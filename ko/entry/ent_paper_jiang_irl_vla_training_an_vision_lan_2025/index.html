@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model</h1>
+      <p class="entry-name-en">IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.06571v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (757 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch Corporate Research, School of Communication and Information Engineering, Shanghai University, School of Mechanical Engineering, Shanghai Jiao Tong University, Bosch Mobility Solutions, Robert Bosch GmbH, AIR, Tsinghua University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.06571" target="_blank" rel="noopener">IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2508.06571" target="_blank" rel="noopener">IRL-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 VLA 모델은 주로 개루프 모방 학습에 기반하여 데이터셋에 기록된 행동에 제한되기 쉽고, 이로 인해 성능이 차선에 그치는 문제가 있습니다. 반면 폐루프 훈련은 고충실도 센서 시뮬레이션에 크게 의존하여 도메인 격차와 낮은 계산 효율성 문제가 있습니다. IRL-VLA는 3단계 패러다임을 제안합니다: 먼저 VLA 아키텍처를 구축하고 모방 학습을 통해 정책을 사전 훈련합니다; 그 다음 역강화학습을 활용하여 경량 보상 세계 모델을 구축하고 효율적인 폐루프 보상 계산을 실현합니다; 마지막으로 PPO 알고리즘을 통해 전용 보상 세계 모델 기반 강화학습을 설계하여 안전 사건, 운전 편안함, 교통 효율성을 효과적으로 균형 있게 조정합니다. 이 방법은 NAVSIM v2 벤치마크에서 최고 성능을 달성했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<p>IRL-VLA는 3단계 훈련 패러다임을 채택합니다:
+- <strong>1단계</strong>: VLA 아키텍처를 구축하고 모방 학습을 통해 정책 네트워크를 사전 훈련하여 기본적인 행동 예측 능력을 갖추게 합니다.
+- <strong>2단계</strong>: 역강화학습을 활용하여 전문가 시연에서 보상 함수를 학습하고, 경량 보상 세계 모델을 구축하여 고충실도 센서 시뮬레이션에 대한 의존을 피하고 효율적인 폐루프 보상 계산을 실현합니다.
+- <strong>3단계</strong>: PPO 알고리즘을 기반으로 보상 세계 모델 기반 강화학습을 설계하고, 정책 네트워크를 최적화하여 안전 사건, 운전 편안함, 교통 효율성이라는 세 가지 목표를 균형 있게 조정합니다.</p>
+<h3 id="_4">실험 설정 및 주요 결과</h3>
+<ul>
+<li><strong>벤치마크 테스트</strong>: 다양한 운전 시나리오와 평가 지표를 포함하는 NAVSIM v2 엔드투엔드 운전 벤치마크에서 평가를 수행했습니다.</li>
+<li><strong>성능</strong>: IRL-VLA는 해당 벤치마크에서 최고 성능(state-of-the-art)을 달성했으며, CVPR2025 자율주행 대회에서 준우승(1st runner up)을 차지했습니다.</li>
+<li><strong>주요 장점</strong>: 개루프 모방 학습 방법과 비교하여 폐루프 강화학습은 정책의 일반화 능력과 견고성을 크게 향상시켰습니다. 보상 세계 모델 설계는 고충실도 시뮬레이션으로 인한 도메인 격차와 계산 병목을 피할 수 있습니다.</li>
+</ul>
+<h3 id="_5">결론</h3>
+<p>IRL-VLA는 역강화학습 보상 세계 모델과 PPO 강화학습의 결합을 통해 VLA 모델의 폐루프 자율주행 훈련 문제를 효과적으로 해결하며, VLA 연구에 새로운 방향을 제시합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jiang_irl_vla_training_an_vision_lan_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정 및 주요 결과</a></li>
+<li><a href="#_5">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

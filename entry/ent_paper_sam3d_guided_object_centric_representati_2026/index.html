@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>SAM3D-VLA 是一种基于 π₀ 架构的视觉-语言-动作模型，通过冻结的 SAM3D 教师网络在训练阶段将目标物体中心的 3D 特征对齐到 RGB 视觉骨干中，推理时保持纯 RGB 管线不变。该方法在 LIBERO、CALVIN 和真实世界任务上显著提升了长时程操作成功率，尤其改善了遮挡场景下的表现。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.25912" target="_blank" rel="noopener">arXiv:2607.25912 SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 模型的核心瓶颈在于：2D 视觉骨干缺乏对目标物体的细粒度 3D 理解，导致在遮挡、姿态变化和精确空间交互中失败。此前引入 3D 信息的方法要么需要额外输入（深度图、点云），要么修改输入输出接口，要么仅关注全局场景级表征，均未解决「目标物体中心」这一关键粒度。本文真正改变的是：在不改变推理管线的前提下，将 3D 物体先验注入 RGB 特征空间，使策略在部署时无需任何 3D 传感器或额外模块即可获得物体级空间理解。这一思路将 3D 知识从「输入模态」转变为「训练监督信号」，是 VLA 3D 化路径上的重要转向。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">训练阶段架构</h3>
+<ul>
+<li>骨干：π₀（SigLIP 视觉编码器 + Gemma 语言模型），冻结 SAM3D 作为 3D 教师。</li>
+<li>物体定位：Grounding DINO / YOLO 开放词汇检测 + SAM2 分割，生成任务相关物体二值掩码。</li>
+<li>教师特征提取：多视角观测展平为 (B×V)×3×H×W，图像-掩码对输入冻结 SAM3D，取最后一个 transformer 块输出 T_t ∈ R^(BV)×L_T×D_T。</li>
+<li>空间重采样：教师序列重塑为 2D 特征网格，移除全局 token，双线性插值到学生视觉 token 分辨率，按视角重组为 T̄_t ∈ R^(B)×(V·L_S)×D_T。</li>
+<li>学生特征：从 Gemma 选定层提取中间视觉特征 S_t = h_t^(m) ∈ R^(B)×(V·L_S)×D_S，经投影头 P_φ 映射到教师空间：T̂_t = P_φ(S_t)。</li>
+<li>对齐损失：构建 token 级掩码 m_t 仅监督目标物体 token，双方 ℓ₂ 归一化后计算掩码归一化 MSE：
+  L_align = MSE(Norm(T̂_t)[M_t], Norm(T̄_t)[M_t])</li>
+<li>总目标：L = L_action + α·L_align，其中 L_action 沿用 π₀ 的条件流匹配：
+  L_action = E[‖v_θ(A_t^τ, τ, o_t) − (A_t − ε)‖₂²]</li>
+</ul>
+<h3 id="_4">长时程任务处理</h3>
+<p>高层指令分解为子任务，每个子任务关联对应物体掩码，提供阶段特定的 3D 监督。</p>
+<h3 id="_5">推理阶段</h3>
+<p>仅使用 RGB 图像和语言指令，遵循原始 π₀ 管线，无需深度图、点云、掩码或 SAM3D。</p>
+<h3 id="_6">冻结表征探测</h3>
+<p>训练后冻结 VLA 骨干，仅训练两层 MLP 探测头 P_ω 预测重采样的 SAM3D 目标，验证 3D 先验的可恢复性。</p>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>物体中心 3D 对齐范式</strong>：首次将 SAM3D 的密集物体中心特征作为监督信号对齐到 VLA 视觉骨干，而非作为输入模态。这使得 3D 知识在训练时注入、推理时零成本，突破了以往 3D-VLA 对额外传感器的依赖。</li>
+<li><strong>token 级掩码监督</strong>：仅对目标物体 token 施加对齐损失，避免背景和无关区域干扰，使监督信号精准聚焦于任务相关物体。这一设计比全局特征对齐更高效，也更符合操作任务的需求。</li>
+<li><strong>子任务-物体关联</strong>：在长时程任务中按子任务提供阶段特定 3D 监督，使策略在不同操作阶段关注不同物体，解决了单一全局 3D 表征无法覆盖多阶段任务的问题。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="libero">LIBERO 基准（成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Long</th>
+<th>Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAM3D-VLA</td>
+<td>99.2</td>
+<td>99.7</td>
+<td>99.1</td>
+<td>98.4</td>
+<td>99.1</td>
+</tr>
+<tr>
+<td>π₀</td>
+<td>96.8</td>
+<td>98.8</td>
+<td>95.8</td>
+<td>85.2</td>
+<td>94.2</td>
+</tr>
+<tr>
+<td>Spatial Forcing</td>
+<td>99.4</td>
+<td>99.6</td>
+<td>98.8</td>
+<td>96.0</td>
+<td>98.5</td>
+</tr>
+<tr>
+<td>GeoVLA</td>
+<td>98.4</td>
+<td>99.0</td>
+<td>96.6</td>
+<td>96.6</td>
+<td>97.7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calvin-abcd">CALVIN ABC→D（成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>1/5</th>
+<th>2/5</th>
+<th>3/5</th>
+<th>4/5</th>
+<th>5/5</th>
+<th>Avg. Len</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAM3D-VLA</td>
+<td>96.2</td>
+<td>89.1</td>
+<td>80.5</td>
+<td>73.6</td>
+<td>71.6</td>
+<td>4.11</td>
+</tr>
+<tr>
+<td>ReconVLA</td>
+<td>95.6</td>
+<td>87.6</td>
+<td>76.9</td>
+<td>69.3</td>
+<td>64.1</td>
+<td>3.95</td>
+</tr>
+<tr>
+<td>UniVLA</td>
+<td>95.5</td>
+<td>85.8</td>
+<td>75.4</td>
+<td>66.9</td>
+<td>56.5</td>
+<td>3.80</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">真实世界（成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>π₀ Average</th>
+<th>SAM3D-VLA Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标准 (ST)</td>
+<td>50.2</td>
+<td>65.2</td>
+</tr>
+<tr>
+<td>遮挡 (OC)</td>
+<td>21.3</td>
+<td>44.3</td>
+</tr>
+</tbody>
+</table>
+<p>关键结果：LIBERO Long 任务从 π₀ 的 85.2% 提升至 98.4%（由表内数值 85.2→98.4 计算），CALVIN 5/5 从 64.1% 提升至 71.6%（由表内数值 64.1→71.6 计算），真实世界遮挡场景平均成功率提升 23.0 个百分点（由表内数值 21.3→44.3 计算）。遮挡场景的显著提升验证了 3D 物体中心先验对鲁棒性的核心贡献。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li>训练管线依赖自动生成的子任务标注和物体掩码，分解、grounding 或分割错误会引入噪声监督，影响对齐质量。</li>
+<li>SAM3D 仅处理单张图像，在严重遮挡、透明物体或较差视角下可靠性受限，可能限制 3D 先验的上限。</li>
+<li>真实世界评估仅限单一机器人平台（Piper-X）的桌面任务，未验证跨平台、跨场景泛化。</li>
+<li>框架虽声称不限于 π₀，但本文仅基于 π₀ 构建，其他骨干上的有效性论文未明确。</li>
+<li>推理频率、训练步数、batch size、学习率、α 具体取值等关键超参数论文未明确。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<p>复现时优先核对三点：一是物体掩码生成质量，Grounding DINO / YOLO 与 SAM2 的检测分割精度直接决定对齐监督的有效性，建议在目标场景先做掩码质量评估；二是 SAM3D 教师特征的空间重采样细节，双线性插值到学生 token 分辨率时需确保视角顺序与掩码对齐一致，这是最容易出错的地方；三是 α 的取值平衡，过强会干扰动作学习，过弱则 3D 先验注入不足，论文未明确具体值，需自行调参。对下游团队，若任务涉及精确空间交互或遮挡场景，该方法的收益最明显；若任务以全局导航为主，则收益有限。部署时无需额外 3D 模块，但训练阶段需要 8 块 H100 GPU 和完整的检测-分割-教师特征提取管线，计算成本集中在训练而非推理。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.25912</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_wang_unified_vision_language_action_2025/">UniVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sam3d_guided_object_centric_representati_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_unified_vision_language_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniVLA</h3>
+          <p>UniVLA 是由中国科学院自动化研究所、北京智源人工智能研究院、清华大学和香港科技大学（深圳）联合提出的 2025 年大型视觉-语言-动作模型。其核心贡献在于将视觉、语言和动作信号统一建模为离散…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">训练阶段架构</a></li>
+<li><a href="#_4">长时程任务处理</a></li>
+<li><a href="#_5">推理阶段</a></li>
+<li><a href="#_6">冻结表征探测</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#libero">LIBERO 基准（成功率 %）</a></li>
+<li><a href="#calvin-abcd">CALVIN ABC→D（成功率 %）</a></li>
+<li><a href="#_9">真实世界（成功率 %）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

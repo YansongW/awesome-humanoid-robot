@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M16 · Building the Perception Stack: Let the Robot See Where the Cup Is · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M16 · Building the Perception Stack: Let the Robot See Where the Cup Is</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m16-building-the-perception-stack-let-the-robot-see-where-the-cup-is">M16 · Building the Perception Stack: Let the Robot See Where the Cup Is</h1>
+<p><strong>Global Position</strong>: After the arm and end-effector are ready (M15), before teleoperation data collection (M17). The input is the assembled sensor hardware, and the output is a <strong>calibrated vision/localization stack</strong> — give it a scene, and it outputs the 3D pose of the target object and the robot's own position. This output is a common consumer for M17 data collection, M18 imitation learning, and M19 task planning.</p>
+<p><strong>Prerequisites</strong>: The URDF from M10 plus the arm from M15 make the full-body TF tree available; sensors have been purchased or are on the procurement list (selection basis in <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Handbook</a>); the onboard computing platform is ready (<a href="/en/roadmap/playbooks/compute-selection/">Compute Platform Selection Handbook</a>).</p>
+<p>Theoretical background: <a href="/en/wiki/chapters/chapter-05/">Chapter 5: Sensing and Perception Hardware</a> covers sensor principles, <a href="/en/wiki/chapters/chapter-22/">Chapter 22: Software Middleware</a> covers the communication skeleton; this task is to weave them into a "pixels → 3D pose" pipeline.</p>
+<h2 id="step-1-define-the-sensor-configuration-plan">Step 1: Define the Sensor Configuration Plan</h2>
+<p>【What to do】Define three tiers of configurations based on the task and write them into the procurement and installation checklist:</p>
+<ol>
+<li><strong>Primary Vision (Required)</strong>: One <a href="/entry/ent_component_rgbd_camera/">RGB-D camera</a> on the head/chest. Mainstream options: <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a> D435i (~USD 199, range 0.1–10 m, built-in IMU — official datasheet spec) or D455 (~USD 299, depth accuracy &lt;2% @ 4 m, global shutter — card spec); for onboard depth and spatial AI, consider the <a href="/entry/ent_component_zed_stereo_camera_2024/">ZED Stereo Camera</a> (depth computation relies on host GPU ecosystem, price needs to be confirmed with the supplier).</li>
+<li><strong>Wrist Close-up Camera (Strongly Recommended)</strong>: One small RGB camera on each wrist. The wrist perspective is a key source of operational data — the last 10 cm of grasping, where the head camera is often blocked by the robot's own arm.</li>
+<li><strong>360° LiDAR (Only for Navigation)</strong>: For indoor cross-room navigation, add the <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a> (~CNY 3,999, 265 g, 40 m @ 10% reflectivity, built-in IMU — official datasheet/card spec), used for SLAM localization.</li>
+</ol>
+<p>Simultaneously, perform a <strong>USB bandwidth budget</strong>: A single D435i with depth + RGB fully enabled has a data flow on the order of hundreds of MB/s (engineering recommendation, measure based on your resolution/frame rate); multiple cameras on the same USB controller will compete for bandwidth and drop frames — allocate "one camera per USB 3 controller", or reduce resolution/frame rate.</p>
+<p>【Why】There are three routes for depth acquisition: structured light/active stereo (good indoor close-range accuracy, sensitive to strong light), ToF, passive stereo (works in sunlight but relies on texture). Trade-offs are in the <a href="/entry/ent_component_rgbd_camera/">RGB-D card</a>. Anchor: <a href="/entry/ent_robot_system_toddlerbot/">ToddlerBot</a> uses dual fisheye cameras + chest IMU (<a href="https://toddlerbot.github.io/">ToddlerBot Project Page</a>); D435i is used as head vision on platforms like Qinglong, G1, etc. (Sensor Selection Handbook).</p>
+<p>【How to analyze your situation】Only doing "fixed stance + tabletop grasping": one D435i + wrist cameras are sufficient; LiDAR is a pure waste. Need to walk to the table and then grasp: add Mid-360. Budget limit: start with a single D435i, add wrist cameras later, but mechanically reserve the mounting positions and cable routing.</p>
+<h2 id="step-2-drivers-time-synchronization-and-tf-tree-integration">Step 2: Drivers, Time Synchronization, and TF Tree Integration</h2>
+<p>【What to do】</p>
+<ol>
+<li>Install <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> drivers (RealSense uses the official ROS 2 wrapper, Livox uses the official driver), check topic by topic: <code>ros2 topic hz</code> to confirm frame rate meets requirements, <code>ros2 topic echo</code> to see if timestamps are monotonically increasing.</li>
+<li><strong>Time Synchronization</strong>: Sensors on the same main controller use the system clock for timestamps; when deploying with a main controller and Jetson dual-machine, use chrony/NTP for time synchronization (millisecond level, engineering recommendation); for VIO/multi-sensor fusion, use PTP or hardware triggering.</li>
+<li><strong>TF Tree Integration</strong>: Attach each sensor's frame into the full-body TF tree from M15 (add fixed joint in URDF, or publish static transform in launch file), use <code>tf2_tools view_frames</code> to check the entire tree is connected without islands.</li>
+</ol>
+<p>【Why】All algorithms for multi-sensor fusion assume "extrinsics known, clocks synchronized". A 30 ms timestamp difference causes ghosting in motion fusion results — VIO diverges, point cloud coloring is misaligned (Section 3 of <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Handbook</a>). If dual-machine time synchronization is not done well, images and joint states won't match, and the data collected in M17 will be directly unusable.</p>
+<p>【How to analyze your situation】Single-machine deployment + single camera: this step can be done in half a day. Dual-machine (main controller + Jetson): complete time synchronization before proceeding further; don't move forward with a 50 ms clock offset — every subsequent step will be contaminated by it.</p>
+<h2 id="step-3-calibration-chain-intrinsics-hand-eye-multi-sensor-joint">Step 3: Calibration Chain — Intrinsics, Hand-Eye, Multi-Sensor Joint</h2>
+<p>【What to do】Perform three levels of calibration in order, all scripted into a one-click script and archived:</p>
+<ol>
+<li><strong>Camera Intrinsics</strong>: Collect 20+ images of a checkerboard/dot grid board from multiple poses, calibration tool outputs fx/fy/cx/cy and distortion coefficients, <strong>reprojection error &lt; 0.5 px level</strong> (engineering recommendation, based on calibration tool report spec) before finishing.</li>
+<li><strong>Hand-Eye Calibration</strong>: Eye-to-hand (head camera relative to base) or eye-in-hand (wrist camera relative to end-effector), essentially solving AX=XB: move the calibration board through 10–15 different poses relative to the camera (ensure sufficient rotation), solve for the transformation from camera to robot frame.</li>
+<li><strong>Camera-LiDAR-IMU Joint Calibration</strong> (only if LiDAR is installed): Process in <a href="/entry/ent_method_calibration_joint_camera_imu/">Joint Calibration</a> card: collect multiple poses of calibration target → detect corners in camera + extract planes from LiDAR → initial value + ICP/nonlinear optimization → reprojection error verification.</li>
+</ol>
+<p>Iron Rule: <strong>Must recalibrate after any disassembly, collision, or transport</strong>. Acceptance for this step: RGB point cloud coloring has no obvious misalignment, reprojection error &lt; 2 px (Stage 3 criterion).</p>
+<p>【Why】Manipulation is essentially a coordinate transformation chain: pixels → camera frame → base frame → end-effector. If any link's extrinsics are wrong, you grasp at air (Stage 3 original text). If calibration is not scripted, you'll spend a day recalling how to adjust parameters after every disassembly.</p>
+<p>【How to analyze your situation】Only doing tabletop grasping: complete steps 1+2 is sufficient; leave LiDAR joint calibration for when navigation is unlocked. Archive calibration results with date and version number — the dataset card for M17 must include the calibration version; mismatched data and calibration means wasted collection.</p>
+<h2 id="step-4-perception-algorithm-pipeline-from-point-cloud-to-object-pose">Step 4: Perception Algorithm Pipeline — From Point Cloud to Object Pose</h2>
+<p>【What to do】Build a four-level pipeline:</p>
+<ol>
+<li><strong>Point Cloud Preprocessing</strong>: Voxel downsampling → Pass-through filtering (keep only the tabletop workspace) → Plane segmentation (remove the tabletop). Parameters are tuned based on actual measurements of table height and camera mounting angle.</li>
+<li><strong>Two Paths for Object Detection</strong>:<ul>
+<li>Geometric method: cup ≈ cylinder, RANSAC cylinder fitting, zero training cost, ready to use immediately;</li>
+<li>Learning method: detection/segmentation model outputs masks, no need to rewrite geometric assumptions when changing object categories.</li>
+</ul>
+</li>
+<li><strong>6D Pose</strong>: Geometric method directly gives pose from fitting parameters; learning method can connect to a 6D pose estimation model (first version can use "mask center point + principal axis direction" approximation).</li>
+<li><strong>Output Definition</strong> (frozen as an interface): <code>{object category, 3D pose, confidence}</code>, publish frequency <strong>10–30 Hz</strong> (engineering recommendation, measure based on compute power).</li>
+</ol>
+<p>【Why】Always use the geometric method for the first version: it gives you an end-to-end baseline with zero training data and can also provide automatic annotations for the learning method. Once the output interface is frozen, M17/M18/M19 only recognize this definition; later algorithm changes won't affect downstream.</p>
+<p>【How to analyze your situation】Only one type of cup in the scene: the geometric method is sufficient; focus effort on calibration and localization. Need to generalize to multiple objects: start with the learning method, but first use geometric method results as coarse annotations; don't start manually labeling hundreds of images.</p>
+<h2 id="step-5-localization-where-the-robot-is">Step 5: Localization – Where the Robot Is</h2>
+<p>[What to Do] Three gears to choose based on the task:</p>
+<table>
+<thead>
+<tr>
+<th>Gear</th>
+<th>Solution</th>
+<th>Applicable Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leg Odometry</td>
+<td>Joint encoder kinematics + torso <a href="/entry/ent_component_imu_2024/">IMU</a> fusion</td>
+<td>Stationary operation, short-distance shuffling</td>
+</tr>
+<tr>
+<td>VIO</td>
+<td>Camera + IMU visual-inertial odometry (D435i built-in IMU can save an external one)</td>
+<td>Indoor fixed room, sufficient texture</td>
+</tr>
+<tr>
+<td>LiDAR SLAM</td>
+<td>Mid-360 + built-in IMU for LIO</td>
+<td>Cross-room navigation, long distance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Drift Quantification</strong>: Have the robot walk a closed-loop path back to the origin (or a marker), measure the deviation of the final pose from the origin, and divide by the path length to get the relative drift rate – this number must be included in the acceptance criteria.</p>
+<p>[Why] For fixed-room desktop grasping, RGB-D odometry-level accuracy is sufficient (Stage 3 scope); cross-room reliance solely on proprioception will cause drift to the point of grasping air. For open-source references, see <a href="/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3</a> and <a href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion</a> paper cards.</p>
+<p>[How to Analyze Your Situation] In the first phase (stationary grasping), only retain leg odometry + visual servoing closed loop; localization errors are absorbed by the "visible servo". Only add VIO/LIO after unlocking walking; do not stack all three gears at once.</p>
+<h2 id="step-6-compute-allocation-and-engineering">Step 6: Compute Allocation and Engineering</h2>
+<p>[What to Do]</p>
+<ol>
+<li><strong>Perception runs on Layer 2</strong>: All vision/SLAM nodes are deployed on the intelligent layer (e.g., <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a>, up to 275 TOPS @ 64 GB version, 15–60 W, dev kit approx. USD 1,999 – card scope), isolated from the control loop processes; machine-level isolation is better.</li>
+<li><strong>Failure Drill</strong>: Manually kill all perception processes; the control loop must not be interrupted, and the robot must enter a safe state (Stage 3 acceptance criterion).</li>
+<li><strong>Frequency/Latency Budget Table</strong> (engineering recommendations, verify with actual measurements):</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Target Frequency</th>
+<th>Single-Frame Latency Budget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera Driver</td>
+<td>30 Hz</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Point Cloud Preprocessing</td>
+<td>15–30 Hz</td>
+<td>&lt; 30 ms</td>
+</tr>
+<tr>
+<td>Detection + Pose</td>
+<td>10–30 Hz</td>
+<td>&lt; 100 ms</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>10–100 Hz (depends on gear)</td>
+<td>&lt; 50 ms</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Resource Monitoring</strong>: CPU/GPU/memory/temperature must be continuously monitored. ToddlerBot's actual onboard inference experienced thermal throttling after 19 minutes (research archive) – heat is a hidden budget for perception.</li>
+</ol>
+<p>[Why] The control loop requires determinism, perception requires throughput; running them together causes mutual degradation (see the layered logic in the <a href="/en/roadmap/playbooks/compute-selection/">Compute Platform Selection Manual</a>). A separate process architecture ensures that even if perception crashes, the control can still safely shut down (Stage 3, Step 14).</p>
+<p>[How to Analyze Your Situation] With only one motherboard: at least achieve process isolation + lower perception process priority + watchdog; if possible, use a dual-computer setup (main controller + Jetson) – ToddlerBot uses Orin NX 16GB to run a 300M parameter diffusion policy with ~100 ms latency, 10 Hz onboard stereo depth estimation (research archive), proving this scale is sufficient for perception + small policies.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Sensor configuration document created: each sensor has mounting position, interface, bandwidth budget; no USB controller allocation conflicts.</li>
+<li>[ ] All topic frame rates/timestamps verified; dual-computer deployment has clock synchronization records.</li>
+<li>[ ] Camera intrinsic reprojection error &lt; 0.5 px and archived; hand-eye calibration completed; one-click calibration script stored in repository, and re-calibration process after disassembly rehearsed.</li>
+<li>[ ] RGB point cloud coloring shows no obvious misalignment (reprojection &lt; 2 px, Stage 3 criterion).</li>
+<li>[ ] Cup 3D localization error ≤ 1 cm @ desktop distance (Stage 3 criterion), repeated 10 times with distribution recorded.</li>
+<li>[ ] Localization return-to-origin deviation quantified (path length vs. deviation), documented in acceptance report.</li>
+<li>[ ] After killing perception processes, control loop is not interrupted, robot enters safe state (actual test video archived).</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Depth stream frame drops with multiple cameras</td>
+<td>Insufficient USB bandwidth, multiple cameras contending for the same controller</td>
+<td><code>lsusb -t</code> to check controller topology; reduce resolution/frame rate; assign to separate controllers</td>
+</tr>
+<tr>
+<td>Point cloud coloring misaligned, ghosting</td>
+<td>Camera-LiDAR extrinsic parameters outdated (after collision) / timestamp offset not calibrated</td>
+<td>Re-run joint calibration and check reprojection error; verify timestamp source consistency</td>
+</tr>
+<tr>
+<td>Hand-eye calibration always misaligned</td>
+<td>Insufficient rotation in collected poses / timestamp misalignment</td>
+<td>Increase pose diversity (especially rotation); check time synchronization first, then re-calibrate</td>
+</tr>
+<tr>
+<td>Large depth holes on transparent/reflective objects</td>
+<td>Inherent limitation of structured light / active IR methods</td>
+<td>Change viewing angle; apply matte powder; switch to passive stereo or learning-based depth</td>
+</tr>
+<tr>
+<td>Depth failure in sunlight</td>
+<td>Active IR overwhelmed by sunlight</td>
+<td>Use indoors or with shading; for outdoor tasks, switch to LiDAR/passive methods</td>
+</tr>
+<tr>
+<td>RViz reports TF break</td>
+<td>Inconsistent frame names / static transform not published</td>
+<td>Use <code>tf2_tools view_frames</code> to find orphan frames; cross-check against M15 naming convention</td>
+</tr>
+<tr>
+<td>Perception frequency drops after a few minutes</td>
+<td>Thermal throttling (ToddlerBot precedent at 19 minutes)</td>
+<td>Monitor temperature curve; lower power mode; improve cooling airflow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous Task: <a href="/en/roadmap/missions/m15-upper-body/">M15 · Upper Body and End Effector</a></li>
+<li>Next Task: <a href="/en/roadmap/missions/m17-teleop-data/">M17 · Teleoperation and Data Collection</a></li>
+<li>Theoretical Background: <a href="/en/wiki/chapters/chapter-05/">Chapter 5 Sensing and Perception Hardware</a>, <a href="/en/wiki/chapters/chapter-22/">Chapter 22 Software Middleware</a>, <a href="/en/wiki/chapters/chapter-11/">Chapter 11 Assembly, Integration, and Testing</a></li>
+<li><a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Manual</a> · <a href="/en/roadmap/playbooks/compute-selection/">Compute Platform Selection Manual</a> · <a href="/en/roadmap/stage-3-humanoid/">Stage 3 Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m15-upper-body/">← Previous<span>M15 · Upper Limbs and End Effectors: Giving Hands to a Walking Robot</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m17-teleop-data/">Next →<span>M17 · Teleoperation and Data Collection: How Imitation Learning Data is Gathered</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m16-building-the-perception-stack-let-the-robot-see-where-the-cup-is">M16 · Building the Perception Stack: Let the Robot See Where the Cup Is</a><ul>
+<li><a href="#step-1-define-the-sensor-configuration-plan">Step 1: Define the Sensor Configuration Plan</a></li>
+<li><a href="#step-2-drivers-time-synchronization-and-tf-tree-integration">Step 2: Drivers, Time Synchronization, and TF Tree Integration</a></li>
+<li><a href="#step-3-calibration-chain-intrinsics-hand-eye-multi-sensor-joint">Step 3: Calibration Chain — Intrinsics, Hand-Eye, Multi-Sensor Joint</a></li>
+<li><a href="#step-4-perception-algorithm-pipeline-from-point-cloud-to-object-pose">Step 4: Perception Algorithm Pipeline — From Point Cloud to Object Pose</a></li>
+<li><a href="#step-5-localization-where-the-robot-is">Step 5: Localization – Where the Robot Is</a></li>
+<li><a href="#step-6-compute-allocation-and-engineering">Step 6: Compute Allocation and Engineering</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

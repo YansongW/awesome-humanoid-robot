@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GigaWorld-0: World Models as Data Engine to Empower Embodied AI · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">GigaWorld-0: World Models as Data Engine to Empower Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>GigaWorld-0: World Models as Data Engine to Empower Embodied AI</h1>
+      <p class="entry-name-en">GigaWorld-0: World Models as Data Engine to Empower Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P115. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>World models are emerging as a foundational paradigm for scalable, data-efficient embodied AI. In this work, we present GigaWorld-0, a unified world model framework designed explicitly as a data engine for Vision-Language-Action (VLA) learning. GigaWorld-0 integrates two synergistic components: GigaWorld-0-Video, which leverages large-scale video generation to produce diverse, texture-rich, and.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.19861" target="_blank" rel="noopener">arXiv:2511.19861 GigaWorld-0: World Models as Data Engine to Empower Embodied AI</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>GigaWorld-0은 임베디드 지능을 위한 통합 세계 모델 프레임워크로, 비디오 생성(GigaWorld-0-Video)과 3D 자산 생성(GigaWorld-0-3D)의 두 가지 주요 구성 요소로 이루어져 있습니다. VLA 모델의 데이터 엔진 역할을 하여, 합성 데이터로 비용이 높고 제한적인 실제 세계 수집을 대체하는 것을 목표로 합니다. 핵심 기여는 제어 가능한 비디오 생성, 물리적 미분 가능한 시스템 식별, 실행 가능한 모션 플래닝을 확장 가능한 데이터 생산 파이프라인으로 통합하고, 품질 평가 및 추론 가속화 메커니즘을 함께 제공한다는 점입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>무엇을 바꾸었는가: 문제와 동기. 전통적인 임베디드 데이터 획득의 병목은 단순한 비용 문제가 아니라, 실제 세계 데이터가 시점, 텍스처, 조명, 물리적 상호작용에서 가지는 다양성의 한계입니다. 이는 VLA 모델이 "보는 것"에서 "행동하는 것"으로 일반화되는 능력을 직접적으로 제한합니다. GigaWorld-0의 실질적인 변화는 세계 모델을 수동적인 예측기로 보지 않고, 능동적이고 프로그래밍 가능한 데이터 생산 도구로 재구성하여 "데이터 생성"이라는 행위 자체가 실제 수집과 동등한 훈련 가치를 갖게 한다는 점입니다. 이는 더 근본적인 질문에 답하려고 시도합니다: 데이터를 필요에 따라 합성할 수 있을 때, 임베디드 지능의 훈련 패러다임이 "수집"에서 "설계"로 전환될 수 있는가?</p>
+<p>이 전환의 깊은 동기는 기존 비디오 생성 모델(Cosmos, Wan 등)이 고충실도 화면을 생성할 수 있지만, 물리적 합리성, 다중 시점 일관성, 동작 의미론의 제어 가능성에서 체계적 결함이 있어 생성 콘텐츠를 정책 학습에 직접 사용할 수 없다는 점에 있습니다. GigaWorld-0은 3D 물리 시뮬레이션과 미분 가능한 시스템 식별을 도입하여 생성 과정을 "픽셀 수준의 사실성"에서 "물리 수준의 신뢰성"으로 끌어올리며, 이는 기존 데이터 엔진 패러다임에 대한 핵심 수정입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>방법 분해: 어떻게 했는가.</p>
+<h3 id="gigaworld-0-video">비디오 생성 브랜치 (GigaWorld-0-Video)</h3>
+<ul>
+<li><strong>기반 모델 (Dreamer)</strong>: flow-matching 공식 <code>dz_t/dt = v_θ(z_t, t, c)</code>을 채택하고, 3D-VAE로 원본 비디오를 압축하며, 시공간 압축 비율은 4,8,8(시간, 높이, 너비)로 16채널 잠재 변수를 생성합니다. 이후 1×2×2 patchification을 적용하여 추가 압축하고, 3D-RoPE로 위치 정보를 인코딩합니다.</li>
+<li><strong>MoE 아키텍처</strong>: FFN 블록에 4개의 라우팅 전문가(N_r=4)를 통합하고, 토큰당 2개의 전문가(K_r=2)를 활성화하며, DeepSeek-V3의 상호 보완 균형 손실을 사용하고 균형 계수 α=0.01입니다. DeepSeek-V2와 달리 공유 전문가는 포함하지 않습니다.</li>
+<li><strong>제어 가능한 생성</strong>: 세 가지 사후 훈련 적응 모듈을 통해 세밀한 제어를 구현합니다 — AppearanceTransfer(외관 편집), ViewTransfer(시점 이동), MimicTransfer(인간-로봇 동작 이동). ViewTransfer는 이중 재투영 전략을 채택하고, MoGe로 깊이를 추정하여 시점 A의 이미지를 시점 B로 왜곡하며, SAM2로 로봇 팔을 마스킹하여 배경 일관성을 보장합니다. MimicTransfer는 IK를 통해 인간 손의 말단 자세를 로봇 팔의 관절 각도로 매핑하고, SAPIEN 시뮬레이터에서 조건부 비디오를 렌더링합니다.</li>
+</ul>
+<h3 id="3d-gigaworld-0-3d">3D 자산 생성 브랜치 (GigaWorld-0-3D)</h3>
+<ul>
+<li><strong>전경 생성 (FG)</strong>: Trellis 기반 이미지-3D 변환으로, 메시와 3DGS 이중 표현을 지원합니다. 전처리 단계에서는 Aesthetic-Checker와 GPT-4o 기반 ImageSegChecker로 분할 신뢰성을 평가하고, 후처리 단계에서는 MeshGeoChecker로 네 개의 직교 시점에서 기하학적 완전성을 검증합니다.</li>
+<li><strong>배경 재구성 (BG)</strong>: 3DGRUT(각 가우시안에 7개의 대표점 연결)을 채택하여 비-핀홀 카메라를 지원하며, 희소 시점 입력 → 초기 재구성 → 시점 세분화 → 밀집 재구성 → 푸아송 표면 재구성의 흐름으로 수밀 메시를 생성합니다.</li>
+<li><strong>물리 속성 모델링 (Phys)</strong>: 로봇 팔은 PINN 기반 미분 가능한 물리 프레임워크를 사용하며, 3단계 프로세스: 물리 파라미터를 무작위 샘플링하여 시뮬레이션 롤아웃 생성 → 예측과 시뮬레이션의 MSE를 최소화하는 대리 모델 훈련 → 경사 하강법으로 물리 파라미터 최적화. 조작 대상은 Qwen3-VL 다중 모달 전문가를 기반으로 질량, 마찰 계수 등의 속성을 추론합니다.</li>
+<li><strong>동작 생성 (Act)</strong>: 두 계층 파이프라인으로, MimicGen 프레임워크를 사용하여 시드 궤적을 새로운 객체 자세와 장면 레이아웃으로 확장하고, 복잡한 장면은 원격 조작 데모를 강화 학습 콜드 스타트 데이터로 사용합니다.</li>
+</ul>
+<h3 id="_4">훈련 및 추론 최적화</h3>
+<ul>
+<li>훈련 프레임워크 GigaTrain은 DeepSpeed ZeRO(Stages 0–3)와 FSDP2를 지원하며, 훈련 해상도는 480×768, 시퀀스 길이는 61프레임, NATTEN 희소 어텐션 연산자와 FP8 정밀도를 사용합니다.</li>
+<li>추론 가속화: DMD2 디노이징 스텝 증류로 샘플링을 수십 스텝에서 단일 스텝으로 줄이고, FP8 정밀도를 결합하여 50배 이상의 가속을 달성합니다.</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<p>핵심 혁신:</p>
+<ol>
+<li>
+<p><strong>물리 인식 비디오 생성 제어</strong>: 기존 비디오 모델이 외관이나 카메라 궤적만 제어하는 것과 달리, GigaWorld-0은 ViewTransfer와 MimicTransfer를 통해 로봇 팔의 운동학적 제약(관절 각도, 말단 자세)을 생성 과정에 직접 주입하여, 생성된 비디오의 동작 시퀀스가 물리적으로 실행 가능하도록 합니다. 이는 "조작처럼 보이는 것"에서 "실제로 조작할 수 있는 것"으로의 핵심 도약입니다.</p>
+</li>
+<li>
+<p><strong>미분 가능한 시스템 식별과 3D 생성의 폐루프</strong>: PINN 기반 물리 파라미터 식별과 3DGS 재구성을 결합하여, 생성된 3D 자산이 외관이 사실적일 뿐만 아니라 올바른 질량, 마찰, 탄성 속성을 가지며 물리 시뮬레이터에 직접 사용할 수 있습니다. 이는 Trellis와 같은 3D 생성 모델이 물리적 합리성이 부족한 근본적 결함을 해결합니다.</p>
+</li>
+<li>
+<p><strong>경량 제어 브랜치 설계</strong>: MoE 아키텍처에서 ControlNet을 포기하고(MoE 레이어를 복제하면 파라미터가 크게 증가하기 때문), 채널 연결+MLP 압축 방식으로 다중 모달 조건을 주입하여 모델 규모를 유지하면서 세밀한 제어를 구현합니다. 이 설계 결정은 대규모 비디오 생성 모델의 제어 가능한 적응에 직접적인 참조 가치가 있습니다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<p>실험 및 결과: 대조 설정, 핵심 수치, 결과의 의미.</p>
+<h3 id="pbench-robot-set">PBench Robot Set 평가</h3>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>파라미터</th>
+<th>품질 점수</th>
+<th>도메인 점수</th>
+<th>종합 점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cosmos-Predict2</td>
+<td>14B</td>
+<td>97.4</td>
+<td>84.0</td>
+<td>79.88</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>14B</td>
+<td>95.9</td>
+<td>83.2</td>
+<td>78.85</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>5B</td>
+<td>95.4</td>
+<td>80.1</td>
+<td>77.15</td>
+</tr>
+<tr>
+<td>Cosmos-Predict2.5</td>
+<td>2B</td>
+<td>93.8</td>
+<td>84.7</td>
+<td>79.95</td>
+</tr>
+<tr>
+<td>GigaWorld-0-Video-Dreamer</td>
+<td>2B(Act.)</td>
+<td>97.6</td>
+<td>88.2</td>
+<td>82.07</td>
+</tr>
+</tbody>
+</table>
+<p>GigaWorld-0은 2B 활성 파라미터로 14B 모델을 능가하며, 종합 점수 82.07로 2위보다 약 2.1점 높습니다(표 내 수치 82.07−79.95로 계산). 특히 도메인 점수(88.2)에서 뚜렷한 우위를 보여, 생성 콘텐츠가 임베디드 조작 작업 요구에 더 부합함을 나타냅니다.</p>
+<h3 id="dreamgen-bench-gr1-env">DreamGen Bench 평가 (GR1-Env 하위 집합)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>파라미터</th>
+<th>Qwen-IF</th>
+<th>GPT-IF</th>
+<th>PA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cosmos-Predict2</td>
+<td>14B</td>
+<td>0.966</td>
+<td>0.552</td>
+<td>0.586</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>14B</td>
+<td>0.900</td>
+<td>0.760</td>
+<td>0.549</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>5B</td>
+<td>0.790</td>
+<td>0.340</td>
+<td>0.531</td>
+</tr>
+<tr>
+<td>Cosmos-Predict2.5</td>
+<td>2B</td>
+<td>0.930</td>
+<td>0.480</td>
+<td>0.534</td>
+</tr>
+<tr>
+<td>GigaWorld-0-Video-Dreamer</td>
+<td>2B(Act.)</td>
+<td>0.966</td>
+<td>0.586</td>
+<td>0.529</td>
+</tr>
+</tbody>
+</table>
+<p>GR1-Env에서 GigaWorld-0의 Qwen-IF 점수는 Cosmos-Predict2와 공동 최고(0.966)이며, GPT-IF 점수(0.586)는 Cosmos-Predict2(0.552)보다 우수하지만, PA 점수(0.529)는 Cosmos-Predict2(0.586)보다 약간 낮습니다. 이는 명령 따르기에서 우수한 성능을 보이지만 물리적 합리성에서는 여전히 개선 여지가 있음을 나타냅니다.</p>
+<h3 id="8h20-gpus-batch-size-32">훈련 효율성 (8×H20 GPUs, batch size 32)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>시간 (s/step)</th>
+<th>메모리 (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSpeed-Zero2 + FP8 + 희소 어텐션</td>
+<td>25.44</td>
+<td>76937</td>
+</tr>
+<tr>
+<td>FSDP-2 + FP8 + 희소 어텐션</td>
+<td>25.38</td>
+<td>73131</td>
+</tr>
+<tr>
+<td>DeepSpeed-Zero2 + 활성화 체크포인트 + FP8 + 희소 어텐션 + MoE</td>
+<td>33.27</td>
+<td>84699</td>
+</tr>
+<tr>
+<td>FSDP-2 + 활성화 체크포인트 + FP8 + 희소 어텐션 + MoE</td>
+<td>33.38</td>
+<td>73997</td>
+</tr>
+</tbody>
+</table>
+<p>FP8과 희소 어텐션의 조합은 훈련 속도를 32.84 s/step에서 25.38 s/step으로 향상시키지만(표 내 수치 32.84→25.38로 계산), MoE 도입 후 활성화 체크포인트가 필요해 속도는 33.38 s/step으로 돌아가고 메모리는 73997 MB로 제어됩니다.</p>
+<h2 id="_7">경계와 한계</h2>
+<p>경계와 한계: 저자는 본 논문에서 하위 작업(예: 옷 접기, 테이블 정리)의 정량적 성공률을 제공하지 않았으며, GigaBrain-0 논문에서 확인할 수 있다고만 언급했습니다. 생성된 비디오는 여전히 환각이나 아티팩트를 포함할 수 있어 하위 정책 학습을 손상시킬 수 있으므로, 품질 평가 파이프라인을 근본적 해결이 아닌 보완책으로 도입했습니다. 변형 가능한 객체의 경우 PhysTwin은 장면별 최적화를 채택하지만, 저자가 탐구한 피드포워드 방법은 아직 완성되지 않았습니다. GigaWorld-0은 현재 데이터 엔진으로만 사용되며, 모델 기반 강화 학습을 위한 상호작용 정책 환경으로 배포되지 않았고, 세계 모델이 능동적 정책 공동 설계자 역할을 하는 능력도 구현되지 않았습니다. 실제 세계 경험과 합성 생성 간의 폐루프(로봇 롤아웃이 세계 모델을 지속적으로 개선)도 본 논문에서 구현되지 않았습니다.</p>
+<h2 id="_8">엔지니어링 시사점</h2>
+<p>엔지니어링 시사점: 재현, 선택, 하위 팀에 대한 구체적 지침.</p>
+<ol>
+<li>
+<p><strong>훈련 구성 먼저 확인</strong>: MoE 아키텍처에서는 활성화 체크포인트를 반드시 활성화해야 하며, 그렇지 않으면 8×H20에서 OOM이 발생합니다(DeepSpeed-Zero0 구성은 직접 OOM). FSDP2는 메모리 제어에서 DeepSpeed-Zero2보다 우수하지만(73997 MB vs 84699 MB), 속도는 비슷하므로 FSDP2를 우선 선택하는 것이 좋습니다.</p>
+</li>
+<li>
+<p><strong>어텐션 연산자 선택</strong>: NATTEN은 SageAttention보다 더 나은 가속 효과를 제공하지만, 성능 저하를 피하기 위해 미세 조정이 필요합니다. 기본 연산자를 직접 교체하면 훈련 불안정 문제가 발생할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>데이터 품질 평가는 건너뛸 수 없음</strong>: 생성된 비디오의 환각과 아티팩트는 정책 학습을 직접 손상시키므로, 데이터 생산 파이프라인에 4차원 품질 평가(기하학적 일관성, 다중 시점 일관성, 텍스트 정렬, 물리적 합리성)를 통합하고 종합 점수 임계값을 설정하여 데이터 용도를 결정하는 것이 좋습니다.</p>
+</li>
+<li>
+<p><strong>물리 속성 식별의 함정</strong>: 로봇 팔의 PINN 3단계 프로세스에서 대리 모델의 훈련 품질이 이후 경사 하강법의 수렴성을 직접 결정합니다. 먼저 소규모 궤적에서 대리 모델 MSE가 충분히 낮은지 검증한 후 대규모 데이터로 확장하는 것이 좋습니다.</p>
+</li>
+<li>
+<p><strong>시점 이동 재현의 핵심 포인트</strong>: ViewTransfer는 MoGe의 스케일 추정과 SAM2의 팔 마스크에 의존하며, 이 두 전제 모델의 정확도가 생성 품질에 직접 영향을 미칩니다. 대상 장면에서 먼저 MoGe의 깊이 추정이 정확한지 검증하는 것이 좋습니다. 그렇지 않으면 왜곡 과정에서 심각한 아티팩트가 발생합니다.</p>
+</li>
+<li>
+<p><strong>하위 팀 선택</strong>: 작업이 물리적 합리성을 높게 요구하는 경우(예: 접촉이 많은 조작), 3D 브랜치에서 생성된 자산을 우선 사용하는 것이 좋습니다. 작업이 시각적 다양성과 명령 따르기를 더 중시하는 경우, 비디오 브랜치의 생성 결과로 충분합니다. 둘을 결합할 때는 3DGS와 메시 표현 간의 전환 비용에 주의해야 합니다.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_tech_mimicgen/">MimicGen</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gigaworld_0_world_models_data_engine_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_tech_mimicgen/">
+          <span class="entry-type">기술</span>
+          <h3>MimicGen</h3>
+          <p>물체 자세 및 초기 조건을 변형하여 시뮬레이션에서 소량의 인간 시드 데모를 확장하는 데모 증강 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#gigaworld-0-video">비디오 생성 브랜치 (GigaWorld-0-Video)</a></li>
+<li><a href="#3d-gigaworld-0-3d">3D 자산 생성 브랜치 (GigaWorld-0-3D)</a></li>
+<li><a href="#_4">훈련 및 추론 최적화</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#pbench-robot-set">PBench Robot Set 평가</a></li>
+<li><a href="#dreamgen-bench-gr1-env">DreamGen Bench 평가 (GR1-Env 하위 집합)</a></li>
+<li><a href="#8h20-gpus-batch-size-32">훈련 효율성 (8×H20 GPUs, batch size 32)</a></li>
+</ul>
+</li>
+<li><a href="#_7">경계와 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

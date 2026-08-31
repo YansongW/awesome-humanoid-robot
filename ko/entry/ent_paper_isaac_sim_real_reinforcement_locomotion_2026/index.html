@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</h1>
+      <p class="entry-name-en">Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Learning-based approaches to locomotion have risen in popularity in recent years, showing the capability for complex legged locomotion and whole-body control. Reinforcement learning (RL), the primary learning-based approach for locomotion, often utilizes a high-performance simulation tool, providing a controlled and efficient training and development environment. However, policies that perform.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18135" target="_blank" rel="noopener">arXiv:2607.18135 Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 Nvidia Isaac Sim 플랫폼 기반 강화학습 사족 보행 제어 프레임워크를 제안하며, 도메인 무작위화, 액추에이터 모델링 및 보상 형상을 통해 제로샷 sim-to-real 전이를 구현하고 Unitree Go1에서 검증한다. 핵심 기여는 사전 수집 데이터나 teacher-student 아키텍처에 의존하지 않고, 시뮬레이션 훈련만으로 통합 컨트롤러와 유사한 속도 추적 성능과 더 강력한 외란 회복 능력을 얻을 수 있다는 점이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 RL 운동 정책은 고수준 컨트롤러로서 참조 궤적을 출력하거나 teacher-student 프레임워크의 사전 훈련 모델에 의존하여, 정책의 일반화 성능과 배포 편의성을 제한했다. 본 논문은 이러한 패러다임을 변경한다: 관절 위치를 직접 행동 공간으로 사용하고, 정교하게 설계된 보상 형상을 통해 명시적 보행 패턴 지정 없이 정책이 자연스러운 보행을 자율적으로 창발하게 한다. 이러한 "보상 기반" 접근 방식은 Isaac Sim 플랫폼에서 실현 가능함을 입증했으며, 훈련 비용이 매우 낮아(단일 RTX 3090, 3시간) RL 운동 제어를 연구 프로토타입에서 공학적으로 재현 가능한 수준으로 끌어올렸다.</p>
+<p>더 중요하게, 저자는 액추에이터 모델링(actuator-net)을 사후 보상이 아닌 sim-to-real 성공의 핵심 선행 조건으로 간주한다. 이 결정은 "정책을 먼저 훈련하고 도메인 차이를 처리하는" 기존 프로세스를 변경하여 하드웨어 특성을 시뮬레이션 환경에 내장함으로써 제로샷 전이를 가능하게 한다. 또한, 저자는 추론 단계에서 정책 주파수를 훈련 시 50Hz에서 100Hz로 높였을 때 성능이 현저히 향상됨을 발견했으며, 이는 "훈련과 추론 주파수가 일치해야 한다"는 일반적인 가정에 도전한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">문제 모델링</h3>
+<ul>
+<li>MDP (𝒮, 𝒜, 𝒫, ℛ, γ)로 운동 제어 문제를 정의하고, 정책 π(𝒜|𝒮)는 12차원 관절 위치 행동(Unitree Go1의 12개 구동 관절)을 출력한다.</li>
+<li>행동 공간: 관절 위치에 스케일 팩터 0.2를 곱하고 공칭 구성 오프셋을 더함; 관측 공간은 48차원 벡터로 선속도, 각속도, 투영 중력, 사용자 명령, 관절 위치/속도, 이전 행동을 포함한다.</li>
+</ul>
+<h3 id="_5">도메인 무작위화</h3>
+<ul>
+<li>4096개 환경을 병렬 훈련(RTX 3090)하며, 무작위화 범위는 발 마찰(0.4, 1.1), 질량 중심 오프셋(±0.025), 링크 질량(0.8-1.3배), 몸체 속도/위치/자세, 관절 위치/속도 등을 포함한다.</li>
+<li>지형 커리큘럼은 높이와 거칠기를 점진적으로 증가시킨다; 10-15초마다 무작위 밀기(선속도 [-1.0, 1.0] m/s)를 적용한다.</li>
+<li>명령 속도 샘플링: x 방향 [-2, 3] m/s, y 방향 [-1.5, 1.5] m/s, 각속도 [-1.5, 1.5] rad/s, 샘플링 간격 0.3-10초.</li>
+</ul>
+<h3 id="_6">액추에이터 모델링</h3>
+<ul>
+<li>3층 MLP(각 층 64 뉴런, soft-sign 활성화)의 actuator-net으로 비선형 액추에이터 동역학을 포착하며, kp=20, kd=0.5.</li>
+<li>훈련 데이터는 배포 중 기록된 관절 위치/속도 이력과 토크 출력에서 얻는다; 저자는 actuator-net 통합 전 정책이 sim-to-real에서 상당한 어려움을 겪었음을 강조한다.</li>
+</ul>
+<h3 id="_7">보상 형상</h3>
+<ul>
+<li>보행 보상(가중치 10.0)은 동기/비동기 발 접촉을 통해 자연스러운 보행을 생성한다; 발 이격 간격(5.0)과 공중 시간(5.0) 가중치가 크다.</li>
+<li>안전 패널티: 관절 위치 제한(-100.0), 관절 속도 제한(-10.0), 대퇴부 접촉(-10.0), 하퇴부 접촉(-1.0).</li>
+<li>행동 평활성(-1.5)과 관절 편차(-0.75) 가중치는 유사 연구보다 높아 높은 명령 속도에서 성능을 향상시킨다; 발 힘 패널티(-0.00002)는 부드러운 접촉을 구현한다.</li>
+</ul>
+<h3 id="_8">네트워크 및 훈련</h3>
+<ul>
+<li>Actor-critic 아키텍처, MLP 모두 3층(512, 256, 128), ELU 활성화; PPO 알고리즘, 엔트로피 계수 0.0025, 목표 KL 0.01, γ=0.99, λ=0.95, 학습률 0.001.</li>
+<li>훈련 5000회 반복 약 3시간; 물리 시뮬레이션 Δt=0.002s, 정책 Δt=0.02s(50Hz).</li>
+</ul>
+<h3 id="_9">추론 최적화</h3>
+<ul>
+<li>정책을 ONNX 형식으로 컴파일하여 Jetson Nano(Docker 컨테이너)에서 실행하며, GPU 가속 없이 400Hz 달성.</li>
+<li>칼만 필터를 완전히 C++로 구현(Pybind11 컴파일)하여 상태 추정 지연을 400Hz 루프 속도를 지원할 수준으로 낮춘다.</li>
+</ul>
+<h2 id="_10">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>제로샷 sim-to-real의 완전한 엔지니어링 폐루프</strong>: 실제 로봇 데이터나 사전 훈련 모델에 의존하지 않고, 도메인 무작위화 + 액추에이터 모델링 + 보상 형상만으로 Isaac Sim에서 훈련된 정책을 Unitree Go1에 직접 배포할 수 있다. 이는 Isaac Sim의 RL 훈련 플랫폼으로서의 신뢰성을 검증하며, 다른 로봇 플랫폼에 재현 가능한 패러다임을 제공한다.</p>
+</li>
+<li>
+<p><strong>액추에이터 모델링을 선행 조건으로</strong>: 저자는 actuator-net 통합을 sim-to-real 성공의 핵심으로 명시하며, 사후 보상이 아닌 것으로 간주한다. 이 설계 결정은 하드웨어 비선형 동역학을 시뮬레이션 환경에 내장하여 정책이 훈련 단계에서 실제 액추에이터 특성에 적응하게 하여 도메인 격차를 현저히 줄인다.</p>
+</li>
+<li>
+<p><strong>추론 주파수 향상의 예상 외 이점</strong>: 정책 루프 속도를 훈련 시 50Hz에서 100Hz로 높였을 때 오히려 성능이 향상된다(더 민첩하고 안정적). 이는 "훈련-추론 주파수 일치"의 일반적 관행에 도전하며, 더 높은 제어 주파수가 정책의 모델 오차를 부분적으로 보상할 수 있음을 시사하여 배포 최적화에 새로운 방향을 제시한다.</p>
+</li>
+</ol>
+<h2 id="_11">실험 및 결과</h2>
+<h3 id="_12">속도 추적</h3>
+<ul>
+<li>정책은 선속도 2.0 m/s, 각속도 1.8 rad/s에 도달; 35초 사인파 명령 추적에서 Unitree 통합 컨트롤러와 유사한 성능을 보이며, 약간의 위상 지연만 존재한다.</li>
+<li>고주파 고진폭 명령에서 발 미끄러짐이 발생하여 최대/최소 속도 제한을 낮췄다.</li>
+</ul>
+<h3 id="_13">외란 억제</h3>
+<ul>
+<li>세 번의 연속 발차기(힘 증가)에서 정책은 모두 성공적으로 회복하며, 비틀거림만 발생하고 완전히 넘어지지 않았다; 원본 데이터는 25Hz 기록, 정책은 100Hz 실행.</li>
+</ul>
+<h3 id="_14">지형 검증</h3>
+<ul>
+<li>자갈, 모래, 오르막/내리막 평지 등 거친 지형에서 성공적으로 보행하며, 가파른 경사 팔레트(그림 1)도 포함한다.</li>
+</ul>
+<h3 id="_15">핵심 수치 요약</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>훈련 시간</td>
+<td>~3시간(5000회 반복)</td>
+</tr>
+<tr>
+<td>병렬 환경 수</td>
+<td>4096</td>
+</tr>
+<tr>
+<td>최대 선속도</td>
+<td>2.0 m/s</td>
+</tr>
+<tr>
+<td>최대 각속도</td>
+<td>1.8 rad/s</td>
+</tr>
+<tr>
+<td>추론 주파수</td>
+<td>400 Hz(ONNX, Jetson Nano)</td>
+</tr>
+<tr>
+<td>훈련 주파수</td>
+<td>50 Hz</td>
+</tr>
+<tr>
+<td>배포 주파수</td>
+<td>100 Hz(성능 향상)</td>
+</tr>
+<tr>
+<td>외란 회복</td>
+<td>3/3회 성공</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">비교 기준</h3>
+<ul>
+<li>Unitree 통합 컨트롤러(기본 보행)와만 비교했으며, 다른 RL 방법과의 정량적 비교는 없다.</li>
+</ul>
+<h2 id="_17">경계 및 한계</h2>
+<ul>
+<li>논문은 별도의 한계 섹션을 두지 않았으며, 사실적 요점에서 추론: 사전 수집 데이터를 사용하지 않았고(비 teacher-student 프레임워크), 실제 로봇에서 훈련이나 미세 조정을 하지 않았다(순수 시뮬레이션 + 제로샷 전이).</li>
+<li>다른 RL 기준(SAC, TD3 또는 다른 사족 RL 방법)과의 정량적 비교가 없으며, Unitree 통합 컨트롤러와만 비교하여 상대적 우위의 정량적 증거가 부족하다.</li>
+<li>외란 테스트의 발차기 힘은 근사 추정(선속도로 환산)일 뿐 정밀 측정이 아니며, 회복 능력의 경계 조건이 명확하지 않다.</li>
+<li>극단적 지형(계단, 빙판)이나 장시간 운용에서의 정책 저하에 대한 언급이 없다; 도메인 무작위화 범위가 제한적이어서 모든 실제 환경 변화를 포괄하지 못할 수 있다.</li>
+</ul>
+<h2 id="_18">엔지니어링 시사점</h2>
+<ol>
+<li><strong>재현 시 우선 확인 사항</strong>: 액추에이터 모델링(actuator-net)은 sim-to-real 성공의 핵심이므로, 먼저 실제 액추에이터 데이터를 수집하여 해당 네트워크를 훈련한 후 정책을 훈련해야 한다. 이 단계를 건너뛰면 상당한 도메인 격차가 발생한다.</li>
+<li><strong>보상 가중치 민감성</strong>: 관절 위치 제한 패널티(-100.0)와 보행 보상(10.0) 가중치가 매우 높아 조정 시 주의가 필요하다; 행동 평활성(-1.5)과 관절 편차(-0.75)는 일반 설정보다 높아 높은 명령 속도 성능에 중요하다.</li>
+<li><strong>추론 주파수 최적화</strong>: 배포 시 정책 주파수를 훈련 값에서 높이는 것(예: 50Hz→100Hz)이 성능 향상을 가져올 수 있다; 단, 상태 추정(예: 칼만 필터) 지연이 충분히 낮아야 하며, 핵심 구성 요소는 C++로 구현하는 것이 좋다.</li>
+<li><strong>도메인 무작위화 범위</strong>: 발 마찰(0.4, 1.1)과 링크 질량(0.8-1.3)이 주요 무작위화 차원이며, 목표 지형 차이가 크면 범위를 확장하거나 지형 커리큘럼 복잡도를 높여야 한다.</li>
+<li><strong>주의할 함정</strong>: 관측 공간이 스케일링되지 않았으며(다른 연구와 다름), 수정 시 재조정이 필요하다; 명령 속도 샘플링 간격(0.3-10초)은 정책의 명령 변화 응답에 영향을 미치므로 실제 작업에 따라 조정해야 한다.</li>
+</ol>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_sac/">소프트 액터-크리틱(SAC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_isaac_sim_real_reinforcement_locomotion_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_sac/">
+          <span class="entry-type">알고리즘</span>
+          <h3>소프트 액터-크리틱(SAC)</h3>
+          <p>기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">문제 모델링</a></li>
+<li><a href="#_5">도메인 무작위화</a></li>
+<li><a href="#_6">액추에이터 모델링</a></li>
+<li><a href="#_7">보상 형상</a></li>
+<li><a href="#_8">네트워크 및 훈련</a></li>
+<li><a href="#_9">추론 최적화</a></li>
+</ul>
+</li>
+<li><a href="#_10">핵심 혁신</a></li>
+<li><a href="#_11">실험 및 결과</a><ul>
+<li><a href="#_12">속도 추적</a></li>
+<li><a href="#_13">외란 억제</a></li>
+<li><a href="#_14">지형 검증</a></li>
+<li><a href="#_15">핵심 수치 요약</a></li>
+<li><a href="#_16">비교 기준</a></li>
+</ul>
+</li>
+<li><a href="#_17">경계 및 한계</a></li>
+<li><a href="#_18">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

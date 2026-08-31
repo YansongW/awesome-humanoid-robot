@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction</h1>
+      <p class="entry-name-en">ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ReTouch 是一个面向接触丰富灵巧操作的触觉-视觉-语言-动作（VLA）策略框架，由研究团队在 XHand–UR7e 平台上提出。其核心贡献在于通过结构化触觉补丁编码、未来触觉潜在预测与递归在线精化，解决了触觉时序预测与动作生成之间的对齐问题，在标准与挑战性设置下分别超越最强基线 18.4 和 23.8 个百分点。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01824" target="_blank" rel="noopener">arXiv:2608.01824 ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tact</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这个工作的真正改变在于，它把触觉预测从“一次性预报”重新定义为“由执行反馈持续更新的控制状态”。现有方法（如 Tactile-VLA、TaF-VLA）虽然引入了触觉，但要么将触觉展平为通用 token 模糊了手指级空间结构，要么在动作块执行过程中让预测的触觉状态逐渐过时，导致后续动作修正被误导。ReTouch 直击这两个痛点：一是保留接触拓扑的触觉表示，二是让未来触觉预测在块内以 36 Hz 高频被递归精化。</p>
+<p>另一个关键改变是架构层面的解耦。它不再让 VLM 以单一频率处理所有模态，而是将低频视觉-语言推理（9 Hz）与高频触觉-动作更新（36 Hz）分离。这种多速率异步设计更符合真实物理交互的时序需求——视觉场景变化慢，而接触状态（滑动、位移）变化快。这不仅是工程优化，更是对“预测-反应”范式的重新思考：预测不是终点，而是需要被反馈持续修正的中间状态。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体架构与多速率调度</h3>
+<ul>
+<li>低频 VLM 以 9 Hz 缓存语义上下文 c_k，与块起始状态 s_k 一起条件化高频控制。</li>
+<li>高频 FAE（Foresight Action Expert）以 36 Hz 运行，每次调用重新生成 16 步动作块 Â_t，但仅应用偏移 o ∈ {4, 8, 12} 后的未执行后缀。</li>
+</ul>
+<h3 id="_4">双专家潜在对齐</h3>
+<ul>
+<li>HAE（Hindsight Action Expert）：特权分支，访问真实未来触觉 τ_{t:t+H}^+，提取目标表示 Z_{t,ℓ}^{+,hid}。</li>
+<li>FAE（Foresight Action Expert）：可部署分支，用可学习查询 Q^fore 推断未来触觉潜在 Ẑ_{t,ℓ}^+。</li>
+<li>对齐损失：L_align = d_cos(g_ψ(Ẑ<em t_ℓ="t,ℓ">{t,ℓ}^+), sg(Z</em>))，在 18 层 Transformer 的第 12 层对齐，权重 0.1。}^{+,hid</li>
+</ul>
+<h3 id="_5">在线触觉预测精化</h3>
+<ul>
+<li>每次高频调用构造查询：Q̃<em t-1="t-1">t^fore = M_t ⊙ sg(Ẑ</em>^+) + (1-M_t) ⊙ Q^fore，M_t 选择已流逝部分的潜在前缀。</li>
+<li>方向性注意力掩码：触觉查询可关注上下文但不能关注动作 token；动作 token 可关注更新的触觉潜在，防止信息泄漏。</li>
+<li>训练时从 {4, 8, 12} 随机采样偏移，部署时以高频控制率重复调用。</li>
+</ul>
+<h3 id="_6">动作流匹配</h3>
+<ul>
+<li>采样 ε∼N(0,I)，t = 0.001 + 0.999·t̃，t̃∼Beta(1.5,1)；x_t = tε + (1−t)a，u = ε − a。</li>
+<li>推理用 10 步显式 Euler 从 t=1 到 0，同一块内所有精化调用复用初始动作噪声样本。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>递归触觉潜在精化机制</strong>：这是最核心的创新。它不是简单地“预测未来触觉”，而是让预测结果在动作块执行过程中被高频（36 Hz）重新估计和修正。离线诊断显示，接触中阶段潜在余弦相似度提升 0.908%，动作后缀 MSE 降低 2.139%。这直接解决了多指操作中接触状态快速变化导致预测过时的问题。</p>
+</li>
+<li>
+<p><strong>结构化触觉补丁编码器（TPE）</strong>：与将触觉展平为通用 token 的做法不同，TPE 保留手指级空间拓扑（5 指 × 5 补丁），并引入软接触权重和精确池化。预训练诊断显示，平衡三头损失将接触 F1 从 0.9980 提升至 0.9999，规范补丁分布 KL 从 0.1648 降至 0.0048，活动力方向余弦从 0.4089 提升至 0.8071。这证明结构化表示对局部接触变化的敏感性远优于扁平化方法。</p>
+</li>
+<li>
+<p><strong>HAE-FAE 双专家对齐训练</strong>：通过特权分支（HAE）提供动作相关的未来触觉目标，让可部署分支（FAE）在无真实未来信息时也能逼近特权表示。这种“教师-学生”式对齐避免了直接回归原始触觉信号的冗余，而是聚焦于动作相关的潜在空间。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="table-1">标准设置平均成功率（Table 1）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>成功率 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ReTouch</strong></td>
+<td><strong>83.6</strong></td>
+</tr>
+<tr>
+<td>Tactile-VLA</td>
+<td>65.2</td>
+</tr>
+<tr>
+<td>π0.5+tactile</td>
+<td>53.1</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>51.5</td>
+</tr>
+<tr>
+<td>π0+tactile</td>
+<td>43.8</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>45.6</td>
+</tr>
+<tr>
+<td>ViTacFormer</td>
+<td>33.1</td>
+</tr>
+<tr>
+<td>RDP</td>
+<td>31.6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-2">挑战设置平均成功率（Table 2）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>成功率 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ReTouch</strong></td>
+<td><strong>73.1</strong></td>
+</tr>
+<tr>
+<td>π0.5+tactile</td>
+<td>49.3</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>47.1</td>
+</tr>
+<tr>
+<td>Tactile-VLA</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>RDP</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>ViTacFormer</td>
+<td>7.8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3">消融研究（Table 3）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>成功率 (%)</th>
+<th>差值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full ReTouch</td>
+<td>83.6</td>
+<td>—</td>
+</tr>
+<tr>
+<td>w/o intra-chunk refinement</td>
+<td>60.0</td>
+<td>-23.6</td>
+</tr>
+<tr>
+<td>w/o tactile-prediction refinement</td>
+<td>68.4</td>
+<td>-15.2</td>
+</tr>
+<tr>
+<td>w/o future tactile prediction</td>
+<td>67.6</td>
+<td>-16.0</td>
+</tr>
+<tr>
+<td>non-blocking joint refinement</td>
+<td>75.8</td>
+<td>-7.8</td>
+</tr>
+<tr>
+<td>w/o Tactile-Patch Encoder</td>
+<td>69.1</td>
+<td>-14.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">关键结果解读</h3>
+<ul>
+<li>最大任务增益：Sponge Wipe 超越最强基线 25.0 个百分点，Liquid Transfer 超越 19.0 个百分点。</li>
+<li>拉动干扰（Pull Bottle）增益最大：ReTouch 85.0% vs 最强基线 30.0%，差距 30.0 个百分点。</li>
+<li>光照变化（Lighting Liquid）超越最强基线 20.0 个百分点。</li>
+<li>触觉预测细化诊断（100 条测试轨迹）：接触后潜在余弦 +0.908%，动作误差 -2.139%。</li>
+<li>例外：Cabinet Retrieval 中 ReTouch 62.5% 低于 ViTacFormer 67.5%。</li>
+</ul>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>Cabinet Retrieval 例外</strong>：ReTouch 在视觉遮挡任务中低于 ViTacFormer（62.5% vs 67.5%），说明触觉精化在需要长时序视觉推理的任务中可能不是主导因素。</li>
+<li><strong>编码器预训练诊断的局限</strong>：作者明确承认预训练诊断仅评估编码器质量，不单独证明下游操作增益。</li>
+<li><strong>未明确项</strong>：论文未提及模型参数量、训练时间、泛化到未见任务/物体的能力、触觉传感器磨损或校准漂移的影响、多平台迁移、安全性分析、失败案例分析、长期稳定性测试。</li>
+<li><strong>扩展性未验证</strong>：对触觉预测细化机制在更长动作块或更复杂多阶段任务上的扩展性分析未提及。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>先核对触觉表示的结构保真度</strong>：如果你的触觉传感器是阵列式（如 taxel），不要直接展平。ReTouch 的补丁划分（tip/center/base/left/right）和软接触权重（θ_c 从 0.5 到 1.0 的切换）是经过预训练验证的关键设计，直接复现可省去大量调参。</li>
+<li><strong>最容易踩坑的地方是训练-部署不一致</strong>：ReTouch 在训练时随机采样偏移 {4, 8, 12} 构造监督，部署时以 36 Hz 高频调用。如果只训练单次预测而部署时做多次精化，性能会显著下降（消融显示 w/o intra-chunk refinement 掉 23.6 个百分点）。务必在训练中模拟多偏移场景。</li>
+<li><strong>注意动作噪声的复用</strong>：同一块内所有精化调用复用初始动作噪声样本，这是流匹配稳定性的关键。如果每次精化重新采样噪声，动作输出会抖动。</li>
+<li><strong>对下游团队的指导</strong>：如果目标是接触丰富任务（如抓取、按压、擦拭），ReTouch 的架构值得参考；但如果是视觉遮挡主导的任务（如 Cabinet Retrieval），可能需要更强的视觉推理而非触觉精化。建议先评估任务中接触状态变化的频率——变化越快，递归精化的收益越大。</li>
+<li><strong>硬件门槛</strong>：推理延迟在 RTX 5090 上为 52.25 ms（初始）+ 19.54 ms（精化），对应 9 Hz/36 Hz。部署时需确保 GPU 能支撑双频率异步调度，否则需降低 VLM 频率或减少触觉历史窗口。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01824</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_huang_tactile_vla_unlocking_vision_l_2025/">Tactile-VLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_retouch_empowering_contact_rich_dexterou_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_tactile_vla_unlocking_vision_l_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Tactile-VLA</h3>
+          <p>Tactile-VLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体架构与多速率调度</a></li>
+<li><a href="#_4">双专家潜在对齐</a></li>
+<li><a href="#_5">在线触觉预测精化</a></li>
+<li><a href="#_6">动作流匹配</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#table-1">标准设置平均成功率（Table 1）</a></li>
+<li><a href="#table-2">挑战设置平均成功率（Table 2）</a></li>
+<li><a href="#table-3">消融研究（Table 3）</a></li>
+<li><a href="#_9">关键结果解读</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</h1>
+      <p class="entry-name-en">Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Closing the gap between benchmark performance and reliable real-world operation remains a central challenge for Vision-Language-Action (VLA) humanoid robots, which must handle execution errors, distribution shifts, and environmental variability. This paper presents DEED (Data-Efficient Post-Training and Experience-Driven Learning), a systems-level approach evaluated on a supermarket.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.20345" target="_blank" rel="noopener">arXiv:2607.20345 Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driv</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 소매용 휴머노이드 로봇을 대상으로 사전 훈련된 VLA를 '실험실 사용 가능'에서 '매장 배치 가능'으로 전환하는 DEED 2단계 프레임워크를 제안한다. 핵심 기여는 데이터 정리, 주파수 정렬, 작업 관련 시각적 하이라이트 등의 엔지니어링 수단을 통해 단일 RTX 5090에서 0%에서 32%로 성공률을 도약시키는 데 있다. 이후 RECAP 기반 경험 주도 학습을 도입하여 단일 반복으로 성공률을 42%로 끌어올린다. 저자들은 실험실과 매장 간의 격차를 해소하는 것이 주로 아키텍처 혁신이 아닌 시스템 통합 과제라고 명확히 주장한다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>이 작업이 실제로 바꾼 것은 VLA 배포 문제에 대한 귀인 방식이다. 이전에는 커뮤니티가 성능 격차를 모델 아키텍처나 사전 훈련 데이터 규모 탓으로 돌렸지만, 본 논문은 고정된 사전 훈련 체크포인트(GR00T-N1.6)를 전제로 데이터 정리 규칙(6가지), 주파수 계층 제약(f_r=f_ctrl≤f_cam 및 f_t≥f_r), 작업 관련 시각적 하이라이트, 추론 시 동작 평활화만으로도 완전히 실패한(0%) 단순 SFT 정책을 실행 가능한 작업(32%)을 수행하는 시스템으로 전환할 수 있음을 실험으로 증명한다. 이는 '배포'를 알고리즘 문제에서 '데이터 및 시스템 통합' 문제로 재정의하여, 자원이 제한된 팀에게 대규모 아키텍처 변경에 의존하지 않는 실행 가능한 경로를 제공한다.</p>
+<p>동시에 로봇 조작에서 지속 학습의 실천 방식을 바꾼다. 저자들은 표준 온라인 RL이나 처음부터 미세 조정을 채택하는 대신, RECAP을 GR00T의 분리형 아키텍처에 적응시켜 텍스트 명령 접두사로 정책을 조건화하고, 비전 인코더를 동결하며, 경량 가치 헤드만 훈련하여 약 1.5시간, 5000스텝의 저비용 정제를 구현한다. 더 중요한 것은 저자들이 두 번째 반복의 성능 저하(22%)를 솔직하게 보고하고 분포 이동이 핵심 원인임을 지적한다는 점이다. 이는 '더 많은 반복이 반드시 더 나은 결과를 낳는다'는 직관을 깨고, 지속 학습 안정성에 관한 새로운 논의 기준을 후속 연구에 제시한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="1-de-">1단계: 데이터 효율적 후훈련 레시피 (DE-)</h3>
+<ul>
+<li><strong>주파수 계층 설계</strong>: f_r = f_ctrl ≤ f_cam 및 f_t ≥ f_r을 충족해야 한다. 기록 또는 실행 속도가 카메라보다 빠르면 프레임 간 변화가 없는 반복 관측에서 학습하게 된다. 기록 주파수는 연속 동작 목표 간 공간 해상도를 결정한다. 기록과 추론 제어 주파수는 일치해야 한다. 원격 조작 주파수는 카메라 상한을 초과할 수 있다. 본 실험은 f_t=50 Hz, f_cam=30 Hz, f_r=f_ctrl=25 Hz를 채택했다.</li>
+<li><strong>6가지 데이터 정리 규칙</strong>:</li>
+<li>균형 잡힌 상태 커버리지 보장</li>
+<li>효율적이고 성공적인 행동만 기록하고, 망설임, 수정, 후퇴 또는 비효율적 경로는 피할 것</li>
+<li>우연한 복구는 보존(실패 세그먼트만 제거하고 복구 부분은 유지)</li>
+<li>상태 커버리지만이 아닌 동작 일관성 극대화</li>
+<li>통제되지 않은 환경 변화 최소화</li>
+<li>무동작 상태 회피(유효한 움직임 시작 후 세그먼트 시작, 목표 달성 후 즉시 종료)</li>
+<li><strong>작업 관련 시각적 하이라이트</strong>: IA-VLA 프레임워크를 통합하여 대형 VLM이 프레임 간 전파되는 분할 마스크를 통해 작업 관련 이미지 영역을 하이라이트하며, 시간 단계별 추론은 피한다. 마스크는 작업 관련 객체를 식별하고, 배치 영역은 그 여집합의 빈 영역이며, 경계 상자로 하이라이트한다.</li>
+<li><strong>VLA 의존성 감소를 위한 실용적 기법</strong>:</li>
+<li>이진 손 컨트롤러: 주로 손의 개폐로 귀결되는 작업의 경우, 연속적인 세밀한 관절 제어를 학습하는 대신 이진 신호로 손을 그리퍼처럼 제어</li>
+<li>Butterworth 필터를 통한 동작 평활화: 추론 시 예측된 동작 시퀀스에 Butterworth 필터를 적용하여 정책 일반화를 유지하면서 실행 동작을 평활하고 분포 내에 있게 함</li>
+<li><strong>다중 하위 작업 시연의 연속 세그먼트</strong>: 분할된 시연보다 전체 하위 작업 전환을 포괄하는 연속 세그먼트 기록을 권장. 하위 작업 간 언어 프롬프트의 표현 공유는 피할 것.</li>
+</ul>
+<h3 id="2-ed">2단계: 경험 주도 학습 전략 (-ED)</h3>
+<ul>
+<li><strong>아키텍처 적응</strong>: 텍스트 기반 명령 접두사("Advantage=True/False")로 정책을 조건화하고, 가치 함수를 카메라 관측과 텍스트 명령만 사용하도록 제한한다. 사전 훈련 모델에 대한 아키텍처 수정은 필요 없다.</li>
+<li><strong>절차</strong>: 데이터 효율적 레시피에서 얻은 정책으로 시작하여 자율 롤아웃을 수집하고, 인간 운영자는 필요한 경우에만 개입하여 교정한다. 데이터셋에는 원시 원격 조작 세그먼트, 성공적인 자율 실행, 인간 복구 시연이 포함된다.</li>
+<li><strong>각 정제 반복은 원시 체크포인트(GR00T-N1.6-G1-PnPAppleToPlate)에서 초기화</strong>되며, 이전 정책에서 초기화하지 않아 최적화 드리프트를 완화하고 정제 주기 간 오류 축적을 방지한다.</li>
+<li><strong>추론 시 이점 레이블은 True로 고정</strong>되며, 정책 π_θ(a_t | o_t, ℓ, A=True)에 해당한다.</li>
+<li><strong>가치 함수</strong>: 언어 명령 ℓ과 시각적 관측 o_t에만 조건화되고 로봇 상태는 포함하지 않는다. GR00T의 사전 훈련된 Eagle-3 비전-언어 인코더 f_ψ를 재사용하고, 경량 MLP 가치 헤드(1024 유닛 은닉층 2개, GELU 활성화)를 평균 풀링된 토큰 임베딩에 적용한다. 정규화된 구간 [-1,0]에 걸친 중심 {b_i}를 가진 B=101개의 균일 이산화 보상 구간에 대한 분류 분포를 예측하고, 스칼라 추정값은 기대값 V_φ(o_t,ℓ) = Σ_{i=1}^{B} p_φ(b_i|o_t,ℓ)·b_i이다.</li>
+<li><strong>보상 설정</strong>: 터미널 성공 r_t=0, 터미널 실패 r_t=-C_fail(C_fail=80), 그 외 r_t=-1. 보상은 작업당 평균 궤적 길이 s_ℓ로 정규화된다.</li>
+<li><strong>가치 함수 훈련</strong>: Eagle-3 인코더는 전체 과정에서 동결되고, 이미지 임베딩은 사전 계산되어 캐시되며, MLP 헤드만 업데이트된다. 약 1.5시간 동안 5000스텝 훈련, 배치 크기 16, AdamW, 학습률 1e-4, 가중치 감쇠 1e-4, 15% 홀드아웃 검증 세트.</li>
+<li><strong>이점 계산</strong>: RECAP의 다중 스텝 추정기를 채택하고, 전방 시야 N=25: Â_t^(N) = (R_t - R_{t+N})/s_ℓ + V_φ(o_{t+N},ℓ) - V_φ(o_t,ℓ). t+N≥T일 때 절단된 형태 R_t/s_ℓ - V_φ(o_t,ℓ)를 사용한다. 연속 값은 임계값 τ에서 이진 레이블로 변환되고, 목표 양성 레이블 비율 ε=0.4.</li>
+<li><strong>인간 교정 개입은 추정 이점과 무관하게 양성으로 강제 표시</strong>(c_t=1).</li>
+<li><strong>조건화 드롭아웃</strong>: p_drop=0.3, 훈련 중이 아닌 데이터셋 생성 중에 적용되어 GR00T 훈련 절차를 수정하지 않는다.</li>
+</ul>
+<h3 id="_4">분포 내/외 분석 도구</h3>
+<ul>
+<li>미세 조정된 GR00T 상태 인코더의 잠재 공간에서 상태를 비교하고, 가우시안 혼합 모델(GMM)로 훈련 임베딩을 피팅하며, K개의 성분을 사용한다.</li>
+<li>새로 인코딩된 상태는 가장 가까운 혼합 성분까지의 마할라노비스 거리로 점수가 매겨진다: d(z) = min_k (z-μ_k)ᵀΣ_k⁻¹(z-μ_k).</li>
+<li>혼합 공식이 중요한 이유는 단일 작업이 여러 유효한 구성을 허용하고, 시연 매니폴드가 본질적으로 다중 모드이기 때문이다.</li>
+<li>추가 출력: 관절별 z-점수와 경험적 백분위 검사가 귀인에 사용된다. PCA는 훈련 임베딩에 피팅되고, 처음 세 개의 주성분은 저차원 시각화에 사용된다.</li>
+<li>임계값은 수동 조정이 아닌 훈련 거리의 경험적 분포에서 도출된다.</li>
+<li>이 도구는 정책과 무관하며 VLA 수정이 필요 없고, 두 DEED 단계에서 변경 없이 재사용된다.</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>배포 문제를 데이터 및 시스템 통합 문제로 재정의</strong>: 저자들은 새로운 아키텍처나 새로운 손실 함수를 제안하는 대신, 6가지 데이터 정리 규칙, 주파수 계층 제약, 추론 시 평활화를 통해 단순 SFT를 0% 성공률에서 32%로 끌어올렸다. 이 혁신의 핵심은 재현 가능성에 있다. 사전 훈련된 VLA와 단일 GPU를 가진 어떤 팀도 모델을 재설계할 필요 없이 직접 적용할 수 있다.</p>
+</li>
+<li>
+<p><strong>분리형 VLA 아키텍처에 대한 RECAP의 경량 적응</strong>: 텍스트 명령 접두사("Advantage=True/False")로 정책을 조건화하고, 가치 함수를 시각 및 언어 입력만 사용하도록 제한하며, Eagle-3 인코더를 동결하고 경량 MLP 헤드(1024 유닛 은닉층 2개)만 훈련한다. 이를 통해 가치 함수 훈련은 약 1.5시간, 5000스텝만 필요하며 사전 훈련 모델 수정이 필요 없어 지속 학습의 계산 장벽을 크게 낮춘다.</p>
+</li>
+<li>
+<p><strong>모델 무관 분포 내/외 분석 도구</strong>: GMM으로 훈련 임베딩을 피팅하고, 마할라노비스 거리로 새 상태를 점수화하며, 임계값은 수동 조정이 아닌 경험적 분포에서 도출된다. 이 도구는 정책과 무관하며 VLA 수정이 필요 없고, 두 DEED 단계에서 변경 없이 재사용되어 성능 저하를 감지하는 정량적 진단 신호를 제공하며, 온라인 개입 또는 데이터 수집 트리거 메커니즘으로 확장될 가능성이 있다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<p>실험은 슈퍼마켓 감자칩 보충 작업에서 수행되었으며, Unitree G1-Edu 휴머노이드 로봇에 Dex-3 손이 장착되었고, 동작 공간은 원래 32차원에서 20차원으로 축소되었다(팔당 7개 관절 명령, 손당 1개 이진 개폐 명령, 1개 허리 관절, 3개 베이스 속도 명령). 시각 입력은 3개의 RGB 스트림(1개 헤드 Intel RealSense D435i 및 2개 손목 RealSense D405)이며, 모두 640×480@30 FPS이다. 원격 조작 데이터는 81개 시연(약 51.5분), 자율 롤아웃 데이터는 116개 세그먼트(약 56.9분), 총 데이터셋은 약 108.4분이다. 훈련 하드웨어는 단일 NVIDIA RTX 5090 워크스테이션이다.</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>성공률</th>
+<th>평균 시간(s)</th>
+<th>최대 연속 봉지 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단순 SFT</td>
+<td>0% (0/50)</td>
+<td>N/A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>DE 정책</td>
+<td>32% (16/50)</td>
+<td>24.30</td>
+<td>4</td>
+</tr>
+<tr>
+<td>RECAP 반복 1</td>
+<td>42% (21/50)</td>
+<td>22.37</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RECAP 반복 2</td>
+<td>22% (11/50)</td>
+<td>21.09</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>95% Wilson 구간은 기준선과 반복 1의 성공률 구간(20.8-45.8% 및 29.4-55.8%)이 크게 겹쳐 반복 1의 이득이 결론적이기보다 지표적임을 보여준다. 반복 2의 하락 구간(12.8-35.2%)은 겹침이 적어 성능 저하가 실제임을 나타낸다. 가치 함수 소거 실험은 Eagle-3 무상태 조건화가 가장 우수함을 보여주었고, 프롬프트 특이성은 단일 작업 설정에서 영향이 무시할 만하며, 통합 헤드는 거의 0에 가까운 발산(평균 표준 편차: 0.009)을 보였고, 이점을 추가 상태 차원으로 인코딩하면 성능이 크게 저하되었다.</p>
+<h2 id="_7">경계 및 한계</h2>
+<p>저자들은 다음 경계를 명시적으로 인정한다. 50개 세그먼트 표본 크기는 통계적 검정력을 제한하며, 반복 1의 이득은 결론적이기보다 지표적이다. 정제 이득은 반복에 따라 복합되지 않으며, 반복 2의 저하는 분포 이동에 기인하며, 자체 생성 롤아웃이 훈련 세트를 지배하고 원격 조작 시연의 상대적 영향력이 줄어들며, 이점 재레이블링이 점점 정책 자체의 샘플링 분포에 묶여 피드백 루프가 유효 상태-동작 분포를 점차 좁힌다. 정제된 정책은 시작 구성으로 돌아가기보다 단일 배치 후 중단하는 경향이 있는데, 이는 터미널 완료 상태의 가치가 재설정의 중간 자세보다 높기 때문이며, 재설정 전환은 낮거나 음의 이점을 받아 억제된다. 저자들은 실전에서 정책에 의존하기보다 로봇에게 시작 자세로 돌아가라고 명령한다. 또한 일반화 메커니즘에 대한 전용 평가는 보고되지 않았고, 사전 훈련 단계는 원래 RECAP 레시피를 따르며 본 작업 범위를 벗어나고, 계산 집약적 사전 훈련을 재현하기보다 공개적으로 사용 가능한 사전 훈련 체크포인트에 직접 구축한다. 정제 이득은 작업이 더 많은 일반화를 요구할수록 감소해야 하며, 고정된 원격 조작과 롤아웃 데이터 혼합을 유지하거나 정기적으로 시연을 재도입하는 것이 필요할 수 있다.</p>
+<h2 id="_8">엔지니어링 시사점</h2>
+<p>이 프레임워크를 재현하거나 적용할 때, 먼저 주파수 계층이 f_r = f_ctrl ≤ f_cam 및 f_t ≥ f_r을 충족하는지 확인하라. 이것이 가장 쉽게 함정에 빠지는 부분이다. 기록 또는 실행 속도가 카메라보다 빠르면 모델이 프레임 간 변화가 없는 반복 관측에서 학습하여 정책이失效하게 된다. 둘째, 데이터 정리 규칙을 엄격히 실행해야 하며, 특히 '효율적이고 성공적인 행동만 기록'과 '무동작 상태 회피'가 기준 정책을 0%에서 32%로 끌어올릴 수 있는지 직접 결정한다. 셋째, 가치 함수 훈련 시 반드시 Eagle-3 인코더를 동결하고 이미지 임베딩을 사전 계산하여 캐시해야 하며, 그렇지 않으면 훈련 시간이 논문에 보고된 약 1.5시간을 훨씬 초과한다. 넷째, 각 정제 반복은 반드시 원시 체크포인트(GR00T-N1.6-G1-PnPAppleToPlate)에서 초기화해야 하며, 이전 정책에서 초기화하면 최적화 드리프트가 분포 저하를 가속화한다. 마지막으로, 하류 팀은 지속 학습 과정에서 시연과 롤아웃의 고정 혼합 비율을 유지하고 정기적으로 시연 데이터를 재도입하는 것이 좋다. 그렇지 않으면 두 번째 반복 후 성공률이 42%에서 22%로 떨어지고(표 내 수치 42%→22%로 계산), 정책이 시작 구성으로 돌아가기보다 작업을 조기 종료하는 경향이 있다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_gr00t_n1/">GR00T N1</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_closing_lab_store_gap_data_efficient_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">방법</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#1-de-">1단계: 데이터 효율적 후훈련 레시피 (DE-)</a></li>
+<li><a href="#2-ed">2단계: 경험 주도 학습 전략 (-ED)</a></li>
+<li><a href="#_4">분포 내/외 분석 도구</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a></li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

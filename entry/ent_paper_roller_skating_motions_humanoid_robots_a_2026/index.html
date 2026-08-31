@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors</h1>
+      <p class="entry-name-en">Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出基于对抗运动先验（AMP）的强化学习框架，在Booster T1人形机器人上实现了两种被动轮滑步态（Pump Glide和Push Glide）的仿真与真实世界可持续滑行。核心贡献在于将AMP扩展到被动轮滚动接触场景，通过切片圆柱轮碰撞模型和步态特定的课程学习，解决了欠驱动动力学下的风格模仿与任务跟踪的耦合问题。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.10815" target="_blank" rel="noopener">arXiv:2607.10815 Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion P</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>被动轮滑行对人形机器人是本质不同的控制问题：平足支撑被滚动接触取代，推进力完全来自腿部运动与轮地摩擦的耦合，系统欠驱动程度显著增加。现有AMP工作多针对足式运动，其风格先验与滚动接触的兼容性未经验证；而传统手工奖励设计又难以捕捉滑行中重心转移、速度相关姿态调节等微妙动力学。本文真正改变的是将"风格模仿"从足式运动范式扩展到"滚动接触+欠驱动推进"范式，并证明AMP的判别器能够学习到与被动轮约束兼容的运动风格，而非简单叠加奖励项。这一转变使得两种不同推进机制的步态（泵式滑行与推式滑行）能在同一框架下系统训练，突破了以往单一运动形式或手工设计的局限。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">系统架构</h3>
+<ul>
+<li><strong>平台</strong>：Booster T1，23个驱动身体自由度，每脚4个被动轮（共8个被动轮自由度），策略50Hz输出21个非轮关节目标位置，由50Hz PD控制器执行</li>
+<li><strong>轮建模</strong>：切片圆柱碰撞模型，沿轮宽用9个窄圆柱替代（最大半径0.032m），视觉模型保持STL；轮动力学由切向接触力主导：Iω̇ = (r_c × F_t) · a</li>
+</ul>
+<h3 id="_4">训练框架</h3>
+<ul>
+<li><strong>AMP-PPO</strong>：两种步态共享框架但独立判别器/策略/任务奖励（因推进机制和接触时序不同）</li>
+<li><strong>AMP状态</strong>：5帧拼接，z_t^m ∈ ℝ³⁰⁰，包含身体关节状态、手/脚关键点位置、根速度</li>
+<li><strong>判别器</strong>：Wasserstein形式，η=0.4，λ_gp=10；AMP奖励 r_amp = 2.0·(1 + tanh(0.4·D_ψ(z)))</li>
+<li><strong>总回报</strong>：Pump Glide为0.40·r_amp + 0.60·r_task；Push Glide为0.45·r_amp + 0.55·r_task</li>
+</ul>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>数据采集</strong>：动作捕捉+GMR重定向，被动轮关节不作为模仿目标，处理后组织为短状态转移样本</li>
+<li><strong>课程学习</strong>：Push Glide的轮空时间惩罚从1.25降至0.9（0–22000步）抑制早期跳跃；支撑腿切换奖励5000步前保持0.2，后线性增至1.0（至32000步）</li>
+<li><strong>指令生成</strong>：Pump Glide用12s速度课程（0.2–0.7 m/s）；Push Glide每12s重采样（前向0–2 m/s，偏航率±0.2 rad/s）</li>
+<li><strong>速度滤波</strong>：v_t^f = 0.9·v_{t−1}^f + 0.1·v_t^yaw，指数跟踪项 φ_exp(e; σ) = exp(−e²/σ²)</li>
+<li><strong>随机化</strong>：80%环境从参考运动随机帧初始化；观测噪声、轮地摩擦、质量、质心、PD增益、轮关节阻尼均随机化</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>切片圆柱轮碰撞模型</strong>：用9个窄圆柱替代全球体碰撞，将轮宽误差从2.77倍降至可接受范围（体积超出48.2%→接近真实），在滚动稳定性与训练成本间取得折中（吞吐量7.13×10³ steps/s）。这是sim-to-real可行性的关键，全球体模型会导致接触几何严重失真。</li>
+<li><strong>AMP与被动轮动力学的系统集成</strong>：首次证明AMP判别器能学习与滚动接触、重心转移兼容的风格，且两种步态需独立判别器——这验证了推进机制差异对风格先验的根本影响，而非简单调参可解决。</li>
+<li><strong>步态特定的课程学习</strong>：针对Push Glide的轮空时间惩罚衰减和支撑腿切换奖励渐进增强，有效抑制了早期"跳跃"伪策略，这是被动轮场景特有的训练稳定性问题。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="pump-glide64">Pump Glide速度扫描（64次评估/指令）</h3>
+<table>
+<thead>
+<tr>
+<th>指令 (m/s)</th>
+<th>完成率</th>
+<th>平均持续时间 (s)</th>
+<th>躯干倾斜RMS (rad)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.10–0.45</td>
+<td>0.766–0.813</td>
+<td>15.88–16.25</td>
+<td>0.104–0.196</td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>0.531</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>最大行驶距离14.55m，偏航率误差&lt;0.184 rad/s；100s长时程剖面总距离39.50m，躯干倾斜RMS 0.132 rad。</p>
+<h3 id="push-glidemujoco8s">Push Glide前向速度响应（MuJoCo，稳定窗口8s起）</h3>
+<table>
+<thead>
+<tr>
+<th>指令 (m/s)</th>
+<th>实际v_x^f (m/s)</th>
+<th>误差e_v (m/s)</th>
+<th>时间 (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.10</td>
+<td>0.366±0.015</td>
+<td>0.266</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.20</td>
+<td>0.558±0.028</td>
+<td>0.358</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.30</td>
+<td>0.746±0.030</td>
+<td>0.446</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.40</td>
+<td>1.069±0.043</td>
+<td>0.669</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>1.594±0.109</td>
+<td>1.094</td>
+<td>20.00</td>
+</tr>
+</tbody>
+</table>
+<p>所有指令均维持20s，实际速度单调增加但始终高于指令值，误差随指令增大而增大。</p>
+<h3 id="_8">轮模型对比</h3>
+<p>全球体碰撞宽度64mm为真实轮宽23.13mm的2.77倍，体积超出48.2%，最低点离开真实轮宽阈值ϕ_edge≈21.2°；9切片方案在滚动稳定性、几何保真度与训练成本间最优。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li><strong>评估局限</strong>：当前为任务级评估，缺乏标准化滑行质量基准；横向速度和偏航率指令未在实验中验证（仅前向速度指令）</li>
+<li><strong>模型近似</strong>：切片圆柱仍是真实轮地接触的近似，支撑高度不连续虽小，但近似模型、部署模型与真实接触的不匹配可能导致速度跟踪误差</li>
+<li><strong>未做之事</strong>：更精确的轮接触建模、系统辨识、闭环速度控制均留作未来工作；未提及具体GPU型号、演示数据量、训练步数（除课程学习中的22000/32000步）</li>
+<li><strong>速度跟踪</strong>：Push Glide实际速度系统性高于指令（误差0.266–1.094 m/s），作者未给出补偿机制</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>先核对轮碰撞模型</strong>：全球体碰撞在被动轮场景不可用，切片数选择需权衡——9切片吞吐量7.13×10³ steps/s，若训练资源紧张可考虑减少切片但需验证滚动稳定性</li>
+<li><strong>AMP权重敏感</strong>：Pump Glide的AMP权重0.40与Push Glide的0.45差异显著，复现时需按步态单独调参，不可直接迁移</li>
+<li><strong>课程学习是关键</strong>：Push Glide的轮空时间惩罚衰减（1.25→0.9）和支撑腿切换奖励渐进增强（0.2→1.0）是抑制跳跃伪策略的核心，跳过此步骤可能导致训练失败</li>
+<li><strong>速度误差预期</strong>：Push Glide实际速度高于指令是系统性的（非随机噪声），下游任务若需精确速度控制需额外设计补偿或闭环</li>
+<li><strong>数据管线</strong>：GMR重定向后需严格过滤地面穿透/自碰撞/关节突变片段，被动轮关节不作为模仿目标——这是AMP在欠驱动系统应用的关键细节</li>
+<li><strong>最易踩坑</strong>：80%环境从参考运动随机帧初始化，若比例不当可能导致策略过度依赖初始状态；观测噪声与轮地摩擦随机化范围需与真实平台匹配，否则sim-to-real gap会放大速度跟踪误差</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.10815</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_roller_skating_motions_humanoid_robots_a_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">系统架构</a></li>
+<li><a href="#_4">训练框架</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#pump-glide64">Pump Glide速度扫描（64次评估/指令）</a></li>
+<li><a href="#push-glidemujoco8s">Push Glide前向速度响应（MuJoCo，稳定窗口8s起）</a></li>
+<li><a href="#_8">轮模型对比</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

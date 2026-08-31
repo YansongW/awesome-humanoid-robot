@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 13 章 量产与规模化 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">第 13 章 量产与规模化</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="13">第 13 章 量产与规模化</h1>
+<h2 id="_1">摘要</h2>
+<p>人形机器人从实验室样机走向万台级、十万台级交付，要跨越的并不只是工程技术鸿沟，更是一整套制造体系能力：可制造性设计、供应链锁定、试产验证、产能爬坡、良率工程、成本曲线管理与质量体系建设。本章以知识图谱中的量产流程实体（P0 项目立项至 P16 小批量试产与量产准备）为主线，系统讨论人形机器人量产化的六个核心议题——量产导入流程、产能爬坡模型、良率与可靠性工程、成本曲线与降本路径、供应链组织与保供策略、典型企业的制造模式。本章给出产能爬坡的学习曲线模型、串联良率模型、缺陷密度模型与制程能力指数等定量工具，并结合特斯拉（Tesla）、Figure AI、宇树科技（Unitree Robotics）、Agility Robotics 等整机厂商的公开实践，以及美国银行研究所《Humanoid Robots 101》（2025）等行业公开预测中的 BOM 成本轨迹，刻画人形机器人规模化的工程经济学图景。本章与第 6 章（供应链）、第 9 章（子系统设计）互补：第 6 章侧重零部件供给侧格局，第 9 章侧重设计验证（DV/PV）本身，本章则聚焦"把设计稳定、低成本、大规模地造出来"这一制造系统问题。</p>
+<p><strong>关键词</strong>：量产导入；产能爬坡；学习曲线；良率工程；制程能力指数；BOM 成本；DFM/DFA；PPAP；供应链保供；垂直整合</p>
+<hr />
+<h2 id="131">13.1 从原型到量产：量产导入的总体框架</h2>
+<h3 id="1311">13.1.1 原型思维与量产思维的根本差异</h3>
+<p>实验室样机的目标是"证明可行"，量产产品的目标是"证明可重复"。二者在工程目标函数上的差异可以概括为：</p>
+<ul>
+<li><strong>样机</strong>：最大化性能上限，容忍手工调试、单件定制、长装配工时；</li>
+<li><strong>量产</strong>：在性能下限满足规格的前提下，最小化单位成本、装配工时与质量波动。</li>
+</ul>
+<p>一台人形机器人通常包含 30–60 个自由度、数千个零部件、数十个供应商。任何单点波动——某批谐波减速器背隙超差、某批无框力矩电机磁钢退磁、某个关节模组装配同轴度失控——都会在整机层面放大为行走稳定性或寿命问题。因此量产导入（New Product Introduction, NPI）的本质是<strong>把不确定性从系统中逐层驱逐出去</strong>的过程。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：NPI、EVT/DVT/PVT、DV/PV、量产就绪</p>
+<ul>
+<li><strong>NPI（New Product Introduction，新产品导入）</strong>：将产品设计转化为可稳定量产的制造系统的全过程，涵盖工艺开发、供应链搭建、试产验证与爬坡。</li>
+<li><strong>EVT/DVT/PVT</strong>：工程验证、设计验证、生产验证三个阶段的原型迭代；PVT 之后进入量产爬坡（Ramp-up）。</li>
+<li><strong>DV/PV（Design Validation / Production Validation）</strong>：DV 验证"设计是否满足规格"，PV 验证"用量产工艺造出来的产品是否仍满足规格"。第 9 章已讨论 DV/PV 的试验内容，本章关注 PV 之后的制造一致性。</li>
+<li><strong>量产就绪（Production Readiness）</strong>：工艺冻结、供应链冻结、质量基线冻结三者同时达成，通常以 PPAP 批准为标志。</li>
+</ul>
+</div>
+<h3 id="1312-p0p16">13.1.2 知识图谱中的量产流程主线：P0–P16</h3>
+<p>知识图谱将人形机器人从立项到量产的完整流程建模为 17 个阶段实体（research/methods/ent_process_p0 … p16），构成全书的流程骨架：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>名称</th>
+<th>与量产的关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>项目立项与商业基线</td>
+<td>确定目标成本、目标产量、目标市场</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>需求定义与系统方案（Concept / Pre-A）</td>
+<td>冻结产品规格与平台化策略</td>
+</tr>
+<tr>
+<td>P2–P3</td>
+<td>工业设计与机电总体设计</td>
+<td>决定可制造性上限</td>
+</tr>
+<tr>
+<td>P4–P5</td>
+<td>关节模组与驱动系统、本体结构工程</td>
+<td>决定 BOM 成本的主要部分</td>
+</tr>
+<tr>
+<td>P6–P9</td>
+<td>URDF 校核、仿真、结构与热迭代</td>
+<td>以仿真降低物理试制轮次</td>
+</tr>
+<tr>
+<td>P10–P14</td>
+<td>控制、灵巧手、AI、电子电气与软件集成</td>
+<td>决定软件可刷写、可标定的制造需求</td>
+</tr>
+<tr>
+<td>P15</td>
+<td>整机集成与验证测试（Integration &amp; V&amp;V）</td>
+<td>DV/PV 验证</td>
+</tr>
+<tr>
+<td>P16</td>
+<td>小批量试产与量产准备（Pilot &amp; Production Ramp）</td>
+<td>本章核心</td>
+</tr>
+</tbody>
+</table>
+<p>其中 P16 阶段被进一步细分为三组子流程，恰好对应量产准备的三个工作面：</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    P16["P16 小批量试产与量产准备"] --&gt; A["P16.1 制造工程准备"]
+    P16 --&gt; B["P16.2 供应链与质量准备"]
+    P16 --&gt; C["P16.3 试产与量产移交"]
+    A --&gt; A1["DFM/DFA 评审"]
+    A --&gt; A2["模具与工装设计"]
+    A --&gt; A3["装配线规划与 SOP"]
+    B --&gt; B1["供应商选择与审核"]
+    B --&gt; B2["质量控制体系建立"]
+    B --&gt; B3["来料与过程异常处理"]
+    C --&gt; C1["小批量试产 Pilot Run"]
+    C --&gt; C2["成本核算与降本"]
+    C --&gt; C3["PPAP / 量产 readiness 评估"]
+    C --&gt; C4["服务手册与培训"]</code></pre>
+<h3 id="1313">13.1.3 量产导入的里程碑与"冻结"纪律</h3>
+<p>典型的量产导入时间线包含四个"冻结点"，其纪律性强于人形机器人行业以往的科研文化：</p>
+<ol>
+<li><strong>设计冻结（Design Freeze）</strong>：之后任何变更走 ECN（Engineering Change Notice，工程变更通知）流程，评估对模具、库存、已售产品的影响；</li>
+<li><strong>工艺冻结（Process Freeze）</strong>：装配顺序、拧紧力矩、点胶量、标定参数固化进 SOP（Standard Operating Procedure，标准作业程序）；</li>
+<li><strong>供应链冻结（Supply Freeze）</strong>：关键物料的合格供应商清单（Approved Vendor List, AVL）与二供比例确定；</li>
+<li><strong>质量基线冻结（Quality Baseline Freeze）</strong>：出厂检验规范（OQC）、可靠性验收标准与可追溯粒度（到关节模组序列号级）确定。</li>
+</ol>
+<p>汽车行业惯用的 PPAP（Production Part Approval Process，生产件批准程序）在第 9 章的 DV/PV 语境下是验证工具，在本章语境下则是<strong>量产移交的法律性文件</strong>：供应商提交尺寸报告、材料报告、性能试验报告与过程能力数据，整机厂批准后方可按量产节拍供货。</p>
+<h2 id="132">13.2 产能规划与产能爬坡</h2>
+<h3 id="1321-oee">13.2.1 产能的基本度量：节拍、瓶颈与 OEE</h3>
+<p>产线产能由瓶颈工位决定。设产线有 <span class="arithmatex">\(n\)</span> 个工位，第 <span class="arithmatex">\(i\)</span> 个工位的节拍（Cycle Time）为 <span class="arithmatex">\(t_i\)</span>（含作业时间与上下料时间），则理论节拍为</p>
+<div class="arithmatex">\[
+t_{cyc} = \max_{i=1,\dots,n} t_i, \qquad Q_{theory} = \frac{T_{avail}}{t_{cyc}}
+\]</div>
+<p>其中 <span class="arithmatex">\(T_{avail}\)</span> 为可用生产时间。实际产出需乘以<strong>综合设备效率</strong>（Overall Equipment Effectiveness, OEE）：</p>
+<div class="arithmatex">\[
+OEE = A \times P \times Q
+\]</div>
+<ul>
+<li><span class="arithmatex">\(A\)</span>（Availability，时间开动率）：扣除换型、故障、缺料停线；</li>
+<li><span class="arithmatex">\(P\)</span>（Performance，性能开动率）：实际节拍与理论节拍之比；</li>
+<li><span class="arithmatex">\(Q\)</span>（Quality，良品率）：一次通过良率（First Pass Yield, FPY）。</li>
+</ul>
+<p>人形机器人总装目前仍以<strong>手工装配岛式产线</strong>为主——关节模组预装、线束敷设、整机标定高度依赖熟练工，这与汽车行业高度自动化的流水线有本质不同。典型地，整机总装节拍在小批量阶段以"天/台"计，爬坡目标是将瓶颈工位压缩到以"小时/台"计。制约因素通常不在总装，而在<strong>关节模组的老化测试（Burn-in）与整机标定</strong>：每个关节需要温升、背隙、效率、噪声测试，每台整机需要步态标定与传感器标定，这些工位的时间常数决定了产线投资额。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：节拍、瓶颈、OEE、FPY、老化测试、标定</p>
+<ul>
+<li><strong>节拍（Cycle Time）</strong>：产线上相邻两台产品下线的时间间隔，由最慢工位决定。</li>
+<li><strong>瓶颈（Bottleneck）</strong>：节拍最长的工位；提升非瓶颈工位速度对总产能无效（约束理论，TOC）。</li>
+<li><strong>OEE（Overall Equipment Effectiveness）</strong>：衡量设备综合效率的标准指标，世界级离散制造典型值约 85%。</li>
+<li><strong>FPY（First Pass Yield，一次通过率）</strong>：不经返修直接通过全部检验的产品比例，是爬坡期最重要的健康指标。</li>
+<li><strong>老化测试（Burn-in）</strong>：在高温/满载下通电运行以激发早期失效的筛选工序。</li>
+<li><strong>标定（Calibration）</strong>：将传感器零偏、关节零点、运动学参数写入个体产品配置的过程；每台人形机器人都是"千机千面"，标定数据需随序列号存档。</li>
+</ul>
+</div>
+<h3 id="1322">13.2.2 产能爬坡曲线与学习模型</h3>
+<p>爬坡期的单位产量随时间近似服从 S 型曲线，工程上常用两类模型刻画。</p>
+<p><strong>（1）学习曲线（Wright 定律）</strong>：累计产量每翻一番，单位成本（或单位工时）下降固定比例 <span class="arithmatex">\(1-\phi\)</span>，其中 <span class="arithmatex">\(\phi\)</span> 为学习率：</p>
+<div class="arithmatex">\[
+C(N) = C_1 \cdot N^{-b}, \qquad b = -\log_2 \phi
+\]</div>
+<p>典型离散制造的学习率 <span class="arithmatex">\(\phi \in [0.80, 0.95]\)</span>：<span class="arithmatex">\(\phi=0.85\)</span> 意味着累计产量每翻倍一次，单位成本下降 15%。人形机器人关节模组（电机+减速器+编码器+驱动器的一体化部件）与消费级无人机、新能源车驱动电机在工艺上有同源性，可参照的学习率约为 0.85–0.92。</p>
+<p><strong>（2）爬坡产量模型</strong>：月度产量 <span class="arithmatex">\(Q(t)\)</span> 在爬坡期近似为</p>
+<div class="arithmatex">\[
+Q(t) = Q_{max}\left(1 - e^{-t/\tau}\right)
+\]</div>
+<p>其中 <span class="arithmatex">\(\tau\)</span> 为爬坡时间常数，由产线调试、工人熟练度与供应链齐套率共同决定。一般而言，全新品类（无可借用工艺遗产）的 <span class="arithmatex">\(\tau\)</span> 以季度计；有汽车 Tier 1 供应商参与的产线 <span class="arithmatex">\(\tau\)</span> 显著缩短——这也是特斯拉（Tesla）、拓普集团（Tuopu Group）、三花智控（Sanhua Intelligent Controls）等车规级供应商被整机厂高度重视的原因之一。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["PVT 小批量&lt;br/&gt;数十至数百台"] --&gt; B["爬坡初期&lt;br/&gt;月产数百台&lt;br/&gt;FPY 快速上升"]
+    B --&gt; C["爬坡中期&lt;br/&gt;月产数千台&lt;br/&gt;瓶颈工位复制"]
+    C --&gt; D["稳态量产&lt;br/&gt;月产万台级&lt;br/&gt;成本进入学习曲线平坦段"]
+    A -.-&gt;|主要矛盾: 设计缺陷暴露| A1["设计回溯 ECN"]
+    B -.-&gt;|主要矛盾: 工艺与良率| B1["SOP 迭代/防错"]
+    C -.-&gt;|主要矛盾: 供应链齐套| C1["二供导入/VMI"]</code></pre>
+<h3 id="1323">13.2.3 爬坡期的典型失效模式与对策</h3>
+<p>爬坡期的主要矛盾不是"造得慢"，而是"造得不一样"。典型问题包括：</p>
+<ul>
+<li><strong>批次间一致性差</strong>：同一 SOP 下不同班次装配的关节背隙分布漂移——对策是关键工位<strong>防错设计</strong>（Poka-Yoke）与拧紧枪联网记录力矩-转角曲线；</li>
+<li><strong>标定产能不足</strong>：整机步态标定依赖工程师经验——对策是把标定流程脚本化、治具化，将"老师傅调参"转化为"自动标定工位"；</li>
+<li><strong>软件版本碎片化</strong>：试产批次固件与出厂固件不一致——对策是建立制造执行系统（Manufacturing Execution System, MES）中的软件基线管理，配合 OTA（Over-The-Air，空中升级）实现出厂后版本统一（知识图谱实体：ent_technology_ota_software_update_2024）；</li>
+<li><strong>返修工位挤占产能</strong>：FPY 低于约 80% 时返修会吞噬瓶颈工位——对策是设立独立返修区与 8D 问题解决流程。</li>
+</ul>
+<h2 id="133">13.3 良率工程与制造质量</h2>
+<h3 id="1331">13.3.1 串联良率模型：为什么人形机器人良率是"乘法问题"</h3>
+<p>人形机器人整机由数千个零件、数十个关键模组串联构成。若整机的合格要求所有关键工序都合格，且各工序近似独立，则整机一次通过良率为各工序良率之积：</p>
+<div class="arithmatex">\[
+Y_{total} = \prod_{i=1}^{n} Y_i
+\]</div>
+<p>以一个简化算例说明其严峻性：假设一台机器人有 40 个关节模组工序与 20 个整机工序，每个工序良率均为 99%，则</p>
+<div class="arithmatex">\[
+Y_{total} = 0.99^{60} \approx 54.7\%
+\]</div>
+<p>即近一半整机需要返修。若要整机 FPY 达到 90%，则平均单工序良率需满足</p>
+<div class="arithmatex">\[
+\bar{Y} \ge 0.90^{1/60} \approx 99.82\%
+\]</div>
+<p>这解释了为什么人形机器人量产必须向汽车行业的 PPM（Parts Per Million，百万分之一缺陷率）管理靠拢：<strong>单点良率的"小数点后位数"，在串联系统中会被指数放大。</strong></p>
+<h3 id="1332">13.3.2 缺陷密度模型与面积/复杂度缩放</h3>
+<p>对于减速器齿面、电机磁钢粘接、PCB 焊接等工艺，良率常用缺陷密度模型估计。Poisson 模型给出：</p>
+<div class="arithmatex">\[
+Y = e^{-D_0 A}
+\]</div>
+<p>其中 <span class="arithmatex">\(D_0\)</span> 为缺陷密度（defects per unit area 或 per joint），<span class="arithmatex">\(A\)</span> 为关键面积（或焊点数、配合面数）。改良的 Murphy 模型考虑了缺陷聚集效应：</p>
+<div class="arithmatex">\[
+Y = \left(\frac{1 - e^{-D_0 A}}{D_0 A}\right)^2
+\]</div>
+<p>工程含义是：<strong>减小关键面积或关键特征数量，本身就是良率工程。</strong>这解释了关节模组高度集成化（电机、减速器、编码器、驱动器、力矩传感器一体化）的双重收益——既降低 BOM，又减少装配界面数量，从而指数级改善串联良率。</p>
+<h3 id="1333">13.3.3 统计过程控制与制程能力指数</h3>
+<p>关键特性（如谐波减速器背隙、关节零位误差、整机静平衡）需纳入统计过程控制（Statistical Process Control, SPC）。制程能力指数定义为：</p>
+<div class="arithmatex">\[
+C_p = \frac{USL - LSL}{6\sigma}, \qquad C_{pk} = \min\left(\frac{USL-\mu}{3\sigma}, \frac{\mu-LSL}{3\sigma}\right)
+\]</div>
+<p>其中 <span class="arithmatex">\(USL/LSL\)</span> 为规格上下限，<span class="arithmatex">\(\mu,\sigma\)</span> 为过程均值与标准差。车规级要求通常为 <span class="arithmatex">\(C_{pk} \ge 1.33\)</span>（对应约 63 PPM），关键安全特性要求 <span class="arithmatex">\(C_{pk} \ge 1.67\)</span>。人形机器人关节的背隙、空程、效率等特性目前少有供应商能稳定提供 <span class="arithmatex">\(C_{pk}\)</span> 数据，这是 P16.2.2"质量控制体系建立"阶段必须补齐的能力。</p>
+<h3 id="1334">13.3.4 可靠性与寿命验证</h3>
+<p>量产质量不仅是出厂合格，更是在寿命期内合格。人形机器人的可靠性工程要点：</p>
+<ul>
+<li><strong>MTBF 目标</strong>：工业场景通常要求平均故障间隔时间（Mean Time Between Failures）数千小时级；以每日双班运行计，年运行约 4000–6000 小时，整机关键件寿命需覆盖保修期；</li>
+<li><strong>加速寿命试验（Accelerated Life Test, ALT）</strong>：对关节模组施加超额定负载与高温，用逆幂律模型外推寿命：</li>
+</ul>
+<div class="arithmatex">\[
+L = L_0 \left(\frac{S_0}{S}\right)^{m}
+\]</div>
+<p>其中 <span class="arithmatex">\(S\)</span> 为应力水平，<span class="arithmatex">\(m\)</span> 为材料/机理相关指数（疲劳失效典型 <span class="arithmatex">\(m\approx 3\)</span>–<span class="arithmatex">\(5\)</span>）；
+- <strong>失效模式库</strong>：第 4、5 章已讨论执行器与传动的失效机理（齿面疲劳、轴承磨损、磁钢退磁、编码器污染），量产阶段需将其转化为控制计划（Control Plan）中的检测项与频次。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["设计失效模式分析 DFMEA"] --&gt; C["控制计划 Control Plan"]
+    B["过程失效模式分析 PFMEA"] --&gt; C
+    C --&gt; D["来料检验 IQC"]
+    C --&gt; E["过程检验 IPQC + SPC"]
+    C --&gt; F["出厂检验 OQC + 老化"]
+    D --&gt; G["追溯: 序列号级 MES 记录"]
+    E --&gt; G
+    F --&gt; G
+    G --&gt; H["现场失效 8D 分析"]
+    H -.-&gt;|纠正措施回流| A</code></pre>
+<h3 id="1335-python">13.3.5 Python 算例：串联良率与爬坡期报废成本</h3>
+<p>下面的脚本把 13.3.1 的串联良率模型与爬坡学习曲线联立，估算爬坡期因良率损失产生的额外制造成本，并演示"先良率、后扩产"的财务含义：</p>
+<pre class="highlight"><code class="language-python"># 串联良率与爬坡期报废成本算例
+import math
+
+# 整机关键工序: 40 个关节模组工序 + 20 个整机工序
+n_ops = 60
+
+def total_yield(p_op, n=n_ops):
+    """串联良率: 各工序良率均为 p_op 时的整机一次通过良率"""
+    return p_op ** n
+
+for p in [0.99, 0.995, 0.998, 0.999]:
+    print(f"单工序良率 {p:.1%} -&gt; 整机 FPY {total_yield(p):.1%}")
+
+# 爬坡学习曲线: 月度产量 Q(t) = Qmax * (1 - exp(-t/tau))
+Qmax, tau = 2000, 9          # 稳态月产 2000 台, 爬坡时间常数 9 个月
+fpy0, fpy1, k = 0.55, 0.90, 0.25  # FPY 从 55% 向 90% 收敛, 速率 k
+unit_cost = 25000            # 爬坡期单位制造成本 (美元, 量级估计)
+
+def monthly_output(t):
+    return Qmax * (1 - math.exp(-t / tau))
+
+def monthly_fpy(t):
+    return fpy1 - (fpy1 - fpy0) * math.exp(-k * t)
+
+scrap = 0.0
+for t in range(24):          # 头 24 个月
+    q = monthly_output(t)
+    scrap += q * (1 - monthly_fpy(t)) * unit_cost
+
+print(f"爬坡期 24 个月累计产量约 {sum(monthly_output(t) for t in range(24)):,.0f} 台")
+print(f"良率损失对应的报废/返修成本量级约 {scrap/1e6:,.0f} 百万美元")</code></pre>
+<p>算例的工程解读：在 FPY 从 55% 爬升到 90% 的过程中，良率损失是与设备投资同量级的现金流出。因此爬坡期的首要 KPI 不是产量而是 <strong>FPY 斜率</strong>——这与 13.2.3 中"返修工位挤占产能"的定性判断互为印证。</p>
+<h2 id="134">13.4 成本曲线与降本路径</h2>
+<h3 id="1341-bom">13.4.1 BOM 成本的现状与公开预测</h3>
+<p>物料清单（Bill of Materials, BOM）成本是人形机器人商业化的第一约束。行业公开预测给出的量级图景如下（均为分析机构估计值，非审计数据）：</p>
+<ul>
+<li>美国银行研究所《Humanoid Robots 101》（2025 年 4 月，知识图谱实体 ent_report_bofa_humanoid_robots_101_2025）估计：以中国供应链为主、含 16 个旋转执行器、14 个直线执行器（行星滚柱丝杠）、6 自由度灵巧手、深度相机与激光雷达配置的典型人形机器人，2025 年底 BOM 约 <strong>3.5 万美元/台</strong>；</li>
+<li>同一报告预测 BOM 将在 2030–2035 年降至 <strong>1.3 万–1.7 万美元/台</strong>，隐含年均降幅约 14%，与学习曲线模型（<span class="arithmatex">\(\phi \approx 0.86\)</span>–<span class="arithmatex">\(0.88\)</span>）自洽；</li>
+<li>消费级售价的先行锚点已经出现：宇树科技（Unitree Robotics）G1 人形机器人公开售价自 <strong>1.6 万美元</strong>起（知识图谱实体 ent_report_unitree_unitree_g1_humanoid_agent_pric_2024），其路径是牺牲部分性能（负载、续航、防护等级）换取价格下探，验证了中国供应链的成本潜力。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">数据使用说明</p>
+<p>本节及第 28 章引用的 BOM 与市场规模数字均为行业公开预测或企业公开报价，属于分析机构的前瞻性估计，实际值取决于技术路线（谐波 vs 行星、滚柱丝杠 vs 梯形丝杠、是否配置灵巧手与激光雷达）与产量假设，读者应将其视为量级参考而非精确预测。</p>
+</div>
+<h3 id="1342-bom">13.4.2 BOM 结构：成本大头在哪里</h3>
+<p>综合知识图谱中的零部件实体与行业公开拆解，一台全尺寸电驱人形机器人的 BOM 大致按以下结构分布（典型地，随方案不同有显著浮动）：</p>
+<table>
+<thead>
+<tr>
+<th>成本项</th>
+<th>占比量级</th>
+<th>关键零部件（KG 实体示例）</th>
+<th>降本杠杆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关节执行器（旋转+直线）</td>
+<td>40%–60%</td>
+<td>谐波减速器（Harmonic Drive、绿的谐波 Leaderdrive）、行星减速器（Nabtesco、Wittenstein）、无框力矩电机（Kollmorgen、maxon）、行星滚柱丝杠（GSA、Rollvis、Ewellix）</td>
+<td>集成化、国产替代、规格降配</td>
+</tr>
+<tr>
+<td>灵巧手与末端</td>
+<td>5%–15%</td>
+<td>因时机器人（Inspire Robots）、DH Robotics、Wonik Robotics、灵巧手微型丝杠/腱绳</td>
+<td>自由度降配、腱绳方案</td>
+</tr>
+<tr>
+<td>计算与传感</td>
+<td>10%–20%</td>
+<td>NVIDIA Jetson 平台、深度相机（Orbbec）、激光雷达（Hesai、RoboSense）、IMU、六维力传感器（ATI、坤维 Kunwei、Bota Systems）</td>
+<td>国产 SoC、传感器减配融合</td>
+</tr>
+<tr>
+<td>电池与电源</td>
+<td>3%–8%</td>
+<td>锂电池 pack（CATL、亿纬锂能 EVE Energy）、BMS、DC-DC</td>
+<td>平台化电池包</td>
+</tr>
+<tr>
+<td>结构与外观</td>
+<td>5%–10%</td>
+<td>铝合金/镁合金压铸与 CNC、碳纤维覆盖件</td>
+<td>压铸替代 CNC、以塑代铝</td>
+</tr>
+<tr>
+<td>线束与电气</td>
+<td>3%–5%</td>
+<td>连接器（TE Connectivity、JST）、线束</td>
+<td>EtherCAT 一线到底、无线化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1343">13.4.3 降本的四条路径</h3>
+<p><strong>路径一：设计降本（Design-to-Cost, DTC）。</strong> 在 P1–P5 阶段即设定目标成本并逐层分解到模组。知识图谱中的方法实体<strong>价值工程/价值分析</strong>（Value Analysis / Value Engineering, VAVE，ent_method_value_analysis_value_engineering）提供了系统工具：对每个零部件问"它的功能是什么、实现该功能的最低成本方案是什么"。典型 VAVE 案例包括：以准直驱（Quasi-Direct-Drive, QDD）方案替代高减速比谐波方案（用控制带宽换取减速器成本与体积，宇树路线）；以行星滚柱丝杠替代梯形丝杠仅用于高负载关节（特斯拉 Optimus 思路）；灵巧手自由度从 20+ 降至 6–11 以匹配真实任务需求。</p>
+<p><strong>路径二：规模降本。</strong> 由学习曲线 <span class="arithmatex">\(C(N)=C_1 N^{-b}\)</span> 描述。规模降本的前提是可制造性设计（DFM）先行，否则规模只会放大缺陷成本。</p>
+<p><strong>路径三：供应链降本。</strong> 国产替代是中国整机厂的核心杠杆：谐波减速器从 Harmonic Drive Systems 转向绿的谐波（Leaderdrive）或来福谐波（Laifual），行星减速器转向双环传动（Shuanghuan）、中大力德（Zhongda），电机转向鸣志电器（Mingzhi Appliance / Moons'）、江苏雷利（Jiangsu Leili），行业公开拆解普遍报告此类替代可带来零部件级 30%–60% 的成本下降。</p>
+<p><strong>路径四：制造降本。</strong> 即 P16.3.2"成本核算与降本"的日常化：通过压铸、MIM（金属注射成型）、冷镦等净成形工艺替代 CNC 全切削（参照知识图谱实体 ent_process_cnc_machining 的工艺边界），将结构件机加工工时压缩一个数量级；通过工装治具与自动拧紧、自动点胶降低直接人工。</p>
+<h3 id="1344">13.4.4 成本、产量与价格的联动</h3>
+<p>整机厂面对的是一个动态联立方程：价格决定需求，需求决定产量，产量经由学习曲线决定成本，成本决定可行价格。该联动的简化表述为</p>
+<div class="arithmatex">\[
+P(N) = \frac{C_1 N^{-b}}{1 - m}
+\]</div>
+<p>其中 <span class="arithmatex">\(m\)</span> 为目标毛利率。当 <span class="arithmatex">\(N\)</span> 在千台级以下时，任何正毛利定价都难以匹配工业客户的投资回报要求（通常要求机器人替代人工的投资回收期在 2–3 年以内）；只有当累计产量进入万台级、BOM 降至 2 万美元以下，工业场景的总拥有成本（Total Cost of Ownership, TCO）才开始闭合。这是"量产与规模化"一章的核心结论：<strong>人形机器人的商业化本质是制造学习曲线与场景 TCO 曲线的赛跑。</strong></p>
+<h2 id="135">13.5 供应链组织与保供策略</h2>
+<h3 id="1351">13.5.1 关键长周期物料的识别</h3>
+<p>爬坡期供应链管理的重心是<strong>长周期、高瓶颈、高波动</strong>物料。综合知识图谱实体与行业公开信息，人形机器人的关键瓶颈物料包括：</p>
+<table>
+<thead>
+<tr>
+<th>物料</th>
+<th>瓶颈成因</th>
+<th>KG 相关实体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行星滚柱丝杠</td>
+<td>高精度磨床/旋风铣设备稀缺，工艺 know-how 集中</td>
+<td>GSA、Rollvis、Ewellix、南京工艺（Nanjing Craft）、贝斯特（Best）</td>
+</tr>
+<tr>
+<td>谐波减速器</td>
+<td>柔轮材料与齿形加工一致性</td>
+<td>Harmonic Drive Systems、绿的谐波（Leaderdrive）、来福（Laifual）</td>
+</tr>
+<tr>
+<td>高性能钕铁硼磁钢</td>
+<td>稀土原料与出口管制波动</td>
+<td>中科三环（Zhongke Sanhuan）、金力永磁（JL Mag）、正海磁材（Zhenghai Magnet）、宁波韵升（Ningbo Yunsheng）；ent_report_oceanwall_rare_earth_bottleneck_2025</td>
+</tr>
+<tr>
+<td>车规级算力芯片</td>
+<td>先进制程产能与出口政策</td>
+<td>NVIDIA、地平线（Horizon）、黑芝麻（Black Sesame）</td>
+</tr>
+<tr>
+<td>六维力传感器</td>
+<td>标定产能与一致性</td>
+<td>ATI、坤维科技（Kunwei）、Bota Systems</td>
+</tr>
+<tr>
+<td>高端编码器</td>
+<td>光栅刻划工艺</td>
+<td>Heidenhain、Renishaw、多摩川（Tamagawa）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1352">13.5.2 供应商选择、审核与二供策略</h3>
+<p>P16.2.1"供应商选择与审核"在人形机器人行业的特殊之处：大量核心供应商是从汽车零部件、3C、医疗器械行业跨界而来，其质量体系（IATF 16949 或 ISO 9001）成熟度差异极大。实务要点：</p>
+<ul>
+<li><strong>分级管理</strong>：按"瓶颈/杠杆/常规/关键"四象限（Kraljic 矩阵）分配资源；谐波减速器、丝杠、磁钢属于"瓶颈+关键"，必须双源或签署产能预留协议；</li>
+<li><strong>过程审核</strong>：对关键供应商执行 VDA 6.3 或等效过程审核，重点核查 SPC 数据真实性与变更管理（未经通知的材料/工艺变更是批量事故的最大来源）；</li>
+<li><strong>二供导入节奏</strong>：二供不仅是议价工具，更是保供保险；但二供件必须通过完整的 PPAP 与整机级 A/B 对比验证，避免"名义双源、实际单源"；</li>
+<li><strong>库存策略</strong>：对稀土磁钢等政策性波动物料，安全库存可按</li>
+</ul>
+<div class="arithmatex">\[
+SS = z \cdot \sigma_L \cdot \sqrt{LT}
+\]</div>
+<p>估计，其中 <span class="arithmatex">\(z\)</span> 为服务水平系数，<span class="arithmatex">\(\sigma_L\)</span> 为需求波动，<span class="arithmatex">\(LT\)</span> 为补货提前期。政策风险导致的"提前期分布右尾"需要用情景储备而非正态假设处理。</p>
+<h3 id="1353-tier-1">13.5.3 整机厂与 Tier 1 的新型关系</h3>
+<p>人形机器人产业正在复制汽车行业"整车厂—Tier 1—Tier 2"的分层。知识图谱中已出现明确的一级供应商实体：<strong>拓普集团</strong>（Tuopu Group，执行器总成方向）、<strong>三花智控</strong>（Sanhua Intelligent Controls，机电执行器方向），二者均从新能源车热管理与结构件跨界，承接整机厂的执行器总成外包。这种模式的工程含义是：</p>
+<ul>
+<li>整机厂聚焦"大脑+小脑"（AI 与运动控制）与整机集成，把关节模组的制造学习曲线外包给有车规量产经验的 Tier 1；</li>
+<li>Tier 1 再向上整合减速器（绿的、双环）、电机（鸣志、步科等）、丝杠（南京工艺、贝斯特）等 Tier 2；</li>
+<li>整机厂保留对关键接口（通信协议、力矩-位置特性、失效安全行为）的定义权，即第 9 章所述 ICD 的外延。</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    OEM["整机厂 OEM&lt;br/&gt;Tesla / Figure / Unitree / 优必选 / 智元"] --&gt; T1["Tier 1 执行器/结构总成&lt;br/&gt;拓普集团 / 三花智控 / 代工: 立讯精密等"]
+    T1 --&gt; T2a["减速器&lt;br/&gt;绿的谐波 / 双环 / Nabtesco / HD"]
+    T1 --&gt; T2b["电机&lt;br/&gt;鸣志 / maxon / Kollmorgen / 步科"]
+    T1 --&gt; T2c["丝杠&lt;br/&gt;GSA / 南京工艺 / 贝斯特"]
+    T1 --&gt; T2d["传感器&lt;br/&gt;ATI / 坤维 / Bota / Heidenhain"]
+    T2a --&gt; T3["材料与机床&lt;br/&gt;磁钢: 中科三环/金力永磁&lt;br/&gt;轴承钢 / 高精度磨床"]
+    T2b --&gt; T3</code></pre>
+<h2 id="136">13.6 典型制造模式与案例</h2>
+<h3 id="1361-optimus">13.6.1 垂直整合模式：特斯拉 Optimus</h3>
+<p>特斯拉（Tesla，知识图谱实体 ent_oem_tesla）的量产哲学继承自其汽车业务：<strong>设计可制造性内生化</strong>——先确定目标成本（公开表述为长期 2 万美元级售价）与目标产量，再反推每个执行器、每根丝杠的设计；自研执行器总成，复用汽车的压铸、电机与电池工艺遗产；工厂即产品（"the machine that builds the machine"），把产线本身当作迭代对象。其风险在于全新执行器供应链需自建学习曲线，短期成本高于外购。</p>
+<h3 id="1362-agility-robotics-figure-ai">13.6.2 专业工厂模式：Agility Robotics 与 Figure AI</h3>
+<p>Agility Robotics 为 Digit（知识图谱实体 product_digit）建设了专用工厂 RoboFab，是行业首个公开宣称按年产万台级规划的人形机器人专用产线，其意义在于验证"人形机器人专用制造系统"的单元经济学。Figure AI（ent_oem_figure_ai）则公开了自建工厂 BotQ 的产能规划，并采取"整机自产+汽车客户场景共创"（与宝马等车企的公开合作）的双轮模式：工厂既是交付能力，也是真实工况数据的采集基础设施——这指向本章与第 21 章（数据基础设施）的深层联系：<strong>量产工厂同时是数据工厂。</strong></p>
+<h3 id="1363">13.6.3 成本颠覆模式：宇树科技</h3>
+<p>宇树科技（Unitree Robotics，ent_oem_unitree_robotics）的路径是消费级定价反向定义工程规格：G1 以 1.6 万美元起的公开售价（ent_report_unitree_unitree_g1_humanoid_agent_pric_2024）锚定科研与开发者市场，H1/H2 覆盖更高性能段。其制造模式的关键是：准直驱关节自研自产、结构件大量采用压铸与型材、复用四足机器人（Go2 等）已跑通的电机与减速器供应链。该模式证明了中国供应链支撑下，人形机器人的价格下降速度可以显著快于行业公开预测的均值——代价是初始性能与工业场景要求之间仍有距离。</p>
+<h3 id="1364">13.6.4 三种模式的对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>垂直整合（Tesla）</th>
+<th>专用工厂（Agility/Figure）</th>
+<th>成本颠覆（Unitree）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标场景</td>
+<td>自有工厂→泛工业</td>
+<td>物流/制造客户</td>
+<td>科研/开发者→轻商用</td>
+</tr>
+<tr>
+<td>核心壁垒</td>
+<td>制造工艺遗产+数据闭环</td>
+<td>场景 know-how+专用产线</td>
+<td>供应链成本+快速迭代</td>
+</tr>
+<tr>
+<td>量产风险</td>
+<td>全链条自建，资本开支大</td>
+<td>依赖单一大客户导入节奏</td>
+<td>性能上限与工业可靠性</td>
+</tr>
+<tr>
+<td>成本路径</td>
+<td>规模+工艺复用</td>
+<td>学习曲线+客户共担</td>
+<td>国产供应链+降配设计</td>
+</tr>
+</tbody>
+</table>
+<h2 id="137">13.7 质量体系与量产法规衔接</h2>
+<p>人形机器人量产还需跨越法规门槛：整机需满足目标市场的电气安全（如 IEC 60204-1）、电磁兼容（EMC）、功能安全（ISO 13849、IEC 61508）与人机协作安全（ISO/TS 15066 的精神延伸至双足平台）要求；知识图谱中的标准机构实体（ISO、IEEE SA、ANSI/RIA、UL Solutions、TÜV SÜD、SGS）构成认证生态。量产质量体系通常以 ISO 9001 为基线，有汽车客户者叠加 IATF 16949。本章不展开标准条文（见附录 E），仅强调一点：<strong>认证能力必须在 P16 之前内建到设计里</strong>——事后再补安全回路（如关节抱闸、力矩限制）几乎必然推翻既有设计，这是从协作机器人行业反复验证过的教训。</p>
+<h2 id="138">13.8 本章小结</h2>
+<ul>
+<li>量产导入的本质是驱逐不确定性：设计、工艺、供应链、质量四重冻结是量产就绪的标志，PPAP 是移交的法律文件；</li>
+<li>产能爬坡受瓶颈工位（关节老化测试、整机标定）支配，遵循 <span class="arithmatex">\(C(N)=C_1N^{-b}\)</span> 的学习曲线，典型学习率 0.85–0.92；</li>
+<li>人形机器人的良率是串联乘法问题：60 个 99% 良率的工序只剩约 55% 整机 FPY，量产必须向 PPM 管理与 <span class="arithmatex">\(C_{pk}\ge1.33\)</span> 的车规水平靠拢；</li>
+<li>成本曲线的锚点：行业公开预测（BofA《Humanoid Robots 101》）给出 2025 年约 3.5 万美元、2030–2035 年 1.3–1.7 万美元的 BOM 轨迹；宇树 G1 以 1.6 万美元售价提供了消费端先行锚点；</li>
+<li>供应链的瓶颈物料是行星滚柱丝杠、谐波减速器、钕铁硼磁钢、车规算力与六维力传感器；拓普、三花等 Tier 1 的崛起标志着产业分层正在形成；</li>
+<li>制造模式分化出垂直整合、专用工厂与成本颠覆三条路线，其共同点是：工厂同时承担制造与数据采集双重职能。</li>
+</ul>
+<h2 id="_2">本章涉及的知识图谱实体</h2>
+<table>
+<thead>
+<tr>
+<th>实体 ID</th>
+<th>名称</th>
+<th>本章引用位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ent_process_p0 – p16</td>
+<td>立项到量产流程主线（含 P16 全部子流程）</td>
+<td>13.1–13.7</td>
+</tr>
+<tr>
+<td>ent_method_value_analysis_value_engineering</td>
+<td>价值工程/价值分析（VAVE）</td>
+<td>13.4.3</td>
+</tr>
+<tr>
+<td>ent_report_bofa_humanoid_robots_101_2025</td>
+<td>美国银行研究所《Humanoid Robots 101》</td>
+<td>13.4.1</td>
+</tr>
+<tr>
+<td>ent_report_oceanwall_rare_earth_bottleneck_2025</td>
+<td>稀土瓶颈分析报告</td>
+<td>13.5.1</td>
+</tr>
+<tr>
+<td>ent_report_unitree_unitree_g1_humanoid_agent_pric_2024</td>
+<td>宇树 G1 售价公告</td>
+<td>13.4.1, 13.6.3</td>
+</tr>
+<tr>
+<td>ent_oem_tesla / ent_oem_figure_ai / ent_oem_unitree_robotics</td>
+<td>特斯拉 / Figure AI / 宇树科技</td>
+<td>13.6</td>
+</tr>
+<tr>
+<td>ent_tier1_supplier_tuopujituan / ent_tier1_supplier_sanhuazhikong</td>
+<td>拓普集团 / 三花智控</td>
+<td>13.5.3</td>
+</tr>
+<tr>
+<td>ent_technology_ota_software_update_2024</td>
+<td>OTA 空中升级</td>
+<td>13.2.3</td>
+</tr>
+<tr>
+<td>ent_process_cnc_machining</td>
+<td>CNC 加工工艺</td>
+<td>13.4.3</td>
+</tr>
+<tr>
+<td>附录 D 企业卡片</td>
+<td>Harmonic Drive、Nabtesco、Leaderdrive、maxon、Kollmorgen、ATI、Heidenhain、CATL、Orbbec、Hesai 等</td>
+<td>13.4.2, 13.5.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Bank of America Institute. (2025-04). <em>Humanoid Robots 101</em>. https://institute.bankofamerica.com/content/dam/transformation/humanoid-robots.pdf （知识图谱收录，其 BOM 与普及预测为分析师估计值）</li>
+<li>知识图谱 research/methods/ent_process_p0.md – ent_process_p16.md（量产流程实体族）</li>
+<li>附录 D：主要供应商与企业名录；附录 E：标准、法规与认证清单</li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/chapters/chapter-12/">← 上一页<span>第 12 章 认证、合规与质量标准</span></a>
+      
+      
+      <a class="next" href="/wiki/chapters/chapter-14/">下一页 →<span>第 14 章 机器人控制基础</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#13">第 13 章 量产与规模化</a><ul>
+<li><a href="#_1">摘要</a></li>
+<li><a href="#131">13.1 从原型到量产：量产导入的总体框架</a><ul>
+<li><a href="#1311">13.1.1 原型思维与量产思维的根本差异</a></li>
+<li><a href="#1312-p0p16">13.1.2 知识图谱中的量产流程主线：P0–P16</a></li>
+<li><a href="#1313">13.1.3 量产导入的里程碑与"冻结"纪律</a></li>
+</ul>
+</li>
+<li><a href="#132">13.2 产能规划与产能爬坡</a><ul>
+<li><a href="#1321-oee">13.2.1 产能的基本度量：节拍、瓶颈与 OEE</a></li>
+<li><a href="#1322">13.2.2 产能爬坡曲线与学习模型</a></li>
+<li><a href="#1323">13.2.3 爬坡期的典型失效模式与对策</a></li>
+</ul>
+</li>
+<li><a href="#133">13.3 良率工程与制造质量</a><ul>
+<li><a href="#1331">13.3.1 串联良率模型：为什么人形机器人良率是"乘法问题"</a></li>
+<li><a href="#1332">13.3.2 缺陷密度模型与面积/复杂度缩放</a></li>
+<li><a href="#1333">13.3.3 统计过程控制与制程能力指数</a></li>
+<li><a href="#1334">13.3.4 可靠性与寿命验证</a></li>
+<li><a href="#1335-python">13.3.5 Python 算例：串联良率与爬坡期报废成本</a></li>
+</ul>
+</li>
+<li><a href="#134">13.4 成本曲线与降本路径</a><ul>
+<li><a href="#1341-bom">13.4.1 BOM 成本的现状与公开预测</a></li>
+<li><a href="#1342-bom">13.4.2 BOM 结构：成本大头在哪里</a></li>
+<li><a href="#1343">13.4.3 降本的四条路径</a></li>
+<li><a href="#1344">13.4.4 成本、产量与价格的联动</a></li>
+</ul>
+</li>
+<li><a href="#135">13.5 供应链组织与保供策略</a><ul>
+<li><a href="#1351">13.5.1 关键长周期物料的识别</a></li>
+<li><a href="#1352">13.5.2 供应商选择、审核与二供策略</a></li>
+<li><a href="#1353-tier-1">13.5.3 整机厂与 Tier 1 的新型关系</a></li>
+</ul>
+</li>
+<li><a href="#136">13.6 典型制造模式与案例</a><ul>
+<li><a href="#1361-optimus">13.6.1 垂直整合模式：特斯拉 Optimus</a></li>
+<li><a href="#1362-agility-robotics-figure-ai">13.6.2 专业工厂模式：Agility Robotics 与 Figure AI</a></li>
+<li><a href="#1363">13.6.3 成本颠覆模式：宇树科技</a></li>
+<li><a href="#1364">13.6.4 三种模式的对比</a></li>
+</ul>
+</li>
+<li><a href="#137">13.7 质量体系与量产法规衔接</a></li>
+<li><a href="#138">13.8 本章小结</a></li>
+<li><a href="#_2">本章涉及的知识图谱实体</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

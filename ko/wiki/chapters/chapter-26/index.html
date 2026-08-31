@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>제 26장 완전기 시스템 사례 · Wiki · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" aria-current="page">Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">제 26장 완전기 시스템 사례</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="26">제 26장 완전기 시스템 사례</h1>
+<h2 id="_1">요약</h2>
+<p>앞선 장에서는 재료, 부품, 서브시스템 및 알고리즘 등 "상향식" 관점에서 휴머노이드 로봇을 분석했습니다. 이번 장에서는 "하향식" 완전기 관점으로 전환하여, 8개의 대표적인 완전기 시스템 사례를 통해 실제 제품이 제약 조건 하에서 시스템 통합과 엔지니어링 트레이드오프를 어떻게 수행하는지 살펴봅니다. 사례는 4가지 주요 기술 경로를 다룹니다: Unitree H1/G1으로 대표되는 고동적 개방형 플랫폼 경로, Tesla Optimus Gen 3 및 Figure 02로 대표되는 "AI 우선" 범용 경로, Boston Dynamics Atlas(전동 버전) 및 UBTECH Walker S2로 대표되는 중하중/산업 배치 경로, Agility Digit 및 Fourier GR 시리즈로 대표되는 시나리오 집중 경로, 그리고 XPeng Iron의 자동차 기업 생태계 경로와 Galbot G1의 바퀴형 섀시 대체 경로를 함께 논의합니다. 각 사례는 포지셔닝 및 진화, 시스템 아키텍처, 주요 파라미터, 배치 진행 상황 및 엔지니어링 트레이드오프의 5가지 차원에서 분석되며, 마지막으로 사례 간 횡적 비교 및 설계 규칙 요약을 제시합니다. 이 장의 모든 파라미터는 본 지식 그래프(KG)의 제품 엔터티 카드(부록 D)에서 가져왔으며, 누락된 항목은 "미공개"로 표시하고 추측하지 않습니다.</p>
+<p><strong>키워드</strong>: 완전기 시스템 통합; Unitree H1/G1; Tesla Optimus; Figure 02; Atlas(전동 버전); Agility Digit; Walker S2; Fourier GR; 설계 트레이드오프; 기술 경로</p>
+<hr />
+<h2 id="261">26.1 완전기 시스템 통합: 부품에서 시스템으로</h2>
+<h3 id="2611">26.1.1 완전기는 제약 조건 하의 시스템 트레이드오프 결과물</h3>
+<p>휴머노이드 로봇 시스템의 엔지니어링 설계는 본질적으로 질량, 전력, 비용, 연산 능력 및 안전성이라는 5가지 제약 조건으로 구성된 다목적 공간에서 실행 가능한 해를 찾는 과정입니다. 제4-6장에서는 각각 액추에이터, 센싱, 컴퓨팅 전원 등 부품 수준의 기술을 논의했지만, 부품 성능을 단순히 합산할 수는 없습니다. 완전기의 최종 성능은 각 서브시스템 간의 <strong>인터페이스 매칭</strong>과 <strong>예산 할당</strong>에 따라 결정됩니다. 일반적인 완전기 예산은 다음과 같습니다:</p>
+<ul>
+<li><strong>질량 예산</strong>: 구조 부품, 액추에이터, 배터리, 컴퓨팅 및 배선 간의 할당. 일반적으로 액추에이터는 완전기 질량의 30%–45%, 배터리는 8%–15%, 구조 부품은 25%–35%를 차지합니다.</li>
+<li><strong>전력 예산</strong>: 운동 피크 전력과 지속 전력의 구분. 이족 동적 보행의 순간 전력은 킬로와트(kW) 수준에 달할 수 있는 반면, 컴퓨팅 및 센싱의 지속 소비 전력은 일반적으로 수백 와트(W) 수준입니다.</li>
+<li><strong>자유도(DOF) 예산</strong>: 다리 6–7 DOF/다리, 허리 1–3 DOF, 팔 4–7 DOF/팔, 로봇 손 6–22 DOF/손 간의 선택은 비용과 신뢰성에 직접적인 영향을 미칩니다.</li>
+<li><strong>데이터 예산</strong>: 센싱 센서의 대역폭, 컴퓨팅 플랫폼의 TOPS 및 저장 용량, 제어 루프의 실시간 요구 사항(전신 제어 루프는 일반적으로 500 Hz–1 kHz).</li>
+</ul>
+<p>완전기 시스템 동역학은 부유 기반 강체 동역학으로 통일적으로 설명할 수 있습니다(제14장 참조):</p>
+<div class="arithmatex">\[
+\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}} + \mathbf{g}(\mathbf{q}) = \mathbf{S}^{\top}\boldsymbol{\tau} + \mathbf{J}_c^{\top}\mathbf{f}_c
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf{q}\in\mathbb{R}^{n+6}\)</span>는 부유 기반 자세를 포함하는 일반화 좌표, <span class="arithmatex">\(\mathbf{M}\)</span>은 질량 행렬, <span class="arithmatex">\(\mathbf{S}\)</span>는 구동 관절 선택 행렬, <span class="arithmatex">\(\mathbf{J}_c\)</span>는 접촉 자코비안, <span class="arithmatex">\(\mathbf{f}_c\)</span>는 접촉력입니다. 완전기 설계의 많은 트레이드오프(예: 발 질량이 스윙 관성에 미치는 영향, 배터리 용량이 항속 거리와 완전기 질량에 미치는 결합)는 이 방정식에서 해당 물리량을 찾을 수 있습니다.</p>
+<h3 id="2612">26.1.2 완전기 평가의 핵심 지표</h3>
+<p>사례 간 비교를 위해 이 장에서는 다음 지표군을 사용합니다:</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정의</th>
+<th>엔지니어링적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>피크 토크 밀도</td>
+<td>관절 피크 토크 / 관절 모듈 질량 (N·m/kg)</td>
+<td>동적 운동 능력 상한 결정</td>
+</tr>
+<tr>
+<td>추력 대 중량비 유사 지표</td>
+<td>적재 용량 / 완전기 질량</td>
+<td>실용적인 운반 능력 결정</td>
+</tr>
+<tr>
+<td>에너지 자율성</td>
+<td>배터리 용량 / 일반 작업 평균 전력</td>
+<td>단일 작업 시간 결정</td>
+</tr>
+<tr>
+<td>자유도 구조</td>
+<td>다리/허리/팔/손 DOF 할당</td>
+<td>작업 범위와 비용 결정</td>
+</tr>
+<tr>
+<td>센싱-컴퓨팅 구성</td>
+<td>센서 제품군 × 엣지 컴퓨팅 성능</td>
+<td>자율성 및 AI 배치 능력 결정</td>
+</tr>
+<tr>
+<td>개방성</td>
+<td>SDK, ROS2 지원, 2차 개발 문서</td>
+<td>생태계 및 연구 가치 결정</td>
+</tr>
+<tr>
+<td>배치 성숙도</td>
+<td>실제 고객 시나리오 운영 시간 및 규모</td>
+<td>"데모"와 "제품" 구분</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 데모 지표와 제품 지표의 격차 (Demo-to-Product Gap)</p>
+<p>본 지식 그래프의 개념 엔터티 <code>ent_concept_demo_to_product_gap</code>는 다음을 지적합니다: 데모 비디오의 단일 작업 성공률, 이상적인 환경에서의 운동 성능은 실제 시나리오에서 요구되는 <strong>평균 무고장 시간(MTBF)</strong>, 작업 성공률 ≥99%의 안정성, 하루 수 시간의 지속적인 작업 능력과 체계적인 격차가 있습니다. 이 장에서는 각 사례를 평가할 때 "제3자 고객 시나리오에서의 지속적인 배치 기록 유무"를 데모와 제품을 구분하는 핵심 판단 기준으로 사용합니다.</p>
+</div>
+<h3 id="2613">26.1.3 완전기 시스템의 계층 구조 관점</h3>
+<p>각 제조사의 기술 경로 차이는 크지만, 완전기 시스템은 기능 계층에서 높은 동형성을 보입니다. 다음 계층 구조 관점은 이후 각 사례를 개별적으로 분석하기 위한 통일된 프레임워크로 사용될 수 있습니다:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    subgraph L4[작업 및 스케줄링 계층]
+        A1[작업 계획 / 작업 지시 시스템&lt;br/&gt;MES · WMS 연동]
+        A2[차량 관리 및 원격 운영&lt;br/&gt;Orbit · Arc · ROSA]
+    end
+    subgraph L3[지능형 의사 결정 계층]
+        B1[VLA / 대규모 모델 추론&lt;br/&gt;Helix · FSD 파생 네트워크 · AstraBrain]
+        B2[스킬 라이브러리 및 행동 계획]
+    end
+    subgraph L2[실시간 제어 계층]
+        C1[전신 제어 WBC / MPC&lt;br/&gt;500 Hz–1 kHz]
+        C2[관절 서보 루프&lt;br/&gt;전류-속도-위치 3중 루프]
+    end
+    subgraph L1[기계 전기 물리 계층]
+        D1[액추에이터 및 동력 전달]
+        D2[센서 제품군&lt;br/&gt;비전 · LiDAR · 힘 감지 · IMU]
+        D3[컴퓨팅 플랫폼 및 배터리]
+        D4[구조 및 열 관리]
+    end
+    A1 --&gt; B1
+    A2 --&gt; B2
+    B1 --&gt; C1
+    B2 --&gt; C1
+    C1 --&gt; C2
+    C2 --&gt; D1
+    D2 --&gt; C1
+    D3 --&gt; B1
+    D3 --&gt; C1</code></pre>
+<p>각 완전기 사례를 읽을 때 유용한 분석 질문은 다음과 같습니다: <strong>해당 제조사의 차별화는 정확히 어느 계층에서 발생하는가?</strong> Unitree의 차별화는 L1(자체 개발 고토크 밀도 관절)과 생태계 개방성에, Figure의 차별화는 L3(Helix VLA)에, Walker S2의 차별화는 L4(배터리 교체, 다중 로봇 협업 및 MES 연동)에 있으며, Digit의 차별화는 L1 형태학과 L4의 RaaS 비즈니스 모델에 걸쳐 있습니다. 완전기 경쟁의 본질은 특정 한두 계층에서 장벽을 형성하고, 나머지 계층에서는 업계 기준선을 달성하는 것입니다.</p>
+<h3 id="2614">26.1.4 이 장의 사례 선택 논리</h3>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    A[완전기 기술 경로] --&gt; B[고동적 개방형 플랫폼&lt;br/&gt;Unitree H1 / G1]
+    A --&gt; C[AI 우선 범용 경로&lt;br/&gt;Tesla Optimus Gen 3&lt;br/&gt;Figure 02]
+    A --&gt; D[산업 배치 경로&lt;br/&gt;Atlas 전동 버전 / Walker S2]
+    A --&gt; E[시나리오 집중 경로&lt;br/&gt;Agility Digit / Fourier GR]
+    A --&gt; F[생태계 확장 및 대체 형태&lt;br/&gt;XPeng Iron / Galbot G1]
+    B --&gt; G[26.2절]
+    C --&gt; G2[26.3 / 26.4절]
+    D --&gt; G3[26.5 / 26.7절]
+    E --&gt; G4[26.6 / 26.8절]
+    F --&gt; G5[26.9절]</code></pre>
+<p>사례 선택은 세 가지 기준을 따릅니다: 첫째, KG에 인간과 AI의 이중 검증을 거친 제품 엔터티 카드(부록 D)가 있을 것; 둘째, 실제 시나리오에서 검증 가능한 배치 또는 양산 기록이 있을 것; 셋째, 합쳐서 현재 산업계의 주요 기술 경로와 비즈니스 모델을 포괄할 것. 총 8개의 사례로, KG의 <code>ent_product_*</code> 엔터티 패밀리에 해당합니다.</p>
+<h2 id="262-1-unitree-h1-g1">26.2 사례 1: Unitree H1 및 G1 – 고동적 전기 구동 플랫폼과 개방형 생태계</h2>
+<h3 id="2621">26.2.1 포지셔닝 및 진화</h3>
+<p>Unitree Robotics는 사족 보행 로봇의 전기 구동 관절에서 시작하여 고토크 밀도 준직접 구동(QDD) 관절 기술을 휴머노이드 플랫폼으로 이전했습니다. KG 엔터티 <code>ent_product_unitree_h1</code>(Unitree H1)은 2023년에 출시되어 풀사이즈 고동적 연구 플랫폼으로 포지셔닝되었습니다. <code>ent_product_unitree_g1</code>(Unitree G1)은 2024년에 출시되어 약 16,000 USD의 공격적인 가격으로 개발자 및 교육 시장을 위한 엔트리 레벨 플랫폼이 되었습니다.</p>
+<h3 id="2622">26.2.2 시스템 아키텍처 및 주요 매개변수</h3>
+<p>H1은 Unitree 자체 개발 M107 영구 자석 동기 모터 관절을 사용하며, 무릎 관절의 최대 토크는 360 N·m, 최대 토크 밀도는 약 189 N·m/kg이며, 한때 풀사이즈 휴머노이드 로봇의 3.3 m/s 달리기 속도 기록을 세웠습니다. 기본 버전 팔은 4 DOF이며, 선택적으로 H1-2로 업그레이드하여 7 DOF 팔을 사용할 수 있습니다. G1의 키는 약 127 cm, 무게는 약 35 kg이며, 기본 버전은 23 DOF, EDU 버전은 43 DOF까지 확장 가능하며 선택적으로 Dex3-1 다섯 손가락 다용도 핸드와 NVIDIA Jetson Orin 컴퓨팅 모듈을 장착할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>매개변수</th>
+<th>Unitree H1</th>
+<th>Unitree G1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>키 / 무게</td>
+<td>약 180 cm / 약 47 kg</td>
+<td>약 127 cm / 약 35 kg</td>
+</tr>
+<tr>
+<td>전체 자유도</td>
+<td>26–27 DOF</td>
+<td>23–43 DOF (기본 버전/EDU 버전)</td>
+</tr>
+<tr>
+<td>관절 최대 토크</td>
+<td>무릎 360 N·m (M107 모터)</td>
+<td>90–120 N·m</td>
+</tr>
+<tr>
+<td>이동 속도</td>
+<td>보행 약 1.5 m/s; 달리기 3.3 m/s</td>
+<td>약 2 m/s</td>
+</tr>
+<tr>
+<td>배터리 지속 시간</td>
+<td>약 1.5–2 h (864 Wh)</td>
+<td>약 1.5–2 h (9,000 mAh 퀵 릴리스 배터리)</td>
+</tr>
+<tr>
+<td>컴퓨팅 플랫폼</td>
+<td>Intel Core / Jetson Orin NX (선택 사양)</td>
+<td>8코어 CPU; EDU 버전 선택 가능 Jetson Orin</td>
+</tr>
+<tr>
+<td>개방성</td>
+<td>ROS2 + Unitree SDK</td>
+<td>ROS2 + Python/C++ SDK + OTA</td>
+</tr>
+<tr>
+<td>가격</td>
+<td>약 90,000 USD</td>
+<td>약 16,000 USD부터</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2623">26.2.3 엔지니어링 강점 및 한계</h3>
+<p><strong>강점</strong>은 세 가지입니다. 첫째, 관절 자체 개발로 인한 비용 구조 및 동적 성능: 준직접 구동 방식은 높은 감속비의 하모닉 드라이브 비용과 백래시 문제를 없애고, 낮은 감속비 전동과 결합하여 높은 대역폭의 힘 제어를 가능하게 하며, 이것이 3.3 m/s 달리기 능력의 물리적 기초입니다. 둘째, 제품 매트릭스의 가격 계층화 전략: G1은 전체 기계의 엔트리 레벨을 소비자 수준으로 낮추어 전 세계적으로 출하량이 가장 많은 휴머노이드 개발 플랫폼 중 하나가 되었으며, 대학 연구실 및 임베디드 지능 연구팀에 널리 보급되었습니다. 셋째, 개방형 생태계: ROS2 및 SDK 지원으로 강화 학습 운동 제어, VLA 배포 검증 등 연구의 주요 하드웨어 플랫폼이 되었습니다.</p>
+<p><strong>한계</strong>도 명확합니다: H1 기본 버전 팔은 4 DOF에 불과하여 손목 자세 조정이 필요한 정밀 조작을 수행할 수 없습니다. G1의 페이로드는 약 2 kg에 불과하여 산업용 운반에 적합하지 않습니다. 두 제품의 배터리 지속 시간은 약 1.5–2시간으로 하루 종일 작업 시나리오를 지원하기에는 부족합니다. 따라서 Unitree의 포지셔닝은 명확합니다. <strong>운동 능력 및 개발 플랫폼</strong>이지 종단 간 산업 작업 제품이 아닙니다.</p>
+<hr />
+<h2 id="263-2-tesla-optimus-gen-3">26.3 사례 2: Tesla Optimus Gen 3 – 제조 수직 통합 및 데이터 폐쇄 루프</h2>
+<h3 id="2631">26.3.1 포지셔닝 및 진화</h3>
+<p>Tesla Optimus(KG 엔터티 패밀리 <code>ent_product_tesla_optimus_gen1/gen2/gen3</code>)는 완성차 업체가 전동화, 인식 및 제조 역량을 휴머노이드 로봇으로 이전하는 대표적인 사례입니다. Gen 3의 핵심 업그레이드는 손에 있습니다: 한 손의 자유도가 Gen 2의 11 DOF에서 22 DOF로 증가했으며, 한 손에 약 25개의 액추에이터가 탑재되어 양손 합계 약 50개의 액추에이터가 있습니다. 양산을 위한 완전히 새로운 본체는 Optimus V3라고 불립니다. 2026년 중반 현재 Optimus는 주로 Tesla의 Fremont, Austin 등 공장 내부에서 테스트 및 작업 학습을 진행 중이며 아직 공개 판매되지 않았습니다.</p>
+<h3 id="2632-fsd">26.3.2 시스템 아키텍처: FSD 방법론의 로봇화</h3>
+<p>Optimus의 기술 경로는 "FSD 방법론의 구현화"로 요약할 수 있습니다:</p>
+<ol>
+<li><strong>순수 비전 인식</strong>: 헤드에 여러 대의 Autopilot 카메라가 통합되어 Occupancy Network와 BEV 표현을 통해 환경 모델을 구축하며, LiDAR를 사용하지 않습니다.</li>
+<li><strong>엔드 투 엔드 정책 학습</strong>: 모방 학습 및 강화 학습을 기반으로 전신 운동 및 조작 정책을 훈련하며, 하위 레벨은 WBC(Whole-Body Control)를 통해 균형 및 접촉 안전을 보장합니다.</li>
+<li><strong>고자유도 다용도 핸드</strong>: 22 DOF/손 + 약 50개의 손 액추에이터로, 도구 사용 및 유연한 조립 수준의 조작 능력을 목표로 합니다.</li>
+<li><strong>자체 개발 컴퓨팅</strong>: Tesla 자체 개발 AI5 칩을 탑재하여 로컬 대규모 모델 추론을 지원합니다.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>매개변수</th>
+<th>Optimus Gen 3 / V3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>키 / 무게</td>
+<td>약 173 cm / 약 57 kg (Gen 2 기준, V3는 미확인)</td>
+</tr>
+<tr>
+<td>전체 자유도</td>
+<td>몸통 28+; 손 22×2</td>
+</tr>
+<tr>
+<td>페이로드</td>
+<td>양손 운반 약 20 kg</td>
+</tr>
+<tr>
+<td>보행 속도</td>
+<td>약 1.2 m/s (V3 보도)</td>
+</tr>
+<tr>
+<td>메인 컨트롤 칩</td>
+<td>Tesla AI5</td>
+</tr>
+<tr>
+<td>가격</td>
+<td>목표 20,000–30,000 USD (장기 목표, 공식 판매되지 않음)</td>
+</tr>
+<tr>
+<td>배포 상태</td>
+<td>Tesla 공장 내부 테스트 및 작업 학습</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2633">26.3.3 엔지니어링 강점 및 한계</h3>
+<p><strong>강점</strong>: 첫째는 <strong>제조 수직 통합</strong>입니다 – Tesla는 선형/회전 액추에이터, 배터리 팩 및 전원 관리를 자체 개발하고 차량급 공급망을 재사용하여 20,000–30,000 USD의 장기 가격 목표를 제시할 수 있는 기반을 마련했습니다. 둘째는 <strong>데이터 폐쇄 루프(data flywheel)</strong>입니다 – 로봇이 자체 공장에서 작업을 수행하면서 생성된 데이터가 직접 훈련으로 환류되어 KG 개념 엔터티 <code>ent_concept_data_flywheel</code>이 설명하는 자기 강화 사이클을 형성하며, Tesla는 데이터 획득 비용을 고객에게 지불할 필요가 없습니다. <strong>한계</strong>: 2026년 중반 현재 Optimus는 타사 고객 시나리오에서 지속적인 배포 기록이 없으며, 대부분의 성능 수치는 공식 데모 및 타사 분석에서 비롯되었습니다. 순수 비전 방식은 산업용 강한 조명, 분진 환경에서의 견고성이 아직 검증되어야 합니다. 손의 고자유도 설계는 액추에이터의 소형화 및 신뢰성에 대한 요구가 매우 높으며, 양산 일관성이 주요 위험 요소입니다.</p>
+<hr />
+<h2 id="264-3-figure-02-vla">26.4 사례 3: Figure 02 – VLA 우선 범용 휴머노이드</h2>
+<h3 id="2641">26.4.1 포지셔닝 및 진화</h3>
+<p>Figure AI의 Figure 02(KG 엔터티 <code>ent_product_figure_ai_figure_02</code>, 후속 모델은 <code>ent_product_figure_ai_figure_03</code>)는 2024년 8월에 출시되어 산업 제조 및 물류 시나리오를 대상으로 합니다. 가장 두드러진 아키텍처 특징은 "AI 우선"입니다: 전체 기계는 자체 개발 Helix VLA(Vision-Language-Action) 모델을 중심으로 설계되었으며, 하드웨어를 먼저 만들고 나중에 지능을 추가하는 방식이 아닙니다.</p>
+<h3 id="2642">26.4.2 시스템 아키텍처 및 주요 매개변수</h3>
+<p>Figure 02는 Helix VLA 모델을 탑재하여 200 Hz 주파수로 상체를 제어하며, 수천 가지의 본 적 없는 물체에 대한 제로샷 그리핑을 가능하게 합니다. 듀얼 NVIDIA RTX GPU 모듈은 Figure 01 대비 약 3배의 엣지 추론 성능을 제공합니다. 6개의 RGB 카메라와 다중 모드 센서가 환경 인식을 지원합니다. 전체 기계는 통합 케이블 레이아웃을 채택하고 있으며, 2.25 kWh 배터리가 몸통에 통합되어 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>매개변수</th>
+<th>Figure 02</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>키 / 무게</td>
+<td>약 168 cm / 약 70 kg</td>
+</tr>
+<tr>
+<td>전체 자유도</td>
+<td>28 DOF (손 16 DOF/쌍)</td>
+</tr>
+<tr>
+<td>페이로드</td>
+<td>손 25 kg; 전체 기계 운반 20 kg</td>
+</tr>
+<tr>
+<td>보행 속도</td>
+<td>약 1.2 m/s</td>
+</tr>
+<tr>
+<td>배터리 지속 시간</td>
+<td>약 5 h (2.25 kWh 몸통 배터리)</td>
+</tr>
+<tr>
+<td>컴퓨팅 플랫폼</td>
+<td>듀얼 NVIDIA RTX GPU 모듈</td>
+</tr>
+<tr>
+<td>AI 아키텍처</td>
+<td>Helix VLA (비전-언어-동작)</td>
+</tr>
+<tr>
+<td>배포 기록</td>
+<td>BMW Spartanburg 공장 실제 작업 검증</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2643">26.4.3 엔지니어링 강점 및 한계</h3>
+<p><strong>강점</strong>: Helix VLA는 "범용 조작 정책의 엔드 투 엔드화" 경로를 대표합니다 – 단일 신경망으로 시각 이해, 언어 명령 및 동작 출력을 동시에 처리하며, 200 Hz 상체 제어 주파수는 VLA 추론이 이미 실시간 제어 루프와 결합될 수 있음을 보여주며, 초 단위의 고수준 계획에만 국한되지 않습니다. BMW Spartanburg 공장에서 섀시 조립, 자재 운반 등 인간과 협력하는 작업을 수행한 것은 범용 휴머노이드 로봇이 실제 자동차 생산 라인에 진입한 상징적인 사례 중 하나입니다. <strong>한계</strong>: 단일 스테이션 파일럿 규모는 제한적이며, 작업 유형은 여전히 구조화된 운반 및 조립 보조에 집중되어 있습니다. VLA 모델의 일반화 능력은 대상 공작물 및 작업장 레이아웃 변화에 여전히 민감하며, 신규 고객 배포는 데이터 재수집 및 미세 조정이 필요하여 한계 배포 비용이 아직 "플러그 앤 플레이" 수준으로 낮아지지 않았습니다.</p>
+<h2 id="265-4-boston-dynamics-atlas">26.5 사례 4: Boston Dynamics Atlas(전동 버전) – 유압에서 전동으로의 중하중 플랫폼 전환</h2>
+<h3 id="2651">26.5.1 포지셔닝과 진화</h3>
+<p>Boston Dynamics는 2024년 4월 유압 Atlas를 퇴역시키고 전동 버전 Atlas(KG 엔터티 <code>ent_product_boston_dynamics_atlas_electric</code>, 제품 카드 <code>product_atlas_electric</code>)를 출시하며 중하중 산업 작업을 목표로 삼았습니다. 이러한 전환 자체가 중요한 사례입니다. 유압 방식은 출력 밀도와 충격 저항에서 뛰어나지만, 누유 유지보수, 소음 및 에너지 효율 문제가 있었습니다. 전동 방식은 맞춤형 고출력 전기 구동 액추에이터와 결합하여 동적 성능을 유지하면서 유지보수성과 양산 가능성을 크게 개선했습니다.</p>
+<h3 id="2652">26.5.2 시스템 아키텍처 및 주요 파라미터</h3>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>Atlas(전동 버전)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신장 / 체중</td>
+<td>약 190 cm / 약 90 kg</td>
+</tr>
+<tr>
+<td>전체 자유도</td>
+<td>56 DOF</td>
+</tr>
+<tr>
+<td>부하</td>
+<td>순간 50 kg; 지속 30 kg</td>
+</tr>
+<tr>
+<td>운동 범위</td>
+<td>엉덩이, 허리, 목 360° 연속 회전; 최대 팔 길이 2.3 m</td>
+</tr>
+<tr>
+<td>보행 속도</td>
+<td>약 9 km/h(타사 평가)</td>
+</tr>
+<tr>
+<td>배터리 지속 시간</td>
+<td>약 4 h(일반 작업), 배터리 자동 핫스왑 지원</td>
+</tr>
+<tr>
+<td>보호 등급</td>
+<td>IP67; -20°C ~ 40°C</td>
+</tr>
+<tr>
+<td>소프트웨어 플랫폼</td>
+<td>자체 개발 실시간 제어 스택 + Orbit 차량 관리</td>
+</tr>
+<tr>
+<td>배치 방향</td>
+<td>Hyundai 제조 기지, Google DeepMind 연구 시나리오</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2653">26.5.3 엔지니어링 강점과 한계</h3>
+<p><strong>강점</strong>: 56 DOF와 여러 360° 연속 회전 관절은 독특한 형태학적 설계입니다. 허리와 엉덩이의 전방위 회전 덕분에 Atlas는 "발걸음을 바꾸지 않고 바로 돌아설 수" 있어 좁은 작업 공간에서 재배치 단계를 줄입니다. 이는 유압 시대부터 계승되어 강화된 운동학적 장점입니다. 30 kg 지속 부하는 현재 전동 휴머노이드 중 최고 수준 중 하나이며, IP67 보호 및 넓은 작동 온도 범위와 결합하여 실험실이 아닌 가혹한 산업 환경을 대상으로 합니다. 배터리 자동 핫스왑과 Orbit 차량 관리를 결합하여 거의 연속적인 작업을 목표로 합니다. <strong>한계</strong>: 약 90 kg의 전체 기기 질량은 바닥 하중 및 인간-로봇 협업 안전에 더 높은 요구 사항을 제기합니다. 가격은 공개되지 않았습니다(타사 추정 약 150,000 USD 수준). 높은 동적 성능에 해당하는 제어 복잡성으로 인해 2차 개발 생태계는 Unitree와 같은 개방형 플랫폼보다 훨씬 덜 성숙하여 고객은 주로 제조업체가 제공하는 완전한 솔루션에 의존합니다.</p>
+<hr />
+<h2 id="266-5-agility-robotics-digit">26.6 사례 5: Agility Robotics Digit – 물류 시나리오의 제품화 사례</h2>
+<h3 id="2661">26.6.1 포지셔닝과 진화</h3>
+<p>Agility Robotics의 Digit(KG 엔터티 <code>ent_product_agility_robotics_digit</code> 및 그 반복 <code>ent_product_agility_robotics_digit_next_gen</code>)은 이족 보행 로봇 Cassie의 연구 계보에서 유래했으며, 현재 창고 물류 분야에서 가장 널리 배치된 휴머노이드 로봇 중 하나입니다. "범용"을 추구하는 접근 방식과 달리 Digit는 처음부터 형태학적으로 단일 작업군, 즉 인간 건물 환경에서 토트(tote)를 운반하는 작업에 최적화되어 있습니다.</p>
+<h3 id="2662">26.6.2 작업 지향적 형태학 설계</h3>
+<p>Digit의 설계는 모든 곳에서 작업 중심성을 보여줍니다. 머리와 몸통이 일체화되어 인식-제어 결합 복잡성을 줄입니다. 역방향 무릎 관절(뒤로 굽은 다리) 구성은 다리가 상자를 운반할 때 상자와 간섭하지 않도록 하면서 쪼그려 앉기와 계단 통과를 용이하게 합니다. 인식 시스템은 4개의 Intel RealSense 깊이 카메라 + LiDAR + IMU + 힘 센서를 사용하며, 외부 인프라 없이 자율 주행이 가능합니다.</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>Digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신장 / 체중</td>
+<td>약 175 cm / 약 63.5–65 kg</td>
+</tr>
+<tr>
+<td>부하</td>
+<td>16 kg(지속 운반 35 lb)</td>
+</tr>
+<tr>
+<td>보행 속도</td>
+<td>약 5.4 km/h</td>
+</tr>
+<tr>
+<td>배터리 지속 시간</td>
+<td>약 4 h(일반 작업), 자동 충전 도킹</td>
+</tr>
+<tr>
+<td>인식</td>
+<td>4× Intel RealSense + LiDAR + IMU + 힘 센서</td>
+</tr>
+<tr>
+<td>제조</td>
+<td>RoboFab 공장, 설계 연간 생산 능력 10,000대</td>
+</tr>
+<tr>
+<td>비즈니스 모델</td>
+<td>직접 판매 + RaaS(Robot-as-a-Service)</td>
+</tr>
+<tr>
+<td>고객</td>
+<td>Amazon, GXO, Spanx 등 창고 고객</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2663">26.6.3 엔지니어링 강점과 한계</h3>
+<p><strong>강점</strong>: 첫째는 <strong>상업적 배치 성숙도</strong>입니다. Amazon, GXO 등 타사 고객의 실제 창고 운영 기록은 Digit를 "데모-제품 격차"를 넘은 소수의 사례로 만듭니다. 둘째는 <strong>비즈니스 모델 혁신</strong>입니다. RaaS(KG 개념 엔터티 <code>ent_concept_robot_as_a_service</code>)는 구독을 통해 일시불 구매를 대체하여 고객의 CapEx를 OpEx로 전환하고 유지보수, 소프트웨어 업데이트 및 차량 관리를 패키지화하여 초기 구매 장벽을 낮춥니다. 셋째는 RoboFab 전용 공장이 대표하는 양산 준비입니다. <strong>한계</strong>: 작업 범위가 좁습니다. 상지 조작 능력은 상자 수준 운반에 국한되며, 다섯 손가락 정밀 조작이 불가능합니다. 역방향 무릎 관절 구성은 운반에 유리하지만, 인간의 정방향 무릎 관절과의 운동학적 차이로 인해 의인화된 작업(예: 운전석 조작)에서는 유리하지 않습니다.</p>
+<hr />
+<h2 id="267-6-ubtech-walker-s2">26.7 사례 6: UBTECH Walker S2 – 산업용 휴머노이드의 체계적 납품</h2>
+<h3 id="2671">26.7.1 포지셔닝과 진화</h3>
+<p>UBTECH Walker 시리즈는 중국 제조사 중 산업 납품 기록이 가장 완벽한 휴머노이드 제품 라인입니다. Walker S1(KG 엔터티 <code>ent_product_ubtech_walker_s1</code>, 2024년 10월 출시)은 이미 BYD, Dongfeng Liuzhou Motor, Geely Auto, Audi FAW 등 자동차 공장에서 실습에 투입되었습니다. Walker S2(KG 엔터티 <code>ent_product_ubtech_walker_s2</code>, 제품 카드 <code>product_walker_s2</code>)는 2세대 산업용 모델로, 자동차 제조, 3C 전자제품 및 물류 창고를 대상으로 합니다.</p>
+<h3 id="2672">26.7.2 시스템 아키텍처 및 주요 파라미터</h3>
+<p>Walker S2는 52 DOF를 가지며, 양팔 최대 부하는 15 kg입니다. 4세대 다섯 손가락 정밀 조작 손과 ±162° 허리 회전을 갖추어 상자 개봉, 자재 투입, 품질 검사, 도장 등의 공정을 수행할 수 있습니다. 핵심 엔지니어링 강점은 <strong>자율 배터리 핫스왑 시스템</strong>입니다. 약 3분 내에 배터리를 교체하여 거의 24시간 연속 작업을 지원합니다. 인식 시스템은 양안 입체 시각, 깊이 LiDAR, 6축 힘 센서 및 IMU를 포함합니다. 소프트웨어 스택은 ROSA 2.0 운영 체제와 멀티모달 대형 모델로, 다중 기기 협업 및 MES 시스템 연동을 지원합니다.</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>Walker S1</th>
+<th>Walker S2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신장 / 체중</td>
+<td>172 cm / 76 kg</td>
+<td>약 176 cm / 약 70–75 kg</td>
+</tr>
+<tr>
+<td>전체 자유도</td>
+<td>41 DOF</td>
+<td>52 DOF</td>
+</tr>
+<tr>
+<td>부하</td>
+<td>부하 보행 15 kg</td>
+<td>양팔 최대 15 kg</td>
+</tr>
+<tr>
+<td>정밀 조작 손</td>
+<td>3세대(6阵列 촉각)</td>
+<td>4세대 다섯 손가락 정밀 조작 손</td>
+</tr>
+<tr>
+<td>보행 속도</td>
+<td>미공개</td>
+<td>약 2 m/s</td>
+</tr>
+<tr>
+<td>배터리 지속 시간/교체</td>
+<td>미공개</td>
+<td>약 2 h + 3분 자동 핫스왑</td>
+</tr>
+<tr>
+<td>컴퓨팅 플랫폼</td>
+<td>미공개</td>
+<td>X86 + NVIDIA Jetson Orin</td>
+</tr>
+<tr>
+<td>고객 검증</td>
+<td>BYD, Geely, Audi FAW 등</td>
+<td>NIO, BYD, Airbus 등</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2673">26.7.3 엔지니어링 강점과 한계</h3>
+<p><strong>강점</strong>: Walker S2는 "산업용 휴머노이드의 체계화"를 보여줍니다. 단일 기기 성능뿐만 아니라 배터리 교체 자동화, 다중 기기 협업 스케줄링, MES(제조 실행 시스템) 연동을 전체 제품의 일부로 납품합니다. 이것이 바로 산업 고객이 실제로 구매하는 "업타임(효과적인 작업 시간)"이며, 데모 비디오의 동작 난이도가 아닙니다. 여러 자동차 제조사에서의 실습 기록은 자동차 최종 조립 물류가 현재 산업용 휴머노이드에게 가장 현실적인 진입점임을 시사합니다(27장 참조). <strong>한계</strong>: 약 2시간의 단일 배터리 지속 시간은 배터리 교체 인프라에 대한 의존성을 결정합니다. 단일 기기 비용(타사 추정 68,000–120,000 USD)은 대체 가능한 작업장 인건비에 비해 투자 회수 기간이 여전히 깁니다. 도장과 같은 특수 공정에 필요한 방폭 및 보호 등급 요구 사항은 현재 맞춤형 개조가 필요합니다.</p>
+<h2 id="268-7-fourier-gr-1-gr-3">26.8 사례 7: Fourier GR-1과 GR-3——의료 재활 배경의 시나리오 전환</h2>
+<h3 id="2681">26.8.1 포지셔닝과 진화</h3>
+<p>Fourier Intelligence는 재활 외골격과 의료 로봇으로 시작하여, 휴머노이드 제품 라인에서 명확한 "힘 제어 기술 전환" 경로를 보여준다: GR-1(KG 엔터티 <code>ent_product_fourier_gr1</code>, 2023년 7월 출시)은 국내에서 비교적 일찍 양산 납품된 이족 보행 휴머노이드 플랫폼이다; GR-3(KG 엔터티 <code>ent_product_fourier_gr3</code>, 2025년 8월 출시, 내부 코드명 Care-bot)은 명확히 상호작용 동반 및 건강 관리 시나리오로 방향을 전환했다.</p>
+<h3 id="2682">26.8.2 시스템 아키텍처 및 주요 파라미터</h3>
+<p>GR-1은 자체 개발한 FSA(Fourier Self-Actuator) 통합 액추에이터를 채택하여 모터, 드라이버, 감속기 및 엔코더를 통합했다; 재활 외골격에서 이전된 힘 제어 기술은 접촉 작업에서 순응 제어 능력을 갖추게 하여, 이미 여러 3차 종합병원 재활과에서 보행 훈련 및 재활 보조에 사용되고 있다. GR-3는 다른 설계 철학을 대표한다: 모란디 따뜻한 색조 외관, 소프트 커버링 소재 내부, 55 DOF 및 12 DOF 다기능 손, 이중 배터리 핫스왑 약 3시간 배터리 수명, 그리고 청각, 시각, 촉각을 통합한 "전감각 상호작용 시스템"으로, 목표 시나리오는 독거 노인 동반, 어린이 상호작용 및 재활 보조이다.</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>Fourier GR-1</th>
+<th>Fourier GR-3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>포지셔닝</td>
+<td>범용/재활 휴머노이드 플랫폼</td>
+<td>상호작용 동반(Care-bot)</td>
+</tr>
+<tr>
+<td>신장 / 체중</td>
+<td>165 cm / 55 kg</td>
+<td>165 cm / 71 kg</td>
+</tr>
+<tr>
+<td>전체 자유도</td>
+<td>44 DOF</td>
+<td>55 DOF</td>
+</tr>
+<tr>
+<td>주요 지표</td>
+<td>최대 관절 토크 230 N·m; 양팔 부하 10 kg</td>
+<td>12 DOF 다기능 손; 전감각 상호작용</td>
+</tr>
+<tr>
+<td>보행 속도</td>
+<td>5 km/h</td>
+<td>미공개</td>
+</tr>
+<tr>
+<td>배터리 수명</td>
+<td>미공개</td>
+<td>약 3 h(이중 배터리 핫스왑)</td>
+</tr>
+<tr>
+<td>대표 고객</td>
+<td>3차 종합병원 재활과, 연구</td>
+<td>요양, 가정(사전 판매)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2683">26.8.3 엔지니어링 하이라이트 및 한계</h3>
+<p><strong>하이라이트</strong>: Fourier 사례는 "시나리오 노하우가 기계 전체를 역으로 정의할 수 있다"는 것을 보여준다. 재활 시나리오의 힘 제어 안전성, 접촉 순응성에 대한 까다로운 요구사항은 바로 의료용 제품의 진입 장벽이다; GR-3의 소프트 커버링과 친근한 외관 디자인은 가정 시나리오에서 "사람의 기계에 대한 심리적 수용도"라는 비기술적 제약에 직면한다. <strong>한계</strong>: 재활 및 동반 시나리오는 작업 성공률, 안전 인증(예: ISO 13482 개인 케어 로봇 표준)에 대한 요구사항이 전시 시나리오보다 훨씬 높아, 대규모 배포 진행이 임상 검증 주기에 의해 제약된다; 동반 시나리오의 비즈니스 모델(고객 단가, 재계약율)은 아직 검증되지 않아 장기적인 궤도에 속한다.</p>
+<hr />
+<h2 id="269-8-iron-galbot-g1">26.9 사례 8: 생태계 확장 및 형태 대체——샤오펑 Iron과 Galbot G1</h2>
+<h3 id="2691-iron">26.9.1 샤오펑 Iron: 자동차 기업 생태계 경로</h3>
+<p>샤오펑 Iron(KG 엔터티 <code>ent_product_xpeng_iron</code>, 제품 카드 <code>product_xpeng_iron</code>)은 중국에서 "자동차 기업이 휴머노이드를 만든다"는 경로의 샘플로, Tesla Optimus와 시장 간 대조를 이룬다. 기술 기반은 샤오펑 자동차 시스템을 재사용한다: 자체 개발한 Turing AI 칩(40코어, 3000 TOPS급 연산 능력), 720° 호크아이 비전, Tianji AIOS 및 엔드투엔드 대형 모델 + 강화 학습. 1세대 Iron은 신장 178 cm, 체중 70 kg, 62개의 능동 자유도, 손 15 DOF 및 촉각 피드백 지원을 갖추고 있으며, 이미 광저우 공장 P7 생산 라인에서 나사 조이기, 자재 정리, 생산 양식 확인 등의 실습 훈련을 진행했으며, 2026년 말 대량 생산을 계획하고 있으며, 미래에는 매장 안내 및 상업 서비스를 목표로 한다.</p>
+<p>이 경로의 전략적 논리는 Optimus와 동일하다: 자동차 기업은 모터, 배터리, 센서, 칩 및 총조립 제조의 기성 능력을 보유하고 있으며, 휴머노이드 로봇은 이러한 능력의 "재패키징"이다. 위험도 동일하다: 실제 제3자 고객 데이터가 부족하고, 공장 내 실습 훈련의 작업 범위가 제한적이다.</p>
+<h3 id="2692-galbot-g1">26.9.2 Galbot G1: 바퀴형 섀시의 실용적 대체</h3>
+<p>Galbot G1(KG 엔터티 <code>ent_product_galbot_g1</code>)은 "휴머노이드는 반드시 이족 보행이어야 한다"는 가정에 대한 반성을 대표한다. G1은 360° 전방향 바퀴형 섀시를 채택하여 이족 보행을 대체하고, 몸체 승강(스트로크 65 cm) 및 접이식 다리 구조를 통해 수직 작업 범위를 커버하며, 최대 작업 높이는 약 240 cm, 신장 173 cm, 체중 약 85 kg이다. AI 시스템 AstraBrain은 순수 비전 내비게이션(QR 코드 또는 LiDAR 불필요)을 사용하며, 이미 약국, 편의점, 물류 창고 등 시나리오에서 24시간 상업 배포를 실현했다.</p>
+<p>바퀴형 솔루션의 엔지니어링 이점은 직접 정량화할 수 있다: 이족 보행 로봇은 자세 유지를 위해 지속적으로 에너지를 소비해야 하는 반면, 바퀴형 섀시는 에너지를 상체 조작과 계산에 집중시켜 배터리 수명을 크게 연장한다; 동시에 동적 균형 제어의 실패 모드를 제거하여 본질적인 신뢰성이 더 높다. 대가는 계단, 단차 등 비정형 지형을 통과할 수 없다는 점이다——하지만 약국, 편의점 등 평평한 상업 환경에서는 이러한 제약이 거의 발생하지 않는다.</p>
+<div class="admonition note">
+<p class="admonition-title">설계 시사점: 형태는 작업을 따라야 하며, 그 반대가 아니다</p>
+<p>Galbot G1과 Digit는 반대 방향에서 동일한 원칙을 설명한다: Digit는 좁은 통로와 계단 환경에서 운반 상자를 옮기기 위해 이족 보행을 유지하고, Galbot G1은 평평한 상업 환경에서의 24시간 작업을 위해 이족 보행을 포기한다. "휴머노이드"의 합리성은 형태 자체에서 오는 것이 아니라, <strong>환경이 인간을 위해 설계되었다는 사실</strong>에서 비롯된다; 목표 환경이 우연히 평평하고 규칙적일 때, 바퀴형 휴머노이드 상체가 더 나은 솔루션이다.</p>
+</div>
+<h2 id="2610">26.10 사례 간 횡적 비교</h2>
+<h3 id="26101">26.10.1 주요 파라미터 총괄표</h3>
+<table>
+<thead>
+<tr>
+<th>기종</th>
+<th>신장/체중</th>
+<th>전체 DOF</th>
+<th>적재량</th>
+<th>속도</th>
+<th>배터리 지속시간</th>
+<th>AI/연산</th>
+<th>가격/모드</th>
+<th>배포 성숙도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unitree H1</td>
+<td>180 cm / 47 kg</td>
+<td>26–27</td>
+<td>미공개</td>
+<td>달리기 3.3 m/s</td>
+<td>1.5–2 h</td>
+<td>Jetson Orin NX 선택 사양</td>
+<td>~90,000 USD</td>
+<td>연구 플랫폼 출하 선도</td>
+</tr>
+<tr>
+<td>Unitree G1</td>
+<td>127 cm / 35 kg</td>
+<td>23–43</td>
+<td>~2 kg</td>
+<td>2 m/s</td>
+<td>1.5–2 h</td>
+<td>8코어 CPU + Orin 선택 사양</td>
+<td>~16,000 USD</td>
+<td>개발자 생태계 선도</td>
+</tr>
+<tr>
+<td>Optimus Gen 3</td>
+<td>173 cm / ~57 kg</td>
+<td>28+ + 22×2 손</td>
+<td>~20 kg</td>
+<td>~1.2 m/s</td>
+<td>2–4 h (추정)</td>
+<td>Tesla AI5</td>
+<td>목표 20–30k USD</td>
+<td>내부 공장 전용</td>
+</tr>
+<tr>
+<td>Figure 02</td>
+<td>168 cm / 70 kg</td>
+<td>28 (손 16/쌍)</td>
+<td>손 25 kg</td>
+<td>1.2 m/s</td>
+<td>~5 h</td>
+<td>듀얼 RTX GPU + Helix VLA</td>
+<td>미공개</td>
+<td>BMW 생산 라인 시범</td>
+</tr>
+<tr>
+<td>Atlas 전동 버전</td>
+<td>190 cm / 90 kg</td>
+<td>56</td>
+<td>지속 30 kg</td>
+<td>~9 km/h</td>
+<td>~4 h, 핫스왑</td>
+<td>자체 개발 실시간 스택 + Orbit</td>
+<td>미공개</td>
+<td>Hyundai 초기 배포</td>
+</tr>
+<tr>
+<td>Agility Digit</td>
+<td>175 cm / ~65 kg</td>
+<td>16–28</td>
+<td>16 kg</td>
+<td>5.4 km/h</td>
+<td>~4 h, 자율 충전</td>
+<td>RealSense + LiDAR</td>
+<td>RaaS</td>
+<td>Amazon/GXO 창고</td>
+</tr>
+<tr>
+<td>Walker S2</td>
+<td>176 cm / ~72 kg</td>
+<td>52</td>
+<td>양팔 15 kg</td>
+<td>~2 m/s</td>
+<td>2 h + 3분 배터리 교체</td>
+<td>X86 + Orin + ROSA 2.0</td>
+<td>미공개</td>
+<td>다수 자동차 기업 실습</td>
+</tr>
+<tr>
+<td>Fourier GR-1</td>
+<td>165 cm / 55 kg</td>
+<td>44</td>
+<td>양팔 10 kg</td>
+<td>5 km/h</td>
+<td>미공개</td>
+<td>미공개</td>
+<td>미공개</td>
+<td>3차 병원 재활의학과</td>
+</tr>
+<tr>
+<td>XPeng Iron</td>
+<td>178 cm / 70 kg</td>
+<td>62</td>
+<td>미공개</td>
+<td>미공개</td>
+<td>미공개</td>
+<td>Turing 칩 + Tianji AIOS</td>
+<td>미공개</td>
+<td>자체 공장 실습</td>
+</tr>
+<tr>
+<td>Galbot G1</td>
+<td>173 cm / 85 kg</td>
+<td>미공개</td>
+<td>미공개</td>
+<td>미공개</td>
+<td>긴 (바퀴형)</td>
+<td>AstraBrain 순수 비전</td>
+<td>미공개</td>
+<td>약국/편의점 24h</td>
+</tr>
+</tbody>
+</table>
+<h3 id="26102-2">26.10.2 기술 경로의 2차원 분포</h3>
+<pre class="highlight"><code class="language-mermaid">quadrantChart
+    title 전체 사례의 기술 경로 분포 (정성적)
+    x-axis 시나리오 집중 --&gt; 범용 목표
+    y-axis 연구/시연 지향 --&gt; 배포/제품 지향
+    quadrant-1 범용 제품
+    quadrant-2 시나리오 제품
+    quadrant-3 시나리오 플랫폼
+    quadrant-4 범용 플랫폼
+    Unitree G1: [0.35, 0.35]
+    Unitree H1: [0.55, 0.30]
+    Galbot G1: [0.15, 0.80]
+    Agility Digit: [0.25, 0.85]
+    Fourier GR-3: [0.30, 0.55]
+    Walker S2: [0.45, 0.70]
+    Atlas Electric: [0.55, 0.65]
+    Figure 02: [0.75, 0.70]
+    Optimus Gen3: [0.85, 0.50]
+    XPeng Iron: [0.70, 0.40]</code></pre>
+<h3 id="26103">26.10.3 사례 간 설계 규칙</h3>
+<p>8개 사례를 종합하여 다음과 같은 전체 설계 규칙을 도출할 수 있다:</p>
+<ol>
+<li><strong>배터리 지속시간-질량-배터리 교체의 삼각 트레이드오프</strong>: 배터리 에너지 밀도(3장, 6장)는 "배터리 증대"가 전체 질량과 관절 동력 요구를 동시에 증가시킨다는 것을 결정한다. Atlas와 Walker S2는 자율 핫스왑 배터리 교체를 선택하고, Digit는 자율 충전 접속을 선택하는데, 이는 본질적으로 인프라를 통해 업타임을 확보하는 것이지 무분별하게 배터리 용량을 늘리는 것이 아니다. 작업 평균 전력이 <span class="arithmatex">\(P_{avg}\)</span>이고, 배터리 사용 가능 에너지가 <span class="arithmatex">\(E_{bat}\)</span>이며, 배터리 교체/충전 중단 시간이 <span class="arithmatex">\(t_{int}\)</span>라면, 유효 작업 비율은 다음과 같다:</li>
+</ol>
+<div class="arithmatex">\[
+\eta_{uptime} = \frac{E_{bat}/P_{avg}}{E_{bat}/P_{avg} + t_{int}} = \frac{1}{1 + t_{int}\,P_{avg}/E_{bat}}
+\]</div>
+<p>Walker S2를 예로 들면, 약 2시간 배터리 지속시간과 3분 배터리 교체는 이론적 업타임 상한이 약 97.5%임을 의미하며, 이것이 "24시간 연속 작업에 근접"하는 산술적 본질이다. 아래 Python 계산 예제는 세 가지 에너지 보충 전략 하의 이론적 업타임을 비교한다:</p>
+<pre class="highlight"><code class="language-python"># 전체 업타임 비교: 배터리 용량 확대 vs 자율 충전 vs 핫스왑 배터리 교체
+# 약속: 작업 평균 전력 P_avg (W), 배터리 사용 가능 에너지 E_bat (Wh)
+P_avg = 400.0  # W, 산업 운반 작업의 일반적인 평균 전력 규모
+
+def uptime(E_bat_wh, t_interrupt_min):
+    """이론적 유효 작업 비율 η 반환"""
+    t_run = E_bat_wh / P_avg * 60.0   # 단일 작업 시간 (분)
+    return t_run / (t_run + t_interrupt_min)
+
+strategies = {
+    "기본 배터리 (500 Wh, 자율 충전 60분)": (500.0, 60.0),
+    "배터리 2배 (1000 Wh, 자율 충전 60분)": (1000.0, 60.0),
+    "핫스왑 배터리 교체 (등가 800 Wh, 교체 3분)": (800.0, 3.0),
+}
+for name, (e, t) in strategies.items():
+    print(f"{name}: 단일 작업 {e/P_avg:.2f} h, 업타임 = {uptime(e, t)*100:.1f}%")</code></pre>
+<p>계산 예제의 결론은 직관에 반한다: 배터리 용량을 두 배로 늘리면 업타임이 약 55%에서 약 71%로 향상되지만, 3분 핫스왑 배터리 교체는 직접 96%를 넘을 수 있다. 이는 Atlas, Walker S2 및 GR-3가 배터리 교체 자동화를 사후 액세서리가 아닌 전체 기계 수준 기능으로 설계하는 이유를 설명한다.</p>
+<ol>
+<li>
+<p><strong>자유도가 손에 집중</strong>: 2023년의 전체 기계 경쟁 초점은 다리 동적 능력(H1의 3.3 m/s)에 있었지만, 2025년 이후에는 손(Optimus 22 DOF/손, Figure 16 DOF/쌍, Walker S2 4세대 정교한 손)으로 전환되었다. 이유는 다리가 "걸을 수 있는 것"이 이미 합격선인 반면, 손이 "일할 수 있는 것"이 고객 지불 포인트이기 때문이다. 따라서 손 액추에이터의 소형화는 전체 기계 BOM에서 가장 빠르게 성장하는 부분이 되었다.</p>
+</li>
+<li>
+<p><strong>연산 아키텍처의 양극화</strong>: 연구 플랫폼(G1, H1)은 개발 생태계를 위해 범용 Jetson/x86 조합을 채택한다. 제품화된 전체 기계(Optimus, Figure, XPeng)는 자체 개발 또는 대규모 연산 맞춤형 칩으로 나아가는데, 이는 VLA 모델의 엣지 추론이 메모리 대역폭과 전력 소비에 대한 민감도가 절대 TOPS보다 높기 때문이다.</p>
+</li>
+<li>
+<p><strong>배포 성숙도와 개방성은 음의 상관관계</strong>: 가장 성숙하게 배포된 Digit, Walker S2는 폐쇄형 턴키 솔루션을 제공한다. 개방형 생태계가 가장 좋은 G1/H1은 주로 연구를 지원한다. 이러한 음의 상관관계는 현재 산업의 현실을 반영한다. 실제 시나리오 배포는 제조업체의 깊은 개입이 필요하며, 아직 "범용 플랫폼 + 타사 애플리케이션"의 분업이 형성되지 않았다.</p>
+</li>
+<li>
+<p><strong>시나리오 집중이 범용보다 우선</strong>: Digit(물류 상자), Galbot G1(약국 편의점), GR-3(건강 관리 동반)은 모두 신뢰성 지표를 확보하기 위해 작업 영역을 좁히고 있다. 이는 KG 개념 <code>ent_concept_demo_to_product_gap</code>의 판단과 일치한다: 시연-제품 격차를 극복하는 가장 짧은 경로는 범용성을 높이는 것이 아니라 시나리오를 좁히는 것이다.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2611_1">26.11 장 요약</h2>
+<p>이 장에서는 8개의 전체 기계 시스템 사례를 통해 휴머노이드 로봇 시스템 통합의 주요 기술 경로와 설계 트레이드오프를 보여주었다. Unitree H1/G1은 고동적 전동 관절 자체 개발 + 개방형 생태계의 플랫폼 가치를 입증했다. Tesla Optimus와 Figure 02는 "AI 우선" 경로에서 제조 수직 통합과 VLA 엔드투엔드 아키텍처의 두 가지 형태를 보여주었다. 전동 Atlas와 Walker S2는 중량/산업 배포에서 형태 혁신과 체계적 전달의 방향을 대표한다. Digit와 Fourier GR 시리즈는 시나리오 집중 경로의 상업적 타당성을 검증했다. XPeng Iron과 Galbot G1은 각각 자동차 기업 생태계 전환과 바퀴형 형태 대체라는 두 가지 "비전형적" 경로를 시사한다. 이러한 사례들은 공통된 결론을 가리킨다: 전체 기계 설계의 우수성은 단일 파라미터로 순위를 매길 수 없으며, "목표 시나리오 × 비즈니스 모델 × 기술 기반"의 3차원 좌표계에서 평가해야 한다. 27장에서는 이思路를 따라 휴머노이드 로봇의 응용 시나리오 분석을 체계적으로 전개할 것이다.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/wiki/chapters/chapter-25/">← 이전<span>제 25 장 로봇 평가 체계</span></a>
+      
+      
+      <a class="next" href="/ko/wiki/chapters/chapter-27/">다음 →<span>제 27장 응용 시나리오</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#26">제 26장 완전기 시스템 사례</a><ul>
+<li><a href="#_1">요약</a></li>
+<li><a href="#261">26.1 완전기 시스템 통합: 부품에서 시스템으로</a><ul>
+<li><a href="#2611">26.1.1 완전기는 제약 조건 하의 시스템 트레이드오프 결과물</a></li>
+<li><a href="#2612">26.1.2 완전기 평가의 핵심 지표</a></li>
+<li><a href="#2613">26.1.3 완전기 시스템의 계층 구조 관점</a></li>
+<li><a href="#2614">26.1.4 이 장의 사례 선택 논리</a></li>
+</ul>
+</li>
+<li><a href="#262-1-unitree-h1-g1">26.2 사례 1: Unitree H1 및 G1 – 고동적 전기 구동 플랫폼과 개방형 생태계</a><ul>
+<li><a href="#2621">26.2.1 포지셔닝 및 진화</a></li>
+<li><a href="#2622">26.2.2 시스템 아키텍처 및 주요 매개변수</a></li>
+<li><a href="#2623">26.2.3 엔지니어링 강점 및 한계</a></li>
+</ul>
+</li>
+<li><a href="#263-2-tesla-optimus-gen-3">26.3 사례 2: Tesla Optimus Gen 3 – 제조 수직 통합 및 데이터 폐쇄 루프</a><ul>
+<li><a href="#2631">26.3.1 포지셔닝 및 진화</a></li>
+<li><a href="#2632-fsd">26.3.2 시스템 아키텍처: FSD 방법론의 로봇화</a></li>
+<li><a href="#2633">26.3.3 엔지니어링 강점 및 한계</a></li>
+</ul>
+</li>
+<li><a href="#264-3-figure-02-vla">26.4 사례 3: Figure 02 – VLA 우선 범용 휴머노이드</a><ul>
+<li><a href="#2641">26.4.1 포지셔닝 및 진화</a></li>
+<li><a href="#2642">26.4.2 시스템 아키텍처 및 주요 매개변수</a></li>
+<li><a href="#2643">26.4.3 엔지니어링 강점 및 한계</a></li>
+</ul>
+</li>
+<li><a href="#265-4-boston-dynamics-atlas">26.5 사례 4: Boston Dynamics Atlas(전동 버전) – 유압에서 전동으로의 중하중 플랫폼 전환</a><ul>
+<li><a href="#2651">26.5.1 포지셔닝과 진화</a></li>
+<li><a href="#2652">26.5.2 시스템 아키텍처 및 주요 파라미터</a></li>
+<li><a href="#2653">26.5.3 엔지니어링 강점과 한계</a></li>
+</ul>
+</li>
+<li><a href="#266-5-agility-robotics-digit">26.6 사례 5: Agility Robotics Digit – 물류 시나리오의 제품화 사례</a><ul>
+<li><a href="#2661">26.6.1 포지셔닝과 진화</a></li>
+<li><a href="#2662">26.6.2 작업 지향적 형태학 설계</a></li>
+<li><a href="#2663">26.6.3 엔지니어링 강점과 한계</a></li>
+</ul>
+</li>
+<li><a href="#267-6-ubtech-walker-s2">26.7 사례 6: UBTECH Walker S2 – 산업용 휴머노이드의 체계적 납품</a><ul>
+<li><a href="#2671">26.7.1 포지셔닝과 진화</a></li>
+<li><a href="#2672">26.7.2 시스템 아키텍처 및 주요 파라미터</a></li>
+<li><a href="#2673">26.7.3 엔지니어링 강점과 한계</a></li>
+</ul>
+</li>
+<li><a href="#268-7-fourier-gr-1-gr-3">26.8 사례 7: Fourier GR-1과 GR-3——의료 재활 배경의 시나리오 전환</a><ul>
+<li><a href="#2681">26.8.1 포지셔닝과 진화</a></li>
+<li><a href="#2682">26.8.2 시스템 아키텍처 및 주요 파라미터</a></li>
+<li><a href="#2683">26.8.3 엔지니어링 하이라이트 및 한계</a></li>
+</ul>
+</li>
+<li><a href="#269-8-iron-galbot-g1">26.9 사례 8: 생태계 확장 및 형태 대체——샤오펑 Iron과 Galbot G1</a><ul>
+<li><a href="#2691-iron">26.9.1 샤오펑 Iron: 자동차 기업 생태계 경로</a></li>
+<li><a href="#2692-galbot-g1">26.9.2 Galbot G1: 바퀴형 섀시의 실용적 대체</a></li>
+</ul>
+</li>
+<li><a href="#2610">26.10 사례 간 횡적 비교</a><ul>
+<li><a href="#26101">26.10.1 주요 파라미터 총괄표</a></li>
+<li><a href="#26102-2">26.10.2 기술 경로의 2차원 분포</a></li>
+<li><a href="#26103">26.10.3 사례 간 설계 규칙</a></li>
+</ul>
+</li>
+<li><a href="#2611_1">26.11 장 요약</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

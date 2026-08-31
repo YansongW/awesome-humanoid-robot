@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M12 · 仿真站立与行走：先站稳，再走路 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M12 · 仿真站立与行走：先站稳，再走路</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m12">M12 · 仿真站立与行走：先站稳，再走路</h1>
+<p><strong>全局位置</strong>：紧接 <a href="/roadmap/missions/m11-sim-setup/">M11 仿真工程就绪</a>之后。输入是能加载、接触合理的仿真模型；输出是<strong>两个交付物</strong>：①PD 站立 demo（10 分钟不摔 + 抗推恢复）；②一份书面化的行走技术路线决策（经典 MPC/WBC 还是 RL）——<a href="/roadmap/missions/m13-rl-training/">M13</a> 沿 RL 线深入训练。</p>
+<p><strong>前置条件</strong>：M11 验收全过（基线体检四项全过）；<a href="/roadmap/stage-0-foundations/">Stage 0</a> 的 PD 站立手感还在——本任务步骤 1 就是它的放大版。</p>
+<p>理论背景：<a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>、<a href="/wiki/chapters/chapter-15/">第 15 章 运动生成与 Locomotion</a>、<a href="/wiki/chapters/chapter-23/">第 23 章 仿真与物理引擎</a>；平衡理论阶梯的完整版见<a href="/roadmap/stage-2-biped/">阶段 2 总览</a>第 2 节。</p>
+<h2 id="1pd">步骤 1：PD 站立——行走的入场券</h2>
+<p>【做什么】三件事按序做：</p>
+<ol>
+<li><strong>设计零力矩站立姿态</strong>：各关节目标角（踝/膝/髋补偿）让质心投影落在支撑多边形中心附近——用 M11 的 keyframe 起步，微调至不漂；</li>
+<li><strong>位置 PD 控制</strong>：接 M11 的频率分层（物理 1 kHz、控制 100 Hz 量级）：</li>
+</ol>
+<pre class="highlight"><code class="language-python"># 位置 PD 主循环：目标角跟踪 + 力矩限幅（限幅与 M11 步骤 3 一致）
+tau = kp * (q_des - q) - kd * dq
+tau = np.clip(tau, -tau_max, tau_max)</code></pre>
+<ol>
+<li><strong>判据阶梯逐级验收</strong>：10 s → 60 s → 10 min 无摔倒；然后给躯干一个小冲量扰动，能恢复才算过。增益整定：先 P 后 D——P 加到要抖不抖，再用 D 把抖动压下去；高频抖动先降 P，仍抖就检查仿真步长。</li>
+</ol>
+<p>【为什么】站立是行走的子集：站立回路（踝/髋策略）调通，行走只是把平衡点周期性移出支撑域再捕获（<a href="/roadmap/stage-2-biped/">阶段 2</a> 复刻流程 Step 7 的口径）。PD 站立验证的是<strong>模型正确性</strong>——零位、轴向、质量属性（<a href="/roadmap/playbooks/sim-setup/">仿真手册</a>三级火箭第一级），这步过不去，后面全是白费。</p>
+<p>【你的情况怎么分析】站不住先别急着调参，按"模型错 → 增益错 → 步长错"顺序排查：零力矩悬挂过了吗（M11 步骤 6）？质心投影算过吗？增益减半现象变吗？</p>
+<h2 id="2zmplipm">步骤 2：平衡理论阶梯——ZMP、LIPM 与分层架构</h2>
+<p>【做什么】按顺序啃三级（详见<a href="/roadmap/stage-2-biped/">阶段 2</a> 第 2 节）：</p>
+<ol>
+<li><strong><a href="/entry/ent_method_zero_moment_point/">ZMP（零力矩点）</a></strong>：地面反力等效作用点落在支撑多边形内才不倾倒。在仿真里画出/打印 ZMP 轨迹，观察它何时跑出支撑域、机器人何时倒；</li>
+<li><strong>LIPM 线性倒立摆</strong>：把全身简化成"质心 + 无质量腿"，质心高度恒定假设下有解析解，平地 ZMP 估算：</li>
+</ol>
+<pre class="highlight"><code># 平地 LIPM 近似：x_zmp = x_com - (z_com / g) * x_ddot_com
+x_zmp = x_com - (z_com / 9.81) * x_ddot_com</code></pre>
+<ol>
+<li><strong><a href="/entry/ent_method_gait_planning/">步态规划</a>与分层架构</strong>：给定目标速度，决定摆动脚落点与双支撑/摆动相切换时序（入门经典是 LIPM + 捕获点分析：不迈步会摔到哪儿，就踩到哪儿）；并建立分层认知：<strong>落点规划 → 质心轨迹 → WBC 分配 → 关节力矩</strong>。</li>
+</ol>
+<p>【为什么】ZMP 是双足稳定性最经典的判据，是排查一切摔倒的第一工具；分层架构让你能定位"走歪了"是落点错（决策层）还是力控没跟上（执行层）。不建这个认知直接上 RL，摔了分不清是模型错还是控制错。系统推导见 <a href="/wiki/chapters/chapter-14/">第 14 章</a>与<a href="/wiki/chapters/chapter-15/">第 15 章</a>。</p>
+<p>【你的情况怎么分析】走 RL 路线：概念理解即可（策略自己学落点），但 ZMP 观察练习必做；走 MPC 路线：LIPM 推导必须吃透，它是步骤 3 里 MPC 的预测模型。</p>
+<h2 id="3-openloong-mpcwbc">步骤 3：经典路线实操——跑通 OpenLoong MPC+WBC</h2>
+<p>【做什么】跑通 OpenLoong-Dyn-Control：部署在 <a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a> 上的 MPC+WBC 全身控制框架，自带<strong>行走/跳跃/盲踩障碍</strong>三个示例，已在实物样机实现行走与盲踩障碍，Apache-2.0（<a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a>）：</p>
+<pre class="highlight"><code class="language-bash">git clone https://github.com/loongOpen/OpenLoong-Dyn-Control.git
+# 依赖安装与编译严格按仓库 README（版本随仓库更新变化，按你所选版本核对）</code></pre>
+<p>跑通后<strong>动手改</strong>并记录：MPC 权重、步频、步长，每改一项记录行走质量变化（稳定性/速度跟踪/抖动）。同时理清分工：<a href="/entry/ent_method_model_predictive_control/">MPC（模型预测控制）</a>滚动预测一个时间窗、解带约束优化，管"未来几步怎么踩、怎么用力"；<a href="/entry/ent_method_whole_body_control/">WBC（全身控制）</a>把任务目标按优先级分配到全身关节力矩，管"这一拍各关节出多少力"；<a href="/entry/ent_software_pinocchio/">Pinocchio</a>是高效刚体动力学库，MPC/WBC 算动力学项几乎必用它。</p>
+<p>【为什么】这是零硬件学全尺寸人形经典控制管线的现成教材——青龙整机 185 cm/80 kg+ 个人无法复刻，但控制框架随便学（档案口径）。亲手改参看到行走质量变化，比读十篇论文建立直觉快。</p>
+<p>【你的情况怎么分析】编译跑不起来：严格按仓库 README 核对依赖版本，别自行升级。数学跟不上：先当"可调参的黑盒"用，把"参数→现象"对应关系记下来，推导回头补。</p>
+<h2 id="4rl">步骤 4：RL 路线预演——只证明管线通，不开始训练</h2>
+<p>【做什么】只做一件事：把 M13 要用的官方环境在你机器上跑通——<a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a> 人形示例或 <a href="/entry/ent_paper_202501_mujoco_playground_2025/">MuJoCo Playground</a>，确认 obs/action/reward 数据流能转起来，记录 FPS 与显存/CPU 占用：</p>
+<pre class="highlight"><code class="language-bash"># Isaac Lab 官方人形环境冒烟测试（任务名与脚本路径按你所选版本官方文档核对）
+./isaaclab.sh -p &lt;官方 RL 示例脚本&gt; --task=&lt;人形任务名&gt; --num_envs=16 --headless --max_iterations=2
+# 记录：FPS、nvidia-smi 显存占用、obs/action 维度</code></pre>
+<p><strong>不开始训练</strong>：跑官方基线、换自己模型、调奖励是 <a href="/roadmap/missions/m13-rl-training/">M13</a> 步骤 1–3 的事，本步只做管线彩排，证明"到我这台机器上能跑"。</p>
+<p>【为什么】RL 栈的环境/依赖/版本问题极其耗时，现在暴露，M13 就能直接开训；FPS 与硬件占用数据决定 M13 的并行环境数怎么设（<a href="/entry/ent_algorithm_ppo/">PPO</a> 吃吞吐）。</p>
+<p>【你的情况怎么分析】无 N 卡：MuJoCo Playground/MJX 或 CPU 小规模环境先验证数据流；有卡：Isaac Lab 官方人形任务空跑两 iter 或加载官方预训练 checkpoint 评测，截图数据流日志存档。</p>
+<h2 id="5">步骤 5：路线决策——写下来，别漂移</h2>
+<p>【做什么】对照下表选定主线，写入建造日志（可以两条都试，但写明主次与理由）：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>经典 MPC/WBC</th>
+<th>RL（<a href="/entry/ent_algorithm_ppo/">PPO</a> + 域随机化）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发量</td>
+<td>推导实现量大，但有 OpenLoong 现成框架可学</td>
+<td>训练管线现成，奖励工程是新工作量</td>
+</tr>
+<tr>
+<td>数学门槛</td>
+<td>高（动力学 + 优化）</td>
+<td>中（概念即可上手，调奖励是实验科学）</td>
+</tr>
+<tr>
+<td>硬件需求</td>
+<td>CPU 可跑（MuJoCo）</td>
+<td>N 卡训练更顺（Isaac Lab），CPU 也行但慢一个量级</td>
+</tr>
+<tr>
+<td>可解释性</td>
+<td>高——每个力矩有出处</td>
+<td>低——策略是黑盒</td>
+</tr>
+<tr>
+<td>实机案例</td>
+<td>BRUCE 可变周期 MPC 实现行走/跑步/跳跃（bruce-westwood.md）</td>
+<td>ToddlerBot、Berkeley 均实现零样本 <a href="/entry/ent_method_sim_to_real/">sim-to-real</a> 行走（各档案）</td>
+</tr>
+</tbody>
+</table>
+<p>【为什么】两条路都通，但你的时间只够主线一条；决策写下来，是为了 M13/<a href="/roadmap/missions/m14-sim-to-real/">M14</a> 排查时方向不漂移。<a href="/roadmap/stage-2-biped/">阶段 2</a> 决策树的口径同样适用：第一台的核心 KPI 是"走起来"，不是一步到位。</p>
+<p>【你的情况怎么分析】数学强 + 想吃透控制 → MPC/WBC 主线，OpenLoong 就是教材；ML 背景 + 有 GPU → RL 主线直通 M13；都想试 → 主线 RL、辅线读 OpenLoong 代码理解控制结构（或反过来），但日志里必须写清谁是主线。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] PD 站立 10 min 仿真时间不摔倒，躯干轻推后能恢复（录屏存档）。</li>
+<li>[ ] ZMP 观察记录成文：站立与推扰下 ZMP 是否留在支撑多边形内，有图有结论。</li>
+<li>[ ] OpenLoong 示例或官方 RL 环境至少一个跑通（录屏 + 改参/数据流记录存档）。</li>
+<li>[ ] 路线决策书面化：主线/辅线、理由、预期风险，写入建造日志。</li>
+<li>[ ] 若主线为 RL：M13 所需官方环境确认可跑，FPS 与硬件占用有记录。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PD 站立高频抖动、嗡嗡作响</td>
+<td>P 增益过高 / 仿真步长过大</td>
+<td>P 减半复测；减小步长对比；查是否把阻尼写成了刚度</td>
+</tr>
+<tr>
+<td>站立缓慢向一侧倾倒</td>
+<td>质心投影偏离支撑域中心 / 模型左右不对称</td>
+<td>打印质心投影；回 M10 查镜像关节轴向</td>
+</tr>
+<tr>
+<td>脚底溜冰站不住</td>
+<td>摩擦系数过低或接触太软</td>
+<td>回 M11 步骤 4 调 friction 与 solref</td>
+</tr>
+<tr>
+<td>一推就倒、恢复不了</td>
+<td>D 增益不足 / 踝力矩限幅太死</td>
+<td>加大 D 复测；核对踝执行器限幅（M11 步骤 3）</td>
+</tr>
+<tr>
+<td>直接跳 RL，摔倒分不清谁的错</td>
+<td>跳过平衡理论阶梯</td>
+<td>回步骤 2 做 ZMP 观察；PD 站立验收后再谈 RL</td>
+</tr>
+<tr>
+<td>OpenLoong 示例跑不起来</td>
+<td>依赖版本错配</td>
+<td>严格按仓库 README 核对版本，不自行升级依赖</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m11-sim-setup/">M11 · 仿真环境与模型转换</a></li>
+<li>下一任务：<a href="/roadmap/missions/m13-rl-training/">M13 · 强化学习训练</a></li>
+<li>理论背景：<a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>、<a href="/wiki/chapters/chapter-15/">第 15 章 运动生成与 Locomotion</a>、<a href="/wiki/chapters/chapter-23/">第 23 章 仿真与物理引擎</a>、<a href="/wiki/appendices/appendix-c/">附录 C 软件与仿真平台清单</a></li>
+<li><a href="/roadmap/playbooks/sim-setup/">仿真环境搭建手册</a> · <a href="/roadmap/stage-2-biped/">阶段 2 总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m11-sim-setup/">← 上一页<span>M11 · 仿真环境与模型转换：在数字世界先摔一万次</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m13-rl-training/">下一页 →<span>M13 · 强化学习训练：在仿真里摔一万次，换实机一次站稳</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m12">M12 · 仿真站立与行走：先站稳，再走路</a><ul>
+<li><a href="#1pd">步骤 1：PD 站立——行走的入场券</a></li>
+<li><a href="#2zmplipm">步骤 2：平衡理论阶梯——ZMP、LIPM 与分层架构</a></li>
+<li><a href="#3-openloong-mpcwbc">步骤 3：经典路线实操——跑通 OpenLoong MPC+WBC</a></li>
+<li><a href="#4rl">步骤 4：RL 路线预演——只证明管线通，不开始训练</a></li>
+<li><a href="#5">步骤 5：路线决策——写下来，别漂移</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

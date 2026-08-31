@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>관계 그래프 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" aria-current="page">그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="graph-page">
+  <aside class="graph-sidebar">
+    <div class="sidebar-header">
+      <h1>관계 그래프</h1>
+      <p>2382개 개체와 7103개 관계 탐색</p>
+    </div>
+    <div class="sidebar-section">
+      <h3>개체 검색</h3>
+      <input type="search" id="graph-search" placeholder="개체 검색…" autocomplete="off">
+      <div id="graph-search-results" class="graph-search-results"></div>
+    </div>
+    <div class="sidebar-section">
+      <h3>영역 필터</h3>
+      <div class="domain-filter-list" id="domain-filters">
+        <label><input type="checkbox" value="all" checked> 전체</label>
+        
+        <label><input type="checkbox" value="00_foundations"> 기초 학문</label>
+        
+        <label><input type="checkbox" value="01_raw_materials"> 원자재</label>
+        
+        <label><input type="checkbox" value="02_components"> 부품</label>
+        
+        <label><input type="checkbox" value="03_manufacturing_processes"> 제조 공정</label>
+        
+        <label><input type="checkbox" value="04_assembly_integration_testing"> 조립 통합 테스트</label>
+        
+        <label><input type="checkbox" value="05_mass_production"> 대량 생산</label>
+        
+        <label><input type="checkbox" value="06_design_engineering"> 설계 공학</label>
+        
+        <label><input type="checkbox" value="07_ai_models_algorithms"> AI 모델 및 알고리즘</label>
+        
+        <label><input type="checkbox" value="08_software_middleware"> 소프트웨어 미들웨어</label>
+        
+        <label><input type="checkbox" value="09_data_datasets"> 데이터 및 데이터셋</label>
+        
+        <label><input type="checkbox" value="10_evaluation_benchmarks"> 평가 및 벤치마크</label>
+        
+        <label><input type="checkbox" value="11_applications_markets"> 응용 및 시장</label>
+        
+        <label><input type="checkbox" value="12_policy_regulation_ethics"> 정책 규제 윤리</label>
+        
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <h3>범례</h3>
+      <ul class="graph-legend" id="graph-legend">
+        
+        <li><span class="legend-dot" style="background:#7c8798"></span> 기초 학문</li>
+        
+        <li><span class="legend-dot" style="background:#2a9d8f"></span> 원자재</li>
+        
+        <li><span class="legend-dot" style="background:#5d8c48"></span> 부품</li>
+        
+        <li><span class="legend-dot" style="background:#c38e3c"></span> 제조 공정</li>
+        
+        <li><span class="legend-dot" style="background:#b3592a"></span> 조립 통합 테스트</li>
+        
+        <li><span class="legend-dot" style="background:#a84442"></span> 대량 생산</li>
+        
+        <li><span class="legend-dot" style="background:#7d5a8a"></span> 설계 공학</li>
+        
+        <li><span class="legend-dot" style="background:#3d7ea6"></span> AI 모델 및 알고리즘</li>
+        
+        <li><span class="legend-dot" style="background:#5a8fbd"></span> 소프트웨어 미들웨어</li>
+        
+        <li><span class="legend-dot" style="background:#2d5a7b"></span> 데이터 및 데이터셋</li>
+        
+        <li><span class="legend-dot" style="background:#c9a227"></span> 평가 및 벤치마크</li>
+        
+        <li><span class="legend-dot" style="background:#b34d73"></span> 응용 및 시장</li>
+        
+        <li><span class="legend-dot" style="background:#6b5b4f"></span> 정책 규제 윤리</li>
+        
+      </ul>
+    </div>
+    <div class="sidebar-actions">
+      <button class="btn btn-secondary" id="reset-graph">보기 초기화</button>
+      <button class="btn btn-secondary" id="fit-graph">창에 맞춤</button>
+    </div>
+  </aside>
+  <main class="graph-main">
+    <div class="graph-toolbar">
+      <div class="graph-view-title" id="graph-current-view">클러스터 뷰</div>
+      <div class="graph-view-switcher">
+        <button class="graph-view-btn active" id="view-clusters" type="button" title="클러스터 뷰">
+          <span>클러스터 뷰</span>
+          <small class="view-hint">추천</small>
+        </button>
+        <button class="graph-view-btn" id="view-full" type="button" title="전체 그래프">
+          <span>전체 그래프</span>
+        </button>
+      </div>
+    </div>
+    <div id="full-graph" class="full-cy-graph"></div>
+    <div class="graph-tooltip" id="graph-tooltip"></div>
+    <div id="graph-focus-bar" class="graph-focus-bar hidden">
+      <span id="graph-focus-names" class="graph-focus-names"></span>
+      <button id="graph-focus-back" class="btn btn-secondary" type="button">이전 보기로</button>
+    </div>
+  </main>
+  <button id="graph-ask-toggle" class="graph-ask-toggle" type="button" aria-expanded="false" aria-controls="graph-ask-panel">🤖 AI Q&amp;A</button>
+  <div id="graph-ask-panel" class="graph-ask-panel hidden" role="dialog" aria-label="AI Q&amp;A">
+    <div class="graph-ask-panel-header">
+      <span>AI Q&amp;A</span>
+      <button id="graph-ask-collapse" class="graph-ask-collapse" type="button" aria-label="패널 접기" title="패널 접기">×</button>
+    </div>
+    <div id="graph-ask-root" data-base-path="/ko"></div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+<script>
+window.DOMAIN_LABELS = {
+  
+  "00_foundations": "\uae30\ucd08 \ud559\ubb38",
+  
+  "01_raw_materials": "\uc6d0\uc790\uc7ac",
+  
+  "02_components": "\ubd80\ud488",
+  
+  "03_manufacturing_processes": "\uc81c\uc870 \uacf5\uc815",
+  
+  "04_assembly_integration_testing": "\uc870\ub9bd \ud1b5\ud569 \ud14c\uc2a4\ud2b8",
+  
+  "05_mass_production": "\ub300\ub7c9 \uc0dd\uc0b0",
+  
+  "06_design_engineering": "\uc124\uacc4 \uacf5\ud559",
+  
+  "07_ai_models_algorithms": "AI \ubaa8\ub378 \ubc0f \uc54c\uace0\ub9ac\uc998",
+  
+  "08_software_middleware": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \ubbf8\ub4e4\uc6e8\uc5b4",
+  
+  "09_data_datasets": "\ub370\uc774\ud130 \ubc0f \ub370\uc774\ud130\uc14b",
+  
+  "10_evaluation_benchmarks": "\ud3c9\uac00 \ubc0f \ubca4\uce58\ub9c8\ud06c",
+  
+  "11_applications_markets": "\uc751\uc6a9 \ubc0f \uc2dc\uc7a5",
+  
+  "12_policy_regulation_ethics": "\uc815\ucc45 \uaddc\uc81c \uc724\ub9ac",
+  
+};
+window.GRAPH_TEXT = {
+  loading: "\uadf8\ub798\ud504 \ub85c\ub4dc \uc911\u2026",
+  empty: "\ud45c\uc2dc\ud560 \uad00\uacc4 \ub370\uc774\ud130\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.",
+  noRelations: "\uad00\uacc4 \ub370\uc774\ud130\uac00 \uc5c6\uc2b5\ub2c8\ub2e4",
+  clusterCount: "{name}\\n{count}\uac1c \uac1c\uccb4",
+  clusterPruned: "(\uc0c1\uc704 {count}\uac1c \ud575\uc2ec \uac1c\uccb4 \ud45c\uc2dc)",
+  clusterTotal: "({count})",
+  confirmFull: "\ud604\uc7ac {total}\uac1c \ub178\ub4dc\uac00 \uc788\uc2b5\ub2c8\ub2e4. \uc804\uccb4 \uadf8\ub798\ud504\ub294 \ucd5c\uc0c1\uc704 \uc5f0\uacb0 {count}\uac1c \ub178\ub4dc\ub9cc \ud45c\uc2dc\ud558\uc5ec \ubd80\ub4dc\ub7fd\uac8c \uc720\uc9c0\ud569\ub2c8\ub2e4. \uacc4\uc18d\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?",
+  entityCount: "{count}\uac1c \uac1c\uccb4",
+  backToClusters: "\ud074\ub7ec\uc2a4\ud130 \ubdf0",
+  focusView: "\ud3ec\ucee4\uc2a4 \ubdf0: {names}",
+  focusSep: ", ",
+  focusViewTitle: "\ud3ec\ucee4\uc2a4 \ubdf0",
+  fullViewTitle: "\uc804\uccb4 \uadf8\ub798\ud504",
+};
+window.ASK_TEXT = {
+  empty: "\uc9c0\uc2dd \uadf8\ub798\ud504\uc5d0 \uc9c8\ubb38\ud574 \ubcf4\uc138\uc694. \ub2f5\ubcc0\uc740 \uc0ac\uc774\ud2b8 \ub0b4 \uc9c0\uc2dd \uce74\ub4dc\ub97c \uadfc\uac70\ub85c \uc0dd\uc131\ub418\uba70 \ucc38\uace0 \uac1c\uccb4\uac00 \ud568\uaed8 \ud45c\uc2dc\ub429\ub2c8\ub2e4.",
+  inputPlaceholder: "\uc9c8\ubb38\uc744 \uc785\ub825\ud558\uc138\uc694. \uc608: \ucd09\uac01 \uc13c\uc11c\uc758 \uc8fc\uc694 \uae30\uc220 \ubc29\uc2dd\uc5d0\ub294 \uc5b4\ub5a4 \uac83\uc774 \uc788\ub098\uc694?",
+  send: "\ubcf4\ub0b4\uae30",
+  stop: "\uc911\uc9c0",
+  settings: "\uc124\uc815",
+  settingsTitle: "API \uc124\uc815",
+  provider: "\uc81c\uacf5\uc790",
+  providerCustom: "\uc0ac\uc6a9\uc790 \uc9c0\uc815(OpenAI \ud638\ud658)",
+  baseUrl: "Base URL",
+  model: "\ubaa8\ub378",
+  save: "\uc800\uc7a5",
+  clear: "\uc800\uc7a5\ub41c \uc124\uc815 \uc9c0\uc6b0\uae30",
+  privacyNote: "API key\ub294 \uc774 \ube0c\ub77c\uc6b0\uc800\uc758 localStorage\uc5d0\ub9cc \uc800\uc7a5\ub418\uba70, \uc694\uccad\uc740 \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uc81c\uacf5\uc0ac\ub85c \uc9c1\uc811 \uc804\uc1a1\ub418\uc5b4 \ubcf8 \uc0ac\uc774\ud2b8 \uc11c\ubc84\ub97c \uac70\uce58\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.",
+  sources: "\ucc38\uace0 \uac1c\uccb4",
+  thinking: "\uc0dd\uac01 \uc911\u2026",
+  noKey: "\uba3c\uc800 \u0027\uc124\uc815\u0027\uc5d0\uc11c API key\ub97c \uc785\ub825\ud558\uc138\uc694.",
+  noContext: "\uc9c0\uc2dd \uadf8\ub798\ud504\uc5d0\uc11c \uc9c8\ubb38\uacfc \uad00\ub828\ub41c \uac1c\uccb4\ub97c \ucc3e\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. \ub354 \uad6c\uccb4\uc801\uc778 \ud0a4\uc6cc\ub4dc\ub85c \uc2dc\ub3c4\ud574 \ubcf4\uc138\uc694.",
+  stopped: "(\uc911\uc9c0\ub428)",
+  errorNetwork: "\ub124\ud2b8\uc6cc\ud06c \uc624\ub958: \uc81c\uacf5\uc0ac\uc5d0 \uc5f0\uacb0\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4. \ub124\ud2b8\uc6cc\ud06c \ub610\ub294 Base URL\uc744 \ud655\uc778\ud558\uc138\uc694.",
+  errorAuth: "\uc778\uc99d \uc2e4\ud328: API key\ub97c \ud655\uc778\ud558\uc138\uc694.",
+  errorRate: "\uc694\uccad \uc81c\ud55c(429): \uc81c\uacf5\uc0ac\uc758 \uc18d\ub3c4 \uc81c\ud55c\uc5d0 \uac78\ub838\uc2b5\ub2c8\ub2e4. \uc7a0\uc2dc \ud6c4 \ub2e4\uc2dc \uc2dc\ub3c4\ud558\uc138\uc694.",
+  errorGeneric: "\uc694\uccad\uc5d0 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4. \uc7a0\uc2dc \ud6c4 \ub2e4\uc2dc \uc2dc\ub3c4\ud558\uc138\uc694.",
+  settingsSaved: "\uc800\uc7a5\ub418\uc5c8\uc2b5\ub2c8\ub2e4.",
+  settingsCleared: "\uc9c0\uc6cc\uc84c\uc2b5\ub2c8\ub2e4.",
+  highlightAll: "\uadf8\ub798\ud504\uc5d0\uc11c \ubaa8\ub450 \uac15\uc870",
+  openEntry: "\uac1c\uccb4 \uc5f4\uae30",
+  focusPrefix: "\ud604\uc7ac \uadf8\ub798\ud504 \ud3ec\ucee4\uc2a4: ",
+  clearHistory: "\ub300\ud654 \uc9c0\uc6b0\uae30",
+  stageRetrieving: "\uad00\ub828 \uac1c\uccb4 \ucc3e\ub294 \uc911\u2026",
+  stageLoading: "\uc790\ub8cc \ub85c\ub4dc \uc911\u2026",
+  stageGenerating: "\uc0dd\uc131 \uc911\u2026",
+  backToBottom: "\u2193 \ub9e8 \uc544\ub798\ub85c",
+};
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/ask.js"></script>
+<script>
+(function () {
+  var toggle = document.getElementById('graph-ask-toggle');
+  var panel = document.getElementById('graph-ask-panel');
+  var mounted = false;
+  toggle.addEventListener('click', function () {
+    panel.classList.remove('hidden');
+    toggle.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (!mounted && window.KGAsk) {
+      mounted = true;
+      window.KGAsk.mount(document.getElementById('graph-ask-root'), {
+        mode: 'panel',
+        historyScope: 'graph',
+        strings: window.ASK_TEXT,
+        onSourceClick: function (entryId) {
+          if (window.KGGraph) window.KGGraph.focusEntries([entryId]);
+        },
+        onHighlightAll: function (entryIds) {
+          if (window.KGGraph) window.KGGraph.focusEntries(entryIds);
+        },
+      });
+    }
+    var askInput = panel.querySelector('#graph-ask-root textarea');
+    if (askInput) askInput.focus();
+  });
+  function closePanel() {
+    panel.classList.add('hidden');
+    toggle.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.focus();
+  }
+  document.getElementById('graph-ask-collapse').addEventListener('click', closePanel);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.classList.contains('hidden')) closePanel();
+  });
+
+  // Draggable panel: grab the header to reposition, clamped to the viewport.
+  var header = panel.querySelector('.graph-ask-panel-header');
+  var drag = null;
+  header.addEventListener('mousedown', function (e) {
+    if (e.target.closest('button')) return;
+    var rect = panel.getBoundingClientRect();
+    drag = { dx: e.clientX - rect.left, dy: e.clientY - rect.top };
+    panel.style.right = 'auto';
+    panel.style.bottom = 'auto';
+    panel.style.left = rect.left + 'px';
+    panel.style.top = rect.top + 'px';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (!drag) return;
+    var maxX = window.innerWidth - panel.offsetWidth;
+    var maxY = window.innerHeight - panel.offsetHeight;
+    panel.style.left = Math.max(0, Math.min(e.clientX - drag.dx, maxX)) + 'px';
+    panel.style.top = Math.max(0, Math.min(e.clientY - drag.dy, maxY)) + 'px';
+  });
+  document.addEventListener('mouseup', function () { drag = null; });
+})();
+</script>
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+</body>
+</html>

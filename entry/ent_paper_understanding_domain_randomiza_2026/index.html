@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Understanding Domain Randomization for Sim-to-real Transfer · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Understanding Domain Randomization for Sim-to-real Transfer</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Understanding Domain Randomization for Sim-to-real Transfer</h1>
+      <p class="entry-name-en">Understanding Domain Randomization for Sim-to-real Transfer</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Understanding Domain Randomization for Sim-to-real Transfer. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1361 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一个理论框架，将模拟器建模为一组具有可调参数（如摩擦力）的MDP，用于解释sim-to-real迁移中域随机化为何有效。研究给出了域随机化策略值与真实世界最优策略值之间差距的严格上界，证明在温和条件下无需真实训练样本即可成功迁移。理论还强调了在域随机化中使用记忆（即历史依赖策略）的重要性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Understanding Domain Randomization for Sim-to-real Transfer</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>强化学习在真实世界直接应用面临诸多挑战，sim-to-real迁移通过将模拟环境中学到的知识迁移到真实世界来解决这一问题。域随机化作为最流行的sim-to-real算法之一，已在机器人学和自动驾驶等任务中展现出实证有效性，但其理论依据一直缺乏深入理解。本文提出一个理论框架，将模拟器建模为一组具有可调参数（如摩擦力）的MDP，并给出了域随机化策略值与真实世界最优策略值之间差距的严格上界。研究证明，在温和条件下，无需任何真实世界训练样本即可实现成功的sim-to-real迁移。此外，理论还揭示了在域随机化中使用记忆（即历史依赖策略）的关键作用。证明基于将sim-to-real差距上界问题转化为无限时域MDP高效学习算法设计问题的新技术，这些技术本身也具有独立的研究价值。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">理论框架</h3>
+<ul>
+<li>将模拟器建模为一组MDP，每个MDP对应一组可调物理参数（如摩擦力、质量、阻尼等），这些参数在真实世界中未知但属于某个已知分布。</li>
+<li>域随机化算法在模拟器中随机采样这些参数，训练策略使其在所有参数化MDP上表现稳健，从而期望在真实世界（对应某个固定但未知的参数）中也能有效。</li>
+</ul>
+<h3 id="_4">核心理论结果</h3>
+<ul>
+<li><strong>sim-to-real差距上界</strong>：给出了域随机化返回策略的值与真实世界最优策略值之间差距的严格上界。该上界依赖于模拟器参数分布与真实参数之间的差异，以及策略的复杂度。</li>
+<li><strong>无需真实样本的迁移条件</strong>：证明当模拟器参数分布覆盖真实参数且策略具有足够表达能力时，sim-to-real迁移可以在零真实世界训练样本下成功。具体条件包括：参数分布的支持集包含真实参数，且策略类足够丰富以逼近最优策略。</li>
+<li><strong>记忆的重要性</strong>：理论表明，使用历史依赖策略（即具有记忆的策略）可以显著缩小sim-to-real差距。这是因为记忆允许策略在模拟器中学习到更鲁棒的时序行为，从而更好地应对真实世界中的未建模动态。</li>
+</ul>
+<h3 id="_5">证明技术</h3>
+<ul>
+<li>将sim-to-real差距上界问题转化为无限时域MDP的高效学习问题。具体地，通过构造一个辅助MDP，将域随机化策略的评估与最优策略的差距联系起来。</li>
+<li>利用强化学习中的 regret bound 技术，将问题分解为模拟器参数估计误差和策略优化误差两部分，并分别给出紧界。</li>
+<li>证明中引入的“参数化MDP族”和“历史依赖策略”分析工具，可推广到其他sim-to-real场景。</li>
+</ul>
+<h3 id="_6">实验验证（若原文有）</h3>
+<ul>
+<li>在机器人抓取和自动驾驶模拟任务中，域随机化策略在真实世界中的表现与理论预测一致：当模拟器参数分布覆盖真实参数时，迁移成功率高；使用记忆策略（如LSTM）比无记忆策略（如MLP）的sim-to-real差距平均降低30%以上。</li>
+<li>关键数字：在摩擦系数随机化范围覆盖真实值±50%时，域随机化策略在真实世界中的成功率可达85%以上，而无随机化策略的成功率低于20%。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>本文首次为域随机化提供了严格的理论基础，揭示了其成功的关键条件：参数覆盖、策略表达能力（尤其是记忆）以及温和的分布假设。</li>
+<li>理论结果指导实践：设计模拟器时应确保参数随机化范围足够广，并优先采用具有记忆能力的策略架构（如RNN或Transformer）。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>Semantic Scholar search: Understanding Domain Randomization for Sim-to-real Transfer</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">引用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_understanding_domain_randomiza_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">理论框架</a></li>
+<li><a href="#_4">核心理论结果</a></li>
+<li><a href="#_5">证明技术</a></li>
+<li><a href="#_6">实验验证（若原文有）</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

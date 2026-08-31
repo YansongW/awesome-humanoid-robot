@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRIME: Physically-consistent Robotic Inertial and Motion Estimation for Legged and Humanoid Robots · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PRIME: Physically-consistent Robotic Inertial and Motion Estimation for Legged and Humanoid Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>PRIME: Physically-consistent Robotic Inertial and Motion Estimation for Legged and Humanoid Robots</h1>
+      <p class="entry-name-en">PRIME: Physically-consistent Robotic Inertial and Motion Estimation for Legged and Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P143. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PRIME 是一个面向腿式与类人机器人的离线全信息估计框架，将运动学测量与执行器命令细化为动力学一致的轨迹，同时联合估计摩擦接触力与物理一致的惯性参数。其核心贡献在于将平滑接触动力学嵌入最大后验（MAP）优化，通过解析梯度实现高效求解，并在四足与人形平台验证了惯性辨识与接触重建的精度提升。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2605.17681" target="_blank" rel="noopener">arXiv:2605.17681 PRIME: Physically-consistent Robotic Inertial and Motion Estimation for Legged a</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有感知管线（EKF 或 mocap）只输出运动学，接触力、接触时间与惯性参数不可观测，导致重建轨迹违反刚体动力学，尤其在接触丰富的运动中。这种不一致直接阻碍下游规划、控制以及数据驱动方法（如模仿学习、VLA 模型）在真实世界的部署。PRIME 改变的不是“多估一个量”，而是把估计问题从纯运动学拟合重构为动力学一致的全信息估计——这意味着接触序列不再需要预先指定，惯性参数不再依赖人工标定，而是从数据中与运动轨迹联合推断。</p>
+<p>另一个关键改变在于接触建模的范式：传统接触约束估计器将接触检测与估计解耦（通过高度阈值或压力传感器预分配接触标志），PRIME 则用平滑互补约束将接触激活/脱离内化为优化变量。这消除了解耦带来的误差累积，使接触重建在滚动、部分支撑等复杂足部状态下的精度显著提升（仿真中相对力误差从 52.693% 降至 10.494%，由表内数值计算）。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题形式化</h3>
+<p>将运动与参数估计构建为 MAP 问题，状态轨迹 x_{0:T} 与惯性参数 θ 联合优化，目标函数包含测量残差（编码器、mocap、扭矩）与参数正则化项，受离散动力学约束。</p>
+<h3 id="_4">平滑接触动力学</h3>
+<ul>
+<li>采用 log-barrier 松弛逼近二阶锥互补约束，配合 Anitescu 风格摩擦锥，形成无约束凸优化子问题。</li>
+<li>关键参数 κ 控制平滑程度：κ → ∞ 恢复硬接触，中等 κ 引入“远距离力”效应，提高对接触切换与测量噪声的鲁棒性。默认 κ = 500。</li>
+<li>接触冲量（法向与切向）从一阶最优性条件恢复，无需直接力测量。</li>
+</ul>
+<h3 id="_5">解析梯度推导</h3>
+<ul>
+<li>平滑接触动力学的最优性条件 g(v⁺, θ) = 0，通过隐函数定理得到灵敏度 ∂v⁺/∂θ = −(∂g/∂v⁺)⁻¹(∂g/∂θ)。</li>
+<li>该解析梯度使 PFIE 求解无需数值微分，是计算效率的关键。</li>
+</ul>
+<h3 id="_6">惯性参数化</h3>
+<ul>
+<li>采用 Log-Cholesky 参数化，从参数 θ 到标准惯性参数 π 的光滑映射，闭式雅可比保证正定性，无需显式约束。</li>
+</ul>
+<h3 id="_7">优化求解</h3>
+<ul>
+<li>整体 PFIE 用可行性驱动微分动态规划（FDDP）求解，允许从动力学不可行轨迹初始化，逐步将缺陷驱动至零。</li>
+<li>动力学离散化采用半隐式欧拉；接触子问题用定制牛顿求解器，Armijo 回溯线搜索确定步长 α，DDP 反向传递加正则化 η 保证 Hessian 正定。</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li><strong>接触动力学与估计的端到端联合</strong>：将接触序列、接触力与惯性参数统一为优化变量，而非预分配或阈值化。这是对“先检测后估计”范式的根本性替代，直接消除了解耦误差。</li>
+<li><strong>解析梯度驱动的可微接触动力学</strong>：通过隐函数定理获得闭式灵敏度，使 PFIE 求解在 1000 步时域内仅需约 200 s（Intel Core i9-13900），单步 rollout 带微分平均 80 μs，达到实用水平。</li>
+<li><strong>Log-Cholesky 惯性参数化的物理一致性</strong>：无需显式正定约束即可保证惯性矩阵物理可行，且闭式雅可比简化了优化中的导数计算——这是工程实现中容易被忽视但至关重要的设计。</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="_10">仿真与硬件设置</h3>
+<ul>
+<li>Hopper：2.5 s 时域，0.025 s 离散化，验证从有偏初始惯性模型出发的辨识能力。</li>
+<li>Go2 四足：10 s 时域，0.01 s 离散化（1000 样本），仿真含 3 kg 载荷与质心下移 0.1 m 两试验；硬件挂 2.3 kg 杠铃片。</li>
+<li>G1 人形：15 s 时域，0.01 s 离散化（1500 样本），采集行走、跑步、跳舞；跳舞序列用 Bertec-4060 力板（1000 Hz，±0.4 N 分辨率）验证接触力。</li>
+</ul>
+<h3 id="_11">关键结果</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>PRIME</th>
+<th>Baseline</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1 仿真 RMSE_F [N]</td>
+<td>19.833</td>
+<td>73.103</td>
+<td>−72.9%（由表内数值计算）</td>
+</tr>
+<tr>
+<td>G1 仿真相对误差_F [%]</td>
+<td>10.494</td>
+<td>52.693</td>
+<td>−80.1%（由表内数值计算）</td>
+</tr>
+<tr>
+<td>G1 硬件 RMSE_F [N]（有 ID）</td>
+<td>24.486</td>
+<td>26.141（无 ID）</td>
+<td>−6.3%（由表内数值计算）</td>
+</tr>
+<tr>
+<td>G1 硬件 FIE 成本 [×10³]</td>
+<td>1.016</td>
+<td>1.880</td>
+<td>−46.0%（由表内数值计算）</td>
+</tr>
+</tbody>
+</table>
+<p>惯性辨识方面，Go2 硬件估计附加质量约 4.8 kg（实际 4.6 kg），G1 估计附加质量约 3.4 kg（实际 2.914 kg，含电池 2.496 kg），质心位置与加载方向一致。G1 总质量估计 38.029 kg 与尺度测量吻合，名义模型 35.115 kg 偏差 2.914 kg。</p>
+<h2 id="_12">边界与局限</h2>
+<ul>
+<li><strong>离线非实时</strong>：PRIME 为全信息估计，G1 15 s 时域求解约 400 s，无法在线部署；移动时域估计（MHE）与到达成本设计未实现。</li>
+<li><strong>Anitescu 松弛的伪物理行为</strong>：切向滑动可能伴随非零法向分离（虚假抬离），作者认为在接触牢固且短暂的场景中可接受，但极端滑动场景下可能失真。</li>
+<li><strong>可观测性未分析</strong>：未研究有限感官信息下运动、接触力与惯性参数的可辨识性，以及任务结构对估计性能的影响。</li>
+<li><strong>上肢未建模</strong>：G1 三指手未纳入模型，剩余力矩不匹配集中在上肢关节。</li>
+<li><strong>操作任务未验证</strong>：公式可扩展至操作，但无实验证据。</li>
+</ul>
+<h2 id="_13">工程启示</h2>
+<p>复现 PRIME 时，最先核对的是 κ 参数与测量权重。默认 κ = 500 在硬件噪声大时需从较小值初始化并逐步增大，否则平滑伪影可能主导估计。权重设置中，浮基线速度由 mocap 位置微分获得，噪声敏感故权重较低（1×10¹）；mocap 方向测量因校准偏差与标记遮挡质量下降，IMU 角速度更鲁棒（权重 1.5×10²）——这两处权重若不调，硬件实验会直接发散。</p>
+<p>最容易踩坑的是接触模型选择：G1 平面足必须用四角点接触近似，点接触模型虽框架不变但会损失精度。惯性参数正则化权重（4×10⁻²）不可省，否则 Log-Cholesky 参数化可能收敛到物理不合理的局部最优。对下游团队，建议先跑通 Go2 仿真试验（含 3 kg 载荷与质心下移 0.1 m）验证辨识方向正确，再上硬件；硬件实验需确保 mocap 与力板时间同步，否则接触力 RMSE 会显著恶化。</p>
+<h2 id="_14">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2605.17681</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <span class="rel-missing">ent_paper_kalman_filter_kf</span>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_prime_physically_consistent_robotic_iner_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题形式化</a></li>
+<li><a href="#_4">平滑接触动力学</a></li>
+<li><a href="#_5">解析梯度推导</a></li>
+<li><a href="#_6">惯性参数化</a></li>
+<li><a href="#_7">优化求解</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#_10">仿真与硬件设置</a></li>
+<li><a href="#_11">关键结果</a></li>
+</ul>
+</li>
+<li><a href="#_12">边界与局限</a></li>
+<li><a href="#_13">工程启示</a></li>
+<li><a href="#_14">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

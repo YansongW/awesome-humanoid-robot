@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>가치 기반 재고 관리 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">가치 기반 재고 관리</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>가치 기반 재고 관리</h1>
+      <p class="entry-name-en">Value-Based Inventory Management</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">대량 생산</span><span class="tag">제조 공정</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1301.3826v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko body retranslated from zh deep-read (608 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 기업의 잔여현금흐름(FCFF)과 경제적부가가치(EVA)를 기반으로 한 가치 중심 목표함수를 사용하여 EOQ 및 POQ 재고 모형을 재구성하고 자본비용과 세율을 반영한 VBEOQ 및 VBPOQ 공식을 도출한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1301.3826" target="_blank" rel="noopener">Value-Based Inventory Management</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전통적 재고 관리 모델은 장부 이익 극대화를 목표로 하지만, 기업 가치 극대화라는 근본적인 재무 목표에서 벗어날 수 있습니다. 본 연구는 EOQ 및 POQ 모델을 재검토하고, 이익 중심 가정을 가치 기반 관점으로 대체합니다. 핵심 혁신은 할인된 자유 현금 흐름(FCFF)과 경제적 부가가치(EVA)를 목표 함수로 사용하여 VBEOQ와 VBPOQ라는 두 가지 새로운 공식을 도출한 것입니다. 이 공식들은 자본 비용과 세금이 재고 결정에 미치는 영향을 명시적으로 고려하여, 재고 관리가 기업 가치 제고에 직접적으로 기여하도록 합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">연구 배경 및 문제</h3>
+<ul>
+<li>기업의 기본 재무 목표는 가치 극대화이며, 재고 관리 시스템은 이 목표를 지원해야 함</li>
+<li>기존 재무 관리 문헌의 자산 모델은 주로 장부 이익 극대화 가정에 기반하여 가치 극대화 목표에서 벗어날 수 있음</li>
+</ul>
+<h3 id="_4">방법 혁신</h3>
+<ul>
+<li>EOQ(경제적 주문량) 및 POQ(정기 주문량) 모델을 가치 중심 프레임워크로 재구성</li>
+<li>목표 함수를 이익 극대화에서 할인된 자유 현금 흐름(FCFF) 및 경제적 부가가치(EVA) 극대화로 변경</li>
+<li>VBEOQ(가치 기반 EOQ) 및 VBPOQ(가치 기반 POQ) 공식 도출</li>
+</ul>
+<h3 id="_5">핵심 매개변수</h3>
+<ul>
+<li>자본 비용: 재고 보유 비용의 중요한 구성 요소로 모델에 포함</li>
+<li>세금 영향: 현금 흐름 할인 과정에서 세금 방패 효과 고려</li>
+<li>공식 구조: VBEOQ 및 VBPOQ는 전통적 EOQ/POQ에 자본 비용 및 세금 조정 항목을 추가</li>
+</ul>
+<h3 id="_6">결론</h3>
+<ul>
+<li>가치 중심 재고 모델은 이익 중심 모델보다 기업의 장기 재무 목표에 더 부합함</li>
+<li>새로운 공식은 관리자가 재고 결정을 자본 예산 및 세무 계획과 통합할 수 있는 이론적 도구를 제공</li>
+<li>이 모델은 자본 집약적 산업 및 높은 세율 환경에서의 재고 최적화에 적합함</li>
+</ul>
+    </section>
+    
+
+    
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">연구 배경 및 문제</a></li>
+<li><a href="#_4">방법 혁신</a></li>
+<li><a href="#_5">핵심 매개변수</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

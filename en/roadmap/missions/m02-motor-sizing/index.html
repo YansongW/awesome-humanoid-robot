@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M02 · Motor Calculation and Selection: From Specification Table to Specific Model · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M02 · Motor Calculation and Selection: From Specification Table to Specific Model</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m02-motor-calculation-and-selection-from-specification-table-to-specific-model">M02 · Motor Calculation and Selection: From Specification Table to Specific Model</h1>
+<p><strong>Global Position</strong>: The second task of Stage 1, following <a href="/en/roadmap/missions/m01-scenario-to-specs/">M01 · Mathematical Modeling of Requirements</a> with its specification table, and preceding <a href="/en/roadmap/missions/m03-reducer-design/">M03 · Reducer Design and Calculation</a>. The input is the four columns of <strong>peak torque / rated speed / mass budget / cost ceiling</strong> for each joint from the specification table; the output is <strong>1–2 candidate motor models + a key parameter table</strong> (Kt, KV, number of pole pairs, phase resistance, rated/peak current, mass) for each joint—M03 uses this to calculate the reduction ratio, and M04 uses it to select the driver board and wire gauge.</p>
+<p><strong>Prerequisites</strong>: The M01 specification table is finalized; unit conversion and solving linear equations in one variable are required (if insufficient, review <a href="/en/roadmap/stage-0-foundations/">Stage 0 Foundation Building</a>). This task can be completed entirely by hand calculation or spreadsheet; no simulation software is needed.</p>
+<p>Theoretical background: <a href="/entry/ent_component_bldc_motor/">Brushless DC Motor</a>, <a href="/entry/ent_component_frameless_torque_motor_2024/">Frameless Torque Motor</a>, <a href="/entry/ent_comp_servo_motor/">High-Performance Servo Motor</a> cards, <a href="/en/wiki/chapters/chapter-04/">Chapter 4 Actuators</a> and <a href="/en/wiki/chapters/chapter-06/">Chapter 6 Calculation, Power Supply, and Thermal Management</a>; the selection decision framework is in the <a href="/en/roadmap/playbooks/actuator-selection/">Actuator Selection Handbook</a>.</p>
+<h2 id="step-1-translate-the-specification-table-into-motor-language-using-three-motor-constants">Step 1: Translate the Specification Table into Motor Language Using Three Motor Constants</h2>
+<p>【What to Do】Start the selection with three constants: <strong>Kt</strong> (torque constant, N·m/A—how much torque per ampere of current), <strong>KV</strong> (speed constant, rpm/V—how fast the motor spins unloaded per volt), and <strong>number of pole pairs</strong> (affects commutation and low-speed characteristics). Datasheets often only provide KV; Kt is converted using energy conservation (the two are reciprocals in SI units):</p>
+<pre class="highlight"><code>Kt (N·m/A) ≈ 60 / (2π × KV (rpm/V))</code></pre>
+<p>Then, derive the motor-side phase current from the joint peak torque in M01: <code>τ_motor = τ_joint ÷ i ÷ η</code> (i is the preselected reduction ratio, η is the transmission efficiency), <code>I = τ_motor ÷ Kt</code>.</p>
+<p>Complete example (using the 8.3 N·m joint from M01, preselected i = 9, η = 0.8; motor candidate is the Berkeley 6512 equivalent MAD M6C12 150KV—the model name indicates the KV value, $129, source <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">EECS-2025-207 Technical Report BOM</a>):</p>
+<pre class="highlight"><code>Kt      = 60 / (2π × 150) ≈ 0.064 N·m/A
+τ_motor = 8.3 / (9 × 0.8) ≈ 1.15 N·m
+I_peak  = 1.15 / 0.064    ≈ 18 A    ← Peak phase current, used by M04 to select the driver board</code></pre>
+<p>【Why】Kt and KV are two sides of the same electromagnetic design: more winding turns → higher Kt, lower KV. All torque requirements are ultimately converted to current, and <strong>current is the common source of three issues: heating, driver board current limiting, and wire gauge</strong>. Hobbyist motors typically only specify KV, not Kt; without conversion, they cannot be compared horizontally with industrial motors.</p>
+<p>【How to Analyze Your Situation】Manufacturers provide Kt in various units (N·m/A, g·cm/A, oz·in/A); always convert to N·m/A for comparison—1 N·m/A ≈ 10,197 g·cm/A. A unit error of one order of magnitude invalidates all subsequent calculations. Exclude any motor whose datasheet does not provide KV/Kt: without these two numbers, it cannot enter any engineering calculation.</p>
+<h2 id="step-2-kv-and-bus-voltageis-the-speed-sufficient-and-can-the-current-be-handled">Step 2: KV and Bus Voltage—Is the Speed Sufficient, and Can the Current Be Handled?</h2>
+<p>【What to Do】Perform KV checks in two directions to bracket the candidate motor within an interval:</p>
+<ol>
+<li><strong>KV Lower Limit (Speed Side)</strong>: Motor required speed = M01 output speed × i; no-load speed ≈ KV × V. Check with <code>KV × V_min × 0.7 ≥ n_motor</code> (0.7 is an engineering recommended value for the speed reduction factor under load).</li>
+<li><strong>KV Upper Limit (Current Side)</strong>: Higher KV means lower Kt, requiring more current for the same torque. Derive from the current budget: <code>Kt_min = τ_motor ÷ I_budget</code>, then convert <code>KV_max = 60 / (2π × Kt_min)</code>. I_budget is the smaller of the driver board current limit and the thermal calculation (here, 20 A is used as an example assumption; M04 will verify with the actual driver board).</li>
+</ol>
+<p>Example continues from Step 1 (bus voltage: 6S LiPo: nominal 22.2 V, approximately 20 V at end of discharge):</p>
+<pre class="highlight"><code>n_motor = 30 rpm × 9 = 270 rpm
+KV lower limit = 270 / (20 × 0.7) ≈ 19 rpm/V
+Kt_min  = 1.15 / 20        ≈ 0.058 N·m/A → KV upper limit ≈ 60 / (2π × 0.058) ≈ 165 rpm/V
+Candidate 150 KV ∈ [19, 165] ✓; no-load speed 150 × 22.2 = 3330 rpm ≫ 270 rpm</code></pre>
+<p>Next, determine the bus voltage level: LiPo is categorized by series count: 3S (11.1 V) / 6S (22.2 V) / 12S (44.4 V). The entire Berkeley Humanoid Lite uses a 6S 4000 mAh LiPo, with a runtime of about 30 minutes (<a href="https://arxiv.org/html/2504.17249v1">Berkeley Humanoid Lite paper</a>)—the 22 V level is the sweet spot for desktop humanoids: at the same power, current is half that of 3S, reducing line loss and heating, while not imposing the higher voltage withstand and safety requirements of 12S on the driver board.</p>
+<p>【Why】The KV lower limit ensures "it can reach the required speed," and the KV upper limit ensures "it won't burn out"—the essence of the upper limit is the Kt lower limit, and current is a hard constraint: hitting the driver board current limit causes torque loss, and exceeding the thermal limit burns the windings. The voltage level simultaneously determines the speed ceiling and the overall current level, serving as an implicit independent variable in motor selection.</p>
+<p>【How to Analyze Your Situation】If the KV lower limit is not met: increase voltage, switch to a higher KV motor, or reduce the reduction ratio (in coordination with M03). If the KV upper limit is not met (common for high-torque joints): switch to a lower KV motor or increase the reduction ratio. If the margin exceeds 5 times, do not be complacent—the unused speed is obtained at the cost of current; return to M03 to rebalance.</p>
+<h2 id="step-3-power-and-heatcontinuous-rating-depends-on-rms-not-peak">Step 3: Power and Heat—Continuous Rating Depends on RMS, Not Peak</h2>
+<p>【What to Do】Convert the duty cycle from M01 into RMS (root mean square) torque, then calculate the RMS current and copper loss heating. Copper loss I²R is the main heat source in a motor; <strong>continuous output capability is determined by RMS current, while peak torque can only be sustained for seconds</strong>. Example continues (RMS/peak ratio taken as 0.4, an engineering recommendation for a 50% duty cycle; phase resistance R is taken as 0.1 Ω, which is only an example magnitude; refer to the datasheet or confirm with the supplier):</p>
+<pre class="highlight"><code>τ_rms     = 0.4 × 8.3               ≈ 3.3 N·m
+I_rms     = 3.3 / (9 × 0.8 × 0.064) ≈ 7.2 A
+P_cu,rms  = 7.2² × 0.1              ≈ 5.2 W   ← Continuous heating
+P_cu,peak = 18²  × 0.1              ≈ 32 W    ← Only allowed for seconds
+P_mech    = 8.3 N·m × 3.14 rad/s    ≈ 26 W    ← Peak mechanical power at the output</code></pre>
+<p>Reference anchor: Maxon EC-i 40 rated torque 224 mN·m, stall torque 2080 mN·m, a difference of nearly 10 times (<a href="/entry/ent_company_maxon_group_2024/">Maxon</a> card, cited from <a href="/en/roadmap/playbooks/actuator-selection/">Actuator Selection Handbook</a>)—no matter how impressive the stall torque figure, continuous operation must be selected based on the rated value.</p>
+<p>【Why】Motor failure is almost always due to thermal failure: winding insulation has a temperature limit, and heat accumulates with I²R × time. The constraint for peak values is the demagnetization current and the driver board current limit (seconds), while the constraint for continuous operation is heat dissipation (minutes). Both must be calculated and margined separately. For system-level thermal design, see <a href="/en/wiki/chapters/chapter-06/">Chapter 6 Calculation, Power Supply, and Thermal Management</a>.</p>
+<p>【How to Analyze Your Situation】If the RMS/peak ratio is uncertain, estimate it as 0.4; the M07 bench temperature rise test will verify the actual value. The "rated current" in the datasheet typically corresponds to room temperature + free air + a metal mounting surface; derating is required for enclosure with 3D-printed parts and summer ambient conditions—for rated values without specified cooling conditions, confirm with the supplier.</p>
+<h2 id="step-4-topology-and-form-factor-why-joint-motors-are-shaped-like-pancakes">Step 4: Topology and Form Factor – Why Joint Motors Are Shaped Like "Pancakes"</h2>
+<p>【What to Do】 First understand the physics behind the form factor, then choose among the three types. The electromagnetic root of torque is given by the <a href="/entry/ent_component_frameless_torque_motor_2024/">Frameless Torque Motor</a> card: τ = 2πr²l·B_gap·J_s — <strong>Torque grows with the square of the air gap radius</strong>, so joint motors are made as large-diameter, short-axial-length outer-rotor "pancakes". The number of pole pairs is the second lever: more pole pairs → higher electrical frequency at the same mechanical speed, lower KV, higher Kt, which perfectly suits the joint's need for "low speed, high torque"; the cost is increased commutation frequency and iron losses, placing higher demands on the driver board (foreshadowing M04).</p>
+<table>
+<thead>
+<tr>
+<th>Form Factor</th>
+<th>Representative Model/Solution</th>
+<th>Torque Density</th>
+<th>Integration</th>
+<th>Cost</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hobbyist Outer Rotor <a href="/entry/ent_component_bldc_motor/">BLDC</a></td>
+<td>MAD M6C12 150KV, $129 (Berkeley Archive)</td>
+<td>High</td>
+<td>Low (gearing/driver/encoder all self-sourced)</td>
+<td>Low</td>
+<td>Self-developed QDD, tight budget</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_frameless_torque_motor_2024/">Frameless Torque Motor</a></td>
+<td>ODRI uses off-the-shelf frameless motors (odri archive)</td>
+<td>Highest</td>
+<td>Medium (embedded into joint structure)</td>
+<td>Need to confirm with supplier directly</td>
+<td>Has machining capabilities</td>
+</tr>
+<tr>
+<td>Integrated <a href="/entry/ent_comp_servo_motor/">Servo</a>/Smart Actuator</td>
+<td><a href="/entry/ent_component_dynamixel_xm430_w210_t/">XM430-W210-T</a> Stall Torque 3.0 N·m</td>
+<td>Low-Medium</td>
+<td>Highest (plug-and-play)</td>
+<td>Need to inquire per model</td>
+<td>Zero experience, get running first</td>
+</tr>
+</tbody>
+</table>
+<p>【Why】 The outer rotor pushes the air gap radius to the structural limit, a direct realization of τ ∝ r²l; frameless motors go a step further, eliminating the housing and output shaft to "knead" the motor into the joint — the ODRI BLMC actuator follows this path (off-the-shelf frameless motor + self-developed driver board, <a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI Actuator Hardware Repository</a>). Integrated solutions trade torque density for peace of mind, sealing gearing, driver, and feedback into one shell.</p>
+<p>【How to Analyze Your Situation】 Match by budget: Single joint &lt; ¥400 → Servo (XM430 class); Around ¥1,000 → Hobbyist BLDC + 3D-printed reducer (Berkeley 6512 already used a $129 motor + printed cycloid to run RL walking, archive); Pursuing performance with machining capability → Frameless motor, but note the ODRI route has a beginner-friendliness rating of only 2/5 (odri archive), proceed with caution.</p>
+<h2 id="step-5-candidate-convergence-and-pre-order-checklist">Step 5: Candidate Convergence and Pre-Order Checklist</h2>
+<p>【What to Do】 Converge each joint to 1–2 candidates, fill out the <strong>Motor Parameter Checklist</strong> item by item before ordering. Use the Berkeley 6512 joint (MAD M6C12 150KV) as an example to demonstrate the filling method:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value in This Example</th>
+<th>Source / Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model / Price</td>
+<td>MAD M6C12 150KV, $129</td>
+<td>berkeley-humanoid-lite research archive</td>
+</tr>
+<tr>
+<td>KV</td>
+<td>150 rpm/V</td>
+<td>Model specification</td>
+</tr>
+<tr>
+<td>Kt</td>
+<td>≈ 0.064 N·m/A</td>
+<td>Step 1 formula conversion</td>
+</tr>
+<tr>
+<td>Peak Phase Current Requirement</td>
+<td>≈ 18 A</td>
+<td>Step 1 calculation (this example joint)</td>
+</tr>
+<tr>
+<td>No-Load Speed @22.2 V</td>
+<td>3330 rpm</td>
+<td>Step 2 calculation</td>
+</tr>
+<tr>
+<td>Number of Pole Pairs</td>
+<td>—</td>
+<td>Not found in datasheet, need to confirm with supplier directly</td>
+</tr>
+<tr>
+<td>Phase Resistance</td>
+<td>—</td>
+<td>Same as above (0.1 Ω in Step 3 is only an example magnitude)</td>
+</tr>
+<tr>
+<td>Continuous Current</td>
+<td>—</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td>Mass</td>
+<td>—</td>
+<td>Same as above (backfill into M01 mass budget column)</td>
+</tr>
+<tr>
+<td>Shaft Diameter / Mounting Hole Pattern</td>
+<td>—</td>
+<td>Same as above (check against M03 reducer input interface)</td>
+</tr>
+</tbody>
+</table>
+<p>Route comparison: If you don't want to assemble components yourself, refer to ODRI's purchase of off-the-shelf frameless motors + self-developed driver board (fully BSD open-source for mechanics and electronics, odri archive); to get running fastest, use integrated servos, where the task degenerates to "look up the table by torque rating".</p>
+<p>【Why】 The pitfalls before ordering are concentrated in the last five rows of the checklist: wrong pole pair count, FOC commutation fails directly; missing phase resistance, the thermal calculation in Step 3 is a castle in the air; wrong shaft diameter/hole pattern, the motor won't fit into the reducer upon arrival. For any item that cannot be filled, mark it as "Need to confirm with supplier directly", and never guess numbers from product photos.</p>
+<p>【How to Analyze Your Situation】 Replicating Berkeley 6512/5010: Just check the list against the official BOM and print files; the design has been validated by a complete machine with 22 actuators (archive). Self-developed mix-and-match: Fill out the checklist for all three candidates before comparing. The comparison is not about unit price, but "how much Kt × current capability per gram within the mass budget".</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Each joint has ≥ 1 candidate motor model, with the selection rationale documented (corresponding to M01's four-column metrics).</li>
+<li>[ ] Five calculations archived per joint: Kt conversion, peak phase current, KV upper/lower limit check, RMS current, copper loss heating.</li>
+<li>[ ] Bus voltage level determined, KV range check passed, margin explained in writing.</li>
+<li>[ ] Motor parameter checklist filled item by item or marked "Need to confirm with supplier directly".</li>
+<li>[ ] Peak/RMS phase current records complete, clearly handed over to M04 for driver board current limit check.</li>
+<li>[ ] Motor mass backfilled into M01 metrics table, overall machine mass budget not exceeded.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor runs fine unloaded, overheats under load</td>
+<td>High KV with low reduction ratio: Kt too small, torque全靠 current brute force</td>
+<td>Go back to Step 1, recalculate I = τ/Kt; switch to lower KV motor or increase reduction ratio (link with M03)</td>
+</tr>
+<tr>
+<td>Motor bought for "max torque" gets hot in minutes</td>
+<td>Confused stall torque with continuous torque</td>
+<td>Check datasheet for rated (continuous) torque, reselect based on RMS requirements (Maxon example in Step 3)</td>
+</tr>
+<tr>
+<td>"Kt" of two candidates differs by tens of times, can't judge</td>
+<td>Unit confusion (N·m/A vs g·cm/A, difference factor ~10,197)</td>
+<td>Convert everything to SI before comparing; for motors only given KV, use Step 1 formula for conversion</td>
+</tr>
+<tr>
+<td>FOC auto-tuning fails, motor hums but doesn't rotate</td>
+<td>Wrong pole pair count / phase resistance not measured</td>
+<td>Fill in the two missing items in the checklist; leave parameter identification for M04</td>
+</tr>
+<tr>
+<td>Peak current requirement exceeds driver board current limit</td>
+<td>Selection only considered motor, not driver</td>
+<td>Compare I_peak from Step 1 with candidate driver board current limit; if exceeded, change motor or reduce specifications</td>
+</tr>
+<tr>
+<td>Motor doesn't fit into reducer upon arrival</td>
+<td>Shaft diameter / mounting hole pattern not checked</td>
+<td>Check the last two rows of the checklist before ordering; compare with M03 input interface drawing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous Task: <a href="/en/roadmap/missions/m01-scenario-to-specs/">M01 · Quantifying Requirements into Specifications</a></li>
+<li>Next Task: <a href="/en/roadmap/missions/m03-reducer-design/">M03 · Reducer Design and Calculation</a></li>
+<li>Theoretical Background: <a href="/en/wiki/chapters/chapter-04/">Chapter 4 Actuators</a>, <a href="/en/wiki/chapters/chapter-06/">Chapter 6 Computation, Power, and Thermal Management</a></li>
+<li><a href="/en/roadmap/playbooks/actuator-selection/">Actuator Selection Playbook</a> · <a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m01-scenario-to-specs/">← Previous<span>M01 · Mathematizing the Demand Scenario: Translating &#34;I Want to Build a Robot&#34; into Numbers</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m03-reducer-design/">Next →<span>M03 · Reducer Design and Calculation: Reduction Ratio Is Not a Guess</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m02-motor-calculation-and-selection-from-specification-table-to-specific-model">M02 · Motor Calculation and Selection: From Specification Table to Specific Model</a><ul>
+<li><a href="#step-1-translate-the-specification-table-into-motor-language-using-three-motor-constants">Step 1: Translate the Specification Table into Motor Language Using Three Motor Constants</a></li>
+<li><a href="#step-2-kv-and-bus-voltageis-the-speed-sufficient-and-can-the-current-be-handled">Step 2: KV and Bus Voltage—Is the Speed Sufficient, and Can the Current Be Handled?</a></li>
+<li><a href="#step-3-power-and-heatcontinuous-rating-depends-on-rms-not-peak">Step 3: Power and Heat—Continuous Rating Depends on RMS, Not Peak</a></li>
+<li><a href="#step-4-topology-and-form-factor-why-joint-motors-are-shaped-like-pancakes">Step 4: Topology and Form Factor – Why Joint Motors Are Shaped Like "Pancakes"</a></li>
+<li><a href="#step-5-candidate-convergence-and-pre-order-checklist">Step 5: Candidate Convergence and Pre-Order Checklist</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

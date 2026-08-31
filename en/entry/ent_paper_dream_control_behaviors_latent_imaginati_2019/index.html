@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dream to Control: Learning Behaviors by Latent Imagination · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Dream to Control: Learning Behaviors by Latent Imagination</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Dream to Control: Learning Behaviors by Latent Imagination</h1>
+      <p class="entry-name-en">Dream to Control: Learning Behaviors by Latent Imagination</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P064. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (3106 chars, DeepSeek).">AI Full-text Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Learned world models summarize an agent&#39;s experience to facilitate learning complex behaviors. While learning world models from high-dimensional sensory inputs is becoming feasible through deep learning, there are many potential ways for deriving behaviors from them. We present Dreamer, a reinforcement learning agent that solves long-horizon tasks from images purely by latent imagination. We.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1912.01603" target="_blank" rel="noopener">arXiv:1912.01603 Dream to Control: Learning Behaviors by Latent Imagination</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Dreamer is a reinforcement learning agent proposed by DeepMind based on latent imagination. It trains an actor-critic within the latent space of a learned world model (RSSM), enabling learning of long-horizon behaviors from image inputs. Across 20 visual continuous control tasks, Dreamer achieves an average score of 823 with 5×10^6 steps, surpassing PlaNet (332) and A3C (344, 10^8 steps), and significantly leads on sparse reward tasks.</p>
+<h2 id="what-it-changed">What It Changed</h2>
+<p>What it truly changed is "where behavior learning happens": previous model-based reinforcement learning either relied on online planning (e.g., PlaNet) or performed model-free updates on real experience (e.g., A3C, D4PG), whereas Dreamer moved actor-critic updates entirely into the learned latent space, replacing real experience replay with imagined trajectories. This broke the old constraint that "model accuracy directly determines planning quality"—planning requires the model to be precise at every step, while Dreamer only needs the model to be good enough over the distribution of imagined trajectories, allowing the value model to absorb model errors.</p>
+<p>Another change is the magnitude of data efficiency. A3C reaches 344 with 10^8 steps, while Dreamer reaches 823 with 5×10^6 steps—a 20-fold difference in steps (calculated from the table values 10^8 and 5×10^6). This is not a tuning victory but a structural advantage brought by the "learning in imagination" paradigm—the world model compresses experience into repeatably sampleable latent dynamics, and behavior learning is no longer limited by the interaction frequency of the real environment.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="world-model-rssm-latent-dynamics">World Model: RSSM Latent Dynamics</h3>
+<ul>
+<li>Encoder/decoder uses convolutional structures (Ha and Schmidhuber 2018), with latent states as 30-dimensional diagonal Gaussians.</li>
+<li>Recurrent State-Space Model (RSSM) models Markovian latent transitions, trained with pixel reconstruction + KL regularization (β=1, clipped below 3 free nats).</li>
+</ul>
+<h3 id="behavior-learning-actor-critic-in-latent-imagination">Behavior Learning: Actor-Critic in Latent Imagination</h3>
+<ul>
+<li>The action model outputs a tanh mean (scaled by 5) and softplus standard deviation, followed by a tanh transformation, allowing the action distribution to saturate.</li>
+<li>The value model regresses λ-return targets (γ=0.99, λ=0.95), with gradients stopped at the targets.</li>
+<li>During imagination, the action model and value model are updated using the <strong>same imagined trajectories</strong>, with analytic gradients of multi-step values backpropagated through the latent dynamics model.</li>
+</ul>
+<h3 id="key-design-decisions">Key Design Decisions</h3>
+<ul>
+<li><strong>Fixed action repeat R=2</strong>, not manually tuned per environment, differing from Hafner et al. (2018) and Lee et al. (2019).</li>
+<li>No latent overshooting, action model entropy reward, or value model target network—ablations show these are unnecessary.</li>
+<li>Discrete tasks: the action model predicts categorical logits with straight-through gradient sampling; ε-greedy linearly decays from 0.4 to 0.1 (over the first 200,000 gradient steps); KL scaling β=0.1; discount factor predicted by a binary classifier (soft labels 0 and γ).</li>
+</ul>
+<h3 id="training-procedure">Training Procedure</h3>
+<ul>
+<li>Dataset initialized with S=5 random episodes; 100 training steps alternate with collecting 1 episode, with exploration noise Normal(0, 0.3).</li>
+<li>Batch B=50, sequence length L=50, imagination horizon H=15 (continuous) / H=10 (discrete).</li>
+<li>Adam optimizer: world model 6×10^-4, value model 8×10^-5, action model 8×10^-5; gradient norms scaled when clipping exceeds 100.</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>Latent imagination replaces online planning</strong>: PlaNet relies on online planning and is sensitive to imagination horizon H; Dreamer's value model makes performance robust to H from 5 to 15 (optimal H=10). This is a paradigm shift from "using the model for planning" to "using the model to learn a policy."</p>
+</li>
+<li>
+<p><strong>Decoupling representation learning objectives from behavior learning</strong>: A systematic comparison of pixel reconstruction, contrastive estimation, and pure reward prediction as representation objectives shows pixel reconstruction is optimal on most tasks, while pure reward prediction is insufficient. This clarifies that "what the world model learns" and "how behavior is learned" are two independently optimizable dimensions.</p>
+</li>
+<li>
+<p><strong>Breakthrough on sparse reward tasks</strong>: On Cartpole Swingup Sparse, Dreamer scores 812.22, while PlaNet only 0.64 and A3C only 179.80. Latent imagination allows the agent to "rehearse" sparse reward signals in imagination, which is difficult for model-free methods.</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<h3 id="continuous-control-deepmind-control-suite-pixel-inputs">Continuous Control (DeepMind Control Suite, pixel inputs)</h3>
+<p>Dreamer is compared with A3C, D4PG, and PlaNet, with environment steps of 10^8, 10^8, 5×10^6, and 5×10^6, respectively. Key results:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>A3C</th>
+<th>D4PG</th>
+<th>PlaNet</th>
+<th>Dreamer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole Swingup Sparse</td>
+<td>179.80</td>
+<td>482.00</td>
+<td>0.64</td>
+<td>812.22</td>
+</tr>
+<tr>
+<td>Cheetah Run</td>
+<td>213.90</td>
+<td>523.80</td>
+<td>496.12</td>
+<td>894.56</td>
+</tr>
+<tr>
+<td>Hopper Hop</td>
+<td>0.50</td>
+<td>242.00</td>
+<td>0.37</td>
+<td>368.97</td>
+</tr>
+<tr>
+<td>Quadruped Run</td>
+<td>-</td>
+<td>-</td>
+<td>280.45</td>
+<td>888.39</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td><strong>243.70</strong></td>
+<td><strong>786.32</strong></td>
+<td><strong>332.97</strong></td>
+<td><strong>823.39</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ablation-studies">Ablation Studies</h3>
+<ul>
+<li>The value model makes Dreamer robust to imagination horizon H, while the action model without value prediction and PlaNet's online planning are sensitive to H.</li>
+<li>Pixel reconstruction outperforms contrastive estimation on most tasks; pure reward prediction is insufficient.</li>
+<li>H from 5 to 15 all yield high scores, with optimal H=10.</li>
+</ul>
+<h3 id="discrete-control">Discrete Control</h3>
+<p>Evaluated on subsets of Atari and DeepMind Lab (64×64×3 images, 3 to 18 actions), Dreamer learns successful behaviors on some tasks but is not yet competitive overall (compared to Kaiser et al., 2019).</p>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<ul>
+<li>The world model learns from a fixed experience dataset; unvisited states may cause model errors, and behavior may fail in unseen regions.</li>
+<li>Latent dynamics assume Markovian transitions, which may not hold for partially observable environments (hidden states).</li>
+<li>The action model is trained purely in imagination; behavior quality depends on world model accuracy; when the model is inaccurate, policy transfer to the real environment may fail.</li>
+<li>Fixed action repeat R=2 is not optimal for all tasks.</li>
+<li>Experiments are limited to simulated environments and not validated on real robotic systems.</li>
+<li>Performance on discrete action tasks (Atari subset) is inferior to continuous control tasks; the authors did not explore all Atari games and DMLab levels.</li>
+</ul>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<p>When reproducing, first verify three points: first, the imagination horizon H—use 15 for continuous tasks and 10 for discrete, but ablations show 5 to 15 all work, so prioritizing 10 reduces computation; second, action repeat R=2 is a global fixed value; if downstream tasks are sensitive to action frequency, re-validation is needed; third, choose pixel reconstruction as the representation learning objective, not pure reward prediction—experiments clearly show its insufficiency.</p>
+<p>The most error-prone area is hyperparameters for discrete tasks: KL scaling β=0.1 (vs. 1 for continuous), ε linearly decaying from 0.4 to 0.1 (over the first 200,000 gradient steps), reward tanh clipping, and discount factor predicted by a binary classifier (soft labels 0 and γ). These differ significantly from continuous tasks; directly applying continuous task settings will cause discrete task failure. Additionally, training time is approximately 3 hours per 10^6 environment steps (single V100 + 10 CPUs); if resources are limited, first run Cartpole Swingup Sparse to verify implementation correctness—this task is most sensitive to model errors and can quickly expose issues.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">evaluates on</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_paper_deepmind_control_suite_2018/">DeepMind Control Suite</a>
+      
+      <span class="rel-desc">Dream to Control: Learning Behaviors by Latent Imagination is evaluated on DeepMind Control Suite.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dream_control_behaviors_latent_imaginati_2019"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deepmind_control_suite_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>DeepMind Control Suite</h3>
+          <p>The DeepMind Control Suite is a set of continuous control tasks with a standardised structure and…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changed">What It Changed</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#world-model-rssm-latent-dynamics">World Model: RSSM Latent Dynamics</a></li>
+<li><a href="#behavior-learning-actor-critic-in-latent-imagination">Behavior Learning: Actor-Critic in Latent Imagination</a></li>
+<li><a href="#key-design-decisions">Key Design Decisions</a></li>
+<li><a href="#training-procedure">Training Procedure</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a><ul>
+<li><a href="#continuous-control-deepmind-control-suite-pixel-inputs">Continuous Control (DeepMind Control Suite, pixel inputs)</a></li>
+<li><a href="#ablation-studies">Ablation Studies</a></li>
+<li><a href="#discrete-control">Discrete Control</a></li>
+</ul>
+</li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning</h1>
+      <p class="entry-name-en">V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P067. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>V-JEPA 2 是 Meta FAIR 与 Mila 联合提出的自监督视频世界模型，通过两阶段训练（互联网规模视频预训练 + 少量交互数据后训练）实现视频理解、未来预测与机器人规划。核心贡献在于证明基于表示空间的视频预测（而非像素生成）能以 62 小时无标签机器人视频实现跨实验室零样本操作，并在多个视频理解基准上刷新 SOTA。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.09985" target="_blank" rel="noopener">arXiv:2506.09985 V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Plan</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这篇工作真正改变的是“世界模型必须依赖生成式视频预测”这一隐含假设。此前基于视频生成的动作条件模型（如 Cosmos）在机器人控制中表现有限，主要因为像素级预测的计算成本与保真度压力挤占了规划能力。V-JEPA 2 将预测目标从像素空间转移到学习到的表示空间，用 L1 特征匹配替代像素重建，使规划在 16 秒内完成而 Cosmos 需要 4 分钟——这不是工程优化，而是范式选择：世界模型的价值在于捕捉任务相关的抽象状态变化，而非视觉细节。</p>
+<p>另一个被挑战的假设是“语言监督是视觉编码器性能关键”。V-JEPA 2 在无任何语言监督的预训练下，于视频问答任务（如 MVP 44.5、TemporalBench 36.7）上超越 InternVL-2.5、Qwen2.5VL 等有语言监督的模型，说明自监督视频预训练能学到与语言对齐互补的时序与物理常识。这为多模态模型提供了新的视觉骨干选项，尤其在数据稀缺的机器人领域。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">两阶段训练流程</h3>
+<ul>
+<li><strong>阶段一（V-JEPA 2 预训练）</strong>：在 VideoMix22M（2200 万视频）上优化掩码去噪目标：
+  <code>minimize_{θ,φ,Δ_y} ||P_φ(Δ_y, E_θ(x)) - sg(E_θ̄(y))||_1</code>
+  其中 <code>sg</code> 为停止梯度，<code>θ̄</code> 为 EMA 教师权重，损失仅作用于掩码 patch。架构为 ViT 编码器 + ViT 预测器，关键设计是 <strong>3D-RoPE</strong>（将特征维度分为时间/高度/宽度三段分别施加 1D 旋转），替代绝对位置编码以稳定 1B 模型训练。</li>
+<li><strong>阶段二（V-JEPA 2-AC 后训练）</strong>：冻结编码器，训练 300M 参数动作条件预测器（24 层、16 头、隐藏维度 1024）。输入为 4 秒视频（16 帧、256×256、4fps）、7 维末端执行器状态及 7 维动作序列。损失为教师强制（T=15）与两步展开（T=2）之和，采用块因果注意力使当前 patch 可关注历史动作与状态。</li>
+</ul>
+<h3 id="mpc">规划推理（MPC）</h3>
+<ul>
+<li>目标函数：<code>E(â_{1:T}; z_k, s_k, z_g) = ||P(â_{1:T}; s_k, z_k) - z_g||_1</code></li>
+<li>使用交叉熵方法（CEM）优化：采样 800 个动作轨迹，经 10 次迭代细化，每次保留 top-10 更新高斯分布均值方差</li>
+<li>动作约束在 L1-Ball 半径 0.075 内（对应约 13 cm 位移）</li>
+<li>拾取-放置任务通过多目标切换实现：先优化 4 步针对抓取子目标，再 10 步针对放置子目标，最后 4 步针对最终目标</li>
+</ul>
+<h3 id="_4">关键扩展要素</h3>
+<ol>
+<li>数据从 200 万增至 2200 万视频（+1.0 点）</li>
+<li>模型从 300M 扩至 1B 参数（+1.5 点）</li>
+<li>训练迭代从 90K 增至 252K（+0.8 点）</li>
+<li>渐进式分辨率训练：cooldown 阶段将时长从 16 增至 64 帧、分辨率从 256 增至 384（累计 +4.0 点，GPU 时间减少 8.4×）</li>
+</ol>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>表示空间预测替代像素生成</strong>：这是最本质的创新。V-JEPA 2-AC 在特征空间做自回归预测，避免了像素重建的计算开销与视觉细节干扰，使规划速度比 Cosmos 快 15 倍（16 秒 vs 4 分钟/动作），同时保持对物体恒常性、重力等物理规律的表征能力（可视化实验显示夹爪张开时杯子位置不变）。</p>
+</li>
+<li>
+<p><strong>无语言监督的视觉编码器在 VidQA 上超越有语言监督模型</strong>：V-JEPA 2 在冻结编码器设置下，于 MVP（44.5）、TemporalBench（36.7）、TOMATO（40.3）等时序理解基准上显著优于 DINOv2、SigLIP2、Perception Encoder，证明自监督视频预训练能学到与语言对齐互补的时序常识，挑战了“语言监督是视觉编码器性能关键”的主流观点。</p>
+</li>
+<li>
+<p><strong>零样本机器人操作</strong>：仅用 62 小时无标签 Droid 视频（无奖励、无任务元数据）后训练，在两个未见过的实验室 Franka 机械臂上实现 100% 到达、65% 抓杯、80% 拾取-放置成功率，远超行为克隆基线 Octo（15% 抓杯、15% 拾取-放置）。这证明世界模型加 MPC 可以替代大规模模仿学习，为机器人数据稀缺问题提供新路径。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="2-3">机器人操作（表 2、表 3）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>实验室</th>
+<th>Reach</th>
+<th>Grasp Cup</th>
+<th>Grasp Box</th>
+<th>Pick-&amp;-Place Cup</th>
+<th>Pick-&amp;-Place Box</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Octo</td>
+<td>Avg</td>
+<td>100%</td>
+<td>15%</td>
+<td>0%</td>
+<td>15%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>V-JEPA 2-AC</td>
+<td>Avg</td>
+<td>100%</td>
+<td>65%</td>
+<td>25%</td>
+<td>80%</td>
+<td>65%</td>
+</tr>
+<tr>
+<td>Cosmos</td>
+<td>Lab 2</td>
+<td>80%</td>
+<td>0%</td>
+<td>20%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p>V-JEPA 2-AC 在抓取与拾取-放置任务上显著优于 Octo（行为克隆）与 Cosmos（视频生成）。规划速度：V-JEPA 2-AC 每动作 16 秒（800 样本），Cosmos 需 4 分钟（80 样本），完整拾取-放置轨迹 Cosmos 需超 1 小时。</p>
+<h3 id="4-5">视频理解（表 4、表 5）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数</th>
+<th>SSv2</th>
+<th>K400</th>
+<th>EK100 Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InternVideo2-6B</td>
+<td>6B</td>
+<td>67.7</td>
+<td>88.8</td>
+<td>–</td>
+</tr>
+<tr>
+<td>V-JEPA 2 ViT-g 384</td>
+<td>1B</td>
+<td>77.3</td>
+<td>87.3</td>
+<td>39.7</td>
+</tr>
+</tbody>
+</table>
+<p>V-JEPA 2 在 SSv2 上以 1B 参数超越 6B 的 InternVideo2（77.3 vs 67.7）。EK100 动作预期 recall-at-5 达 39.7，相对 PlausiVL（27.6）提升 44%（由表内数值 39.7→27.6 计算）。</p>
+<h3 id="6-7-8">视频问答（表 6、表 7、表 8）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>平均</th>
+<th>PerceptionTest</th>
+<th>MVP</th>
+<th>TempCompass</th>
+<th>TemporalBench</th>
+<th>TOMATO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V-JEPA 2 ViT-g 512（冻结）</td>
+<td>52.3</td>
+<td>72.0</td>
+<td>31.1</td>
+<td>69.2</td>
+<td>33.3</td>
+<td>37.0</td>
+</tr>
+<tr>
+<td>V-JEPA 2 ViT-g 384 Llama 3.1 8B</td>
+<td>59.5</td>
+<td>84.0</td>
+<td>44.5</td>
+<td>76.9</td>
+<td>36.7</td>
+<td>40.3</td>
+</tr>
+<tr>
+<td>PLM 8B</td>
+<td>56.7</td>
+<td>82.7</td>
+<td>39.7</td>
+<td>72.7</td>
+<td>28.3</td>
+<td>33.2</td>
+</tr>
+</tbody>
+</table>
+<p>端到端训练下，V-JEPA 2 在 6 个基准平均分上超越 PerceptionLM 8B（59.5 vs 56.7），尤其在 TemporalBench 提升 8.4 点（由表内数值 36.7→28.3 计算）。</p>
+<h3 id="_7">消融（扩展分析）</h3>
+<ul>
+<li>数据 2M→22M：+1.0 点；模型 300M→1B：+1.5 点；训练 90K→252K：+0.8 点</li>
+<li>分辨率 256→384 且时长 16→64 帧：累计 +4.0 点至 88.2%</li>
+<li>渐进式分辨率训练：GPU 时间减少 8.4×</li>
+<li>数据整理（Curated-YT1B）：+1.4 点平均改进</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li><strong>相机位置敏感性</strong>：V-JEPA 2-AC 未做显式标定，需隐式从单目 RGB 推断动作坐标轴；当机器人基座不在视野中时问题定义不明确，实践中需手动尝试不同相机位置（约 35°-85° 范围）</li>
+<li><strong>长时程规划受限</strong>：自回归预测存在误差累积，表示空间精度随 rollout 长度下降；扩展到 128/256 帧未见进一步改进，长时程任务需引入子目标</li>
+<li><strong>任务指定方式单一</strong>：仅支持图像目标，不支持语言目标；作者承认未来需与语言模型对齐</li>
+<li><strong>EK100 未完全解决</strong>：存在动词/名词预测错误的失败案例，仅关注 1 秒预期时间，更长时程精度下降；限于厨房环境与封闭词汇表</li>
+<li><strong>基线比较非严格公平</strong>：不同编码器在不同数据上预训练（如 DINOv2 在 LVD-142M），只能做系统级比较</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对 3D-RoPE 实现（将特征维度三等分分别旋转）与 EMA 教师权重（0.99925），这是稳定 1B 模型训练的关键；其次确认渐进式训练调度（warmup 12K + constant 228K + cooldown 12K），cooldown 阶段同时增加时长与分辨率是收益最大来源</li>
+<li><strong>机器人部署最容易踩坑</strong>：相机位置对动作坐标轴推断影响极大，务必先扫描机器人底座周围 35°-85° 的相机位姿；训练时仅用左外参相机视图（同时使用左右视图会降低性能）；动作约束半径 0.075 对应约 13 cm 位移，需根据实际机械臂工作空间调整</li>
+<li><strong>规划参数选择</strong>：CEM 用 800 样本、10 次迭代、top-10 更新即可；规划视界 1 对贪婪任务足够，但非贪婪任务（如无图像子目标的拾取-放置）必须引入多目标切换机制</li>
+<li><strong>下游团队适配</strong>：V-JEPA 2 编码器可直接替换现有 MLLM 的视觉骨干，冻结设置下已优于 DINOv2/SigLIP2；但注意其预训练分辨率为 256/384，直接上 512 需验证显存与性能权衡</li>
+<li><strong>数据整理不可跳过</strong>：Curated-YT1B 相比未整理数据平均提升 1.4 点，且未整理数据在 epoch 600 后性能开始下降——长训练必须配合数据整理</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2506.09985</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_v_jepa_2_self_supervised_video_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">两阶段训练流程</a></li>
+<li><a href="#mpc">规划推理（MPC）</a></li>
+<li><a href="#_4">关键扩展要素</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#2-3">机器人操作（表 2、表 3）</a></li>
+<li><a href="#4-5">视频理解（表 4、表 5）</a></li>
+<li><a href="#6-7-8">视频问答（表 6、表 7、表 8）</a></li>
+<li><a href="#_7">消融（扩展分析）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M07 · Bench Testing and Acceptance: Data Speaks, Only Passed Units Are Installed · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M07 · Bench Testing and Acceptance: Data Speaks, Only Passed Units Are Installed</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m07-bench-testing-and-acceptance-data-speaks-only-passed-units-are-installed">M07 · Bench Testing and Acceptance: Data Speaks, Only Passed Units Are Installed</h1>
+<p><strong>Global Position</strong>: After M06 firmware and calibration, before the whole-machine phase (M08 Selection / M09 Assembly). The input is a joint module that "can rotate", and the output is a <strong>measured data package</strong> (curves + conclusions)—upgrading the M01 specification table from an "estimated version" to a "measured version". Only after all six tests are passed can this joint be installed. This page expands <a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a> Step 7 to a hands-on level.</p>
+<p><strong>Prerequisites</strong>: M06 acceptance passed (three loops tuned, 250 Hz communication stable); profile bench, weight bar and weights, temperature measurement tools (infrared thermometer or thermocouple) ready.</p>
+<p>Theoretical background: Test methods in <a href="/en/wiki/chapters/chapter-11/">Chapter 11 Assembly, Integration, and Testing</a>, evaluation methodology in <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation System</a>, control criteria in <a href="/en/wiki/chapters/chapter-14/">Chapter 14 Robot Control Basics</a>.</p>
+<h2 id="step-1-bench-setupfirst-ensure-the-bench-itself-does-not-lie">Step 1: Bench Setup—First Ensure the Bench Itself Does Not Lie</h2>
+<p>【What to Do】</p>
+<ol>
+<li><strong>Rigid Fixation</strong>: Lock the joint module with aluminum profiles + clamps, with the output shaft extending horizontally. First perform a "hand shake/tap test": no movement, rapid vibration decay upon tapping, and the bench's natural frequency clearly separated from the joint's motion frequency—bench resonance will contaminate all data (see Common Pitfall #1).</li>
+<li><strong>Weight Bar Load</strong>: Bar length measured from the output shaft center to the weight hanging point. Load mass calculated inversely from peak torque:</li>
+</ol>
+<pre class="highlight"><code>m = τ_peak ÷ (g × L)
+Example: τ_peak = 8 N·m, bar length L = 0.5 m
+m = 8 ÷ (9.81 × 0.5) ≈ 1.63 kg</code></pre>
+<p>Prepare weights in three levels: 0 kg (no load) / 0.8 kg (half load) / 1.63 kg (full load).
+3. <strong>Recording Chain</strong>: The driver board host computer synchronously records angle/current/temperature at a sampling rate ≥ control frequency (250 Hz, matching Berkeley communication rate, <a href="https://arxiv.org/html/2504.17249v1">Berkeley Humanoid Lite paper</a>); save each curve along with test conditions (load level, firmware version, gain parameters) in raw format.</p>
+<p>【Why】The bench is not a supporting actor; it is part of the measurement instrument: a 1 mm loose clamp adds a false ring to the step response; saving only screenshots without raw data makes reproduction impossible three months later. Accurate measurement requires that "everything except the test object is stiffer and more stable than it."</p>
+<p>【How to Analyze Your Situation】No aluminum profiles: thick steel plate + bench vise works, with the same criteria—no movement by hand, crisp sound when tapped. No weights: dumbbell plates or water bottles are fine, but mass must be measured with a scale, not taken from nominal values. Don't forget the weight bar's own mass: bar inertia about the axis ≈ ⅓·m_bar·L², which must be included in the load (see Common Pitfall #2).</p>
+<h2 id="step-2-step-responsethe-mirror-of-stiffness-and-damping">Step 2: Step Response—The Mirror of Stiffness and Damping</h2>
+<p>【What to Do】Apply a 30° position step (maximum load torque when the weight bar rotates to horizontal), record the angle curve. Criteria (engineering recommended values, adjust per your M01 specification table; consistent with <a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a>):</p>
+<ul>
+<li>Rise time &lt; 0.2 s;</li>
+<li>Overshoot &lt; 10% (i.e., peak not exceeding 33°);</li>
+<li>Steady-state error &lt; 0.5°.</li>
+</ul>
+<p>Test three times each for no load → half load → full load, archive all curves. Slower rise and larger overshoot under load are normal; if any item exceeds limits under full load, first return to M06 Step 4 to retune with actual load inertia, and only question the specification itself if tuning fails.</p>
+<p>【Why】The step response reveals three things at once: whether gain is sufficient (rise time), whether damping is sufficient (overshoot and ringing), and whether static error and gravity/friction compensation are adequate (steady-state error). These three directly determine whether the joint "follows commands" in the whole-machine phase.</p>
+<p>【How to Analyze Your Situation】Full load overshoot of 15% cannot be reduced: first add gravity feedforward/friction compensation, then reduce position loop P and increase D; if still not working, recalculate load inertia—if inertia quadruples, original gains will inevitably oscillate. For hip and knee joints that "bear whole-machine impact during the stance phase," it is recommended to tighten the full load criteria (e.g., overshoot &lt; 5%, engineering recommended value), which will benefit the whole-machine phase.</p>
+<h2 id="step-3-frequency-response-and-bandwidthcan-it-really-be-used-as-a-leg">Step 3: Frequency Response and Bandwidth—Can It Really Be Used as a Leg</h2>
+<p>【What to Do】</p>
+<ol>
+<li>First send a 1 Hz, ±20° sinusoidal position command. Criteria (engineering recommended values, same as <a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a>): amplitude attenuation &lt; 10% (output peak-to-peak ≥ 36°), phase lag &lt; 15°.</li>
+<li>Then sweep frequency: measure output/command amplitude ratio stepwise from 0.5 → 1 → 2 → 5 → 10 → 20 Hz, find the frequency where amplitude drops to 70.7% (−3 dB)—this is the <strong>measured position loop bandwidth</strong>.</li>
+</ol>
+<p>Why bandwidth determines leg capability: during walking, the stance/swing phase switches once per step; a step frequency of 1–2 Hz means the joint experiences multiple load transients and command reversals per second, with frequency components far higher than the step frequency itself. When position loop bandwidth is only a few Hz, the joint is "still chasing the previous command" during stance phase transitions, resulting in soft legs and wobbling. Recommended bandwidth for major leg joints ≥ 10 Hz (engineering recommended value, adjust per your gait frequency).</p>
+<p>【Why】Step response looks at the time domain, frequency sweep at the frequency domain—two photos of the same system; the sweep quantifies "response capability" into a comparable hard metric, upgrading the corresponding column in the M01 specification table to measured values.</p>
+<p>【How to Analyze Your Situation】Three approaches for insufficient bandwidth: increase position loop gain (constrained by overshoot) → acceleration/velocity feedforward → check mechanical backlash and encoder resolution (nonlinearities fundamentally limit bandwidth; tuning cannot solve). High reduction ratio servo solutions are inherently limited by topology—record honestly and note in the specification table "not for dynamic walking."</p>
+<h2 id="step-4-backdrivability-and-force-transparency-mandatory-for-qdddirect-drive">Step 4: Backdrivability and Force Transparency (Mandatory for QDD/Direct Drive)</h2>
+<p>【What to Do】<a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi-Direct Drive (QDD)</a> and direct drive solutions add three tests; for high reduction ratio solutions (servo/harmonic), directly record "Fail—determined by topology," no need to force test.</p>
+<ol>
+<li><strong>Power-off Backdrivability</strong>: Manually rotate the output shaft with power off; should be smooth without jamming or noticeable cogging torque.</li>
+<li><strong>Zero Stiffness Drag</strong>: Power on, set zero stiffness (position gain = 0, low damping); should be able to drag the output shaft with "zero gravity" feel—this is a degenerate form of <a href="/entry/ent_method_impedance_control/">impedance control</a> and a prerequisite for subsequent force control.</li>
+<li><strong>Current-Torque Calibration (Measure Kt)</strong>: Hang a known weight and hold stationary, record steady-state phase current, back-calculate the measured torque constant:</li>
+</ol>
+<pre class="highlight"><code>Kt_output = τ ÷ I = (m × g × L) ÷ I
+Example: m = 1.63 kg, L = 0.5 m → τ = 1.63 × 9.81 × 0.5 ≈ 8.0 N·m
+Measured steady-state phase current I = 5.2 A
+Kt_output = 8.0 ÷ 5.2 ≈ 1.54 N·m/A</code></pre>
+<p>Compare with theoretical value (motor Kt × reduction ratio × efficiency, from M02 manual); if deviation &gt; 10%, investigate cause (engineering recommended value): incorrect current sampling calibration, friction consuming torque, or inflated manual Kt.
+4. <strong>Dual Encoder Solution</strong>: Synchronously record readings from the motor-side and output-side <a href="/entry/ent_component_joint_encoder_2024/">joint encoder</a>; their difference = reducer deformation + backlash—ODRI uses this difference for proprioceptive force control (<a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI actuator hardware repository</a>). The difference under no load approximates backlash; the incremental difference under load approximates reducer stiffness deformation; record both in the data package.</p>
+<p>【Why】Force transparency is the raison d'être of QDD: the equation "current ≈ torque" holds, allowing subsequent impedance/force control without additional torque sensors. If Kt deviation is large but manual values are used, the whole-machine force control feedforward will be entirely wrong.</p>
+<p>【How to Analyze Your Situation】Cannot rotate by hand when powered off: check for overly tight reducer assembly (return to M05) or topology that is inherently non-backdrivable. "Jerky" motion during zero stiffness drag: mostly cogging torque + uncompensated friction; add a small amount of current feedforward compensation, record the compensation amount in the data package (directly reusable in the whole-machine phase).</p>
+<h2 id="step-5-temperature-rise-and-durability-time-is-the-revealer">Step 5: Temperature Rise and Durability – Time is the Revealer</h2>
+<p>【What to Do】</p>
+<ol>
+<li><strong>Temperature Rise</strong>: Run continuously for 30 min under rated load (half-load weight tracking a 1 Hz sine wave, or equivalent based on your M01 duty cycle), and record the case temperature curve. Criterion: Case temperature &lt; 60 °C (engineering recommended value; the insulation class limit must be confirmed with the motor supplier). Record the ambient test temperature as well; for summer retests, adjust based on the temperature rise difference.</li>
+<li><strong>Durability Sampling</strong>: Berkeley verified the reliability of 3D-printed cycloidal gears with 60 hours of continuous operation (<a href="https://arxiv.org/abs/2504.17249">arXiv:2504.17249</a>) – for your custom reducer, sample test at this scale: run the first unit for 60 h, and sample 10% of production units for 10–20 h (engineering recommended process). After running, inspect gear tooth wear, and retest backlash and no-load current, comparing against the first unit baseline.</li>
+<li><strong>Efficiency Rough Measurement</strong>: Under constant high-load conditions, input electrical power vs. output mechanical power:</li>
+</ol>
+<pre class="highlight"><code>η = (τ × ω) ÷ (V × I)
+Example: Output τ = 4 N·m, ω = 3 rad/s → Mechanical power 12 W
+Input 24 V × 1.0 A = 24 W
+η = 12 ÷ 24 ≈ 50%</code></pre>
+<p>This is the total efficiency of the reducer + motor + drive, a reference order-of-magnitude value, to be verified against your system.</p>
+<p>【Why】Passing step response tests only shows "instantaneous capability"; temperature rise and durability show "whether it can sustain that capability" – walking is a continuous minute-to-hour-level operation; insufficient thermal margin means overheating and derating after a few steps. Efficiency directly determines M09 battery selection and range estimation. For thermal design background, see <a href="/en/wiki/chapters/chapter-06/">Chapter 6: Computation, Power, and Thermal Management</a>.</p>
+<p>【How to Analyze Your Situation】No temperature sensor: Use an infrared thermometer for case temperature + the drive board's built-in temperature reading for dual recording. If it can't sustain 30 min: Gradually reduce the continuous current limit to find the "current that can sustain 30 min," then back-calculate the actual usable continuous torque – this value is what should be written as the rated value in the M01 specification table.</p>
+<h2 id="step-6-data-write-back-and-release-decision">Step 6: Data Write-Back and Release Decision</h2>
+<p>【What to Do】</p>
+<ol>
+<li>Fill the measured values item by item back into the <a href="/en/roadmap/missions/m01-scenario-to-specs/">M01 Specification Table</a>: Peak torque (measured Kt × current limit), bandwidth, backlash, continuous torque, efficiency – upgrade from "estimated version" to "measured version."</li>
+<li>Handle out-of-tolerance items one by one, choosing one of three paths: Insufficient performance → <strong>Replace the motor</strong> (back to M02); Mismatched response or torque → <strong>Change the reduction ratio</strong> (back to M03); The specification itself is set too high → <strong>Change the specification</strong> (back to M01, must include a written reason: "Why reducing the specification does not affect the mission requirements").</li>
+<li>After all items meet criteria, output a written conclusion: "This joint module is ready for assembly," along with a data package index (curve directory + parameter version + test bench photos + wiring diagram).</li>
+</ol>
+<p>【Why】Write-back turns experience into assets: The measured distribution (Kt, backlash, temperature rise) across 22 joints is first-hand data for parameterizing the actuator model in full-machine simulation (M10/M11) – using measured values in simulation cuts sim-to-real pitfalls by half.</p>
+<p>【How to Analyze Your Situation】Testing all 22 units individually is too labor-intensive: Fully test the first 3 units on all six items; for the rest, test only the three key items (step response, temperature rise, Kt). Compare the data distribution with the first unit, and perform full retests on outliers (engineering recommended process, adjust based on your batch size). Name the data package consistently from the start: <code>JointID_TestItem_Date_FirmwareVersion</code>.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Curves for all six tests (step response/sine wave/sweep/back-drive &amp; Kt/temperature rise/durability) are archived in original format, with complete test conditions.</li>
+<li>[ ] 30° step response under three load levels: Rise time &lt; 0.2 s, overshoot &lt; 10%, steady-state error &lt; 0.5° (or value defined in the specification table).</li>
+<li>[ ] 1 Hz ±20° sine wave: Amplitude attenuation &lt; 10%, phase lag &lt; 15°; −3 dB bandwidth has a measured value.</li>
+<li>[ ] QDD/direct drive solution: Smooth zero-stiffness back-driving, measured Kt deviation from theoretical value ≤ 10% or the cause of deviation is identified; dual-encoder difference (backlash + deformation) is quantified.</li>
+<li>[ ] Case temperature &lt; 60 °C (or within supplier's limit) after 30 min at rated load; reducer durability sampling is completed with inspection records.</li>
+<li>[ ] M01 specification table is upgraded to "measured version," with a disposition conclusion for all write-back discrepancies (replace motor/change reduction ratio/change specification, including written reasons).</li>
+<li>[ ] The "ready for assembly" conclusion is documented in writing; test bench photos and wiring diagrams are archived.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed-frequency oscillation in step response curve</td>
+<td>Bench resonance mistaken for joint oscillation</td>
+<td>Reinforce fixture/add mass to bench and retest; tap the bench to identify natural frequency</td>
+</tr>
+<tr>
+<td>Bandwidth much lower than M06 no-load tuning value</td>
+<td>Inertia of weight bar and weights neglected</td>
+<td>Include ⅓·m_bar·L² + m_weight·L² in load calculation and retune</td>
+</tr>
+<tr>
+<td>Two temperature rise results don't match</td>
+<td>Ambient temperature/airflow not fixed</td>
+<td>Fix ambient temperature and placement, record room temperature; adjust based on temperature rise difference</td>
+</tr>
+<tr>
+<td>Passes no-load tests but fails when installed</td>
+<td>Only no-load tests performed before declaring pass</td>
+<td>Three load levels are a hard requirement; failing under full load = fail</td>
+</tr>
+<tr>
+<td>Data cannot be reproduced for analysis</td>
+<td>Only screenshots saved, no raw data</td>
+<td>Save raw format (csv/log) along with firmware version and parameters</td>
+</tr>
+<tr>
+<td>Measured Kt much lower than datasheet</td>
+<td>Friction not compensated / power supply current mistaken for phase current</td>
+<td>Confirm phase current reading; measure in both directions and average to cancel friction</td>
+</tr>
+<tr>
+<td>Backlash increases after durability test</td>
+<td>Gear wear / bearing clearance increase</td>
+<td>Inspect gear teeth; evaluate material/process change against Berkeley's 60 h scale</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous Task: <a href="/en/roadmap/missions/m06-firmware-calibration/">M06 · Firmware and Calibration</a></li>
+<li>Next Task: <a href="/en/roadmap/missions/m08-platform-selection/">M08 · Platform Selection and Procurement</a></li>
+<li>Theoretical Background: <a href="/en/wiki/chapters/chapter-11/">Chapter 11: Assembly, Integration, and Testing</a>, <a href="/en/wiki/chapters/chapter-25/">Chapter 25: Robot Evaluation System</a>, <a href="/en/wiki/chapters/chapter-14/">Chapter 14: Fundamentals of Robot Control</a>, <a href="/en/wiki/chapters/chapter-06/">Chapter 6: Computation, Power, and Thermal Management</a></li>
+<li><a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a> · <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a> · <a href="/en/roadmap/playbooks/actuator-selection/">Actuator Selection Handbook</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m06-firmware-calibration/">← Previous<span>M06 · Firmware and Calibration: Making the Iron Lump Understand Commands for the First Time</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/stage-2-biped/">Next →<span>Phase 2: Biped Platform – From Simulation to the First Walking Robot</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m07-bench-testing-and-acceptance-data-speaks-only-passed-units-are-installed">M07 · Bench Testing and Acceptance: Data Speaks, Only Passed Units Are Installed</a><ul>
+<li><a href="#step-1-bench-setupfirst-ensure-the-bench-itself-does-not-lie">Step 1: Bench Setup—First Ensure the Bench Itself Does Not Lie</a></li>
+<li><a href="#step-2-step-responsethe-mirror-of-stiffness-and-damping">Step 2: Step Response—The Mirror of Stiffness and Damping</a></li>
+<li><a href="#step-3-frequency-response-and-bandwidthcan-it-really-be-used-as-a-leg">Step 3: Frequency Response and Bandwidth—Can It Really Be Used as a Leg</a></li>
+<li><a href="#step-4-backdrivability-and-force-transparency-mandatory-for-qdddirect-drive">Step 4: Backdrivability and Force Transparency (Mandatory for QDD/Direct Drive)</a></li>
+<li><a href="#step-5-temperature-rise-and-durability-time-is-the-revealer">Step 5: Temperature Rise and Durability – Time is the Revealer</a></li>
+<li><a href="#step-6-data-write-back-and-release-decision">Step 6: Data Write-Back and Release Decision</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

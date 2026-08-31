@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M09 · 전체 조립, 배선 및 전원: 부품 상자에서 스스로 서는 기계까지 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M09 · 전체 조립, 배선 및 전원: 부품 상자에서 스스로 서는 기계까지</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m09">M09 · 전체 조립, 배선 및 전원: 부품 상자에서 스스로 서는 기계까지</h1>
+<p><strong>전체 위치</strong>: <a href="/ko/roadmap/missions/m08-platform-selection/">M08</a> 조달 완료 후, <a href="/ko/roadmap/stage-2-biped/">2단계 개요</a> 복제 프로세스의 Step 3(기계 조립) 및 Step 6(최초 전원 인가). 입력은 부품 및 도구 상자이며, 출력은 <strong>기계적으로 완전한 본체 + smoke test를 통과한 전원 및 배선 시스템</strong>입니다. 하위 <a href="/ko/roadmap/missions/m10-urdf-modeling/">M10 · URDF 모델링 및 내보내기</a>에서는 이 작업의 중량 측정 및 실측 데이터를 사용합니다. 구조가 정형화되지 않으면 모델이 정확하지 않으므로, 모델링은 이 작업 이후에 진행됩니다.</p>
+<p><strong>전제 조건</strong>: M08 검수 통과(부품 도착, 도구 준비, 리튬 배터리 보관 규정 준수); 1단계(M05/M07)의 조립 및 벤치 테스트 경험 보유; <a href="/ko/roadmap/stage-2-biped/">2단계 개요</a>의 안전 적색선(비상 정지, 행거, 리튬 배터리 3가지) 숙지.</p>
+<p>이론적 배경: <a href="/ko/wiki/chapters/chapter-11/">제11장 조립, 통합 및 테스트</a>, <a href="/ko/wiki/chapters/chapter-06/">제6장 계산, 전원 및 열 관리</a>, <a href="/ko/wiki/chapters/chapter-10/">제10장 제조 공정 시스템</a>. 플랫폼 사실은 <a href="https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/">공개 조사 아카이브</a>에서 인용.</p>
+<h2 id="1">단계 1: 모듈별 조립 – 다리 → 팔 → 몸통 → 최종 조립</h2>
+<p>【수행할 작업】"다리 → 팔 → 몸통 → 최종 조립" 순서를 엄격히 따르며, <strong>각 모듈을 조립한 후 다음 단계로 넘어가기 전에 세 가지 작업을 수행</strong>합니다:</p>
+<ol>
+<li>수동 회전: 전원을 연결하지 않고, 각 관절을 수동으로 전체 범위로 움직여 부드러움과 백래시를 확인합니다.</li>
+<li>간섭 검사: 관절을 끝 위치까지 움직여 구조물과 배선이 서로 간섭하지 않는지 확인합니다.</li>
+<li>중량 측정 기록: 모듈을 저울에 올리고 숫자를 표에 기록합니다. – M10의 관성 매개변수와 2단계 Step 5의 시뮬레이션 정합은 이 데이터에 전적으로 의존합니다.</li>
+</ol>
+<p>체결구 규격: 공식 매뉴얼의 토크를 따릅니다(표시가 없는 경우 나사 규격의 엔지니어링 권장 값을 따르며, 직접 확인 필요), 진동 영역의 나사산에는 나사 고정제를 도포합니다. 3D 프린팅 부품의 사전 제작된 구멍은 억지로 끝까지 조이지 마십시오. 복제 플랫폼은 공식 자료에 따라 작업합니다: ToddlerBot에는 조립 매뉴얼 + 조립 비디오 + 조립 지그가 있으며, 논문에서는 하드웨어 경험이 없는 사람도 3일 안에 본체 조립을 독립적으로 완료할 수 있다고 검증되었습니다(toddlerbot.md); Berkeley는 먼저 22개의 액추에이터를 자체 제작해야 합니다. – 먼저 6512 하나를 완전히 조립하여 무부하 테스트를 통과시킨 후, 나머지 21개를 일괄 복제합니다. CAN 버스 납땜도 이 단계에서 함께 완료합니다(berkeley-humanoid-lite.md).</p>
+<p>【이유】최종 조립 후 재작업 시 분해 비용은 모듈 수준의 몇 배입니다. 수동 회전 감각은 가장 저렴한 품질 검사입니다. – 조립이 너무 빡빡하거나 축이 맞지 않으면, 전류 센서보다 손이 먼저 알 수 있습니다. 일괄 복제 전에 단일 부품을 먼저 검증하는 것은 "시스템적 오류 × 22"를 "오류 × 1"로 줄이는 유일한 방법입니다.</p>
+<p>【상황 분석】서보 모터 버스 플랫폼(ToddlerBot): 조립은 나사 조이기와 케이블 연결이 주를 이루며, 서보 모터 ID 기록과 서보 혼의 영점 위치 확인에 중점을 둡니다. 자체 개발 액추에이터 플랫폼(Berkeley): 단일 액추에이터를 먼저 무부하로 작동시킨 후 최종 조립을 논의하고, 22대를 동시에 점화하지 마십시오.</p>
+<h2 id="2">단계 2: 전체 배선 계획 – 두 가지 다이어그램 우선</h2>
+<p>【수행할 작업】납땜 인두를 사용하기 전에 먼저 두 가지 다이어그램을 그립니다:</p>
+<ol>
+<li><strong>전원 트리</strong>: 배터리 → 퓨즈 → 비상 정지 → 전원 분배 보드 → 각 드라이버/메인 컨트롤러, 각 구간의 전압과 예상 전류를 표시합니다(배경은 <a href="/entry/ent_component_power_distribution_system_2024/">전원 분배 시스템</a> 카드 참조).</li>
+<li><strong>신호 트리</strong>: 메인 컨트롤러 → 통신 버스 세그먼트 → 각 액추에이터/센서. 참고 사양: Berkeley의 사지 각각은 하나의 CAN 2.0 버스(1 Mbps, 액추에이터 및 IMU는 250 Hz로 통신, berkeley-humanoid-lite.md); ToddlerBot은 5V TTL 직렬 버스(2 Mbps, 30개 모터 전체 상태 피드백 50 Hz, toddlerbot.md). 버스 토폴로지 및 종단 매칭은 <a href="/entry/ent_technology_can_bus_2024/">CAN 버스</a> 카드를 참조하십시오.</li>
+</ol>
+<p>시공 4단계: <strong>실제 케이블 길이 측정 → 절단 → 압착 → 라벨링</strong>(양쪽 끝에 라벨을 부착하고, 라벨 번호를 신호 트리 다이어그램에 기록). 규격: 전원과 신호는 별도로 배선합니다. 관절을 통과하는 부분에는 비틀림 여유를 둡니다(관절 전체 작동 범위에서 케이블이 팽팽해지지 않도록). 모듈 간에는 분리 가능한 커넥터를 사용하여, 부품 교체 시 전체 기계를 분해하지 않아도 됩니다. 각 케이블 번들의 루트 부분에는 응력 완화 처리를 합니다. – 케이블 타이로 구조물에 고정하여, 힘이 납땜 지점과 터미널에 직접 가해지지 않도록 합니다.</p>
+<p>【이유】배선은 자작 로봇에서 고장률이 가장 높은 하위 시스템이며, 고장 모드가 가장 나쁩니다(간헐적, 재현 어려움). 두 가지 다이어그램은 몇 달 후 문제 해결 시 유일한 지도입니다. – 다이어그램에 없는 케이블이 바로 문제 해결 시 놓치는 케이블입니다.</p>
+<p>【상황 분석】선경은 각 분기 전류를 표에서 찾아 선택하고, 50%의 전류 용량 여유를 둡니다(엔지니어링 권장 값, 케이블 사양에 따라 확인 필요). 커넥터는 역삽입 방지 키가 있는 것을 우선 선택하십시오. – 역삽입으로 인한 보드 소손은 자작 로봇에서 가장 비싼 수업료입니다. 다이어그램은 예쁠 필요 없으며, 손으로 그려 사진을 찍어 보관해도 되지만, 실제 배선과 일치해야 합니다.</p>
+<h2 id="3-bms">단계 3: 전원 시스템 – 배터리, BMS, 퓨즈 및 비상 정지</h2>
+<p>【수행할 작업】</p>
+<ol>
+<li><strong>배터리 용량 → 작동 시간 추정</strong>:</li>
+</ol>
+<pre class="highlight"><code>배터리 에너지 (Wh) = 공칭 전압 (V) × 용량 (Ah)
+작동 시간 (h) ≈ 배터리 에너지 (Wh) ÷ 전체 기계 평균 전력 (W)</code></pre>
+<p>계산 예시(아카이브 사양 기준 역산): Berkeley의 6S 4000 mAh LiPo ≈ 22.2 V × 4.0 Ah ≈ 88.8 Wh, 실측 작동 시간 약 30분(berkeley-humanoid-lite.md), 역산한 전체 기계 평균 전력 ≈ 88.8 Wh ÷ 0.5 h ≈ 178 W. 정방향 사용: 목표 작동 시간 45분, 전체 기계 평균 전력 150 W 추정 → 필요 에너지 ≥ 150 × 0.75 ≈ 112.5 Wh → 6S(22.2 V)에서 필요 용량 ≥ 5.1 Ah, 6S 5200 mAh 급 선택. 작동 시간은 열 제약에도 영향을 받습니다: ToddlerBot RL 보행 실측 결과 19분 만에 과열로 클럭이 낮아짐(toddlerbot.md) – 전력은 남아 있지만, 기계가 먼저 움직일 수 없게 됩니다.</p>
+<ol>
+<li><strong>BMS 및 모니터링</strong>: 배터리 팩에는 보호 보드/관리 시스템이 있어야 합니다(<a href="/entry/ent_component_battery_management_system/">배터리 관리 시스템</a> 카드). 기내에서 전압 모니터링을 수행하고 저전압 보호 임계값을 설정합니다.</li>
+<li><strong>퓨즈</strong>: 정격 전류 ≥ 해당 분기의 최대 작동 전류, 그리고 &lt; 케이블의 전류 용량 한계; 작동 전류의 1.25–1.5배는 엔지니어링 권장 시작점이며, 선경 및 부품 사양에 따라 확인해야 합니다.</li>
+<li><strong>비상 정지(E-Stop)</strong>: 하드 와이어링으로 모터 동력을 물리적으로 차단하며, <strong>소프트웨어 체인과 독립적</strong>입니다(<a href="/entry/ent_component_emergency_stop_system_2024/">비상 정지 시스템</a> 카드). 참고: BRUCE에는 독립적인 무선 비상 정지 장치가 장착됨(bruce-westwood.md); THORMANG3는 출고 시 무선 비상 정지 장치와 리프팅 스트랩이 함께 제공됨(thormang3.md).</li>
+<li><strong>스파크 방지 및 전원 시퀀스</strong>: 대용량 배터리 최초 연결 시 스파크 방지 플러그 또는 사전 충전 회로를 사용합니다. 리튬 배터리 전체 수명 주기 규격은 <a href="/entry/ent_tech_li_battery_humanoid/">리튬 배터리 기술 카드</a>를 참조하십시오.</li>
+</ol>
+<p>【이유】이족 보행 로봇의 치명적인 사고 체인은 대부분 전원에서 시작됩니다: 단락 화재, 제어 불능 다리 휘두름, 과방전 폐기. 비상 정지를 소프트웨어에 의존하는 것은 생명을 운영 체제의 스케줄링 운에 맡기는 것과 같습니다. 퓨즈는 "5백 원짜리를 구하기 위해 5백 원짜리를 희생하는" 부품입니다.</p>
+<p>【상황 분석】먼저 플랫폼 공식 배터리 사양을 그대로 구매합니다(플랫폼에서 이미 검증됨). 더 큰 용량으로 교체하려면 위의 공식으로 Wh와 방전율을 다시 계산하십시오. 비상 정지 회로는 빈 보드에서 먼저 10회 온오프를 검증한 후 기기에 장착합니다.</p>
+<h2 id="4">단계 4: 메인 컨트롤러 및 네트워크 설치</h2>
+<p>【수행할 작업】</p>
+<ol>
+<li><strong>고정 및 진동 완화</strong>: 메인 컨트롤러를 몸통에 단단히 고정하고 진동 완화 패드를 추가합니다. – 구조적 진동이 IMU 판독값에 직접 유입됩니다(<a href="/entry/ent_component_imu_2024/">관성 측정 장치</a> 카드). 참고: Berkeley는 약 $129의 Intel N95 미니 PC를 몸통에 배치하여 하위 수준 제어와 RL 정책을 동시에 실행합니다(berkeley-humanoid-lite.md); ToddlerBot은 Jetson Orin NX 16GB를 기내 추론에 사용합니다(toddlerbot.md).</li>
+<li><strong>냉각 공기 통로</strong>: 흡기/배기구가 구조물에 막히지 않도록 하고, 먼저 무부하로 열 테스트를 수행하여 온도 곡선을 측정합니다. ToddlerBot의 19분 과열 클럭 저하 실측 결과는 소형 본체의 방열이 실제 제약 조건임을 보여줍니다.</li>
+<li><strong>통신 어댑터</strong>: USB-CAN 어댑터와 USB 케이블을 케이블 타이로 고정하여 작동 중 풀림을 방지합니다.</li>
+<li><strong>소프트웨어 구성</strong>: 부팅 시 자동 시작 + SSH 원격 로그인(BRUCE는 SSH를 통해 Wi-Fi/블루투스로 제어됨, bruce-westwood.md); 실시간성 솔루션은 <a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선택 매뉴얼</a>의 3단계에 따라 실행하며, 연산 계층화 논리는 이 작업에서 반복하지 않습니다.</li>
+</ol>
+<p>【이유】메인 컨트롤러의 느슨함과 과열은 가장 흔한 "불가사의한 재부팅" 원인입니다. 원격 로그인이 가능해야 행거 디버깅 작업 방식이 가능합니다. – 사람이 매달린 로봇 옆에서 작업할 필요가 없습니다.</p>
+<p>【상황 분석】미니 PC/개발 보드의 방열 구멍 방향은 장착 전에 먼저 확인하고, 공기 통로가 구조물에 막히면 장착 방향을 변경합니다. 팬 소음이 큰 경우, 공기 통로를 개조할 구조적 여유를预留합니다. 기내 연산 성능 선택을 아직 하지 않았다면, 먼저 매뉴얼로 돌아가 보충 학습한 후 장착하십시오.</p>
+<h2 id="5-smoke-test-2">5단계: 최초 전원 인가 smoke test – 2인 체제, 거치대 하단, 채널별 순차 인에이블</h2>
+<p>【수행 방법】전원 인가 전 체크리스트(항목별 서명):</p>
+<ol>
+<li>극성 재확인: 멀티미터로 채널별로 양극/음극 확인, 배터리 인터페이스는 마지막에 연결;</li>
+<li>절연 테스트: 전원 레일과 섀시 간 단락 없음 확인;</li>
+<li>비상정지 회로 무부하 검증: 모터 미연결 상태에서 비상정지 버튼을 눌러 동력 전원이 실제로 차단되는지 확인, 버튼 누름부터 전원 차단까지 &lt; 1초;</li>
+<li>단일 채널 순차 인에이블: 한 번에 하나의 분기 회로만 활성화, 전류가 정상이면 다음 회로 활성화.</li>
+</ol>
+<p>최초 전원 인가는 <strong>거치대에 매달린 상태</strong>(발이 지면에서 떨어진 상태)에서 진행하며, 2인 체제: 한 명은 인터페이스 수치를 모니터링하고, 한 명은 비상정지 버튼에 손을 얹음. 세 가지 항목 감시: 각 분기 회로 전류, 모터/드라이버 온도, 버스 통신(패킷 손실률). 모든 관절에 대해 소폭 정현파 스윙을 수행하여 방향과 응답성을 확인. 이상 징후 발견 시: 즉시 전원 차단, 현상 기록 후 원인 분석.</p>
+<p>【이유】전기적 오류는 최초 전원 인가 시 집중적으로 드러나며, 매달린 상태에서는 어떤 제어 불능 상황에서도 로봇이 추락하지 않음 – 이는 2단계의 안전 기준선이자 M07 테스트벤치 절차의 완제품 버전임.</p>
+<p>【사용자 상황 분석】거치대가 없는 경우: 갠트리 + 상단 스트랩으로 간이 보호 장치 구성(THORMANG3와 같은 풀사이즈 모델은 출고 시 리깅 스트랩이 기본 제공됨, thormang3.md, 데스크탑 로봇은 더욱이 보호 장치 없이 운용 불가); smoke test 기록표는 보관하며, M14에서 sim-to-real 문제를 추적할 때 다시 참조.</p>
+<h2 id="_1">승인 기준</h2>
+<ul>
+<li>[ ] 각 모듈의 회전 간섭/중량 측정 기록이 완료되고, 전체 로봇 중량 측정이 완료되어 BOM 추정치와 비교 분석됨.</li>
+<li>[ ] 전원 트리/신호 트리 두 가지 다이어그램이 문서화되고, 와이어 하네스 라벨링이 다이어그램과 일치하며, 전체 구간(관절 한계 위치 포함)에서 장력이 발생하지 않음.</li>
+<li>[ ] 비상정지 하드와이어링이 소프트웨어와 독립적이며, 버튼 누름부터 전원 차단까지 &lt; 1초 실측 기록이 보관됨.</li>
+<li>[ ] 퓨즈 사양에 대한 문서화된 선정 근거가 있고, 전압 모니터링 및 저전압 보호 임계값이 설정됨.</li>
+<li>[ ] 모든 관절 인에이블 시 이상 전류/이상 소음이 없고, 통신에 이상 패킷 손실이 없음; smoke test 체크리스트에 서명하여 보관.</li>
+</ul>
+<h2 id="_2">일반적인 문제점 및 진단</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>진단 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비상정지 버튼 누른 후에도 모터에 전원 공급됨</td>
+<td>비상정지가 소프트웨어/릴레이 제어 경로를 거침</td>
+<td>3단계로 돌아가기: 비상정지는 물리적으로 동력 전원을 차단해야 하며, 소프트웨어 경로와 독립적이어야 함</td>
+</tr>
+<tr>
+<td>CAN 통신 혼란, 패킷 손실률 급증</td>
+<td>접지 루프/공통 접지 불량, 종단 저항 누락</td>
+<td>각 노드의 공통 접지와 버스 양단 120Ω 종단 저항 확인; USB 어댑터를 독립 포트로 변경</td>
+</tr>
+<tr>
+<td>관절 부위 와이어 하네스 반복 굽힘으로 단선</td>
+<td>비틀림 여유 부족, 루트 부분 응력 완화 장치 없음</td>
+<td>재배선: 관절 전체 가동 범위에서 와이어가 팽팽해지지 않는지 확인, 루트 부분 케이블 타이로 구조물에 고정</td>
+</tr>
+<tr>
+<td>작동 중 배터리 이동, 이상 소음</td>
+<td>배터리 고정 불량</td>
+<td>배터리 베이에 스트랩/폼 추가, 전복 및 흔들림 테스트 수행</td>
+</tr>
+<tr>
+<td>전원 인가 순서 오류로 보드 손상</td>
+<td>신호선 먼저 연결 후 전원 인가, 서지가 신호선을 통해 유입</td>
+<td>전원 인가 순서 고정: 전원 안정화 후 신호/메인 컨트롤러 연결, 체크리스트에 명시</td>
+</tr>
+<tr>
+<td>메인 컨트롤러 불규칙 리셋</td>
+<td>고정 불량 또는 과열로 인한 클럭 다운 보호</td>
+<td>장착 상태와 에어 덕트 확인; 온도 곡선 모니터링(ToddlerBot 19분 클럭 다운 기준 참조)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m08-platform-selection/">M08 · 플랫폼 선정 및 구매</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m10-urdf-modeling/">M10 · URDF 모델링 및 내보내기</a></li>
+<li><a href="/ko/roadmap/stage-2-biped/">2단계 개요</a> · <a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선정 매뉴얼</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-11/">제11장 조립, 통합 및 테스트</a>, <a href="/ko/wiki/chapters/chapter-06/">제6장 컴퓨팅, 전원 및 열 관리</a>, <a href="/ko/wiki/chapters/chapter-10/">제10장 제조 공정 시스템</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m08-platform-selection/">← 이전<span>M08 · 플랫폼 선정 및 조달: 플랫폼을 제대로 고르면 성공의 절반</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m10-urdf-modeling/">다음 →<span>M10 · URDF 모델링 및 내보내기: 쇳덩이를 계산 가능한 모델로 만들기</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m09">M09 · 전체 조립, 배선 및 전원: 부품 상자에서 스스로 서는 기계까지</a><ul>
+<li><a href="#1">단계 1: 모듈별 조립 – 다리 → 팔 → 몸통 → 최종 조립</a></li>
+<li><a href="#2">단계 2: 전체 배선 계획 – 두 가지 다이어그램 우선</a></li>
+<li><a href="#3-bms">단계 3: 전원 시스템 – 배터리, BMS, 퓨즈 및 비상 정지</a></li>
+<li><a href="#4">단계 4: 메인 컨트롤러 및 네트워크 설치</a></li>
+<li><a href="#5-smoke-test-2">5단계: 최초 전원 인가 smoke test – 2인 체제, 거치대 하단, 채널별 순차 인에이블</a></li>
+<li><a href="#_1">승인 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 진단</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

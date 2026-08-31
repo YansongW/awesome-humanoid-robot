@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</h1>
+      <p class="entry-name-en">FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>FM-VLA 是首个将力（wrench）流作为轻量级长时程记忆用于视觉-语言-动作（VLA）模型的系统，由作者团队提出，旨在解决接触丰富操作中依赖单帧观测的马尔可夫假设失效问题。其核心贡献在于通过冻结的 Force-VAE 将长程腕部力/力矩历史压缩为 8 个记忆 token，并与短程关节状态历史结合，在三个双臂接触任务上将平均成功率从基线的 27.8% 提升至 83.3%，同时推理延迟仅增加 3.3 ms。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18231" target="_blank" rel="noopener">arXiv:2607.18231 FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Man</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 模型将决策视为从当前状态到动作的无记忆映射，这在按钮按压、擦碗等视觉变化细微但力信号携带关键计数信息的任务中系统性失效。此前引入力信号的尝试（如 TA-VLA）仅将力作为短期上下文，无法累积“已按几次”这类长时程状态；而视觉记忆方案（如 π-MEM）在视觉位移可忽略时失效，且存储历史帧导致推理延迟显著增加（+39.1 ms 至 +129.3 ms）。</p>
+<p>FM-VLA 真正改变的是“记忆的模态选择”与“记忆的压缩方式”。它证明了力信号不仅是瞬时的反馈信号，更是一种天然适合长时程压缩的本体感受流——6 维力/力矩的时序模式比高维视觉帧更易编码为紧凑的潜在表示。通过将力历史压缩为固定 8 个 token，它绕开了视觉记忆的 token 膨胀问题，同时保留了任务关键的非马尔可夫信息，这是对 VLA 架构中“记忆从哪来、以何种形式存在”这一根本问题的重新回答。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题形式化</h3>
+<p>策略建模为 π(a_t | o_t, l, h_t)，其中历史 h_t 由两个互补流组成：
+- <strong>长时程 wrench 历史</strong>：{f_τ}<em τ="t-W+1">{τ=1}^{t}，f_τ ∈ R⁶（3 轴力 + 3 轴力矩，腕装六轴 F/T 传感器，100 Hz 降采样至 30 Hz）
+- <strong>短窗口关节状态历史</strong>：{s_τ}</em>，s_τ ∈ R¹⁶（7-DoF 双臂 + 两个 1-DoF 夹爪）}^{t</p>
+<h3 id="_4">力历史预处理</h3>
+<ul>
+<li><strong>因果一阶 EMA 平滑</strong>：f̃<em τ-1="τ-1">τ = 0.3·f_τ + 0.7·f̃</em>，去除传感器噪声同时保留接触起始与峰值特征</li>
+<li><strong>随机噪声预填充</strong>：训练时在历史前添加均匀采样至多 1000 帧（≈10 s）的低幅高斯噪声（σ=0.05），防止模型利用序列长度泄露时间进度；推理时禁用</li>
+</ul>
+<h3 id="force-vae-perceiver-io">Force-VAE 编码器（Perceiver-IO 架构）</h3>
+<ol>
+<li>输入力帧经分位数归一化（q₀₁/q₉₉），输入 MLP 投影至 384 维，叠加 32 波段傅里叶位置编码（f_max=1500）</li>
+<li>编码器：2 层交叉注意力（1 头，头维 64）将特征提取至 K=8 个可学习潜查询 token，穿插 10 层自注意力（8 头，头维 32，dropout 0.1）</li>
+<li>每潜 token 经线性头输出后验参数 (μₖ, log σₖ²) ∈ R⁹⁶，采样 zₖ = μₖ + σₖ ⊙ εₖ</li>
+<li>解码器：2 层交叉注意力，时间步特定傅里叶编码查询关注潜 token，重建序列 F̂ ∈ R^{T×6}</li>
+</ol>
+<h3 id="_5">短状态历史投影器</h3>
+<p>避免第二个 VAE，取最近 10 帧关节状态（步长 3 数据集帧，覆盖 ≈0.9 s），10×16 张量展平后经单个零初始化线性层投影为 1 个状态历史 token。</p>
+<h3 id="token">记忆 token 注入</h3>
+<ul>
+<li>力编码器仅取后验均值 μ_f（无重参数化噪声），经零初始化线性层从 d_z=96 投影至动作专家隐藏维度 d_h</li>
+<li>序列布局：<code>[30 个噪声动作 token] ∥ [8 个 wrench 记忆 token] ∥ [1 个状态窗口 token]</code></li>
+<li>后置位置保持噪声动作 token 在基础策略预训练时的 RoPE 位置不变</li>
+</ul>
+<h3 id="_6">两阶段训练</h3>
+<ul>
+<li><strong>Stage 1（Force-VAE 预训练）</strong>：掩码 ELBO 目标 L_VAE = (1/(Σ_τ m_τ·6)) Σ_τ m_τ ||f_τ - f̂<em k_j="k,j">τ||² + 1×10⁻³·(1/(8·96)) Σ</em> max(D_KL^(k,j), 0.5)，使用逆频率任务采样；100000 步，批大小 512，峰值 LR 3×10⁻⁴</li>
+<li><strong>Stage 2（VLA 微调）</strong>：冻结力编码器并切换 eval 模式，仅用 μ_f；遵循 π₀.₅ 的 rectified-flow 方案，预测速度 ε - a₀；联合微调 VLM、动作专家、短状态投影器、wrench 潜在投影器；50000 步，全局批大小 32，峰值 LR 5×10⁻⁵，每视角图像 dropout p=0.4</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>力作为长时程记忆的首次系统性应用</strong>：此前力信号仅用于短期动作调节，FM-VLA 证明 6 维力/力矩流经 VAE 压缩后可稳定携带“按钮已按次数”“碗已擦几圈”等跨数十秒的任务状态，这是对 VLA 记忆模态选择的根本性拓展。</p>
+</li>
+<li>
+<p><strong>冻结 VAE + 零初始化投影的注入范式</strong>：力编码器在 Stage 1 预训练后完全冻结，仅通过零初始化线性层接入动作专家。这避免了端到端训练中力表征被动作预测目标破坏，同时零初始化保证初始训练时记忆 token 不干扰 π₀.₅ 预训练的行为分布，实现稳定微调。</p>
+</li>
+<li>
+<p><strong>极低推理开销的记忆机制</strong>：8 个力记忆 token + 1 个状态 token 仅增加 3.3 ms 延迟（60.7→64.0 ms），相比视觉记忆 π-MEM 的 +39.1 ms（K=5）和 +129.3 ms（K=16）有数量级优势，使长时程记忆首次可部署于实时机器人控制回路。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<p><strong>任务套件</strong>（AgiBot G1 双臂人形，每任务 18 次试验）：
+- 任务 1（Find a Block Under Two Cups）：200 演示，需记住哪个杯子已检查
+- 任务 2（Push Buttons）：350 演示，按 N∈{1,2,3} 次后停止，视觉位移可忽略
+- 任务 3（Wipe Dishes）：200 演示，擦碗 N∈{1,2,3} 圈，视觉变化极小</p>
+<p><strong>主要结果（成功率 %）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>任务 1</th>
+<th>任务 2</th>
+<th>任务 3</th>
+<th>平均</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅（无历史）</td>
+<td>72.2</td>
+<td>11.1</td>
+<td>0.0</td>
+<td>27.8</td>
+</tr>
+<tr>
+<td>TA-VLA（短期力）</td>
+<td>50.0</td>
+<td>11.1</td>
+<td>5.6</td>
+<td>22.2</td>
+</tr>
+<tr>
+<td>π-MEM（视觉记忆）</td>
+<td>77.8</td>
+<td>33.3</td>
+<td>50.0</td>
+<td>53.7</td>
+</tr>
+<tr>
+<td>FM-VLA（VAE，ours）</td>
+<td>100.0</td>
+<td>72.2</td>
+<td>77.8</td>
+<td>83.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键消融</strong>：
+- 仅力历史（无状态窗口）：平均 25.9%，任务 2 降至 0.0%——力历史单独不足以完成任务，需与短状态配合
+- 仅状态历史：平均 40.7%，任务 1 达 100.0%——关节状态可推断杯子检查进度，但无法感知按钮按压次数
+- 架构消融：GRU 编码器平均 33.3%，Q-Former 平均 57.4%，VAE 平均 83.3%——VAE 的显式信息瓶颈（8 token）优于 GRU 的单 token 压缩和 Q-Former 的端到端学习</p>
+<p><strong>推理延迟（RTX 4090）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>延迟 (ms)</th>
+<th>Δ vs. base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>60.7 ± 0.3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>π-MEM (K=5)</td>
+<td>99.8 ± 0.4</td>
+<td>+39.1</td>
+</tr>
+<tr>
+<td>π-MEM (K=16)</td>
+<td>190.0 ± 1.0</td>
+<td>+129.3</td>
+</tr>
+<tr>
+<td>FM-VLA</td>
+<td>64.0 ± 0.4</td>
+<td>+3.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>容量消融</strong>（Wipe Dishes）：VAE 潜 token 数在 {4, 8, 16, 32} 上测试，8 个 token 达峰值；16/32 个 token 性能下降，归因于基础策略预训练时最多观察 50 个 token，额外力 token 超出分布范围。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>当前 VAE 潜空间引入固定 8 token 瓶颈，对于需记忆数百个接触事件的超长时程任务（如整桌多碗擦拭），可能需要分层或自适应压缩机制，论文未明确。</li>
+<li>VAE 仅在演示数据集（共 750 个演示）的力数据上训练，未在大规模机器人数据集上预训练多样力/力矩记录，泛化性受限。</li>
+<li>实验仅在单一平台（AgiBot G1）和三个任务上验证，未涉及更复杂的接触操作（如装配、插拔）或非双臂场景。</li>
+<li>力传感器为腕装六轴，未探索指尖触觉或全身力感知；任务 2 中 FM-VLA 仍有 27.8% 失败率，说明计数误差在极端情况下仍存在。</li>
+<li>论文未明确报告训练时间、显存占用或对传感器噪声/漂移的鲁棒性分析。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>先核对力信号质量</strong>：EMA 平滑（α=0.3）和分位数归一化（q₀₁/q₉₉）是预处理关键，若传感器噪声大或基线漂移，需先调整这两个超参数；训练时噪声预填充（σ=0.05，最大 1000 帧）必须启用，否则模型会利用序列长度作弊。</li>
+<li><strong>冻结 VAE 是稳定微调的核心</strong>：Stage 2 中力编码器必须切换 eval 模式并仅用后验均值，任何重参数化噪声都会破坏动作专家训练；零初始化投影器保证初始梯度不干扰 π₀.₅ 预训练行为，这是复现 83.3% 成功率的关键设计。</li>
+<li><strong>最容易踩坑的是 token 数量</strong>：VAE 潜 token 数固定为 8，不要随意增加——基础策略预训练时动作专家最多观察 50 个 token，超过此限制会因分布偏移导致性能骤降（16/32 token 时任务 3 成功率下降）。</li>
+<li><strong>短状态窗口不可省略</strong>：仅力历史在任务 2 上完全失败（0.0%），必须配合 10 帧关节状态窗口（步长 3，覆盖 0.9 s）；状态窗口的零初始化线性投影是轻量且有效的设计，无需额外 VAE。</li>
+<li><strong>推理部署友好</strong>：64.0 ms 延迟（含 8 个力 token + 1 个状态 token）满足实时控制需求；若下游任务需更高控制频率，可考虑将力流降采样率从 30 Hz 进一步降低，但需重新验证计数精度。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18231</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">TA-VLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_fm_vla_force_memory_vision_language_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TA-VLA</h3>
+          <p>TA-VLA 是由北京人工智能研究院（BAAI）、清华大学 AIR、南洋理工大学等机构在 CoRL25 上发表的 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题形式化</a></li>
+<li><a href="#_4">力历史预处理</a></li>
+<li><a href="#force-vae-perceiver-io">Force-VAE 编码器（Perceiver-IO 架构）</a></li>
+<li><a href="#_5">短状态历史投影器</a></li>
+<li><a href="#token">记忆 token 注入</a></li>
+<li><a href="#_6">两阶段训练</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

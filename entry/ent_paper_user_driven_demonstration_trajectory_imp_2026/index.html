@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method</h1>
+      <p class="entry-name-en">User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种单次示教（single-shot）的机器人学习从示教（LfD）框架，由作者 Yang 与 Kermani 开发，同时从机器人本体感觉传感器学习轨迹与阻抗轮廓。核心贡献在于将 3D 快速微分同胚匹配（FDM）与扩展卡尔曼滤波（EKF）速度修正、在线阻抗参数化及表面接触保持策略结合，实现高保真路径复现与扰动恢复。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.16998" target="_blank" rel="noopener">arXiv:2607.16998 User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Met</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>传统 LfD 方法长期受困于两个相互纠缠的痛点：一是多示教需求带来的用户负担，二是轨迹表示对时间索引的依赖，导致复现时无法适应新轨迹或外部扰动。尽管 DMPs 解决了时间不变性与目标收敛，但其多示教需求与时间依赖问题依旧存在。更关键的是，现有力/阻抗学习方法通常依赖传感器反馈或简化环境接触模型，与路径复现独立记录，无法直接从人类示教中学习柔顺行为。</p>
+<p>本文真正改变的是将“轨迹学习”与“阻抗学习”从分离的两条技术路线合并为单一、在线、本体感觉驱动的过程。它不再将偏离任务参考视为需要抑制的扰动，而是通过 EKF 在线估计速度偏置，将扰动视为可修正的系统状态。同时，它利用示教阶段人类操作者保持末端执行器与表面连续接触的隐含假设，将表面几何信息编码进动力学系统（DS）中，从而无需外部接触或视觉传感器即可实现表面接触保持。这实质上是把“示教什么”从单纯的位置路径扩展到了“如何与环境交互”的层面。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="fig-1">整体架构（Fig. 1）</h3>
+<p>框架由四个模块组成：(i) 3D FDM 算法将线性 DS 匹配到示教轨迹，生成基础速度场；(ii) EKF 修正基础速度以细化轨迹复现并实现扰动恢复；(iii) 复现过程中在线学习阻抗参数；(iv) 可选模块用于表面接触保持。</p>
+<h3 id="3d-fdm-algorithm-1">3D FDM 算法（Algorithm 1）</h3>
+<ul>
+<li>将 2D FDM 扩展至 3D，计算微分同胚 Φ 将点集 X 映射到 Y。</li>
+<li>局部加权平移：ŷᵢ = xᵢ + k_ρⱼ vⱼ，其中 k_ρⱼ = e^(−ρⱼ²‖xᵢ−cⱼ‖²) 为高斯 RBF 核。</li>
+<li>优化 ρⱼ 以最小化 ‖φ(X)−Y‖²/N，ρ_max = e^(1/4)/(√2‖v‖)。</li>
+<li>每次迭代选择 X 中距目标最远的点，方向 vⱼ = β(qⱼ−cⱼ)，0 &lt; μ &lt; 1 为安全裕度，0 &lt; β ≤ 1 为学习率，K = 120–200 为用户选择的局部加权平移总数。</li>
+<li>最终 Ŷ = Φ(X^(K)) = (φ_ρ₁ ∘ φ_ρ₂ ∘ ⋯ ∘ φ_ρK)(X)。</li>
+</ul>
+<h3 id="dsmds-6">改进的 DS（mDS）运动生成器（式 6）</h3>
+<ul>
+<li>原始 FDM 变换 DS 在 3D 和复杂运动情况下泛化能力下降，作者提出 mDS：ẏ_mDS = −ζ J_Φ x̂。</li>
+<li>ζ = ζ + ηΔζ 为速度调制项，Δζ = (·)ᵀe_v/(‖(·)ᵀe_v‖+ε)，e_v 为示教速度与 mDS 生成速度之间的误差，η 为适应率，ε 为阈值。</li>
+<li>Δζ 经移动平均滤波并施加钳位。</li>
+</ul>
+<h3 id="algorithm-2">逆微分同胚（Algorithm 2）</h3>
+<ul>
+<li>通过反转位移求解 X̂ = Φ⁻¹(Y)，使用 Newton–Raphson 方法求解自引用方程 rⱼ(k) = e^(−ρⱼ²‖oⱼ+kⱼvⱼ⁻‖²)。</li>
+<li>停止阈值 ε = 10⁻⁶，最大迭代次数 20–50。</li>
+</ul>
+<h3 id="jacobian-1617">Jacobian 矩阵（式 16–17）</h3>
+<ul>
+<li>使用 Sherman–Morrison 公式 J_φⱼ = I₃ + 2ρⱼ²kⱼvⱼ⁻(X̂−cⱼ)ᵀ，完整 Jacobian J_Φ = ∏ⱼ₌K→1 J_φⱼ。</li>
+</ul>
+<h3 id="ekf-1822">EKF 速度修正模块（式 18–22）</h3>
+<ul>
+<li>修正速度：ẏ_ekf = ẏ_mDS + b，b 为在线估计的速度偏置项。</li>
+<li>EKF 状态 sᵢ = [yᵢ, bᵢ]ᵀ ∈ ℝ⁶。</li>
+<li>过程模型包含偏置衰减项 e^(−λ_b Δt)，λ_b &gt; 0 为偏置衰减率。</li>
+<li>状态转移 Jacobian 中 F_y 用前向有限差分近似，时间间隔 10⁻³。</li>
+<li>测量矩阵 H = [I₃ 0₃]，R 为用户定义测量噪声协方差。</li>
+</ul>
+<h3 id="2325">阻抗参数化（式 23–25）</h3>
+<ul>
+<li>速度跟踪控制器：F_c = D(⋄)ṗ_c，其中 ṗ_c = ẏ_msr − ẏ_ekf。</li>
+<li>D(⋄) = U(⋄)ΛU(⋄)ᵀ，U 包含估计的正交主轴，ê₁ 指向期望运动方向。</li>
+<li>Λ = diag(λ₁, λ₂, λ₃) 为用户定义对角矩阵，元素非负（通常 10–100）。</li>
+<li>设置 λ₁ = 0 且其余 &gt; 0 可抵抗导致偏离路径跟踪的外力。</li>
+</ul>
+<h3 id="26">表面接触保持策略（式 26）</h3>
+<ul>
+<li>利用示教阶段人类操作者保持 EE 工具与目标表面连续接触的假设，表面局部几何隐含编码在 DS 中，无需外部接触或视觉传感器。</li>
+<li>第三列 ê₃ 与外表面法线重合，提供实时表面法线估计。</li>
+<li>最终速度：ẏ_d = ẏ_mDS + g_c(·) + b，其中 g_c(·) = α_c ê₃ 产生指向表面的可调速度；高 α_c 强制紧密接触，α_c = 0 表示无接触力跟踪。</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li><strong>单次示教同时学习轨迹与阻抗</strong>：这是对传统 LfD 范式的实质性突破。以往方法要么只学轨迹（如 DMPs、GMM），要么依赖传感器反馈单独学习力/阻抗，本文首次将两者统一在本体感觉驱动的单一框架内，显著降低用户示教负担。</li>
+<li><strong>mDS 与 EKF 的协同设计</strong>：mDS 解决了原始 FDM 在 3D 复杂运动下的泛化退化问题，而 EKF 在线估计速度偏置 b 则赋予系统扰动恢复能力。这一组合的关键在于：EKF 不是简单地滤波，而是将“偏离参考”重新解释为可估计、可修正的系统状态，而非需要抑制的噪声。</li>
+<li><strong>表面接触保持的无传感器策略</strong>：利用示教阶段隐含的表面几何信息，通过 DS 编码与第三主轴 ê₃ 对齐表面法线，实现无需外部接触或视觉传感器的接触保持。这一设计将“示教”的语义从路径跟踪扩展到了交互任务本身，对 HRI 安全性具有直接意义。</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<p>实验在 7-DOF KUKA LWR IV+ 机器人上进行，远程 Ubuntu PC 通过 ROS 与 UDP 通信，使用 FRI 接口，采样率 200 Hz。控制模式为关节阻抗模式，仅控制扭矩输入，刚度和阻尼接口被禁用，摩擦与重力扭矩得到补偿。数据集采用 LASA Handwriting 数据集的 2D 参考轨迹，扩展至 3D 笛卡尔空间，轨迹类型包括 'S' 形、近 'O' 形、梯形、'W' 形路径。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDM 变换估计误差</td>
+<td>低于 0.3 cm</td>
+<td>subfigures ii</td>
+</tr>
+<tr>
+<td>修正后复现误差</td>
+<td>一般在 2 cm 以下</td>
+<td>绿色虚线紧密跟随示教（红色）</td>
+</tr>
+<tr>
+<td>基线（DS 速度生成）复现误差</td>
+<td>明显更大</td>
+<td>随路径复杂度增加而恶化，扰动下无法恢复</td>
+</tr>
+</tbody>
+</table>
+<p>结果以图形形式呈现（Fig. 3 和 Fig. 4），论文未包含数字表格。关键含义：mDS+EKF 组合在复现精度上显著优于纯 DS 基线，且具备扰动恢复能力；阻抗参数化与表面接触保持策略在保持接触的同时不牺牲路径跟踪精度。</p>
+<h2 id="_5">边界与局限</h2>
+<p>论文未明确讨论多任务泛化、不同用户示教风格差异、以及该方法在其他机器人平台上的可迁移性。原始 FDM 变换 DS 在 3D 和更复杂运动情况下泛化能力下降的问题虽由 mDS 缓解，但作者未提及对非常复杂或高度动态任务的适用性边界。计算复杂度在更大规模数据集上的表现也未讨论。实验仅在单一平台（KUKA LWR IV+）上验证，且轨迹类型有限（'S'、'O'、梯形、'W'），对非结构化环境或动态接触任务的泛化能力论文未明确。</p>
+<h2 id="_6">工程启示</h2>
+<p>复现时首先核对 FDM 参数设置：K = 120–200 的局部加权平移总数、0 &lt; μ &lt; 1 的安全裕度、0 &lt; β ≤ 1 的学习率，这些参数直接影响微分同胚的质量与计算开销。EKF 模块中，F_y 的前向有限差分时间间隔 10⁻³ 与偏置衰减率 λ_b &gt; 0 需要根据实际采样率（200 Hz）与任务动态调整，否则可能导致速度估计滞后或过度平滑。阻抗参数 Λ 对角元素（通常 10–100）的选择需权衡柔顺性与跟踪精度，λ₁ = 0 的设置对抵抗偏离路径的外力至关重要。最容易踩坑的地方在于逆微分同胚的 Newton–Raphson 求解：停止阈值 ε = 10⁻⁶ 与最大迭代次数 20–50 在复杂轨迹上可能不收敛，建议先在小规模点集上验证逆变换精度。表面接触保持策略依赖示教阶段人类操作者保持连续接触的假设，若示教时接触不连续，第三主轴 ê₃ 与表面法线的对齐将失效，需在示教阶段严格规范操作者行为。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.16998</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <span class="rel-missing">ent_paper_kalman_filter_kf</span>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_user_driven_demonstration_trajectory_imp_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#fig-1">整体架构（Fig. 1）</a></li>
+<li><a href="#3d-fdm-algorithm-1">3D FDM 算法（Algorithm 1）</a></li>
+<li><a href="#dsmds-6">改进的 DS（mDS）运动生成器（式 6）</a></li>
+<li><a href="#algorithm-2">逆微分同胚（Algorithm 2）</a></li>
+<li><a href="#jacobian-1617">Jacobian 矩阵（式 16–17）</a></li>
+<li><a href="#ekf-1822">EKF 速度修正模块（式 18–22）</a></li>
+<li><a href="#2325">阻抗参数化（式 23–25）</a></li>
+<li><a href="#26">表面接触保持策略（式 26）</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a></li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

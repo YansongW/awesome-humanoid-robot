@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 19: Vision-Language-Action Models (VLA) · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 19: Vision-Language-Action Models (VLA)</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-19-vision-language-action-models-vla">Chapter 19: Vision-Language-Action Models (VLA)</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Vision-Language-Action Models (VLA) represent the most influential technical paradigm in recent embodied AI: they unify the semantic understanding capabilities of large-scale Vision-Language Models (VLM) with robot action generation within a single end-to-end network, enabling robots to directly output executable actions based on natural language instructions and visual observations. This chapter begins with the definition and mathematical formulation of VLA, systematically reviewing its architectural paradigms—including discrete action token autoregression, diffusion policy and flow matching continuous action heads, and the "slow thinking-fast execution" dual-system architecture. It then delves into the design trade-offs of representative systems such as RT-1/RT-2, OpenVLA, Octo, π0, GR00T N1, Helix, and SmolVLA. Subsequently, it discusses data engineering for cross-embodiment pre-training (Open X-Embodiment, DROID, BridgeData V2, AgiBot World Colosseo, etc.), adaptation methods for full-body control of humanoid robots, inference latency and edge deployment constraints, as well as evaluation benchmarks and typical failure modes. This chapter, together with Chapter 18 (Imitation Learning and Policy Learning), Chapter 20 (World Models and Long-Horizon Reasoning), and Chapter 21 (Data Infrastructure), constitutes the intelligent layer technology mainline of this book.</p>
+<p><strong>Keywords</strong>: Vision-Language-Action Model; VLA; RT-2; OpenVLA; π0; GR00T N1; Helix; Flow Matching; Diffusion Policy; Action Chunking; Cross-Embodiment Pre-training; Dual-System Architecture; Edge Deployment</p>
+<hr />
+<h2 id="191-vla-overview-from-end-to-end-control-to-embodied-foundation-models">19.1 VLA Overview: From End-to-End Control to Embodied Foundation Models</h2>
+<h3 id="1911-definition-and-positioning">19.1.1 Definition and Positioning</h3>
+<p><strong>Vision-Language-Action Model (VLA)</strong> refers to a large model policy that takes visual observations and natural language instructions as input and directly outputs robot actions (or action sequences). Its core idea is to compress the traditionally layered pipeline of "perception—understanding—decision—control" into a single end-to-end trainable neural network. By leveraging the semantic priors obtained from pre-training Vision-Language Models on internet-scale data, it achieves generalization over objects, tasks, and instructions in the open world.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Vision-Language-Action Model, Vision-Language Model, Embodied Foundation Model, End-to-End Policy</p>
+<ul>
+<li><strong>Vision-Language-Action Model (VLA)</strong>: A multimodal large model that takes images (or video frames) and language instructions as input and outputs robot actions. The term was formally established by Google DeepMind's RT-2 work (2023).</li>
+<li><strong>Vision-Language Model (VLM)</strong>: A model pre-trained on internet image-text data, capable of visual question answering and image description, such as PaLI-X, SigLIP+Llama combinations, etc. It serves as the semantic backbone of VLA.</li>
+<li><strong>Embodied Foundation Model</strong>: A general-purpose model oriented towards physical world tasks, adaptable to various robot embodiments. VLA is currently the primary implementation form.</li>
+<li><strong>End-to-End Policy</strong>: A policy network that goes from raw sensor input to actuator output without passing through manually designed intermediate modules (such as explicit pose estimation or grasp planning).</li>
+</ul>
+</div>
+<p>Compared to the classic imitation learning discussed in Chapter 18, the difference of VLA lies not in the training paradigm (most VLAs still use behavioral cloning as the backbone), but in <strong>scale and prior knowledge</strong>: parameter scale jumps from millions to billions, training data expands from single-task demonstrations to millions of cross-embodiment, cross-scenario episodes, and the model carries open-vocabulary semantics from internet image-text pre-training. This endows VLA with instruction-following and novel object generalization capabilities that are difficult for classic methods to achieve.</p>
+<p>For the entire book, this chapter sits at the center of the "intelligence layer" narrative: Chapters 14–17 answer "how robots are controlled and taught," Chapter 18 answers "how policies learn from data," and this chapter answers "how to truly drive a physical body with the common sense of large models." The answer to this question is reshaping the division of labor in the entire humanoid robot industry—the boundaries between model companies, data companies, and robot manufacturers are largely being redrawn along the VLA technology stack (Chapter 28 will discuss its industrial consequences).</p>
+<p>From a hardware perspective, VLA also explains why the first half of this book repeatedly emphasized certain design choices: wrist cameras and proprioceptive interfaces (Chapter 5) are the "senses" of VLA; onboard computing power and thermal design (Chapter 6) determine how large a backbone can run; force control bandwidth and joint precision (Chapter 4) determine whether the action head's output can be faithfully executed. Large models have not made hardware less important—quite the opposite, they amplify differences in hardware quality into differences in data quality and deployment density.</p>
+<h3 id="1912-development-trajectory-from-rt-1-to-open-source-ecosystem">19.1.2 Development Trajectory: From RT-1 to Open-Source Ecosystem</h3>
+<p>The lineage of VLA can be traced back to Google's <strong>RT-1 (Robotics Transformer, 2022)</strong>: It trained a Transformer policy on approximately 130,000 real robot demonstration episodes, covering over 700 tasks, and first demonstrated the feasibility of large-scale, real-data-driven, language-conditioned manipulation policies. Subsequently, <strong>RT-2 (2023)</strong> took a critical step: representing actions as text tokens and performing co-fine-tuning directly on internet-scale pre-trained Vision-Language Models (PaLI-X, PaLM-E), thereby transferring network-scale semantic knowledge (such as instructions requiring common sense reasoning like "pick out the animal that is about to go extinct") to robot control. RT-2 thus established the term VLA and its basic paradigm.</p>
+<p>Since then, the ecosystem has expanded rapidly: On the open-source side, <strong>Octo</strong> (a generalist policy trained on heterogeneous cross-embodiment data) and <strong>OpenVLA</strong> (a 7-billion-parameter open-source model trained on approximately 970,000 episodes from Open X-Embodiment) emerged; the startup <strong>Physical Intelligence</strong> launched <strong>π0</strong> based on flow matching, demonstrating dexterous long-horizon tasks like folding clothes and packing boxes; NVIDIA released the open foundation model <strong>GR00T N1</strong> for general-purpose humanoid robots; Figure released <strong>Helix</strong> to drive its Figure 02 humanoid robot; and the Hugging Face community introduced <strong>SmolVLA</strong> for low-cost hardware. VLA work in the autonomous driving domain (e.g., DriveVLA, Impromptu VLA) and the robotics domain have been cross-fertilizing, further enriching this lineage.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["RT-1&lt;br/&gt;2022&lt;br/&gt;Real Data Scaling"] --&gt; B["RT-2&lt;br/&gt;2023&lt;br/&gt;VLM Knowledge Transfer&lt;br/&gt;Establishes VLA Paradigm"]
+    B --&gt; C["Octo / OpenVLA&lt;br/&gt;2024&lt;br/&gt;Open-Source Cross-Embodiment"]
+    B --&gt; D["π0&lt;br/&gt;2024&lt;br/&gt;Flow Matching Action Head"]
+    C --&gt; E["GR00T N1 / Helix&lt;br/&gt;2025&lt;br/&gt;Humanoid Robot VLA"]
+    D --&gt; E
+    E --&gt; F["SmolVLA etc.&lt;br/&gt;2025&lt;br/&gt;Lightweight &amp; Edge Deployment"]</code></pre>
+<p>There are three turning points worth remembering in this trajectory. First, RT-2 proved the value of <strong>knowledge transfer</strong>: robots no longer need to learn "what a dinosaur is" or "what a hammer is" from scratch; these concepts can be inherited from internet pre-training. Second, OpenVLA proved the power of <strong>open ecosystems</strong>: an academic team could replicate and surpass industrial closed-source baselines with a budget of hundreds of GPU-days, rapidly democratizing VLA research. Third, π0 and GR00T N1 proved the necessity of <strong>generative action heads</strong>: when tasks escalate from "pick and place" to "folding clothes"—high-dimensional, multi-modal, temporally tightly coupled dexterous manipulation—the precision and bandwidth of the discrete token approach begin to fall short.</p>
+<h3 id="1913-boundaries-between-vla-and-related-concepts">19.1.3 Boundaries Between VLA and Related Concepts</h3>
+<p>To avoid conceptual confusion, it is necessary to delineate the boundaries between VLA and adjacent terms. VLA is not a simple synonym for VLM: VLM is only responsible for understanding; VLA must output executable actions. A VLM that describes an image perfectly, no matter how accurately, is not a VLA without an action head. VLA is also not a new paradigm for policy learning: in the vast majority of cases, it is still behavioral cloning (Chapter 18), just with the policy network replaced by a pre-trained large model. The relationship between VLA and <strong>teleoperation (Chapter 17)</strong> is symbiotic in terms of data—currently, the vast majority of VLA training data comes from human teleoperation demonstrations, and VLA, in turn, is used for intent assistance and automatic error correction in teleoperation. Finally, the division of labor between VLA and <strong>world models (Chapter 20)</strong> is "reaction" vs. "prediction": VLA directly produces actions given observations; world models predict observations given actions. The coupling of the two is currently the most active research frontier.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Input</th>
+<th>Output</th>
+<th>Contains Actions?</th>
+<th>Typical Representative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLM</td>
+<td>Image + Text</td>
+<td>Text</td>
+<td>No</td>
+<td>PaLI-X, Gemini</td>
+</tr>
+<tr>
+<td>Classic Imitation Learning Policy</td>
+<td>Observation</td>
+<td>Action</td>
+<td>Yes</td>
+<td>ACT, Diffusion Policy</td>
+</tr>
+<tr>
+<td>VLA</td>
+<td>Image + Instruction (+ State)</td>
+<td>Action</td>
+<td>Yes</td>
+<td>RT-2, OpenVLA, π0</td>
+</tr>
+<tr>
+<td>World Model</td>
+<td>Observation + Action</td>
+<td>Future Observation/State</td>
+<td>Inverse</td>
+<td>Cosmos, Dreamer</td>
+</tr>
+<tr>
+<td>LLM Planner</td>
+<td>Text (Task)</td>
+<td>Sub-goal Sequence</td>
+<td>Indirect</td>
+<td>SayCan, CoT Planning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1914-mathematical-formulation-of-vla">19.1.4 Mathematical Formulation of VLA</h3>
+<p>Formally, VLA is a conditional policy model. Given a multimodal observation <span class="arithmatex">\(o_t\)</span> at time <span class="arithmatex">\(t\)</span> (usually including images from one or more camera views, proprioceptive state <span class="arithmatex">\(q_t\)</span>, and optionally depth, tactile data, etc.) and a natural language instruction <span class="arithmatex">\(\ell\)</span>, VLA learns the following conditional distribution:</p>
+<div class="arithmatex">\[
+\pi_\theta\big(a_{t:t+H} \mid o_t, \ell\big)
+\]</div>
+<p>where <span class="arithmatex">\(a_{t:t+H} = (a_t, a_{t+1}, \dots, a_{t+H-1})\)</span> is an <strong>action chunk</strong> for the future <span class="arithmatex">\(H\)</span> steps, and <span class="arithmatex">\(\theta\)</span> represents the model parameters. The design of outputting action chunks rather than single-step actions is inherited from <strong>Action Chunking with Transformers (ACT)</strong>, which significantly alleviates error accumulation in long-horizon tasks and reduces the demand on inference frequency.</p>
+<p>The training objective is typically the negative log-likelihood (behavioral cloning loss) over the demonstration dataset <span class="arithmatex">\(\mathcal{D} = \{(o_t, \ell, a_{t:t+H})\}\)</span>:</p>
+<div class="arithmatex">\[
+\mathcal{L}_{\mathrm{BC}}(\theta) = -\mathbb{E}_{(o,\ell,a)\sim\mathcal{D}} \log \pi_\theta\big(a \mid o, \ell\big)
+\]</div>
+<p>The divergence between different architectures essentially lies in <strong>how to parameterize this conditional distribution</strong>: discrete token autoregression (RT-2, OpenVLA), denoising diffusion (RDT-1B, DexVLA), flow matching (π0, GR00T N1), or a mixture of the three. This choice directly determines the model's accuracy ceiling, inference latency, and deployability, and is the main thread of Section 19.2.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Action Chunk, Conditional Policy, Behavior Cloning Loss, Compounding Error</p>
+<ul>
+<li><strong>Action chunk</strong>: A sequence of future <span class="arithmatex">\(H\)</span> steps of actions predicted at once, which can be executed in an open-loop manner for several steps before re-inference.</li>
+<li><strong>Conditional policy</strong>: An action distribution conditioned on observations and instructions; VLA is an instance of it under multimodal large models.</li>
+<li><strong>Behavior cloning loss</strong>: The negative log-likelihood of demonstration actions, which is the basic training objective for most VLAs.</li>
+<li><strong>Compounding error</strong>: The phenomenon where small policy deviations accumulate frame by frame, pushing the system out of the training distribution; action chunks and temporal integration are common mitigation methods.</li>
+</ul>
+</div>
+<h2 id="192-architectural-paradigms">19.2 Architectural Paradigms</h2>
+<h3 id="1921-vision-language-backbone-the-semantic-foundation-of-vla">19.2.1 Vision-Language Backbone: The Semantic Foundation of VLA</h3>
+<p>Almost all VLAs are built upon a pre-trained VLM backbone, whose role is to encode images and instructions into semantically rich token sequences. Typical approaches include:</p>
+<ul>
+<li><strong>Vision Encoder</strong>: Uses SigLIP, DINOv2, or a combination of both (e.g., OpenVLA simultaneously uses DINOv2's low-level spatial features and SigLIP's semantic features) to segment images into patch tokens;</li>
+<li><strong>Language Model Backbone</strong>: Employs decoder-only Transformers such as Llama, PaLI-X, Gemma, Eagle-2, etc., concatenating visual tokens with instruction tokens for unified multimodal autoregressive or bidirectional attention encoding;</li>
+<li><strong>Proprioception Injection</strong>: Maps low-dimensional states like joint positions and gripper status into additional tokens via an MLP, or adds them to the action head input.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Backbone Network, Vision Encoder, Multimodal Projection, Co-fine-tuning</p>
+<ul>
+<li><strong>Backbone Network</strong>: The pre-trained large model part responsible for primary representation computation; in VLA, it usually refers to the VLM.</li>
+<li><strong>Vision Encoder</strong>: A network that maps images into a sequence of feature vectors, commonly pre-trained using contrastive learning (CLIP/SigLIP) or self-supervision (DINOv2).</li>
+<li><strong>Multimodal Projector</strong>: A lightweight adaptation layer that aligns the visual feature space to the language model's word embedding space.</li>
+<li><strong>Co-fine-tuning</strong>: Joint fine-tuning on a mixture of robot data and original image-text data to prevent the VLM from forgetting its semantic knowledge on robot data—RT-2 demonstrates this is crucial for retaining generalization ability.</li>
+</ul>
+</div>
+<p>The choice of backbone determines the VLA's "common sense reservoir." The core engineering trade-off is: a larger backbone provides stronger instruction understanding but also incurs higher memory usage and inference latency, posing hard constraints for onboard deployment on humanoid robots (see 19.5.3).</p>
+<h3 id="1922-action-representation-i-discrete-token-autoregression">19.2.2 Action Representation I: Discrete Token Autoregression</h3>
+<p>The approach adopted by RT-2 and OpenVLA is <strong>action token prediction</strong>: quantizing continuous actions for each degree of freedom into discrete bins (RT-2 uses 256 uniform bins), then mapping these bins to the language model's vocabulary (often using the least-used tokens at the end of the vocabulary). Thus, action generation becomes a "next token prediction" problem identical to text generation.</p>
+<div class="arithmatex">\[
+\hat{a}_{t} = \mathrm{decode}\big(\mathrm{tokenizer}^{-1}(y_1, y_2, \dots, y_D)\big), \quad y_i \sim p_\theta(y_i \mid o_t, \ell, y_{&lt;i})
+\]</div>
+<p>The biggest advantage of this scheme is <strong>reusability</strong>: no modification to the VLM structure is required; training infrastructure, regularization techniques, and even reinforcement learning post-training (RLHF-like methods) can be directly borrowed from the language model ecosystem. The costs are equally evident:</p>
+<ol>
+<li><strong>Quantization Error</strong>: 256 bins may be insufficient for high-precision assembly tasks; increasing resolution lengthens the sequence;</li>
+<li><strong>Sequence Length</strong>: The number of tokens for <span class="arithmatex">\(D\)</span> degrees of freedom × <span class="arithmatex">\(H\)</span> action chunks grows linearly with dimensionality. Autoregressive token-by-token decoding keeps inference latency high; typical models can only output action chunks at a few Hz;</li>
+<li><strong>High-Frequency Jitter</strong>: Discretization disrupts the temporal smoothness of actions, requiring additional post-processing or temporal integration.</li>
+</ol>
+<p>To address efficiency, <strong>FAST (Efficient Action Tokenization)</strong> proposes using the Discrete Cosine Transform (DCT) to compress action chunks in the frequency domain before tokenization, representing high-frequency action sequences with far fewer tokens than per-dimension quantization. This significantly reduces autoregressive decoding steps and is an important improvement of the discrete route towards high-frequency actions.</p>
+<h3 id="1923-action-representation-ii-diffusion-and-flow-matching-continuous-action-heads">19.2.3 Action Representation II: Diffusion and Flow Matching Continuous Action Heads</h3>
+<p>Another route preserves action continuity: the semantic representation output by the VLM backbone serves as a condition for an <strong>action expert</strong> to generate continuous action chunks. The two mainstream generative models are diffusion models and flow matching.</p>
+<p><strong>Diffusion Policy</strong> models action chunk generation as the reverse process of denoising diffusion: starting from pure noise <span class="arithmatex">\(a^{K}\)</span>, it iteratively denoises over <span class="arithmatex">\(K\)</span> steps to obtain the action <span class="arithmatex">\(a^{0}\)</span>. The training objective is the noise prediction loss:</p>
+<div class="arithmatex">\[
+\mathcal{L}_{\mathrm{diff}}(\theta) = \mathbb{E}_{k, a^0, \epsilon} \big\| \epsilon - \epsilon_\theta(a^k, k \mid o_t, \ell) \big\|^2
+\]</div>
+<p><strong>Flow Matching</strong> learns a deterministic velocity field connecting the noise distribution and the data distribution. Using a linear interpolation path <span class="arithmatex">\(a^\tau = \tau a^1 + (1-\tau) a^0\)</span> (where <span class="arithmatex">\(a^0\)</span> is Gaussian noise and <span class="arithmatex">\(a^1\)</span> is the true action), the conditional flow matching loss is:</p>
+<div class="arithmatex">\[
+\mathcal{L}_{\mathrm{FM}}(\theta) = \mathbb{E}_{\tau, a^0, a^1} \big\| v_\theta(a^\tau, \tau \mid o_t, \ell) - (a^1 - a^0) \big\|^2
+\]</div>
+<p>During inference, starting from <span class="arithmatex">\(a^0 \sim \mathcal{N}(0, I)\)</span>, numerical integration of the ordinary differential equation <span class="arithmatex">\(\dot{a}^\tau = v_\theta(a^\tau, \tau)\)</span> yields the action chunk. π0 and GR00T N1 both use flow matching action heads; RDT-1B (a diffusion foundation model for bimanual manipulation) and DexVLA (a plug-in diffusion expert) use the diffusion route. Compared to discrete tokens, continuous action heads have inherent advantages for high-dimensional, high-frequency actions (e.g., bimanual 50 Hz control, dexterous hand multi-finger coordination). Moreover, diffusion/flow matching naturally support <strong>multimodal action distributions</strong>—when faced with demonstration data like "can bypass the obstacle from the left or the right," they do not learn a compromised "crash into the wall" action, which is impossible with unimodal regression loss.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Discrete Token Autoregression</th>
+<th>Diffusion/Flow Matching Action Head</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Representative Systems</td>
+<td>RT-2, OpenVLA, Octo</td>
+<td>π0, GR00T N1, RDT-1B, DexVLA</td>
+</tr>
+<tr>
+<td>Action Continuity</td>
+<td>Quantized bins, quantization error exists</td>
+<td>Inherently continuous</td>
+</tr>
+<tr>
+<td>Multimodal Distribution Modeling</td>
+<td>Autoregression can express but sample inefficient</td>
+<td>Naturally supported</td>
+</tr>
+<tr>
+<td>Inference Latency</td>
+<td>Token-by-token decoding, latency grows with dimensionality</td>
+<td>Fixed number of iterative steps (typically a few to tens of steps)</td>
+</tr>
+<tr>
+<td>High-Frequency Actions (&gt;20 Hz)</td>
+<td>Requires compression techniques like FAST</td>
+<td>Suitable</td>
+</tr>
+<tr>
+<td>Infrastructure Reusability</td>
+<td>Fully reuses LLM ecosystem</td>
+<td>Requires additional action expert and sampler</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Action Expert, Denoising Diffusion, Flow Matching, Velocity Field, Multimodal Distribution</p>
+<ul>
+<li><strong>Action Expert</strong>: A sub-network in VLA dedicated to generating continuous actions, typically sharing or cross-attending to semantic representations from the VLM backbone, but with its own parameters and output head.</li>
+<li><strong>Denoising Diffusion</strong>: A generative model that learns to reverse a process of gradually adding noise to data; inference requires multiple forward iterations.</li>
+<li><strong>Flow Matching</strong>: A generative framework that learns a deterministic transport velocity field between a noise distribution and a data distribution; can be seen as a "straightened" variant of diffusion models, typically requiring fewer steps for sampling.</li>
+<li><strong>Velocity Field</strong>: The vector field <span class="arithmatex">\(v_\theta(a,\tau)\)</span> learned in flow matching, indicating the direction of movement for a sample at each point along the transport path.</li>
+<li><strong>Multimodal Distribution</strong>: An action distribution with multiple high-probability regions, e.g., "can bypass from the left or the right"; generative models can faithfully represent multimodality, whereas mean squared regression would learn a compromise point between the two modes.</li>
+</ul>
+</div>
+<h3 id="1924-dual-system-architecture-slow-thinking-and-fast-execution">19.2.4 Dual-System Architecture: Slow Thinking and Fast Execution</h3>
+<p>Inspired by cognitive science's "System 1/System 2," since 2025, humanoid robot VLAs have generally converged on a <strong>dual-system architecture</strong>: a large model running at low frequency handles semantic understanding and high-level decision-making, while a small model running at high frequency handles real-time action generation.</p>
+<ul>
+<li><strong>Figure's Helix</strong>: System 2 (S2) is a VLM with approximately 7 billion parameters, understanding the scene and instructions at a few Hz and outputting semantic latent vectors; System 1 (S1) is a visuomotor Transformer with approximately 80 million parameters, translating the semantic latent vectors into continuous control quantities for the upper body (including arms, wrists, and fingers) at approximately 200 Hz. The two systems are trained end-to-end jointly but run asynchronously.</li>
+<li><strong>NVIDIA GR00T N1</strong>: Uses the Eagle-2 vision-language module for reasoning and a flow matching Diffusion Transformer (DiT) action head for real-time motion generation, trained end-to-end on a heterogeneous mixture of real robot trajectories, human videos, and synthetic data.</li>
+<li>Academic works like <strong>Fast-in-Slow</strong> further explore designs such as shared representations between fast and slow systems, and how the slow system's output serves as a conditional prompt for the fast system.</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    subgraph SlowSystem["System 2: Semantic Reasoning (Hz)"]
+        A["Multi-view Images"] --&gt; C["VLM Backbone"]
+        B["Language Instruction"] --&gt; C
+        C --&gt; D["Semantic Latent Vector / Subgoal"]
+    end
+    subgraph FastSystem["System 1: Motion Generation (Tens to Hundreds of Hz)"]
+        E["Proprioceptive State"] --&gt; F["Flow Matching / Diffusion Action Head"]
+        D --&gt; F
+        F --&gt; G["Continuous Action Chunk"]
+    end
+    G --&gt; H["Whole-Body Controller / Joint Servo"]</code></pre>
+<p>The dual-system architecture is essentially an engineering trade-off between <strong>semantic generalization capability</strong> and <strong>control bandwidth</strong>: large models cannot run at 200 Hz, and reflexive low-level control does not require "deep deliberation" every time. It is conceptually isomorphic to classical hierarchical control (Chapter 14), with the only difference being that the high-level component has been replaced from a symbolic planner to a learned VLM.</p>
+<h3 id="1925-condition-injection-and-interface-design">19.2.5 Condition Injection and Interface Design</h3>
+<p>Regardless of the chosen action representation, one question must be answered: <strong>how is the semantic representation injected into the action generation process</strong>. There are four mainstream interface designs:</p>
+<ol>
+<li><strong>Concatenation</strong>: Vision-language tokens and action tokens are autoregressively processed in the same sequence. This is the simplest structure, used by RT-2 and OpenVLA.</li>
+<li><strong>Cross-Attention</strong>: Each layer of the action expert reads the multimodal representation from the backbone via cross-attention. The DiT action heads of π0 and GR00T N1 adopt this method, allowing for deeper semantic conditioning.</li>
+<li><strong>Adaptive Layer Normalization (AdaLN)</strong>: The condition vector is injected into the scaling and shifting parameters of the normalization layer. This has low computational cost and is a classic conditioning method for DiT-based models.</li>
+<li><strong>Latent Bridge</strong>: The slow system outputs a compressed semantic latent vector, which the fast system uses as a condition to run at high frequency. The S1/S2 interface of Helix falls into this category.</li>
+</ol>
+<p>The choice of interface design affects more than just performance: concatenation has the highest data efficiency during training but the highest inference cost; cross-attention better preserves semantic details; the latent bridge naturally supports asynchronous deployment. For a systems engineer, the interface is often a decision that needs to be frozen earlier than the backbone selection, as it directly determines the data format, training pipeline, and deployment topology.</p>
+<h2 id="193-representative-vla-system-analysis">19.3 Representative VLA System Analysis</h2>
+<h3 id="1931-rt-series-the-paradigm-setters">19.3.1 RT Series: The Paradigm Setters</h3>
+<p><strong>RT-1 (Robotics Transformer)</strong> contributed through data scaling: approximately 130,000 real-world demonstrations and over 700 language-annotated tasks, proving the feasibility of the "real robot data + Transformer + behavior cloning" recipe. However, its vision and semantic modules are lightweight, limiting open-world generalization.</p>
+<p><strong>RT-2</strong>'s key innovation was treating actions as text: directly performing co-fine-tuning on PaLI-X (approximately 55 billion parameters) and PaLM-E (approximately 12 billion parameters) instances with robot data and raw image-text data. This yielded three emergent capabilities—<strong>semantic generalization</strong> (understanding concepts absent from the training set but present in internet corpora), <strong>symbol understanding</strong> (numbers, icons), and <strong>basic reasoning</strong> (multi-step reasoning like "choose an object that can be used as a hammer" via chain-of-thought prompting). RT-2's lesson is equally important: the massive backbone incurs severe deployment burdens (requiring cloud or large accelerator cards for inference), and discretization limits fine manipulation capabilities.</p>
+<h3 id="1932-openvla-and-octo-founders-of-the-open-source-ecosystem">19.3.2 OpenVLA and Octo: Founders of the Open-Source Ecosystem</h3>
+<p><strong>OpenVLA</strong> is the most widely cited open-source VLA: approximately 7 billion parameters, employing a DINOv2+SigLIP dual vision encoder and a Llama-series language backbone, pre-trained on approximately 970,000 real robot episodes from the <strong>Open X-Embodiment</strong> dataset, surpassing previous open-source baselines on benchmarks like LIBERO. Its value lies not in a single metric, but in <strong>full openness</strong>: weights, training code, and data recipes are all publicly available, and it supports parameter-efficient fine-tuning like LoRA, enabling academia and small teams to perform downstream adaptation on a single multi-GPU workstation.</p>
+<p><strong>Octo</strong> explored another open-source path: training a generalist policy on 800,000 cross-embodiment episodes with a smaller Transformer backbone, using a diffusion-based action head and task/goal conditioning interfaces, emphasizing "plug-and-play fine-tuning on new embodiments." Together, they established the de facto standard for open-source VLA: cross-embodiment pre-training + parameter-efficient fine-tuning + standardized evaluation.</p>
+<p>The rise of open-source VLA also brought a methodological dividend: <strong>reproducible ablation studies</strong>. With fully open models like OpenVLA, the community can systematically answer the key question "what does pre-trained VLM actually contribute?"—experiments generally show that internet pre-training mainly contributes semantic and instruction generalization, with limited impact on pure motor skills (e.g., precise insertion); the retention level of low-level visual encoder features, action tokenization granularity, and fine-tuning strategies often determine downstream success more than backbone size. The engineering guidance value of such conclusions is comparable to the models themselves.</p>
+<h3 id="1933-0-flow-matching-generalist-policy">19.3.3 π0: Flow Matching Generalist Policy</h3>
+<p><strong>π0</strong>, proposed by Physical Intelligence, features a core design of "VLM backbone + flow matching action expert": the backbone reuses the semantic capabilities of internet pre-trained VLMs, while the action expert uses flow matching to generate continuous action chunks at up to 50 Hz, covering <strong>long-horizon, dual-arm dexterous manipulation</strong> tasks like folding laundry, clearing tables, and packing boxes. π0 also demonstrates a "pre-training then post-training" recipe of cross-embodiment pre-training (mixed data from single-arm, dual-arm, and mobile manipulation platforms) plus high-quality task data fine-tuning. Its open-source version (openpi) further promoted the adoption of flow matching action heads. Its successor, π0.5, introduces a hierarchical inference structure of "high-level semantic reasoning + low-level action generation," moving towards open-environment generalization.</p>
+<p>π0's demonstrations caused a stir because it conquered a class of tasks previously considered "unlearnable": <strong>deformable object manipulation</strong>. Clothing and bedsheets lack fixed geometric models, making model-based planning approaches nearly impossible, yet the purely data-driven flow matching strategy could induce a "flatten—fold—smooth" skill structure from thousands of teleoperated folding episodes. This case is often cited to argue: when tasks are hard to model but easy to demonstrate, large-capacity generative strategies are currently the most effective technical route.</p>
+<h3 id="1934-gr00t-n1-and-helix-humanoid-robot-specific-vlas">19.3.4 GR00T N1 and Helix: Humanoid Robot-Specific VLAs</h3>
+<p>Humanoid robots pose two unique challenges for VLAs: high-dimensional action spaces (30–50+ degrees of freedom for the whole body) and strong dynamic constraints from bipedal balance. Two representative systems offer different answers:</p>
+<ul>
+<li><strong>GR00T N1 (NVIDIA)</strong>: Positioned as an "open foundation model for general-purpose humanoid robots," with a dual-system design—Eagle-2 VLM for vision-language reasoning and a flow matching DiT action head for real-time motion generation. Its data strategy is particularly noteworthy: heterogeneous mixing of real robot trajectories, human videos (via action labeling/latent action learning), and simulation synthetic data (generated using NVIDIA Cosmos world model and Isaac simulation) to alleviate the scarcity of real humanoid robot data.</li>
+<li><strong>Helix (Figure)</strong>: An asynchronous architecture with S2 (approximately 7 billion parameter VLM) + S1 (approximately 80 million parameter visuomotor policy), driving continuous control of all 35 degrees of freedom in the Figure 02 upper body with a single set of weights, without needing separate training or hand-designed action primitives for each task, and demonstrating dual-robot collaboration and zero-shot grasping of "any unseen household object."</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Publisher</th>
+<th>Backbone Scale</th>
+<th>Action Generation</th>
+<th>Target Embodiment</th>
+<th>Openness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RT-1</td>
+<td>Google</td>
+<td>Lightweight Transformer</td>
+<td>Discrete tokens</td>
+<td>Single-arm mobile manipulator</td>
+<td>Paper open</td>
+</tr>
+<tr>
+<td>RT-2</td>
+<td>Google DeepMind</td>
+<td>~12B–55B</td>
+<td>Discrete tokens</td>
+<td>Single-arm mobile manipulator</td>
+<td>Closed-source</td>
+</tr>
+<tr>
+<td>Octo</td>
+<td>UC Berkeley et al.</td>
+<td>~100M</td>
+<td>Diffusion head</td>
+<td>Multi-embodiment robotic arm</td>
+<td>Open weights</td>
+</tr>
+<tr>
+<td>OpenVLA</td>
+<td>Stanford et al.</td>
+<td>~7B</td>
+<td>Discrete tokens</td>
+<td>Multi-embodiment robotic arm</td>
+<td>Fully open</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>Physical Intelligence</td>
+<td>~3B class</td>
+<td>Flow matching</td>
+<td>Dual-arm/mobile manipulator</td>
+<td>Open (openpi)</td>
+</tr>
+<tr>
+<td>RDT-1B</td>
+<td>Tsinghua University et al.</td>
+<td>~1.2B</td>
+<td>Diffusion</td>
+<td>Dual-arm</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>GR00T N1</td>
+<td>NVIDIA</td>
+<td>VLM+DiT dual system</td>
+<td>Flow matching</td>
+<td>Humanoid robot</td>
+<td>Open weights</td>
+</tr>
+<tr>
+<td>Helix</td>
+<td>Figure</td>
+<td>S2 ~7B + S1 ~80M</td>
+<td>Continuous regression</td>
+<td>Humanoid robot (Figure 02)</td>
+<td>Closed-source</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>Hugging Face</td>
+<td>~450M</td>
+<td>Flow matching</td>
+<td>Low-cost robotic arm</td>
+<td>Fully open</td>
+</tr>
+<tr>
+<td>Gemini Robotics</td>
+<td>Google DeepMind</td>
+<td>Gemini 2.0 series</td>
+<td>Continuous actions</td>
+<td>Dual-arm to humanoid</td>
+<td>Restricted open</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1935-lightweight-and-edge-deployment-smolvla-tinyvla-and-efficiency-optimization">19.3.5 Lightweight and Edge Deployment: SmolVLA, TinyVLA, and Efficiency Optimization</h3>
+<p>The tension between large models and onboard compute has driven the lightweight direction. <strong>SmolVLA</strong> (Hugging Face) compresses parameters to approximately 450 million, using an asynchronous inference stack (overlapping policy inference and action execution), capable of driving LeRobot ecosystem low-cost robotic arms on consumer GPUs or even CPUs, validating the cost-effectiveness of the "community data + small model" route. <strong>TinyVLA</strong> systematically studied the feasibility of data-efficient, pre-training-free small VLAs. Efficiency optimization methods also include: visual token pruning and merging, KV-cache, quantization (INT8/INT4), action chunk prediction to reduce inference frequency, and fast-slow asynchronous inference. For complete humanoid robots, these optimizations directly determine whether a VLA can fit within the onboard compute budget (typically, the sustained power reserved for intelligent computing on a complete robot is only on the order of tens of watts, see Chapter 6).</p>
+<h3 id="1936-other-noteworthy-directions">19.3.6 Other Noteworthy Directions</h3>
+<p>Beyond the mainline systems, several branch directions are rapidly evolving and worth tracking:</p>
+<ul>
+<li><strong>Reasoning-Enhanced VLA</strong>: Introducing explicit reasoning into VLA, such as Gemini Robotics-ER's embodied reasoning (first performing pointing, affordance judgment, and multi-step reasoning, then outputting actions) and various "plan-then-execute" hierarchical variants, aiming to improve long-horizon tasks and failure recovery;</li>
+<li><strong>Spatial and Geometry-Enhanced VLA</strong>: SpatialVLA, TraceVLA, etc., address VLM shortcomings in spatial reasoning through 3D position encoding, visual trajectory prompting, etc. (see 19.5.2);</li>
+<li><strong>Autonomous Driving VLA</strong>: DriveVLA, CoVLA, Impromptu VLA, etc., transfer the VLA paradigm to driving scenarios. Their experience handling long-tail scenarios and semantic instructions (e.g., Impromptu VLA's practice of open-sourcing weights and data) is feeding back into the robotics field;</li>
+<li><strong>Vertical Domain VLA</strong>: Dedicated data and fine-tuned models are emerging in domains like healthcare (Open-H-Embodiment and its GR00T-H), logistics, and food service, with industry know-how directly encoded into data recipes.</li>
+</ul>
+<p>These branches share a common judgment: general-purpose VLA provides the "foundation," but entering specific industries still requires the "superstructure" of domain data and domain constraints.</p>
+<h2 id="194-data-and-training">19.4 Data and Training</h2>
+<h3 id="1941-cross-embodiment-pre-training-data">19.4.1 Cross-Embodiment Pre-training Data</h3>
+<p>The generalization capability of VLA primarily stems from <strong>cross-embodiment pre-training</strong>: training on a mixture of data from multiple robots and diverse scenarios forces the model to learn "operational physical intuition" decoupled from specific embodiments. Key datasets include:</p>
+<ul>
+<li><strong>Open X-Embodiment</strong>: An open dataset aggregated by over 20 institutions, covering more than 20 robot embodiments and millions of episodes. It serves as the common foundation for subsequent work such as OpenVLA, Octo, and the RT series.</li>
+<li><strong>DROID</strong>: An operation dataset distributedly collected across multiple laboratories and real home environments, renowned for its diversity in scenes and viewpoints.</li>
+<li><strong>BridgeData V2</strong>: A desktop manipulation dataset annotated with language instructions, commonly used as a benchmark for imitation learning research.</li>
+<li><strong>AgiBot World Colosseo</strong>: A large-scale humanoid/dual-arm manipulation platform dataset released by AgiBot, providing scarce high-quality real-robot data for full-size humanoid robots.</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    subgraph Data Layer["Pre-training Data Mixture"]
+        A["Real Robot Demonstrations&lt;br/&gt;Open X-Embodiment / DROID&lt;br/&gt;BridgeData V2 / AgiBot World"]
+        B["Human Videos&lt;br/&gt;First-Person Manipulation Videos"]
+        C["Simulation &amp; Synthetic Data&lt;br/&gt;World Model Generation / Domain Randomization"]
+        D["Internet Image-Text&lt;br/&gt;VQA / Image Captioning"]
+    end
+    A --&gt; E["VLA Pre-training&lt;br/&gt;Behavior Cloning"]
+    B --&gt; E
+    C --&gt; E
+    D --&gt; E
+    E --&gt; F["Downstream Fine-tuning&lt;br/&gt;LoRA / Full Fine-tuning"]
+    F --&gt; G["Onboard Deployment"]</code></pre>
+<h3 id="1942-data-recipe-and-co-training">19.4.2 Data Recipe and Co-training</h3>
+<p>Empirically, VLA training involves three key recipe issues. The first is the <strong>mixture ratio</strong>: the proportion of robot data, image-text data, and human videos directly affects the balance between semantic retention and action precision. Co-fine-tuning in RT-2 and heterogeneous mixing in GR00T N1 both indicate that completely discarding image-text data leads to degradation in semantic generalization. The second is <strong>action space alignment</strong>: different embodiments have varying joint spaces, control frequencies, and gripper interfaces. Common practices include unifying to end-effector pose space, grouping output heads by embodiment, or aligning human videos via latent actions. The third is <strong>quality filtering</strong>: pauses, regressions, and failed segments in teleoperation demonstrations, if not filtered, significantly degrade policy quality—this is why teams are racing to build teleoperation data pipelines (Chapters 17 and 21).</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Cross-Embodiment, Action Space Alignment, Latent Action, Data Mixture Ratio</p>
+<ul>
+<li><strong>Cross-embodiment</strong>: Joint training on data from multiple robot morphologies (single-arm, dual-arm, humanoid, mobile base) to pursue a general policy decoupled from specific embodiments.</li>
+<li><strong>Action space alignment</strong>: Unifying action representations from different embodiments (e.g., unifying to end-effector 6D pose + gripper opening/closing) to enable joint training on mixed data.</li>
+<li><strong>Latent action</strong>: Action proxy variables learned unsupervised from inter-frame changes in videos, used to extract supervisory signals from human videos without action annotations.</li>
+<li><strong>Data mixture ratio</strong>: The proportion of each data source in training batches, a hyperparameter as critical as model scale in VLA training.</li>
+</ul>
+</div>
+<h3 id="1943-fine-tuning-post-training-and-quantized-deployment">19.4.3 Fine-tuning, Post-training, and Quantized Deployment</h3>
+<p>Mainstream approaches for downstream adaptation include: <strong>LoRA/adapter fine-tuning</strong> (freezing the backbone, training only low-rank increments, reducing memory requirements by over an order of magnitude), <strong>full fine-tuning</strong> (higher performance ceiling but requires multiple GPUs), and <strong>post-training reinforcement learning</strong> (fine-tuning VLA in real or simulated environments using PPO-like algorithms, or optimizing policies with world models, see Chapter 20 for WMPO, etc.). A typical deployment pipeline is: FP16 training → INT8/INT4 quantization → TensorRT compilation → onboard Orin-level SoC inference. The impact of quantization on action precision must be measured via task-level metrics, not just proxy metrics like perplexity.</p>
+<h3 id="1944-human-videos-and-synthetic-data-mitigating-real-robot-data-scarcity">19.4.4 Human Videos and Synthetic Data: Mitigating Real-Robot Data Scarcity</h3>
+<p>The cost of collecting real-robot data for humanoid robots is far higher than for robotic arms (expensive whole-body hardware, difficulty of full-body teleoperation, limited robot time), forcing the community to seek alternative data sources:</p>
+<ul>
+<li><strong>Human Videos</strong>: First-person manipulation videos (e.g., large-scale egocentric video datasets like Ego4D) are abundant but lack action labels. Solutions include using hand pose estimation algorithms to infer actions, learning "latent action" representations to encode inter-frame changes as pseudo-actions, or using videos solely for visual-semantic pre-training rather than action supervision.</li>
+<li><strong>Simulation Synthetic Data</strong>: Programmatically generating task variants in engines like Isaac Sim (methods such as MimicGen, DexMimicGen that "scale up from a few demonstrations to large-scale data"), mixed with real-robot data after domain randomization.</li>
+<li><strong>World Model Generated Data</strong>: Using action-conditioned video generation models to augment counterfactual trajectories from a few real segments (Chapter 20). The data recipe for GR00T N1 includes such synthetic data.</li>
+</ul>
+<p>The effectiveness ranking of these three data types varies by task, but one empirical rule has been widely validated: <strong>synthetic data provides diversity, real-robot data provides precision</strong>—without either, the model is either "knowledgeable but clumsy" or "dexterous but unfamiliar." A systematic discussion of data engineering is provided in Chapter 21.</p>
+<h2 id="195-adaptation-for-humanoid-robots">19.5 Adaptation for Humanoid Robots</h2>
+<h3 id="1951-full-body-action-space-and-hierarchical-control">19.5.1 Full-Body Action Space and Hierarchical Control</h3>
+<p>Directly mapping VLA outputs to position commands for over 40 joints across the whole body simultaneously faces two issues: the curse of dimensionality and dynamic feasibility. Learned policies do not inherently guarantee bipedal balance. The mainstream engineering solution is <strong>hierarchical</strong>:</p>
+<ol>
+<li>The VLA outputs upper-body targets (end-effector poses, wrist/finger commands, or joint trajectories above the waist);</li>
+<li>A Whole-Body Control (WBC) or reinforcement learning-based motion controller (Chapters 14, 15) solves for full-body joint commands that satisfy balance constraints in real time;</li>
+<li>Balance-critical joints such as the ankles and hips are closed-loop controlled by low-level controllers and are not exposed to the VLA.</li>
+</ol>
+<p>Helix's S1 outputs continuous upper-body control quantities, and GR00T N1 unifies motion skills and manipulation skills within an action head—both embody this idea. Strictly speaking, current humanoid VLAs address "manipulation intelligence," while "locomotion intelligence" still primarily relies on the motion control stack from Chapter 15. The deep integration of the two (manipulation during walking, whole-body coordinated carrying) is a frontier direction.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Whole-Body Control, Motion Primitive, Hierarchical Policy, Skill Routing</p>
+<ul>
+<li><strong>Whole-Body Control (WBC)</strong>: A control framework that uniformly solves for whole-body torque/position commands satisfying balance, contact, and task constraints at the joint level (Chapter 14). It is a common execution layer for grounding VLA outputs.</li>
+<li><strong>Motion primitive</strong>: Predefined or pre-learned parameterized action templates (e.g., "grasp," "place"). A VLA can select one and provide parameters, reducing output dimensionality.</li>
+<li><strong>Hierarchical policy</strong>: A policy structure where a high-level layer outputs subgoals and a low-level layer outputs actions. Dual-system VLAs are an instance of this in the era of large models.</li>
+<li><strong>Skill routing</strong>: A mechanism that switches and schedules among skill modules such as navigation, manipulation, and locomotion based on the task phase.</li>
+</ul>
+</div>
+<h3 id="1952-spatial-representation-and-3d-perception">19.5.2 Spatial Representation and 3D Perception</h3>
+<p>Pure 2D image features have limited performance in spatial reasoning ("put the cup to the left of the plate," "reach the second shelf"), driving the 3D transformation of VLAs:</p>
+<ul>
+<li><strong>SpatialVLA</strong> injects 3D positional encodings expressed in the robot's coordinate frame (Ego3D positional encoding and adaptive action grids) into cross-embodiment data, improving spatial generalization and data efficiency;</li>
+<li><strong>TraceVLA</strong> uses visual trace prompting to enhance the spatiotemporal perception of generalist policies;</li>
+<li>Point cloud/voxel representations, occupancy grids, and implicit neural fields have also been introduced into the VLA input side, trading some inference speed for geometric accuracy.</li>
+</ul>
+<p>For humanoid robots, the combination of head-mounted multi-view cameras and wrist cameras provides natural stereo observation, but camera calibration, occlusion, and view jitter caused by body motion are far more challenging than for fixed manipulator arms (see the discussion on sensing calibration in Chapter 5).</p>
+<h3 id="1953-inference-latency-frequency-and-onboard-deployment-constraints">19.5.3 Inference Latency, Frequency, and Onboard Deployment Constraints</h3>
+<p>The engineering constraints of VLA deployment can be summarized by three numbers: <strong>semantic loop latency</strong> (a single forward pass of a VLM typically takes hundreds of milliseconds), <strong>action loop frequency</strong> (joint servoing requires a smooth command stream above 100 Hz), and <strong>compute budget</strong> (onboard SoC-level compute, shared with motion control and perception). Standard methods to bridge these gaps include:</p>
+<ul>
+<li><strong>Asynchronous inference</strong>: The VLM runs at a low frequency, while the action head or interpolator unfolds the most recent action chunk at a high frequency (SmolVLA's asynchronous stack, Helix's S1/S2 division of labor);</li>
+<li><strong>Action chunking + temporal ensemble</strong>: Each inference outputs <span class="arithmatex">\(H\)</span> steps of actions, which are weighted and smoothed over overlapping windows—a tradition from ACT that remains effective in the VLA era;</li>
+<li><strong>Quantization and compilation</strong>: INT8/INT4 quantization, TensorRT/ONNX compilation, and KV-cache reuse;</li>
+<li><strong>Hierarchical offloading</strong>: The slow system is placed on a base station or in the cloud, while the fast system runs onboard—at the cost of introducing network latency and availability risks; safety-critical loops must be closed onboard.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Asynchronous Inference, Temporal Ensemble, Quantization, KV-cache</p>
+<ul>
+<li><strong>Asynchronous inference</strong>: Policy network inference and action execution run in parallel; the execution side uses the most recent inference result to prevent the robot from "freezing while thinking."</li>
+<li><strong>Temporal ensemble</strong>: Overlapping action chunks are averaged with time-dependent weights to smooth jitter introduced by chunk-by-chunk inference.</li>
+<li><strong>Quantization</strong>: Reducing weights/activations from FP16 to INT8/INT4 to lower memory usage and latency, requiring evaluation of the impact on task success rates.</li>
+<li><strong>KV-cache</strong>: Caching historical key/value pairs during autoregressive decoding to avoid redundant computation; a fundamental method for accelerating LLM inference.</li>
+</ul>
+</div>
+<h3 id="1954-interface-for-mobile-manipulation-and-navigation">19.5.4 Interface for Mobile Manipulation and Navigation</h3>
+<p>Humanoid robot tasks are rarely confined to a desktop: fetching an object requires first walking to a shelf, and delivering a meal requires navigating through a corridor. Mobile manipulation imposes a requirement for "manipulation-navigation integration" on VLAs. The current engineering approach is <strong>skill routing</strong>: a high-level scheduler (which can be an LLM planner or a state machine) switches between the navigation stack (SLAM + local planning, where traditional solutions are more mature) and the manipulation VLA based on the task phase; the VLA only takes over after reaching the operation pose. Works like Mobility VLA attempt to unify navigation commands ("go to the kitchen") and manipulation commands into a single multimodal policy. True integration of navigation and manipulation—adjusting the upper body posture while walking, tidying shelves while moving—requires the VLA output to simultaneously drive the chassis/legs and arms, returning to the full-body action space problem of 19.5.1. This is a threshold that must be crossed to achieve "whole-house service" scenarios.</p>
+<h2 id="196-evaluation-and-failure-modes">19.6 Evaluation and Failure Modes</h2>
+<h3 id="1961-benchmarks-and-evaluation-dimensions">19.6.1 Benchmarks and Evaluation Dimensions</h3>
+<p>The difficulty of VLA evaluation lies in the inability to scale real robot experiments, leading the community to adopt a dual-track system of "simulation benchmarks + controlled real-world robot suites." <strong>LIBERO</strong> provides a desktop manipulation benchmark with four types of programmatic variations—spatial relations, objects, goals, and long-horizon tasks—widely used to measure VLA generalization dimensions; <strong>LIBERO-Plus</strong> further increases perturbation intensity and combinatorial complexity. On the real robot side, standardized gradient tests such as "unseen objects/unseen instructions/unseen backgrounds/unseen lighting" are commonly used, along with cross-embodiment transfer tests (training on embodiment A, fine-tuning on embodiment B). Evaluation reports should simultaneously provide success rate, completion time, intervention count, and failure attribution, rather than a single success rate (see Chapter 25 for systematic evaluation methodology).</p>
+<table>
+<thead>
+<tr>
+<th>Evaluation Dimension</th>
+<th>Typical Variation Factors</th>
+<th>Capability Assessed</th>
+<th>Common Carriers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object Generalization</td>
+<td>Unseen object categories, colors, materials</td>
+<td>Visual-semantic transfer</td>
+<td>LIBERO-OBJECT, real robot gradient tests</td>
+</tr>
+<tr>
+<td>Spatial Generalization</td>
+<td>Position/orientation/layout changes</td>
+<td>Spatial reasoning and coordinate transformation</td>
+<td>LIBERO-SPATIAL</td>
+</tr>
+<tr>
+<td>Instruction Generalization</td>
+<td>Paraphrasing, compositional instructions, counterfactual instructions</td>
+<td>Language understanding</td>
+<td>LIBERO-GOAL</td>
+</tr>
+<tr>
+<td>Long-Horizon</td>
+<td>Multi-stage tasks, mid-task perturbations</td>
+<td>Goal maintenance and recovery</td>
+<td>LIBERO-LONG</td>
+</tr>
+<tr>
+<td>Visual Robustness</td>
+<td>Background, lighting, camera pose changes</td>
+<td>Representation invariance</td>
+<td>LIBERO-Plus perturbation suite</td>
+</tr>
+<tr>
+<td>Cross-Embodiment</td>
+<td>New arm types, new grippers, new humanoid platforms</td>
+<td>Action space transfer</td>
+<td>Cross-embodiment fine-tuning experiments</td>
+</tr>
+</tbody>
+</table>
+<p>A methodological pitfall must be emphasized: <strong>the correlation between simulation success rate and real robot success rate is not always valid</strong>, especially in contact-rich tasks. A rigorous evaluation process should use simulation for large-scale screening and real robots for final confirmation, clearly noting the differences between the two in papers or delivery documents.</p>
+<h3 id="1962-typical-failure-modes">19.6.2 Typical Failure Modes</h3>
+<p>Failures of VLA in field deployment exhibit forms distinctly different from classical controllers:</p>
+<table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Phenomenon</th>
+<th>Root Cause</th>
+<th>Mitigation Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semantic Hallucination</td>
+<td>Grasping objects unrelated to the instruction</td>
+<td>VLM priors suppress visual evidence</td>
+<td>Data balancing, instruction augmentation, visual grounding supervision</td>
+</tr>
+<tr>
+<td>Out-of-Distribution Drift</td>
+<td>Sharp drop in success rate after background/lighting/tabletop changes</td>
+<td>Insufficient diversity in demonstration data</td>
+<td>Data augmentation, cross-scenario collection, domain randomization</td>
+</tr>
+<tr>
+<td>Action Jitter/Pause</td>
+<td>Jitter or hesitation at action chunk boundaries</td>
+<td>Discretization, multi-modal distribution compromise</td>
+<td>Temporal integration, flow matching head, increasing chunk size</td>
+</tr>
+<tr>
+<td>Long-Horizon Disorientation</td>
+<td>Forgetting sub-goals in multi-step tasks</td>
+<td>Lack of explicit task state</td>
+<td>Hierarchical planning, chain-of-thought, progress supervision</td>
+</tr>
+<tr>
+<td>Recovery Inability</td>
+<td>Inability to retry after a single grasp failure</td>
+<td>Lack of failure-recovery data in demonstrations</td>
+<td>Collect corrective demonstrations, DAgger-style roll-in</td>
+</tr>
+<tr>
+<td>Safety Violation</td>
+<td>Collisions, overspeed, approaching humans</td>
+<td>No hard constraints in the policy</td>
+<td>Onboard safety layer, velocity/workspace limits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1963-safety-constraints-a-hard-defense-line-above-learned-policies">19.6.3 Safety Constraints: A Hard Defense Line Above Learned Policies</h3>
+<p>Regardless of how high the VLA success rate is, its output must pass through a <strong>non-learnable safety layer</strong>: joint position/velocity/torque limits, workspace virtual fences, power and force limits in human-collaboration scenarios (see the standard systems in Chapter 12, such as the collaborative power limit concept in ISO/TS 15066), and an emergency stop circuit independent of the learned policy. The learning system is responsible for "doing the right thing," while the hard safety layer is responsible for "never doing the wrong thing." This layered approach is the engineering prerequisite for VLA to enter factories and homes.</p>
+<p>In practical implementation, safety layer design can follow three principles:</p>
+<ol>
+<li><strong>Determinism First</strong>: Safety logic is implemented using formally verifiable rules, independent of any learning component's output;</li>
+<li><strong>Independent Power and Sensing</strong>: The emergency stop and collision detection circuit has its own power supply and sensors, capable of triggering even when the main computer crashes;</li>
+<li><strong>Least Privilege</strong>: The VLA can only output "advisory" targets; the final execution quantities must pass through limiters and monitors, architecturally preventing the policy from directly driving actuators.</li>
+</ol>
+<h3 id="1964-open-source-ecosystem-and-toolchain">19.6.4 Open-Source Ecosystem and Toolchain</h3>
+<p>The rapid adoption of VLA is largely due to a mature open-source toolchain. Readers can follow the path below to reproduce the content of this chapter:</p>
+<ul>
+<li><strong>Models and Weights</strong>: OpenVLA, Octo, π0 (openpi), SmolVLA, RDT-1B, and GR00T N1 all provide public weights, covering a full gradient from 400 million to 7 billion parameters;</li>
+<li><strong>Training Frameworks</strong>: Hugging Face's <strong>LeRobot</strong> unifies dataset formats, policy implementations, and low-cost hardware interfaces, making it the first choice for getting started with VLA training; openpi provides reference implementations and fine-tuning scripts for the flow matching action head;</li>
+<li><strong>Evaluation Environments</strong>: LIBERO/LIBERO-Plus, along with each model's own real robot reproduction guide, form a validation ladder from simulation to real robots.</li>
+</ul>
+<p>For engineering teams, a pragmatic technology selection path is typically: first use LeRobot + SmolVLA to complete the data loop on a low-cost arm, then use OpenVLA or π0-class models as performance baselines, and finally perform dual-system transformation and onboard deployment optimization on the target humanoid platform.</p>
+<h2 id="197-summary-and-outlook">19.7 Summary and Outlook</h2>
+<p>VLA advances robot manipulation from "programming for each task" to "defining tasks with language and demonstrations." Its essence is the combination of internet-scale semantic priors with robot action data. The technical landscape outlined in this chapter can be summarized as follows: Architecturally, two routes—discrete tokens and diffusion/flow matching continuous action heads—coexist, with humanoid robot scenarios converging towards a "slow thinking, fast execution" dual system; in terms of data, cross-embodiment pre-training + high-quality fine-tuning has become the standard recipe, with the scarcity of real robot data driving the use of human videos and synthetic data; for deployment, quantization, asynchronous inference, and hierarchical offloading collectively bridge the gap between large models and onboard computing power.</p>
+<p>Looking ahead three to five years, several directions deserve special attention:</p>
+<ol>
+<li><strong>Convergence of VLA and World Models</strong>: Action prediction informs the future, and the future feeds back into actions (UWM, WorldVLA are already emerging); the boundary between policy and model is dissolving. See Chapter 20 for details;</li>
+<li><strong>Post-Training and Online Learning</strong>: Moving from "one-shot behavior cloning" to "continuous improvement during deployment"; reinforcement learning post-training and automatic failure data roll-in will become standard;</li>
+<li><strong>Full-Body Control</strong>: VLA expands from upper-body manipulation to integrated walking-manipulation full-body control, truly realizing the value of the humanoid form;</li>
+<li><strong>Standardization and Compliance</strong>: As VLA enters factories and homes, functional safety assessment methods for learning systems (Chapters 12, 25) will move from a blank slate to established norms.</li>
+</ol>
+<p>The current shortcomings of VLA—goal maintenance in long-horizon tasks, failure recovery, and prediction of physical consequences—point directly to the theme of Chapter 20: World Models and Long-Term Reasoning.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-18/">← Previous<span>Chapter 18: Imitation Learning and Policy Learning</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-20/">Next →<span>Chapter 20: World Models and Long-Horizon Reasoning</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-19-vision-language-action-models-vla">Chapter 19: Vision-Language-Action Models (VLA)</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#191-vla-overview-from-end-to-end-control-to-embodied-foundation-models">19.1 VLA Overview: From End-to-End Control to Embodied Foundation Models</a><ul>
+<li><a href="#1911-definition-and-positioning">19.1.1 Definition and Positioning</a></li>
+<li><a href="#1912-development-trajectory-from-rt-1-to-open-source-ecosystem">19.1.2 Development Trajectory: From RT-1 to Open-Source Ecosystem</a></li>
+<li><a href="#1913-boundaries-between-vla-and-related-concepts">19.1.3 Boundaries Between VLA and Related Concepts</a></li>
+<li><a href="#1914-mathematical-formulation-of-vla">19.1.4 Mathematical Formulation of VLA</a></li>
+</ul>
+</li>
+<li><a href="#192-architectural-paradigms">19.2 Architectural Paradigms</a><ul>
+<li><a href="#1921-vision-language-backbone-the-semantic-foundation-of-vla">19.2.1 Vision-Language Backbone: The Semantic Foundation of VLA</a></li>
+<li><a href="#1922-action-representation-i-discrete-token-autoregression">19.2.2 Action Representation I: Discrete Token Autoregression</a></li>
+<li><a href="#1923-action-representation-ii-diffusion-and-flow-matching-continuous-action-heads">19.2.3 Action Representation II: Diffusion and Flow Matching Continuous Action Heads</a></li>
+<li><a href="#1924-dual-system-architecture-slow-thinking-and-fast-execution">19.2.4 Dual-System Architecture: Slow Thinking and Fast Execution</a></li>
+<li><a href="#1925-condition-injection-and-interface-design">19.2.5 Condition Injection and Interface Design</a></li>
+</ul>
+</li>
+<li><a href="#193-representative-vla-system-analysis">19.3 Representative VLA System Analysis</a><ul>
+<li><a href="#1931-rt-series-the-paradigm-setters">19.3.1 RT Series: The Paradigm Setters</a></li>
+<li><a href="#1932-openvla-and-octo-founders-of-the-open-source-ecosystem">19.3.2 OpenVLA and Octo: Founders of the Open-Source Ecosystem</a></li>
+<li><a href="#1933-0-flow-matching-generalist-policy">19.3.3 π0: Flow Matching Generalist Policy</a></li>
+<li><a href="#1934-gr00t-n1-and-helix-humanoid-robot-specific-vlas">19.3.4 GR00T N1 and Helix: Humanoid Robot-Specific VLAs</a></li>
+<li><a href="#1935-lightweight-and-edge-deployment-smolvla-tinyvla-and-efficiency-optimization">19.3.5 Lightweight and Edge Deployment: SmolVLA, TinyVLA, and Efficiency Optimization</a></li>
+<li><a href="#1936-other-noteworthy-directions">19.3.6 Other Noteworthy Directions</a></li>
+</ul>
+</li>
+<li><a href="#194-data-and-training">19.4 Data and Training</a><ul>
+<li><a href="#1941-cross-embodiment-pre-training-data">19.4.1 Cross-Embodiment Pre-training Data</a></li>
+<li><a href="#1942-data-recipe-and-co-training">19.4.2 Data Recipe and Co-training</a></li>
+<li><a href="#1943-fine-tuning-post-training-and-quantized-deployment">19.4.3 Fine-tuning, Post-training, and Quantized Deployment</a></li>
+<li><a href="#1944-human-videos-and-synthetic-data-mitigating-real-robot-data-scarcity">19.4.4 Human Videos and Synthetic Data: Mitigating Real-Robot Data Scarcity</a></li>
+</ul>
+</li>
+<li><a href="#195-adaptation-for-humanoid-robots">19.5 Adaptation for Humanoid Robots</a><ul>
+<li><a href="#1951-full-body-action-space-and-hierarchical-control">19.5.1 Full-Body Action Space and Hierarchical Control</a></li>
+<li><a href="#1952-spatial-representation-and-3d-perception">19.5.2 Spatial Representation and 3D Perception</a></li>
+<li><a href="#1953-inference-latency-frequency-and-onboard-deployment-constraints">19.5.3 Inference Latency, Frequency, and Onboard Deployment Constraints</a></li>
+<li><a href="#1954-interface-for-mobile-manipulation-and-navigation">19.5.4 Interface for Mobile Manipulation and Navigation</a></li>
+</ul>
+</li>
+<li><a href="#196-evaluation-and-failure-modes">19.6 Evaluation and Failure Modes</a><ul>
+<li><a href="#1961-benchmarks-and-evaluation-dimensions">19.6.1 Benchmarks and Evaluation Dimensions</a></li>
+<li><a href="#1962-typical-failure-modes">19.6.2 Typical Failure Modes</a></li>
+<li><a href="#1963-safety-constraints-a-hard-defense-line-above-learned-policies">19.6.3 Safety Constraints: A Hard Defense Line Above Learned Policies</a></li>
+<li><a href="#1964-open-source-ecosystem-and-toolchain">19.6.4 Open-Source Ecosystem and Toolchain</a></li>
+</ul>
+</li>
+<li><a href="#197-summary-and-outlook">19.7 Summary and Outlook</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

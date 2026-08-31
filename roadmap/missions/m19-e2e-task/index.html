@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M19 · 端到端任务集成：听到指令，走过去，抓起来 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M19 · 端到端任务集成：听到指令，走过去，抓起来</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m19">M19 · 端到端任务集成：听到指令，走过去，抓起来</h1>
+<p><strong>全局位置</strong>：M14 行走部署与 M18 抓取策略双双过关之后。输入是各段已单测通过的子系统（指令、导航、检测、抓取、放置），输出是<strong>"指令 → 导航 → 抓取"全链路连续 10 次试验成功 ≥7 次、单次 ≤2 分钟</strong>的端到端系统（Stage 3 整体验收判据）。M20 再为这套系统加上可靠性与安全外壳。</p>
+<p><strong>前置条件</strong>：<a href="/roadmap/missions/m18-imitation-learning/">M18 · 模仿学习训练与部署</a> 达标（固定协议抓取成功率 ≥70%，限幅与降级生效）；<a href="/roadmap/missions/m14-sim-to-real/">M14 · sim-to-real 部署</a> 达标（平地稳定行走 + 通信看门狗分级生效）；M16 定位栈可用（SLAM 建图与在线定位）；<a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> 节点拓扑与接口已冻结。</p>
+<p>理论背景：端到端任务链是感知、规划、学习策略与中间件的总装，系统论述见 <a href="/wiki/chapters/chapter-24/">第 24 章 端到端软件栈</a> 与 <a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a>；指令层与 VLA 见 <a href="/wiki/chapters/chapter-19/">第 19 章 VLA</a>，操作段见 <a href="/wiki/chapters/chapter-16/">第 16 章 操作与抓取</a>。</p>
+<h2 id="1">步骤 1：任务分解与状态机——先分段单测，再谈整链</h2>
+<p>【做什么】把任务冻结成五段流水线，每段写清<strong>输入 / 输出 / 超时 / 失败出口</strong>四要素：</p>
+<table>
+<thead>
+<tr>
+<th>段</th>
+<th>输入</th>
+<th>输出</th>
+<th>超时（工程建议值）</th>
+<th>失败出口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 指令解析</td>
+<td>文本/语音</td>
+<td>目标物体 + 目标位置</td>
+<td>5 s</td>
+<td>回问/报错待重发</td>
+</tr>
+<tr>
+<td>2 导航至桌边</td>
+<td>目标站位点</td>
+<td>到位（双阈值判据）</td>
+<td>60 s</td>
+<td>重规划 ≤2 次 → 原地站定报错</td>
+</tr>
+<tr>
+<td>3 检测定位</td>
+<td>RGB-D 帧</td>
+<td>物体 6D 位姿</td>
+<td>10 s</td>
+<td>重新检测 ≤2 次 → 回段 2 小步换位</td>
+</tr>
+<tr>
+<td>4 抓取</td>
+<td>物体位姿</td>
+<td>夹爪闭合 + 确认信号</td>
+<td>30 s</td>
+<td>退腕复位 → 回段 3</td>
+</tr>
+<tr>
+<td>5 放置确认</td>
+<td>目标放置点</td>
+<td>放置 + 复核</td>
+<td>30 s</td>
+<td>放置失败 → 保持夹持报错</td>
+</tr>
+</tbody>
+</table>
+<p>用状态机或行为树实现（选型与软件栈组织见 <a href="/wiki/chapters/chapter-24/">第 24 章</a>），每段先在仿真或静态场景单测通过，再接入整链。</p>
+<p>【为什么】端到端任务是对所有子系统的交叉检验，分段可观测才能定位失败段（Stage 3 总览原话）。没有显式状态机的"一把梭"脚本，失败时你分不清挂在哪一段；超时与失败出口是系统"安全地报错"而不是"乱跑"的前提——步骤 5 的失败注入测试专门考这个。</p>
+<p>【你的情况怎么分析】行走还不够稳：按 Stage 3 务实建议先以"固定站姿 + 桌面抓取"跑通段 3–5 闭环，段 2 留到最后解锁。状态机实现别追求框架完美：一个带日志的 Python 状态机脚本，胜过没跑起来的重型行为树。</p>
+<h2 id="2vla">步骤 2：指令层——固定句式起步，VLA 只做调度</h2>
+<p>【做什么】三档由简到繁，按验收需求选档：</p>
+<ol>
+<li><strong>固定句式文本</strong>（起步，验收默认）：终端输入"去桌边抓杯子"，模板解析成"目标物体=杯子、目标位置=桌边站位点 A"；</li>
+<li><strong>ASR 语音</strong>（可选增强）：语音转文本后接同一模板解析，识别置信度低时回问；</li>
+<li><strong>VLA 调度</strong>（进阶）：引入 <a href="/entry/ent_method_openvla/">OpenVLA</a>、<a href="/entry/ent_method_pi0/">π0</a> 或 <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a> 做开放词汇的指令解析与技能调度——但<strong>底层抓取仍由 M18 策略执行</strong>（Stage 3 务实路线：VLA 负责"听懂"，专用策略负责"抓到"）。</li>
+</ol>
+<p>【为什么】个人数据与算力条件下，VLA 直接输出全身动作的真机成功率与延迟还撑不起验收协议；"听懂指令"与"抓取成功"解耦后，两段可以各自迭代、各自验收。三张卡片的定位：OpenVLA 基于 <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> 开源数据训练，π0 是跨多本体预训练的多面手策略，GR00T N1 是 NVIDIA 面向人形的通用基础模型（详见各卡片与 <a href="/wiki/chapters/chapter-19/">第 19 章</a>）。</p>
+<p>【你的情况怎么分析】没有 GPU 集群：OpenVLA 公开权重 + 自采数据 LoRA 微调是门槛最低的入口（Stage 3 步骤 11 建议）。只想通过验收：档 1 就够，把精力留给段 2–4 的成功率。VLA 推理的端侧延迟预算见 <a href="/roadmap/missions/m18-imitation-learning/">M18</a> 步骤 5 与<a href="/roadmap/playbooks/compute-selection/">计算平台选型手册</a>。</p>
+<h2 id="3-m16-m14">步骤 3：导航段——复用 M16 定位栈，对接 M14 行走</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>建图与定位</strong>：用 M16 的 SLAM 栈离线建图、在线定位（传感器配置见 Stage 3 感知栈一节，定位传感器背景见 <a href="/wiki/chapters/chapter-05/">第 5 章 传感</a>）；</li>
+<li><strong>站位点标定</strong>：桌边操作站位点<strong>离线人工标定</strong>写进地图（面向桌子、末端可达杯子的站位），不要在线现算；</li>
+<li><strong>行走对接</strong>：路径规划输出速度/目标指令给 M14 行走策略；行走段只负责"到点"，精细对位交给段 3 的视觉；</li>
+<li><strong>到位判据</strong>：位置误差与姿态误差<strong>双阈值</strong>（如 ≤10 cm 且 ≤10°，工程建议值，需按你的操作精度校核），双达标才算段 2 完成。</li>
+</ol>
+<p>【为什么】站位点离线标定是把"导航精度不够"挡在门外的最便宜手段：操作要求的到位精度（厘米级）通常高于 SLAM 定位能稳定达到的水平。双阈值缺一不可：位置到了但朝向偏 20°，末端工作空间可能根本罩不住杯子。</p>
+<p>【你的情况怎么分析】房间固定、路线短：RGB-D 里程计即可（Stage 3 步骤 5 口径）；跨房间再上 LiDAR。到位阈值怎么定：把机器人摆到"刚好能抓到杯子"的极限位置量出来——写大了段 4 替它背锅，写小了段 2 永远不收敛。</p>
+<h2 id="4">步骤 4：操作段——检测、抓取、确认，站定再动手</h2>
+<p>【做什么】段 3–5 的闭环细节：</p>
+<ol>
+<li><strong>检测定位</strong>：<a href="/entry/ent_component_rgbd_camera/">RGB-D 相机</a> 检测杯子并输出 6D 位姿（Stage 3 判据：3D 定位误差 ≤1 cm）；</li>
+<li><strong>抓取执行</strong>：位姿交给 M18 策略（学习路线）或 IK + 规划基元（传统路线，<a href="/entry/ent_method_inverse_kinematics/">逆运动学</a>），执行接近—闭合—抬升；</li>
+<li><strong>抓取确认</strong>：三信号取二——夹爪电流（夹到负载）、等效重量（抬升后电流/力估计）、相机视觉复核；</li>
+<li><strong>互斥规则</strong>：行走与操作严格互斥——到位停稳（速度归零 + 姿态稳定 1 s，工程建议值）后才允许操作段启动，操作中底盘指令锁死；</li>
+<li><strong>失败重试</strong>：检测偶发失败允许原位重试 ≤2 次，仍失败按状态机失败出口走。</li>
+</ol>
+<p>【为什么】确认信号是"抓没抓到"的裁判：没有它，系统会把"抓空"当成功继续往后走，整链成功率虚高。行走-操作互斥来自物理：人形没有固定基座，伸手时的反力矩会扰动平衡（Stage 3 常见坑"伸手时整机晃动倾倒"），站定操作是首机的标准取舍。重试 ≤2 次是统计权衡：偶发失败重试一次能捞回大半，结构性失败重试多少次都没用。</p>
+<p>【你的情况怎么分析】M18 策略和 IK 基元并存时，各跑 20 次对比成功率，谁高用谁——学习策略对分布内场景更鲁棒，IK 基元对分布外位置更诚实。确认信号少一路（如无腕部相机）：电流 + 重量双判据也够，但日志里要标注确认置信度。</p>
+<h2 id="5">步骤 5：整链联调与失败注入——计时找瓶颈，注错看降级</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>分段计时</strong>：每次试验记录各段耗时找瓶颈（导航通常是吞时大户）；单次总时长目标 ≤2 min（Stage 3 判据）；</li>
+<li><strong>失败注入测试</strong>：人为制造异常——遮挡相机、中途挪走杯子、发非法指令、导航路上放障碍——观察系统是否<strong>安全报错并停在定义好的状态</strong>，而不是乱跑、死等或静默继续；</li>
+<li><strong>日志聚合</strong>：每段输入摘要、输出、耗时、失败原因落库（<a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> bag 或结构化日志），10 次试验一键生成报告（各段成功率 × 整链成功率矩阵）。</li>
+</ol>
+<p>【为什么】分段全对、整链挂，是集成任务的经典死法，死因几乎都在接口假设（坐标系、单位、时间戳基准、帧率）；分段计时与日志让接口问题显形。失败注入是安全工程的入门动作：系统对"没见过的异常"的默认行为必须是安全态——这是 M20 FMEA 的预演。</p>
+<p>【你的情况怎么分析】整链不达标时别急着改任何一段：先看报告矩阵——失败集中在哪段就修哪段；失败分散在各段，则优先修失败出口不干净的段（系统连"体面地失败"都不会，谈成功率没意义）。坐标系统一走 TF 树，段间接口只传"地图系下的位姿"，不传局部坐标。</p>
+<h2 id="6-stage-3">步骤 6：验收演练——按 Stage 3 判据走正式流程</h2>
+<p>【做什么】按正式协议做一次完整验收并留档：连续 10 次试验（物体与站位按固定清单摆放，指令用固定句式），记录每次的成败、总时长、失败段与失败原因；全程录屏（头部相机视角 + 第三视角）。判据即 Stage 3 整体验收：<strong>成功 ≥7 次、单次 ≤2 分钟</strong>。失败的每一次写归因分析（哪段、哪类失败、下一步改什么），与录屏一起归档成报告。</p>
+<p>【为什么】验收演练的价值不在"过"，而在留下一份可复测的基准：M20 之后每次变更（换模型、换固件、换结构件）都要按同一协议复跑，数字才能横向比较。录屏是唯一"事后可复核"的证据——归因分析写着"段 3 检测失败"，录屏让你三个月后能验证这个判断。</p>
+<p>【你的情况怎么分析】压线通过（7/10）：把 3 次失败的归因做掉一轮再宣布完成——压线的系统经不起 M20 的变更回归。两次验收结果波动 &gt;2 次：查环境变量（光照、电量、地面），把验收条件也写进协议固定下来。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] 五段状态机成文：每段输入/输出/超时/失败出口四要素齐全，分段单测记录存档。</li>
+<li>[ ] 指令层按所选档位跑通（固定句式为默认档），非法指令有安全出口。</li>
+<li>[ ] 到位判据双阈值实测标定，导航段耗时与成功率进报告。</li>
+<li>[ ] 抓取确认信号 ≥2 路，行走-操作互斥规则实机验证。</li>
+<li>[ ] 失败注入测试通过：遮挡/挪物/非法指令下系统安全报错，无乱跑与死锁。</li>
+<li>[ ] 正式验收：连续 10 次成功 ≥7、单次 ≤2 min，录屏与归因分析报告成文。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分段全对、整链挂</td>
+<td>接口假设不一致（坐标系/单位/时间戳）</td>
+<td>段间只传地图系位姿；打印每段输入输出的单位与坐标系</td>
+</tr>
+<tr>
+<td>某段失败后系统乱跑</td>
+<td>该段无失败出口或出口未实现</td>
+<td>回步骤 1 状态机表逐段核对；失败注入复现</td>
+</tr>
+<tr>
+<td>导航耗时超支</td>
+<td>路径规划保守 / 行走速度没放开 / 重规划死循环</td>
+<td>看分段计时定位；放开速度重测；重规划次数封顶</td>
+</tr>
+<tr>
+<td>检测偶发失败拖垮成功率</td>
+<td>光照敏感 / 视角盲区 / 标定漂移</td>
+<td>固定验收光照；加视觉复核重试；重标外参</td>
+</tr>
+<tr>
+<td>状态机死锁（两段互等）</td>
+<td>状态转移条件写成循环等待</td>
+<td>所有等待加超时；画状态转移图查环</td>
+</tr>
+<tr>
+<td>行走中误启动操作致晃动</td>
+<td>互斥规则未生效</td>
+<td>检查互斥标志位；到位判据补"静止 1 s"条件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m18-imitation-learning/">M18 · 模仿学习训练与部署</a></li>
+<li>下一任务：<a href="/roadmap/missions/m20-reliability-safety/">M20 · 可靠性、维护与安全工程</a></li>
+<li>理论背景：<a href="/wiki/chapters/chapter-19/">第 19 章 VLA</a>、<a href="/wiki/chapters/chapter-24/">第 24 章 端到端软件栈</a>、<a href="/wiki/chapters/chapter-25/">第 25 章 机器人评测体系</a></li>
+<li><a href="/roadmap/stage-3-humanoid/">阶段 3 总览</a> · <a href="/roadmap/index/">路线图总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m18-imitation-learning/">← 上一页<span>M18 · 模仿学习训练与部署：50 条演示喂出一个会抓杯子的策略</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m20-reliability-safety/">下一页 →<span>M20 · 可靠性、维护与安全工程：让机器活得久，让人敢靠近</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m19">M19 · 端到端任务集成：听到指令，走过去，抓起来</a><ul>
+<li><a href="#1">步骤 1：任务分解与状态机——先分段单测，再谈整链</a></li>
+<li><a href="#2vla">步骤 2：指令层——固定句式起步，VLA 只做调度</a></li>
+<li><a href="#3-m16-m14">步骤 3：导航段——复用 M16 定位栈，对接 M14 行走</a></li>
+<li><a href="#4">步骤 4：操作段——检测、抓取、确认，站定再动手</a></li>
+<li><a href="#5">步骤 5：整链联调与失败注入——计时找瓶颈，注错看降级</a></li>
+<li><a href="#6-stage-3">步骤 6：验收演练——按 Stage 3 判据走正式流程</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

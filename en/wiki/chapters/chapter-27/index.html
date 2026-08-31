@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 27 Application Scenarios · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 27 Application Scenarios</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-27-application-scenarios">Chapter 27 Application Scenarios</h1>
+<h2 id="summary">Summary</h2>
+<p>The value of humanoid robots must ultimately be realized in specific scenarios. This chapter takes "scenario-driven" as the main thread and systematically analyzes seven categories of application scenarios for humanoid robots: warehouse logistics, automotive manufacturing and industrial assembly, industrial inspection and maintenance, medical rehabilitation and elderly care, home and domestic services, commercial retail and public services, and scientific research education and developer ecosystems. For each category, this chapter follows a unified framework: scenario definition and task decomposition, adaptability analysis of the humanoid form, key technology requirements, representative deployments based on real entities from the Knowledge Graph (KG) (Agility Digit, Walker S1/S2, Figure 02, Galbot G1, Fourier GR-1/GR-3, Unitree G1, EngineAI PM01, etc.), and current bottlenecks. The scenario classification and analysis dimensions in this chapter reference the search domains and target entity types defined by the application research workflow of this project (the four research direction definition files in <code>scripts/ai4sci_workstreams/applications/</code>: warehouse_logistics, industrial_inspection, assistive_rehabilitation, home_assistive). At the end of the chapter, common cross-scenario engineering constraints are given—safety standards, Total Cost of Ownership (TCO) model, RaaS business model, and data flywheel—laying the scenario-side foundation for the market and investment analysis in Chapter 28.</p>
+<p><strong>Keywords</strong>: Application Scenarios; Warehouse Logistics; Automotive Manufacturing; Industrial Inspection; Medical Rehabilitation; Elderly Care Companionship; Home Services; Human-Robot Collaboration Safety; TCO; RaaS</p>
+<hr />
+<h2 id="271-application-scenario-analysis-framework">27.1 Application Scenario Analysis Framework</h2>
+<h3 id="2711-why-scenario-is-more-important-than-form">27.1.1 Why "Scenario" is More Important Than "Form"</h3>
+<p>The comparison of complete machine cases in Chapter 26 shows that the most successful products currently deployed (Digit for warehousing, Galbot G1 for pharmacies and convenience stores) are products where the scenario defines the form, not the other way around. Application scenario analysis answers three progressive questions:</p>
+<ol>
+<li><strong>Why this scenario?</strong> Is there a sufficiently large labor gap or danger coefficient in this scenario that makes robot replacement economically or ethically justifiable?</li>
+<li><strong>Why humanoid?</strong> Is the environment of this scenario designed for humans (steps, door handles, shelf heights, tool interfaces), making a humanoid form cheaper than re-engineering the environment?</li>
+<li><strong>Why now?</strong> Have actuator costs, VLA model generalization capabilities, and battery technology crossed the baseline for this scenario?</li>
+</ol>
+<p>Only when all three questions are answered affirmatively does the scenario have the conditions for deployment. This chapter examines each category of scenarios according to this logic.</p>
+<h3 id="2712-scenario-taxonomy-three-orthogonal-dimensions">27.1.2 Scenario Taxonomy: Three Orthogonal Dimensions</h3>
+<p>Humanoid robot application scenarios can be positioned along three orthogonal dimensions:</p>
+<ul>
+<li><strong>Degree of Environmental Structure</strong>: From highly structured automotive welding workshops, to semi-structured warehouses and hospitals, to unstructured homes and disaster sites.</li>
+<li><strong>Task Diversity</strong>: From single repetitive tasks (moving totes), to task families (dozens of workstations in final assembly logistics), to open-ended tasks (household chores).</li>
+<li><strong>Human-Robot Interaction and Safety Sensitivity</strong>: From low sensitivity in unmanned warehouses, to medium sensitivity in collaborative production lines, to high sensitivity in elderly care and home scenarios.</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph 结构化["Degree of Environmental Structure High → Low"]
+        S1[Automotive/3C Factory] --&gt; S2[Warehouse/Logistics Center]
+        S2 --&gt; S3[Commercial Retail/Hospital]
+        S3 --&gt; S4[Home/Disaster Site]
+    end
+    subgraph 任务["Task Diversity Low → High"]
+        T1[Single Handling] --&gt; T2[Task Family&lt;br/&gt;Loading·QC·Sorting]
+        T2 --&gt; T3[Open-ended Tasks&lt;br/&gt;Housework·Care]
+    end
+    subgraph 安全["Human-Robot Safety Sensitivity Low → High"]
+        U1[Unmanned Area] --&gt; U2[Human-Robot Collaborative Workstation]
+        U2 --&gt; U3[Close Contact Care/Home]
+    end</code></pre>
+<p>Generally speaking, commercial maturity breaks through first at the corner of "high structuralization, low task diversity, low safety sensitivity": this is why warehouse logistics and automotive final assembly logistics became the pioneers of deployment in 2024–2026.</p>
+<h3 id="2713-scenario-capability-mapping-matrix">27.1.3 Scenario-Capability Mapping Matrix</h3>
+<p>The following table maps the seven scenario categories to complete machine capability requirements (capability definitions are in Section 26.1.2):</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Mobility Requirements</th>
+<th>Manipulation Requirements</th>
+<th>Endurance/Replenishment</th>
+<th>Safety Level</th>
+<th>Typical Payload</th>
+<th>Representative Complete Machine (KG Entity)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Warehouse Logistics</td>
+<td>Level walking, narrow aisles</td>
+<td>Box grasping, palletizing</td>
+<td>4 h+, autonomous charging</td>
+<td>Medium (human-robot zoning)</td>
+<td>10–20 kg</td>
+<td><code>ent_product_agility_robotics_digit</code></td>
+</tr>
+<tr>
+<td>Automotive Manufacturing/Assembly</td>
+<td>Line walking, workstation positioning</td>
+<td>Dual-arm collaboration, tool use</td>
+<td>Battery swap 24 h</td>
+<td>High (collaborative workstation)</td>
+<td>5–15 kg</td>
+<td><code>ent_product_ubtech_walker_s2</code></td>
+</tr>
+<tr>
+<td>Industrial Inspection</td>
+<td>All-weather, stairs/pipe galleries</td>
+<td>Meter reading, valve operation</td>
+<td>Long endurance + wide temperature range</td>
+<td>Medium</td>
+<td>&lt;5 kg</td>
+<td><code>ent_product_boston_dynamics_atlas_electric</code></td>
+</tr>
+<tr>
+<td>Medical Rehabilitation</td>
+<td>Low speed, stable</td>
+<td>Compliant force-controlled contact</td>
+<td>Shift-level</td>
+<td>Extremely High</td>
+<td>Contact force level</td>
+<td><code>ent_product_fourier_gr1</code></td>
+</tr>
+<tr>
+<td>Elderly Care Companionship</td>
+<td>Indoor low speed</td>
+<td>Light manipulation, emotional interaction</td>
+<td>Hot-swappable</td>
+<td>Extremely High</td>
+<td>&lt;3 kg</td>
+<td><code>ent_product_fourier_gr3</code></td>
+</tr>
+<tr>
+<td>Home Services</td>
+<td>Unstructured indoor</td>
+<td>Diverse household manipulation</td>
+<td>Long endurance</td>
+<td>Extremely High</td>
+<td>1–5 kg</td>
+<td><code>ent_product_one_x_technologies_neo</code></td>
+</tr>
+<tr>
+<td>Commercial Retail</td>
+<td>Flat ground</td>
+<td>Shelf picking/placing, guidance</td>
+<td>24 h shift work</td>
+<td>High</td>
+<td>1–5 kg</td>
+<td><code>ent_product_galbot_g1</code></td>
+</tr>
+<tr>
+<td>Scientific Research Education</td>
+<td>Laboratory</td>
+<td>Open secondary development</td>
+<td>1–2 h acceptable</td>
+<td>Low</td>
+<td>—</td>
+<td><code>ent_product_unitree_g1</code>, <code>ent_product_engineai_pm01</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2714-quantitative-framework-for-scenario-economics-tco-and-unit-task-cost">27.1.4 Quantitative Framework for Scenario Economics: TCO and Unit Task Cost</h3>
+<p>Whether a scenario is viable is ultimately determined by comparing the Total Cost of Ownership (TCO) with the cost of human labor replacement. A simplified TCO model is:</p>
+<div class="arithmatex">\[
+TCO = \frac{C_{robot} + \sum_{t=1}^{T} \frac{C_{maint}(t) + C_{energy}(t) + C_{integrate}(t)}{(1+r)^t}}{N_{task}}
+\]</div>
+<p>Where <span class="arithmatex">\(C_{robot}\)</span> is the acquisition cost (or annualized rent under the RaaS model), <span class="arithmatex">\(C_{maint}\)</span>, <span class="arithmatex">\(C_{energy}\)</span>, and <span class="arithmatex">\(C_{integrate}\)</span> are the costs of maintenance, energy, and integration/retrofitting respectively, <span class="arithmatex">\(r\)</span> is the discount rate, <span class="arithmatex">\(T\)</span> is the service life, and <span class="arithmatex">\(N_{task}\)</span> is the total number of effective tasks completed over the lifecycle. The threshold cost of labor replaced by the robot can be written as:</p>
+<div class="arithmatex">\[
+C_{labor}^{eff} = w \cdot h_{shift} \cdot n_{shift} \cdot \eta_{task}
+\]</div>
+<p>Where <span class="arithmatex">\(w\)</span> is the comprehensive hourly labor cost, <span class="arithmatex">\(h_{shift}\)</span> and <span class="arithmatex">\(n_{shift}\)</span> are the shift duration and number of shifts to reflect the robot's advantage of continuous operation, and <span class="arithmatex">\(\eta_{task}\)</span> is the robot's effective coverage rate for the workstation's tasks. When <span class="arithmatex">\(TCO &lt; C_{labor}^{eff}\)</span>, the scenario has an economic closed loop. Currently, in most industrial scenarios, the constraint is not in the denominator (number of tasks) but in the numerator's <span class="arithmatex">\(C_{integrate}\)</span>—integration and retrofitting costs often account for 30% to 50% of the first-year deployment cost. This explains why "retrofitting the production line for the robot" versus "the robot adapting to the production line" has become a strategic debate.</p>
+<h3 id="2715-driving-factors-and-time-window-for-scenario-deployment">27.1.5 Driving Factors and Time Window for Scenario Deployment</h3>
+<p>The question "Why now?" can be broken down into four simultaneously converging forces (the KG concept entity <code>ent_concept_demo_to_product_gap</code> summarizes the new wave of 2025–2026):</p>
+<ol>
+<li><strong>AI Capability Convergence</strong>: Large models and VLA (Vision-Language-Action models, see Chapter 19) have endowed robots with cross-task perception, understanding, and generalization capabilities. Task programming is shifting from "per-workstation teaching" to "data-driven learning," directly compressing <span class="arithmatex">\(C_{integrate}\)</span>.</li>
+<li><strong>Cost Curve Convergence</strong>: Precision manufacturing and supply chain maturity (see Chapter 7) have led to a rapid decline in the cost of core components like actuators and reducers, bringing the complete machine BOM into the TCO-acceptable range for industrial customers.</li>
+<li><strong>Labor Structure Convergence</strong>: Rising labor costs in manufacturing and logistics, recruitment difficulties, and an aging population have raised the threshold of <span class="arithmatex">\(C_{labor}^{eff}\)</span>, allowing more scenarios to cross the economic closed-loop line.</li>
+<li><strong>Capital Convergence</strong>: The capital market provides large-scale funding for leading players, enabling them to withstand long verification cycle scenario pilots (e.g., Figure's 11-month deployment at BMW).</li>
+</ol>
+<p>The four forces are aligned in direction but differ in speed: AI capabilities and cost curves change quarterly, labor structure changes annually, while standards and certification systems change over several years. The order of scenario deployment is essentially the result of ranking each scenario's sensitivity to these four forces.</p>
+<hr />
+<h2 id="272-warehouse-logistics-scenario">27.2 Warehouse Logistics Scenario</h2>
+<h3 id="2721-scenario-definition-and-task-decomposition">27.2.1 Scenario Definition and Task Decomposition</h3>
+<p>Warehouse logistics (corresponding to the application research direction <code>warehouse_logistics</code>) covers picking, packing, palletizing/depalletizing, shelf replenishment, and "last meter" material handling. Common characteristics of this scenario include: a large number of SKUs, high order fluctuation, significant seasonal labor demand, and a warehouse environment (aisle width, shelf height, tote specifications) designed around ergonomics.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    A[Warehouse Workflow] --&gt; B[Receiving/Unloading]
+    B --&gt; C[Depalletizing and Sorting]
+    C --&gt; D[Putaway/Replenishment]
+    D --&gt; E[Picking]
+    E --&gt; F[Packing/Verification]
+    F --&gt; G[Palletizing/Shipping]
+    C -.Humanoid Current Capability.-&gt; H[Tote-level Handling&lt;br/&gt;Digit Deployed]
+    E -.Humanoid Current Capability.-&gt; I[Standard Case Picking&lt;br/&gt;Pilot Phase]
+    D -.Humanoid Current Capability.-&gt; J[Line-side Replenishment&lt;br/&gt;Walker/Digit Pilot]</code></pre>
+<h3 id="2722-suitability-of-humanoid-form-factor">27.2.2 Suitability of Humanoid Form Factor</h3>
+<p>Warehouses are the strongest scenario for the argument that humanoid robots operate in "environments designed for humans": narrow aisles (typically within 1.2 m), shelf heights (within human reach), tote handles, and door handles are all scaled to human dimensions. Wheeled AMRs (Autonomous Mobile Robots) are more efficient for planar transport but cannot handle steps, pit edges, or workstations requiring "reaching high and using both hands"; the humanoid/bipedal form factor precisely fills this "last meter" gap. Agility Digit's reverse knee joint design is optimized for the specific action of "squatting while holding a tote in a narrow aisle" (see Section 26.6).</p>
+<h3 id="2723-key-technical-requirements">27.2.3 Key Technical Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Typical Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous Payload</td>
+<td>15–20 kg</td>
+<td>Full weight of a standard tote</td>
+</tr>
+<tr>
+<td>Throughput per Unit Time</td>
+<td>Comparable to human pace (tens of cases/hour)</td>
+<td>Determines TCO viability</td>
+</tr>
+<tr>
+<td>Autonomous Charging/Battery Swap</td>
+<td>Downtime &lt; 5 min</td>
+<td>Determines uptime (see Section 26.10.3 formula)</td>
+</tr>
+<tr>
+<td>Fleet Management</td>
+<td>Integration with WMS</td>
+<td>Task scheduling, not single-unit intelligence</td>
+</tr>
+<tr>
+<td>Safety</td>
+<td>Human-robot zoning or collaborative speed limits</td>
+<td>Relaxed in unmanned zones, restricted in mixed-traffic areas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2724-representative-deployments-and-bottlenecks">27.2.4 Representative Deployments and Bottlenecks</h3>
+<p>The benchmark case in KG is Agility Digit (<code>ent_product_agility_robotics_digit</code>): it has performed tote sorting and handling in warehouses for customers such as Amazon, GXO, and Spanx, delivered via a RaaS model, with supply supported by the RoboFab factory capable of producing 10,000 units annually. Galaxy General Galbot G1 (<code>ent_product_galbot_g1</code>), using a wheeled chassis + lifting torso solution, achieves 24-hour deployment in warehouse and retail replenishment scenarios, validating the cost logic of "wheels replacing bipedal locomotion on flat surfaces."</p>
+<p>Current bottlenecks are primarily threefold: first, SKU generalization in picking—soft packaging, transparent, and reflective objects remain challenging for vision-grasping strategies; second, cycle time gaps—humanoid single-case processing time still exceeds that of skilled workers, requiring multi-shift advantages (<span class="arithmatex">\(n_{shift}\)</span> term) to compensate; third, deep WMS integration—robots must understand wave, location, and priority semantics, not just execute point-to-point transport.</p>
+<h3 id="2725-python-example-economic-calculation-for-a-warehouse-handling-station">27.2.5 Python Example: Economic Calculation for a Warehouse Handling Station</h3>
+<p>The following example uses the TCO framework from Section 27.1.4 to estimate the breakeven condition for "replacing one warehouse handler with a humanoid robot." All parameters are illustrative assumptions used to demonstrate the calculation method, not to provide industry conclusions:</p>
+<pre class="highlight"><code class="language-python"># Warehouse handling station: Humanoid robot TCO vs. labor cost (illustrative parameters)
+w = 25.0          # Total labor cost (USD/h)
+h_shift = 8.0     # Shift duration (h)
+n_shift_human = 1.0   # Human shifts (including breaks, effectively ~1 shift)
+eta_task = 0.85       # Robot effective task coverage rate
+
+# Robot side: RaaS annual rent + integration + energy + maintenance
+rent_year = 60000.0     # RaaS annual rent (USD)
+integrate_year1 = 30000.0  # First-year integration/retrofit cost (USD)
+maint_year = 8000.0     # Annual maintenance (USD)
+energy_year = 1500.0    # Annual energy (USD)
+n_shift_robot = 2.5     # Robot equivalent consecutive shifts (battery swap/autonomous charging)
+years = 5
+
+# Annual labor cost (single station)
+c_labor_year = w * h_shift * 250 * n_shift_human  # 250 working days
+# Annualized robot cost
+c_robot_year = rent_year + maint_year + energy_year + integrate_year1 / years
+# Effective labor value replaced by robot (multi-shift × coverage)
+c_labor_eff = c_labor_year * n_shift_robot * eta_task
+
+print(f"Annual labor cost (single shift): {c_labor_year:,.0f} USD")
+print(f"Annualized robot cost:     {c_robot_year:,.0f} USD")
+print(f"Effective labor value replaced by robot: {c_labor_eff:,.0f} USD")
+print(f"Economic viability: {'Viable' if c_labor_eff &gt; c_robot_year else 'Not viable'}")</code></pre>
+<p>The example reveals two structural characteristics of the warehouse scenario: first, <strong>multi-shift capability is the primary economic lever</strong>—when robots can operate for more than two shifts, even if single-shift cycle time lags behind humans, annual total output can still surpass them; second, <strong>coverage rate <span class="arithmatex">\(\eta_{task}\)</span> is a sensitive variable</strong>—a drop from 0.85 to 0.6 immediately breaks viability, which is why manufacturers prioritize deploying "tote handling" as a narrow, high-coverage task, leaving complex picking for later.</p>
+<hr />
+<h2 id="273-automotive-manufacturing-and-industrial-assembly-scenarios">27.3 Automotive Manufacturing and Industrial Assembly Scenarios</h2>
+<h3 id="2731-scenario-definition-and-task-decomposition">27.3.1 Scenario Definition and Task Decomposition</h3>
+<p>Automotive manufacturing is currently the most densely deployed scenario for industrial humanoid robots. The task families in the final assembly workshop include: parts sorting and delivery (SPS logistics), wire harness plugging, screw tightening, interior trim installation, quality inspection, and gluing. The common characteristics of these tasks are: workstations are ergonomically designed, tasks have a certain degree of diversity but the environment is highly structured, and there is an extremely high requirement for "no line stoppage."</p>
+<h3 id="2732-representative-deployments-from-training-to-production-lines">27.3.2 Representative Deployments: From Training to Production Lines</h3>
+<p>The KG product entity records benchmark deployments of several manufacturers in automotive scenarios:</p>
+<table>
+<thead>
+<tr>
+<th>Whole Machine (KG Entity)</th>
+<th>Customer/Base</th>
+<th>Task</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Figure 02 (<code>ent_product_figure_ai_figure_02</code>)</td>
+<td>BMW Spartanburg</td>
+<td>Chassis assembly, material handling</td>
+<td>Production line pilot</td>
+</tr>
+<tr>
+<td>Walker S1 (<code>ent_product_ubtech_walker_s1</code>)</td>
+<td>BYD, Dongfeng Liuzhou Motor, Geely, Audi FAW</td>
+<td>Final assembly logistics, handling, quality inspection</td>
+<td>Multi-factory training</td>
+</tr>
+<tr>
+<td>Walker S2 (<code>ent_product_ubtech_walker_s2</code>)</td>
+<td>NIO, BYD, Airbus, etc.</td>
+<td>Unpacking, material loading, quality inspection, spraying</td>
+<td>Enterprise delivery</td>
+</tr>
+<tr>
+<td>Tesla Optimus Gen 3 (<code>ent_product_tesla_optimus_gen3</code>)</td>
+<td>Tesla's own factory</td>
+<td>Battery sorting, material handling</td>
+<td>Internal testing</td>
+</tr>
+<tr>
+<td>XPeng Iron (<code>ent_product_xpeng_iron</code>)</td>
+<td>XPeng Guangzhou factory</td>
+<td>Screw tightening, material organization, viewing production forms</td>
+<td>Production line training</td>
+</tr>
+</tbody>
+</table>
+<p>This table itself reveals an industry fact: <strong>OEMs are both the most active customers and the most active competitors</strong> (Tesla, XPeng self-develop and self-use). For third-party robot manufacturers, the strategic value of the automotive scenario lies in high workstation density and strong replicability—a workstation solution validated in one factory can be horizontally promoted to dozens of factories.</p>
+<h3 id="2733-key-technical-requirements">27.3.3 Key Technical Requirements</h3>
+<ul>
+<li><strong>Cycle time and uptime</strong>: Production line cycle times are measured in seconds. Robots must either be embedded within the cycle time (high dynamic requirements) or undertake logistics tasks outside the cycle time (current mainstream choice). The Walker S2's 3-minute autonomous hot-swap battery change is precisely designed to match three-shift continuous production.</li>
+<li><strong>Dexterous manipulation</strong>: Wire harness plugging and clip installation require a 10+ DOF dexterous hand with force/tactile feedback; the Walker S2's fourth-generation five-fingered dexterous hand and the Optimus's 22 DOF hand are both designed for such processes.</li>
+<li><strong>Human-robot collaboration safety</strong>: Collaborative workstations must meet speed, force, and contact pressure limits (see Section 27.9 Standards System for details).</li>
+<li><strong>System integration</strong>: Integration with MES (Manufacturing Execution System) to receive work orders and report status—this is the watershed between "robot entering the factory" and "robot exhibiting at a show."</li>
+</ul>
+<h3 id="2734-bottlenecks">27.3.4 Bottlenecks</h3>
+<p>The main bottleneck lies in the cost of workstation migration: every time a workstation is changed, it requires re-collecting teaching or teleoperation data, adjusting fixtures, and re-validating safety, resulting in a high integration cost <span class="arithmatex">\(C_{integrate}\)</span>. The zero-shot generalization of VLA models (e.g., Figure Helix's grasping of unseen workpieces) is compressing this cost, but as of 2026, "plug-and-play for workstation changes" has not yet been achieved.</p>
+<h3 id="2735-workstation-grading-the-climbing-path-from-logistics-workstations-to-assembly-workstations">27.3.5 Workstation Grading: The Climbing Path from Logistics Workstations to Assembly Workstations</h3>
+<p>Workstations in the automotive final assembly workshop can be graded according to their friendliness to humanoid robots, forming a climbing path for deployment:</p>
+<table>
+<thead>
+<tr>
+<th>Workstation Grade</th>
+<th>Typical Workstation</th>
+<th>Environmental Constraints</th>
+<th>Operational Requirements</th>
+<th>Deployment Status (as of 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1 Logistics Workstation</td>
+<td>Tote delivery, SPS sorting, empty tote retrieval</td>
+<td>Open aisles</td>
+<td>Box gripping and handling</td>
+<td>Multi-point deployment (Walker, Digit series)</td>
+</tr>
+<tr>
+<td>G2 Auxiliary Workstation</td>
+<td>Parts pre-assembly, quality inspection assistance, form verification</td>
+<td>Workstation side operation</td>
+<td>Dual-arm collaboration, visual judgment</td>
+<td>Pilot validation (Figure@BMW, Iron@XPeng)</td>
+</tr>
+<tr>
+<td>G3 Line-side Workstation</td>
+<td>Wire harness plugging, clip installation, screw tightening</td>
+<td>Embedded in line cycle time</td>
+<td>Dexterous hand + force control, tool use</td>
+<td>Transition zone from demo to pilot</td>
+</tr>
+<tr>
+<td>G4 Specialized Workstation</td>
+<td>Spraying, gluing, welding assistance</td>
+<td>Explosion-proof/certification required</td>
+<td>Process-level precision</td>
+<td>Requires customized modification, not yet deployed at scale</td>
+</tr>
+</tbody>
+</table>
+<p>This grading illustrates that the essence of current "robot entering the factory" is <strong>first filling the labor gap in G1 logistics workstations</strong>, then climbing to G2/G3 as dexterous hand and force control capabilities mature. Any claim that "humanoid robots will soon fully replace production line workers" confuses the technical distance between G1 and G3.</p>
+<hr />
+<h2 id="274-industrial-inspection-and-maintenance-scenarios">27.4 Industrial Inspection and Maintenance Scenarios</h2>
+<h3 id="2741-scenario-definition-and-task-decomposition">27.4.1 Scenario Definition and Task Decomposition</h3>
+<p>Industrial inspection (corresponding to the application research direction <code>industrial_inspection</code>) covers equipment visual inspection, non-destructive testing (NDT) assistance, meter and gauge reading, confined space entry, and linkage with plant control systems. Typical customers are operators in the power, petrochemical, metallurgical, and rail transit industries.</p>
+<h3 id="2742-suitability-of-the-humanoid-form">27.4.2 Suitability of the Humanoid Form</h3>
+<p>The demand for humanoid forms in inspection scenarios comes from two points: First, facilities like power plants and substations have numerous stairs, ladders, and thresholds, where bipedal/humanoid mobility is superior to wheeled chassis. Second, operational interfaces such as valves, handles, and key switches are designed for human hands. However, specialized robots (rail-mounted, quadruped) are highly competitive in this scenario. The differentiation for humanoids lies in the integration of "inspection + simple intervention"—being able to perform light operations like adjusting a valve on the spot upon detecting an anomaly, rather than just transmitting images back.</p>
+<h3 id="2743-key-technical-requirements-and-representative-platforms">27.4.3 Key Technical Requirements and Representative Platforms</h3>
+<ul>
+<li><strong>Environmental adaptability</strong>: Wide temperature range (-20°C to 40°C), protection rating IP65+, explosion-proof certification (petrochemical scenarios); the Atlas electric version's IP67 and wide temperature range (<code>ent_product_boston_dynamics_atlas_electric</code>) are designed for harsh industrial environments.</li>
+<li><strong>Perception</strong>: Infrared thermal imaging, acoustic fingerprinting, gas detection, and visual recognition for meter reading.</li>
+<li><strong>Long endurance and autonomous recharging</strong>: Inspection routes are long with sparse points, making energy budgets tighter than in handling scenarios.</li>
+<li><strong>System integration</strong>: Integration with plant systems like DCS/SCADA to achieve an "inspection discovery—work order generation—disposal closure" loop.</li>
+</ul>
+<p>The bottleneck in this scenario is the low value density per inspection and the high unit price of the robot. Therefore, the primary justification for current projects is "replacing human entry into high-risk areas" (safety value rather than cost value), such as routine inspections in high-temperature, radiation, or toxic environments.</p>
+<h3 id="2744-extension-to-emergency-and-specialized-scenarios">27.4.4 Extension to Emergency and Specialized Scenarios</h3>
+<p>The technology stack of industrial inspection (mobility, remote perception, tolerance to harsh environments) is highly homologous to disaster emergency response. Therefore, inspection is often seen as a springboard for humanoids to enter specialized scenarios. It should be noted that in extremely unstructured environments like rubble and debris, the humanoid form may not be optimal—the KG paper entity <code>ent_paper_maur_roboa_construction_and_evaluat_2022</code> ("RoBoa: Construction and Evaluation of a Steerable Vine Robot for Search and Rescue Applications") demonstrates a completely different route: RoBoa achieves a slender 17 m-level configuration through an everted flexible fabric tube, capable of drilling into narrow crevices of collapsed buildings—spaces no humanoid robot can enter. The methodological significance of this case for scenario analysis is: <strong>The correct question for specialized scenarios is not "can a humanoid enter," but "which form has the lowest unit risk cost."</strong> The reasonable positioning of humanoids in specialized scenarios is closer to "general-purpose operators in hazardous environments" (e.g., valve operation and tool use during nuclear facility decommissioning) rather than explorers of extreme spaces.</p>
+<hr />
+<h2 id="275-medical-rehabilitation-and-elderly-care-scenarios">27.5 Medical Rehabilitation and Elderly Care Scenarios</h2>
+<h3 id="2751-scenario-definition-and-task-decomposition">27.5.1 Scenario Definition and Task Decomposition</h3>
+<p>Medical rehabilitation and elderly care (corresponding to the application research direction <code>assistive_rehabilitation</code>) includes physical therapy assistance, gait training, support for Activities of Daily Living (ADL) for the elderly, and social interaction and reminders for people with cognitive impairments. The evaluation metrics for this scenario differ from those of general industrial scenarios: in addition to task success rate, clinical indicators such as adherence, engagement, and functional improvement are also included.</p>
+<h3 id="2752-representative-platforms-and-research-evidence">27.5.2 Representative Platforms and Research Evidence</h3>
+<p>Fourier is the core entity family for this scenario in the KG: the GR-1 (<code>ent_product_fourier_gr1</code>) has entered the rehabilitation departments of several tertiary hospitals for gait training and rehabilitation therapy assistance, with its force-controlled compliance inherited from Fourier's rehabilitation exoskeleton product line; the GR-3 (<code>ent_product_fourier_gr3</code>, Care-bot) is further oriented towards companionship and rehabilitation assistance for elderly people living alone, featuring a soft-covered appearance, a full-sense interaction system (auditory, visual, tactile), and dual hot-swappable batteries to support long-duration companionship tasks.</p>
+<p>Evidence from the research side is also accumulating. The KG paper entity <code>ent_paper_mishra_does_elderly_enjoy_playing_bin_2021</code> ("Do the elderly enjoy playing bingo with a robot? – A case study with the humanoid robot Nadine") reports on the deployment of the social humanoid robot Nadine as an autonomous bingo host in a nursing home: computer vision analysis showed that elderly residents smiled more and staff burden was reduced during robot-hosted activities. Such research illustrates the unique value of the humanoid form in terms of <strong>social acceptance</strong> – the affinity of human faces and body language for the elderly population is difficult to replace with non-humanoid devices.</p>
+<h3 id="2753-key-technical-requirements">27.5.3 Key Technical Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Requirement</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compliant Force Control</td>
+<td>Contact force closed-loop, collision detection, and rapid retraction</td>
+<td>Direct physical contact with the elderly/patients</td>
+</tr>
+<tr>
+<td>Safety Certification</td>
+<td>ISO 13482 (Personal Care Robots), etc.</td>
+<td>See Section 27.9 for details</td>
+</tr>
+<tr>
+<td>Interaction Naturalness</td>
+<td>Multimodal voice, expression, touch</td>
+<td>Adherence and engagement metrics</td>
+</tr>
+<tr>
+<td>Continuous Operation</td>
+<td>Shift-level endurance, silent battery swap</td>
+<td>Design basis for GR-3 dual hot-swappable batteries</td>
+</tr>
+<tr>
+<td>Privacy Compliance</td>
+<td>Local processing of audio and video data</td>
+<td>Strong privacy constraints in elderly care scenarios</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2754-bottlenecks">27.5.4 Bottlenecks</h3>
+<p>The scaling of rehabilitation medical scenarios is constrained by the clinical validation cycle and medical insurance reimbursement pathways: entry as a "medical device" requires registration and clinical evaluation, while as a "consumer product," it is difficult to support a high unit price. The current practical path is institutional procurement (rehabilitation departments, nursing homes) + service-based billing, while home market adoption still awaits cost reduction and standard improvement.</p>
+<h3 id="2755-rehabilitation-service-closed-loop-and-evaluation-metrics">27.5.5 Rehabilitation Service Closed Loop and Evaluation Metrics</h3>
+<p>The uniqueness of rehabilitation and care scenarios lies in the service being a clinical closed loop of "assessment—intervention—re-assessment," where the robot simultaneously assumes the dual roles of intervention executor and data collector:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Initial Functional Assessment&lt;br/&gt;Gait/Muscle Strength/ADL Scales] --&gt; B[Personalized Training Prescription]
+    B --&gt; C[Robot-Assisted Training&lt;br/&gt;Gait Training / Task-Oriented Training]
+    C --&gt; D[Process Data Collection&lt;br/&gt;Joint Angles · Engagement · Adherence]
+    D --&gt; E[Periodic Re-assessment]
+    E --&gt;|Functional Improvement| B
+    E --&gt;|Plateau| F[Adjust Prescription or Refer]</code></pre>
+<p>Unlike industrial scenarios where "throughput per unit time" is the core metric, the KPI system for this scenario is human-centered: training adherence (the proportion of prescribed training completed by the patient), engagement (the level of active involvement during training, estimable from visual expressions and movement amplitude analysis), and functional improvement (the difference in standardized scale scores before and after training). The value proposition of humanoid robots in this closed loop is not to replace therapists, but to <strong>amplify the service radius per unit time of the therapist</strong> – one therapist can simultaneously supervise the training process of multiple devices, which has direct structural significance for the rehabilitation medical system, which has long suffered from a shortage of therapists.</p>
+<hr />
+<h2 id="276-home-and-domestic-service-scenarios">27.6 Home and Domestic Service Scenarios</h2>
+<h3 id="2761-scenario-definition-and-task-decomposition">27.6.1 Scenario Definition and Task Decomposition</h3>
+<p>Home service (corresponding to the application research direction <code>home_assistive</code>) is the scenario with the highest task diversity and the lowest degree of environmental structuring: tidying and organizing, cleaning, laundry, fetching items, companionship, and emergency call response. Among the KG product entities, 1X Technologies' NEO (<code>ent_product_one_x_technologies_neo</code>) and Fourier's GR-3 target this type of scenario; Tesla also lists home service as a long-term target scenario for Optimus.</p>
+<p>Classifying household tasks along the two dimensions of "operational intensity × environmental variability" reveals the path for increasing autonomy:</p>
+<table>
+<thead>
+<tr>
+<th>Task Level</th>
+<th>Typical Tasks</th>
+<th>Operational Intensity</th>
+<th>Environmental Variability</th>
+<th>Current Autonomy Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0 Companionship &amp; Interaction</td>
+<td>Voice reminders, emotional communication, video calls</td>
+<td>No contact</td>
+<td>Low</td>
+<td>Already productizable (GR-3 positioning)</td>
+</tr>
+<tr>
+<td>L1 Light Fetching</td>
+<td>Handing water, fetching remote control, delivering medicine</td>
+<td>Single-hand, light load</td>
+<td>Medium</td>
+<td>Usable with teleoperation assistance</td>
+</tr>
+<tr>
+<td>L2 Tidying &amp; Organizing</td>
+<td>Clearing tables, folding clothes</td>
+<td>Two-hand operation</td>
+<td>High</td>
+<td>Demonstration level, unstable success rate</td>
+</tr>
+<tr>
+<td>L3 Complex Housework</td>
+<td>Washing dishes, cooking meal prep, deep cleaning</td>
+<td>Tools + liquids + fragile items</td>
+<td>Very High</td>
+<td>Research stage</td>
+</tr>
+</tbody>
+</table>
+<p>This classification aligns with the scenario taxonomy in Section 27.1.2: autonomy advances first from the corner of "low operational intensity, low environmental variability," and each level's breakthrough relies on long-tail task samples accumulated by the data flywheel.</p>
+<h3 id="2762-why-the-home-is-the-last-scenario-to-be-conquered">27.6.2 Why the Home is the "Last" Scenario to be Conquered</h3>
+<p>The difficulties of the home scenario are systemic:</p>
+<ol>
+<li><strong>Unstructured Environment</strong>: Every home has different layouts, item placements, and lighting conditions, preventing perception and manipulation models from relying on prior maps;</li>
+<li><strong>Open Task Space</strong>: The variety of objects and operational sequences for household tasks is nearly infinite, demanding generalization capabilities from VLA models far beyond those required for factory task families;</li>
+<li><strong>Safety and Psychological Acceptance</strong>: Coexistence with children, the elderly, and pets makes the system highly sensitive to collision forces, fall risks, and the "uncanny valley" effect;</li>
+<li><strong>Price Ceiling</strong>: The willingness to pay of home users is far lower than the TCO threshold of industrial clients, requiring the entire machine BOM to be an order of magnitude lower than industrial models.</li>
+</ol>
+<p>The KG report entity <code>ent_report_humanoid_home_robot_safety_is_all_about_2026</code> ("Home Robot Safety Is All About Relationships") points out that ISO is updating the safety requirements for personal care robots, which have been in effect for 12 years, indirectly reflecting the evolution of home robot safety standards alongside the productization process.</p>
+<h3 id="2763-current-feasible-entry-points">27.6.3 Current Feasible Entry Points</h3>
+<p>In the short term, the practical path for the home scenario is to "narrow the task domain": enter with low operational intensity tasks such as companionship, reminders, and light fetching (the companionship positioning of the GR-3 follows this logic), use teleoperation assistance (human-in-the-loop) to cover long-tail tasks while simultaneously accumulating data, and gradually expand the scope of autonomous tasks. This is consistent with the judgment of the KG concept <code>ent_concept_demo_to_product_gap</code> – the gap is largest for the home scenario, and narrowing the entry point is a necessary route.</p>
+<hr />
+<h2 id="277-commercial-retail-and-public-service-scenarios">27.7 Commercial Retail and Public Service Scenarios</h2>
+<h3 id="2771-scenario-definition-and-representative-deployments">27.7.1 Scenario Definition and Representative Deployments</h3>
+<p>Commercial retail scenarios cover shelf restocking and inventory in pharmacies and convenience stores, store navigation, promotional interactions, and unattended nighttime operations. The most complete case in the KG is Galbot G1 (<code>ent_product_galbot_g1</code>): a wheeled omnidirectional chassis + a 65 cm lifting torso covering a working height of up to approximately 240 cm, pure visual navigation requiring no modification to store infrastructure, and its AstraBrain system supports 24-hour commercial deployment in pharmacies and convenience stores. XPeng Iron also plans to target store navigation and commercial services.</p>
+<h3 id="2772-scenario-characteristics-and-bottlenecks">27.7.2 Scenario Characteristics and Bottlenecks</h3>
+<p>The technical threshold for commercial retail is lower than for industry (narrow task families, semi-structured environments), but it has unique constraints: mixed pedestrian traffic requires higher dynamic obstacle avoidance and behavioral predictability; unattended nighttime store operations require remote maintenance and abnormal self-handling capabilities; the limited payment capacity of a single store requires sufficiently low machine cost and operational cost. This scenario essentially uses robots to fill the labor gap during nighttime and off-peak hours in the retail industry, with an economic model close to "shared employees."</p>
+<h2 id="278-scientific-research-education-and-developer-scenarios">27.8 Scientific Research, Education, and Developer Scenarios</h2>
+<h3 id="2781-scenario-definition-and-unique-position">27.8.1 Scenario Definition and Unique Position</h3>
+<p>Scientific research and education is a scenario that is easily overlooked but had the largest actual shipment scale during 2024–2026. Universities and research institutions purchase humanoid platforms for motion control, reinforcement learning, VLA deployment, and embodied intelligence research. This scenario is insensitive to "task success rate" but highly sensitive to openness, documentation, and price.</p>
+<p>Unitree G1 (<code>ent_product_unitree_g1</code>), with a price of approximately 16,000 USD and ROS2 with Python/C++ SDK, has become one of the world's leading humanoid development platforms in terms of shipment volume. H1 (<code>ent_product_unitree_h1</code>), with its 3.3 m/s running capability, serves high-dynamic motion research. EngineAI PM01 (<code>ent_product_engineai_pm01</code>) targets the algorithm teaching and secondary development market with open-source training/deployment code and an education version configuration.</p>
+<p>The typical trade-offs for research teams when selecting a platform can be summarized as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Selection Dimension</th>
+<th>Description</th>
+<th>Representative Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Budget and Accessibility</td>
+<td>Unit purchase price and delivery lead time</td>
+<td>G1 Basic Edition, PM01 Education Edition</td>
+</tr>
+<tr>
+<td>Depth of Secondary Development</td>
+<td>SDK level (joint-level/task-level), simulation model completeness</td>
+<td>Unitree SDK + ROS2</td>
+</tr>
+<tr>
+<td>Computing Power Expansion</td>
+<td>Whether edge computing like Jetson Orin can be added</td>
+<td>G1 EDU Edition</td>
+</tr>
+<tr>
+<td>Manipulation Capability</td>
+<td>Whether dexterous hands are optional</td>
+<td>G1 + Dex3-1, H1-2 upgraded arms</td>
+</tr>
+<tr>
+<td>Motion Performance</td>
+<td>High-dynamic validation needs such as running and jumping</td>
+<td>H1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2782-strategic-significance-outpost-for-ecosystem-and-data">27.8.2 Strategic Significance: Outpost for Ecosystem and Data</h3>
+<p>The commercial value of the scientific research and education scenario lies not in the profit per unit, but in three points: first, it cultivates a developer ecosystem familiar with the vendor's SDK, creating platform stickiness; second, university research outputs (papers, open-source algorithms) feed back into the vendor's technology roadmap; third, it reserves talent and system integrators for future industrial scenarios. From a KG perspective, this scenario is a springboard for robot manufacturers to move from "selling products" to "building an ecosystem," and it is also an important variable in the analysis of the enterprise competitive landscape in Chapter 28.</p>
+<hr />
+<h2 id="279-cross-scenario-common-engineering-constraints">27.9 Cross-Scenario Common Engineering Constraints</h2>
+<h3 id="2791-safety-standards-system">27.9.1 Safety Standards System</h3>
+<p>Humanoid robots interacting closely with humans in the work environment must comply with standards for functional safety, electrical safety, electromagnetic compatibility, and mechanical safety. The main standards summarized by the KG concept entity <code>ent_concept_human_robot_collaboration_safety</code> are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Scope</th>
+<th>Core Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 13482:2014</td>
+<td>Personal care robots</td>
+<td>Speed, force, contact pressure limits</td>
+</tr>
+<tr>
+<td>ISO/TS 15066</td>
+<td>Collaborative robots</td>
+<td>Human-robot collaboration safety requirements (quasi-static/transient contact limits)</td>
+</tr>
+<tr>
+<td>IEC 61508</td>
+<td>Functional safety</td>
+<td>Safety Integrity Level (SIL) for control systems</td>
+</tr>
+<tr>
+<td>ISO 13849</td>
+<td>Safety of machinery control systems</td>
+<td>Performance Level (PL) for safety-related control parts</td>
+</tr>
+<tr>
+<td>IEC 62368</td>
+<td>Safety of audio/video and information technology equipment</td>
+<td>Electrical safety, fire risk</td>
+</tr>
+</tbody>
+</table>
+<p>Regarding regional market access: the EU requires CE marking, the US requires UL certification and FCC electromagnetic compatibility, and China has CR certification (China Robot Certification) and CCC. The direct implication for application scenarios is: the higher the safety sensitivity of the scenario (elderly care, home), the longer the certification cycle, and the more the scenario's scaling pace is constrained by the evolution of standards.</p>
+<h3 id="2792-business-model-from-capex-to-raas">27.9.2 Business Model: From CapEx to RaaS</h3>
+<p>Robot-as-a-Service (RaaS, KG concept <code>ent_concept_robot_as_a_service</code>) replaces outright purchase with leasing or subscription, bundling maintenance, software updates, and fleet management. RaaS transforms the acquisition cost <span class="arithmatex">\(C_{robot}\)</span> in the TCO formula (Section 27.1.4) into predictable annualized operating expenses while transferring availability risk to the vendor—this precisely matches customers in warehousing, retail, etc., who are sensitive to cash flow and lack robot operation and maintenance capabilities. Agility Digit's warehouse deployments adopt the RaaS model.</p>
+<h3 id="2793-data-flywheel-and-scenario-selection">27.9.3 Data Flywheel and Scenario Selection</h3>
+<p>The cycle described by the KG concept <code>ent_concept_data_flywheel</code>—deployment generates data, data improves models, models enhance performance and unlock more deployments—means that scenario selection has strategic compounding effects:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Select scenarios with high data value] --&gt; B[Real-world deployment]
+    B --&gt; C[Long-tail task data feedback]
+    C --&gt; D[VLA/policy model iteration]
+    D --&gt; E[Improved task success rate and generalization]
+    E --&gt; F[Unlock adjacent scenarios]
+    F --&gt; B</code></pre>
+<p>The scenario strategies of Tesla (own factory), Figure (BMW production line), and Ubtech (multi-automaker training) all follow this logic: first occupy the scenario with the optimal "data density × willingness to pay," then diffuse to adjacent scenarios. For entrepreneurs, the primary question for scenario selection is not "where is the biggest demand," but "where can data make me improve the fastest."</p>
+<h3 id="2794-failure-modes-and-maintenance">27.9.4 Failure Modes and Maintenance</h3>
+<p>Recurring failure modes in cross-scenario deployments include: falling (dynamic balance failure), grasping failure (insufficient perception or policy generalization), battery/actuator thermal runaway risks, and task suspension due to network interruption. The engineering mitigation approach is a hierarchical degradation strategy: fallback to a safe posture upon task failure, remote teleoperation takeover, and then on-site manual intervention. The cost of the maintenance system (spare parts, OTA, predictive maintenance) can account for a significant proportion of TCO in large-scale deployments and is an indispensable item in scenario economic calculations.</p>
+<hr />
+<h2 id="2710-chapter-summary">27.10 Chapter Summary</h2>
+<p>This chapter analyzed seven application scenarios for humanoid robots based on the "scenario-driven" framework. Warehousing/logistics and automotive manufacturing, with their "structured environment + clear task families + strong willingness to pay," are the current pioneers in deployment (evidenced by production line records of Digit, Walker S1/S2, Figure 02, and Optimus). Industrial inspection is justified by safety value. Medical rehabilitation and elderly care (Fourier GR-1/GR-3) exhibit long-cycle characteristics constrained by clinical validation and payment pathways. Home service is the ultimate scenario with the highest task diversity and the largest gap, currently entered through low-manipulation-intensity tasks like companionship. Commercial retail (Galbot G1) validates the pragmatic approach of a wheeled humanoid upper body. Scientific research and education (Unitree G1/H1, EngineAI PM01) assume the strategic role of an outpost for ecosystem and data. Cross-scenario common constraints—safety standards, TCO, RaaS, and the data flywheel—determine the pace and order of scenario deployment: structured before unstructured, industrial before home, narrow tasks before general tasks.</p>
+<p>Practical advice for readers can be summarized in three sentences: <strong>When evaluating a scenario, first look at coverage rate, then cycle time</strong> (<span class="arithmatex">\(\eta_{task}\)</span> is a sensitive variable for TCO closure); <strong>When evaluating a vendor, first look at deployment records, then demo videos</strong> (the criterion for crossing the demo-to-product gap is the continuous runtime in third-party scenarios); <strong>When evaluating timing, first look at standards, then price</strong> (the scaling pace of high-safety-sensitivity scenarios is determined by the certification system, not the BOM). Chapter 28 will build upon this scenario landscape to analyze market structure, enterprise competition, and investment logic.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-26/">← Previous<span>Chapter 26: Complete System Case Studies</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-28/">Next →<span>Chapter 28: Markets, Enterprises, and Investment</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-27-application-scenarios">Chapter 27 Application Scenarios</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#271-application-scenario-analysis-framework">27.1 Application Scenario Analysis Framework</a><ul>
+<li><a href="#2711-why-scenario-is-more-important-than-form">27.1.1 Why "Scenario" is More Important Than "Form"</a></li>
+<li><a href="#2712-scenario-taxonomy-three-orthogonal-dimensions">27.1.2 Scenario Taxonomy: Three Orthogonal Dimensions</a></li>
+<li><a href="#2713-scenario-capability-mapping-matrix">27.1.3 Scenario-Capability Mapping Matrix</a></li>
+<li><a href="#2714-quantitative-framework-for-scenario-economics-tco-and-unit-task-cost">27.1.4 Quantitative Framework for Scenario Economics: TCO and Unit Task Cost</a></li>
+<li><a href="#2715-driving-factors-and-time-window-for-scenario-deployment">27.1.5 Driving Factors and Time Window for Scenario Deployment</a></li>
+</ul>
+</li>
+<li><a href="#272-warehouse-logistics-scenario">27.2 Warehouse Logistics Scenario</a><ul>
+<li><a href="#2721-scenario-definition-and-task-decomposition">27.2.1 Scenario Definition and Task Decomposition</a></li>
+<li><a href="#2722-suitability-of-humanoid-form-factor">27.2.2 Suitability of Humanoid Form Factor</a></li>
+<li><a href="#2723-key-technical-requirements">27.2.3 Key Technical Requirements</a></li>
+<li><a href="#2724-representative-deployments-and-bottlenecks">27.2.4 Representative Deployments and Bottlenecks</a></li>
+<li><a href="#2725-python-example-economic-calculation-for-a-warehouse-handling-station">27.2.5 Python Example: Economic Calculation for a Warehouse Handling Station</a></li>
+</ul>
+</li>
+<li><a href="#273-automotive-manufacturing-and-industrial-assembly-scenarios">27.3 Automotive Manufacturing and Industrial Assembly Scenarios</a><ul>
+<li><a href="#2731-scenario-definition-and-task-decomposition">27.3.1 Scenario Definition and Task Decomposition</a></li>
+<li><a href="#2732-representative-deployments-from-training-to-production-lines">27.3.2 Representative Deployments: From Training to Production Lines</a></li>
+<li><a href="#2733-key-technical-requirements">27.3.3 Key Technical Requirements</a></li>
+<li><a href="#2734-bottlenecks">27.3.4 Bottlenecks</a></li>
+<li><a href="#2735-workstation-grading-the-climbing-path-from-logistics-workstations-to-assembly-workstations">27.3.5 Workstation Grading: The Climbing Path from Logistics Workstations to Assembly Workstations</a></li>
+</ul>
+</li>
+<li><a href="#274-industrial-inspection-and-maintenance-scenarios">27.4 Industrial Inspection and Maintenance Scenarios</a><ul>
+<li><a href="#2741-scenario-definition-and-task-decomposition">27.4.1 Scenario Definition and Task Decomposition</a></li>
+<li><a href="#2742-suitability-of-the-humanoid-form">27.4.2 Suitability of the Humanoid Form</a></li>
+<li><a href="#2743-key-technical-requirements-and-representative-platforms">27.4.3 Key Technical Requirements and Representative Platforms</a></li>
+<li><a href="#2744-extension-to-emergency-and-specialized-scenarios">27.4.4 Extension to Emergency and Specialized Scenarios</a></li>
+</ul>
+</li>
+<li><a href="#275-medical-rehabilitation-and-elderly-care-scenarios">27.5 Medical Rehabilitation and Elderly Care Scenarios</a><ul>
+<li><a href="#2751-scenario-definition-and-task-decomposition">27.5.1 Scenario Definition and Task Decomposition</a></li>
+<li><a href="#2752-representative-platforms-and-research-evidence">27.5.2 Representative Platforms and Research Evidence</a></li>
+<li><a href="#2753-key-technical-requirements">27.5.3 Key Technical Requirements</a></li>
+<li><a href="#2754-bottlenecks">27.5.4 Bottlenecks</a></li>
+<li><a href="#2755-rehabilitation-service-closed-loop-and-evaluation-metrics">27.5.5 Rehabilitation Service Closed Loop and Evaluation Metrics</a></li>
+</ul>
+</li>
+<li><a href="#276-home-and-domestic-service-scenarios">27.6 Home and Domestic Service Scenarios</a><ul>
+<li><a href="#2761-scenario-definition-and-task-decomposition">27.6.1 Scenario Definition and Task Decomposition</a></li>
+<li><a href="#2762-why-the-home-is-the-last-scenario-to-be-conquered">27.6.2 Why the Home is the "Last" Scenario to be Conquered</a></li>
+<li><a href="#2763-current-feasible-entry-points">27.6.3 Current Feasible Entry Points</a></li>
+</ul>
+</li>
+<li><a href="#277-commercial-retail-and-public-service-scenarios">27.7 Commercial Retail and Public Service Scenarios</a><ul>
+<li><a href="#2771-scenario-definition-and-representative-deployments">27.7.1 Scenario Definition and Representative Deployments</a></li>
+<li><a href="#2772-scenario-characteristics-and-bottlenecks">27.7.2 Scenario Characteristics and Bottlenecks</a></li>
+</ul>
+</li>
+<li><a href="#278-scientific-research-education-and-developer-scenarios">27.8 Scientific Research, Education, and Developer Scenarios</a><ul>
+<li><a href="#2781-scenario-definition-and-unique-position">27.8.1 Scenario Definition and Unique Position</a></li>
+<li><a href="#2782-strategic-significance-outpost-for-ecosystem-and-data">27.8.2 Strategic Significance: Outpost for Ecosystem and Data</a></li>
+</ul>
+</li>
+<li><a href="#279-cross-scenario-common-engineering-constraints">27.9 Cross-Scenario Common Engineering Constraints</a><ul>
+<li><a href="#2791-safety-standards-system">27.9.1 Safety Standards System</a></li>
+<li><a href="#2792-business-model-from-capex-to-raas">27.9.2 Business Model: From CapEx to RaaS</a></li>
+<li><a href="#2793-data-flywheel-and-scenario-selection">27.9.3 Data Flywheel and Scenario Selection</a></li>
+<li><a href="#2794-failure-modes-and-maintenance">27.9.4 Failure Modes and Maintenance</a></li>
+</ul>
+</li>
+<li><a href="#2710-chapter-summary">27.10 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

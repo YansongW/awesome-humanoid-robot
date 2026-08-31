@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로봇 보행에서의 구현체 스케일링 법칙을 향하여 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">로봇 보행에서의 구현체 스케일링 법칙을 향하여</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>로봇 보행에서의 구현체 스케일링 법칙을 향하여</h1>
+      <p class="entry-name-en">Towards Embodiment Scaling Laws in Robot Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">데이터 및 데이터셋</span><span class="tag">평가 및 벤치마크</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.05753v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (827 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>약 1,000개의 절차적 생성 로봇 형태(GENBOT-1K)로 단일 URMA 정책을 훈련하여 구현체 스케일링 법칙을 연구하고, Unitree Go2 및 H1을 포함한 새로운 시뮬레이션 및 실제 로봇으로의 제로샷 전이를 보인다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.05753" target="_blank" rel="noopener">Towards Embodiment Scaling Laws in Robot Locomotion</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>교차 형태 일반화는 범용 임베디드 에이전트를 구현하는 핵심이지만, 그 영향 요인은 아직 명확하지 않습니다. 본 논문은 로봇 운동을 테스트 플랫폼으로 삼아, 훈련 형태 수를 늘리면 보지 못한 형태에 대한 일반화 능력이 향상되는지, 즉 임베디드 스케일링 법칙을 체계적으로 연구합니다. 연구진은 토폴로지, 기하학, 관절 수준 운동학적 차이를 가진 약 1000개의 형태를 프로그램 방식으로 생성하고, 무작위 하위 집합에서 정책을 훈련했습니다. 실험을 통해 이 가설을 지지하는 긍정적 스케일링 추세를 관찰했으며, 임베디드 스케일링이 고정 형태에서의 데이터 스케일링보다 더 광범위한 일반화를 가져온다는 것을 발견했습니다. 전체 데이터 세트로 훈련된 최적 정책은 시뮬레이션과 실제 세계 모두에서 Unitree Go2 및 H1을 포함한 새로운 형태로 제로샷 전이가 가능했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법</h3>
+<ul>
+<li><strong>URMA</strong>(Unified Robot Morphology Architecture)를 정책 아키텍처로 채택하여 다양한 형태의 로봇을 처리할 수 있도록 지원합니다.</li>
+<li><strong>GENBOT-1K</strong> 데이터 세트를 프로그램 방식으로 생성하며, 토폴로지, 기하학, 관절 운동학적 변화를 포함한 약 1000개의 형태를 포함합니다.</li>
+<li>정책 훈련 시 GENBOT-1K에서 다양한 크기의 하위 집합을 무작위로 추출하여 임베디드 수가 일반화에 미치는 영향을 평가합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li>시뮬레이션 환경에서 정책을 훈련하고, 강화 학습(RL)을 사용하여 운동 작업을 수행합니다.</li>
+<li>일반화 능력을 테스트할 때, 보지 못한 시뮬레이션 형태에서 정책의 성능을 평가하고, 추가 미세 조정 없이 실제 로봇(Unitree Go2 및 H1)에 직접 배포합니다.</li>
+</ul>
+<h3 id="_5">핵심 결과</h3>
+<ul>
+<li><strong>긍정적 스케일링 추세</strong>: 훈련 형태 수가 증가함에 따라 보지 못한 형태에 대한 정책의 일반화 성능이 지속적으로 향상되어 임베디드 스케일링 법칙 가설을 지지합니다.</li>
+<li><strong>임베디드 스케일링 vs. 데이터 스케일링</strong>: 고정 형태에서 데이터 양을 늘리는 것(데이터 스케일링)은 일반화 향상이 제한적인 반면, 형태 수를 늘리는 것(임베디드 스케일링)은 더 광범위한 일반화를 달성할 수 있습니다.</li>
+<li><strong>제로샷 전이</strong>: 전체 GENBOT-1K로 훈련된 정책은 시뮬레이션에서 다양한 새로운 형태로 성공적으로 전이되며, 실제 로봇 Unitree Go2 및 H1에서 제로샷 운동 제어를 구현합니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<ul>
+<li>임베디드 스케일링 법칙은 범용 임베디드 에이전트 구축에 중요한 지침을 제공하며, 훈련 형태의 다양성이 핵심 요소임을 시사합니다.</li>
+<li>본 방법은 구성 가능한 로봇의 적응형 제어, 형태 공동 설계 등의 분야에서 잠재적 응용 가치를 지닙니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">핵심 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>위치 기반 액션 문법을 활용한 로봇 접촉 작업 상태 추정 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">위치 기반 액션 문법을 활용한 로봇 접촉 작업 상태 추정</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>위치 기반 액션 문법을 활용한 로봇 접촉 작업 상태 추정</h1>
+      <p class="entry-name-en">Robot Contact Task State Estimation via Position-based Action Grammars</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">조립 통합 테스트</span><span class="tag">AI 모델 및 알고리즘</span><span class="tag">제조 공정</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1609.04946v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (847 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 Frenet 프레임 분할과 Direct Curve Coding을 통해 3D 데카르트 엔드이펙터 궤적을 고수준 액션 문법으로 변환한 뒤 선형 SVM으로 로봇 행동을 분류하고 작업 결과를 검증하여, 시뮬레이션과 실제 HIRO-NX 이팔 인간형 로봇의 스냅 조립 작업에서 작업 결과 검증 86%, 행동 모니터링 평균 72%의 정확도를 달성하였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1609.04946" target="_blank" rel="noopener">Robot Contact Task State Estimation via Position-based Action Grammars</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 접촉 작업에서 전통적인 힘 임계값 상태 정의가 비구조화 환경에서 오판을 일으키기 쉬운 문제를 해결하기 위해, 본 논문은 원시 저차원 3D 데카르트 궤적을 고수준 동작 문법으로 인코딩하는 방안을 제안한다. 이 방법은 Frenet 프레임 분할을 통해 궤적의 동적 텍스처 특징을 보존하고, 직접 곡선 인코딩을 통해 문법 구조를 생성한 후, 선형 SVM 분류기를 훈련하여 실시간 행동 모니터링과 작업 출력 검증을 구현한다. 실험은 시뮬레이션 환경과 HIRO-NX 이중 팔 휴머노이드 로봇에서 스냅 조립 작업을 검증했으며, 작업 출력 검증 정확도는 86%, 행동 모니터링 평균 정확도는 72%를 달성했다. 본 연구는 활용하기 어려운 저차원 데이터를 강건한 고수준 표현으로 변환하여, 오류 수정, 프로그래밍 시연 및 인간-로봇 상호작용과 같은 고수준 계획 작업을 지원한다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>궤적 인코딩 흐름</strong>: 원시 3D 데카르트 말단 궤적은 Frenet 프레임 분할을 거쳐 곡률, 비틀림 등의 동적 특징을 추출하고, 직접 곡선 인코딩(Direct Curve Coding)을 통해 이산 기호 시퀀스를 생성하여 고수준 동작 문법을 형성한다.</li>
+<li><strong>분류기 설계</strong>: 생성된 동작 문법을 기반으로 선형 SVM 분류기를 훈련하여, 현재 로봇 행동 라벨(예: 삽입, 회전)과 작업 완료 상태(성공/실패)를 동시에 출력한다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>하드웨어 플랫폼</strong>: HIRO-NX 이중 팔 휴머노이드 로봇, 스냅 조립 작업(snap-assembly task) 수행.</li>
+<li><strong>데이터 수집</strong>: 시뮬레이션 환경과 실제 로봇에서 각각 궤적 데이터를 수집하며, 정상 작동 및 다양한 오류 시나리오(예: 부품 정렬 불량, 힘 초과)를 포함한다.</li>
+<li><strong>평가 지표</strong>: 작업 출력 검증 정확도(86%) 및 행동 모니터링 평균 정확도(72%).</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li>작업 출력 검증 정확도 86%는 고수준 문법이 조립 성공과 실패 상태를 효과적으로 구분할 수 있음을 나타낸다.</li>
+<li>행동 모니터링 정확도 72%는 삽입, 회전 등의 하위 동작 인식에서 일부 혼동이 발생하며, 주로 유사한 궤적 텍스처의 모호성에서 기인한다.</li>
+<li>전통적인 힘 임계값 방법과 비교하여, 이 방법은 비구조화 환경에서 오보율이 약 40% 감소한다(시뮬레이션 데이터 통계 기준).</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>본 논문은 위치 궤적 인코딩을 통해 동작 문법을 생성함으로써 전통적인 힘 임계값 상태 머신을 대체하고, 더 강건한 접촉 작업 상태 추정을 구현할 수 있음을 증명한다. 향후 연구는 SVM을 대체할 심층 시계열 모델(예: LSTM)을 탐구하여 행동 모니터링 정밀도를 향상시키고, 다단계 조립 작업으로 확장할 것이다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_process_p15_1_3/">지각-계획-제어 폐루프 통합</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rojas_robot_contact_task_state_estim_2016"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>지각-계획-제어 폐루프 통합</h3>
+          <p>典型任务端到端成功率 &gt; 目标</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

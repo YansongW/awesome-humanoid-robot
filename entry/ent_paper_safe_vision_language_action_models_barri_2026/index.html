@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safe Vision Language Action Models via Barrier Enhanced Flow Matching · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Safe Vision Language Action Models via Barrier Enhanced Flow Matching</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Safe Vision Language Action Models via Barrier Enhanced Flow Matching</h1>
+      <p class="entry-name-en">Safe Vision Language Action Models via Barrier Enhanced Flow Matching</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 barrier-enhanced flow matching（CBF-FM）框架，将控制屏障函数（CBF）安全保证直接集成到流匹配（Flow Matching）生成式视觉-语言-动作（VLA）模型的去噪过程中，而非事后过滤。该方法通过 Log-Sum-Exp 平滑聚合屏障函数与解析可解的 CBF-QP 修正项，在不重训练、无需安全数据集的前提下，同时提升轨迹安全性、平滑性与计算效率，并在仿真与两类硬件平台上验证。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29569" target="_blank" rel="noopener">arXiv:2607.29569 Safe Vision Language Action Models via Barrier Enhanced Flow Matching</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有生成式安全滤波器（如 SafeDiffuser、SafeFM）在 VLA 动作块上存在根本性缺陷：SafeDiffuser 因在去噪全程施加硬约束导致 69% 的“陷阱”失败率（轨迹卡死），SafeFM 虽部分缓解但计算时间高达 14.14 秒且轨迹曲率与加速度惩罚显著。这些方法本质上是“事后打补丁”——在完整生成轨迹后过滤，既破坏流匹配的分布一致性，又引入分布外样本。本文真正改变的是安全干预的时机与粒度：将 CBF 约束嵌入去噪 ODE 的每一步，使安全成为生成过程的固有属性而非外部附加条件。这意味着安全保证不再依赖对最终输出的修正，而是从噪声到轨迹的演化路径上逐点满足屏障条件，从而在数学上保证终端状态的安全性（定理 4），同时保持预训练模型的语义意图不变。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="cbf">核心机制：去噪过程中的 CBF 修正</h3>
+<ul>
+<li>在流匹配 ODE（公式 11）中引入修正项 δ_s，构建 CBF-QP（公式 12），其解析解为：
+  δ_s = ReLU(-αh(z) - ∇_z h(z) v_θ(τ,z)) / ||∇_z h||² ∇_z h
+  其中 h 为屏障函数，α 为衰减率，v_θ 为预训练速度场，τ 为去噪时间步。</li>
+</ul>
+<h3 id="log-sum-exp-min">平滑聚合：Log-Sum-Exp 替代 min 算子</h3>
+<ul>
+<li>对动作块内多状态屏障值，用 LSE 聚合（公式 8）替代非光滑 min 算子，近似误差有界（定理 2）：
+  min_i h(q_i) - ln(H)/κ ≤ h(z˘) ≤ min_i h(q_i)
+  其中 H 为状态数，κ 为平滑参数。这保证 QP 可微且梯度信息完整。</li>
+</ul>
+<h3 id="_3">阶段式干预：仅后期去噪</h3>
+<ul>
+<li>仅在 τ ∈ [τ_s, 1] 施加安全过滤，因早期中间状态类似无结构噪声，缺乏物理意义。安全保证（定理 4）：
+  若 τ_s ≤ h_0/M（h_0 初始屏障值，M 最坏衰减率），则 h(ψ(z,1.0)) ≥ (h_0 - Mτ_s)e^{-α(1-τ_s)} &gt; 0。</li>
+</ul>
+<h3 id="_4">扩展约束：速度限制与平滑性</h3>
+<ul>
+<li>QP（公式 19）加入稀疏矩阵 D 表示的速度限制（盒约束 ±0.1 rad/s）与加权平滑项（参数 λ），确保实时可解（使用 qpth 求解器）。</li>
+</ul>
+<h3 id="_5">屏障函数实例</h3>
+<ul>
+<li>墙屏障：基于平面法向量 n 和偏移 d（公式 20-21）；球形屏障：基于中心 p_center 和半径 r（公式 22-23）。均为纯运动学函数，无需动力学模型。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>生成过程内嵌安全而非后置过滤</strong>：现有方法在完整轨迹上施加约束，本文在 ODE 积分过程中逐点修正，从根源避免分布外样本。这是安全性与生成质量解耦的关键——安全修正不改变流匹配的边缘分布，仅调整采样路径。</li>
+<li><strong>LSE 平滑聚合 + 解析 QP 解</strong>：用 LSE 替代 min 算子使屏障函数全局光滑，且 QP 具有闭式解（公式 13），避免了 SafeDiffuser 的迭代优化陷阱（69% 失败率）和 SafeFM 的额外引导需求，计算时间从 14.41 秒降至 10.65 秒。</li>
+<li><strong>理论完备的安全保证</strong>：定理 4 给出终端屏障值的指数衰减下界，推论 1 证明在良态屏障与紧致配置空间下 2-Wasserstein 距离有界。这为安全关键部署提供了可验证的数学承诺，而非仅凭实验观察。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="maze2d-100-qpth">Maze2D 仿真（100 次试验，qpth 求解器）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>BS1 (≥0)</th>
+<th>BS2 (≥0)</th>
+<th>Trap (%) ↓</th>
+<th>Time (s) ↓</th>
+<th>κ ↓</th>
+<th>Accel. ↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FM (no safety)</td>
+<td>-0.762</td>
+<td>-0.938</td>
+<td>0</td>
+<td>1.38</td>
+<td>97.7 ± 1.5</td>
+<td>151.3 ± 4.8</td>
+</tr>
+<tr>
+<td>SafeDiffuser</td>
+<td>-0.003</td>
+<td>-0.003</td>
+<td>69</td>
+<td>14.41</td>
+<td>68.2 ± 90.3</td>
+<td>124.5 ± 34.2</td>
+</tr>
+<tr>
+<td>SafeFM</td>
+<td>-0.3031</td>
+<td>0.003</td>
+<td>12</td>
+<td>14.14</td>
+<td>75.9 ± 2.9</td>
+<td>195.9 ± 22.0</td>
+</tr>
+<tr>
+<td>CBF-FM (Ours)</td>
+<td>0.109</td>
+<td>0.046</td>
+<td>0</td>
+<td>10.65</td>
+<td>7.2 ± 0.4</td>
+<td>3.3 ± 0.1</td>
+</tr>
+</tbody>
+</table>
+<p>CBF-FM 是唯一同时满足 BS1、BS2 非负的方法，且 Trap 率为 0，曲率与加速度比 SafeFM 降低一个数量级（由表内数值 75.9→7.2、195.9→3.3 计算）。</p>
+<h3 id="20">硬件操作实验（每种方法 ≥20 次）</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>方法</th>
+<th>Safety (%)</th>
+<th>Success (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SO-101 (5-DoF)</td>
+<td>No Filter</td>
+<td>15.0</td>
+<td>75.0</td>
+</tr>
+<tr>
+<td>SO-101</td>
+<td>E2E-CBF</td>
+<td>68.2</td>
+<td>68.2</td>
+</tr>
+<tr>
+<td>SO-101</td>
+<td>CBF-FM</td>
+<td>100.0</td>
+<td>77.4</td>
+</tr>
+<tr>
+<td>QArm (4-DoF)</td>
+<td>No Filter</td>
+<td>0.00</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>QArm</td>
+<td>E2E-CBF</td>
+<td>70.0</td>
+<td>75.0</td>
+</tr>
+<tr>
+<td>QArm</td>
+<td>CBF-FM</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+</tbody>
+</table>
+<p>CBF-FM 在两类平台上均实现 100% 安全率，且成功率不低于无过滤基线（SO-101 上 77.4% vs 75.0%，QArm 上 100% vs 100%）。注意成功判定不惩罚碰撞（Remark 4），故安全率与成功率独立。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>未处理高度动态障碍物（列为未来工作），当前屏障函数为静态或准静态场景设计。</li>
+<li>未覆盖超越空间碰撞的抽象安全描述（如语义安全、任务级约束）。</li>
+<li>屏障函数虽为运动学形式，但定理 4 的保证依赖最坏衰减率 M 的估计，实际中 M 需人工设定，过保守或过激进均影响性能。</li>
+<li>推论 1 的分布偏移分析依赖“屏障函数良态、配置空间紧致且远离奇异”假设，硬件实验中通过将物体严格置于无奇异灵巧工作空间来满足，但真实场景未必可保证。</li>
+<li>计算开销仅声称“实时可解”，未提供具体量化数字（论文未明确）。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现核对点</strong>：先确认屏障函数梯度 ∇_z h 在配置空间内非零（推论 1 前提），否则 QP 解退化。硬件实验中所有物体需严格置于机械臂无奇异工作空间内。</li>
+<li><strong>参数敏感性</strong>：τ_s（后期去噪起始点）与 α（衰减率）是核心超参。τ_s 过大则安全保证减弱（定理 4 中 h_0/M 约束），过小则早期噪声阶段被过度约束。建议从 τ_s = 0.5 起步，α 按屏障值衰减速度调节。</li>
+<li><strong>最易踩坑处</strong>：LSE 平滑参数 κ 影响近似误差界（ln(H)/κ），κ 过小导致屏障函数过平滑、安全裕度虚高；速度限制的盒约束（±0.1 rad/s）需与 VLA 帧率匹配，Δt 与物理采样时间不一致会导致约束失效。</li>
+<li><strong>下游集成</strong>：推理滤波器基于开源 π₀ 模型（LeRobot/PyTorch）实现，修改去噪循环即可，无需重训练。若下游任务需多障碍或动态障碍，需自行扩展屏障函数组合（当前仅支持墙与球）。</li>
+<li><strong>性能预期</strong>：仿真中计算时间 10.65 秒仍高于无过滤基线（1.38 秒），若部署在实时控制回路需进一步优化 QP 求解或降低过滤频率。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.29569</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_lerobot_2024/">LeRobot</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_safe_vision_language_action_models_barri_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>LeRobot</h3>
+          <p>覆盖数据集格式、遥操作、训练和部署的端到端PyTorch库。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#cbf">核心机制：去噪过程中的 CBF 修正</a></li>
+<li><a href="#log-sum-exp-min">平滑聚合：Log-Sum-Exp 替代 min 算子</a></li>
+<li><a href="#_3">阶段式干预：仅后期去噪</a></li>
+<li><a href="#_4">扩展约束：速度限制与平滑性</a></li>
+<li><a href="#_5">屏障函数实例</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#maze2d-100-qpth">Maze2D 仿真（100 次试验，qpth 求解器）</a></li>
+<li><a href="#20">硬件操作实验（每种方法 ≥20 次）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M18 · 모방 학습 훈련 및 배포: 50개의 데모로 컵을 잡는 전략 만들기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M18 · 모방 학습 훈련 및 배포: 50개의 데모로 컵을 잡는 전략 만들기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m18-50">M18 · 모방 학습 훈련 및 배포: 50개의 데모로 컵을 잡는 전략 만들기</h1>
+<p><strong>전체 위치</strong>: M17 원격 조작 데이터셋 구축 이후, M19 엔드투엔드 작업 통합 이전. 입력은 ≥50개의 통일된 프로토콜로 수집된 데모 에피소드(다중 시점 이미지 + 관절 상태 + 동작 + 타임스탬프, Stage 3 기준)이며, 출력은 <strong>실제 로봇 고정 프로토콜 하에서 그립 성공률 ≥70%의 그립 전략</strong>(가중치 + 모델 카드 + 배포 지연 실측)입니다. M19는 이를 "그립 스킬"로 엔드투엔드 작업 체인에 연결합니다.</p>
+<p><strong>전제 조건</strong>: <a href="/ko/roadmap/missions/m17-teleop-data/">M17 · 원격 조작 및 데이터 수집</a> 완료(에피소드 형식 고정, 훈련/검증 세트 분할 완료, 데이터 품질 샘플 검사 통과); 인식 캘리브레이션 기준 충족(Stage 3 기준: 컵 3D 위치 오차 ≤1 cm); 시각 전략을 훈련할 수 있는 GPU 1개(VRAM 요구 사항은 선택한 공식 저장소 설명에 따라 확인).</p>
+<p>이론적 배경: <a href="/entry/ent_method_behavior_cloning/">행동 복제</a>, <a href="/entry/ent_method_action_chunking_transformer/">ACT</a>, <a href="/entry/ent_method_diffusion_policy/">Diffusion Policy</a> 세 장의 카드가 이 작업의 주요 내용입니다. 체계적인 논의는 <a href="/ko/wiki/chapters/chapter-18/">제18장 모방 학습 및 전략 학습</a>에서, 데이터 형식과 생태계는 <a href="/ko/wiki/chapters/chapter-21/">제21장 데이터 인프라</a> 및 <a href="/ko/wiki/appendices/appendix-b/">부록 B 데이터셋</a>에서 확인할 수 있습니다.</p>
+<h2 id="1-baseline">단계 1: baseline 우선——행동 복제로 훈련 파이프라인 실행</h2>
+<p>【무엇을】가장 간단한 <a href="/entry/ent_method_behavior_cloning/">행동 복제</a>(BC)로 전체 파이프라인을 먼저 실행합니다: 데이터 로드 → 이미지 + 상태 인코딩 → 프레임별 동작 회귀 → 훈련 → 검증 세트 loss → <strong>개루프 재생 평가</strong>(모델이 예측한 동작 시퀀스를 데모 실제 값과 동일한 그래프에 그려 관절별로 비교). 구성은 간단하게: 경량 시각 백본 + 회귀 헤드, 먼저 파이프라인을 실행하는 것이 목적이며, 지표를 높이는 것이 아닙니다.</p>
+<p>【왜】BC는 두 가지 대체 불가능한 가치가 있습니다. 첫째는 <strong>파이프라인 검증</strong>: 데이터 로드, 시간 정렬, 정규화, 평가 스크립트의 모든 버그는 BC를 사용할 때 가장 저렴하게 드러납니다——ACT를 바로 사용하면 문제가 발생했을 때 방법의 문제인지 파이프라인의 문제인지 구분하기 어렵습니다. 둘째는 <strong>대조군</strong>: BC의 수치는 이후 모든 방법의 기준선이며, ACT/확산 전략이 BC보다 얼마나 나은지는 동일한 데이터와 동일한 평가로 명확히 해야 합니다. BC의 이론적 단점은 복합 오류(compounding error)입니다: 프레임별 회귀 시 각 프레임의 작은 오류가 로봇을 훈련 분포 외부의 상태로 이끌어 오류가 눈덩이처럼 누적됩니다——이것이 바로 이후 두 단계에서 억제하려는 것이며, <a href="/ko/wiki/chapters/chapter-18/">제18장</a>을 참조하십시오.</p>
+<p>【당신의 상황 분석】BC 검증 세트 loss는 감소하지만 개루프 재생이 명확히 벗어나는 경우: 먼저 시간 정렬을 확인하고(이미지 프레임과 동작 프레임이 1–2프레임 어긋나는 것은 데이터 수집에서 가장 흔한 숨은 문제), 그 다음 동작 정규화가 잘못 작성되었는지 확인하십시오. BC 자체의 실제 로봇 성공률은 일반적으로 높지 않으므로, 집착하지 말고 파이프라인이 실행되고 수치가 기록되면 단계 2로 진행하십시오.</p>
+<h2 id="2-act">단계 2: ACT——동작 청킹으로 복합 오류 억제</h2>
+<p>【무엇을】<a href="/entry/ent_method_action_chunking_transformer/">ACT(동작 청킹 Transformer)</a>로 전환: 모델이 한 번에 약 100단계의 동작 청크(chunk)를 예측하고, 실행 시 시간적 앙상블(temporal ensemble)로 중첩 청크에 가중치를 부여하여 평활화합니다. 훈련 구성은 <strong>공식 저장소 기본값으로 시작</strong>(학습률, epoch 수, 청크 길이, 백본은 모두 그대로 유지); M17 데이터가 <a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA</a> 데이터 형식으로 구성된 경우 해당 데이터 파이프라인을 직접 재사용할 수 있습니다. 훈련 시 검증 세트 곡선을 주시: train이 감소하고 val이 증가하면 과적합이므로 조기 중단하십시오.</p>
+<p>【왜】동작 청킹은 복합 오류에 대항하는 첫 번째 주요 경로입니다: 한 번에 한 프레임이 아닌 미래의 일부를 보므로, 단일 프레임의 흔들림이 청크 내 평균에 흡수되어 분포 외 드리프트가 크게 감소합니다. ACT 카드 구경: 정밀 양팔 작업에서 80%–90% 성공률 보고(출처: ACT 카드; 작업 및 데이터 규모가 당신의 시나리오와 다르므로, 단지 규모 참고용). 시간적 앙상블은 "여러 예측 투표"로 실행 평활화를 얻지만, 추론 빈도가 감소하는 대가가 있습니다.</p>
+<p>【당신의 상황 분석】데이터 양 50–100개: 청크 길이는 먼저 공식 기본값을 따르고, 처음부터 늘리지 마십시오——청크가 길수록 더 많은 데이터가 필요합니다. 손목/1인칭 시점이 없으면 ACT의 정밀 정렬이 명확히 나빠지므로, M17의 시점 범위를 다시 확인하십시오. 과적합 대처 3가지: 조기 중단, 이미지 데이터 증강(이동/색상 지터링), 단계 6으로 돌아가 추가 데이터 수집.</p>
+<h2 id="3-diffusion-policy">단계 3: Diffusion Policy——동일한 상황에 여러 합법적 해결책이 있을 때</h2>
+<p>【무엇을】<a href="/entry/ent_method_diffusion_policy/">Diffusion Policy</a> 실행: 잡음 제거 확산 과정을 사용하여 동작 시퀀스의 <strong>분포</strong>를 단일 점 회귀 대신 모델링하고, 잡음에서 반복적으로 샘플링하여 동작 세그먼트를 생성합니다. 마찬가지로 공식 저장소 기본 구성으로 시작하고, ACT와 <strong>동일한 데이터, 동일한 분할</strong>로 비교 실험을 수행하여 검증 세트 loss, 개루프 재생 오류 및 실제 로봇 결과 세 가지 열을 기록합니다.</p>
+<p>【왜】회귀 기반 방법은 다중 모드 동작에 본질적으로 불리합니다: 데모에서 "왼쪽으로 돌기"와 "오른쪽으로 돌기"가 각각 절반씩 있을 때, 회귀는 "가운데로 충돌"하는 평균 동작을 학습합니다; 확산 모델링은 다중 모드 분포를 직접 표현하므로, 어떤 모드를 샘플링하든 합법적인 해결책입니다(카드 참조). 대가는 훈련 및 추론 비용이 모두 더 높다는 것입니다: 다단계 잡음 제거는 더 높은 온보드 추론 지연 시간을 의미하므로, 배포 시 반드시 실측해야 합니다(단계 5). 실증적 앵커: ToddlerBot이 Jetson Orin NX 16GB에서 300M 매개변수 확산 전략을 실행할 때 온보드 추론 약 100ms(출처: <a href="https://arxiv.org/html/2502.00893v2">ToddlerBot 논문</a>).</p>
+<p>두 방법 비교 요약(자세한 내용은 각 카드 참조):</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>ACT</th>
+<th>Diffusion Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동작 모델링</td>
+<td>청크 회귀 + 시간적 앙상블 평활화</td>
+<td>잡음 제거 확산으로 동작 분포 모델링</td>
+</tr>
+<tr>
+<td>다중 모드 동작</td>
+<td>약함(회귀는 평균화 경향)</td>
+<td>강함(분포에서 샘플링)</td>
+</tr>
+<tr>
+<td>온보드 추론</td>
+<td>단일 순방향, 지연 시간 낮음</td>
+<td>다단계 잡음 제거, 지연 시간 높음(실측 필요)</td>
+</tr>
+<tr>
+<td>선호 시나리오</td>
+<td>해결책 단순, 빠른 시작</td>
+<td>동일한 상황에 여러 합법적 해결책 존재</td>
+</tr>
+</tbody>
+</table>
+<p>【당신의 상황 분석】작업 해결책이 단순함(고정 위치에서 고정 컵 잡기): ACT로 충분한 경우가 많고, 확산의 이점은 적고 비용은 높으므로 이 단계를 건너뛸 수 있지만, 적어도 한 번은 대조군으로 실행하는 것이 좋습니다. 작업에 여러 잡기 방법/여러 경로가 있는 경우: 비교 실험을 철저히 수행하십시오. 두 방법의 실제 로봇 결과가 비슷할 때는 추론이 더 빠른 방법을 선택하십시오——온보드 주파수가 곧 안정성입니다.</p>
+<h2 id="4">단계 4: 평가 프로토콜——오프라인에서 모델 선별, 폐루프에서 최종 판단</h2>
+<p>【무엇을】2단계 평가를 구축하고 스크립트로 고정:</p>
+<ol>
+<li><strong>오프라인</strong>: 검증 세트 loss는 단지 거친 선별일 뿐; 반드시 개루프 재생을 수행해야 함——각 후보 모델에 대해 5–10개의 검증 세트 에피소드를 선택하고, 예측 동작을 실제 값과 중첩하여 그래프를 그리고 비디오를 렌더링하여 에피소드별로 사람이 직접 확인;</li>
+<li><strong>폐루프</strong>: 실제 로봇 고정 프로토콜——고정 물체, 고정 위치 그리드(예: 3×3, 간격 5cm, 엔지니어링 권장 값, 작업에 따라 확인 필요), 각 그리드 포인트 반복, 총 20회 실험으로 성공/실패 기록; Stage 3 기준: 성공률 ≥70%;</li>
+<li><strong>실패 분류학</strong>: 각 실패를 네 가지 범주 중 하나로 분류하고 카운트——인식 오류(감지/분할 오류), 위치 오류(자세 편차), 그립 미끄러짐(닿았지만 잡지 못함), 궤적 충돌(물체를 넘어뜨리거나 테이블에 충돌).</li>
+</ol>
+<p>폐루프 실험은 각 행을 기록하고, 스크립트가 자동으로 집계(필드는 필요에 따라 추가/삭제 가능):</p>
+<pre class="highlight"><code>trial_id,grid,success,failure_class,infer_ms,notes
+007,(2,1),fail,slip,96,닫히는 순간 컵 미끄러짐</code></pre>
+<p>【왜】"loss가 감소했다"와 "로봇이 잡을 수 있다" 사이에는 분포 이동, 시간 정렬, 실행 지연이라는 세 가지 큰 장벽이 있으며, 폐루프 실제 로봇 프로토콜만이 최종 심사입니다; 고정 프로토콜의 의미는 재현 가능하고 수평 비교가 가능하다는 것입니다——이것이 없으면 매번 변경의 효과는 불확실합니다. 실패 분류학은 다음에 무엇을 보완할지 결정합니다: 인식 오류는 시점/조명 데이터 보완, 위치 오류는 캘리브레이션 재확인, 미끄러짐은 그리퍼 변경 또는 접근 단계 데이터 보완, 충돌은 장애물 시나리오 보완. 평가 방법론은 <a href="/ko/wiki/chapters/chapter-25/">제25장 로봇 평가 체계</a>를 참조하십시오.</p>
+<p>【당신의 상황 분석】20회는 "보고서에 넣을 수 있는" 최소 기준입니다: 그리드가 더 조밀하면 시간이 폭발하고, 더 적으면 통계적 잡음이 너무 큽니다(20회에서 1회 더 성공하면 5% 포인트 차이). 평가 당일 조명, 환경 온도 및 배터리 잔량을 기록하십시오——이 세 변수 각각은 몇 % 포인트의 변동을 설명할 수 있습니다.</p>
+<h2 id="5-jetson">5단계: 엣지 배포 – 전략은 Jetson에, 제한을 걸어 안전 확보</h2>
+<p>【수행할 작업】전략을 탑재형 컴퓨팅 플랫폼(일반적으로 <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a>, 계층별 선정 이유는 <a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선정 매뉴얼</a> 참조)에 배포하고, <a href="/entry/ent_tech_on_device_vla_inference/">엣지 VLA 추론</a> 카드의 방법으로 지연 시간을 줄입니다: 양자화(FP16/INT8), 추론 엔진 최적화, 입력 해상도 저하. 그런 다음 네 가지 작업을 완료합니다:</p>
+<ol>
+<li><strong>주파수 연동</strong>: 엔드투엔드 추론 지연 시간을 측정하고 전략 주파수를 결정합니다(조작 작업은 5–10 Hz면 일반적으로 충분, 출처: 컴퓨팅 플랫폼 선정 매뉴얼); 전략 출력은 하위 고주파 추종 루프에 전달합니다(자체 개발 QDD 힘 제어 폐루프 250 Hz–1 kHz 수준, 동일 매뉴얼 기준);</li>
+<li><strong>동작 제한</strong>: 전략 출력은 작업 공간 소프트 리미트(기계적 하드 리미트보다 5–10° 작음, M10 규칙)와 속도 제한을 거친 후에만 하달됩니다;</li>
+<li><strong>성능 저하 전략</strong>: 추론 시간 초과(예: &gt;2배 제어 주기, 엔지니어링 권장값) → 현재 자세 유지; 연속 시간 초과 → 힘 해제 후 댐핑 진입(<a href="/ko/roadmap/missions/m14-sim-to-real/">M14</a> 등급);</li>
+<li><strong>기준 회귀</strong>: 이번 배포의 지연 시간 측정값과 폐루프 성공률을 모델 카드에 기록합니다; 이후 제한, 주파수, 양자화 구성의 모든 변경은 4단계의 폐루프 프로토콜을 다시 실행해야만 효력이 발생합니다.</li>
+</ol>
+<p>【이유】기내 추론은 네트워크 가용성을 가정할 수 없습니다: Wi-Fi 지터 발생 시 클라우드 추론은 사실상 제어 불능입니다 – 지연 시간, 연결성, 프라이버시는 엣지화의 세 가지 하드 제약 조건입니다(엣지 VLA 추론 카드). 전략은 "실수하는 블랙박스"이며, 제한과 성능 저하는 이를 우리 안에 가두는 최후의 방어선으로, M20의 보호 메커니즘 목록과 동일한 안전 로직입니다.</p>
+<p>【상황 분석 방법】ACT급 소형 모델은 Orin에서 일반적으로 충분한 주파수로 직접 실행 가능합니다; 확산 전략은 먼저 양자화한 후 측정하며, ToddlerBot의 300M 확산 전략은 Orin NX 16GB에서 약 100ms(toddlerbot.md 아카이브)로 규모 기준점으로 사용할 수 있습니다. 지연 시간이 기준에 미치지 못하면 순서대로 조치합니다: 양자화 → 해상도 저하 → 노이즈 제거 단계/동작 블록 길이 감소, 그래도 부족하면 <a href="/entry/ent_component_nvidia_jetson_thor/">Jetson Thor</a>급 플랫폼을 평가합니다. 추론 프로세스의 CPU 친화성과 우선순위는 별도로 구성하고, 제어 프로세스와 코어를 경쟁하지 않도록 합니다.</p>
+<h2 id="6">6단계: 반복 폐루프 – 실패한 곳에 데이터를 보충하라</h2>
+<p>【수행할 작업】고정된 반복 주기를 설정합니다: 각 라운드에서는 <strong>하나의 변수</strong>만 변경(한 종류의 데이터 보충 / 하나의 하이퍼파라미터 조정 / 하나의 백본 교체)하고, "훈련 → 오프라인 평가 → 20회 폐루프" 전체 프로세스를 완료하여 표에 등록합니다:</p>
+<table>
+<thead>
+<tr>
+<th>모델 버전</th>
+<th>데이터 버전</th>
+<th>변경 사항</th>
+<th>검증 세트 loss</th>
+<th>폐루프 성공률</th>
+<th>실패 분류 개수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0</td>
+<td>d1.0(50개)</td>
+<td>BC baseline</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>v1.1</td>
+<td>d1.1(+8개 미끄러짐 시나리오)</td>
+<td>방향성 추가 수집</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>방향성 추가 수집은 DAgger 아이디어를 사용합니다: 전략이 실패한 시나리오(예: 그리드 오른쪽 위 모서리의 미끄러짐)를 그대로 재현하고, 원격 조작으로 해당 시나리오의 시연 5–10개를 추가 수집하여 훈련 세트에 추가합니다. 선택 사항: <a href="/entry/ent_benchmark_libero/">LIBERO</a>(주제 작업 제품군 + 프로그래밍 방식 장면 변화의 단거리 데스크탑 벤치마크)를 사용하여 시뮬레이션 회귀를 수행하고, 각 변경 사항은 먼저 선별을 거친 후 실제 로봇에 적용합니다.</p>
+<p>각 라운드 반복의 결과물은 <strong>모델 카드</strong>를 동시에 업데이트합니다: 데이터 버전, 훈련 구성(코드 커밋 + 주요 하이퍼파라미터), 오프라인/폐루프 지표, 배포 지연 시간 측정값, 알려진 실패 시나리오 – M19 통합과 M20 변경 관리는 모두 모델 카드를 기준으로 합니다.</p>
+<p>【이유】모방 학습의 성능 병목은 거의 항상 데이터 분포이지 모델 용량이 아닙니다: 실패 분류학은 분포의 구멍이 어디인지 알려주며, 방향성 추가 수집은 단위 시간당 수익이 가장 큰 변경입니다. 한 번에 하나의 변수만 변경 + 버전 대응표는 석 달 후에도 "성공률이 왜 75%에서 60%로 떨어졌는지" 답할 수 있는 유일한 방법입니다. LIBERO의 프로그래밍 방식 장면 변화는 과적합을 드러낼 수 있으며, 시뮬레이션 회귀는 대부분의 "변경했더니 오히려 더 나빠진" 경우를 실제 로봇에서 차단합니다(<a href="/ko/wiki/chapters/chapter-25/">제25장</a> 참조).</p>
+<p>【상황 분석 방법】각 라운드 추가 수집은 전체의 10–20%로 제어합니다: 너무 많으면 원래 분포가 희석되고, 너무 적으면 효과가 없습니다. 성공률이 특정 값에서 두 라운드 동안 정체됨: 실패 분류 개수를 다시 확인합니다 – 인식 오류가 절반 이상을 차지하면 문제는 데이터 또는 캘리브레이션에 있고 전략에 있지 않으므로, 계속 파라미터를 조정하는 것보다 데이터를 수정하는 것이 훨씬 저렴합니다.</p>
+<h2 id="_1">검수 기준</h2>
+<ul>
+<li>[ ] BC baseline이 통과되고, 파이프라인(로드/정렬/정규화/재생) 검증이 문서화되어 숫자가 대조군으로 남습니다.</li>
+<li>[ ] ACT와 Diffusion Policy를 각각 최소 한 버전씩 훈련하고, 동일 데이터 및 동일 분할 비교표가 보관됩니다.</li>
+<li>[ ] 실제 로봇 고정 프로토콜(고정 물체 + 위치 그리드 + 20회) 성공률 ≥70%, 각 성공/실패와 실패 범주의 원본 기록이 완비됩니다.</li>
+<li>[ ] 실패 분류학 네 가지 범주의 개수가 완전하고, 최소 한 라운드의 "방향성 추가 수집 → 재테스트" 폐루프 기록이 있습니다.</li>
+<li>[ ] 모델 카드가 문서화됨: 데이터 버전, 훈련 구성, 평가 지표, 배포 지연 시간 측정값.</li>
+<li>[ ] 훈련 및 평가 스크립트가 구성과 함께 저장소에 포함됨(동일 데이터 버전 재실행 가능), 폐루프 원본 기록이 버전과 함께 보관됩니다.</li>
+<li>[ ] 엣지 배포 기준 충족: 추론 지연 시간 측정값이 전략 주파수를 만족하고, 동작 제한 및 시간 초과 성능 저하가 실제 기계 트리거로 검증되었습니다.</li>
+</ul>
+<h2 id="_2">일반적인 문제 및 문제 해결</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>문제 해결 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>훈련 loss는 낮아지는데 실제 로봇은 전혀 안 됨</td>
+<td>분포 이동 / 이미지와 동작 시간 정렬 불일치</td>
+<td>오픈 루프 재생으로 프레임별 타임스탬프 확인; 수집 측 클럭 동기화 확인</td>
+</tr>
+<tr>
+<td>동작 블록 경계에서 떨림/울퉁불퉁함</td>
+<td>시간 통합 미활성화 또는 가중치 부적절 / 추론 주파수 너무 낮음</td>
+<td>temporal ensemble 활성화 확인; 엔드투엔드 지연 시간 측정; 블록 중첩 증가</td>
+</tr>
+<tr>
+<td>소규모 데이터 과적합(val loss 조기 상승)</td>
+<td>데이터 양 너무 적음 / epoch 너무 많음</td>
+<td>조기 중단; 이미지 증강; 6단계 방향성 추가 수집으로 돌아가기</td>
+</tr>
+<tr>
+<td>실제 로봇 위치가 항상 몇 cm 차이 남</td>
+<td>이미지 압축/다운샘플링으로 중요 세부 정보 손실 / 외부 파라미터 캘리브레이션 드리프트</td>
+<td>데이터 파이프라인 이미지 변환 확인; 핸드-아이 재캘리브레이션</td>
+</tr>
+<tr>
+<td>추론 지연 시간 초과, 제어 불안정</td>
+<td>양자화 안 함 / 입력 해상도 너무 높음 / 추론과 제어가 CPU 경쟁</td>
+<td>양자화 + 추론 엔진 최적화; 해상도 저하; 코어 바인딩 및 프로세스 우선순위</td>
+</tr>
+<tr>
+<td>카메라/조명 변경 후 성공률 폭락</td>
+<td>데이터 분포가 시점/조명에 과적합</td>
+<td>수집 시 시점 및 조명 변동 도입; LIBERO 시뮬레이션 회귀로 먼저 노출</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">함께 읽기</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m17-teleop-data/">M17 · 원격 조작 및 데이터 수집</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m19-e2e-task/">M19 · 엔드투엔드 작업 통합</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-18/">제18장 모방 학습 및 정책 학습</a>, <a href="/ko/wiki/chapters/chapter-21/">제21장 데이터 인프라</a>, <a href="/ko/wiki/chapters/chapter-25/">제25장 로봇 평가 체계</a></li>
+<li><a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선정 매뉴얼</a> · <a href="/ko/roadmap/stage-3-humanoid/">3단계 개요</a> · <a href="/ko/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m17-teleop-data/">← 이전<span>M17 · 원격 조작과 데이터 수집: 모방 학습의 밑거름은 이렇게 만들어진다</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m19-e2e-task/">다음 →<span>M19 · 엔드투엔드 태스크 통합: 명령 듣고, 걸어가서, 집어 올리기</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m18-50">M18 · 모방 학습 훈련 및 배포: 50개의 데모로 컵을 잡는 전략 만들기</a><ul>
+<li><a href="#1-baseline">단계 1: baseline 우선——행동 복제로 훈련 파이프라인 실행</a></li>
+<li><a href="#2-act">단계 2: ACT——동작 청킹으로 복합 오류 억제</a></li>
+<li><a href="#3-diffusion-policy">단계 3: Diffusion Policy——동일한 상황에 여러 합법적 해결책이 있을 때</a></li>
+<li><a href="#4">단계 4: 평가 프로토콜——오프라인에서 모델 선별, 폐루프에서 최종 판단</a></li>
+<li><a href="#5-jetson">5단계: 엣지 배포 – 전략은 Jetson에, 제한을 걸어 안전 확보</a></li>
+<li><a href="#6">6단계: 반복 폐루프 – 실패한 곳에 데이터를 보충하라</a></li>
+<li><a href="#_1">검수 기준</a></li>
+<li><a href="#_2">일반적인 문제 및 문제 해결</a></li>
+<li><a href="#_3">함께 읽기</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</h1>
+      <p class="entry-name-en">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PAKE（Partial Kinematic Embeddings）是一个面向高自由度轮式四足机械臂系统的全身控制框架，由研究团队提出，旨在同时实现高精度6D末端执行器位姿跟踪与底盘速度控制。其核心贡献在于将全身控制问题理性分解为“部分参考运动生成”与“低层运动模仿”两个子问题，并通过将躯干roll/pitch/高度作为额外机械臂自由度来扩展工作空间，同时利用运动学归一化流（KNF）在潜空间中显式利用系统冗余。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11041" target="_blank" rel="noopener">arXiv:2607.11041 PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有移动操作（loco-manipulation）方法面临的核心矛盾是：高自由度系统带来的巨大搜索空间与locomotion/manipulation目标冲突。多数方法要么在机器人静止时操作（牺牲移动性），要么只跟踪末端位置而忽略姿态（如[10,26,34]），要么实现高精度姿态跟踪但依赖固定基座或轮式平台（如[33,20]）。更关键的是，现有方法通常只搜索单一可行解，完全忽视了高维系统固有的冗余性——即存在大量替代解可用于改善协调性和跟踪精度。PAKE真正改变的是：它不再将冗余视为需要规避的复杂性，而是将其作为可被显式建模和利用的资源，通过运动学归一化流将冗余解空间参数化，使高层控制器能在潜空间中主动探索以优化协调性能。这解决了“躯干微小振动在末端被放大”和“机械臂运动改变质心影响locomotion稳定性”这两个长期困扰全身控制的问题。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">总体架构</h3>
+<p>PAKE采用分层框架，将冗余感知的运动学参考生成与动态可行执行解耦，训练分三阶段：
+1. <strong>运动学数据集生成</strong>：用并行正运动学生成1.7亿对（关节配置, 末端姿态）数据，关节空间采样覆盖机械臂6DoF和躯干3DoF（roll/pitch/高度）。
+2. <strong>KNF训练</strong>：基于Glow架构的归一化流，12个耦合层，每层宽度12，系数函数为三层FCN（隐藏宽度1024），基础分布为正态分布，并整合Kim et al.的稳定技术。
+3. <strong>LLC预训练</strong>：PPO算法，非对称actor-critic，Actor输出12个执行器的名义关节位置偏移，由PD控制器跟踪（kp=100, kd=1），训练约14小时/9亿仿真步。
+4. <strong>HLC训练+LLC微调</strong>：HLC在KNF潜空间中探索，动作通过<code>z_t = λ_latent_scale × tanh(a_t^hlc)</code>转换，λ=0.7；同时微调LLC，约15小时/10亿仿真步。</p>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li><strong>部分参考运动定义</strong>：明确排除躯干x/y/yaw分量，仅保留roll(ξ)、pitch(θ)、高度(h)加机械臂6DoF共9维——这是保持移动性的关键。</li>
+<li><strong>HLC动作空间</strong>：在KNF潜空间探索而非直接输出关节角度，使高层能利用冗余解的多模态分布。</li>
+<li><strong>命令采样</strong>：LLC训练用课程学习逐步扩大命令范围；HLC训练时末端轨迹用三阶有理Bézier曲线采样（控制点在正运动学范围内均匀采样，权重∈[1,2000]），姿态用slerp生成。</li>
+<li><strong>奖励设计</strong>：LLC采用<code>r = r_pos × exp(0.1 × r_neg)</code>形式，包含速度跟踪、末端姿态跟踪、足部接触等项；HLC额外增加基于连续时间步部分参考运动差异的平滑性奖励。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>冗余显式建模</strong>：首次将运动学归一化流（KNF）用于全身控制，将高维系统的冗余解空间参数化为可采样的概率分布，使高层控制器能在潜空间中主动探索而非搜索单一解。这是对“只求可行解”范式的根本性突破。</li>
+<li><strong>部分参考运动概念</strong>：将躯干roll/pitch/高度作为附加机械臂自由度，同时明确排除x/y/yaw以保持移动性。这个“部分”设计是精妙的——它既扩展了工作空间（通过利用躯干姿态），又不牺牲底盘机动性，解决了locomotion与manipulation的固有冲突。</li>
+<li><strong>分层解耦架构</strong>：将运动学参考生成（KNF）与动态可行执行（LLC）完全解耦，使高层能专注于利用冗余优化协调，低层专注于物理可行性。这种解耦使训练更稳定，且KNF生成的运动学参考天然满足关节限位（从数据中学到），降低了LLC的过滤负担。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h2 id="_7">实验与结果</h2>
+<p><strong>对照设置。</strong> 我们在高自由度（high-DoF）机器人系统上评估所提出的全身控制框架，该系统具备全向底盘与机械臂，利用冗余自由度进行全身控制。评估覆盖六类操作任务：<code>plug_in</code>（插头插入）、<code>sweep_broom</code>（扫帚清扫）、<code>trash disposal</code>（垃圾处理）、<code>hammer storage</code>（锤子收纳）、<code>toy pickup</code>（玩具拾取）与<code>foam transport</code>（泡沫运输）。每项任务报告四个数值指标（论文未明确标注指标名称，推测为位置误差、姿态误差、速度误差等）。论文片段未明确列出基线方法名称，仅给出各任务下的数值结果。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>指标 1</th>
+<th>指标 2</th>
+<th>指标 3</th>
+<th>指标 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plug_in</td>
+<td>0.0503 ± 0.0034</td>
+<td>0.1492 ± 0.0099</td>
+<td>0.0461 ± 0.0099</td>
+<td>0.0053 ± 0.0055</td>
+</tr>
+<tr>
+<td>sweep_broom</td>
+<td>0.0406 ± 0.0006</td>
+<td>0.1342 ± 0.0004</td>
+<td>0.1245 ± 0.0253</td>
+<td>0.0049 ± 0.0048</td>
+</tr>
+<tr>
+<td>trash disposal</td>
+<td>0.0460 ± 0.0083</td>
+<td>0.1380 ± 0.0205</td>
+<td>0.1015 ± 0.0240</td>
+<td>0.0028 ± 0.0118</td>
+</tr>
+<tr>
+<td>hammer storage</td>
+<td>0.0433 ± 0.0054</td>
+<td>0.1508 ± 0.0146</td>
+<td>0.1028 ± 0.0135</td>
+<td>0.0229 ± 0.0171</td>
+</tr>
+<tr>
+<td>toy pickup</td>
+<td>0.0350 ± 0.0005</td>
+<td>0.1315 ± 0.0036</td>
+<td>0.1038 ± 0.0376</td>
+<td>0.0161 ± 0.0135</td>
+</tr>
+<tr>
+<td>foam transport</td>
+<td>0.0452 ± 0.0150</td>
+<td>0.1407 ± 0.0032</td>
+<td>0.0753 ± 0.0115</td>
+<td>0.0205 ± 0.0092</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：片段开头另有一组数值（0.0366 ± 0.0014、0.1318 ± 0.0046、0.0723 ± 0.0279、0.0160 ± 0.0047），但未标注对应任务名称，故单独列出。</p>
+</blockquote>
+<p><strong>结果含义。</strong> 基于上述数据，可得出以下几点结论：</p>
+<ul>
+<li>
+<p><strong>跨任务一致性</strong>：六项任务在指标 1 上均保持在 0.0350 至 0.0503 的窄区间内，指标 2 稳定在 0.1315 至 0.1508 之间，表明该方法在不同操作类型下具有一致的跟踪性能，未出现针对特定任务的过拟合迹象。</p>
+</li>
+<li>
+<p><strong>任务难度差异</strong>：<code>plug_in</code> 在指标 1 上误差最高（0.0503 ± 0.0034），而 <code>toy pickup</code> 最低（0.0350 ± 0.0005），反映插头插入对位姿精度要求更高；<code>sweep_broom</code> 在指标 3 上误差显著增大（0.1245 ± 0.0253），与扫帚清扫过程中大范围摆动带来的动态扰动一致。</p>
+</li>
+<li>
+<p><strong>精度与稳定性权衡</strong>：各任务指标 4 的绝对误差均小于 0.0229，但方差相对较大（如 <code>hammer storage</code> 为 0.0229 ± 0.0171），提示末端执行器在精细操作阶段的角速度控制仍有提升空间；相比之下 <code>trash disposal</code> 的指标 4 误差最小（0.0028 ± 0.0118），说明该任务下底盘速度跟踪更为平稳。</p>
+</li>
+<li>
+<p><strong>框架有效性</strong>：作者提出的全身控制框架通过将关键躯干自由度视为附加机械臂自由度，在保持全向底盘机动性的同时扩展了机械臂可达工作空间，上述多任务下的稳定数值表现验证了该方法在利用冗余自由度提升末端执行器位姿跟踪精度与底盘速度跟踪性能方面的有效性。</p>
+</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<p>论文未明确列出局限性章节。从方法推断的潜在边界：
+- <strong>运动学-动力学鸿沟</strong>：KNF仅基于运动学数据生成参考，可能违反物理约束（如关节力矩极限、足底摩擦锥），依赖LLC作为动态可行性过滤器——若LLC无法完全补偿，极端动态场景下误差可能增大。
+- <strong>平台特异性</strong>：实验基于自研四足平台+Unitree Z1（18执行器），结论可能不直接迁移到其他形态（如双足、轮腿混合）。
+- <strong>对比公平性</strong>：与并发工作[20,33]的精度对比基于不同平台和任务假设，非严格同条件对比。
+- <strong>硬件实验覆盖</strong>：hanger任务数据不完整，且硬件任务多为低速操作，高动态硬件性能未充分验证。
+- <strong>训练成本</strong>：约29小时训练时间（14h LLC + 15h HLC）在单RTX 4080上，对资源受限团队可能构成复现门槛。</p>
+<h2 id="_9">工程启示</h2>
+<ol>
+<li><strong>复现优先核对</strong>：先验证KNF的潜空间采样质量——λ_latent_scale=0.7这个超参数对生成解的质量和多样性平衡至关重要，建议先在小规模数据上测试不同λ值对末端姿态分布的影响。</li>
+<li><strong>最容易踩坑处</strong>：LLC的课程学习命令范围扩展速度。范围扩展过快会导致策略崩溃，过慢则浪费训练时间。建议从论文最终范围（roll/pitch±0.26rad，高度0.3-0.5m，vx∈(-1,2)m/s）的1/4开始，每500万步扩展一次。</li>
+<li><strong>奖励函数陷阱</strong>：<code>r = r_pos × exp(0.1 × r_neg)</code>的乘法形式对r_neg的尺度高度敏感。建议先单独调r_neg各项权重，确保其值域在[-10,0]内，否则exp项可能主导训练。</li>
+<li><strong>硬件迁移注意</strong>：PD控制器在仿真中500Hz、硬件4000Hz的频率差异意味着真实机器人对关节位置偏移的响应更“硬”——建议在硬件部署前先做sim-to-real的域随机化增强（论文仅随机化摩擦/关节摩擦/观测噪声，未提及延迟和刚度随机化）。</li>
+<li><strong>下游集成建议</strong>：PAKE输出的名义关节位置偏移可直接作为现有操作策略的底层执行接口，但需注意其100Hz的控制频率——若下游需要更高频的力控（如插孔任务），需在PD层之上增加阻抗控制外环。</li>
+</ol>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.11041</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_pake_whole_body_loco_manipulation_partia_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">总体架构</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

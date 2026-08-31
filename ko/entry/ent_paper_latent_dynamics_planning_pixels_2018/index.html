@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Latent Dynamics for Planning from Pixels · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Latent Dynamics for Planning from Pixels</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Latent Dynamics for Planning from Pixels</h1>
+      <p class="entry-name-en">Learning Latent Dynamics for Planning from Pixels</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P063. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Planning has been very successful for control tasks with known environment dynamics. To leverage planning in unknown environments, the agent needs to learn the dynamics from interactions with the world. However, learning dynamics models that are accurate enough for planning has been a long-standing challenge, especially in image-based domains. We propose the Deep Planning Network (PlaNet), a.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1811.04551" target="_blank" rel="noopener">arXiv:1811.04551 Learning Latent Dynamics for Planning from Pixels</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>PlaNet은 픽셀 관측에서 순환 상태 공간 모델(RSSM)을 학습하고 잠재 공간에서 교차 엔트로피 방법(CEM)으로 계획하는 순수 모델 기반 강화 학습 에이전트입니다. DeepMind Control Suite의 여섯 가지 연속 제어 작업에서 1000개의 에피소드 샘플로 무모델 기준선(D4PG)이 100000개의 에피소드에서 달성한 성능에 도달하거나 능가하여 데이터 효율성을 40배에서 500배 이상 향상시켰습니다. 핵심 기여는 무작위성과 결정론이 혼합된 잠재 역학 모델과 온라인 계획의 결합이 샘플 효율적인 제어의 실행 가능한 경로임을 입증한 것입니다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>PlaNet 이전에는 픽셀에서 직접 모델 예측 제어(MPC)를 수행하는 것이 거의 불가능했습니다. 비디오 예측 모델은 결정론적(다중 모드 미래를 처리할 수 없음)이거나 순수 무작위(훈련이 불안정하고 장기 예측이 붕괴됨)였기 때문입니다. 강화 학습 커뮤니티의 주류 합의는 모델 오류가 다단계 계획에서 누적되므로 정책이나 가치 함수를 직접 학습하는 것이 더 낫다는 것이었습니다. PlaNet이 실제로 바꾼 것은 이 전제입니다. RSSM의 결정론적 경로가 시간 단계 간 메모리를 담당하고 무작위 경로가 관측의 불확실성을 포착하여 잠재 공간에서의 12단계 계획(H=12)이 충분히 신뢰할 수 있게 만들었고, 실제 시뮬레이터 상태로 CEM 계획을 수행하는 성능(예: cheetah 662 vs 656, walker 951 vs 994 근접)을 능가하기도 했습니다.</p>
+<p>또 다른 바뀐 인식은 "계획은 실제 상태를 사용해야 한다"는 것입니다. PlaNet은 64×64 픽셀, 5비트 깊이(비트 깊이를 5로 낮춤)의 관측에서 학습된 30차원 잠재 상태가 개루프 50단계의 픽셀 수준 예측(그림 9)을 지원할 수 있고, 잠재 공간의 상태 추정(위치, 속도)이 계획 시야를 훨씬 넘어서는 거리에서도 예측 가능함(그림 10)을 증명했습니다. 이는 모델이 단순한 프레임 간 보간이 아니라 기본 물리량의 압축 표현을 학습한다는 것을 의미합니다. 또한 PlaNet의 다중 작업 실험(단일 에이전트가 작업 정체를 알지 못한 채 여섯 가지 작업을 동시에 학습)은 "각 작업에 별도의 모델링이 필요하다"는 기본 가정에 도전했지만, 학습 속도는 느려졌습니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="rssmrecurrent-state-space-model">모델 아키텍처: RSSM(Recurrent State-Space Model)</h3>
+<ul>
+<li>두 가지 경로로 구성:</li>
+<li><strong>결정론적 경로</strong>: GRU(200개 유닛)가 이전 시간 단계의 결정론적 상태 h_{t-1}와 무작위 상태 s_{t-1}를 받아 h_t를 출력합니다. 이를 통해 모델이 시간 단계 간 정보를 기억할 수 있어 순수 무작위 모델의 정보 손실을 피할 수 있습니다.</li>
+<li><strong>무작위 경로</strong>: 30차원 대각 가우시안 분포에서 s_t를 샘플링하며, 평균과 표준편차는 h_t와 관측 인코더로 예측됩니다. 무작위성은 학습에 중요합니다. 작업이 에이전트 관점에서 부분적으로 관측 가능하고(초기 상태 불명), 노이즈가 계획 목표에 안전 마진을 추가하여 더 견고한 행동 시퀀스를 생성하기 때문입니다.</li>
+<li>관측 인코더/디코더: 합성곱/역합성곱 네트워크(Ha &amp; Schmidhuber 2018), 기타 함수는 두 개의 완전 연결 계층(크기 200, ReLU 활성화).</li>
+</ul>
+<h3 id="_4">훈련 목표</h3>
+<ul>
+<li>재구성 손실(이미지 재구성)과 KL 발산(잠재 분포 정규화)을 공동 최적화합니다. KL 항은 재구성 항에 대해 스케일링되지 않지만, 발산 손실은 3 자유 nats 미만으로 클리핑됩니다.</li>
+<li>핵심 설계: <strong>latent overshooting</strong>(잠재 오버슈팅)이 다단계 예측의 정규화기로 사용되며, 훈련 중 잠재 상태를 다단계로 전개하고 KL을 계산합니다. 그러나 최종 에이전트는 이를 사용하지 않았습니다. RSSM 자체가 충분히 좋았기 때문입니다(절제 실험에서 RSSM 성능을 약간 낮추지만 순수 무작위 DRNN을 크게 향상시킴).</li>
+</ul>
+<h3 id="cem">계획 알고리즘: CEM(교차 엔트로피 방법)</h3>
+<ul>
+<li>매개변수: 계획 시야 H=12, 최적화 반복 I=10, 후보 샘플 J=1000, 최적 적합 K=100.</li>
+<li>절차:</li>
+<li>인수분해된 신념 q(a_{t:t+H}) ← Normal(0, I)에서 초기화.</li>
+<li>I번 반복: J개의 행동 시퀀스를 샘플링하고, 학습된 보상 모델로 기대 보상을 평가한 후, K개의 최적 시퀀스로 가우시안 분포를 재적합(평균과 표준편차 업데이트).</li>
+<li>첫 번째 행동 평균 μ_t를 실행 행동으로 반환.</li>
+<li>행동 노이즈 ε ~ Normal(0, 0.3)는 데이터 수집에 사용되며, C=100 업데이트 단계마다 추가 에피소드를 수집하고 S=5개의 무작위 행동 시드 에피소드에서 시작합니다.</li>
+</ul>
+<h3 id="_5">다중 작업 학습</h3>
+<ul>
+<li>단일 에이전트가 여섯 가지 작업 모두에서 훈련되며 작업 정체를 알지 못하고 이미지 관측에서 추론해야 합니다. 행동 공간은 호환성을 위해 사용되지 않는 요소로 채워지고, 알고리즘은 C 업데이트 단계마다 각 작업의 에피소드를 수집하도록 조정되며, 주 실험과 동일한 하이퍼파라미터를 사용합니다.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>무작위성과 결정론의 혼합 상태 공간</strong>: 이것이 RSSM의 핵심 혁신입니다. 순수 무작위 모델(stochastic-only)은 어떤 작업도 해결할 수 없고, 순수 결정론적 모델(deterministic-only)은 대부분의 작업에서 더 나쁜 성능을 보입니다. RSSM의 결정론적 경로는 장기 메모리를 제공하고 무작위 경로는 관측 불확실성을 처리하여, 두 경로의 결합이 잠재 역학을 안정적이면서도 표현력 있게 만듭니다. 이 설계는 비디오 예측에서 "결정론적 모델은 다중 모드 미래를 생성할 수 없고, 무작위 모델은 훈련이 어렵다"는 딜레마를 직접 해결합니다.</p>
+</li>
+<li>
+<p><strong>잠재 공간에서의 온라인 계획(latent planning)</strong>: PlaNet은 정책이나 가치 함수를 학습하지 않고 CEM으로 잠재 공간에서 행동 시퀀스를 탐색합니다. 무작위 사격(random shooting, 1000개 시퀀스에서 최적 선택)과 비교하여 CEM의 반복 최적화(I=10)는 모든 작업에서 성능을 향상시킵니다. 무작위 데이터 수집(random collection)과 비교하여 온라인 계획 기반 데이터 수집은 모든 작업에 도움이 되며, cartpole, finger, walker 작업에는 필수적입니다. 이는 계획이 의사 결정뿐만 아니라 데이터 분포를 유도하여 "탐색-모델링-계획"의 긍정적 피드백을 형성함을 보여줍니다.</p>
+</li>
+<li>
+<p><strong>데이터 효율성의 비약적 향상</strong>: PlaNet은 1000개의 에피소드로 D4PG가 100000개의 에피소드에서 달성한 성능에 도달하여 데이터 효율성을 40(reacher)에서 500+(cheetah)배 향상시킵니다. 이 규모의 차이는 점진적 개선이 아니라 "픽셀에서 제어를 학습하는 데 필요한 데이터 양"에 대한 기대를 바꾸어, 데이터 획득 비용이 높은 실제 로봇 응용에 가능성을 열어줍니다.</p>
+</li>
+</ol>
+<h2 id="_7">실험과 결과</h2>
+<h3 id="_8">작업과 기준선</h3>
+<ul>
+<li>작업: Cartpole Swing Up, Reacher Easy, Cheetah Run, Finger Spin, Cup Catch, Walker Walk.</li>
+<li>기준선: A3C(고유 감각 모달리티, 100000 에피소드), D4PG(픽셀 모달리티, 100000 에피소드), PlaNet(픽셀 모달리티, 1000 에피소드), CEM + 실제 시뮬레이터(시뮬레이터 상태, 0 에피소드, 성능 상한 추정).</li>
+</ul>
+<h3 id="1-5-10">핵심 결과(표 1, 5개 시드와 10개 궤적의 평균 최종 성능)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>A3C</th>
+<th>D4PG</th>
+<th>PlaNet (ours)</th>
+<th>CEM + true simulator</th>
+<th>데이터 효율성 이득(PlaNet vs D4PG)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole Swing Up</td>
+<td>558</td>
+<td>862</td>
+<td>821</td>
+<td>850</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Reacher Easy</td>
+<td>285</td>
+<td>967</td>
+<td>832</td>
+<td>964</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Cheetah Run</td>
+<td>214</td>
+<td>524</td>
+<td>662</td>
+<td>656</td>
+<td>500+</td>
+</tr>
+<tr>
+<td>Finger Spin</td>
+<td>129</td>
+<td>985</td>
+<td>700</td>
+<td>825</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Cup Catch</td>
+<td>105</td>
+<td>980</td>
+<td>930</td>
+<td>993</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Walker Walk</td>
+<td>311</td>
+<td>968</td>
+<td>951</td>
+<td>994</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>PlaNet은 cheetah에서 D4PG를 능가(662 vs 524)하고, walker에서 근접(951 vs 968), cup에서 근접(930 vs 980)합니다. finger에서는 뒤처지지만(700 vs 985), 데이터 효율성 이득은 여전히 300배입니다.</li>
+<li>CEM + true simulator와 비교: PlaNet은 cheetah에서 능가(662 vs 656)하고 walker에서 근접(951 vs 994)하여 잠재 모델의 품질이 실제 시뮬레이터에 근접함을 보여줍니다.</li>
+</ul>
+<h3 id="_9">절제 실험</h3>
+<ul>
+<li><strong>모델 구성 요소</strong>: 순수 무작위 모델은 어떤 작업도 해결할 수 없고, 순수 결정론적 모델은 대부분의 작업에서 더 나쁩니다. RSSM은 모든 작업에서 최적입니다(finger 작업에서는 결정론적 모델이 약간 더 좋음).</li>
+<li><strong>계획 설계</strong>: PlaNet은 무작위 수집(random collection)과 무작위 사격(random shooting)보다 우수하여 온라인 계획과 CEM 반복 최적화의 필요성을 입증합니다.</li>
+<li><strong>잠재 오버슈팅</strong>: DRNN 성능을 크게 향상시키지만 RSSM 성능을 약간 낮춥니다(그림 7).</li>
+<li><strong>활성화 함수</strong>: ELU는 순수 무작위 모델에 도움이 되지만 RSSM은 활성화 함수 선택에 강건합니다(그림 8).</li>
+<li><strong>계획 시야</strong>: 시야 길이 6은 충분하지 않고, 너무 길면 탐색 공간 증가로 성능이 저하됩니다. cheetah 환경의 최적 시야는 약 8단계입니다(그림 11, 계획 성능 범위 132~837).</li>
+</ul>
+<h3 id="_10">다중 작업 학습</h3>
+<ul>
+<li>단일 에이전트가 모든 작업을 해결하지만, 개별 훈련 에이전트보다 학습 속도가 느립니다(그림 5, 그림 6).</li>
+</ul>
+<h2 id="_11">경계와 한계</h2>
+<ul>
+<li><strong>latent overshooting 미사용</strong>: 최종 에이전트는 이 정규화기를 사용하지 않았으며, 저자는 다른 모델 아키텍처에 더 유용할 수 있다고 생각하지만 검증하지 않았습니다.</li>
+<li><strong>고정 계획 시야</strong>: H=12가 모든 작업에 고정되어 있으며 작업이나 상태에 따라 적응하지 않습니다. 그림 11은 cheetah의 최적 시야가 약 8단계임을 보여주어 고정 시야가 최적이 아님을 시사합니다.</li>
+<li><strong>고정 행동 반복</strong>: 각 작업의 행동 반복 R은 사전 설정됩니다(cartpole R=8, reacher R=4, cheetah R=4, finger R=2, cup R=4, walker R=2), 학습으로 조정되지 않습니다.</li>
+<li><strong>전이 학습 없음</strong>: 작업 간 또는 환경 간 전이를 고려하지 않습니다.</li>
+<li><strong>단순한 탐색 전략</strong>: 가우시안 노이즈(ε ~ Normal(0, 0.3))만 사용하며 더 복잡한 탐색 방법을 탐구하지 않습니다.</li>
+<li><strong>실제 로봇 검증 없음</strong>: 모든 실험은 시뮬레이션 환경(DeepMind Control Suite)에서 수행됩니다.</li>
+<li><strong>높은 시각적 다양성 작업 미해결</strong>: 시각적으로 더 복잡한 장면을 처리하지 않습니다.</li>
+<li><strong>그래디언트 계획 또는 가치 함수 미사용</strong>: 계획 시야를 넘어서는 보상 합계를 가치 함수로 근사하지 않아 계산 효율성에 개선 여지가 있습니다.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 하이퍼파라미터 먼저 확인</strong>: 가장 중요한 하이퍼파라미터는 행동 반복(R), KL 발산 스케일 β, 학습률입니다. 행동 반복은 데이터 수집의 세분성에 직접 영향을 미치고, KL 클리핑을 3 자유 nats로 하는 것은 핵심 세부 사항으로 누락 시 훈련이 불안정해집니다.</li>
+<li><strong>RSSM의 무작위 경로는 생략 불가</strong>: 순수 결정론적 모델은 대부분의 작업에서 성능이 저하되고, 순수 무작위 모델은 완전히 실패합니다. 하류 작업에 장기 메모리가 필요하면 결정론적 경로의 GRU 유닛 수(200)와 잠재 차원(30)이 합리적인 시작점이지만, 먼저 활성화 함수 민감도 테스트를 권장합니다(RSSM은 ELU/ReLU에 강건하지만 순수 무작위 모델은 ELU에 민감).</li>
+<li><strong>CEM 매개변수는 성능 레버</strong>: J=1000, I=10, K=100이 기본값이지만, 그림 11은 계획 시야 길이가 성능에 가장 큰 영향을 미침을 보여줍니다(6단계는 부족, 너무 길면 오히려 해로움). 특정 작업에 대해 H를 6~12 사이에서 먼저 스캔한 후 J와 I를 조정하는 것을 권장합니다.</li>
+<li><strong>다중 작업 훈련은 느려짐</strong>: 목표가 단일 작업이라면 다중 작업 구성을 직접 재사용하지 마십시오. 다중 작업 시 C=100 단계마다 각 작업의 에피소드를 수집하지만 학습 속도가 감소하므로 더 많은 총 업데이트 단계가 필요합니다.</li>
+<li><strong>가장 쉽게 함정에 빠지는 부분</strong>: 데이터 수집 단계의 처음 S=5개 무작위 에피소드 품질이 매우 중요합니다. 초기 데이터 분포가 너무 나쁘면 모델이 수렴하지 않을 수 있습니다. 또한 이미지 전처리(비트 깊이를 5비트로 낮춤)와 배치 크기 B=50, 시퀀스 블록 길이 L=50을 일관되게 유지해야 합니다. 그렇지 않으면 재구성 손실과 KL 균형이 어긋납니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_deepmind_control_suite_2018/">DeepMind Control Suite</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_latent_dynamics_planning_pixels_2018"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_deepmind_control_suite_2018/">
+          <span class="entry-type">논문</span>
+          <h3>DeepMind Control Suite</h3>
+          <p>The DeepMind Control Suite is a set of continuous control tasks with a standardised structure and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#rssmrecurrent-state-space-model">모델 아키텍처: RSSM(Recurrent State-Space Model)</a></li>
+<li><a href="#_4">훈련 목표</a></li>
+<li><a href="#cem">계획 알고리즘: CEM(교차 엔트로피 방법)</a></li>
+<li><a href="#_5">다중 작업 학습</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험과 결과</a><ul>
+<li><a href="#_8">작업과 기준선</a></li>
+<li><a href="#1-5-10">핵심 결과(표 1, 5개 시드와 10개 궤적의 평균 최종 성능)</a></li>
+<li><a href="#_9">절제 실험</a></li>
+<li><a href="#_10">다중 작업 학습</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계와 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

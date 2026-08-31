@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</h1>
+      <p class="entry-name-en">ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ActFovea 是一个面向视觉-语言-动作（VLA）策略的即插即用运行时防护框架，由研究团队提出，核心贡献在于通过动作条件化注视、时空一致性监控与确定性路由，在不重训练底层策略的前提下统一处理动作漂移、视觉延迟、局部覆盖与观测重放四类扰动。其核心原则是视觉观测、本体感受转变与候选动作应共同描述机器人与环境的连贯物理演化。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29169" target="_blank" rel="noopener">arXiv:2607.29169 ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 安全防护的痛点在于“头痛医头”：控制屏障层只针对动力学约束，观测干预只处理单一扰动族，且大多施加预定保守约束而非根据证据动态决策。ActFovea 真正改变的是将运行时防护从“检测-拒绝”范式升级为“检测-分诊-恢复”范式——它不再问“这个观测是否被破坏”，而是问“这个破坏是否仍存在合理的物理恢复路径”。这一转变使系统能够在动作漂移时保持 90.1% 的成功率（由表内 83.1%→90.1% 计算），而在视觉覆盖时获得 41.0 个百分点的绝对增益，同时避免均匀保守响应抑制有效行为。</p>
+<p>另一个关键改变是它把“时间”维度纳入视觉-动作一致性检查。现有方法要么完全忽略时间戳健康性，要么仅做简单的“过旧则保持”（Timestamp-Only Hold 在延迟场景下成功率降至 0.0%）。ActFovea 通过多视角滞后估计、缺失局部运动检测与全局重放相似性，将时间错位从“二元判定”变为“可恢复性分级”，从而在视觉延迟下维持 86.0% 的成功率，而基线仅 76.2%。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="action-conditioned-foveation">动作条件化注视（Action-Conditioned Foveation）</h3>
+<p>利用机器人运动学与近期动作构建保留掩码：
+- 投影接触中心圆盘 M_{c,t}^v（半径 r_c）与投影折线走廊 M_{Γ,t}^v（半径 r_Γ）取并集后膨胀（半径 r_m），得到 M_t^v = Dilate(M_{c,t}^v ∨ M_{Γ,t}^v, r_m)
+- 图像滤波：Ĩ_t^v = (1 − α B̄_t^v) ⊙ I_t^v + α B̄_t^v ⊙ E(I_t^v)，其中 E 为背景归一化、高斯平滑与颜色-灰度混合，α 为有界编辑强度
+- 设计理由：保留接触相关区域与预测运动走廊，抑制任务无关视觉内容，避免扰动注入点被“注视”放大</p>
+<h3 id="_3">一致性监控与风险聚合</h3>
+<ul>
+<li>几何一致性：观测中心与投影接触中心距离</li>
+<li>动态一致性：预测与观测图像位移的方向和幅度</li>
+<li>时间证据：时间戳健康、缺失局部运动、滞后估计、全局重放相似性</li>
+<li>加权风险：R_t = clip(β r̄_t + (1−β) r_t + p_t^cam + p_t^lag + p_t^cal, 0, 1)，β 与组件权重为固定实现常数，低置信度估计收缩至 0.5</li>
+</ul>
+<h3 id="_4">确定性路由器与恢复路径</h3>
+<ul>
+<li>根据证据推断扰动类型：直接滞后→时间延迟；动态/本体感受不一致→动作漂移；强陈旧/重放证据且闩锁激活→不可恢复冻结</li>
+<li>可恢复扰动构建候选观测库：原始观测、注视观测、时间稳定化候选（有限视觉滞后）、空间恢复算子（局部覆盖）</li>
+<li>空间恢复：X̂_t^v = clip((P_t^v − α̂_t^v Q̂_t^v)/(1 − α̂_t^v), 0, 255)，基于最后干净参考与当前图像的中值稠密光流对齐；仅当所有检测视图均重建且最弱视图质量通过准入阈值时才接受修复</li>
+</ul>
+<h3 id="_5">动作验证与执行仲裁</h3>
+<ul>
+<li>验证分数 V_k = clip(w^T u_k + b_k, 0, 1)，w 为固定非负权重，b_k 为威胁条件奖励；排除最终夹爪维度，测量首动作方向、端点方向、运动幅度、平滑度、视界和块漂移</li>
+<li>两阶段仲裁：监控器产生 λ_t^mon 和 h_t^mon，验证器产生 λ_t^ver 和 h_t^ver；最终动作 â_{t,i}^mot = λ_t^mon λ_t^ver a_{t,i}^{⋆,mot}（i &lt; h_t），h_t = min(h_t^mon, h_t^ver)</li>
+<li>安全失败：观测持续陈旧或重放时禁用恢复并调用有界运动抑制；保持闩锁在强重放证据或可配置陈旧连续后激活，在足够新鲜证据后释放</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>动作条件化注视作为统一预处理</strong>：不同于现有方法对整幅图像做鲁棒化或直接丢弃，ActFovea 利用机器人运动学预测“哪些像素区域与当前动作物理相关”，从而在保留任务关键信息的同时抑制扰动注入点。这是首次将动作意图显式编码进视觉防护的预处理阶段，且不依赖分割标注或对象状态。</p>
+</li>
+<li>
+<p><strong>可恢复性分诊而非二元拒绝</strong>：路由器根据证据强度区分“可恢复扰动”（动作漂移、视觉延迟、局部覆盖）与“不可恢复状态”（冻结重放），并分别触发恢复候选库或安全失败。这一设计避免了“所有异常都尝试恢复”导致失控延长（无 Hold/Safe-Fail 时控制器在检测后继续 259.2 个动作），也避免了“所有异常都保守抑制”导致有效行为被阻断。</p>
+</li>
+<li>
+<p><strong>时空一致性作为统一检测信号</strong>：将几何一致性（空间）、动态一致性（时间-空间耦合）与时间证据（纯时间）融合为加权风险，使系统能区分“观测被局部覆盖但时间健康”与“观测被重放但空间看似合理”等细微差异。这在表 4 中体现为 w/o Threat Typing 在视觉覆盖下增益降至 −7.6，而完整模型达 +41.0。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>实验在 LIBERO 基准上使用冻结 π_0 检查点，四个十任务套件各 2,000 个片段，覆盖四类扰动。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>指标</th>
+<th>Base VLA</th>
+<th>ActFovea</th>
+<th>增益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action Drift</td>
+<td>Disturbed SR</td>
+<td>83.1%</td>
+<td>90.1%</td>
+<td>+7.0</td>
+</tr>
+<tr>
+<td>Visual Delay</td>
+<td>Disturbed SR</td>
+<td>76.2%</td>
+<td>86.0%</td>
+<td>+9.8</td>
+</tr>
+<tr>
+<td>Visual Overlay</td>
+<td>Disturbed SR</td>
+<td>49.3%</td>
+<td>90.3%</td>
+<td>+41.0</td>
+</tr>
+<tr>
+<td>Frozen Replay</td>
+<td>Timely Safe Failure</td>
+<td>0.00%</td>
+<td>100.00%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>表 2 对比训练无关运行时方法：ActFovea 在视觉覆盖下 90.3% 远超 Action Clip/Smoothing 的 30.9% 与 Fixed Short Horizon 的 32.4%；在视觉延迟下 86.0% 远超 Timestamp-Only Hold 的 0.0%。表 3 显示完整执行器在冻结重放下实现 100% 及时安全失败，检测后仅执行 2.0 个有界动作步骤，累积运动范数 0.326，无动作界违规；而无 Hold/Safe-Fail 时控制器继续 259.2 个动作，累积运动 241.98（由表内数值计算，检测后动作数减少 99.23%，累积运动减少 99.87%）。</p>
+<p>表 4 消融显示：w/o Recovery Bank 在视觉覆盖下增益降至 −33.3，w/o Candidate Expansion 降至 −31.7，w/o Action Verification 在动作漂移下增益为 −1.2，证明恢复候选库、候选扩展与动作验证均不可或缺。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>正式碰撞避免保证不在机制范围内，安全失败仅表示保守运动抑制，不提供物理安全性证明。</li>
+<li>扰动在接口之后引入（即已进入策略内部或执行器层）的情况不在威胁模型内。</li>
+<li>未进行重训练或参数优化，底层 VLA 策略保持冻结；所有选择规则在推理时固定，不添加训练目标。</li>
+<li>未提供奖励信号、模拟器对象状态、分割标注或扰动类型先验；投影不可用时依赖恒速笛卡尔外推或先前跟踪中心加图像平面方向推断，极端运动下可能失效。</li>
+<li>论文未明确硬件平台细节与推理延迟开销。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<p>复现时先核对三处：一是动作条件化注视的掩码构建——投影不可用时的外推策略直接影响覆盖场景下的恢复质量，建议优先验证恒速外推在快速旋转下的稳定性；二是风险聚合中 β 与组件权重的固定常数——论文未给出具体值，需自行标定，低置信度收缩至 0.5 的行为对延迟场景影响显著；三是空间恢复的准入阈值——仅当所有检测视图均重建且最弱视图质量通过阈值时才接受修复，阈值过严会退化为 w/o Recovery Bank（视觉覆盖增益 −33.3），过松则引入错误修复。</p>
+<p>最容易踩坑的是 Timestamp-Only Hold 的“假安全”：它在冻结重放查询中 96.55% 时间保持，但从未转换为终端安全失败，导致任务卡死而非及时失败。ActFovea 的保持闩锁必须在强重放证据或可配置陈旧连续后激活，并在足够新鲜证据后释放——实现时需确保闩锁释放条件与重放检测解耦，否则会复现 0.0% 及时安全失败的失败模式。下游团队集成时，建议先以视觉覆盖场景验证恢复候选库的准入逻辑，再逐步开放动作验证的权重向量。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.29169</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_actfovea_runtime_safeguarding_vla_polici_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#action-conditioned-foveation">动作条件化注视（Action-Conditioned Foveation）</a></li>
+<li><a href="#_3">一致性监控与风险聚合</a></li>
+<li><a href="#_4">确定性路由器与恢复路径</a></li>
+<li><a href="#_5">动作验证与执行仲裁</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

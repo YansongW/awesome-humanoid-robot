@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M11 · 시뮬레이션 환경과 모델 변환: 디지털 세계에서 먼저 만 번 넘어지기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M11 · 시뮬레이션 환경과 모델 변환: 디지털 세계에서 먼저 만 번 넘어지기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m11">M11 · 시뮬레이션 환경과 모델 변환: 디지털 세계에서 먼저 만 번 넘어지기</h1>
+<p><strong>전체 위치</strong>: <a href="/ko/roadmap/missions/m10-urdf-modeling/">M10의 URDF 모델 패키지</a> 바로 다음, Stage 2 시뮬레이션의 첫 단계입니다. 입력은 M10이 전달한 모델 패키지이며, 출력은 <strong>실행 가능한 시뮬레이션 프로젝트</strong>입니다——모델 로딩 시 경고 없음, 접촉 동작 합리적, 액추에이터/센서 모델링 완료, 기본 검사 모두 통과. <a href="/ko/roadmap/missions/m12-sim-walking/">M12</a>에서 이를 사용해 서고 걷고, <a href="/ko/roadmap/missions/m13-rl-training/">M13</a>에서 이를 사용해 정책을 훈련합니다.</p>
+<p><strong>전제 조건</strong>: M10 검수 모두 통과(모델 패키지入库, 관성 매개변수 확인 완료); <a href="/ko/roadmap/stage-0-foundations/">Stage 0</a> 단계 4의 PD 서기 감각 유지.</p>
+<p>이론 배경: <a href="/ko/wiki/chapters/chapter-23/">제23장 시뮬레이션과 물리 엔진</a>, <a href="/ko/wiki/chapters/chapter-22/">제22장 소프트웨어 미들웨어</a>, <a href="/ko/wiki/appendices/appendix-c/">부록 C 소프트웨어 및 시뮬레이션 플랫폼 목록</a>; 엔진 선정 총괄표는 <a href="/ko/roadmap/playbooks/sim-setup/">시뮬레이션 환경 구축 매뉴얼</a> 첫 번째 단계 참조.</p>
+<h2 id="1">단계 1: 엔진 설치 및 공식 기준 검증</h2>
+<p>【무엇을 할까】두 가지 주류 중 하나 선택(또는 둘 다 설치):</p>
+<ul>
+<li><strong><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a></strong> : <code>pip install mujoco</code>, CPU만으로 실행 가능;</li>
+<li><strong><a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a></strong> (<a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a> 위에서 실행): NVIDIA GPU 필요, conda 환경, Isaac Lab과 Isaac Sim 버전 엄격히 일치——조합은 릴리스에 따라 변동되므로, 공식 설치 문서를 기준으로 선택한 버전에 맞게 직접 확인.</li>
+</ul>
+<p>설치 후 먼저 공식 예제 실행(MuJoCo 내장 humanoid 모델 / Isaac Lab의 H1 휴머노이드 예제), 그다음 자체 모델 테스트:</p>
+<pre class="highlight"><code class="language-bash"># MuJoCo: CPU로 충분; 공식 내장 휴머노이드 모델 로딩하여 검증(모델 경로는 버전에 따라 변동되므로 선택한 버전에 맞게 확인)
+pip install mujoco
+python -m mujoco.viewer --mjcf=$(python -c "import mujoco, os; print(os.path.join(os.path.dirname(mujoco.__file__), 'model', 'humanoid', 'humanoid.xml'))")
+# Isaac Lab: conda 환경 + 공식 H1 예제(설치 단계와 작업 이름은 공식 문서 기준)
+conda create -n isaaclab python=3.10 -y &amp;&amp; conda activate isaaclab
+git clone https://github.com/isaac-sim/IsaacLab.git</code></pre>
+<p>【왜 하는가】공식 예제는 "환경 문제"와 "모델 문제"를 분리하는 데 도움을 줍니다——예제가 실행되지 않으면 설치가 잘못된 것이고, 예제는 실행되지만 내 모델이 실행되지 않으면 모델이 잘못된 것입니다. 선정 논리(자세한 내용은 <a href="/ko/roadmap/playbooks/sim-setup/">시뮬레이션 매뉴얼</a> 참조): MuJoCo는 접촉 품질이 높아 보행 제어 연구의 사실상 표준입니다; Isaac Lab GPU 대규모 병렬 처리는 RL 훈련을 위해 설계되었습니다. 오픈소스 기준점: ToddlerBot은 MuJoCo/MJX 사용, Berkeley Humanoid Lite는 Isaac Lab 기반, OpenLoong의 MPC+WBC는 MuJoCo에 배포(각각 <a href="https://github.com/hshi74/toddlerbot">ToddlerBot</a>, <a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite</a>, <a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a> 저장소 참조).</p>
+<p>【상황별 분석】NVIDIA GPU 없음: MuJoCo만 사용, 제어 연구와 CPU 소규모 RL에 충분; RTX 카드 보유 및 RL 경로: 둘 다 설치, MuJoCo로 모델 조정, Isaac Lab으로 정책 훈련(Berkeley가 이 조합); ROS 전체 스택 통합 테스트 필요: <a href="/entry/ent_software_gazebo/">Gazebo</a> 추가, 물리 정밀도에 집착하지 말 것.</p>
+<h2 id="2-urdf-mjcfusd">단계 2: URDF → MJCF/USD 변환 및 재확인</h2>
+<p>【무엇을 할까】<a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF</a>를 대상 형식으로 변환: MuJoCo는 URDF를 직접 컴파일하고 <a href="/entry/ent_technology_mjcf_simulation_format_2024/">MJCF</a>로 저장 가능, Isaac은 공식 URDF Importer를 사용하여 USD로 변환:</p>
+<pre class="highlight"><code class="language-bash"># MuJoCo Python API로 URDF 컴파일 및 MJCF 내보내기(API 세부 사항은 선택한 버전에 맞게 확인)
+python -c "import mujoco; m = mujoco.MjModel.from_xml_path('robot.urdf'); mujoco.mj_saveLastXML('robot_mjcf.xml', m); print('converted OK')"</code></pre>
+<p>네 가지 고전적인 변환 오류를 하나씩 확인:</p>
+<table>
+<thead>
+<tr>
+<th>오류</th>
+<th>증상</th>
+<th>수정 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관성 텐서 비양정부호</td>
+<td>컴파일 오류/모델 떨림</td>
+<td>M10 단계 3으로 돌아가 CAD에서 다시 내보내기, ixx/iyy/izz 삼각 부등식 확인</td>
+</tr>
+<tr>
+<td>mesh 단위 mm를 m로 인식</td>
+<td>모델이 1000배 크거나 작음</td>
+<td>×0.001 스케일 조정 또는 내보내기 시 미터로 통일</td>
+</tr>
+<tr>
+<td>mesh 경로 대소문자</td>
+<td>Linux에서 파일을 찾을 수 없음</td>
+<td>경로와 파일명을 모두 소문자로 통일</td>
+</tr>
+<tr>
+<td>관절 축 방향 규약 차이</td>
+<td>운동 방향 모두 반대</td>
+<td>viewer에서 관절별로 구동 확인(M10에서 이미 1차 검증, 여기서 시뮬레이션 내 재확인)</td>
+</tr>
+</tbody>
+</table>
+<p>변환 후 MJCF 수동 보정: <code>&lt;compiler angle="radian" .../&gt;</code> 각도 단위 통일, 변환 시 손실된 관절 한계 복원, 좌표계 규약 확인.</p>
+<p>【왜 하는가】URDF는 시각화 및 ROS 도구 체인을 위해 설계되었으며, 트리 구조만 지원하고 액추에이터 모델이 약함; MJCF는 시뮬레이션 및 제어를 위해 설계됨——컴파일 시 자동으로 관성 계산, 액추에이터와 센서는 일급 시민(제23장 23.4절). 변환할 때마다 정보 손실이 발생하며, 작은 오류가 물리 엔진에 의해 "실행하자마자 날아감"으로 증폭될 수 있음.</p>
+<p>【상황별 분석】오픈소스 플랫폼 복제: 공식 유지 관리 MJCF/USD 직접 사용(Berkeley는 세 가지 형식 모두 제공, 아카이브), 이 단계에서는 관절별 재확인만 수행; 자체 개발 모델: 변환 결과물과 보정 기록을 함께 버전 관리에 포함, M13에서 모델 수정 시 무엇을 변경했는지 알 수 있음.</p>
+<h2 id="3-sim-to-real">단계 3: 액추에이터 모델링——제한 허위 설정 = sim-to-real 자살 행위</h2>
+<p>【무엇을 할까】MJCF에서 각 제어 가능한 관절에 액추에이터 할당: 힘 제어는 <code>motor</code>, 위치 제어는 <code>position</code>; 세 가지 규칙:</p>
+<ol>
+<li><strong>토크 제한</strong> = M01 사양표의 피크 토크(M10 단계 4에서 effort에 이미 기록, 변환 후 손실되지 않았는지 확인);</li>
+<li><strong>속도 제한</strong>은 M01 정격 속도 환산값 사용;</li>
+<li><strong>액추에이터 동특성</strong>은 1차 저역 통과 필터로 실제 응답 근사, 시정수는 먼저 5–20 ms로 추정(공학 권장값, <a href="/ko/roadmap/missions/m14-sim-to-real/">M14</a>에서 <a href="/entry/ent_method_system_identification/">시스템 식별</a>로 실제 측정하여 보정).</li>
+</ol>
+<pre class="highlight"><code class="language-xml">&lt;actuator&gt;
+  &lt;!-- ctrlrange는 M01 사양표의 피크 토크 입력, 허위 설정 엄금 --&gt;
+  &lt;position joint="l_knee_pitch" kp="40" forcerange="-33 33" ctrllimited="true" ctrlrange="-1.2 1.2"/&gt;
+  &lt;!-- 1차 저역 통과 필터로 액추에이터 동특성 근사: dynprm은 시정수(초), 5–20 ms 공학 권장값부터 시작 --&gt;
+  &lt;general joint="l_hip_pitch" dyntype="filter" dynprm="0.01" gaintype="fixed" gainprm="1" ctrllimited="true" ctrlrange="-20 20"/&gt;
+&lt;/actuator&gt;</code></pre>
+<p>【왜 하는가】RL은 제한 내의 동작을 학습합니다: 제한을 허위로 높게 설정하면, 정책은 실제 기계가 실행할 수 없는 동작을 학습하게 되어 sim-to-real이 직접 실패합니다(M10 단계 4의 규칙). 실제 액추에이터는 이상적인 토크 소스가 아닙니다——전류 루프 응답과 통신 지연으로 인해 1차 관성 요소에 가깝습니다; 이 동특성을 모델링하지 않으면, 시뮬레이션에서 사용 가능한 게인이 실제 기계에서는 진동으로 이어집니다.</p>
+<p>【상황별 분석】버스 서보/QDD 준직구동: <code>position</code> + 토크 제한이 실제 기계 작동 방식에 가장 가깝습니다; 순수 힘 제어 계획: <code>motor</code> + 저역 통과 필터. 시정수를 확신할 수 없으면 먼저 10 ms 정도로 시작하고, M14에서 다시 확인. PD 게인을 모델(kp/kv)에 작성할지, 컨트롤러 코드에 작성할지: 모델에 작성하면 컨트롤러 교체 시 재조정 불필요, 코드에 작성하면 온라인 튜닝에 용이——하나를 선택하고 전체적으로 통일.</p>
+<h2 id="4">4단계: 접촉과 마찰 – 이족보행의 모든 것은 발바닥에서 일어난다</h2>
+<p>【수행할 작업】네 가지 동작:</p>
+<ol>
+<li><strong>발바닥 마찰 계수</strong>: 고무/PLA와 바닥의 수준은 먼저 0.6–1.0 범위로 시도 (구체적인 값은 재료에 따라 직접 확인 필요);</li>
+<li><strong>접촉 해석 파라미터</strong>: <code>solref</code>(시간 상수, 감쇠비)로 접촉의 강성 조절 – 너무 부드러우면 발이 바닥에 파묻히고, 너무 딱딱하면 수치적 진동 발생; <code>solimp</code>는 구속 조건 임피던스 곡선을 제어하며, 먼저 기본값 근처 값 사용;</li>
+<li><strong>자체 충돌 쌍 정리</strong>: <code>exclude</code>를 사용하여 필요한 접촉 쌍만 남기고, 접촉 쌍의 개수가 시뮬레이션 속도를 직접 결정;</li>
+<li><strong>바닥 및 외란 인터페이스</strong>: 바닥 geom을 파라미터화하고, 외부 힘 외란 입력 지점을预留 – M13의 <a href="/entry/ent_method_domain_randomization/">도메인 무작위화</a>는 마찰을 무작위화하고 로봇을 밀어야 함.</li>
+</ol>
+<pre class="highlight"><code class="language-xml">&lt;default&gt;
+  &lt;!-- solref=(시간 상수, 감쇠비): 일반적으로 2–10×timestep, 작을수록 접촉이 더 딱딱함 --&gt;
+  &lt;geom solref="0.01 1" solimp="0.9 0.95 0.001" friction="0.8 0.005 0.0001"/&gt;
+&lt;/default&gt;
+&lt;contact&gt;&lt;exclude body1="l_thigh" body2="l_shank"/&gt;&lt;/contact&gt;  &lt;!-- 충돌 가능성이 없는 링크 쌍 제외 --&gt;</code></pre>
+<p>【이유】접촉 파라미터는 sim-to-real 격차의 주요 원인이며, 반드시 "발바닥 재료-바닥 재료" 쌍으로 보정하고 이후 도메인 무작위화 범위에 포함시켜야 함 (23장 23.4.4절). 먼저 명목 값을 합리적으로 조정한 후, 무작위화를 논의해야 함.</p>
+<p>【상황 분석 방법】마찰이 확실하지 않음: 발바닥 재료 샘플을 대상 바닥에 놓고, 스프링 저울로 블록을 당겨 대략적인 수준을 추정. PLA로 출력한 발바닥과 고무 밑창은 차이가 크므로, 다른 사람의 값을 그대로 사용하지 말 것.</p>
+<h2 id="5">5단계: 센서 시뮬레이션 및 관측 파이프라인</h2>
+<p>【수행할 작업】실기 BOM에 따라 관측 파이프라인 구축: <a href="/entry/ent_component_imu_2024/">IMU</a>(자세/각속도 + 노이즈 모델), 관절 엔코더(위치/속도, 양자화 가능), 발바닥 접촉력; 그리고 주파수 계층 설정:</p>
+<pre class="highlight"><code class="language-xml">&lt;sensor&gt;
+  &lt;framequat objtype="site" objname="imu_site" noise="0.001"/&gt;
+  &lt;gyro site="imu_site" noise="0.005"/&gt;
+  &lt;jointpos joint="l_knee_pitch"/&gt;  &lt;jointvel joint="l_knee_pitch"/&gt;
+&lt;/sensor&gt;</code></pre>
+<pre class="highlight"><code class="language-python"># 물리 1 kHz, 제어 100 Hz (엔지니어링 권장값, 컨트롤러 대역폭 및 버스 속도에 따라 확인)
+model.opt.timestep = 0.001   # 물리 스텝 크기
+decimation = 10              # 물리 10 스텝마다 제어 명령 전송 → 100 Hz</code></pre>
+<p><strong>철칙: 관측 인터페이스는 실기 센서와 일대일 대응 – 실기에서 얻을 수 없는 관측값은 정책에 입력하지 않음</strong> (M13/M14의 공통 규율). 제어 주파수 기준점: ToddlerBot 전상태 피드백 50 Hz, Berkeley CAN 버스 250 Hz (각 조사 파일 참조).</p>
+<p>【이유】관측은 sim-to-real에서 가장 쉽게 부정행위를 할 수 있는 부분: 시뮬레이션에서 쉽게 읽을 수 있는 실제값(베이스 선속도, 질량 중심 위치)은 실기에는 존재하지 않음. 지금 실기 센서 목록에 따라 파이프라인을 구축하면 M13 훈련 시 재작업이 없음; 노이즈를 추가하는 것은 자신을 괴롭히는 것이 아니라, 정책이 실제 센서에 미리 적응하도록 하는 것.</p>
+<p>【상황 분석 방법】실기 센서가 아직 결정되지 않음: 먼저 <a href="/ko/roadmap/playbooks/sensor-selection/">센서 선택 매뉴얼</a>로 돌아가 BOM을 결정하고, 시뮬레이션 관측은 실기를 따라가며, 반대로 하지 않음.</p>
+<h2 id="6-m12">6단계: 기준 건강 상태 점검 – M12의 입장권</h2>
+<p>【수행할 작업】네 가지 건강 검진:</p>
+<ol>
+<li><strong>제로 토크 해제</strong>: 액추에이터를 끄고, 자유 낙하/매달기 – 모델이 분해되지 않고, 관절에 댐핑이 있어 과도하게 흔들리지 않음;</li>
+<li><strong>초기 keyframe</strong>: 서 있는 자세에서 10초 동안 입력 없이 표류하지 않고, 질량 중심 투영이 지지 영역 내에 안정적으로 유지됨;</li>
+<li><strong>접촉력 수준</strong>: 서 있을 때 한 발의 법선 힘 ≈ 체중의 절반 수준, 너무 크거나 작지 않음;</li>
+<li><strong>시뮬레이션 속도</strong>: real-time factor(RTF) 기록, 목표 ≥ 1 (RL 처리량은 별도 계산).</li>
+</ol>
+<p>【이유】모델 수준 오류(관성 오류, 축 방향 반대, 리미트 누락)는 PD 서 있을 때 모두 드러나며, 수동 역학으로 확인하는 것이 가장 저렴함; RTF는 이후 MPC 실시간성과 RL 훈련 처리량의 상한선을 결정.</p>
+<p>【상황 분석 방법】매달면 분해됨: 관성 또는 관절 정의 오류, M10 3단계로 돌아감; RTF &lt; 0.5: 접촉 쌍 개수, 충돌 메쉬 복잡성, 스텝 크기 확인, 억지로 진행하지 말 것.</p>
+<h2 id="_1">승인 기준</h2>
+<ul>
+<li>[ ] 엔진 공식 예제 실행 성공 (MuJoCo humanoid 또는 Isaac Lab H1), 화면 녹화/로그存档.</li>
+<li>[ ] 모델 로드 시 경고 없음; 관절별 구동 방향이 M10 규약과 일치하는지 재확인.</li>
+<li>[ ] 액추에이터 리미트(토크/속도/위치)가 M01 지표표와 항목별로 일치하며, 허위로 높게 설정되지 않음.</li>
+<li>[ ] 제로 토크 매달기/자유 낙하 테스트 통과: 분해되지 않고, 댐핑 정상; keyframe 서 있기 10초 동안 표류 없음, 접촉력 수준 합리적.</li>
+<li>[ ] 관측 목록 문서화: 각 항목별 실기 출처(어떤 센서, 어떤 속도) 명시, 실기에서 얻을 수 없는 것은 "정책 입력 금지"로 표시.</li>
+<li>[ ] real-time factor 기록 완료, 접촉 쌍 및 충돌체 정리 완료.</li>
+</ul>
+<h2 id="_2">일반적인 문제 및 해결</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>해결 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MJCF 컴파일 시 관성 텐서 양정부호 오류</td>
+<td>수동 관성 행렬이 물리적 제약 조건을 만족하지 않음</td>
+<td>M10 3단계로 돌아가 CAD로 재추출; ixx/iyy/izz 삼각 부등식 확인</td>
+</tr>
+<tr>
+<td>발이 바닥에 파묻히거나 빙판 위를 미끄러지는 듯함</td>
+<td>solref 너무 부드러움 / 마찰 계수 너무 낮음</td>
+<td>4단계로 돌아가 solref 시간 상수와 friction 조정</td>
+</tr>
+<tr>
+<td>시뮬레이션이 실시간보다 몇 배 느림</td>
+<td>접촉 쌍 너무 많음 / 충돌 메쉬 너무 복잡</td>
+<td>exclude로 접촉 쌍 정리; 충돌체는 M10 5단계로 돌아가 단순화</td>
+</tr>
+<tr>
+<td>관절 운동 방향이 모두 반대</td>
+<td>도/라디안 혼용 / 축 규약 차이</td>
+<td>compiler angle 확인; viewer에서 단일 관절별로 하나씩 재확인</td>
+</tr>
+<tr>
+<td>URDF를 USD로 변환 후 리미트 누락</td>
+<td>Importer 옵션/버전 동작 차이</td>
+<td>변환 후 항목별로 limit 확인, 누락된 경우 수동으로 추가 (선택한 버전의 Importer 문서 확인)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m10-urdf-modeling/">M10 · URDF 모델링 및 내보내기</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m12-sim-walking/">M12 · 시뮬레이션 서기 및 걷기</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-22/">제22장 소프트웨어 미들웨어</a>, <a href="/ko/wiki/chapters/chapter-23/">제23장 시뮬레이션 및 물리 엔진</a>, <a href="/ko/wiki/appendices/appendix-c/">부록 C 소프트웨어 및 시뮬레이션 플랫폼 목록</a></li>
+<li><a href="/ko/roadmap/playbooks/sim-setup/">시뮬레이션 환경 구축 매뉴얼</a> · <a href="/ko/roadmap/stage-2-biped/">2단계 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m10-urdf-modeling/">← 이전<span>M10 · URDF 모델링 및 내보내기: 쇳덩이를 계산 가능한 모델로 만들기</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m12-sim-walking/">다음 →<span>M12 · 시뮬레이션 서기와 걷기: 먼저 안정적으로 서고, 그다음 걷기</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m11">M11 · 시뮬레이션 환경과 모델 변환: 디지털 세계에서 먼저 만 번 넘어지기</a><ul>
+<li><a href="#1">단계 1: 엔진 설치 및 공식 기준 검증</a></li>
+<li><a href="#2-urdf-mjcfusd">단계 2: URDF → MJCF/USD 변환 및 재확인</a></li>
+<li><a href="#3-sim-to-real">단계 3: 액추에이터 모델링——제한 허위 설정 = sim-to-real 자살 행위</a></li>
+<li><a href="#4">4단계: 접촉과 마찰 – 이족보행의 모든 것은 발바닥에서 일어난다</a></li>
+<li><a href="#5">5단계: 센서 시뮬레이션 및 관측 파이프라인</a></li>
+<li><a href="#6-m12">6단계: 기준 건강 상태 점검 – M12의 입장권</a></li>
+<li><a href="#_1">승인 기준</a></li>
+<li><a href="#_2">일반적인 문제 및 해결</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

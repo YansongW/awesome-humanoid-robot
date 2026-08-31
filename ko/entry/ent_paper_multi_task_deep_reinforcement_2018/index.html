@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-task Deep Reinforcement Learning with PopArt · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Multi-task Deep Reinforcement Learning with PopArt</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Multi-task Deep Reinforcement Learning with PopArt</h1>
+      <p class="entry-name-en">Multi-task Deep Reinforcement Learning with PopArt</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.04474v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1132 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based character animation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1809.04474" target="_blank" rel="noopener">Multi-task Deep Reinforcement Learning with PopArt (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전통적인 강화학습 알고리즘은 일반적으로 한 번에 하나의 작업만 훈련하며, 각각의 새 작업은 처음부터 독립적인 에이전트를 훈련해야 하므로 솔루션의 일반성이 부족합니다. 이 연구는 다중 작업 학습의 핵심 과제에 초점을 맞춥니다: 보상 밀도나 크기의 차이로 인해 서로 다른 작업이 단일 학습 시스템의 제한된 자원을 두고 경쟁하여, 알고리즘이 특정 "눈에 띄는" 작업에 편향되고 전체 성능을 희생할 수 있습니다. 이를 위해 저자들은 PopArt 방법을 제안하여 각 작업이 에이전트 업데이트에 미치는 영향 가중치를 자동으로 조정함으로써 모든 작업이 훈련 역학에서 유사한 영향력을 갖도록 보장합니다. 실험 결과, 이 방법은 57개의 Atari 게임에서 훈련된 단일 정책(하나의 가중치 세트 사용)이 인간 중앙값 성능을 초과했으며, DeepMind Lab의 30개 3D 작업에서도 당시 최고 성능을 달성했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 핵심</h3>
+<ul>
+<li><strong>문제 정의</strong>: 다중 작업 강화학습에서 작업 간 보상 규모 차이(예: 희소 보상 vs 밀집 보상)로 인해 에이전트가 특정 작업에 과도하게 집중하고 다른 작업의 학습을 무시할 수 있습니다.</li>
+<li><strong>PopArt 메커니즘</strong>: 각 작업의 보상 통계(평균 및 표준편차)를 유지하여 정책 업데이트에서 작업의 기울기 기여도를 동적으로 조정하는 적응형 정규화 기술입니다. 구체적으로, PopArt는 각 작업의 반환을 정규화하고 정책 네트워크가 훈련 중 출력 레이어의 스케일링 매개변수를 적응적으로 조정할 수 있게 하여 각 작업의 학습 신호를 균형 있게 만듭니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>벤치마크 테스트</strong>:</li>
+<li><strong>Atari 57</strong>: 액션, 전략, 슈팅 등 다양한 유형을 포함한 57개의 고전 Atari 게임.</li>
+<li><strong>DeepMind Lab</strong>: 복잡한 환경에서 목표를 완료해야 하는 30개의 3D 내비게이션 및 탐색 작업.</li>
+<li><strong>비교 방법</strong>: 단일 작업 DQN, 다중 작업 기준선(예: 공유 네트워크, 작업별 헤드) 및 당시 다중 작업 강화학습 알고리즘(예: A3C)과 비교.</li>
+<li><strong>평가 지표</strong>: 인간 정규화 점수(HNS)로, 인간 플레이어 성능을 기준으로 함(100%는 인간 중앙값 수준).</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>Atari 57</strong>:</li>
+<li>훈련된 단일 정책(하나의 가중치 세트)이 57개 게임에서 <strong>중앙값 HNS 100% 초과</strong>를 달성하여, 단일 에이전트가 인간 중앙값 수준을 처음으로 초과했습니다.</li>
+<li>39개 게임에서 단일 작업 DQN보다 우수했으며, 18개 게임에서 인간 전문가 수준에 도달하거나 초과했습니다.</li>
+<li><strong>DeepMind Lab</strong>:</li>
+<li>30개 작업에서 <strong>당시 최고 평균 성능</strong>을 기록했으며, PopArt를 사용하지 않은 다중 작업 기준선보다 크게 우수했습니다.</li>
+<li><strong>절제 실험</strong>: PopArt를 제거하면 다중 작업 훈련 성능이 30-50% 하락하여 적응형 균형 메커니즘의 핵심 역할을 검증했습니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>PopArt는 작업 기여도를 자동으로 조정하여 다중 작업 학습의 보상 규모 불균형 문제를 효과적으로 해결하며, 단일 에이전트가 다양한 작업에서 인간 수준에 도달하거나 초과할 수 있게 합니다. 이 방법은 이후 다중 작업 및 일반 강화학습(예: IMPALA, Agent57)의 중요한 기반을 제공합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_multi_task_deep_reinforcement_2018"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 핵심</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

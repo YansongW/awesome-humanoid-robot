@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DLAM: Distributional Latent Actions with Temporal Constraints · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DLAM: Distributional Latent Actions with Temporal Constraints</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DLAM: Distributional Latent Actions with Temporal Constraints</h1>
+      <p class="entry-name-en">DLAM: Distributional Latent Actions with Temporal Constraints</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DLAM 将潜在动作模型（LAM）中每个转移的确定性点估计升级为对角高斯分布，使时间一致性约束同时监督均值和逐维方差。该方法在无动作视频上预训练，再冻结编码器迁移到 π0 策略，在 MetaWorld、LIBERO 和真实机器人任务上显著超越确定性基线。核心贡献在于用分布化表示和归一化组合操作，缓解了递归组合中残差误差的累积问题。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27138" target="_blank" rel="noopener">arXiv:2607.27138 DLAM: Distributional Latent Actions with Temporal Constraints</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>潜在动作模型（LAM）的核心矛盾在于：从无动作视频中学习到的潜在转移表示，既要能预测未来观测，又要能支撑下游机器人动作生成。此前结构化方法（如 AC-LAM、ALAM、RotVLA）虽然引入了时间约束，但每个转移仍是确定性点。问题在于，当这些转移在长时程上递归组合时，局部推断的残差误差会逐级传播放大——这不是简单的精度问题，而是表示结构本身的缺陷：确定性点无法表达"这个转移有多确定"，导致组合时所有误差都被等权叠加。</p>
+<p>DLAM 真正改变的是将"转移"从点估计变为分布估计。这个转变不是锦上添花，而是从根本上改变了时间约束的作用方式：约束不再只监督均值轨迹，还监督方差如何随组合变化。这使得模型在组合多个转移时，能够通过方差传播来隐式地控制误差累积——不确定的转移在组合时贡献更少的确定性信息。更重要的是，这种分布化并不增加下游推理成本，因为预训练后只取均值，方差纯粹作为训练信号存在。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">分布化转移表示</h3>
+<p>每个转移 token 的条件后验为对角高斯：
+[ q_{i,\kappa}^{j} = \mathcal{N}(\boldsymbol{\mu}<em i_kappa="i,\kappa">{i,\kappa}^{j}, \operatorname{diag}((\boldsymbol{\sigma}</em>)) ]
+其中 }^{j})^{2<span class="arithmatex">\(\kappa\)</span> 索引 token 槽位，<span class="arithmatex">\(d\)</span> 为 token 宽度。关系编码器 <span class="arithmatex">\(E_{\phi}\)</span> 处理两帧并输出均值和对数方差，对数方差经裁剪后转换为标准差。</p>
+<h3 id="_4">重建路径仅用均值</h3>
+<p>源条件解码器 <span class="arithmatex">\(D_{\omega}\)</span> 从源帧和堆叠转移均值重建目标帧，不使用后验采样。这是关键设计：方差不参与重建，因此不会被"校准不确定性"的目标带偏，而是纯粹作为时间约束的训练信号。</p>
+<h3 id="_5">归一化组合</h3>
+<p>对等间隔三元组 <span class="arithmatex">\((O_a, O_b, O_c)\)</span>：
+- 组合均值：<span class="arithmatex">\(\overline{\boldsymbol{\mu}}_{a}^{c} = \frac{\boldsymbol{\mu}_{a}^{b} + \boldsymbol{\mu}_{b}^{c}}{\sqrt{2}}\)</span>
+- 组合方差：<span class="arithmatex">\((\overline{\boldsymbol{\sigma}}_{a}^{c})^{2} = \frac{(\boldsymbol{\sigma}_{a}^{b})^{2} + (\boldsymbol{\sigma}_{b}^{c})^{2}}{2} + \rho \, \boldsymbol{\sigma}_{a}^{b} \odot \boldsymbol{\sigma}_{b}^{c}\)</span></p>
+<p><span class="arithmatex">\(1/\sqrt{2}\)</span> 因子保证输入为独立标准高斯时组合后仍为单位方差。<span class="arithmatex">\(\rho\)</span> 为共享相关系数，通过 <span class="arithmatex">\(\rho = \rho_{\max} \tanh(r)\)</span> 学习，固定界 <span class="arithmatex">\(0 &lt; \rho_{\max} &lt; 1\)</span> 确保 <span class="arithmatex">\(|\rho| &lt; 1\)</span>。</p>
+<h3 id="_6">反转操作与损失</h3>
+<p>反转操作 <span class="arithmatex">\(\mathcal{R}\)</span> 取反均值、保持方差，应用两次恢复原后验。完整预训练目标：
+[ \mathcal{L}<em _in="\in" _mathcal_S="\mathcal{S" s="s">{\mathrm{DLAM}} = \sum</em>} ]
+损失权重：}} \lambda_{s} \mathcal{L}_{s}, \quad \mathcal{S} = {\mathrm{rec}, \mathrm{prior}, \mathrm{comp}, \mathrm{rev<span class="arithmatex">\(\lambda_{\mathrm{rec}} = 1\)</span>，<span class="arithmatex">\(\lambda_{\mathrm{prior}} = 0.005\)</span>，<span class="arithmatex">\(\lambda_{\mathrm{comp}} = \lambda_{\mathrm{rev}} = 0.05\)</span>，<span class="arithmatex">\(\lambda_{\ell} = 0.1\)</span>。</p>
+<h3 id="_7">下游转移</h3>
+<p>预训练后丢弃重建解码器、冻结转移编码器，仅用后验均值 <span class="arithmatex">\(\boldsymbol{\mu}_{h}^{m}\)</span> 作为下游潜在目标。联合流匹配损失同时生成动作流和每视角潜在流，推理时仅执行动作流。</p>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>分布化转移 + 归一化组合</strong>：将时间约束从确定性点扩展到对角高斯，组合操作在保持单位方差的同时引入共享相关系数。这是首个在潜在动作模型中同时约束均值和方差的方案，直接针对递归组合误差累积问题。</p>
+</li>
+<li>
+<p><strong>方差作为训练信号而非不确定性估计</strong>：由于重建路径仅用均值，方差不会被校准目标污染，可以纯粹服务于时间一致性约束。这个设计决策避免了"方差既要预测未来又要表达不确定性"的目标冲突。</p>
+</li>
+<li>
+<p><strong>零下游开销的迁移</strong>：预训练后只取均值，不预测方差、不需要潜在到动作解码器、不更换 VLA 骨干。这意味着分布化带来的收益完全在预训练阶段兑现，下游推理成本与确定性基线相同。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="metaworld-mt50-1">MetaWorld MT50（表 1）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Easy</th>
+<th>Med</th>
+<th>Hard</th>
+<th>V-Hard</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π0 + DLAM</td>
+<td>90.3</td>
+<td>84.8</td>
+<td>84.0</td>
+<td>91.3</td>
+<td>87.6</td>
+</tr>
+<tr>
+<td>π0 + ALAM</td>
+<td>89.3</td>
+<td>83.6</td>
+<td>85.0</td>
+<td>82.0</td>
+<td>85.0</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>71.8</td>
+<td>48.2</td>
+<td>41.7</td>
+<td>30.0</td>
+<td>47.9</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>68.2</td>
+<td>37.3</td>
+<td>41.7</td>
+<td>28.0</td>
+<td>43.8</td>
+</tr>
+</tbody>
+</table>
+<p>DLAM 在 Avg. 上较 ALAM 提升 2.6 个百分点（由表内数值 87.6→85.0 计算），较 π0 提升 39.7 个百分点（由表内数值 87.6→47.9 计算）。</p>
+<h3 id="libero-2">LIBERO（表 2）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Long</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π0 + DLAM</td>
+<td>99.6</td>
+<td>99.8</td>
+<td>99.6</td>
+<td>97.1</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>π0 + ALAM</td>
+<td>99.2</td>
+<td>99.6</td>
+<td>99.0</td>
+<td>94.4</td>
+<td>98.1</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>94.1</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>96.9</td>
+</tr>
+</tbody>
+</table>
+<p>DLAM 在 Long 上较 ALAM 提升 2.7 个百分点（由表内数值 97.1→94.4 计算）。</p>
+<h3 id="_10">重建质量与真实世界</h3>
+<p>跨 <span class="arithmatex">\(3k\)</span>–<span class="arithmatex">\(5k\)</span> 跨度，DLAM 直接重建 PSNR 29.14 dB，累积重建 22.40 dB，较 ALAM 分别提升 3.45 dB 和 1.17 dB。LPIPS 降低 45.6%（直接）和 26.1%（累积）。真实世界 4 任务平均成功率：π0 + DLAM 73.8%，π0 + ALAM 63.8%，π0.5 53.8%，π0 40.0%。</p>
+<h3 id="3">受控消融（表 3）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>PSNR</th>
+<th>SSIM</th>
+<th>LPIPS</th>
+<th><span class="arithmatex">\(R_{\mathrm{comp}}^{\mu}\)</span></th>
+<th><span class="arithmatex">\(R_{\mathrm{rev}}^{\mu}\)</span></th>
+<th>Avg. Success</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No temporal relations</td>
+<td>21.236</td>
+<td>0.7894</td>
+<td>0.1755</td>
+<td>1.2071</td>
+<td>1.0314</td>
+<td>76.6%</td>
+</tr>
+<tr>
+<td>Matched mean-only</td>
+<td>22.109</td>
+<td>0.8057</td>
+<td>0.1644</td>
+<td>1.1808</td>
+<td>1.0371</td>
+<td>82.1%</td>
+</tr>
+<tr>
+<td>Learned variance (ρ=0)</td>
+<td>22.084</td>
+<td>0.8067</td>
+<td>0.1637</td>
+<td>1.1777</td>
+<td>1.0341</td>
+<td>85.3%</td>
+</tr>
+<tr>
+<td>Full DLAM</td>
+<td>22.400</td>
+<td>0.8086</td>
+<td>0.1623</td>
+<td>1.1662</td>
+<td>1.0010</td>
+<td>87.6%</td>
+</tr>
+</tbody>
+</table>
+<p>归一化均值约束将成功率从 76.6% 提升至 82.1%，学习方差（ρ=0）再提升至 85.3%，完整 DLAM 较无时间关系变体提升 11.0 个百分点。</p>
+<h2 id="_11">边界与局限</h2>
+<p>DLAM 仅对等间隔三元组施加局部约束，长时程泛化仍是开放问题——时间一致性诊断只反映所评估跨度上的行为，不构成任意时域的通用保证。方差目标可能允许近似常数解，且由于下游仅用均值，方差始终只是辅助训练信号而非校准不确定性。共享相关系数 <span class="arithmatex">\(\rho\)</span> 跨样本、token 槽位和潜在维度共享，可能遗漏上下文相关或维度相关的依赖关系。均值探针不测试超出监督跨度的相关感知方差组合。论文未明确在非等间隔时间步或非机器人操作场景下的表现。</p>
+<h2 id="_12">工程启示</h2>
+<p>复现时先核对三个关键点：一是归一化组合中的 <span class="arithmatex">\(1/\sqrt{2}\)</span> 因子是否在实现中正确应用，这直接影响组合后方差是否保持单位尺度；二是对数方差裁剪边界 <span class="arithmatex">\(\ell_{\min}, \ell_{\max}\)</span> 的具体取值，论文未明确，这会影响训练稳定性；三是共享相关系数 <span class="arithmatex">\(\rho\)</span> 的初始化与 <span class="arithmatex">\(\rho_{\max}\)</span> 取值，论文未明确，建议从较小值开始。最容易踩坑的地方是下游转移时"仅用均值"——如果误将方差也传入策略，会改变训练分布且无收益。预训练硬件为 64 块 AMD MI308X GPU，训练 57 个 epoch，策略转移学习率 <span class="arithmatex">\(5 \times 10^{-5}\)</span>，这些配置对复现成功率有直接影响。对于下游团队，DLAM 的价值在于预训练成本一次投入、下游零额外开销，适合作为 VLA 基座的通用预训练模块。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.27138</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dlam_distributional_latent_actions_tempo_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">分布化转移表示</a></li>
+<li><a href="#_4">重建路径仅用均值</a></li>
+<li><a href="#_5">归一化组合</a></li>
+<li><a href="#_6">反转操作与损失</a></li>
+<li><a href="#_7">下游转移</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#metaworld-mt50-1">MetaWorld MT50（表 1）</a></li>
+<li><a href="#libero-2">LIBERO（表 2）</a></li>
+<li><a href="#_10">重建质量与真实世界</a></li>
+<li><a href="#3">受控消融（表 3）</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals</h1>
+      <p class="entry-name-en">Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.05996v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (853 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, and published at Robotics - Science and Systems 2024.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.15607/RSS.2024.XX.121" target="_blank" rel="noopener">MDT source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>MDT는 확산 기반 멀티모달 Transformer 백본 네트워크와 두 가지 자기 지도 보조 목표를 통해, 기존 모방 학습 방법이 단일 목표 모달리티(예: 언어 또는 이미지 전용)에 의존하는 한계를 해결합니다. 이 방법은 이미지와 언어 목표 임베딩을 동시에 정렬하고, 미래 상태를 예측하기에 충분한 정보를 인코딩하는 잠재 목표 조건 상태 표현을 학습합니다. CALVIN과 LIBERO의 164개 작업에서 MDT는 뛰어난 성능을 보여주며, 특히 언어 주석이 희소한 시나리오에서 두드러진 성과를 나타냅니다. 대규모 사전 학습이 필요하고 매개변수 수가 10배 많은 최첨단 방법과 비교하여, MDT는 CALVIN 챌린지에서 새로운 기록을 세웠습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>확산 정책 프레임워크</strong>: MDT는 확산 기반 멀티모달 Transformer를 백본 네트워크로 사용하여, 노이즈 제거 과정을 통해 행동 시퀀스를 생성하며, 멀티모달 목표 조건(언어 명령 또는 목표 이미지)을 지원합니다.</li>
+<li><strong>잠재 목표 조건 상태 표현</strong>: 이미지와 언어 목표 임베딩의 정렬을 동시에 훈련하고, 미래 상태 예측에 필요한 정보를 인코딩하여 멀티모달 목표 명령의 이질성을 해결합니다.</li>
+<li><strong>자기 지도 보조 목표</strong>: 두 가지 보조 목표는 각각 상태 표현의 예측 능력과 모달리티 정렬을 강화하며, 추가 주석 없이 Transformer 백본 성능을 향상시킵니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>벤치마크 및 작업</strong>: CALVIN(장기 도메인 조작 챌린지)과 LIBERO(희소 언어 주석 버전 포함)의 164개 작업에서 평가합니다.</li>
+<li><strong>데이터 희소성</strong>: LIBERO 버전에서 언어 주석 비율이 2% 미만으로, 실제 시나리오의 주석 부족 문제를 시뮬레이션합니다.</li>
+<li><strong>비교 방법</strong>: 대규모 사전 학습이 필요하고 매개변수 수가 10배 많은 최첨단 방법(예: RT-2)과 비교합니다.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>CALVIN 챌린지</strong>: MDT는 대규모 사전 학습 없이 15%의 절대 성능 향상(기준 방법에서 새로운 기록까지)을 달성합니다.</li>
+<li><strong>LIBERO 벤치마크</strong>: 언어 주석이 희소한 시나리오에서도 높은 성공률을 유지하여, 멀티모달 목표 명령에 대한 일반화 능력을 검증합니다.</li>
+<li><strong>실제 환경 검증</strong>: 시뮬레이션 및 실제 로봇 조작 작업에서 장기 도메인 조작을 성공적으로 완료합니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>MDT는 확산 기반 멀티모달 Transformer와 자기 지도 보조 목표를 통해, 희소 주석이 있는 멀티모달 목표에서 일반적인 조작 행동을 학습하는 것을 최초로 실현하며, 언어 주석에 대한 의존도를 크게 줄여 로봇 학습을 위한 효율적인 솔루션을 제공합니다. 코드와 데모는 오픈소스로 공개되었습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_reuss_multimodal_diffusion_transform_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

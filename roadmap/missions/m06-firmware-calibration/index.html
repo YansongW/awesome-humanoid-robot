@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M06 · 固件与标定：让铁疙瘩第一次听懂指令 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M06 · 固件与标定：让铁疙瘩第一次听懂指令</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m06">M06 · 固件与标定：让铁疙瘩第一次听懂指令</h1>
+<p><strong>全局位置</strong>：M05 装配完成之后、M07 台架测试之前。输入是一台装好但还没"开智"的关节模组，输出是一块<strong>可通信、已标定、三环调好的关节模组</strong>——M07 把它上台架，用数据决定它配不配装进腿里。本页把 <a href="/roadmap/stage-1-actuator/">阶段 1 总览</a> 的步骤 6（闭环控制阶梯）展开到手把手级。</p>
+<p><strong>前置条件</strong>：M05 装配验收通过（全程无卡滞、空载电流正常）；驱动板、电机、编码器、线束齐备；电脑上装好驱动板配套的上位机工具。</p>
+<p>理论背景：<a href="/entry/ent_method_foc_motor_control/">FOC（磁场定向控制）</a>、<a href="/entry/ent_method_pid_control/">PID 控制</a>、<a href="/entry/ent_principle_current_velocity_position_loops/">电流-速度-位置三环级联</a>卡片，教科书见 <a href="/wiki/chapters/chapter-04/">第 4 章 执行器</a> 与 <a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>。</p>
+<h2 id="1">步骤 1：固件烧录与版本冻结</h2>
+<p>【做什么】固件由 M04 选的驱动板决定，对号入座：</p>
+<table>
+<thead>
+<tr>
+<th>驱动板</th>
+<th>固件路线</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ST B-G431B-ESC1</td>
+<td>Berkeley Humanoid Lite 开源 FOC 固件</td>
+<td>板子 $19；真机底层代码在其仓库 <code>berkeley_humanoid_lite_lowlevel</code> 子目录（C 语言、独立于训练栈——<a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>）</td>
+</tr>
+<tr>
+<td>ODrive</td>
+<td>ODrive 官方固件 + odrivetool</td>
+<td>Berkeley 方案亦兼容 ODrive / moteus / VESC（调研档案）</td>
+</tr>
+<tr>
+<td>moteus</td>
+<td>moteus 官方固件 + tview</td>
+<td>固件与上位机版本要配套</td>
+</tr>
+</tbody>
+</table>
+<p>烧录三件事按顺序做：</p>
+<ol>
+<li>装好工具链（ST 系用 ST-Link + STM32CubeProgrammer 或 DFU 模式；先确认能进 bootloader、能读回芯片信息）；</li>
+<li>烧录后<strong>立刻记录固件版本号/commit</strong>——整机 22 台执行器（Berkeley 构型为 6512×10 台 + 5010×12 台，调研档案）必须刷同一版本，混版本 = 通信协议与默认参数对不上；</li>
+<li>备份出厂默认参数（dump 一份存盘），调崩了能一键回去。</li>
+</ol>
+<p>【为什么】固件是驱动板的"操作系统"：FOC 换相、三环计算、CAN 协议栈全在里面。版本混用是批量调试最隐蔽的坑——现象是"这批关节听话、那批不听话"，查三天才发现固件差了两个 commit。</p>
+<p>【你的情况怎么分析】照抄 Berkeley 方案：用其文档指定的固件版本，不要追 main 分支最新提交。自研固件：先把"能编译、能烧、能回读版本号"固化成脚本，22 台量产时你会感谢自己。</p>
+<h2 id="2">步骤 2：电机参数录入——填错一个数，全盘皆输</h2>
+<p>【做什么】逐台录入四个核心参数，填进参数登记表（同型号电机也有个体差异，逐台登记）：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>获取方法</th>
+<th>填错的后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极对数</td>
+<td>数磁钢：极对数 = 磁钢片数 ÷ 2；或查电机手册</td>
+<td>换相错乱——嗡鸣、不转或乱抖</td>
+</tr>
+<tr>
+<td>相电阻 R</td>
+<td>手册值；或毫欧表/LCR 表测线电阻 ÷ 2（星形接法）</td>
+<td>电流环增益失配</td>
+</tr>
+<tr>
+<td>相电感 L</td>
+<td>手册值；或 LCR 表（1 kHz 档）测线电感 ÷ 2</td>
+<td>电流环自整定失败</td>
+</tr>
+<tr>
+<td>KV 值</td>
+<td>M02 选型时定的手册值</td>
+<td>速度前馈与最高速估算全错</td>
+</tr>
+</tbody>
+</table>
+<p>算例（星形接法换算）：测得任意两相线间电阻 0.20 Ω，则相电阻 = 0.20 ÷ 2 = 0.10 Ω；线电感同理除以 2。</p>
+<p>【为什么】这四个数是 FOC 的"身份证信息"：极对数决定电角度与机械角度的换算（电角度 = 机械角度 × 极对数），R/L 决定电流环增益的物理量级，KV 决定速度-电压映射。驱动板自整定本质也是在估这几个数——估出来必须和手册/实测对一遍，差一个量级说明接线或测量有问题。</p>
+<p>【你的情况怎么分析】无人机 <a href="/entry/ent_component_bldc_motor/">无刷直流电机</a>（如 Berkeley 用的 MAD M6C12 150KV，$129，调研档案）手册常缺 R/L：百元级 LCR 表值得买；没有就用驱动板自整定值，但登记表里标注"来源：自整定，未复测"，M07 的 Kt 标定会替你兜底校核。</p>
+<h2 id="3">步骤 3：编码器偏置校准——对齐电角度零位与机械零位</h2>
+<p>【做什么】FOC 要知道转子磁极相对定子的精确角度才能换相，但 <a href="/entry/ent_component_joint_encoder_2024/">关节编码器</a> 装上时零位是随机的。自动校准的原理：驱动板注入一个缓慢旋转的开环电流矢量，转子被电磁力矩"拽"着跟转，转到对齐 d 轴时记下编码器读数——这就是偏置（offset）。校准后必须<strong>写 flash 保存</strong>，然后断电重启验证读数还在。</p>
+<p>验证判据（工程建议值，需按你的驱动板手册校核）：连续 5 次上电重新校准，偏置漂移 &lt; 5° 电角度。漂移超标说明磁钢或编码器安装有问题，调参救不了，回 M05 查装配。</p>
+<p>【为什么】偏置错一点电机照样转，但输出扭矩约按 cos(偏置误差角) 打折，多出来的电流全变成热；错到 90° 电角度，电机彻底不出力。每次上电偏置都在漂，等于每天都在开一台陌生的电机。</p>
+<p>【你的情况怎么分析】校准失败/偏置乱跳的排查顺序：编码器原始读数是否干净（手转电机看读数单调递增）→ 磁钢与芯片同轴度 → 校准电流是否够（拖不动转子就加大校准电流，注意不超过相电流额定）。磁编码器对安装同轴度和相线电磁干扰敏感（<a href="/wiki/chapters/chapter-05/">第 5 章 传感与感知硬件</a>），编码器线束远离大电流相线。</p>
+<h2 id="4">步骤 4：三环整定阶梯——从内到外，逐级驯服</h2>
+<p>【做什么】严格按 电流环 → 速度环 → 位置环 顺序整定，每级用阶跃验证通过再上一级。带宽按 5–10 倍递减（<a href="/entry/ent_principle_current_velocity_position_loops/">三环级联</a>卡片的原则）：内环必须比外环快得多，外环才能把内环当成"理想执行器"。</p>
+<ol>
+<li><strong>电流环</strong>：按 R/L 估增益，或直接用驱动板自整定。极点配置估算式（工程常用起点，需按驱动板手册校核）：</li>
+</ol>
+<pre class="highlight"><code>L = 0.05 mH = 0.00005 H，R = 0.10 Ω，目标带宽 fc = 500 Hz
+ωc = 2π × fc = 2π × 500 ≈ 3142 rad/s
+Kp_i = L × ωc = 0.00005 × 3142 ≈ 0.16
+Ki_i = R × ωc = 0.10 × 3142 ≈ 314</code></pre>
+<p>阶跃验证：给额定 30–50% 的电流阶跃，看上升时间（ms 级）与振铃——振铃多就降带宽。</p>
+<ol>
+<li><strong>速度环</strong>：带宽取电流环的 1/5–1/10（上例 500 Hz → 50–100 Hz，工程建议值）。给额定 20% 的小速度阶跃验证；增益过高的典型症状是电机啸叫（高频嗡嗡声），立刻降增益。</li>
+<li><strong>位置环</strong>：带宽再降 5–10 倍（10–20 Hz 量级，工程建议值）。30° 阶跃验证：超调 &lt; 10%、稳态误差 &lt; 0.5°（与 <a href="/roadmap/stage-1-actuator/">阶段 1 总览</a> 判据一致，M07 会带载复测）。超调大先别急着降 P——加<strong>速度前馈</strong>往往更治本：位置指令变化时同步前馈一个速度指令，误差还没积累就被抵消。</li>
+</ol>
+<p>【为什么】三环级联的物理意义：电流环管"出多大力"（扭矩 ∝ 电流），速度环管"转多快"，位置环管"停在哪"。外环带宽超过内环，等于让近视的人指挥显微镜——必然振荡。这是 <a href="/entry/ent_method_pid_control/">PID 控制</a> 在级联结构里的标准用法，理论见 <a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>。</p>
+<p>【你的情况怎么分析】驱动板自带电流环（Berkeley 固件、ODrive、moteus 都内置）：你的活主要是速度环与位置环。没有示波器：上位机录波功能（tview / odrivetool / 自定义日志）够用，采样率至少要高于被测环带宽 10 倍。舵机路线三环封闭在内部，本步骤退化为"读手册调寄存器"。</p>
+<h2 id="5">步骤 5：通信组网与参数归档</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>CAN ID 分配</strong>：逐台单独上电，把默认 ID 改成分配表里的唯一 ID，贴标签（关节名 + ID），全部改完再组网。分配表成文，格式如"左髋 pitch = 0x01"。</li>
+<li><strong>统一波特率</strong>：全网同一速率。参考值：Berkeley 用 CAN 2.0 @ 1 Mbps，四肢各一条总线、经 USB-CAN 适配器接主控，单总线最多 64 台设备（调研档案）。</li>
+<li><strong>收发测试</strong>：上位机以 250 Hz 对全网关节做收发（对标 Berkeley 执行器与 IMU 通信 250 Hz，调研档案），连续 1 h 无掉线、无错误帧激增为通过（判据同 <a href="/roadmap/stage-1-actuator/">阶段 1 总览</a>）。</li>
+<li><strong>参数归档</strong>：每台关节的最终参数（电机参数 + 偏置 + 三环增益 + ID）落盘成文件，git 仓库 + 表格双备份。</li>
+</ol>
+<p>总线带载能力粗算（工程建议值，按你的帧长重算）：扩展帧满载约 130 µs/帧，6 台关节一条总线（Berkeley 每条肢体总线约 5–6 台）、250 Hz 双向收发 = 6 × 250 × 2 × 130 µs ≈ 占用 39%，健康；12 台全挂一条就逼近 80%，必须分总线。</p>
+<p>【为什么】<a href="/entry/ent_technology_can_bus_2024/">CAN 总线</a> 多节点共享一对线，ID 冲突时两台设备同帧对发，错误帧滚雪球成总线风暴、全网瘫痪——而且现象是"随机掉线"，极难定位。参数归档则是 M07 与整机阶段的救命绳：22 台关节，三个月后没人记得 7 号关节的偏置。</p>
+<p>【你的情况怎么分析】组网第一步永远是断电测 CANH-CANL 电阻：两端各 120 Ω 终端时应约 60 Ω——无穷大 = 终端没接，远低于 60 Ω = 接多了（同 <a href="/roadmap/stage-1-actuator/">阶段 1 总览</a> 排查表）。通信协议与中间件选型见 <a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a>。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] 全部关节固件版本一致，版本号/commit 记录在案，出厂默认参数已备份。</li>
+<li>[ ] 每台电机参数（极对数/R/L/KV）逐台登记，来源标注（手册/实测/自整定）。</li>
+<li>[ ] 上电自动校准通过，连续 5 次重复校准偏置漂移 &lt; 5° 电角度（或驱动板手册给定值），校准结果已写 flash。</li>
+<li>[ ] 三环整定完成：空载 30° 阶跃超调 &lt; 10%、稳态误差 &lt; 0.5°，曲线存档。</li>
+<li>[ ] CAN 组网完成：ID 分配表成文，250 Hz 收发连续 1 h 无掉线。</li>
+<li>[ ] 全部参数落盘并双备份（git + 表格），可一键烧回任意一台关节。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每次上电都要重新校准</td>
+<td>校准结果没写 flash</td>
+<td>校准后执行保存指令，断电重启验证</td>
+</tr>
+<tr>
+<td>组网后总线风暴、全网掉线</td>
+<td>两台关节 ID 冲突</td>
+<td>逐台单独上电改 ID、贴标签，再组网</td>
+</tr>
+<tr>
+<td>电机高频啸叫、摸着发麻</td>
+<td>速度环增益过高</td>
+<td>速度环 Kp 降半试；确认其带宽 ≤ 电流环 1/5</td>
+</tr>
+<tr>
+<td>偏置每次校准都漂移</td>
+<td>磁钢松动 / 编码器安装偏心</td>
+<td>检查磁钢胶合与同轴度，回 M05 修装配</td>
+</tr>
+<tr>
+<td>电机反转、无力或嗡鸣不转</td>
+<td>相序错 / 极对数填错</td>
+<td>开环小电流旋转测试确认相序；重数磁钢</td>
+</tr>
+<tr>
+<td>电流环自整定失败</td>
+<td>R/L 录入值离谱 / 相线虚接</td>
+<td>LCR 表复测；查三相接线和焊点</td>
+</tr>
+<tr>
+<td>低速爬行、一顿一顿</td>
+<td>电流环带宽太低 / 编码器分辨率不足</td>
+<td>提电流环带宽；核对编码器位数与安装同轴度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m05-print-assembly/">M05 · 3D 打印与机械装配</a></li>
+<li>下一任务：<a href="/roadmap/missions/m07-bench-acceptance/">M07 · 台架测试与验收</a></li>
+<li>理论背景：<a href="/wiki/chapters/chapter-04/">第 4 章 执行器</a>、<a href="/wiki/chapters/chapter-05/">第 5 章 传感与感知硬件</a>、<a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>、<a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a></li>
+<li><a href="/roadmap/stage-1-actuator/">阶段 1 总览</a> · <a href="/roadmap/playbooks/actuator-selection/">执行器选型手册</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m05-print-assembly/">← 上一页<span>M05 · 3D 打印与机械装配：把图纸变成手里发烫的关节</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m07-bench-acceptance/">下一页 →<span>M07 · 台架测试与验收：数据说话，合格才准装机</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m06">M06 · 固件与标定：让铁疙瘩第一次听懂指令</a><ul>
+<li><a href="#1">步骤 1：固件烧录与版本冻结</a></li>
+<li><a href="#2">步骤 2：电机参数录入——填错一个数，全盘皆输</a></li>
+<li><a href="#3">步骤 3：编码器偏置校准——对齐电角度零位与机械零位</a></li>
+<li><a href="#4">步骤 4：三环整定阶梯——从内到外，逐级驯服</a></li>
+<li><a href="#5">步骤 5：通信组网与参数归档</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

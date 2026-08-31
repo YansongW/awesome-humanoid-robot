@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FARO: Feasibility-Aware Robot Motion Optimization · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FARO: Feasibility-Aware Robot Motion Optimization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>FARO: Feasibility-Aware Robot Motion Optimization</h1>
+      <p class="entry-name-en">FARO: Feasibility-Aware Robot Motion Optimization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>FARO 是一个面向人形机器人移动操作的可行性感知运动优化框架，由研究团队提出，核心思路是用分层可行性检查（模式/边优化、运动学序列优化 KSO、轨迹优化 TO）在树搜索中快速剪除不可行接触模式序列，从而在不依赖预定义行为抽象或参考运动的前提下，高效探索动态可行行为。其核心贡献在于用计算代价极低的 KSO 作为 TO 的可行性分类器，在保持接近零假阴性率的同时，将搜索效率提升一到两个数量级。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18362" target="_blank" rel="noopener">arXiv:2607.18362 FARO: Feasibility-Aware Robot Motion Optimization</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这个问题真正的痛点在于：轨迹优化（TO）虽然能处理高维、混合、欠驱动的人形机器人动力学，但接触序列搜索的组合爆炸让 TO 成为瓶颈——每个候选接触模式都要跑一次完整 TO，代价是数十秒甚至上百秒（表 I 中平均 64.70 秒），而搜索空间的分支因子可达 108。以往的做法要么用简化模型或手工动作抽象来缩小搜索空间，牺牲行为多样性；要么用 RL 加模仿学习绕开探索，但无法在未见场景中发现新行为。FARO 改变的是“可行性评估”在整个搜索流程中的位置和粒度：它不再把 TO 当作唯一的过滤器，而是插入一个运动学层面的廉价预筛器，让搜索在早期就能剪掉大量不可行分支，把宝贵的 TO 计算留给真正有希望的候选。这本质上是在“探索广度”和“评估精度”之间重新分配计算预算。</p>
+<h2 id="_2">方法拆解</h2>
+<p>FARO 的搜索框架是一个可行性引导的树搜索，核心是三级过滤层级，每一级都比上一级更严格、更昂贵：</p>
+<h3 id="1-14">1. 模式/边优化（式 14）</h3>
+<ul>
+<li>对每个接触模式 c 或过渡 c₁∪c₂，求解一个逆运动学优化问题：</li>
+<li>目标：最小化 (q − q_nom)ᵀ W (q − q_nom)</li>
+<li>约束：接触约束、碰撞约束、关节位置限制</li>
+<li>不收敛则判定该模式/过渡不可行，直接剪枝</li>
+<li>这一步只检查“是否存在一个满足几何与接触约束的构型”，不涉及动力学。</li>
+</ul>
+<h3 id="2-kso-15">2. 运动学序列优化 KSO（式 15）</h3>
+<ul>
+<li>对 K 个接触模式的序列，求解 K+1 个配置（每个模式一个代表构型）</li>
+<li>约束：接触、碰撞、位置限制，以及粘滞接触的过渡一致性（持续接触和接触释放两种情况）</li>
+<li>关键设计：KSO 与 TO 共享大部分几何与接触约束（表 I 显示平均覆盖 TO 中 70.0% 的约束类型），但省略了动力学约束和完整轨迹变量，因此计算代价极低——平均 0.60 秒 vs TO 的 64.70 秒，决策变量减少 74.8×。</li>
+</ul>
+<h3 id="3-to-17">3. 轨迹优化 TO（式 17）</h3>
+<ul>
+<li>直接多重打靶转录，求解状态轨迹 x_{0:N}、控制轨迹 u_{0:N−1} 和每模式的无量纲时间缩放因子 T̄_s</li>
+<li>约束：后向欧拉离散化的机器人/对象动力学、接触约束（法向对齐、金字塔摩擦锥、扭转摩擦、压力中心边界）、碰撞、关节限制</li>
+<li>只有通过 KSO 的序列才进入这一级</li>
+</ul>
+<h3 id="_3">搜索策略</h3>
+<ul>
+<li>成本基 UCT 节点选择（式 18，C=3）</li>
+<li>渐进增宽（式 19，k=1.0, α=0.5）</li>
+<li>四种过滤变体：F1=(KSO), F2=(M,E,KSO), F3=(M,E,KSO,TO), F4=(TO)</li>
+<li>可行/不可行缓存（K_feas, K_infeas）避免重复求解</li>
+<li>时间预算 B 内持续搜索，成功到达目标的序列加入 S_goal</li>
+</ul>
+<p>实现层面：KSO 用 acados 的 SQP，TO 用 Hippo SQP，模式/边优化用 Ipopt，运动学/动力学用 Pinocchio，NLP 构建用 CasADi，碰撞距离用 coal。</p>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>KSO 作为 TO 可行性的廉价分类器</strong>：这是 FARO 最核心的洞察。KSO 只优化每个接触模式的一个代表构型，而不是完整轨迹，却保留了 TO 中 70.0% 的约束类型（表 I）。实验表明其假阴性率接近零（LLM 采样实验中 FNR 为 0.0% 或 1.3%），意味着它几乎不会错误拒绝 TO 下可行的计划。这打破了“可行性评估必须精确”的隐含假设——在搜索早期，一个“足够好”的过滤器比一个“完美”的过滤器更有价值。</p>
+</li>
+<li>
+<p><strong>分层可行性检查的嵌套结构</strong>：模式/边优化 → KSO → TO 构成一个逐渐严格的过滤链。每一级都在上一级的基础上增加约束，使得不可行候选在最早、最便宜的阶段就被剪除。虽然作者未形式化证明可行集的嵌套性，但实验数据强烈支持这一设计：Hard 任务中 TO-only 基线平均仅扩展 12.8 个节点且无解，而 M,E,KSO 变体扩展 814.6 个节点并平均找到 26.4 个解。</p>
+</li>
+<li>
+<p><strong>可行性引导的树搜索与缓存机制</strong>：将可行性检查结果（可行/不可行）缓存并反馈给搜索策略，避免重复求解相同的模式或过渡。这在实际搜索中至关重要，因为接触模式序列的组合空间巨大（分支因子 108），而许多子序列会被多次访问。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验分两部分：人类定义接触序列的基准测试和可行性引导树搜索。</p>
+<p><strong>表 I：人类定义接触序列（8 个序列）</strong></p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平均模式数 K</td>
+<td>8.4</td>
+</tr>
+<tr>
+<td>平均 TO 时间 [s]</td>
+<td>64.70</td>
+</tr>
+<tr>
+<td>平均 KSO 时间 [s]</td>
+<td>0.60</td>
+</tr>
+<tr>
+<td>决策变量减少 [×]</td>
+<td>74.8</td>
+</tr>
+<tr>
+<td>约束覆盖率 [%]</td>
+<td>70.0</td>
+</tr>
+</tbody>
+</table>
+<p>KSO 比 TO 快约两个数量级（由表内数值 0.60 → 64.70 计算），同时保留 70.0% 的约束类型。</p>
+<p><strong>表 II：树搜索（Easy/Hard 两个 box-placement 任务，5 次运行，2 小时预算）</strong></p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>KSO</th>
+<th>M,E,KSO</th>
+<th>M,E,KSO,TO</th>
+<th>TO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy 解数</td>
+<td>73.6 ± 19.7</td>
+<td>83.8 ± 6.5</td>
+<td>8.0 ± 3.7</td>
+<td>20.0 ± 5.0</td>
+</tr>
+<tr>
+<td>Easy 首解时间 [s]</td>
+<td>192 ± 96</td>
+<td>194 ± 74</td>
+<td>1455 ± 989</td>
+<td>951 ± 583</td>
+</tr>
+<tr>
+<td>Hard 解数</td>
+<td>0.4 ± 0.9</td>
+<td>26.4 ± 9.7</td>
+<td>1.2 ± 0.8</td>
+<td>0.0 ± 0.0</td>
+</tr>
+<tr>
+<td>Hard 首解时间 [s]</td>
+<td>2671</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+</tr>
+</tbody>
+</table>
+<p>关键发现：Hard 任务中 TO-only 基线完全失败（0 解，仅扩展 12.8 个节点），而 M,E,KSO 变体找到 26.4 个解并扩展 814.6 个节点。这直接验证了分层过滤的价值——TO 单独作为过滤器时，计算代价太高导致搜索无法深入。</p>
+<p><strong>表 III：LLM 接触计划采样（GPT-5.5 生成 100 个计划，重复 5 次）</strong></p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>1-a</th>
+<th>1-b</th>
+<th>2-a</th>
+<th>2-b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FNR [%] ↓</td>
+<td>0.0 ± 0.0</td>
+<td>0.0 ± 0.0</td>
+<td>1.3 ± 2.6</td>
+<td>0.0 ± 0.0</td>
+</tr>
+<tr>
+<td>FPR [%] ↓</td>
+<td>24.2 ± 10.4</td>
+<td>4.2 ± 5.8</td>
+<td>41.4 ± 8.3</td>
+<td>19.5 ± 26.1</td>
+</tr>
+<tr>
+<td>Speedup [×] ↑</td>
+<td>3.8 ± 1.4</td>
+<td>15.5 ± 10.2</td>
+<td>2.4 ± 0.5</td>
+<td>7.4 ± 4.3</td>
+</tr>
+</tbody>
+</table>
+<p>FNR 接近零是关键——KSO 几乎不会漏掉 TO 可行的计划。FPR 较高（尤其 Easy 任务），意味着 KSO 会放行一些 TO 不可行的计划，但这在搜索场景中是可接受的代价，因为最终 TO 会做精确过滤。</p>
+<h2 id="_6">边界与局限</h2>
+<ul>
+<li><strong>KSO 省略动力学约束</strong>：KSO 只优化每模式过渡的一个配置而非完整离散轨迹，因此无法捕获动态可行性（如质心动量、力矩限制）。这意味着 KSO 可能放行一些动力学上不可行的序列，需要 TO 兜底。</li>
+<li><strong>嵌套性未证明</strong>：作者期望分层优化对应的可行集是嵌套的，但未提供形式化证明。如果实际中 KSO 的可行集不包含 TO 的可行集，可能导致假阴性（漏掉可行计划），虽然实验显示 FNR 接近零。</li>
+<li><strong>接触模态受限</strong>：当前公式假设平面接触界面和粘滞接触（无滑移），未涉及滑动或双边接触模态。作者注明可扩展至更丰富几何，但未实现。</li>
+<li><strong>未完全自主发现行为</strong>：LLM 用于接触计划采样，人类输入也作为计划来源之一。FARO 本身不生成接触模式，只负责评估和搜索给定序列。</li>
+<li><strong>长时域任务未验证</strong>：扩展到显著更长时域任务需要与更高级的任务与运动规划或程序搜索集成，论文未涉及。</li>
+</ul>
+<h2 id="_7">工程启示</h2>
+<ul>
+<li><strong>先核对 KSO 与 TO 的约束覆盖率</strong>：FARO 的有效性依赖于 KSO 与 TO 共享约束的程度。在你的场景中，如果 KSO 无法覆盖 TO 中大部分几何与接触约束（表 I 中为 70.0%），分层过滤的收益会显著下降。复现时先跑表 I 的基准测试，确认 KSO 的约束覆盖率接近 70.0% 再部署。</li>
+<li><strong>最容易踩坑的是 KSO 的求解器配置</strong>：论文提到少数假阴性主要与 KSO 初始化不佳或求解器迭代次数不足有关。KSO 用 acados 的 SQP，对初始猜测敏感——建议用模式/边优化的解作为 KSO 的热启动，并适当增加迭代上限，否则 FNR 会上升。</li>
+<li><strong>搜索参数对结果影响大</strong>：树搜索系数（k=1.0, α=0.5, C=3）、时间预算（2 小时）、最大深度（5 次切换）都是经验值。Hard 任务中 TO-only 完全失败，说明如果你的任务动力学难度高，必须启用 KSO 过滤；但如果任务简单，KSO 的 FPR 可能浪费 TO 计算（Easy 任务中 M,E,KSO,TO 解数反而少于 TO-only）。</li>
+<li><strong>缓存机制是性能关键</strong>：可行/不可行缓存（K_feas, K_infeas）避免重复求解相同模式，在分支因子 108 的搜索空间中收益巨大。实现时务必确保缓存键包含完整的接触模式定义（含对象状态），否则会漏缓存导致重复计算。</li>
+<li><strong>LLM 采样与 FARO 是互补的</strong>：LLM 负责生成多样化的接触计划（100 个/场景，重复 5 次），FARO 负责评估。如果你没有 LLM，可以用随机采样或手工设计替代，但搜索效率会下降——FARO 本身不解决“如何生成好计划”的问题。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18362</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">uses_hardware_from</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_pinocchio/">Pinocchio</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_faro_feasibility_aware_robot_motion_opti_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_software_pinocchio/">
+          <span class="entry-type">软件平台</span>
+          <h3>Pinocchio</h3>
+          <p>用于高效刚体动力学、运动学与解析导数计算的开源C++库，广泛应用于机器人研究与基于模型的控制。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#1-14">1. 模式/边优化（式 14）</a></li>
+<li><a href="#2-kso-15">2. 运动学序列优化 KSO（式 15）</a></li>
+<li><a href="#3-to-17">3. 轨迹优化 TO（式 17）</a></li>
+<li><a href="#_3">搜索策略</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

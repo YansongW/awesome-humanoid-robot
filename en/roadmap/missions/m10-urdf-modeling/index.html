@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M10 · URDF Modeling and Export: Turning a Hunk of Metal into a Computable Model · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M10 · URDF Modeling and Export: Turning a Hunk of Metal into a Computable Model</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m10-urdf-modeling-and-export-turning-a-hunk-of-metal-into-a-computable-model">M10 · URDF Modeling and Export: Turning a Hunk of Metal into a Computable Model</h1>
+<p><strong>Global Position</strong>: After the full machine is assembled (M09) or the structure is finalized, before simulation (M11–M13). The input is your mechanical design (CAD or physical object), and the output is a <strong>validated URDF model package</strong> (urdf file + mesh + inertial parameters). It is the common foundation for M11 simulation conversion, M12 standing, and M13 reinforcement learning.</p>
+<p><strong>Prerequisites</strong>: Able to understand the URDF structure (<a href="/en/roadmap/stage-0-foundations/">Stage 0</a> simulation first experience); structural dimensions and mass distribution are determined.</p>
+<p>Theoretical background: <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF Robot Description Format</a> card and <a href="/en/wiki/chapters/chapter-22/">Chapter 22: Software Middleware</a>, <a href="/en/wiki/chapters/chapter-23/">Chapter 23: Simulation and Physics Engines</a>.</p>
+<h2 id="step-1-define-the-linkjoint-tree-and-naming-convention">Step 1: Define the Link/Joint Tree and Naming Convention</h2>
+<p>【What to Do】First, sketch the kinematic tree on paper: base_link → hip → leg → ankle → foot, torso → shoulder → arm → wrist. Then establish three naming rules and follow them throughout:</p>
+<ol>
+<li>Side prefix: <code>l_</code> / <code>r_</code> (left/right leg and arm);</li>
+<li>Joint type suffix: <code>_pitch</code> / <code>_roll</code> / <code>_yaw</code> (rotation axis);</li>
+<li>Coordinate system for each link: <strong>Origin on the joint axis, z-axis along the joint axis</strong> (consistent with the exporter default, avoiding pitfalls later).</li>
+</ol>
+<p>【Why】90% of URDF problems are not format errors but <strong>inconsistent coordinate system conventions</strong>: axis drawn in reverse, origin offset, left-right mirroring written incorrectly. Freeze the conventions on paper first, then open the software. Specifications for joint types (revolute/prismatic/fixed) and axis directions are detailed in the <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF Robot Description Format</a> card.</p>
+<p>【How to Analyze Your Situation】For replicating an open-source platform (M08): Use the official URDF directly; this task only requires Step 4 (inertia verification) and Step 6 (validation); skip the rest. For a self-developed structure: Follow all six steps thoroughly.</p>
+<h2 id="step-2-export-the-skeleton-from-cad">Step 2: Export the Skeleton from CAD</h2>
+<p>【What to Do】Choose one of three routes:</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Tool</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SolidWorks Export</td>
+<td><code>sw_urdf_exporter</code> plugin</td>
+<td>Structure designed in SolidWorks</td>
+</tr>
+<tr>
+<td>Onshape Export</td>
+<td><code>onshape-to-robot</code></td>
+<td>Cloud-based CAD, multi-user collaboration</td>
+</tr>
+<tr>
+<td>Hand-write URDF/xacro</td>
+<td>Text editor + xacro macros</td>
+<td>Simple structure or need for parameterization (e.g., adjustable leg length)</td>
+</tr>
+</tbody>
+</table>
+<p>First thing after export: Open it in RViz or <code>urdf-viz</code>, <strong>manually drag each joint</strong> to confirm that the axis direction and positive/negative orientation match the conventions from Step 1.</p>
+<p>【Why】Exporter-generated skeletons often have redundant fixed joints and nested frames, and the axis conventions may not match your specifications; xacro macros can condense 20 similar joints into a parameterized template, allowing one change to take effect globally. Before hand-writing the skeleton, ensure you can mentally describe the <code>origin rpy</code> for each joint.</p>
+<p>【How to Analyze Your Situation】If you have no CAD model, only the physical object: Use calipers to measure joint distances, hand-write xacro directly; for a desktop robot with a dozen links, this can be done in half a day; mesh files (Step 5) can initially be placeholder geometries (box/cylinder).</p>
+<h2 id="step-3-fill-in-inertial-parametersthe-soul-of-the-model">Step 3: Fill in Inertial Parameters—The Soul of the Model</h2>
+<p>【What to Do】Every link must have <code>&lt;inertial&gt;</code>: <code>mass</code>, <code>origin</code> (center of mass), <code>inertia</code> (3×3 inertia tensor). Three acquisition paths, ordered by accuracy:</p>
+<ol>
+<li><strong>Read from CAD after material assignment</strong>: Assign real material density to each part; CAD directly outputs the center of mass and inertia tensor;</li>
+<li><strong>Physical weighing + geometric approximation</strong>: Weigh to get mass, estimate using equivalent geometry (cuboid/cylinder) inertia formulas;</li>
+<li><strong>Swing method to measure period</strong>: Suspend and swing to measure period, then back-calculate inertia (highest accuracy, most labor-intensive; see <a href="/en/wiki/chapters/chapter-09/">Chapter 9: Key Subsystem Design</a> and the <a href="/entry/ent_method_system_identification/">System Identification</a> card).</li>
+</ol>
+<p>Actuators account for the bulk of mass: Enter the mass of the motor/reducer selected in M02 into the corresponding link according to the datasheet; do not distribute evenly.</p>
+<p>【Why】80% of "mysterious falls" in simulation stem from incorrect inertial parameters: a 20% mass error ruins controller tuning; an order-of-magnitude error in the inertia tensor completely changes dynamic response. In M14 sim-to-real, you will return to refine these numbers using system identification.</p>
+<p>【How to Analyze Your Situation】For 3D-printed parts, use CAD density × print infill ratio (PLA ~1.24 g/cm³ × infill ratio). A 10–15% error is acceptable for the first version, but <strong>the center of mass position must be verified experimentally</strong>: Suspend the physical link with a string; the intersection of the vertical lines is the center of mass. If it doesn't match the model, adjust.</p>
+<h2 id="step-4-joint-limits-transmission-ratios-and-safety-boundaries">Step 4: Joint Limits, Transmission Ratios, and Safety Boundaries</h2>
+<p>【What to Do】For each revolute joint, fill in <code>&lt;limit&gt;</code>: <code>lower/upper</code> (angle limits, degrees → radians), <code>effort</code> (torque limit, use the peak torque from the M01 specification table), <code>velocity</code> (speed limit, convert the rated speed from M01 to rad/s). For transmissions with reduction ratios, specify <code>&lt;transmission&gt;</code> or annotate the reduction ratio in comments (value from M03).</p>
+<p>【Why】The simulator constrains motion according to limits; during RL training (M13), action clipping also reads these values—if <code>effort</code> is set too high, the policy may learn actions the real machine cannot execute, causing sim-to-real failure. Software limits for safety must be 5–10° smaller than the mechanical hard limits.</p>
+<p>【How to Analyze Your Situation】Measure limit angles from structural drawings; if not available, manually rotate the physical joint to its endpoints and measure with an angle gauge. For <code>effort</code>, use motor peak torque × reduction ratio × efficiency (0.7–0.9 estimated value, needs verification based on reducer type—M03).</p>
+<h2 id="step-5-separate-visual-and-collision-geometry">Step 5: Separate Visual and Collision Geometry</h2>
+<p>【What to Do】</p>
+<ul>
+<li><code>&lt;visual&gt;</code>: Place fine mesh (STL/DAE), purely for appearance;</li>
+<li><code>&lt;collision&gt;</code>: Place <strong>simplified geometry</strong>—prefer combinations of box/cylinder/sphere, or a convex hull simplified mesh; keep the vertex count of each link's collision body within a few hundred.</li>
+</ul>
+<p>Handle the foot sole collision body separately: Use a flat-bottomed box, slightly smaller than the actual foot sole (to avoid edge mis-triggering); leave friction parameters for tuning in M11.</p>
+<p>【Why】The physics engine calculates contact based on collision geometry; complex meshes are both slow and unstable (sharp corners, self-intersections); a beautiful visual mesh contributes nothing to simulation. Official documentation for <a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo Physics Engine</a> and <a href="/entry/ent_software_gazebo/">Gazebo</a> both list "collision body simplification" as the primary recommendation for performance and stability.</p>
+<p>【How to Analyze Your Situation】For 3D-printed parts, use the print STL directly for visual; for collision, manually write the bounding box of the same-named part in CAD—this is more controllable than converting to a convex hull. Pay attention to mesh units: STL in millimeters vs. meters—URDF defaults to meters; scaling errors during export are a classic pitfall.</p>
+<h2 id="step-6-validation-and-export-delivery">Step 6: Validation and Export Delivery</h2>
+<p>【What to Do】Pass four checks sequentially:</p>
+<ol>
+<li><code>check_urdf model.urdf</code>: Kinematic tree parses without errors;</li>
+<li>RViz / urdf-viz visualization: Axes, limits, and mesh scaling are correct;</li>
+<li>Mass report: Total model mass = physical weight ±10%, overall center of mass position is reasonable (projection within the support polygon when standing);</li>
+<li>Package delivery: <code>robot_description/</code> (urdf + meshes + a README documenting coordinate system conventions and inertia sources), submit to version control.</li>
+</ol>
+<p>【Why】These four checks are the entry ticket to M11—model conversion (URDF→MJCF/USD) amplifies small errors into "simulation flies off immediately upon running." The delivery package goes into version control; when you modify the model in M13, you'll know what changed.</p>
+<p>【How to Analyze Your Situation】When validation reports errors, prioritize checking: missing units in <code>origin</code> (degrees vs. radians), non-positive definite inertia tensor, case sensitivity in mesh paths. These three account for the vast majority of URDF errors.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Kinematic tree and naming convention documented (one sheet: tree diagram + axis conventions).</li>
+<li>[ ] <code>check_urdf</code> passes; RViz manual joint dragging confirms axes/directions are correct.</li>
+<li>[ ] Every link has inertial parameters; total mass deviation from physical weight ≤ 10%; center of mass verified by string suspension.</li>
+<li>[ ] Every revolute joint has limits (angle/effort/velocity), values consistent with the M01 specification table.</li>
+<li>[ ] Visual/collision geometry separated; collision bodies are simplified geometry.</li>
+<li>[ ] Model package committed to repository (including README with coordinate system conventions), ready for direct conversion in M11.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model "explodes" or flies around in RViz</td>
+<td>Joint origin miswritten / mesh unit mismatch (mm mistaken for m)</td>
+<td>Comment out joints level by level to isolate; try mesh scaling ×0.001</td>
+</tr>
+<tr>
+<td>Slowly topples during simulated standing</td>
+<td>Incorrect center of mass position / total mass inconsistent with physical model</td>
+<td>Re-measure center of mass using plumb line method; re-weigh and compare</td>
+</tr>
+<tr>
+<td>MJCF conversion reports inertia tensor error</td>
+<td>Inertia matrix not positive definite (manually estimated incorrectly)</td>
+<td>Check ixx/iyy/izz satisfy triangle inequality; re-export from CAD</td>
+</tr>
+<tr>
+<td>RL policy fails to learn standing</td>
+<td>Effort/velocity limits set too high</td>
+<td>Return to Step 4 and refill according to motor's actual capability</td>
+</tr>
+<tr>
+<td>Asymmetric left/right leg behavior</td>
+<td>Mirror joint axis direction or sign reversed</td>
+<td>Check rpy and axis joint by joint against naming conventions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous task: <a href="/en/roadmap/missions/m09-mechanical-assembly/">M09 · Full Assembly, Wiring, and Power Supply</a></li>
+<li>Next task: <a href="/en/roadmap/missions/m11-sim-setup/">M11 · Simulation Environment and Model Conversion</a></li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-22/">Chapter 22 · Software Middleware</a>, <a href="/en/wiki/chapters/chapter-23/">Chapter 23 · Simulation and Physics Engines</a></li>
+<li><a href="/en/roadmap/playbooks/sim-setup/">Simulation Environment Setup Guide</a> · <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m09-mechanical-assembly/">← Previous<span>M09 · Complete Machine Assembly, Wiring Harness and Power Supply: From a Box of Parts to a Machine That Can Stand</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m11-sim-setup/">Next →<span>M11 · Simulation Environment and Model Conversion: Fall Ten Thousand Times in the Digital World First</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m10-urdf-modeling-and-export-turning-a-hunk-of-metal-into-a-computable-model">M10 · URDF Modeling and Export: Turning a Hunk of Metal into a Computable Model</a><ul>
+<li><a href="#step-1-define-the-linkjoint-tree-and-naming-convention">Step 1: Define the Link/Joint Tree and Naming Convention</a></li>
+<li><a href="#step-2-export-the-skeleton-from-cad">Step 2: Export the Skeleton from CAD</a></li>
+<li><a href="#step-3-fill-in-inertial-parametersthe-soul-of-the-model">Step 3: Fill in Inertial Parameters—The Soul of the Model</a></li>
+<li><a href="#step-4-joint-limits-transmission-ratios-and-safety-boundaries">Step 4: Joint Limits, Transmission Ratios, and Safety Boundaries</a></li>
+<li><a href="#step-5-separate-visual-and-collision-geometry">Step 5: Separate Visual and Collision Geometry</a></li>
+<li><a href="#step-6-validation-and-export-delivery">Step 6: Validation and Export Delivery</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

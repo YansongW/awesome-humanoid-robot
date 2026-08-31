@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M16 · 感知栈搭建：让机器人看见杯子在哪 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M16 · 感知栈搭建：让机器人看见杯子在哪</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m16">M16 · 感知栈搭建：让机器人看见杯子在哪</h1>
+<p><strong>全局位置</strong>：手臂与末端就绪（M15）之后、遥操作数据采集（M17）之前。输入是装好的传感器硬件，输出是一套<strong>标定好的视觉/定位栈</strong>——给它一个场景，它输出目标物的 3D 位姿和机器人自身位置。这套输出是 M17 数据采集、M18 模仿学习、M19 任务规划的共同消费者。</p>
+<p><strong>前置条件</strong>：M10 的 URDF 加上 M15 的手臂后，全身 TF 树可用；传感器已采购或已在采购清单（选型依据见<a href="/roadmap/playbooks/sensor-selection/">传感器选型手册</a>）；机载计算平台已就位（<a href="/roadmap/playbooks/compute-selection/">计算平台选型手册</a>）。</p>
+<p>理论背景：<a href="/wiki/chapters/chapter-05/">第 5 章 传感与感知硬件</a> 讲传感器原理，<a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a> 讲通信骨架；本任务是把它们拧成一条"像素 → 3D 位姿"的流水线。</p>
+<h2 id="1">步骤 1：定传感器配置方案</h2>
+<p>【做什么】按任务定三档配置，写进采购与安装清单：</p>
+<ol>
+<li><strong>主视觉（必备）</strong>：头部/胸部一颗 <a href="/entry/ent_component_rgbd_camera/">RGB-D 相机</a>。主流选型 <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a> D435i（约 USD 199、量程 0.1–10 m、内置 IMU——官方 datasheet 口径）或 D455（约 USD 299、深度精度 &lt;2% @ 4 m、全局快门——卡片口径）；要 onboard 深度与空间 AI 再看 <a href="/entry/ent_component_zed_stereo_camera_2024/">ZED 立体相机</a>（深度计算依赖主机 GPU 生态，价格需自行向供应商确认）。</li>
+<li><strong>腕部近景相机（强烈建议）</strong>：每只腕部一颗小 RGB 相机。腕部视角是操作数据的关键来源——抓取最后 10 cm，头部相机经常被自己的手臂挡住。</li>
+<li><strong>360° LiDAR（导航才上）</strong>：室内跨房间导航加 <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a>（约 CNY 3,999、265 g、40 m @ 10% 反射率、内置 IMU——官方 datasheet/卡片口径），跑 SLAM 定位。</li>
+</ol>
+<p>同时做 <strong>USB 带宽预算</strong>：单颗 D435i 深度 + RGB 全开的流量在百 MB/s 量级（工程建议值，按你的分辨率/帧率实测）；多相机挂同一 USB 控制器会互相抢带宽掉帧——按"一颗相机独占一个 USB 3 控制器"分配，或降分辨率/帧率。</p>
+<p>【为什么】深度获取有三条路线：结构光/主动双目（室内近距精度好、怕强光）、ToF、被动双目（不吃阳光但依赖纹理），取舍见 <a href="/entry/ent_component_rgbd_camera/">RGB-D 卡片</a>。锚点：<a href="/entry/ent_robot_system_toddlerbot/">ToddlerBot</a> 用双鱼眼相机 + 胸部 IMU（<a href="https://toddlerbot.github.io/">ToddlerBot 项目主页</a>）；D435i 被青龙、G1 等平台用作头部视觉（传感器选型手册）。</p>
+<p>【你的情况怎么分析】只做"固定站姿 + 桌面抓取"：一颗 D435i + 腕部相机就够，LiDAR 是纯浪费；要走到桌边再抓：加 Mid-360。预算极限：先单 D435i，腕部相机后补，但机械上把安装位与走线预留出来。</p>
+<h2 id="2-tf">步骤 2：驱动、时间同步与 TF 树合并</h2>
+<p>【做什么】</p>
+<ol>
+<li>装 <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> 驱动（RealSense 用官方 ROS 2 wrapper，Livox 用官方驱动），逐 topic 核查：<code>ros2 topic hz</code> 确认帧率达标、<code>ros2 topic echo</code> 看时间戳是否单调递增。</li>
+<li><strong>时间同步</strong>：同一主控上的传感器用系统时钟打时间戳；主控与 Jetson 双机部署时用 chrony/NTP 对时（毫秒级，工程建议值）；做 VIO/多传感器融合再上 PTP 或硬件触发。</li>
+<li><strong>TF 树合并</strong>：把每颗传感器的 frame 挂进 M15 的全身 TF 树（URDF 加 fixed joint，或 launch 里发 static transform），用 <code>tf2_tools view_frames</code> 检查全树连通无孤岛。</li>
+</ol>
+<p>【为什么】多传感器融合的一切算法都假设"外参已知、时钟同步"。时间戳差 30 ms，运动中的融合结果就是重影——VIO 发散、点云着色错位都源于此（<a href="/roadmap/playbooks/sensor-selection/">传感器选型手册</a> 第三节）。双机对时没做好，图像与关节状态对不上，M17 采的数据直接报废。</p>
+<p>【你的情况怎么分析】单机部署 + 单相机：这步半天搞定；双机（主控 + Jetson）：先把对时做掉再谈后面，别带着 50 ms 时钟偏移往下走——后面每一步都会被它污染。</p>
+<h2 id="3">步骤 3：标定链——内参、手眼、多传感器联合</h2>
+<p>【做什么】按顺序做三级标定，全部写成一键脚本入库：</p>
+<ol>
+<li><strong>相机内参</strong>：棋盘格/圆点板多姿态采集 20+ 张，标定工具输出 fx/fy/cx/cy 与畸变系数，<strong>重投影误差 &lt; 0.5 px 量级</strong>（工程建议值，按标定工具报告口径）再收工。</li>
+<li><strong>手眼标定</strong>：眼在手外（头相机对基座）或眼在手上（腕相机对末端），本质都是解 AX=XB：让标定板相对相机走 10–15 个不同位姿（旋转要充分），求解相机到机器人系的变换。</li>
+<li><strong>相机—LiDAR—IMU 联合标定</strong>（装了 LiDAR 才做）：流程见<a href="/entry/ent_method_calibration_joint_camera_imu/">联合标定</a>卡片：标定靶多姿态采集 → 相机检角点 + LiDAR 提平面 → 初值 + ICP/非线性优化 → 重投影误差验证。</li>
+</ol>
+<p>铁律：<strong>任何拆装、碰撞、运输之后必须重标</strong>。本步验收：RGB 点云着色无明显错位、重投影误差 &lt; 2 px（Stage 3 判据）。</p>
+<p>【为什么】操作本质是一条坐标变换链：像素 → 相机系 → 基座系 → 末端，任一环外参错了就抓空气（Stage 3 原文）。标定不做成脚本，每次拆装后你都会花一天重新回忆参数怎么调。</p>
+<p>【你的情况怎么分析】只跑桌面抓取：做完 1+2 就够，LiDAR 联合标定留给导航解锁时。标定结果带日期与版本号存档——M17 的数据集卡要写标定版本，数据和标定对不上等于白采。</p>
+<h2 id="4">步骤 4：感知算法管线——从点云到物体位姿</h2>
+<p>【做什么】搭四级管线：</p>
+<ol>
+<li><strong>点云预处理</strong>：体素降采样 → 直通滤波（只留桌面工作空间）→ 平面分割（去掉桌面）。参数按桌面高度与相机安装角实测调。</li>
+<li><strong>目标检测两条路</strong>：</li>
+<li>几何法：杯子 ≈ 圆柱，RANSAC 圆柱拟合，零训练成本、立等可用；</li>
+<li>学习法：检测/分割模型输出掩码，换品类不用重写几何假设。</li>
+<li><strong>6D 位姿</strong>：几何法直接由拟合参数给位姿；学习法可接 6D 位姿估计模型（首版可用"掩码中心点 + 主轴方向"近似）。</li>
+<li><strong>输出定义</strong>（冻结成接口）：<code>{物体类别, 3D 位姿, 置信度}</code>，发布频率 <strong>10–30 Hz</strong>（工程建议值，按算力实测）。</li>
+</ol>
+<p>【为什么】第一版永远先用几何法：它让你在零训练数据时就有端到端 baseline，还能为学习法提供自动标注。输出接口冻结后，M17/M18/M19 只认这个定义，后面换算法不动下游。</p>
+<p>【你的情况怎么分析】场景里就一种杯子：几何法足够，把精力留给标定与定位；要泛化到多种物体：学习法起步，但先用几何法结果当粗标注，别上来就手标几百张图。</p>
+<h2 id="5">步骤 5：定位——机器人自己在哪</h2>
+<p>【做什么】三档按任务选：</p>
+<table>
+<thead>
+<tr>
+<th>档位</th>
+<th>方案</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>腿部里程计</td>
+<td>关节编码器运动学 + 躯干 <a href="/entry/ent_component_imu_2024/">IMU</a> 融合</td>
+<td>站定操作、短距离挪步</td>
+</tr>
+<tr>
+<td>VIO</td>
+<td>相机 + IMU 视觉惯性里程计（D435i 内置 IMU 可省一颗外置）</td>
+<td>室内固定房间、纹理足够</td>
+</tr>
+<tr>
+<td>LiDAR SLAM</td>
+<td>Mid-360 + 内置 IMU 做 LIO</td>
+<td>跨房间导航、长距离</td>
+</tr>
+</tbody>
+</table>
+<p><strong>漂移量化</strong>：让机器人沿闭环路线走回原点（或标志物），测终位姿与原点的偏差，除以路径长度得相对漂移率——这个数字要写进验收。</p>
+<p>【为什么】固定房间桌面抓取，RGB-D 里程计级别的精度就够（Stage 3 口径）；跨房间纯靠本体感觉会漂到抓空气。开源参照见 <a href="/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3</a> 与 <a href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion</a> 论文卡片。</p>
+<p>【你的情况怎么分析】第一阶段（站定抓取）只保留腿部里程计 + 视觉伺服闭环，定位误差靠"看得见的伺服"吸收；解锁行走后再上 VIO/LIO，别一次把三档全堆上。</p>
+<h2 id="6">步骤 6：算力分配与工程化</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>感知跑 L2 层</strong>：全部视觉/SLAM 节点部署在智能层（如 <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a>，最高 275 TOPS @ 64 GB 版、15–60 W、开发套件约 USD 1,999——卡片口径），与控制回路进程隔离，机器隔离更好。</li>
+<li><strong>失效演练</strong>：手动 kill 全部感知进程，控制回路必须不中断、机器人进入安全态（Stage 3 验收判据）。</li>
+<li><strong>频率/延迟预算表</strong>（工程建议值，按实测校核）：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>节点</th>
+<th>目标频率</th>
+<th>单帧延迟预算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相机驱动</td>
+<td>30 Hz</td>
+<td>—</td>
+</tr>
+<tr>
+<td>点云预处理</td>
+<td>15–30 Hz</td>
+<td>&lt; 30 ms</td>
+</tr>
+<tr>
+<td>检测 + 位姿</td>
+<td>10–30 Hz</td>
+<td>&lt; 100 ms</td>
+</tr>
+<tr>
+<td>定位</td>
+<td>10–100 Hz（视档位）</td>
+<td>&lt; 50 ms</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>资源监视</strong>：CPU/GPU/内存/温度常驻监控。ToddlerBot 实测机上推理 19 分钟即过热降频（调研档案）——热是感知的隐性预算。</li>
+</ol>
+<p>【为什么】控制回路要确定性，感知要吞吐，混跑互相拖累（<a href="/roadmap/playbooks/compute-selection/">计算平台选型手册</a> 的分层逻辑）。分进程架构让感知崩溃时控制仍能安全停机（Stage 3 步骤 14）。</p>
+<p>【你的情况怎么分析】只有一块主板：至少做到进程隔离 + 感知进程降优先级 + 看门狗；能上双机（主控 + Jetson）就上——ToddlerBot 用 Orin NX 16GB 跑 300M 参数扩散策略约 100 ms 延迟、10 Hz 机上立体深度估计（调研档案），证明这个量级够感知 + 小策略。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] 传感器配置单成文：每颗传感器有安装位、接口、带宽预算；USB 控制器分配无冲突。</li>
+<li>[ ] 全部 topic 帧率/时间戳核查通过；双机部署有时钟对时记录。</li>
+<li>[ ] 相机内参重投影误差 &lt; 0.5 px 量级并存档；手眼标定完成；标定一键脚本入库，拆装后重标流程演练过。</li>
+<li>[ ] RGB 点云着色无明显错位（重投影 &lt; 2 px，Stage 3 判据）。</li>
+<li>[ ] 杯子 3D 定位误差 ≤ 1 cm @ 桌面距离（Stage 3 判据），重复 10 次记录分布。</li>
+<li>[ ] 定位回原偏差有数字（路径长度 vs 偏差），写进验收文档。</li>
+<li>[ ] kill 感知进程后控制回路不中断、机器人进入安全态（实测录像存档）。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多相机时深度流掉帧</td>
+<td>USB 带宽不足，多相机抢同一控制器</td>
+<td><code>lsusb -t</code> 查控制器拓扑；降分辨率/帧率；分到独立控制器</td>
+</tr>
+<tr>
+<td>点云着色错位、重影</td>
+<td>相机-LiDAR 外参过期（碰撞后）/ 时间偏移未标</td>
+<td>重做联合标定看重投影误差；查时间戳来源是否统一</td>
+</tr>
+<tr>
+<td>手眼标定怎么标都对不准</td>
+<td>采集位姿旋转不足 / 时间戳不对齐</td>
+<td>增加姿态多样性（尤其旋转）；先查时间同步再重标</td>
+</tr>
+<tr>
+<td>透明/反光物体深度大片空洞</td>
+<td>结构光/主动 IR 的路线固有缺陷</td>
+<td>换观察角度；贴哑光粉；换被动双目或学习法深度</td>
+</tr>
+<tr>
+<td>阳光下深度失效</td>
+<td>主动 IR 被阳光淹没</td>
+<td>室内使用或遮光；户外任务换 LiDAR/被动路线</td>
+</tr>
+<tr>
+<td>RViz 报 TF 断裂</td>
+<td>frame 命名不一致 / static transform 未发</td>
+<td><code>tf2_tools view_frames</code> 查孤岛；对照 M15 命名规范</td>
+</tr>
+<tr>
+<td>感知跑几分钟后频率骤降</td>
+<td>过热降频（ToddlerBot 19 分钟先例）</td>
+<td>监控温度曲线；降功耗档位；改善散热风道</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m15-upper-body/">M15 · 上肢与末端执行器</a></li>
+<li>下一任务：<a href="/roadmap/missions/m17-teleop-data/">M17 · 遥操作与数据采集</a></li>
+<li>理论背景：<a href="/wiki/chapters/chapter-05/">第 5 章 传感与感知硬件</a>、<a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a>、<a href="/wiki/chapters/chapter-11/">第 11 章 装配、集成与测试</a></li>
+<li><a href="/roadmap/playbooks/sensor-selection/">传感器选型手册</a> · <a href="/roadmap/playbooks/compute-selection/">计算平台选型手册</a> · <a href="/roadmap/stage-3-humanoid/">阶段 3 总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m15-upper-body/">← 上一页<span>M15 · 上肢与末端执行器：给会走的机器长出手</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m17-teleop-data/">下一页 →<span>M17 · 遥操作与数据采集：模仿学习的粮食是这样种出来的</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m16">M16 · 感知栈搭建：让机器人看见杯子在哪</a><ul>
+<li><a href="#1">步骤 1：定传感器配置方案</a></li>
+<li><a href="#2-tf">步骤 2：驱动、时间同步与 TF 树合并</a></li>
+<li><a href="#3">步骤 3：标定链——内参、手眼、多传感器联合</a></li>
+<li><a href="#4">步骤 4：感知算法管线——从点云到物体位姿</a></li>
+<li><a href="#5">步骤 5：定位——机器人自己在哪</a></li>
+<li><a href="#6">步骤 6：算力分配与工程化</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

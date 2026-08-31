@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving</h1>
+      <p class="entry-name-en">Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Large language models bring instruction following and scene reasoning to end-to-end driving, but their inference latency collides with the control rate a vehicle requires. Existing closed-loop agents hide this gap by invoking the model on alternate simulation ticks and replaying the previous command in between, so half of all control outputs ignore the newest observations. We present a fast-slow.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15621" target="_blank" rel="noopener">arXiv:2607.15621 Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Infer</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 비동기식 빠른-느린 이중 시스템 폐루프 주행 아키텍처를 제안한다: 동결된 7B 비전-언어 백본이 느린 시스템으로서 저주파수로 내비게이션 명령과 시각적 이력을 소화하고, 경량 337M 액션 전문가가 빠른 시스템으로서 각 시뮬레이션 틱마다 단일 순방향 전파를 통해 웨이포인트를 회귀한다. 핵심 기여는 백본의 계층별 키-값 캐시를 상주 장면 표현으로 활용하여, 빠른 시스템이 소비자급 하드웨어에서 20 Hz 전체 제어율로 작동하도록 하면서, 오래됨(staleness) 증강 훈련을 통해 캐시 지연을 흡수하여 폐루프 주행 완료율과 경로 이탈 지표를 크게 개선한다는 점이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 폐루프 VLA 에이전트(예: LMDrive)의 지연 문제는 일반적으로 근본적인 병목으로 간주되며, 일반적으로 틱을 건너뛰어 모델을 호출하거나 중간에 이전 명령을 재생하여 은폐하는데, 이는 제어 출력의 절반이 최신 관측을 무시하게 만든다. 본 논문은 이러한 인식 프레임워크를 변경한다: 지연 문제를 근본적이 아닌 아키텍처적 문제로 재정의한다—명령 이해와 시계열 장면 집계는 느리게 변화하는 반면, 현재 프레임에서 궤적으로의 매핑은 빠르지만 계산량이 가벼워야 한다. 이 판단은 문제를 "대형 모델을 어떻게 가속화할 것인가"에서 "계산 분업을 어떻게 설계할 것인가"로 전환하여, 7B 모델이 소비자급 GPU에서 전체 제어율로 폐루프에 참여할 수 있게 한다.</p>
+<p>이전 fast-slow 설계(DriveVLM, π₀, DriveVLA-W0)는 궤적만 교환하거나 동기식 오픈루프 벤치마크에서만 평가되었으며, fast-slow VLA가 소비자급 하드웨어에서 전체 제어율로 캐시 오래됨을 흡수하고 주행 결과를 개선할 수 있음을 입증하지 못했다. 본 논문은 CARLA 폐루프에서 처음으로 이 아키텍처 가설을 검증하여 제어율을 10 Hz에서 20 Hz로 높이고 경로 완료율을 37.0에서 94.0으로 향상시켰으며, 캐시 오래됨이 훈련 분포 내 샘플링을 통해 효과적으로 흡수될 수 있음을 증명했다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<ul>
+<li><strong>느린 시스템</strong>: 동결된 7B 비전-언어 백본, 저주파수(매 K=4 틱, 0.2초)로 내비게이션 명령과 시각적 이력을 소화하며, 계층별 키-값 캐시를 장면 상주 표현으로 노출한다.</li>
+<li><strong>빠른 시스템</strong>: 경량 액션 전문가, 각 시뮬레이션 틱(50ms)마다 단일 순방향 전파로 5개의 웨이포인트를 회귀한다.</li>
+</ul>
+<h3 id="_5">액션 전문가 설계</h3>
+<ul>
+<li>32개 레이어 트랜스포머, 은닉 너비 d_ae=512, 백본 레이어와 일대일 대응.</li>
+<li>각 레이어는 직사각형 투영 W^ℓ_{q,k,v} ∈ R^{4096×512}을 통해 자체 토큰을 백본의 32개 헤드, 128차원 어텐션 기하 구조로 투영하고, 백본 동일 레이어의 캐시 키-값을 연결한 후 단일 어텐션 연산을 수행하며, 출력을 d_ae로 투영하고 SwiGLU 피드포워드 블록을 연결한다.</li>
+<li><strong>핵심 속성</strong>: 백본은 전문가 토큰에 주목하지 않으므로, 캐시는 전문가 실행 여부와 관계없이 동일하다—이것이 캐시를 허용하는 핵심 설계 결정이다.</li>
+<li>전문가 토큰은 학습 가능한 위치 임베딩을 가지며 회전 인코딩이 없다; 백본 키는 캐시 시점의 회전 위상을 유지하여, 추가 전용 캐시가 정확하다.</li>
+</ul>
+<h3 id="_6">프레임별 전문가 입력</h3>
+<ul>
+<li>10개 토큰: 1개 상태 토큰(이전 예측 웨이포인트, 이전 제어 삼중항, 현재 속도, 목표 지점 임베딩), 현재 프레임의 4개 비전 토큰(백본과 동일한 Q-Former 파이프라인으로 생성), 5개 학습 가능한 웨이포인트 쿼리, 2개 레이어 헤드가 L1 감독 하에 5개의 (x,y) 웨이포인트로 디코딩.</li>
+</ul>
+<h3 id="_7">오래됨 증강 훈련</h3>
+<ul>
+<li>배포 시 캐시는 현재 프레임보다 최대 K 틱 지연된다. 훈련 시 각 샘플에 대해 δ ~ U{0,…,δ_max}를 샘플링하고, 프레임 j의 전문가 블록이 볼 수 있는 백본 접두사를 프레임 j−δ에서 멈추도록 마스킹한다(j&lt;δ일 때는 명령 텍스트만 볼 수 있음).</li>
+<li>상태 토큰은 가우시안 노이즈와 무작위 드롭아웃 하에서 교사 강제(teacher forcing)로 이전 웨이포인트를 사용하여 훈련된다.</li>
+<li>모든 프레임은 블록별 어텐션 마스킹을 통해 병렬로 감독된다.</li>
+</ul>
+<h3 id="_8">비동기 배포</h3>
+<ul>
+<li>백본 캐시는 가변 상태로 유지된다. 매 K=4 틱마다 증분 순방향 전파를 통해 현재 프레임의 4개 토큰을 추가하며, 비용은 이력 길이와 무관하다.</li>
+<li>명령 변경, 알림 도착, 에피소드 종료 또는 캐시가 훈련 창 상한에 도달할 때만 처음부터 재구축한다.</li>
+<li>각 틱마다 전문가는 캐시를 그대로 읽으며, 테스트 시 오래됨 상한은 K−1 틱으로 훈련 분포 내에 유지된다.</li>
+<li>골든 테스트는 증분과 전체 프리필의 웨이포인트 차이가 4mm 미만임을 확인한다(fp16 노이즈 바닥).</li>
+</ul>
+<h2 id="_9">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>캐시 불변성 설계</strong>: 백본은 전문가 토큰에 주목하지 않으므로 캐시가 전문가 실행 상태와 분리된다. 이 설계는 빠른 시스템이 백본 재계산을 유발하지 않고 임의 주파수로 캐시를 읽을 수 있게 하며, 비동기 배포의 아키텍처 기반이다. 이전 fast-slow 설계는 이 속성을 명시적으로 활용하지 않았다.</p>
+</li>
+<li>
+<p><strong>오래됨 증강 훈련</strong>: 배포 시 캐시 지연을 훈련 분포의 일부로 명시적으로 모델링하고, 무작위 백본 접두사 마스킹을 통해 δ 틱의 지연을 시뮬레이션한다. 이는 빠른 시스템이 테스트 시 오래된 캐시를 마주해도 성능을 유지할 수 있게 하며, 폐루프에서 20 Hz 제어율을 가능하게 하는 핵심 훈련 전략이다.</p>
+</li>
+<li>
+<p><strong>증분 캐시 유지</strong>: 회전 위상을 활용하여 추가 전용 캐시가 정확하며, 매 K=4 틱의 증분 순방향 전파 비용은 이력 길이와 무관하다(폐루프 내 중앙값 10.7ms). 이는 기존 트랜스포머 추론 지연이 컨텍스트 길이에 따라 선형적으로 증가하는 병목을 깨고, 긴 이력 장면 집계를 가능하게 한다.</p>
+</li>
+</ol>
+<h2 id="_10">실험 및 결과</h2>
+<h3 id="1-0">오픈루프 웨이포인트 정확도(표 1, 동기 δ=0 프로토콜)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>L1</th>
+<th>훈련 파라미터</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>백본 액션 헤드(동결)</td>
+<td>0.123</td>
+<td>—</td>
+</tr>
+<tr>
+<td>액션 전문가, δ=0만</td>
+<td>0.037</td>
+<td>337M</td>
+</tr>
+<tr>
+<td>액션 전문가, 무작위 δ(본 논문)</td>
+<td>0.031</td>
+<td>337M</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-langauto-short-town05-32">폐루프 주행(표 2, LangAuto-Short town05, 32개 경로)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>제어율</th>
+<th>DS</th>
+<th>RC</th>
+<th>IS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LMDrive(틱 재생)</td>
+<td>10 Hz</td>
+<td>28.8 ± 0.8</td>
+<td>37.0 ± 0.4</td>
+<td>0.80 ± 0.04</td>
+</tr>
+<tr>
+<td>FastSlow-LMDrive, 프레임 스킵</td>
+<td>10 Hz</td>
+<td>34.0</td>
+<td>82.1</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>FastSlow-LMDrive(본 논문)</td>
+<td>20 Hz</td>
+<td>32.9 ± 0.7</td>
+<td>94.0 ± 2.6</td>
+<td>0.37 ± 0.02</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">킬로미터당 위반(두 번 실행 평균)</h3>
+<ul>
+<li>기준선: 25.0회 경로 이탈, 2.9회 시간 초과; 본 논문: 4.3회 이탈, 0.08회 시간 초과.</li>
+<li>킬로미터당 차량 충돌이 3.2에서 11.2로 증가; 레이아웃 충돌이 10.3에서 2.2로 감소; 차선 이탈이 7.9에서 1.1로 감소.</li>
+</ul>
+<h3 id="3-40-rtx-3090-ti">지연(표 3, 40프레임 이력, RTX 3090 Ti, 중앙값)</h3>
+<table>
+<thead>
+<tr>
+<th>구성 요소</th>
+<th>기존</th>
+<th>본 논문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인식 + Q-Former</td>
+<td>26.9 매 단계</td>
+<td>24.8 매 틱(29.2)</td>
+</tr>
+<tr>
+<td>백본 전체 재계산</td>
+<td>61.6 매 단계</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>증분 추가</td>
+<td>—</td>
+<td>21.1 매 K=4 틱(10.7)</td>
+</tr>
+<tr>
+<td>액션 전문가</td>
+<td>—</td>
+<td>7.5 매 틱(9.3)</td>
+</tr>
+<tr>
+<td>총 모델 계산</td>
+<td>88.6</td>
+<td>32.4 매 틱; 5.3 매 K=4 틱 상각</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">제로샷 도시 전이(표 4, 단일 실행)</h3>
+<ul>
+<li>town01: LMDrive DS=20.5, RC=40.5, IS=0.56; 본 논문 DS=23.2, RC=84.3, IS=0.26.</li>
+<li>town02: LMDrive DS=11.6, RC=30.7, IS=0.38; 본 논문 DS=28.3, RC=94.4, IS=0.29.</li>
+<li>town02에서 주행 점수는 기준선의 2.4배, 완료율은 3.1배.</li>
+</ul>
+<h3 id="0-l1">오래됨 증강 소거(동기 δ=0 프로토콜에서 에폭별 L1 검증)</h3>
+<ul>
+<li>무작위 δ 전문가 vs δ=0 쌍둥이: 0.060 vs 0.067, 0.049 vs 0.056, 0.037 vs 0.045, 수렴 시 0.031 vs 0.037.</li>
+</ul>
+<h2 id="_12">경계 및 한계</h2>
+<ul>
+<li>본 연구는 시뮬레이션 연구로, 단일 도시(town05)의 짧은 경로에서만 훈련되었으며, 긴 경로에서의 위험 협상은 전이되지 않는다; 킬로미터당 차량 충돌은 완료율 상승에 따라 증가한다(표 내 수치 3.2→11.2로 계산).</li>
+<li>저수준 제어기는 더 느린 기준선에 맞춰 조정된 게인을 상속받았으며 재조정되지 않아, 20 Hz 제어율의 잠재적 이점을 제한할 수 있다.</li>
+<li>주요 비교는 구성당 두 번 실행이며, 프레임 스킵 소거와 전이 동작은 단일 실행으로, 실행 간 분산이 최대 1.6 DS로 관찰되었다.</li>
+<li>주행 시스템은 시뮬레이션 벤치마크를 훨씬 넘는 안전 검증이 필요하며, 본 결과는 도로 준비 완료의 증거로 해석되어서는 안 된다.</li>
+<li>하지 않은 일: 백본과 세계 모델 사전 훈련을 결합하여 캐시 인코딩 내용을 풍부하게 하지 않음; fast-slow 분기를 훈련 없는 안전 감독 트리거로 사용하지 않음; 긴 경로 훈련 세그먼트에서 훈련하지 않음(저자는 이를 자연스러운 다음 단계로 지적).</li>
+</ul>
+<h2 id="_13">공학적 시사점</h2>
+<ul>
+<li><strong>재현 우선 확인 사항</strong>: 훈련 시 백본, 인식 인코더, Q-Former, 원본 헤드가 모두 동결되며 공개 LMDrive 체크포인트에서 초기화; 배치 크기 4에서 최대 28GB GPU 메모리 미만, 단일 48GB GPU로 훈련 가능. 추론 시 단일 RTX 3090 Ti로 폐루프가 가능하며, 벽시계 속도 약 17 Hz.</li>
+<li><strong>가장 쉽게 실수하는 지점</strong>: 오래됨 증강 훈련에서 δ 샘플링 범위는 배포 시 K 값과 일치해야 한다(본 논문 K=4, δ_max는 4틱에 해당); 배포 시 캐시 지연이 훈련 분포를 초과하면 전문가 성능이 크게 저하될 수 있다. 골든 등가 테스트(웨이포인트 차이 &lt; 4mm)는 캐시 유지 정확성의 일상적 검증으로 수행되어야 한다.</li>
+<li><strong>하위 팀 지침</strong>: 새 장면으로 전이할 경우 긴 경로에서의 페널티 인자 붕괴에 주의하라(본 논문 town03에서 페널티 인자 0.04로 주행 점수 2.96이 기준선 5.98보다 낮음), 긴 경로 훈련 세그먼트에서 미세 조정을 권장; 저수준 PID 파라미터는 20 Hz 제어율에 맞춰 재조정해야 하며, 느린 기준선 파라미터를 그대로 사용하면 아키텍처 이점이 가려질 수 있다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_li_drivevla_w0_world_models_ampli_2025/">DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_think_5_hz_act_20_hz_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_drivevla_w0_world_models_ampli_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving</h3>
+          <p>DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving (DriveVLA-W0), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#_5">액션 전문가 설계</a></li>
+<li><a href="#_6">프레임별 전문가 입력</a></li>
+<li><a href="#_7">오래됨 증강 훈련</a></li>
+<li><a href="#_8">비동기 배포</a></li>
+</ul>
+</li>
+<li><a href="#_9">핵심 혁신</a></li>
+<li><a href="#_10">실험 및 결과</a><ul>
+<li><a href="#1-0">오픈루프 웨이포인트 정확도(표 1, 동기 δ=0 프로토콜)</a></li>
+<li><a href="#2-langauto-short-town05-32">폐루프 주행(표 2, LangAuto-Short town05, 32개 경로)</a></li>
+<li><a href="#_11">킬로미터당 위반(두 번 실행 평균)</a></li>
+<li><a href="#3-40-rtx-3090-ti">지연(표 3, 40프레임 이력, RTX 3090 Ti, 중앙값)</a></li>
+<li><a href="#4">제로샷 도시 전이(표 4, 단일 실행)</a></li>
+<li><a href="#0-l1">오래됨 증강 소거(동기 δ=0 프로토콜에서 에폭별 L1 검증)</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계 및 한계</a></li>
+<li><a href="#_13">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

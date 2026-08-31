@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 23: Simulation and Physics Engines · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 23: Simulation and Physics Engines</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-23-simulation-and-physics-engines">Chapter 23: Simulation and Physics Engines</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Simulation serves as the "intermediate proving ground" for humanoid robots transitioning from blueprints to the real world: it transforms expensive hardware trial-and-error into inexpensive numerical experiments, and amplifies scarce real-world data into vast synthetic experience. This chapter begins with the mathematical foundations of rigid-body dynamics simulation, systematically explaining the core principles of physics engines, including articulated body equations of motion, forward dynamics algorithms, contact modeling, and time integration. It then analyzes the architectural features and applicable boundaries of mainstream platforms such as the MuJoCo physics engine, NVIDIA Isaac Sim/Isaac Lab, Gazebo, the Drake systems toolbox, the Genesis generative physics engine, and ManiSkill3, and discusses the asset pipeline composed of the URDF robot description format and the MJCF simulation format. Building on this foundation, the chapter delves into how GPU-based massively parallel simulation reshapes the reinforcement learning training paradigm, as well as the engineering implementation of visual and force sensor simulation and synthetic data pipelines. Finally, centered on the core proposition of Sim-to-Real transfer, it provides a three-layer toolbox of domain randomization, system identification, and hardware-in-the-loop (HIL) testing, and illustrates the methodology of controlled comparison using simulation benchmarks such as HumanoidBench and ManiSkill. This chapter complements Chapter 14 (Control), Chapter 18 (Policy Learning), and Chapter 25 (Evaluation Systems).</p>
+<p><strong>Keywords</strong>: Physics Engine; Rigid Body Dynamics; Contact Modeling; MuJoCo; NVIDIA Isaac Sim; Gazebo; GPU Parallel Simulation; Domain Randomization; Sim-to-Real Transfer; Hardware-in-the-Loop Testing</p>
+<hr />
+<h2 id="231-the-role-of-simulation-in-humanoid-robot-development">23.1 The Role of Simulation in Humanoid Robot Development</h2>
+<h3 id="2311-why-humanoid-robots-cannot-do-without-simulation">23.1.1 Why Humanoid Robots Cannot Do Without Simulation</h3>
+<p>Humanoid robots are among the robot forms discussed in this book that are most dependent on simulation, for four reasons.</p>
+<p>First, <strong>the cost of trial and error is extremely high</strong>. The total material cost of a full-size humanoid robot is typically on the order of tens to hundreds of thousands of US dollars. A single uncontrolled fall can damage harmonic drives, torque sensors, or structural components, with repair cycles measured in weeks. Simulation compresses the cost of "falling ten thousand times" to the level of electricity bills, making the exploration of aggressive control strategies feasible.</p>
+<p>Second, <strong>the sample hunger of Reinforcement Learning (RL)</strong>. Current mainstream legged locomotion control policies are often trained using model-free reinforcement learning algorithms such as Proximal Policy Optimization (PPO), and convergence often requires billions of environment interaction steps. At a control frequency of 50 Hz, a single real robot running continuously for a year can only accumulate approximately 1.6 billion steps, accompanied throughout by wear and safety risks. In contrast, GPU-based parallel simulation can complete an equivalent scale of sampling within hours.</p>
+<p>Third, <strong>the scalability of data collection</strong>. The throughput of collecting real-world demonstration data via teleoperation is limited by the number of operators and available hardware units. Synthetic data pipelines in simulation can programmatically generate scenes, objects, lighting, and annotations, with scale virtually unconstrained by physical limitations. NVIDIA Isaac Sim's support for the GR00T synthetic data pipeline is an industrial practice of this approach.</p>
+<p>Fourth, <strong>safety and reproducibility</strong>. Simulation environments can precisely reproduce the same initial conditions, supporting regression testing and controlled comparisons, which is crucial for verifying iterations of control software versions.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Simulation, Digital Twin, Synthetic Data, Regression Testing</p>
+<ul>
+<li><strong>Simulation</strong>: Using mathematical models to reproduce the evolution of a physical system in a computer, used for prediction, training, and validation.</li>
+<li><strong>Digital Twin</strong>: A high-fidelity simulation replica that maintains state synchronization with a specific physical entity, emphasizing a "one-to-one" mapping; general simulation is not tied to a specific entity.</li>
+<li><strong>Synthetic Data</strong>: Sensor data and its annotations programmatically generated by a simulator, used for training perception or policy models.</li>
+<li><strong>Regression Testing</strong>: Re-running an existing test suite after each software change to confirm that no performance degradation has been introduced.</li>
+</ul>
+</div>
+<h3 id="2312-the-role-of-simulation-in-the-complete-robot-development-process">23.1.2 The Role of Simulation in the Complete Robot Development Process</h3>
+<p>Simulation runs through the entire lifecycle of humanoid robot development, playing different roles at different stages:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Simulation Role</th>
+<th>Typical Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concept Design</td>
+<td>Virtual Prototype</td>
+<td>Configuration comparison, joint torque spectrum estimation, reachable space analysis</td>
+</tr>
+<tr>
+<td>Detailed Design</td>
+<td>Multiphysics Verification</td>
+<td>Structural strength interface verification, thermal simulation coupling, cable motion interference check</td>
+</tr>
+<tr>
+<td>Algorithm Development</td>
+<td>Training Ground &amp; Testbed</td>
+<td>Controller tuning, RL policy training, planning algorithm validation</td>
+</tr>
+<tr>
+<td>Integration Testing</td>
+<td>In-the-Loop Verification</td>
+<td>Software-in-the-Loop (SiL), Hardware-in-the-Loop (HIL), Regression Testing</td>
+</tr>
+<tr>
+<td>Deployment &amp; Operations</td>
+<td>Digital Twin &amp; Data Factory</td>
+<td>Fault reproduction, synthetic data generation, policy retraining</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Concept Design&lt;br/&gt;Virtual Prototype"] --&gt; B["Detailed Design&lt;br/&gt;Multiphysics Verification"]
+    B --&gt; C["Algorithm Development&lt;br/&gt;Simulation Training Ground"]
+    C --&gt; D["Integration Testing&lt;br/&gt;SiL / HIL"]
+    D --&gt; E["Real Robot Deployment&lt;br/&gt;Sim-to-Real"]
+    E --&gt; F["Operations Phase&lt;br/&gt;Digital Twin / Synthetic Data"]
+    F -.-&gt;|"Real Data Feedback"| C</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Virtual Prototype, Software-in-the-Loop, Hardware-in-the-Loop, Multiphysics Simulation</p>
+<ul>
+<li><strong>Virtual Prototype</strong>: A complete digital model used to evaluate design candidates before manufacturing a physical prototype.</li>
+<li><strong>Software-in-the-Loop (SiL)</strong>: The control software under test and the simulated plant run in a closed loop within the same computing environment.</li>
+<li><strong>Hardware-in-the-Loop (HIL)</strong>: Real controller hardware runs in a closed loop with a real-time simulated plant; see Section 23.7.4 for details.</li>
+<li><strong>Multiphysics Simulation</strong>: A coupled simulation that simultaneously solves multiple physical fields such as structural, thermal, electromagnetic, and fluid dynamics.</li>
+</ul>
+</div>
+<h3 id="2313-the-capability-boundary-of-simulation-the-reality-gap">23.1.3 The Capability Boundary of Simulation: The Reality Gap</h3>
+<p>Simulation is not a free lunch. The systematic discrepancy between simulation and reality is called the <strong>reality gap</strong> or <strong>sim-to-real gap</strong>, whose main sources include:</p>
+<ul>
+<li><strong>Contact mechanics errors</strong>: Foot-ground and hand-object contacts involve stick-slip, asperity deformation, and impact; any contact model is only an approximation of real physics.</li>
+<li><strong>Actuator nonlinearities</strong>: Gear backlash, friction, hysteresis, and temperature drift are difficult to model precisely.</li>
+<li><strong>Insufficient sensor distortion models</strong>: Camera motion blur, lens radial distortion, IMU bias wander, etc., are often simplified or ignored.</li>
+<li><strong>Unmodeled flexible bodies and clearances</strong>: Cables, skins, foot padding, and structural elastic deformation are invisible in pure rigid-body simulation.</li>
+<li><strong>Rendering domain gap</strong>: Statistical differences in texture, lighting, and noise distribution between simulated images and real cameras directly degrade the transfer performance of visual policies.</li>
+</ul>
+<p>Therefore, the methodological main line of this chapter is not "how to make simulation more realistic," but rather "how to ensure that conclusions drawn in simulation remain valid in reality, given the inevitable inaccuracy of simulation"—this is the starting point for the Sim-to-Real transfer toolbox in Section 23.7.</p>
+<h2 id="232-mathematical-foundations-of-rigid-body-dynamics-simulation">23.2 Mathematical Foundations of Rigid Body Dynamics Simulation</h2>
+<h3 id="2321-equations-of-motion-for-articulated-rigid-body-systems">23.2.1 Equations of Motion for Articulated Rigid Body Systems</h3>
+<p>Humanoid robots are typically modeled in simulation as <strong>floating base articulated rigid body systems</strong>: the pelvis (base) has a spatial pose with 6 degrees of freedom, and the limbs are connected via revolute joints to form a tree-like kinematic chain. The equation of motion is</p>
+<div class="arithmatex">\[
+\mathbf{M}(\mathbf{q})\,\ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q}, \dot{\mathbf{q}})\,\dot{\mathbf{q}} + \mathbf{g}(\mathbf{q}) = \mathbf{S}^{\top}\boldsymbol{\tau} + \mathbf{J}_c(\mathbf{q})^{\top}\,\mathbf{f}_c
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{q} \in \mathbb{R}^{n+6}\)</span> are the generalized coordinates (including the floating base pose), <span class="arithmatex">\(\mathbf{M}\)</span> is the mass matrix, <span class="arithmatex">\(\mathbf{C}\dot{\mathbf{q}}\)</span> is the Coriolis and centrifugal term, <span class="arithmatex">\(\mathbf{g}\)</span> is the gravity term, <span class="arithmatex">\(\mathbf{S}\)</span> is the selection matrix for actuated joints, <span class="arithmatex">\(\boldsymbol{\tau}\)</span> is the joint torque, <span class="arithmatex">\(\mathbf{J}_c\)</span> is the contact Jacobian, and <span class="arithmatex">\(\mathbf{f}_c\)</span> is the contact force. The core task of the physics engine at each step is to solve the <strong>forward dynamics</strong> of this equation: given the current state <span class="arithmatex">\((\mathbf{q}, \dot{\mathbf{q}})\)</span> and applied torques <span class="arithmatex">\(\boldsymbol{\tau}\)</span>, find the acceleration <span class="arithmatex">\(\ddot{\mathbf{q}}\)</span>, then perform time integration to advance the state.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Generalized Coordinates, Floating Base, Mass Matrix, Selection Matrix, Contact Jacobian</p>
+<ul>
+<li><strong>Generalized coordinates</strong>: The minimal set of coordinates required to fully describe the system configuration; for a humanoid robot, this means the base pose plus all joint angles.</li>
+<li><strong>Floating base</strong>: The root link that is not fixed to an inertial frame and can move freely in space; this is the essential difference between modeling legged robots and fixed-base manipulators.</li>
+<li><strong>Mass matrix (<span class="arithmatex">\(\mathbf{M}\)</span>)</strong>: A linear mapping from generalized acceleration to generalized force, symmetric positive definite; its condition number affects the accuracy of numerical solutions.</li>
+<li><strong>Selection matrix (<span class="arithmatex">\(\mathbf{S}\)</span>)</strong>: Maps actuator torques to the corresponding joints; the 6 degrees of freedom of the floating base are not directly actuated, reflecting the underactuated nature of humanoid robots.</li>
+<li><strong>Contact Jacobian (<span class="arithmatex">\(\mathbf{J}_c\)</span>)</strong>: Maps joint-space velocities to contact point spatial velocities; <span class="arithmatex">\(\mathbf{J}_c^{\top}\mathbf{f}_c\)</span> is the generalized force equivalent of the contact forces.</li>
+</ul>
+</div>
+<h3 id="2322-forward-dynamics-algorithms-crba-and-aba">23.2.2 Forward Dynamics Algorithms: CRBA and ABA</h3>
+<p>Directly inverting <span class="arithmatex">\(\mathbf{M}\)</span> has a complexity of <span class="arithmatex">\(O(n^3)\)</span>, which is not economical for floating base systems with over 30 degrees of freedom. Classical rigid body dynamics algorithms leverage the tree structure of the kinematic chain for efficient recursion:</p>
+<ul>
+<li><strong>Composite Rigid Body Algorithm (CRBA)</strong>: Constructs the mass matrix <span class="arithmatex">\(\mathbf{M}\)</span> explicitly with <span class="arithmatex">\(O(n^2)\)</span> complexity (actually better for tree structures), suitable for scenarios requiring an explicit mass matrix, such as model-based control and some contact solvers;</li>
+<li><strong>Articulated Body Algorithm (ABA)</strong>: Does not construct <span class="arithmatex">\(\mathbf{M}\)</span> explicitly, but directly computes <span class="arithmatex">\(\ddot{\mathbf{q}}\)</span> with <span class="arithmatex">\(O(n)\)</span> complexity through forward-backward recursion; it is the preferred choice for high-performance engines and dynamics libraries like MuJoCo and Pinocchio.</li>
+</ul>
+<p>In engineering practice, forward/inverse dynamics and analytical derivatives are typically computed by calling mature libraries: the open-source C++ library Pinocchio provides efficient implementations of rigid body dynamics, kinematics, and analytical derivatives, widely embedded in controllers and simulation pipelines; the Drake systems toolbox deeply integrates dynamics with mathematical programming solvers, targeting optimization-based control and analysis.</p>
+<h3 id="2323-contact-modeling-complementarity-constraints-and-penalty-methods">23.2.3 Contact Modeling: Complementarity Constraints and Penalty Methods</h3>
+<p>Contact is the soul of legged locomotion and manipulation simulation, and also the most challenging aspect to achieve both "fast and accurate". The two main technical routes are as follows.</p>
+<p><strong>Constraint-based contact</strong>. Non-penetration and Coulomb friction are formulated as complementarity conditions: normal velocity <span class="arithmatex">\(v_n \ge 0\)</span>, normal force <span class="arithmatex">\(f_n \ge 0\)</span>, and they are complementary <span class="arithmatex">\(v_n \cdot f_n = 0\)</span>, meaning the contact point is either separating (<span class="arithmatex">\(f_n=0\)</span>) or in firm contact with no relative normal motion (<span class="arithmatex">\(v_n=0\)</span>). The friction cone constraint is</p>
+<div class="arithmatex">\[
+\|\mathbf{f}_t\| \le \mu f_n
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{f}_t\)</span> is the tangential friction force and <span class="arithmatex">\(\mu\)</span> is the friction coefficient. For numerical solvability, the cone is often linearized into a polyhedral cone, transforming the problem into a <strong>Linear Complementarity Problem (LCP)</strong> or a convex optimization problem. The uniqueness of the MuJoCo physics engine lies in modeling contact as a convex optimization problem, allowing soft contact and regularization, achieving good numerical stability and potential differentiability while maintaining physical plausibility.</p>
+<p><strong>Penalty-based contact</strong>. Allows small penetration <span class="arithmatex">\(\delta\)</span> between contacting bodies, generating a normal force using virtual spring-dampers</p>
+<div class="arithmatex">\[
+f_n = k_p\,\delta + k_d\,\dot{\delta}, \qquad \delta &gt; 0
+\]</div>
+<p>The penalty method is simple to implement and easy to parallelize, making it the choice for most GPU simulators; however, large stiffness <span class="arithmatex">\(k_p\)</span> values introduce stiff differential equations, forcing smaller integration time steps, and the physical correspondence between penetration depth and contact force requires careful calibration.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Complementarity Condition, Coulomb Friction Cone, LCP, Soft Contact, Stiff Equation</p>
+<ul>
+<li><strong>Complementarity condition</strong>: A constraint form where two non-negative quantities cannot both be positive (<span class="arithmatex">\(a\ge 0,\, b\ge 0,\, ab=0\)</span>), capturing the "contact or separation" binary logic.</li>
+<li><strong>Coulomb friction cone</strong>: The contact force must lie within a cone with the normal as its axis and a half-angle of <span class="arithmatex">\(\arctan\mu\)</span>; otherwise, sliding occurs.</li>
+<li><strong>Linear Complementarity Problem (LCP)</strong>: The standard complementarity problem form obtained after linearizing the friction cone, solvable by Lemke's algorithm or interior point methods.</li>
+<li><strong>Soft contact</strong>: Introducing regularization in constraint solving so that contact force varies continuously with small penetration, improving numerical convergence; MuJoCo's contact model falls into this category.</li>
+<li><strong>Stiff equation</strong>: A differential equation where time constants within the system differ vastly; explicit integration requires very small time steps for stability.</li>
+</ul>
+</div>
+<p>The engineering comparison between the two routes is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Constraint-based Contact</th>
+<th>Penalty-based Contact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical Accuracy</td>
+<td>High, no macroscopic penetration</td>
+<td>Depends on stiffness calibration, steady-state penetration exists</td>
+</tr>
+<tr>
+<td>Numerical Stability</td>
+<td>Good, step size not limited by contact stiffness</td>
+<td>Large stiffness requires small step sizes</td>
+</tr>
+<tr>
+<td>Parallel Friendliness</td>
+<td>Solver has significant serial components</td>
+<td>Per-contact independent computation, inherently parallel</td>
+</tr>
+<tr>
+<td>Differentiability</td>
+<td>Requires special handling (e.g., convex optimization implicit differentiation)</td>
+<td>Directly differentiable</td>
+</tr>
+<tr>
+<td>Typical Platforms</td>
+<td>MuJoCo, Drake</td>
+<td>GPU parallel simulators (e.g., Isaac series, optional mode in Genesis)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2324-time-integration-and-numerical-stability">23.2.4 Time Integration and Numerical Stability</h3>
+<p>After obtaining <span class="arithmatex">\(\ddot{\mathbf{q}}\)</span>, numerical integration is needed to advance the state. Common schemes include:</p>
+<ul>
+<li><strong>Forward Euler</strong>: <span class="arithmatex">\(\dot{\mathbf{q}}_{k+1} = \dot{\mathbf{q}}_k + h\ddot{\mathbf{q}}_k\)</span>, <span class="arithmatex">\(\mathbf{q}_{k+1} = \mathbf{q}_k + h\dot{\mathbf{q}}_k\)</span>. Simplest to implement, but energy grows monotonically for oscillatory systems, leading to poor stability;</li>
+<li><strong>Semi-implicit Euler / Symplectic Euler</strong>: First updates velocity using the new acceleration, then updates position using the <strong>new velocity</strong>. As a symplectic integrator, it bounds energy error over long simulations, making it a mainstay in physics engines;</li>
+<li><strong>Implicit Euler</strong>: Constructs update equations using quantities at the next time step, requiring solving a system of equations; computationally expensive but inherent numerical damping suppresses high-frequency instability, suitable for stiff systems with contact;</li>
+<li><strong>Higher-order Runge-Kutta (e.g., RK4)</strong>: High accuracy but requires multiple dynamics evaluations per step, and lacks symplectic properties; common in scenarios demanding trajectory precision with less sensitivity to energy drift.</li>
+</ul>
+<p>Time step selection is a key trade-off between accuracy and speed: generally, a simulation step of <span class="arithmatex">\(0.5\)</span>–<span class="arithmatex">\(2\)</span> ms for legged contact balances contact stability and throughput; control loops run at downsampled frequencies from 20–50 Hz (policy layer) to 500–1000 Hz (torque layer). A common metric for evaluating simulation speed is the <strong>Real-Time Factor (RTF)</strong>, defined as the ratio of simulated time to wall-clock time; RL training pursues RTF &gt;&gt; 1, while HIL testing requires RTF = 1.</p>
+<h3 id="2325-python-example-energy-drift-in-pendulum-integration">23.2.5 Python Example: Energy Drift in Pendulum Integration</h3>
+<p>The following example compares the energy behavior of forward Euler and semi-implicit Euler integration for a simple pendulum, intuitively demonstrating the advantage of symplectic integrators in long-duration simulations—a difference that is further amplified in multi-hour humanoid walking simulations.</p>
+<pre class="highlight"><code class="language-python"># Simple Pendulum: Energy Error Comparison of Explicit Euler vs Semi-Implicit Euler
+# Dynamics: theta_ddot = -(g/L) * sin(theta)
+import numpy as np
+
+g, L, m = 9.81, 1.0, 1.0     # Gravitational acceleration, pendulum length, mass
+h = 1e-3                     # Integration step size (s)
+T = 20.0                     # Simulation duration (s)
+steps = int(T / h)
+
+def energy(theta, omega):
+    return 0.5 * m * (L * omega)**2 - m * g * L * np.cos(theta)
+
+def simulate(mode):
+    theta, omega = 0.5, 0.0  # Initial pendulum angle 0.5 rad
+    E0 = energy(theta, omega)
+    drift = []
+    for _ in range(steps):
+        alpha = -(g / L) * np.sin(theta)
+        if mode == "explicit":           # Explicit Euler
+            theta_new = theta + h * omega
+            omega_new = omega + h * alpha
+        else:                            # Semi-implicit Euler: update velocity first
+            omega_new = omega + h * alpha
+            theta_new = theta + h * omega_new
+        theta, omega = theta_new, omega_new
+        drift.append(energy(theta, omega) - E0)
+    return np.array(drift)
+
+for mode in ("explicit", "semi-implicit"):
+    d = simulate(mode)
+    print(f"{mode:&gt;14s}: Energy drift after 20 s {d[-1]:+.6f} J, max |drift| {np.abs(d).max():.6f} J")</code></pre>
+<p>Typical output shows: the energy of explicit Euler grows approximately linearly over time (the system is artificially "injected" with energy, manifested as increasing swing amplitude), while the energy error of semi-implicit Euler exhibits bounded oscillations. The damping, contact solving, and integrator selection within the physics engine collectively determine the magnitude of such numerical artifacts. Developers should perform energy conservation regression tests on undisturbed scenarios before using long-duration simulation data.</p>
+<h2 id="233-mainstream-physics-engines-and-simulation-platforms">23.3 Mainstream Physics Engines and Simulation Platforms</h2>
+<h3 id="2331-mujoco-physics-engine">23.3.1 MuJoCo Physics Engine</h3>
+<p><strong>MuJoCo Physics Engine</strong> originated from the team of Emo Todorov at the University of Washington. It was open-sourced by DeepMind in 2021 and is continuously maintained. It is a high-fidelity physics engine with rich contact dynamics, widely used in humanoid control research. Its technical features include:</p>
+<ul>
+<li><strong>Convex optimization contact solving</strong>: Formulates contact dynamics as a convex optimization problem, supporting soft contacts and constraint regularization, resulting in smooth contact behavior with good physical consistency, which is crucial for legged locomotion and dexterous manipulation;</li>
+<li><strong>Generalized coordinate dynamics</strong>: Recursively computes directly in joint space, avoiding large-scale sparse systems of the Lagrange multiplier method, and combined with ABA for high throughput;</li>
+<li><strong>MJCF native format</strong>: Models are described using the MJCF simulation format (see Section 23.4.2), with semantics close to control requirements;</li>
+<li><strong>C API + Python bindings</strong>: Facilitates integration into training pipelines, and has long been the de facto standard simulator for legged control and deep RL papers.</li>
+</ul>
+<p>Typical uses of MuJoCo include: algorithm validation for whole-body control and MPC, policy training in small to medium-scale (tens to hundreds of parallel environments), and simulation of manipulation tasks requiring precise contact behavior. Its shortcomings include relatively simple rendering capabilities and GPU large-scale parallelism relying on later versions and derivative works (e.g., MJX).</p>
+<h3 id="2332-nvidia-isaac-sim-and-isaac-lab">23.3.2 NVIDIA Isaac Sim and Isaac Lab</h3>
+<p><strong>NVIDIA Isaac Sim</strong> is a GPU-accelerated photorealistic robot simulator built on the Omniverse platform, based on the USD (Universal Scene Description) scene format and the PhysX physics engine. Its core advantage is <strong>photorealistic rendering</strong>: the RTX ray tracing pipeline can generate camera data with realistic lighting, materials, and motion blur, making it a primary platform for synthetic data generation and visual policy training, and supporting the GR00T synthetic data pipeline.</p>
+<p><strong>NVIDIA Isaac Lab</strong> is a modular learning framework built on Isaac Sim for large-scale robot policy training. It modularizes RL environments, reward terms, observations, and domain randomization configurations, and comes with built-in motion and manipulation task examples for humanoid robots (e.g., Unitree H1/G1). It is a common entry point for training whole-body policies for humanoid robots in the industry. The relationship between the two is: Isaac Sim provides the simulation and rendering foundation, while Isaac Lab provides a learning-oriented abstraction layer on top of it.</p>
+<h3 id="2333-isaac-gym-benchmarks-and-gpu-end-to-end-reinforcement-learning">23.3.3 Isaac Gym Benchmarks and GPU End-to-End Reinforcement Learning</h3>
+<p>Before Isaac Lab, <strong>Isaac Gym</strong> pioneered high-throughput RL with an end-to-end design where "physics and rendering are both on the GPU, and observation and action tensors never leave GPU memory." <strong>Isaac Gym Benchmarks</strong> is a collection of GPU-accelerated reinforcement learning benchmarks built on top of it, covering task families from inverted pendulums to dexterous hands (e.g., Shadow Hand rotating a ball) to quadruped/humanoid locomotion, providing a unified high-throughput comparison environment for policy training and evaluation. Its historical significance lies in proving that when a single GPU can simultaneously advance thousands of environments, "simulation sampling speed" is no longer the bottleneck for RL, shifting research focus to reward design and Sim-to-Real methods themselves.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: End-to-End GPU Pipeline, Parallel Environments, Tensor API, Physics Step and Policy Step</p>
+<ul>
+<li><strong>End-to-end GPU pipeline</strong>: Physics simulation, rendering, observation assembly, and policy inference all reside on the GPU, avoiding the synchronization overhead of CPU-GPU data transfer.</li>
+<li><strong>Parallel environments</strong>: Batch advancing thousands of independent environment instances within the same physics step, which is the source of GPU high throughput.</li>
+<li><strong>Tensor API</strong>: An interface that reads and writes the state of all environments using batched tensors, replacing traditional per-environment function calls.</li>
+<li><strong>Physics step and policy step</strong>: Physics integrates at millisecond-level small steps, while the policy executes every few physics steps, with the two frequencies decoupled.</li>
+</ul>
+</div>
+<h3 id="2334-gazebo">23.3.4 Gazebo</h3>
+<p><strong>Gazebo</strong> is an open-source 3D robot simulator providing physics engines, sensor models, and scene editing capabilities. It is maintained by Open Robotics and deeply integrated with the ROS ecosystem. Its characteristics include:</p>
+<ul>
+<li><strong>Multiple physics engine backends</strong>: Optional backends like ODE, Bullet, Simbody, DART, etc., facilitating cross-validation;</li>
+<li><strong>Rich sensor plugins</strong>: Ready-made models for cameras, depth cameras, LiDAR, IMU, force/torque sensors, published as ROS topics;</li>
+<li><strong>SDF scene description and graphical editing</strong>: Suitable for building structured test scenarios (warehouses, stairs, porches);</li>
+<li><strong>Classic Gazebo and new-generation Gazebo (formerly Ignition)</strong>: The latter has been refactored into modular libraries, improving rendering and distributed simulation capabilities.</li>
+</ul>
+<p>Gazebo's physics throughput and contact accuracy are not outstanding, but it excels in its ecosystem: navigation stacks, MoveIt motion planning, and the ros_control controller framework can all run end-to-end directly in Gazebo, making it still the main platform for system integration testing and teaching scenarios.</p>
+<h3 id="2335-drake-systems-toolbox">23.3.5 Drake Systems Toolbox</h3>
+<p><strong>Drake Systems Toolbox</strong> is a systems modeling toolbox from MIT focused on optimization-based control and analysis, continuously invested in by the Toyota Research Institute (TRI). Unlike "general-purpose simulators," Drake's strength lies in the <strong>rigorous combination of dynamics and mathematical programming</strong>: its multibody dynamics implementation emphasizes numerical accuracy (including high-fidelity contact representations like the hydroelastic contact model) and seamlessly integrates with toolchains for trajectory optimization, LQR, MPC, reachability analysis, etc. For scenarios requiring formal analysis or high-precision contact research (e.g., hybrid system stability analysis for bipedal walking), Drake provides a depth that other platforms find hard to replace; correspondingly, its rendering and GPU parallelism capabilities are weaker.</p>
+<h3 id="2336-genesis-generative-physics-engine">23.3.6 Genesis Generative Physics Engine</h3>
+<p><strong>Genesis Generative Physics Engine</strong> is an emerging generative general-purpose physics engine that appeared around 2024, targeting robotics and other fields. Its design goal is to unify rigid bodies, soft bodies, fluids, and deformable bodies within a differentiable, GPU-accelerated framework, and to reduce environment construction costs with extremely high simulation speeds (official demos show significantly higher rigid body scene throughput than traditional engines) and a "generative" philosophy—using natural language or procedural generation to create interactive scenes and tasks. For humanoid robots, the unified modeling of deformable bodies and soft contacts is expected to improve aspects long neglected by rigid body assumptions, such as foot sole foam and flexible skins. As an emerging platform, its ecosystem and engineering validation are still being accumulated.</p>
+<h3 id="2337-maniskill3-and-gpu-parallel-rendering">23.3.7 ManiSkill3 and GPU Parallel Rendering</h3>
+<p><strong>ManiSkill3</strong> is a GPU-parallel robot simulation and rendering benchmark platform for embodied AI, built on the SAPIEN engine. Its key feature is <strong>simultaneously GPU-izing both physics parallelism and rendering parallelism</strong>, enabling high throughput for manipulation tasks with visual observations, bridging the long-standing trade-off between "high-fidelity vision" and "large-scale sampling." Its task set covers rigid/articulated object manipulation, mobile manipulation, etc., and comes with demonstration data and baselines. See Section 23.8.2 for details.</p>
+<h3 id="2338-platform-capability-comparison">23.3.8 Platform Capability Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Physics Kernel</th>
+<th>Parallelism</th>
+<th>Rendering Fidelity</th>
+<th>Contact Quality</th>
+<th>Typical Positioning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MuJoCo</td>
+<td>Proprietary (Convex Contact)</td>
+<td>CPU-centric, MJX provides GPU path</td>
+<td>Medium</td>
+<td>High</td>
+<td>Control Research, RL Training</td>
+</tr>
+<tr>
+<td>Isaac Sim / Lab</td>
+<td>PhysX</td>
+<td>GPU Large-Scale Parallel</td>
+<td>High (RTX Ray Tracing)</td>
+<td>Medium-High</td>
+<td>Synthetic Data, Large-Scale RL</td>
+</tr>
+<tr>
+<td>Isaac Gym</td>
+<td>PhysX</td>
+<td>GPU Large-Scale Parallel</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>High-Throughput RL Benchmark</td>
+</tr>
+<tr>
+<td>Gazebo</td>
+<td>ODE/Bullet/DART etc.</td>
+<td>CPU-centric</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>ROS Integration Testing</td>
+</tr>
+<tr>
+<td>Drake</td>
+<td>Proprietary (Hydroelastic)</td>
+<td>CPU</td>
+<td>Medium-Low</td>
+<td>High (Research-Grade)</td>
+<td>Optimal Control &amp; Analysis</td>
+</tr>
+<tr>
+<td>Genesis</td>
+<td>Proprietary Unified Solver</td>
+<td>GPU Large-Scale Parallel</td>
+<td>Medium-High</td>
+<td>Medium-High (Includes Soft Bodies)</td>
+<td>General/Generative Simulation</td>
+</tr>
+<tr>
+<td>ManiSkill3</td>
+<td>SAPIEN (PhysX-based)</td>
+<td>GPU Physics + Rendering Parallel</td>
+<td>High</td>
+<td>Medium</td>
+<td>Embodied Manipulation Benchmark</td>
+</tr>
+</tbody>
+</table>
+<p>General selection principles are: choose MuJoCo/Drake when contact accuracy and control validation are the priority; choose the Isaac family or ManiSkill3 when visual synthetic data and large-scale RL are the priority; choose Gazebo when ROS full-stack integration is the priority; and watch Genesis when exploring soft/deformable interactions. Most teams actually adopt a <strong>multi-simulator strategy</strong>, using two or more engines to cross-validate key conclusions, reducing the systemic risk of modeling bias from a single engine.</p>
+<h2 id="234-robot-description-formats-and-asset-pipeline">23.4 Robot Description Formats and Asset Pipeline</h2>
+<h3 id="2341-urdf-robot-description-format">23.4.1 URDF Robot Description Format</h3>
+<p><strong>URDF Robot Description Format</strong> is an XML-based robot model format that describes links, joints, inertia, and geometry for simulation and control. It is the standard in the ROS ecosystem. Its core elements include:</p>
+<ul>
+<li><code>&lt;link&gt;</code>: Links, containing visualization geometry (<code>&lt;visual&gt;</code>), collision geometry (<code>&lt;collision&gt;</code>), and inertial parameters (<code>&lt;inertial&gt;</code>: mass, center of mass, inertia tensor);</li>
+<li><code>&lt;joint&gt;</code>: Joints, with types including revolute, prismatic, fixed, etc., containing axis, limits, and dynamic parameters (damping, friction);</li>
+<li><code>&lt;transmission&gt;</code> and <code>&lt;gazebo&gt;</code> extensions: Describe actuator mapping and simulation-specific parameters.</li>
+</ul>
+<p>URDF's limitations are also clear: it only supports tree structures (closed chains require hacks), does not support parallel joint groups or detailed actuator models, and has weak scene description capabilities. In engineering, the xacro macro mechanism is often used to parameterize and generate URDFs to manage humanoid models with dozens of joints.</p>
+<h3 id="2342-mjcf-simulation-format">23.4.2 MJCF Simulation Format</h3>
+<p><strong>MJCF Simulation Format</strong> is MuJoCo's XML modeling format used to describe articulated rigid body systems with contacts, actuators, and sensors. Compared to URDF, MJCF's differences lie precisely in being "designed for simulation and control":</p>
+<ul>
+<li><strong>Compile-time expansion</strong>: MJCF allows omitting inertial parameters, which are automatically calculated by the compiler from geometry and density;</li>
+<li><strong>Native support for closed chains and equality constraints</strong>: Uses <code>&lt;equality&gt;</code> to describe closed-loop mechanisms like four-bar linkages;</li>
+<li><strong>Actuators and sensors as first-class citizens</strong>: <code>&lt;actuator&gt;</code> supports motors, position/velocity servos, and tendon drives; <code>&lt;sensor&gt;</code> directly declares force/torque, tactile, and other readings;</li>
+<li><strong>Contact parameterization</strong>: Each pair of geometries can be configured with condim, friction, and soft contact parameters, aligning with MuJoCo's convex contact solver semantics.</li>
+</ul>
+<h3 id="2343-usd-and-the-engineering-reality-of-format-conversion">23.4.3 USD and the Engineering Reality of Format Conversion</h3>
+<p>Isaac Sim uses <strong>USD (Universal Scene Description)</strong>, proposed by Pixar, as its scene format. Its hierarchical composition and efficient instancing capabilities are suitable for large scenes and GPU rendering. Thus, a typical humanoid robot asset pipeline is: CAD → URDF/MJCF (control and dynamics semantics) → USD (Isaac rendering semantics), with information loss at each step. Common conversion issues include:</p>
+<ul>
+<li><strong>Inertia tensor loss or error</strong>: If visual meshes exported from CAD lack density assumptions, inertial parameters are completely wrong, directly causing dynamic distortion;</li>
+<li><strong>Collision mesh inflation</strong>: Directly using high-polygon visual meshes as collision meshes slows collision detection by one to two orders of magnitude; convex decomposition or primitive approximation is necessary;</li>
+<li><strong>Differences in joint orientation and limit conventions</strong>: Conventions for joint axes, zero positions, and handedness vary between formats, requiring per-joint verification after conversion;</li>
+<li><strong>Incompatibility of material and friction parameter semantics</strong>: Rendering materials (PBR) and physical materials (friction, restitution coefficient) are two separate systems that must be maintained independently.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Convex Decomposition, Primitive Approximation, Zero Calibration, Asset Pipeline</p>
+<ul>
+<li><strong>Convex decomposition</strong>: Splitting a non-convex mesh into a union of several convex bodies, balancing collision detection speed and geometric fidelity.</li>
+<li><strong>Primitive approximation</strong>: Replacing mesh collision bodies with basic geometries like spheres, capsules, and boxes; fastest for detection but with the largest geometric error.</li>
+<li><strong>Zero calibration</strong>: Determining the correspondence between the model's joint angle zero position and the real robot's encoder zero position; the first step in aligning the simulation model with the real robot.</li>
+<li><strong>Asset pipeline</strong>: The process of converting, verifying, and version-managing models from CAD to formats usable by various simulators.</li>
+</ul>
+</div>
+<h3 id="2344-engineering-essentials-for-humanoid-robot-simulation-modeling">23.4.4 Engineering Essentials for Humanoid Robot Simulation Modeling</h3>
+<p>Whether a humanoid robot model is "realistic" often depends not on the engine but on the modeling details:</p>
+<ol>
+<li><strong>Mass property source hierarchy</strong>: CAD theoretical values → measured weighing values → system identification corrected values, with increasing reliability; the overall center of mass error should be controlled to the millimeter level, otherwise the balance controller will be constantly "surprised" on the real robot;</li>
+<li><strong>Actuator model</strong>: At a minimum, incorporate first-order lag for velocity/torque loops, torque saturation, backlash, and Coulomb friction in joint space; quasi-direct drive (QDD) joints also require modeling the current loop bandwidth;</li>
+<li><strong>Paired parameters for foot-ground contact</strong>: Contact stiffness, damping, and friction coefficients must be calibrated per pair of "foot sole material - ground material" and covered within the domain randomization range;</li>
+<li><strong>Sensor mounting pose extrinsics</strong>: Errors in the extrinsics of cameras/IMUs relative to the link directly contaminate visual policies and state estimation; they must be written into the model using a calibration process (see relevant content in Chapters 6 and 21);</li>
+<li><strong>Collision pair culling</strong>: Humanoid robots have a large number of geometric pairs; explicitly disable collision detection for link pairs that cannot possibly touch to gain significant acceleration.</li>
+</ol>
+<h2 id="235-gpu-large-scale-parallel-simulation-and-policy-training">23.5 GPU Large-Scale Parallel Simulation and Policy Training</h2>
+<h3 id="2351-from-cpu-serial-to-gpu-parallel-an-order-of-magnitude-leap-in-throughput">23.5.1 From CPU Serial to GPU Parallel: An Order-of-Magnitude Leap in Throughput</h3>
+<p>Traditional CPU simulation is limited by the number of cores, and parallelizing tens of environments is near its limit. GPU parallel simulation represents states as batched tensors, executing collision detection, constraint solving, and integration all in kernel form in batches, allowing a single GPU to parallelize thousands to tens of thousands of environments. Assuming a single environment's physical throughput is <span class="arithmatex">\(s\)</span> steps/second, the ideal total throughput for parallelizing <span class="arithmatex">\(N\)</span> environments is approximately</p>
+<div class="arithmatex">\[
+S_{\text{total}} \approx N \cdot s \cdot \eta(N)
+\]</div>
+<p>where <span class="arithmatex">\(\eta(N)\)</span> is the parallel efficiency, close to 1 before the GPU is saturated, and decreasing after saturation due to kernel scheduling and memory bandwidth contention. Engineering experience suggests: set the number of environments near the inflection point of the throughput curve (not the maximum), and ensure observation assembly, reward calculation, and policy forward passes are also completed on the GPU to avoid per-step CPU-GPU memory transfers negating the benefits—this is the design philosophy of Isaac Gym's end-to-end GPU pipeline.</p>
+<h3 id="2352-multi-simulator-training-frameworks-like-humanoidverse">23.5.2 Multi-Simulator Training Frameworks like HumanoidVerse</h3>
+<p><strong>HumanoidVerse</strong> is a multi-simulator training framework for Sim-to-Real humanoid robot learning. Its design philosophy warrants specific discussion: the modeling bias of a single simulator is systematic (specific contact solver, specific integrator, specific actuator model). A policy trained to convergence in a single engine may overfit to that engine's "physical flavor." HumanoidVerse decouples the training environment from the high-level algorithm, allowing the same policy to be trained and evaluated across multiple simulation backends. This effectively adds another layer of randomization in the "engine space," testing the policy's robustness. This approach complements domain randomization: domain randomizes <strong>parameters</strong>, while multi-engine training randomizes <strong>solver structure</strong>.</p>
+<h3 id="2353-engineering-trade-offs-in-parallel-training">23.5.3 Engineering Trade-offs in Parallel Training</h3>
+<p>More parallelism is not always better; the following factors must be weighed:</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Impact</th>
+<th>Engineering Suggestion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU Memory Capacity</td>
+<td>Limits the number of environments and observation dimensions</td>
+<td>Use low resolution for visual observations + in-memory preprocessing</td>
+</tr>
+<tr>
+<td>Physics-Policy Frequency Ratio</td>
+<td>Determines the number of physics steps per policy step</td>
+<td>Typically 10–50, depending on control bandwidth</td>
+</tr>
+<tr>
+<td>Environment Heterogeneity</td>
+<td>Domain randomization increases kernel branching</td>
+<td>Store parameters in vectors, avoid per-environment conditional statements</td>
+</tr>
+<tr>
+<td>Early Termination</td>
+<td>Resetting failed environments causes utilization imbalance</td>
+<td>Use bucketed resets or short episode concatenation</td>
+</tr>
+<tr>
+<td>Random Seed Management</td>
+<td>Affects reproducibility</td>
+<td>Bind seeds to environment IDs, record full configuration</td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, high throughput can mask sample efficiency issues: when hundreds of billions of steps can be collected in an hour, algorithm comparisons should shift to <strong>wall-clock convergence speed</strong> and <strong>final real-robot performance</strong>, rather than traditional sample complexity metrics. Evaluation methods should be adjusted accordingly (see Chapter 25).</p>
+<h2 id="236-sensor-simulation-and-synthetic-data">23.6 Sensor Simulation and Synthetic Data</h2>
+<h3 id="2361-visual-sensor-rendering-pipeline">23.6.1 Visual Sensor Rendering Pipeline</h3>
+<p>Visual sensor simulation operates on two levels. The <strong>geometry layer</strong> is handled by the rendering engine: rasterization or ray tracing generates RGB, depth, semantic segmentation, and instance segmentation images. Isaac Sim's RTX pipeline and ManiSkill3's GPU parallel rendering represent the two extremes of "single-scene high fidelity" and "batch-scene high throughput." The <strong>noise layer</strong> is responsible for injecting real sensor distortions: lens distortion, rolling shutter, motion blur, exposure noise, depth camera holes and quantization stripes, LiDAR multipath echoes, etc. Rendering only "clean" images while ignoring noise modeling is a common cause of Sim-to-Real failure for visual policies.</p>
+<h3 id="2362-force-and-proprioception-simulation">23.6.2 Force and Proprioception Simulation</h3>
+<p>Proprioceptive sensors for humanoid robots (joint encoders, IMUs, foot force/torque sensors, joint torque sensors) are generated in simulation using a "ground truth + noise model" approach: ideal readings are extracted from the dynamic state, then bias, random walk, quantization, and delay are superimposed. Two points require special attention in engineering: First, IMU simulation must include the Coriolis coupling term between gravity projection and angular velocity; otherwise, IMU-based state estimation will exhibit systematic bias during transfer. Second, simulated contact force readings should be aligned with the real sensor's mounting position and filtering characteristics—the "free" global contact ground truth in simulation should not be directly exposed to the policy, otherwise the policy will learn privileged information unavailable on the real robot (unless intentionally used in an asymmetric Actor-Critic teacher-student framework).</p>
+<h3 id="2363-synthetic-data-pipeline">23.6.3 Synthetic Data Pipeline</h3>
+<p>The value of synthetic data lies in transforming the labor-intensive "collect-annotate" process into a compute-intensive "procedural generation" process. A typical synthetic data pipeline for humanoid robots includes: scene and object asset generation → pose and lighting randomization → physics simulation stepping → multi-modal sensor rendering → automatic annotation (bounding boxes, segmentation, keypoints, contact states) → dataset export. NVIDIA Isaac Sim's support for the GR00T synthetic data pipeline is an industrial example of this paradigm: generating manipulation trajectories and visual observations at scale in simulation for pre-training or augmenting humanoid robot foundation models. It is important to note that the <strong>ratio</strong> of synthetic to real data, and the <strong>coverage</strong> of the real distribution by the synthetic distribution, are more important than absolute quantity; data infrastructure and ratio methods are detailed in Chapter 21.</p>
+<h2 id="237-sim-to-real-bridging-the-reality-gap">23.7 Sim-to-Real: Bridging the Reality Gap</h2>
+<h3 id="2371-decomposition-of-the-reality-gap-sources">23.7.1 Decomposition of the Reality Gap Sources</h3>
+<p><strong>Sim-to-Real Transfer</strong> is a general term for techniques that transfer policies or controllers trained in simulation to real robots. Translating the qualitative discussion from Section 23.1.3 into an operational level, the reality gap can be divided into three categories based on how they can be handled:</p>
+<ul>
+<li><strong>Parameterizable Gap</strong>: Continuous parameters such as mass, friction, delay, and stiffness—covered by domain randomization, narrowed by system identification;</li>
+<li><strong>Structural Gap</strong>: Non-parametric effects such as backlash, hysteresis, and soft body deformation—requiring supplementary modeling (e.g., adding history to observations for implicit identification) or structural design to avoid;</li>
+<li><strong>Perceptual Distribution Gap</strong>: Statistical differences between rendered and real images—bridged using visual domain randomization, real data mixing, or domain adaptation.</li>
+</ul>
+<h3 id="2372-domain-randomization">23.7.2 Domain Randomization</h3>
+<p><strong>Domain Randomization</strong> is a Sim-to-Real technique that randomizes simulation parameters during training to improve policy robustness against real-world model mismatch. Formally, let simulation parameters <span class="arithmatex">\(\boldsymbol{\xi}\)</span> (mass, friction, delay, external disturbances, etc.) follow a distribution <span class="arithmatex">\(p(\boldsymbol{\xi})\)</span>. The policy training objective then shifts from maximizing return in a single environment to maximizing the expected return:</p>
+<div class="arithmatex">\[
+\max_{\pi}\; \mathbb{E}_{\boldsymbol{\xi}\sim p(\boldsymbol{\xi})}\left[\, J(\pi;\, \boldsymbol{\xi}) \,\right]
+\]</div>
+<p>Typical randomization parameters for humanoid robots include: link mass and center of mass (on the order of ±10%), joint friction and damping, ground friction coefficient and stiffness, actuator gain and delay, IMU/encoder noise, external push disturbances, and foot terrain. Three engineering key points are:</p>
+<ol>
+<li><strong>Range Calibration</strong>: The randomization range must cover the real parameter distribution (with priors from system identification). Too wide a range slows convergence and yields conservative policies; too narrow leads to transfer failure;</li>
+<li><strong>Observation History</strong>: Incorporating several steps of historical observations allows the policy to implicitly identify environmental parameters online (effectively making <span class="arithmatex">\(\boldsymbol{\xi}\)</span> partially observable), significantly improving transfer robustness;</li>
+<li><strong>Curriculum Convergence</strong>: Learning skills with a narrow range first, then robustness with a wide range, converges faster than using a wide range throughout training.</li>
+</ol>
+<h3 id="2373-system-identification-and-real-robot-calibration">23.7.3 System Identification and Real Robot Calibration</h3>
+<p><strong>System Identification</strong> is the process of building a mathematical model of a dynamic system from measured input-output data to align simulation with reality. For a single joint, drive chain parameters (gain, delay, friction curve) can be fitted via frequency sweep or step excitation. For the whole robot, excitation trajectories are collected under constraints (e.g., double support), and inertial parameters are optimized to minimize the residual between predicted and measured torque/motion:</p>
+<div class="arithmatex">\[
+\min_{\boldsymbol{\theta}}\; \sum_{t} \left\| \boldsymbol{\tau}_{\text{meas}}(t) - \boldsymbol{\tau}_{\text{model}}\big(\mathbf{q}_t, \dot{\mathbf{q}}_t, \ddot{\mathbf{q}}_t;\, \boldsymbol{\theta}\big) \right\|^2
+\]</div>
+<p>where <span class="arithmatex">\(\boldsymbol{\theta}\)</span> represents the inertial, friction, and actuator parameters to be identified. The identification results are used to backfill the simulation model, narrowing the reality gap itself; they also provide empirical evidence for the domain randomization range. The relationship between the two is: system identification "pulls simulation toward reality," while domain randomization "makes the policy insensitive to residual errors." Together, they form the mainstream Sim-to-Real workflow.</p>
+<h3 id="2374-in-the-loop-verification-sil-hil-and-hardware-in-the-loop-testing">23.7.4 In-the-Loop Verification: SiL, HIL, and Hardware-in-the-Loop Testing</h3>
+<p>Before deploying a policy on the robot, the engineering workflow requires layered in-the-loop verification. <strong>Hardware-in-the-Loop (HIL) Testing</strong> is a verification method where real hardware controllers interact with a real-time simulation model of the controlled object, enabling safe and repeatable testing of control software. A typical in-the-loop ladder for humanoid robots is:</p>
+<ol>
+<li><strong>SiL</strong>: Control software (compiled as an executable isomorphic to the target platform) runs in a closed loop with the simulator on an industrial PC to verify logical correctness;</li>
+<li><strong>HIL</strong>: Control software runs on the real onboard computing platform, closed-loop with a real-time simulator via real bus interfaces (EtherCAT/CAN) to verify real-time performance, drive chain, and communication timing;</li>
+<li><strong>Single-Joint/Single-Leg Bench HIL</strong>: Some real actuators participate in the closed loop to verify the electromechanical interface;</li>
+<li><strong>Controlled First Full-Robot Test</strong>: Low-amplitude motion verification under a gantry protection system, gradually expanding the envelope.</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Pure Simulation Training&lt;br/&gt;GPU Parallel Environment"] --&gt; B["System Identification Calibration&lt;br/&gt;Backfill Model Parameters"]
+    B --&gt; C["Domain Randomization Retraining"]
+    C --&gt; D["SiL Software-in-the-Loop&lt;br/&gt;Logical Regression"]
+    D --&gt; E["HIL Hardware-in-the-Loop&lt;br/&gt;Real-Time &amp; Bus Verification"]
+    E --&gt; F["Bench-Level Verification&lt;br/&gt;Single Joint/Leg"]
+    F --&gt; G["Controlled First Full-Robot Test&lt;br/&gt;Gantry Protection"]
+    G --&gt; H["Free Operation&lt;br/&gt;Continuous Data Collection"]
+    H -.-&gt;|"Real Robot Data"| B</code></pre>
+<p>A special requirement for HIL simulation is <strong>hard real-time</strong>: the simulation must advance synchronously with wall-clock time (RTF = 1); any timeout manifests as bus frame loss on the controller side. Therefore, HIL typically uses deterministic scheduling (real-time kernel) and simplified physics models, rather than the high-throughput variants used for RL training.</p>
+<h2 id="238-simulation-benchmarks-and-regression-verification">23.8 Simulation Benchmarks and Regression Verification</h2>
+<h3 id="2381-humanoidbench-and-whole-body-task-benchmarks">23.8.1 HumanoidBench and Whole-Body Task Benchmarks</h3>
+<p><strong>HumanoidBench</strong> is a whole-body humanoid locomotion and manipulation simulation benchmark based on the Unitree H1 robot morphology, providing over 40 tasks for controlled comparison of VLA and control algorithms. Its tasks cover pure mobility (walking, running, balancing), pure manipulation (reaching, carrying, inserting), and locomotion-manipulation coupling (e.g., pushing objects while moving). It uses a unified robot model and environmental parameters, making cross-algorithm comparisons meaningful. For humanoid robot research, the value of HumanoidBench lies in transforming the core challenge of "whole-body coordination" from anecdotal demonstrations into quantifiable comparison protocols. Its limitations include covering only simulation and being tied to the Unitree H1 morphology; extrapolation to other robot models and real hardware requires additional verification. The overall methodology for evaluation systems is discussed in Chapter 25.</p>
+<h3 id="2382-maniskill-and-manipulation-skill-benchmarks">23.8.2 ManiSkill and Manipulation Skill Benchmarks</h3>
+<p>The <strong>ManiSkill</strong> benchmark targets generalizable manipulation skills, providing standardized tasks, simulation environments, and evaluation protocols. Its third-generation platform, ManiSkill3 (see Section 23.3.7), supports large-scale evaluation with GPU-parallel physics and rendering. For humanoid robots whose core selling point is manipulation capability, the ManiSkill series offers a complete comparison stack from demonstration data and baseline policies to success rates, enabling the screening of clearly substandard policies before deployment on the robot.</p>
+<h3 id="2383-scenario-libraries-and-regression-testing">23.8.3 Scenario Libraries and Regression Testing</h3>
+<p>Beyond public benchmarks, internal <strong>private scenario libraries</strong> form the main body of the simulation verification system: every historical real-robot failure (slipping, collision, overheating, communication loss) is converted into a reproducible simulation test case and integrated into the continuous integration (CI) pipeline. Any software version must pass full regression testing before release. Health metrics for a scenario library include: number and coverage of test cases, reproduction fidelity of failure cases (consistency between simulation reproduction and real-robot logs), and the cycle time from real-robot incident to test case inclusion. This "incident-driven scenario library" approach elevates simulation from a development tool to an organizational safety asset.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Real Robot Operation Logs"] --&gt; B["Incident Analysis &amp; Root Cause"]
+    B --&gt; C["Simulation Test Case Reproduction"]
+    C --&gt; D["Private Scenario Library"]
+    D --&gt; E["CI Regression Pipeline"]
+    E --&gt;|"All Pass"| F["Version Release"]
+    E --&gt;|"Any Failure"| G["Fix &amp; Retrain"]
+    G --&gt; E</code></pre>
+<h2 id="239-chapter-summary">23.9 Chapter Summary</h2>
+<p>This chapter focuses on "how simulation can reliably serve humanoid robots." Mathematically, the floating-base articulated body equations <span class="arithmatex">\(\mathbf{M}\ddot{\mathbf{q}}+\mathbf{C}\dot{\mathbf{q}}+\mathbf{g}=\mathbf{S}^{\top}\boldsymbol{\tau}+\mathbf{J}_c^{\top}\mathbf{f}_c\)</span> and contact complementarity conditions define the solver's target for physics engines, while CRBA/ABA algorithms and symplectic integrators determine their speed and long-term stability. Platform-wise, MuJoCo excels in convex contact solving, NVIDIA Isaac Sim/Isaac Lab in photorealistic rendering and GPU-scaled training, Gazebo in ROS ecosystem integration, Drake in rigorous analysis for optimal control, and Genesis and ManiSkill3 represent new directions in differentiable unified physics and full-GPU pipelines; URDF and MJCF serve as dual semantic standards for model assets. Methodologically, GPU parallelism transforms the RL sampling bottleneck into an algorithmic problem, while the Sim-to-Real reality gap requires a three-layer toolkit: system identification (narrowing model error), domain randomization (dulling policy sensitivity), and SiL/HIL in-the-loop verification (engineering safety net). Simulation benchmarks (HumanoidBench, ManiSkill) and private scenario libraries institutionalize comparison and regression. The next chapter will build on this to discuss the end-to-end software stack from perception to action, and how simulation outputs are deployed onto onboard computing platforms.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-22/">← Previous<span>Chapter 22: Software Middleware</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-24/">Next →<span>Chapter 24: End-to-End Software Stack</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-23-simulation-and-physics-engines">Chapter 23: Simulation and Physics Engines</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#231-the-role-of-simulation-in-humanoid-robot-development">23.1 The Role of Simulation in Humanoid Robot Development</a><ul>
+<li><a href="#2311-why-humanoid-robots-cannot-do-without-simulation">23.1.1 Why Humanoid Robots Cannot Do Without Simulation</a></li>
+<li><a href="#2312-the-role-of-simulation-in-the-complete-robot-development-process">23.1.2 The Role of Simulation in the Complete Robot Development Process</a></li>
+<li><a href="#2313-the-capability-boundary-of-simulation-the-reality-gap">23.1.3 The Capability Boundary of Simulation: The Reality Gap</a></li>
+</ul>
+</li>
+<li><a href="#232-mathematical-foundations-of-rigid-body-dynamics-simulation">23.2 Mathematical Foundations of Rigid Body Dynamics Simulation</a><ul>
+<li><a href="#2321-equations-of-motion-for-articulated-rigid-body-systems">23.2.1 Equations of Motion for Articulated Rigid Body Systems</a></li>
+<li><a href="#2322-forward-dynamics-algorithms-crba-and-aba">23.2.2 Forward Dynamics Algorithms: CRBA and ABA</a></li>
+<li><a href="#2323-contact-modeling-complementarity-constraints-and-penalty-methods">23.2.3 Contact Modeling: Complementarity Constraints and Penalty Methods</a></li>
+<li><a href="#2324-time-integration-and-numerical-stability">23.2.4 Time Integration and Numerical Stability</a></li>
+<li><a href="#2325-python-example-energy-drift-in-pendulum-integration">23.2.5 Python Example: Energy Drift in Pendulum Integration</a></li>
+</ul>
+</li>
+<li><a href="#233-mainstream-physics-engines-and-simulation-platforms">23.3 Mainstream Physics Engines and Simulation Platforms</a><ul>
+<li><a href="#2331-mujoco-physics-engine">23.3.1 MuJoCo Physics Engine</a></li>
+<li><a href="#2332-nvidia-isaac-sim-and-isaac-lab">23.3.2 NVIDIA Isaac Sim and Isaac Lab</a></li>
+<li><a href="#2333-isaac-gym-benchmarks-and-gpu-end-to-end-reinforcement-learning">23.3.3 Isaac Gym Benchmarks and GPU End-to-End Reinforcement Learning</a></li>
+<li><a href="#2334-gazebo">23.3.4 Gazebo</a></li>
+<li><a href="#2335-drake-systems-toolbox">23.3.5 Drake Systems Toolbox</a></li>
+<li><a href="#2336-genesis-generative-physics-engine">23.3.6 Genesis Generative Physics Engine</a></li>
+<li><a href="#2337-maniskill3-and-gpu-parallel-rendering">23.3.7 ManiSkill3 and GPU Parallel Rendering</a></li>
+<li><a href="#2338-platform-capability-comparison">23.3.8 Platform Capability Comparison</a></li>
+</ul>
+</li>
+<li><a href="#234-robot-description-formats-and-asset-pipeline">23.4 Robot Description Formats and Asset Pipeline</a><ul>
+<li><a href="#2341-urdf-robot-description-format">23.4.1 URDF Robot Description Format</a></li>
+<li><a href="#2342-mjcf-simulation-format">23.4.2 MJCF Simulation Format</a></li>
+<li><a href="#2343-usd-and-the-engineering-reality-of-format-conversion">23.4.3 USD and the Engineering Reality of Format Conversion</a></li>
+<li><a href="#2344-engineering-essentials-for-humanoid-robot-simulation-modeling">23.4.4 Engineering Essentials for Humanoid Robot Simulation Modeling</a></li>
+</ul>
+</li>
+<li><a href="#235-gpu-large-scale-parallel-simulation-and-policy-training">23.5 GPU Large-Scale Parallel Simulation and Policy Training</a><ul>
+<li><a href="#2351-from-cpu-serial-to-gpu-parallel-an-order-of-magnitude-leap-in-throughput">23.5.1 From CPU Serial to GPU Parallel: An Order-of-Magnitude Leap in Throughput</a></li>
+<li><a href="#2352-multi-simulator-training-frameworks-like-humanoidverse">23.5.2 Multi-Simulator Training Frameworks like HumanoidVerse</a></li>
+<li><a href="#2353-engineering-trade-offs-in-parallel-training">23.5.3 Engineering Trade-offs in Parallel Training</a></li>
+</ul>
+</li>
+<li><a href="#236-sensor-simulation-and-synthetic-data">23.6 Sensor Simulation and Synthetic Data</a><ul>
+<li><a href="#2361-visual-sensor-rendering-pipeline">23.6.1 Visual Sensor Rendering Pipeline</a></li>
+<li><a href="#2362-force-and-proprioception-simulation">23.6.2 Force and Proprioception Simulation</a></li>
+<li><a href="#2363-synthetic-data-pipeline">23.6.3 Synthetic Data Pipeline</a></li>
+</ul>
+</li>
+<li><a href="#237-sim-to-real-bridging-the-reality-gap">23.7 Sim-to-Real: Bridging the Reality Gap</a><ul>
+<li><a href="#2371-decomposition-of-the-reality-gap-sources">23.7.1 Decomposition of the Reality Gap Sources</a></li>
+<li><a href="#2372-domain-randomization">23.7.2 Domain Randomization</a></li>
+<li><a href="#2373-system-identification-and-real-robot-calibration">23.7.3 System Identification and Real Robot Calibration</a></li>
+<li><a href="#2374-in-the-loop-verification-sil-hil-and-hardware-in-the-loop-testing">23.7.4 In-the-Loop Verification: SiL, HIL, and Hardware-in-the-Loop Testing</a></li>
+</ul>
+</li>
+<li><a href="#238-simulation-benchmarks-and-regression-verification">23.8 Simulation Benchmarks and Regression Verification</a><ul>
+<li><a href="#2381-humanoidbench-and-whole-body-task-benchmarks">23.8.1 HumanoidBench and Whole-Body Task Benchmarks</a></li>
+<li><a href="#2382-maniskill-and-manipulation-skill-benchmarks">23.8.2 ManiSkill and Manipulation Skill Benchmarks</a></li>
+<li><a href="#2383-scenario-libraries-and-regression-testing">23.8.3 Scenario Libraries and Regression Testing</a></li>
+</ul>
+</li>
+<li><a href="#239-chapter-summary">23.9 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

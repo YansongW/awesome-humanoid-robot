@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M04 · Drives, Sensing, and Wiring: Making the Joint Understand and Respond · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M04 · Drives, Sensing, and Wiring: Making the Joint Understand and Respond</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m04-drives-sensing-and-wiring-making-the-joint-understand-and-respond">M04 · Drives, Sensing, and Wiring: Making the Joint Understand and Respond</h1>
+<p><strong>Global Position</strong>: After M02 Motor Selection and M03 Reducer Design, before M05 Assembly and M06 Firmware. Inputs are the motor parameters calculated in M02 (phase current, phase resistance, KV, bus voltage level) and the reducer structure from M03. Outputs are three items: <strong>drive board selection conclusion, encoder scheme, single-joint electrical drawings (power/signal/bus)</strong> — M05 wires according to the drawings, M06 burns firmware according to the scheme.</p>
+<p><strong>Prerequisites</strong>: Motor calculations from M02 are complete (continuous phase current and bus voltage are quantified); the reducer structure from M03 is finalized (knowing where the encoder can be mounted and where the wires pass through).</p>
+<p>Theoretical background: <a href="/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>, <a href="/entry/ent_component_servo_drive_2024/">Servo Drive</a>, <a href="/entry/ent_component_joint_encoder_2024/">Joint Encoder</a>, <a href="/entry/ent_technology_can_bus_2024/">CAN Bus</a> cards; systematic discussion in <a href="/en/wiki/chapters/chapter-04/">Chapter 4 Actuators</a>, <a href="/en/wiki/chapters/chapter-05/">Chapter 5 Sensing and Perception Hardware</a>, and <a href="/en/wiki/chapters/chapter-06/">Chapter 6 Computing, Power, and Thermal Management</a>.</p>
+<h2 id="step-1-drive-selection-foc-is-the-baseline">Step 1: Drive Selection — FOC is the Baseline</h2>
+<p>[What to do] Only consider drive solutions that support <a href="/entry/ent_method_foc_motor_control/">FOC</a>, converging to one from the candidates in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>Positioning</th>
+<th>Source/Anchor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ST B-G431B-ESC1</td>
+<td>Cheapest FOC entry board, $19</td>
+<td>Standard for Berkeley 6512 actuator (<a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>)</td>
+</tr>
+<tr>
+<td>ODrive / Moteus / VESC</td>
+<td>Third-party open-source drives, mature ecosystem</td>
+<td>Berkeley structure compatible with these three (same repository)</td>
+</tr>
+<tr>
+<td>ODRI MicroDriver</td>
+<td>Research-grade custom drive card, BSD fully open-source design files</td>
+<td><a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI Actuator Hardware Repository</a>, beginner-friendliness 2/5</td>
+</tr>
+</tbody>
+</table>
+<p>After selection, perform two hard checks and record them on the drawing title page:</p>
+<pre class="highlight"><code>Check 1 (Voltage): Drive board voltage range ⊇ M02's determined bus voltage level (e.g., 24 V level must cover 6S full charge)
+Check 2 (Current): Continuous phase current rating ≥ I_M02 × 1.5   (1.5 is an engineering recommended margin, verify based on thermal conditions)</code></pre>
+<p>Example: M02 calculates joint continuous phase current 8 A → requires drive board continuous rating ≥ 12 A; bus voltage 24 V level → board rated voltage must cover 24 V. Look up the datasheet and fill both values into the acceptance table; if not found, mark "Must confirm with supplier," do not assume "should be enough."</p>
+<p>[Why] FOC transforms three-phase currents into the d-q coordinate system rotating with the rotor, decoupling torque and flux linkage. It is a prerequisite for low torque ripple and current-loop force control (FOC entity card); cheap six-step commutation ESCs cannot achieve this, making all M07 force control impossible. Drive board overcurrent burnout is the most common hardware accident during the bench testing phase; the 1.5x margin is reserved for startup/stall current spikes.</p>
+<p>[How to analyze your situation] Tight budget, willing to solder: B-G431B-ESC1. Berkeley has verified that a "$129 motor + $19 drive board" can run zero-shot sim-to-real locomotion. Want out-of-the-box, minimal power-stage work: Moteus/ODrive. Want to develop the drive board yourself: Read the ODRI <code>open_robot_actuator_hardware</code> repository first before deciding; the entry barrier is high (odri documentation).</p>
+<h2 id="step-2-current-sensing-and-current-loop-the-upper-limit-of-force-control-lies-here">Step 2: Current Sensing and Current Loop — The Upper Limit of Force Control Lies Here</h2>
+<p>[What to do] Open the schematic/documentation of the selected drive board, confirm three items, and record them in the drawings:</p>
+<ol>
+<li><strong>Current Sensing Topology</strong>: Low-side three-resistor, low-side single-resistor, or inline (phase wire) sampling — conceptual difference: low-side sampling is cheap but can only see current during specific PWM windows; inline sampling provides continuous visibility but is costly;</li>
+<li><strong>Current Loop Bandwidth</strong>: Target ≥ 1 kHz (engineering recommended value, verify against board documentation and actual measurement);</li>
+<li><strong>Whether sampling is synchronized with PWM</strong>: If not synchronized, switching noise will be captured, causing noisy current readings.</li>
+</ol>
+<p>[Why] The force control of <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi-Direct Drive (QDD)</a> is essentially "using the current loop as a torque sensor" — the faster and more accurate the current loop, the faster and more accurate the force control. Remember one sentence: <strong>Force control performance = Current loop performance + Communication latency</strong>. In the three-loop cascade, the current loop is the innermost; the outer loop bandwidth can only be 1/5–1/10 of it (<a href="/entry/ent_principle_current_velocity_position_loops/">Current-Velocity-Position Three Loops</a> card). If the inner loop is weak, the whole system fails.</p>
+<p>[How to analyze your situation] Smart servo route: Skip this step (the loop is sealed inside the servo). Self-developed QDD: Use the drive board's host software to perform a current step test, record the rise time, and back-calculate the bandwidth; if the sense resistor gets hot or readings are noisy, first check the layout and sampling timing, then suspect the algorithm.</p>
+<h2 id="step-3-encoder-scheme-and-mounting">Step 3: Encoder Scheme and Mounting</h2>
+<p>[What to do] Magnetic encoder scheme = chip + radially magnetized magnet (<a href="/entry/ent_mat_neodymium_magnet/">Neodymium Magnet</a>) + 3D-printed bracket. Order the three items separately:</p>
+<ul>
+<li>Chip: Start with AS5600 (12-bit, $3, used by Berkeley, berkeley-humanoid-lite repository); for finer velocity estimation, upgrade to a higher-resolution model (price must be confirmed with supplier).</li>
+<li>Quantity: One on the motor side is mandatory (for FOC commutation); for force control, add one on the output side to form a dual-encoder setup.</li>
+</ul>
+<p>Record the three installation essentials in the assembly process card: ① Magnet and chip are <strong>coaxial</strong>; ② Magnet-chip gap follows the value specified in the chip datasheet (must be confirmed based on the selected model); ③ Encoder and its wiring are <strong>kept away from high-current phase wires</strong>. Select the interface based on bandwidth and wire count:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Signal Wire Count</th>
+<th>Bandwidth/Latency Qualitative</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I²C</td>
+<td>2</td>
+<td>Slow, suitable for low-speed reading</td>
+<td>Debugging/Auxiliary</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>4</td>
+<td>Fast, low latency</td>
+<td>Preferred for motor-side FOC commutation</td>
+</tr>
+<tr>
+<td>ABI (Incremental)</td>
+<td>3</td>
+<td>Fast, but absolute angle unknown on power-up</td>
+<td>Applications with homing capability</td>
+</tr>
+<tr>
+<td>PWM</td>
+<td>1</td>
+<td>Simple, anti-interference, limited resolution</td>
+<td>Low-cost backup</td>
+</tr>
+</tbody>
+</table>
+<p>[Why] The motor-side encoder is the lifeline of FOC: commutation requires knowing the rotor's electrical angle; a one-degree reading error causes a corresponding torque ripple. The value of the output-side encoder is to "see through" the reducer — dual encoders can directly measure backlash and elastic deformation. The ODRI BLMC actuator achieves proprioceptive force control precisely through motor-side/output-side dual encoders (odri documentation); installing only the motor-side encoder systematically overestimates accuracy (<a href="/entry/ent_component_joint_encoder_2024/">Joint Encoder</a> card). Magnetic encoders are sensitive to coaxial alignment and electromagnetic interference; these two factors account for the vast majority of abnormal readings for beginners.</p>
+<p>[How to analyze your situation] Smart servo: The built-in feedback is sufficient; don't overcomplicate. Self-developed QDD for position control only: Install the motor-side encoder first, and reserve bracket mounting holes on the housing for the output-side encoder. Target RL locomotion/force control: Go straight to dual encoders; starting with the AS5600 level is sufficient — for more trade-offs, see the <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Manual</a>.</p>
+<h2 id="step-4-wire-gauge-voltage-drop-and-connectors">Step 4: Wire Gauge, Voltage Drop, and Connectors</h2>
+<p>[What to do] Select wire gauge using the formula, criterion: <strong>Full-load voltage drop ≤ 5% of bus voltage</strong> (engineering recommended value):</p>
+<pre class="highlight"><code>R = ρ·L / A      ρ_copper = 1.7×10⁻⁸ Ω·m, L is total round-trip length, A is wire cross-sectional area
+ΔV = I·R         Requirement ΔV ≤ 0.05 × V_bus</code></pre>
+<p>Complete example (bus voltage 24 V level, joint peak current 10 A, one-way wire length 1 m, AWG data for generic copper wire):</p>
+<pre class="highlight"><code>20 AWG: A ≈ 0.518 mm² → R = 1.7e-8 × 2 / 0.518e-6 ≈ 0.066 Ω
+ΔV = 10 × 0.066 = 0.66 V ≈ 2.7% of 24 V  ✓ Pass
+Same condition, 12 V bus: 0.66 / 12 = 5.5%  ✗ → Switch to 18 AWG (A ≈ 0.82 mm², ΔV ≈ 0.41 V ≈ 3.4% ✓)</code></pre>
+<p>Connector selection: Use XT30 (small joints) / XT60 (trunk lines) for power, with keying and locking features; use JST type for signals. All solder/crimp points should have strain relief (heat shrink + cable clamp); bend radius ≥ 5x wire diameter (engineering recommended value); route power and signal wires in <strong>separate bundles</strong>; when crossing is unavoidable, cross perpendicularly.</p>
+<p>[Why] Wire resistance not only consumes voltage but also generates heat: the 0.066 Ω in the example dissipates 0.66 W at 10 A, which becomes a heat source when enclosed in the joint housing. In a vibrating environment, most "intermittent power loss" incidents are due to loose or poorly crimped connectors, not a faulty board.</p>
+<p>[How to analyze your situation] For internal joint wiring &lt; 0.3 m, you can slightly reduce wire gauge to save weight; trunk lines from the torso to the legs must be calculated item by item. First, build a sample wire run and measure the voltage drop at 10 A before bulk ordering — actual measurement is more reliable than tables.</p>
+<h2 id="step-5-can-bus-electrical">Step 5: CAN Bus Electrical</h2>
+<p>【What to Do】Wire in a daisy-chain (hand-in-hand) topology, <strong>star topology is prohibited</strong>; solder one 120 Ω termination resistor at each end of the bus; stub lengths ≤ 0.3 m (engineering recommendation). Power off after completion, measure resistance between CANH-CANL with a multimeter; it should be ≈ 60 Ω (two 120 Ω resistors in parallel). Baud rate is tied to cable length: 1 Mbps corresponds to meter-scale cable length; for longer cables, reduce the baud rate (engineering recommendation, verify against the transceiver datasheet).</p>
+<p>For the anchor solution, you can directly copy: Berkeley Humanoid Lite has one CAN 2.0 bus per limb (1 Mbps, connected to the main controller via a USB-CAN adapter), actuators and IMU communicate at 250 Hz, with a maximum of 64 devices per bus (berkeley-humanoid-lite archive).</p>
+<p>【Why】<a href="/entry/ent_technology_can_bus_2024/">CAN</a> relies on differential signals for noise immunity, but high-frequency signals reflect at cable ends—termination resistors absorb these reflections; without them, waveform ringing and random frame loss occur. The daisy-chain topology ensures continuous impedance along each segment; star branches are impedance discontinuities, and communication becomes unreliable as node count increases. If bandwidth is insufficient, evaluate <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>, at the cost of expensive slave chips and the need for a real-time Linux master (refer to the ODRI Master Board approach, odri archive).</p>
+<p>【How to Analyze Your Situation】Number of joints ≤ 12, control frequency ≤ 500 Hz: CAN 2.0 is sufficient; a USB-CAN adapter costs tens of dollars to get started. Multiple driver boards ship with the same default node ID; <strong>power them on one by one to change IDs, label them, then network them</strong>; otherwise, all devices will conflict on the bus as soon as it is activated.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Single-joint electrical drawings documented: three drawings for power, signal, and bus, specifying wire gauge, connector model, and termination resistor location.</li>
+<li>[ ] Two hard checks (voltage, current) for the driver board with formulas and numerical values, sourced from the datasheet or marked as "needs confirmation from supplier."</li>
+<li>[ ] Encoder readings stable when stationary: fluctuation on the order of ±1 LSB (AS5600 is 12-bit, 1 LSB ≈ 0.088°, see <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Manual</a>).</li>
+<li>[ ] Wire gauge selection includes complete formulas and calculation examples; measured voltage drop at full load ≤ 5% of the bus voltage.</li>
+<li>[ ] CAN network measured with power off: CANH-CANL ≈ 60 Ω; continuous communication at 250 Hz for 1 hour without disconnection.</li>
+<li>[ ] Each driver board node ID is unique and labeled, recorded in the drawings.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encoder readings jitter, velocity loop oscillation</td>
+<td>Magnetic encoder routed parallel to phase wires / Magnet eccentric or gap misaligned</td>
+<td>Twist encoder wires, keep away from phase wires; recheck coaxiality and gap</td>
+</tr>
+<tr>
+<td>CAN communication randomly interrupted</td>
+<td>Termination resistor missing/duplicated, star topology</td>
+<td>Measure 60 Ω with power off: infinite = missing, far below 60 = too many; change to daisy-chain</td>
+</tr>
+<tr>
+<td>Connector/harness heating</td>
+<td>Loose connection, undersized wire gauge, poor crimping</td>
+<td>Use infrared thermography at full load to locate hot spots; re-crimp or increase wire gauge</td>
+</tr>
+<tr>
+<td>I²C encoder data erratic</td>
+<td>Incorrect pull-up resistors, trace too long</td>
+<td>Shorten traces, adjust pull-ups per datasheet; if still problematic, switch to SPI</td>
+</tr>
+<tr>
+<td>Communication intermittent, no pattern found</td>
+<td>Ground loop (multiple ground points)</td>
+<td>Single-point grounding for signal ground; use isolated CAN transceivers if necessary</td>
+</tr>
+<tr>
+<td>Occasional power loss after vibration</td>
+<td>Poor terminal crimping, no strain relief</td>
+<td>Perform pull-force tests on each wire; add heat shrink tubing and cable clamps</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous task: <a href="/en/roadmap/missions/m03-reducer-design/">M03 · Reducer Design and Calculation</a></li>
+<li>Next task: <a href="/en/roadmap/missions/m05-print-assembly/">M05 · 3D Printing and Mechanical Assembly</a></li>
+<li>Manuals: <a href="/en/roadmap/playbooks/actuator-selection/">Actuator Selection Manual</a> · <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Manual</a></li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-04/">Chapter 4 Actuators</a>, <a href="/en/wiki/chapters/chapter-05/">Chapter 5 Sensing and Perception Hardware</a>, <a href="/en/wiki/chapters/chapter-06/">Chapter 6 Computing, Power, and Thermal Management</a></li>
+<li><a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a> · <a href="/en/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m03-reducer-design/">← Previous<span>M03 · Reducer Design and Calculation: Reduction Ratio Is Not a Guess</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m05-print-assembly/">Next →<span>M05 · 3D Printing and Mechanical Assembly: Turning Drawings into a Joint That Feels Warm in Your Hand</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m04-drives-sensing-and-wiring-making-the-joint-understand-and-respond">M04 · Drives, Sensing, and Wiring: Making the Joint Understand and Respond</a><ul>
+<li><a href="#step-1-drive-selection-foc-is-the-baseline">Step 1: Drive Selection — FOC is the Baseline</a></li>
+<li><a href="#step-2-current-sensing-and-current-loop-the-upper-limit-of-force-control-lies-here">Step 2: Current Sensing and Current Loop — The Upper Limit of Force Control Lies Here</a></li>
+<li><a href="#step-3-encoder-scheme-and-mounting">Step 3: Encoder Scheme and Mounting</a></li>
+<li><a href="#step-4-wire-gauge-voltage-drop-and-connectors">Step 4: Wire Gauge, Voltage Drop, and Connectors</a></li>
+<li><a href="#step-5-can-bus-electrical">Step 5: CAN Bus Electrical</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자기 제어 가능한 가변 곡률을 가진 소프트 연속체 로봇 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">자기 제어 가능한 가변 곡률을 가진 소프트 연속체 로봇</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>자기 제어 가능한 가변 곡률을 가진 소프트 연속체 로봇</h1>
+      <p class="entry-name-en">A Soft Continuum Robot with Self-Controllable Variable Curvature</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">상위</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.01739v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (806 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 외력이나 이산식 잠금 장치 없이 세그먼트 단위에서 연속적인 곡률과 강성 변화를 실현하는 모터 제어 입자 잠금 성장 척추를 내장한 공압식 소프트 연속체 로봇 SCoReS를 제안한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2401.01739" target="_blank" rel="noopener">A Soft Continuum Robot with Self-Controllable Variable Curvature</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>SCoReS는 모터 구동 입자 잠금( Granular Jamming ) 메커니즘을 통해 소프트 로봇 척추의 강성과 곡률을 분절 단위로 연속 조절할 수 있게 하여, 기존 설계가 외부 힘이나 이산 잠금 장치에 의존하던 한계를 극복합니다. 이 설계는 코끼리 코나 타조 목의 다중 곡률 자연 형태를 모방하여 로봇이 복잡한 환경에서 유연하게 변형할 수 있게 합니다. 연구는 보 이론(Beam Theory)과 유한 요소 해석을 기반으로 모델을 구축하고, 실험을 통해 굽힘 성능을 검증했으며, 최종적으로 다양한 형상에서 과일을 집는 응용을 시연했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법</h3>
+<ul>
+<li><strong>핵심 메커니즘</strong>: 미세 입자 잠금 기술을 사용하여 모터가 척추 내부 입자의 압축 정도를 제어함으로써 강성과 곡률을 연속적으로 조절합니다. 척추 자체는 성장형 척추(Growing Spine)로, 외부 힘이나 이산 잠금 요소가 필요 없습니다.</li>
+<li><strong>설계 특징</strong>: 로봇은 공압으로 구동되며, 분절 단위 제어를 통해 각 독립 분절이 서로 다른 곡률을 생성할 수 있어 S자 또는 C자 형태의 다중 굽힘 윤곽을 형성합니다.</li>
+</ul>
+<h3 id="_4">모델링 및 시뮬레이션</h3>
+<ul>
+<li><strong>이론 모델</strong>: 보 이론을 기반으로 곡률과 강성의 관계를 유도하고, 입자 잠금으로 인한 비선형 재료 특성을 고려합니다.</li>
+<li><strong>FEA 시뮬레이션</strong>: 유한 요소 해석을 사용하여 다양한 공압 및 입자 압축 상태에서의 변형 거동을 시뮬레이션하고, 실험 데이터와 비교하여 검증합니다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>검증 실험</strong>: 입자 압축 정도에 따른 로봇 각 분절의 굽힘 각도와 강성 변화를 측정하고, 연속 조절 범위(예: 곡률 0에서 최대값까지의 연속 전이)를 기록합니다.</li>
+<li><strong>응용 시연</strong>: 다양한 과일 집기 작업에서 테스트하며, 로봇이 분절 곡률을 조정하여 서로 다른 형태(예: 원형 사과, 긴 바나나)에 적응하고 성공적으로 집어 안정적으로 유지합니다.</li>
+</ul>
+<h3 id="_6">주요 결과</h3>
+<ul>
+<li><strong>연속 제어</strong>: 곡률 변화에 이산적 점프가 없으며, 분절 단위 조절 정밀도는 ±2°에 달합니다.</li>
+<li><strong>강성 범위</strong>: 입자 잠금으로 강성 변화가 3배 이상(유연 상태에서 강성 상태까지) 발생합니다.</li>
+<li><strong>응용 효과</strong>: 5가지 서로 다른 과일 집기에서 성공률이 90%를 초과하여 적응 능력을 검증했습니다.</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>SCoReS는 입자 잠금 성장형 척추를 통해 소프트 로봇의 자체 제어 연속 곡률을 구현하여, 제한된 환경에서의 정밀 조작을 위한 새로운 솔루션을 제공합니다. 향후 입자 재료와 모터 제어 알고리즘을 최적화하여 응답 속도를 향상시킬 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wang_a_soft_continuum_robot_with_se_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법</a></li>
+<li><a href="#_4">모델링 및 시뮬레이션</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 결과</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

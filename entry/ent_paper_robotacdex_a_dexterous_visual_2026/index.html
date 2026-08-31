@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation</h1>
+      <p class="entry-name-en">RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31836v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (910 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RoboTacDex 是一个面向人形机器人灵巧操作的大规模多模态数据集，由研究团队基于 Unitree G1 机器人构建。该数据集包含 6000 条轨迹，覆盖 19 个任务、23 种技能和 22 种物体交互，并提供多视角 RGB-D、触觉反馈及语义标注。其核心贡献在于通过改进的多相机同步系统实现毫秒级数据采集，并验证了三种模仿学习模型在复杂双手机器人任务上的有效性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.31836" target="_blank" rel="noopener">RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>RoboTacDex 数据集旨在解决机器人学习中大规模多样化演示轨迹的稀缺问题，专门针对人形机器人的灵巧操作行为设计。它基于公开可用的 Unitree G1 人形机器人平台，记录了 6000 条包含多视角 RGB 与深度图像、触觉反馈以及详细语义标注的轨迹数据。数据集涵盖了 19 个任务、23 种技能和 22 种物体交互，其中包含许多仅能通过双臂和灵巧手完成的挑战性任务，以模拟人类操作逻辑和真实世界的操作复杂性。为确保数据质量，团队开发了改进的多相机同步系统，实现了毫秒级的数据同步与模态记录。实验部分评估了三种代表性模仿学习模型，结果表明该数据集在任务成功率与泛化能力上均表现良好，验证了其有效性与多样性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">数据集构建</h3>
+<ul>
+<li><strong>平台与规模</strong>：基于 Unitree G1 人形机器人，采集 6000 条演示轨迹，涵盖 19 个任务、23 种技能，与 22 种物体交互。</li>
+<li><strong>模态记录</strong>：提供多视角 RGB 与深度图像、触觉反馈（tactile feedback）以及详细的语义标注（semantic annotations）。</li>
+<li><strong>任务特点</strong>：包含仅能通过双臂与灵巧手完成的挑战性任务，旨在模仿人类操作逻辑并模拟真实世界的操作复杂性。</li>
+</ul>
+<h3 id="_4">数据采集系统</h3>
+<ul>
+<li><strong>同步技术</strong>：开发了改进的多相机同步系统，实现毫秒级（millisecond）数据同步与多模态记录。</li>
+<li><strong>质量保障</strong>：通过高精度同步确保各模态数据的时间对齐，为后续模型训练提供可靠基础。</li>
+</ul>
+<h3 id="_5">实验设置与结果</h3>
+<ul>
+<li><strong>模型评估</strong>：在数据集上测试了三种代表性模仿学习模型（imitation learning models），分析其在不同任务类别中的性能、优势与局限。</li>
+<li><strong>关键指标</strong>：成功试验结果（successful trial results）表明模型在任务执行上表现良好；跨任务套件的泛化能力（generalization capabilities）达到中等水平，验证了数据集的多样性与有效性。</li>
+<li><strong>开源计划</strong>：数据集即将开源（open-sourced soon）。</li>
+</ul>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2606.31836v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">uses_hardware_from</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">introduces</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_dexterous_manipulation/">灵巧操作</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robotacdex_a_dexterous_visual_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧操作</h3>
+          <p>利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">数据集构建</a></li>
+<li><a href="#_4">数据采集系统</a></li>
+<li><a href="#_5">实验设置与结果</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

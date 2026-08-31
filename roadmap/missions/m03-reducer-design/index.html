@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M03 · 减速器设计与计算：减速比不是拍脑袋 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M03 · 减速器设计与计算：减速比不是拍脑袋</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m03">M03 · 减速器设计与计算：减速比不是拍脑袋</h1>
+<p><strong>全局位置</strong>：Stage 1 的第三个任务，上接 <a href="/roadmap/missions/m02-motor-sizing/">M02 · 电机计算与选型</a> 的电机候选与参数表，下接 <a href="/roadmap/missions/m04-driver-sensing-wiring/">M04 · 驱动器、传感与线束</a>。输出是每个关节的<strong>减速比 + 减速器拓扑方案 + 结构参数</strong>（齿数 / 外径 / 材料）——结构参数决定 M05 的加工文件，减速比、背隙与效率预期值回填 M01 指标表。</p>
+<p><strong>前置条件</strong>：M02 完成（电机 KV/Kt/质量已知，母线电压已定）；M01 指标表在手，特别是<strong>背隙上限、要不要反驱/力控、成本上限</strong>三列。</p>
+<p>理论背景：<a href="/entry/ent_component_harmonic_drive_reducer/">谐波减速器</a>、<a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">准直驱执行器 QDD</a>卡片，<a href="/wiki/chapters/chapter-04/">第 4 章 执行器</a>、<a href="/wiki/chapters/chapter-09/">第 9 章 关键子系统设计</a>与<a href="/wiki/chapters/chapter-03/">第 3 章 关键材料</a>。</p>
+<h2 id="1">步骤 1：减速比双不等式——从扭矩和转速两头夹出区间</h2>
+<p>【做什么】减速比 i 同时被两个方向夹住，写出双不等式取交集：</p>
+<pre class="highlight"><code>i ≥ τ_joint / (τ_motor × η)    ← 扭矩要够（峰值、持续各算一遍，取大者）
+i ≤ n_motor_max / n_out        ← 转速要够</code></pre>
+<p>传动效率 η 量级（工程经验值，需按具体型号校核）：行星齿轮每级约 0.9，摆线针轮约 0.7–0.85，谐波约 0.7–0.9。完整算例沿用 M01/M02 的 8.3 N·m 关节（电机侧能力取持续 0.5 N·m / 峰值 1.5 N·m——<strong>示例假设值，需按你所选电机的数据手册校核</strong>；η 取摆线中值 0.8；电机带载转速上限取空载 3330 rpm 的 70% ≈ 2330 rpm，工程建议值）：</p>
+<pre class="highlight"><code>i_min(峰值) = 8.3 / (1.5 × 0.8) ≈ 6.9
+i_min(持续) = 3.3 / (0.5 × 0.8) ≈ 8.3   ← RMS 扭矩 3.3 N·m，见 M02 步骤 3
+i_max       = 2330 / 30         ≈ 77
+交集：8.3 ≤ i ≤ 77 → 取 i = 9（贴下限，保反驱与力透明）
+验证：τ_motor,peak = 8.3/(9×0.8) ≈ 1.15 N·m &lt; 1.5 ✓；n_motor = 30×9 = 270 ≪ 2330 ✓</code></pre>
+<p>M02 里"预选 9:1"至此有了书面依据——两个任务在此闭环。</p>
+<p>【为什么】减速比是扭矩与转速的兑换率：取小了，M02 的 I = τ/Kt 直接超标、电流爆炸；取大了，输出转速不够且反向效率塌陷（不可反驱，见步骤 4）。交集的宽度本身就是电机能力的度量——好电机给你宽区间，能力不足的电机把区间夹成空集。</p>
+<p>【你的情况怎么分析】交集为空：电机扭矩或转速不够，回 M02 换电机或改母线电压，别硬凑。交集很宽时选哪头由 M01 指标表决定：要力控/反驱贴下限（QDD 思路，<a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">QDD 卡片</a>）；要静态保持精度、断电不塌，往大取。</p>
+<h2 id="2">步骤 2：拓扑选择——五种传动对号入座</h2>
+<p>【做什么】对照 M01 指标表的背隙上限、反驱需求、成本上限三列，在下表里选拓扑（未注明来源的数值为工程经验值，具体型号需按数据手册校核）：</p>
+<table>
+<thead>
+<tr>
+<th>拓扑</th>
+<th>单级减速比</th>
+<th>背隙</th>
+<th>效率</th>
+<th>可反驱</th>
+<th>成本量级</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行星齿轮</td>
+<td>3–10:1</td>
+<td>低-中</td>
+<td>≈0.9/级</td>
+<td>好</td>
+<td>低-中</td>
+<td>3D 打印行星是创客主流</td>
+</tr>
+<tr>
+<td>摆线针轮</td>
+<td>10–100:1</td>
+<td>低</td>
+<td>0.7–0.85</td>
+<td>中</td>
+<td>可全 3D 打印，极低</td>
+<td>Berkeley 6512/5010 即此方案（档案）</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">谐波</a></td>
+<td>50–100:1</td>
+<td>趋零（CSF ≤ 1 arcmin，卡片）</td>
+<td>0.7–0.9</td>
+<td>差</td>
+<td>高（需询价）</td>
+<td>精密关节首选，基本不可反驱</td>
+</tr>
+<tr>
+<td>同步带</td>
+<td>2–6:1</td>
+<td>趋零</td>
+<td>高</td>
+<td>好</td>
+<td>低</td>
+<td>零背隙低噪，但占空间、有弹性</td>
+</tr>
+<tr>
+<td>舵机齿轮组</td>
+<td>数百:1（<a href="/entry/ent_component_dynamixel_xl330_m288_t/">XL330</a> 为 288.4:1）</td>
+<td>大</td>
+<td>低-中</td>
+<td>差</td>
+<td>低</td>
+<td>即插即用，力控无缘</td>
+</tr>
+</tbody>
+</table>
+<p>【为什么】拓扑决定背隙、效率、可反驱性的<strong>物理上限</strong>，加工精度只能逼近不能突破：谐波的零背隙来自柔轮多齿无侧隙啮合（<a href="/entry/ent_component_harmonic_reducer_2024/">谐波减速器卡片</a>），摆线的大减速比来自差齿啮合，舵机的高减速比靠多级直齿堆出来——背隙也一级级堆出来。先定拓扑再谈参数，顺序不能反。</p>
+<p>【你的情况怎么分析】RL 行走腿（要反驱、要力透明、预算紧）：摆线或行星低减速比，即 QDD 路线；精密臂/腕（位置精度优先）：谐波；桌面学习机快速跑通：直接买舵机，跳过步骤 3–5；电机与关节异轴布置：同步带过渡。</p>
+<h2 id="33d">步骤 3：3D 打印摆线针轮——复用已验证的设计，别自绘轮廓</h2>
+<p>【做什么】先懂原理再动手：摆线轮与针齿<strong>齿数差 1</strong> 啮合——偏心轴每转一圈，摆线轮只反向拨过一个齿，减速比 = 摆线轮齿数（教科书示例：针齿 12、摆线轮 11 齿 → i = 11:1；此仅为原理演示，非任何产品的实际参数）。摆线轮的转动经销轴输出机构（销孔-销轴）取出为纯旋转。关键参数五项：<strong>针齿数、摆线轮齿数、偏心距、针径、齿宽</strong>。</p>
+<p>然后做本步骤最重要的工程决策：<strong>直接复用 Berkeley Humanoid Lite 开源的参数化摆线设计，不要自绘轮廓</strong>——其全部结构件可用普通桌面 FDM 打印机（PLA）制造，CAD 与打印文件经 GitHub Releases 发布，摆线齿轮多齿分担载荷的特性经 60 小时耐久测试验证（<a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>）。打印公差、轮廓修形、排版方向等加工细节统一留给 M05。</p>
+<p>【为什么】摆线轮廓由参数方程生成，修形量以 0.0x mm 计——自绘错一点，轻则背隙爆炸，重则装配卡死（M05 最常见的返工原因）。复用已验证设计等于白嫖对方迭代过的公差带与 60 小时耐久数据，这在自研机械件里是罕见的免费午餐。</p>
+<p>【你的情况怎么分析】复刻 Berkeley 6512/5010：直接用官方打印文件，本步骤只做阅读理解。改尺寸（如更大扭矩）：在其参数化模型上改齿宽/外径，不要从零画轮廓。买现成金属减速器（行星/谐波）：跳过本步骤，把精力花在核对输入轴径与 M02 电机轴的匹配上。</p>
+<h2 id="4">步骤 4：背隙、刚度与效率——减速器的"隐形指标"</h2>
+<p>【做什么】三项不写进 BOM 却决定控制品质的指标，逐项定出预期值：</p>
+<ol>
+<li><strong>背隙</strong>：三个来源——齿侧隙、轴承游隙、配合间隙（轴与孔）。背隙直接吃掉位置精度，并在力控里形成死区。补救手段是<strong>双编码器</strong>：电机端一个、输出端一个，输出端编码器能"看穿"减速器、量出形变与背隙——ODRI 正是靠双编码器 + 低减速比实现本体感知力控（<a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI 执行器硬件仓库</a>，另见<a href="/entry/ent_component_joint_encoder_2024/">关节编码器</a>卡片）。</li>
+<li><strong>效率</strong>：P_loss = P_out × (1−η)/η——η = 0.8 时每输出 100 W 就有 25 W 变成减速器里的热。效率同时吃掉续航：Berkeley 整机 6S 4000 mAh 电池约 30 分钟续航（档案）里就含着这笔损耗。</li>
+<li><strong>可反驱性</strong> = 反向传动效率高：低减速比、短传动链的方案（行星、摆线、同步带）反向效率可以高到输出端"摸得到"电机电流——电流环就是扭矩传感器，这正是 <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">QDD</a> 存在的理由。谐波与舵机高减速比反向效率低，断电掰不动，力只能估。</li>
+</ol>
+<p>【为什么】位置控机器人可以容忍背隙（闭环在外侧），力控机器人不能——背隙与低反向效率会把"电流 ↔ 扭矩"的对应关系打碎。本步骤的三个预期值（背隙角、η、反驱启动扭矩）回填 M01 指标表，M07 台架验收按此实测。</p>
+<p>【你的情况怎么分析】要 RL 力控：低减速比 + 双编码器（ODRI 模式）；预算紧就低减速比 + 单编码器、靠电流估扭矩（Berkeley 模式，AS5600 编码器 $3——档案）。只装电机端编码器的高减速比方案会系统性高估自己的精度，选型时把这个偏差写进备注。</p>
+<h2 id="5">步骤 5：强度与寿命校核——按峰值扭矩算，不按额定算</h2>
+<p>【做什么】定性校核四步走（无 FEA 工具也能做）：</p>
+<ol>
+<li><strong>校核哪颗齿</strong>：啮合接触线上受力最大的那颗，力从输出端反推。算例：输出 8.3 N·m、摆线轮节圆半径取 25 mm（示例几何，按你的设计改）：
+<pre class="highlight"><code>F_tooth = τ_out / r_pitch = 8.3 / 0.025 ≈ 332 N</code></pre>
+摆线的多齿分担特性（Berkeley 档案明确此点）下按 3–4 齿同时承载估，单齿约 80–110 N。</li>
+<li><strong>看两个失效面</strong>：齿根弯曲（断齿）与齿面接触（点蚀/压溃）。定性判断：330 N 级载荷作用在打印 PLA 齿上，Berkeley 的 60 小时耐久测试给出了"可行"的实证锚点（档案）；你的峰值扭矩超过它，就加齿宽或换材料。</li>
+<li><strong>材料约束</strong>（选材细节留 M05，本页只定约束）：PLA 刚性最好但脆、PETG 韧但蠕变明显、尼龙耐磨抗冲击但打印难度大——首台机按"已被验证的 PLA + 峰值扭矩留 2 倍裕量"起步（工程建议值）。</li>
+<li><strong>轴承与失效判据</strong>：深沟球轴承承受径向力，<strong>成对安装</strong>以承受倾覆力矩（工程经验）。报废判据三条——齿面点蚀、断齿、磨损致背隙增大超 M01 上限。</li>
+</ol>
+<p>【为什么】只按额定扭矩校核、不校核峰值扭矩，等于断齿预定：行走落地的瞬时冲击就是峰值扭矩工况。打印件层间强度是短板，齿宽方向尽量让载荷落在层内——这决定 M05 的排版方向，本页只写约束。</p>
+<p>【你的情况怎么分析】扭矩量级与 Berkeley 6512 相当：直接继承其齿宽/材料/参数组合，耐久性以 60 小时测试为锚。超出该量级：先定破坏性抽测计划（打 3–5 个齿轮样件加载到断，M05/M07 执行）再谈装机。金属减速器路线：本步骤退化为查数据手册的峰值/瞬时扭矩分档限值（读表纪律见<a href="/roadmap/playbooks/actuator-selection/">执行器选型手册</a>）。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] 每个关节减速比有双不等式算式存档，与 M02 的电流/转速核算闭环（τ_motor、n_motor 验证均通过）。</li>
+<li>[ ] 拓扑选择有书面理由，逐条对照 M01 指标表的背隙/反驱/成本三列。</li>
+<li>[ ] 摆线方案给出具体齿数参数组合，或明确引用 Berkeley 开源参数化设计。</li>
+<li>[ ] 背隙、效率、反驱预期值写入 M01 指标表（无数据的标"需自行确认"）。</li>
+<li>[ ] 强度校核完成：最大齿受力算式 + 材料选择 + 峰值工况说明。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出转速怎么都达不到指标</td>
+<td>减速比取太大，双不等式只做了一半</td>
+<td>回步骤 1 补 i ≤ n_motor_max/n_out 核算</td>
+</tr>
+<tr>
+<td>断电后关节掰不动、力控估不准</td>
+<td>高减速比反向效率塌陷</td>
+<td>拓扑决定，调参救不了；要力控回步骤 2 换低比方案</td>
+</tr>
+<tr>
+<td>摆线轮装不进针齿圈或转动卡死</td>
+<td>轮廓参数 / 打印公差错</td>
+<td>停手复用 Berkeley 参数化文件；公差排查留 M05</td>
+</tr>
+<tr>
+<td>跑几十小时后背隙明显变大</td>
+<td>齿面磨损/点蚀，材料或润滑不足</td>
+<td>拆检齿面；按步骤 5 判据定报废；评估换材料</td>
+</tr>
+<tr>
+<td>冲击工况后断齿</td>
+<td>只按额定扭矩校核，没按峰值</td>
+<td>回步骤 5 用峰值扭矩重算；加齿宽或换拓扑</td>
+</tr>
+<tr>
+<td>电流-扭矩标定关系散乱</td>
+<td>背隙大 + 传动摩擦非线性</td>
+<td>双编码器量出真实输出端角；电流标定留 M04</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m02-motor-sizing/">M02 · 电机计算与选型</a></li>
+<li>下一任务：<a href="/roadmap/missions/m04-driver-sensing-wiring/">M04 · 驱动器、传感与线束</a></li>
+<li>理论背景：<a href="/wiki/chapters/chapter-04/">第 4 章 执行器</a>、<a href="/wiki/chapters/chapter-09/">第 9 章 关键子系统设计</a>、<a href="/wiki/chapters/chapter-03/">第 3 章 关键材料</a></li>
+<li><a href="/roadmap/playbooks/actuator-selection/">执行器选型手册</a> · <a href="/roadmap/stage-1-actuator/">阶段 1 总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m02-motor-sizing/">← 上一页<span>M02 · 电机计算与选型：从指标表到具体型号</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m04-driver-sensing-wiring/">下一页 →<span>M04 · 驱动器、传感与线束：让关节听得懂、答得上</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m03">M03 · 减速器设计与计算：减速比不是拍脑袋</a><ul>
+<li><a href="#1">步骤 1：减速比双不等式——从扭矩和转速两头夹出区间</a></li>
+<li><a href="#2">步骤 2：拓扑选择——五种传动对号入座</a></li>
+<li><a href="#33d">步骤 3：3D 打印摆线针轮——复用已验证的设计，别自绘轮廓</a></li>
+<li><a href="#4">步骤 4：背隙、刚度与效率——减速器的"隐形指标"</a></li>
+<li><a href="#5">步骤 5：强度与寿命校核——按峰值扭矩算，不按额定算</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

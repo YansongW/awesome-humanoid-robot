@@ -1,0 +1,3687 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 1 章 绪论：为什么是人形机器人？ · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">第 1 章 绪论：为什么是人形机器人？</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="1">第 1 章 绪论：为什么是人形机器人？</h1>
+<h2 id="_1">摘要</h2>
+<p>人形机器人（Humanoid Robot）是指外形和运动方式模仿人类的机器人，通常具有躯干、头部、双臂、双腿和多指手。2025–2026 年，这一领域正经历从“技术演示”向“产业落地”的关键转折：全球 2025 年市场规模约 29–32 亿美元，安装量约 1.6 万台，其中中国占比超过 80%；特斯拉 Optimus Gen 3 于 2026 年 1 月在弗里蒙特工厂启动量产，Figure AI 在宝马斯巴达堡工厂完成了 11 个月、搬运 9 万余个零件的真实工业验证，而宇树科技、智元机器人、优必选等中国厂商已进入万台级产能爬坡阶段。</p>
+<p>然而，能够在演示视频中完成行走、奔跑或抓取动作的“演示型机器人”，与能够在工厂、仓库或家庭中稳定工作多年的“产品型机器人”之间，仍然存在巨大鸿沟。这一鸿沟体现在可靠性、成本、可维护性与合规性四个维度。从实验室样机到规模化复制，人形机器人需要经历七个递进的跃迁阶段。由于该领域横跨机械、电子、控制、人工智能、材料、制造、供应链和政策等多个学科，必须以知识图谱的方式组织其跨学科知识，才能支持系统性的认知、推理与决策。</p>
+<p><strong>关键词</strong>：人形机器人；产业化；知识图谱；系统工程；从 0 到 1；具身智能；VLA；可靠性；学习曲线；技术采用 S 曲线</p>
+<hr />
+<h2 id="11">1.1 什么是人形机器人？</h2>
+<h3 id="111">1.1.1 基本定义</h3>
+<p>人形机器人是一种设计上模仿人类身体结构和运动能力的机器人。与工业机械臂、扫地机器人、无人机等专用机器人不同，人形机器人的核心特征是：</p>
+<ul>
+<li><strong>双足行走</strong>：用两条腿像人一样行走，而不是轮子或履带。</li>
+<li><strong>上身操作</strong>：通常具有两只手臂和多指手掌，能够抓取、搬运、操作工具。</li>
+<li><strong>人机环境兼容</strong>：外形尺寸接近人类，理论上可以直接使用为人类设计的楼梯、门、工具、工作台和交通工具。</li>
+</ul>
+<p>用一句话概括：<strong>人形机器人是试图在人类建造的世界中，以人类的方式完成任务的通用机器。</strong></p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：机器人（Robot）</p>
+<p>机器人一词源自捷克语 <em>robota</em>（苦役、劳役），1920 年卡雷尔·恰佩克（Karel Čapek）的戏剧《罗素姆的万能机器人》首次将其引入现代语境。从系统科学角度，机器人是可编程的机电系统，能够在物理世界中感知、决策并执行动作，以完成有用任务。它不等同于“人形的机器”，也涵盖机械臂、移动平台、无人机等非人形形态。</p>
+</div>
+<h3 id="112">1.1.2 为什么是人形？</h3>
+<p>初学者最常问的问题是：既然轮式机器人更稳定、机械臂更便宜，为什么还要做双足人形？原因可以归纳为三点，并在更深层的理论视角下得到解释。</p>
+<table>
+<thead>
+<tr>
+<th>理由</th>
+<th>具体解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>环境兼容性</strong></td>
+<td>人类社会的楼梯、门槛、狭窄通道、扶手、操作台都是按人体尺寸设计的。轮式机器人无法上下楼梯，固定机械臂无法移动。人形形态理论上可以直接进入这些空间。</td>
+</tr>
+<tr>
+<td><strong>任务通用性</strong></td>
+<td>工厂中的拧螺丝、搬运箱子、按按钮、推门等动作，人类用双手完成。人形机器人如果足够灵活，理论上可以执行多种任务，而不需要为每个任务重新设计专用设备。</td>
+</tr>
+<tr>
+<td><strong>社会接受度</strong></td>
+<td>在服务、医疗、家庭等与人密切接触的场景中，人形外形更容易被人类理解和预测其动作意图，从而提升安全感与交互体验。</td>
+</tr>
+</tbody>
+</table>
+<p>这三个优势目前还只是“理论优势”。现实中的双足行走仍然能耗高、控制难、易跌倒，灵巧手的成本和可靠性也远未达到人类水平。这也是为什么人形机器人产业化如此困难。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：可供性（Affordance）</p>
+<p>可供性由美国心理学家詹姆斯·吉布森（James J. Gibson）于 1977 年提出，指环境对象“提供给观察者行动的可能性”。例如，楼梯的台阶高度约为 15–18 cm，门把手高度约为 90–110 cm，这些尺寸是为两足直立、手臂可及的人类身体设计的。人形机器人的人体尺寸使其能够直接利用这些“为人类而建”的可供性，而不必重新改造环境。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：恐怖谷（Uncanny Valley）</p>
+<p>恐怖谷由日本机器人学家森政弘（Masahiro Mori）于 1970 年提出。该假说指出：当机器人或仿真人形的外观和动作接近人类但尚未完全一致时，观察者的好感度会突然下降，产生强烈的不适感。Mori 的原始论文以“<em>Bunshin</em>”（分身）概念讨论人形物体与情感反应之间的关系。对人形机器人设计而言，这意味着外观与动作不必过度拟人，关键在于“可预测性”和“行为一致性”。</p>
+</div>
+<p>从经济学视角看，人形形态是一种<strong>通用性投资</strong>：它牺牲了在单一任务上的最优效率，换取了跨任务、跨环境的适应能力。设专用机器人完成任务的效率为 <span class="arithmatex">\(\eta_s\)</span>，人形机器人为 <span class="arithmatex">\(\eta_h\)</span>，若 <span class="arithmatex">\(\eta_h &lt; \eta_s\)</span> 但任务种类 <span class="arithmatex">\(N\)</span> 足够大，则人形的综合部署成本可能更低：</p>
+<div class="arithmatex">\[
+C_{total}^{(h)} = C_{robot} + \sum_{i=1}^{N} c_{adapt,i} \quad \text{vs.} \quad C_{total}^{(s)} = \sum_{i=1}^{N} (C_{robot,i} + c_{integration,i})
+\]</div>
+<p>当 <span class="arithmatex">\(N\)</span> 增大且 <span class="arithmatex">\(c_{adapt,i}\)</span> 足够小时，人形方案可能占据总拥有成本（TCO）优势。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：总拥有成本（TCO）</p>
+<p>总拥有成本（Total Cost of Ownership）是经济学与供应链管理中的核心概念，指资产从采购到报废全生命周期内的全部成本，包括初始购置成本、集成成本、运行能耗、维护维修、停机损失、培训、软件升级和最终处置成本。人形机器人产业化的商业论证通常以 TCO 替代单纯的硬件售价进行比较。</p>
+</div>
+<h3 id="113">1.1.3 主要形态与分类</h3>
+<p>人形机器人并非只有一种形态。根据下半身设计，可以分为：</p>
+<ul>
+<li><strong>全尺寸双足人形</strong>：身高 1.5–1.8 米，双腿行走，如 Tesla Optimus、Unitree H1、Figure 02/03、波士顿动力 Atlas。</li>
+<li><strong>轮式/混合人形</strong>：上半身为人形，下半身用轮子或腿轮混合，如 Agility Digit、Hexagon AEON（用于宝马莱比锡工厂）。</li>
+<li><strong>小型桌面人形</strong>：主要用于研究、教育和娱乐，如 NAO、Pepper、宇树 G1。</li>
+<li><strong>半身或 telepresence 人形</strong>：只有上半身，用于远程呈现和交互。</li>
+</ul>
+<p>根据应用目标，又可分为：</p>
+<ul>
+<li><strong>研究平台</strong>：供高校和实验室开发算法，如 Atlas、H1。</li>
+<li><strong>工业应用型</strong>：面向工厂、物流，如 Figure 03、Optimus Gen 3。</li>
+<li><strong>服务/家庭型</strong>：面向商业服务、医疗陪护、家庭助理，目前尚不成熟。</li>
+</ul>
+<h3 id="114">1.1.4 关键子系统一览</h3>
+<p>一台人形机器人由机械本体、执行器、传感器、计算平台、电源、软件与 AI 模型等多个子系统组成。下图给出了简化结构：</p>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[人形机器人整机] --&gt; B[机械本体]
+    A --&gt; C[执行器系统]
+    A --&gt; D[感知系统]
+    A --&gt; E[计算平台]
+    A --&gt; F[电源系统]
+    A --&gt; G[软件系统]
+    A --&gt; H[AI 模型]
+
+    B --&gt; B1[躯干/四肢/头部结构]
+    C --&gt; C1[电机+减速器+驱动器]
+    D --&gt; D1[相机/激光雷达/IMU/力传感器]
+    E --&gt; E1[主控计算机/安全 MCU]
+    F --&gt; F1[电池/BMS/配电]
+    G --&gt; G1[ROS2/实时系统/规划控制]
+    H --&gt; H1[运动/操作/VLA]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：执行器（Actuator）</p>
+<p>执行器是机器人的“肌肉”，负责将电能或其他形式的能量转换为机械运动和力。一台人形机器人通常有 20–50 个执行器。从控制理论角度看，执行器是系统输入 <span class="arithmatex">\(u\)</span> 的物理实现，其带宽、扭矩密度、反向间隙和响应延迟直接影响闭环控制性能。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：减速器（Reducer/Gearbox）</p>
+<p>减速器是降低电机转速、放大输出扭矩的装置。常用类型包括谐波减速器（Harmonic Drive）、RV 减速器（Rotary Vector）和行星减速器（Planetary Gearbox）。减速比 <span class="arithmatex">\(N\)</span> 使得输出扭矩 <span class="arithmatex">\(T_{out} = N \cdot T_{motor} \cdot \eta\)</span>（<span class="arithmatex">\(\eta\)</span> 为传动效率），但也会引入摩擦、惯量和背隙。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：IMU（Inertial Measurement Unit）</p>
+<p>惯性测量单元包含加速度计和陀螺仪，有时还包括磁力计，用于感知姿态、角速度和线加速度。IMU 是机器人状态估计的核心传感器，但其测量存在零偏漂移（bias drift）和噪声，需要与运动学、视觉或力觉信息融合。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：VLA（Vision-Language-Action Model）</p>
+<p>视觉-语言-动作模型是一种能够将图像、自然语言指令和机器人动作统一建模的 AI 架构。它通常以视觉编码器和大语言模型为骨干，输出低层动作 token 或策略参数，使人形机器人能够根据“把红色盒子放到左边桌子上”这样的自然语言指令执行操作。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：BMS（Battery Management System）</p>
+<p>电池管理系统是保护电池安全并优化续航的电子系统，负责电池状态估计（SOC/SOH）、均衡、过充过放保护、热管理和故障诊断。BMS 的功能安全等级直接影响整机安全认证。</p>
+</div>
+<h3 id="115">1.1.5 机器人的形式化定义</h3>
+<p>从控制理论和系统科学出发，机器人可以被形式化为一个<strong>动态系统</strong>（Dynamical System）：</p>
+<div class="arithmatex">\[
+\dot{x}(t) = f\big(x(t), u(t)\big), \quad y(t) = h\big(x(t), u(t)\big)
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(x(t) \in \mathbb{R}^n\)</span> 是系统状态向量，例如关节角度、角速度、质心位置、姿态四元数等；</li>
+<li><span class="arithmatex">\(u(t) \in \mathbb{R}^m\)</span> 是控制输入，例如电机电流、扭矩或电压；</li>
+<li><span class="arithmatex">\(y(t) \in \mathbb{R}^p\)</span> 是系统输出，即传感器测量；</li>
+<li><span class="arithmatex">\(f\)</span> 是状态转移函数，描述系统动力学；</li>
+<li><span class="arithmatex">\(h\)</span> 是观测函数，描述传感器模型。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：状态空间（State Space）</p>
+<p>状态空间是控制理论中描述动态系统全部可能状态的数学空间。系统的未来演化只依赖于当前状态和未来的输入，而与过去无关，这一性质称为“马尔可夫性”。人形机器人的状态空间维度通常在 30–100 维以上，带来所谓的“维度灾难”。</p>
+</div>
+<p>对于人形机器人，<span class="arithmatex">\(f\)</span> 通常由刚体动力学方程给出。以拉格朗日方程为例：</p>
+<div class="arithmatex">\[
+M(q)\ddot{q} + C(q, \dot{q})\dot{q} + G(q) = S^T \tau + J_c^T F_c
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(q \in \mathbb{R}^n\)</span> 为广义坐标；</li>
+<li><span class="arithmatex">\(M(q)\)</span> 为质量矩阵；</li>
+<li><span class="arithmatex">\(C(q, \dot{q})\)</span> 为科氏力和离心力项；</li>
+<li><span class="arithmatex">\(G(q)\)</span> 为重力项；</li>
+<li><span class="arithmatex">\(\tau\)</span> 为关节力矩；</li>
+<li><span class="arithmatex">\(S\)</span> 为选择矩阵；</li>
+<li><span class="arithmatex">\(J_c\)</span> 为接触点雅可比矩阵；</li>
+<li><span class="arithmatex">\(F_c\)</span> 为地面接触力。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：雅可比矩阵（Jacobian Matrix）</p>
+<p>雅可比矩阵 <span class="arithmatex">\(J\)</span> 描述机器人关节空间速度到操作空间（如末端执行器或质心）速度的线性映射：<span class="arithmatex">\(v = J(q)\dot{q}\)</span>。在力控制中，其转置 <span class="arithmatex">\(J^T\)</span> 将操作空间力映射到关节力矩：<span class="arithmatex">\(\tau = J^T F\)</span>。雅可比矩阵是机器人运动学和静力学分析的核心工具。</p>
+</div>
+<p>从<strong>智能体（Agent）</strong>视角看，机器人是一个与环境交互的自治实体，遵循<strong>感知-决策-执行循环</strong>（Sense-Decide-Act Loop）：</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    E[环境] --&gt; |传感器| S[感知]
+    S --&gt; |状态估计| D[决策]
+    D --&gt; |控制指令| A[执行]
+    A --&gt; |物理作用| E</code></pre>
+<p>在具身智能（Embodied AI）框架下，智能不仅存在于算法之中，而是<strong>嵌入在身体形态、传感器配置与动态交互之中</strong>。这一思想与形态计算（Morphological Computation）密切相关：机器人本体的物理特性（如柔顺性、质量分布、弹性足）本身就可以承担一部分计算功能，从而减轻控制器的负担。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：具身智能（Embodied AI）</p>
+<p>具身智能强调智能行为必须通过具有物理身体的智能体与真实环境交互而产生，而非仅靠符号推理或离线数据学习。其哲学根源可追溯至梅洛-庞蒂（Merleau-Ponty）的“身体主体”概念和皮亚杰（Piaget）的认知发展理论。对人形机器人而言，具身智能意味着：运动控制、感知、推理与社会交互必须统一在身体-环境耦合的框架下。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：形态计算（Morphological Computation）</p>
+<p>形态计算指利用智能体自身物理结构和材料特性来完成部分“计算”任务，从而减少显式控制器的复杂度。例如，鸟类的羽毛和骨骼结构、猎豹的脊柱弹性、人形机器人的柔顺关节都可以在一定程度上“预先解决”动态稳定性问题，使高层控制更简洁。</p>
+</div>
+<h3 id="116">1.1.6 人形机器人的分类学</h3>
+<p>为了系统研究人形机器人，需要建立明确的分类维度。以下从六个维度给出形式化的分类标准：</p>
+<p><strong>按移动方式</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>代表产品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双足行走</td>
+<td>仅依靠两条腿实现移动</td>
+<td>Tesla Optimus、Unitree H1、Figure 02</td>
+</tr>
+<tr>
+<td>轮式移动</td>
+<td>依靠轮子移动，上身人形</td>
+<td>Agility Digit（早期）、移动服务机器人</td>
+</tr>
+<tr>
+<td>腿轮混合</td>
+<td>同时具备腿和轮，可切换模式</td>
+<td>部分研究平台、轮足复合机器人</td>
+</tr>
+<tr>
+<td>固定底座</td>
+<td>只有上半身，无移动能力</td>
+<td>远程呈现机器人、部分服务机器人</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按尺寸与尺度</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>身高范围</th>
+<th>典型应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全尺寸成人型</td>
+<td>1.5–1.8 m</td>
+<td>工业、服务、家庭</td>
+</tr>
+<tr>
+<td>青少年/儿童型</td>
+<td>1.0–1.4 m</td>
+<td>教育、研究、陪伴</td>
+</tr>
+<tr>
+<td>桌面型</td>
+<td>0.3–0.8 m</td>
+<td>科研、教育、娱乐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按驱动方式</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>原理</th>
+<th>优缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电机驱动</td>
+<td>电动机+减速器</td>
+<td>成熟、可控、噪声低；扭矩密度受限</td>
+</tr>
+<tr>
+<td>液压驱动</td>
+<td>液压泵+油缸/执行器</td>
+<td>高功率密度；泄漏、维护复杂</td>
+</tr>
+<tr>
+<td>气动驱动</td>
+<td>气体压力驱动</td>
+<td>柔顺、安全；效率低、控制难</td>
+</tr>
+<tr>
+<td>肌腱/绳驱</td>
+<td>电机通过缆绳驱动远端关节</td>
+<td>减轻远端惯量；摩擦、磨损</td>
+</tr>
+<tr>
+<td>人工肌肉</td>
+<td>气动人工肌肉、EAP 等</td>
+<td>高仿生；寿命和重复性差</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按自主性等级</strong></p>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>描述</th>
+<th>人形机器人应用状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0 遥操作</td>
+<td>完全由人类远程控制</td>
+<td>当前大量工业部署</td>
+</tr>
+<tr>
+<td>L1 辅助</td>
+<td>人类主导，机器人提供辅助</td>
+<td>部分装配任务</td>
+</tr>
+<tr>
+<td>L2 半自主</td>
+<td>机器人执行特定子任务，人类监督</td>
+<td>当前主流目标</td>
+</tr>
+<tr>
+<td>L3 条件自主</td>
+<td>在限定环境和任务中自主运行</td>
+<td>研究与小范围试点</td>
+</tr>
+<tr>
+<td>L4/L5 高度/完全自主</td>
+<td>开放环境长期自主</td>
+<td>尚未实现</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按应用领域</strong></p>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>典型任务</th>
+<th>成熟度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工业制造</td>
+<td>搬运、分拣、拧螺丝、质检</td>
+<td>早期试点</td>
+</tr>
+<tr>
+<td>仓储物流</td>
+<td>拣选、搬运、码垛</td>
+<td>试点阶段</td>
+</tr>
+<tr>
+<td>商业服务</td>
+<td>引导、迎宾、零售</td>
+<td>小规模部署</td>
+</tr>
+<tr>
+<td>医疗康复</td>
+<td>陪护、辅助行走、康复训练</td>
+<td>研究/试点</td>
+</tr>
+<tr>
+<td>家庭服务</td>
+<td>清洁、照料、陪伴</td>
+<td>极早期</td>
+</tr>
+<tr>
+<td>科研教育</td>
+<td>算法验证、教学演示</td>
+<td>较成熟</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按商业化阶段</strong></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>特征</th>
+<th>代表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验室样机</td>
+<td>验证单项技术，不可重复</td>
+<td>高校研究项目</td>
+</tr>
+<tr>
+<td>工程样机</td>
+<td>系统集成，少量可运行</td>
+<td>早期创业公司产品</td>
+</tr>
+<tr>
+<td>小批量验证</td>
+<td>数十至数百台，真实场景测试</td>
+<td>宇树、智元、优必选</td>
+</tr>
+<tr>
+<td>量产产品</td>
+<td>规模化生产，成本可控</td>
+<td>Tesla Optimus Gen 3（目标）</td>
+</tr>
+<tr>
+<td>规模化运营</td>
+<td>多场景 fleet 管理</td>
+<td>尚未成熟</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[人形机器人分类] --&gt; B[移动方式]
+    A --&gt; C[尺寸尺度]
+    A --&gt; D[驱动方式]
+    A --&gt; E[自主性等级]
+    A --&gt; F[应用领域]
+    A --&gt; G[商业化阶段]
+
+    B --&gt; B1[双足]
+    B --&gt; B2[轮式]
+    B --&gt; B3[腿轮混合]
+    B --&gt; B4[固定底座]
+
+    D --&gt; D1[电机]
+    D --&gt; D2[液压]
+    D --&gt; D3[气动]
+    D --&gt; D4[绳驱]
+    D --&gt; D5[人工肌肉]
+
+    E --&gt; E1[L0 遥操作]
+    E --&gt; E2[L1 辅助]
+    E --&gt; E3[L2 半自主]
+    E --&gt; E4[L3 条件自主]
+    E --&gt; E5[L4/L5 高度完全自主]</code></pre>
+<hr />
+<h2 id="12">1.2 人形机器人的发展历程</h2>
+<p>人形机器人的历史不仅是技术演进史，也是数学、控制理论、计算机科学、材料科学与经济学交汇的缩影。以下从科学思想根源出发，梳理其发展历程。</p>
+<h3 id="121-1819">1.2.1 机械自动机时代（18–19 世纪）</h3>
+<p>在电力和电子控制出现之前，人形自动机是纯机械工程的杰作。</p>
+<ul>
+<li><strong>雅克·德·沃康松（Jacques de Vaucanson）</strong> 于 1738 年制造出“吹笛手”“鼓手”和著名的“消化鸭”，展示了复杂的凸轮、齿轮和连杆机构。</li>
+<li><strong>雅克德罗父子（Jaquet-Droz）</strong> 于 18 世纪 70 年代制作出“书写者”“绘图者”和“风琴演奏者”，使用凸轮编码程序，可更换凸轮以改变行为。</li>
+</ul>
+<p>这些自动机没有感知和决策能力，但证明了<strong>复杂运动可以通过机械机构精确编码</strong>。其控制方式本质上是开环的：凸轮轮廓即“程序”，时间即“输入”。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：开环控制（Open-Loop Control）</p>
+<p>开环控制是指控制器的输出不依赖于系统实际状态的反馈。例如，机械自动机按照预设凸轮运动，不考虑外部扰动。其数学形式为 <span class="arithmatex">\(u(t) = u_{ref}(t)\)</span>。开环控制简单、成本低，但无法应对不确定性；现代机器人普遍采用闭环控制。</p>
+</div>
+<h3 id="122-20-3050">1.2.2 控制论与计算机科学的诞生（20 世纪 30–50 年代）</h3>
+<p>现代机器人学的思想根基在 20 世纪中叶奠定：</p>
+<ul>
+<li><strong>诺伯特·维纳（Norbert Wiener）</strong> 于 1948 年出版《控制论：或关于在动物和机器中控制和通信的科学》，提出反馈控制、信息论和系统科学的统一框架。</li>
+<li><strong>克劳德·香农（Claude Shannon）</strong> 于 1948 年发表《通信的数学理论》，奠定了信息论基础，其熵概念 <span class="arithmatex">\(H(X) = -\sum p(x)\log p(x)\)</span> 成为感知、学习与决策的度量工具。</li>
+<li><strong>阿兰·图灵（Alan Turing）</strong> 于 1936 年提出图灵机模型，1950 年提出“图灵测试”，开启了人工智能的思想传统。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：反馈控制（Feedback Control）</p>
+<p>反馈控制是指根据系统输出与期望参考值之间的误差来调整输入，使系统状态趋向目标。其核心思想是 <span class="arithmatex">\(u(t) = K\big(r(t) - y(t)\big)\)</span>，其中 <span class="arithmatex">\(K\)</span> 为控制器增益。维纳将反馈机制从工程系统推广到生物、社会和认知系统，奠定了控制论的基础。</p>
+</div>
+<p>反馈控制使机器人能够在不确定环境中维持稳定，这是双足机器人动态平衡的理论起点。</p>
+<h3 id="123-1960s1980s">1.2.3 早期人形机器人（1960s–1980s）</h3>
+<p>这一时期，电子计算机和伺服电机开始应用于机器人。</p>
+<ul>
+<li><strong>WABOT-1（早稻田大学，1973）</strong>：世界上第一台完整的人形机器人，高约 2 米，具有双腿、双臂和视觉系统，实现了静态行走。其控制计算机相当于当时的小型机，算力极其有限。</li>
+<li><strong>WL-10 系列（早稻田大学，1980s）</strong>：实现了更自然的动态步态，为后续双足控制研究奠定基础。</li>
+<li><strong>HD-2（加藤实验室）</strong>：进一步提升了运动协调性。</li>
+</ul>
+<p>这一时期的核心特征是<strong>静态行走（Static Walking）</strong>：机器人质心（Center of Mass, CoM）投影始终保持在支撑多边形内，速度缓慢但稳定。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：质心（Center of Mass, CoM）</p>
+<p>质心是物体质量分布的平均位置。对于多刚体系统，质心位置 <span class="arithmatex">\(r_{CoM} = \frac{\sum_i m_i r_i}{\sum_i m_i}\)</span>。在机器人学中，质心投影是否落在支撑多边形内是判断静态稳定性的常用判据。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：零力矩点（Zero Moment Point, ZMP）</p>
+<p>零力矩点由南斯拉夫（今塞尔维亚）机器人学家米奥米尔·武科布拉托维奇（Miomir Vukobratović）于 1969 年提出。ZMP 是地面上的一点，使得由重力和惯性力产生的水平力矩为零。对于平面接触，若 ZMP 位于支撑多边形内，则机器人不会发生绕支撑边界的翻转。ZMP 准则是过去数十年双足机器人控制的主流稳定性判据。</p>
+</div>
+<h3 id="124-1990s2010s">1.2.4 动态平衡时代（1990s–2010s）</h3>
+<p>这一时期，控制理论和计算能力的进步使人形机器人实现了动态行走、跑步甚至跳跃。</p>
+<ul>
+<li><strong>本田 ASIMO（2000）</strong>：以 6 km/h 速度跑步、上下楼梯、避障、语音交互，成为 2000 年代人形机器人的技术象征。本田于 2018 年停止 ASIMO 开发，原因包括成本过高和应用场景不清。</li>
+<li><strong>索尼 QRIO（2003）</strong>：小型双足娱乐机器人，展示了较强的运动控制能力，但因商业原因很快停产。</li>
+<li><strong>波士顿动力 PETMAN/Atlas（2009–2013）</strong>：PETMAN 用于测试防护服，Atlas 则代表了液压驱动双足动态运动的最高水平，能够后空翻、跑酷、跨越障碍。</li>
+</ul>
+<p>这一时期的关键技术包括：</p>
+<ol>
+<li><strong>ZMP 轨迹规划与 preview control（Kajita et al., 2003）</strong>：将双足行走转化为线性倒立摆（LIPM）模型下的最优控制问题。</li>
+<li><strong>模型预测控制（MPC）</strong>：在有限时域内滚动优化控制输入，处理约束和多接触问题。</li>
+<li><strong>非线性优化与全身控制（WBC）</strong>：协调下肢、上肢和躯干运动，实现复杂任务。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：线性倒立摆（Linear Inverted Pendulum Model, LIPM）</p>
+<p>线性倒立摆由梶田秀司（Shuuji Kajita）等人提出，将双足机器人简化为一个质点通过无质量杆连接到地面。在假设质心高度恒定、忽略角动量的情况下，其水平动力学为线性方程：<span class="arithmatex">\(\ddot{x} = \frac{g}{z_c} x + \frac{1}{m z_c} u_x\)</span>，其中 <span class="arithmatex">\(z_c\)</span> 为质心高度，<span class="arithmatex">\(g\)</span> 为重力加速度。LIPM 极大简化了步态规划，是 preview control 的理论基础。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：模型预测控制（Model Predictive Control, MPC）</p>
+<p>模型预测控制是一种在有限预测时域内求解最优控制序列、并只执行第一步控制的滚动优化方法。其标准形式为：<span class="arithmatex">\(\min_{u_{0:N-1}} \sum_{k=0}^{N-1} \ell(x_k, u_k) + V_f(x_N)\)</span>，满足 <span class="arithmatex">\(x_{k+1} = f(x_k, u_k)\)</span> 和约束 <span class="arithmatex">\(x_k \in \mathcal{X}, u_k \in \mathcal{U}\)</span>。MPC 能够显式处理约束，是双足动态平衡和足式机器人控制的主流方法。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：全身控制（Whole-Body Control, WBC）</p>
+<p>全身控制指同时协调机器人多个任务（如保持平衡、跟踪足部轨迹、操作物体、避障）的控制系统。通常采用任务层级或加权优化框架，将高优先级任务（如平衡）放在低优先级任务的零空间中执行，确保关键约束不被违反。</p>
+</div>
+<h3 id="125-ai-2020s">1.2.5 AI 融合与量产时代（2020s 至今）</h3>
+<p>2020 年代，人形机器人重新成为焦点，核心驱动力是人工智能、供应链成熟和资本投入：</p>
+<ul>
+<li><strong>AI 大模型与 VLA</strong>：RT-2、OpenVLA、GR00T N1、Figure Helix、π0 等模型将视觉、语言和动作统一，使机器人能够理解自然语言指令并泛化到新任务。</li>
+<li><strong>强化学习与 sim-to-real</strong>：在仿真中训练运动与操作策略，通过域随机化（Domain Randomization）和迁移学习部署到真实机器人。</li>
+<li><strong>供应链成熟</strong>：谐波减速器、无框力矩电机、力传感器、高算力计算平台成本快速下降。</li>
+<li><strong>量产尝试</strong>：Tesla Optimus、Figure BotQ、Unitree、智元机器人等进入万台级甚至百万台级产能规划。</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">timeline
+    title 人形机器人发展历程
+    1738 : 沃康松自动机械玩偶
+    1774 : 雅克德罗书写者/绘图者
+    1948 : 维纳《控制论》、香农信息论
+    1950 : 图灵测试
+    1973 : WABOT-1 静态行走
+    1980s : WL-10 / HD-2 早期动态步态
+    2000 : 本田 ASIMO
+    2003 : 索尼 QRIO
+    2009 : 波士顿动力 PETMAN
+    2013 : 波士顿动力 Atlas 液压版
+    2016 : Atlas 后空翻/跑酷
+    2018 : 本田停止 ASIMO 开发
+    2022 : 大语言模型爆发
+    2023 : Tesla Optimus 迭代、Figure AI 成立
+    2024 : 电动 Atlas、VLA 模型涌现
+    2025 : 万台级出货、中国厂商领先
+    2026 : Optimus Gen 3 量产、资本证券化元年</code></pre>
+<h3 id="126-asimo">1.2.6 本田 ASIMO：技术巅峰与商业困境</h3>
+<p>本田 ASIMO（Advanced Step in Innovative Mobility）是 2000 年代最具代表性的人形机器人。它能够以 6 km/h 的速度跑步、上下楼梯、避障、与人握手，甚至进行简单的语音交互。</p>
+<p>然而，本田于 2018 年停止 ASIMO 的开发。其原因值得深思：</p>
+<ul>
+<li><strong>成本过高</strong>：单台成本估计超过 100 万美元，无法商业化。</li>
+<li><strong>应用场景不清</strong>：除了展示和接待，难以找到可持续的商业模式。</li>
+<li><strong>技术封闭</strong>：系统高度定制化，难以扩展。</li>
+</ul>
+<p>ASIMO 的故事说明：<strong>技术先进不等于商业成功</strong>。人形机器人要实现产业化，必须在成本、应用场景和可维护性上取得突破。</p>
+<h3 id="127-atlas">1.2.7 波士顿动力 Atlas：动态能力的极限</h3>
+<p>波士顿动力 Atlas 代表了双足动态运动的最高水平，能够后空翻、跑酷、跨越障碍。2024 年，波士顿动力退役了液压版 Atlas，推出全电动版，转向商业应用探索，尤其是在现代汽车集团的工厂网络中。</p>
+<p>Atlas 的价值在于推动控制理论和机器人极限，但其商业化路径仍在探索中。</p>
+<h3 id="128-20252026">1.2.8 2025–2026 年新一波浪潮：从演示到真实部署</h3>
+<p>与 ASIMO 和早期 Atlas 不同，2025–2026 年的新浪潮强调<strong>真实场景中的长期部署和量产可行性</strong>：</p>
+<ul>
+<li><strong>Tesla Optimus</strong>：2026 年 1 月 21 日，Gen 3 在弗里蒙特工厂启动量产；Model S/X 产线被改造为 Optimus 生产线，目标年产能 100 万台；得州 Gigafactory 在建专用工厂，目标年产能 1000 万台。</li>
+<li><strong>Figure AI</strong>：2025 年 9 月完成 10 亿美元 C 轮融资，估值 390 亿美元；Figure 02 在宝马斯巴达堡工厂完成 11 个月部署，搬运 9 万余个零件，参与生产 3 万余辆 BMW X3。</li>
+<li><strong>中国厂商</strong>：宇树科技 2025 年营收 17.08 亿元、扣非净利润约 6 亿元，2026 年科创板 IPO 已获受理；智元机器人 2025 年出货量据 Omdia 统计达 5168 台，全球第一；优必选 2025 年人形机器人订单近 14 亿元人民币。</li>
+</ul>
+<p>这一波浪潮的核心驱动力是：</p>
+<ol>
+<li>AI 大模型和 VLA 使机器人获得了更强的感知、理解和泛化能力。</li>
+<li>精密制造和供应链成熟使核心零部件成本快速下降。</li>
+<li>劳动力成本上升和制造业自动化需求提供了明确市场。</li>
+<li>资本市场愿意为头部玩家提供大规模资金支持。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[机械自动机] --&gt; B[早期电子人形]
+    B --&gt; C[动态平衡人形]
+    C --&gt; D[AI 驱动人形]
+    D --&gt; E[量产型人形]
+
+    A -.-&gt;|纯机械凸轮| A1[沃康松 1738]
+    B -.-&gt;|伺服电机+ZMP| B1[WABOT-1 1973]
+    C -.-&gt;|MPC+WBC| C1[ASIMO 2000]
+    C -.-&gt;|液压动态极限| C2[Atlas 2013]
+    D -.-&gt;|VLA+强化学习| D1[Tesla/Figure 2023+]
+    E -.-&gt;|万台级产能| E1[2025-2026]</code></pre>
+<hr />
+<h2 id="13">1.3 为什么现在是人形机器人的关键窗口期？</h2>
+<h3 id="131">1.3.1 市场规模与增长预测</h3>
+<p>根据多家研究机构 2025–2026 年的最新预测，全球人形机器人市场正在快速扩张：</p>
+<table>
+<thead>
+<tr>
+<th>研究机构</th>
+<th>2025 年市场规模</th>
+<th>2030 年预测</th>
+<th>2032/2034/2035 年预测</th>
+<th>关键判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MarketsandMarkets</td>
+<td>29.2 亿美元</td>
+<td>152.6 亿美元</td>
+<td>—</td>
+<td>CAGR 39.2%（2025–2030）</td>
+</tr>
+<tr>
+<td>Research Nester</td>
+<td>31.4 亿美元</td>
+<td>—</td>
+<td>—</td>
+<td>CAGR 38.5%（2026–2035）</td>
+</tr>
+<tr>
+<td>BCC Research</td>
+<td>19.0 亿美元</td>
+<td>110.0 亿美元</td>
+<td>—</td>
+<td>CAGR 42.8%</td>
+</tr>
+<tr>
+<td>MarketIntelo</td>
+<td>32.0 亿美元</td>
+<td>—</td>
+<td>431.0 亿美元（2034）</td>
+<td>CAGR 35.0%</td>
+</tr>
+<tr>
+<td>Maximizemarketresearch</td>
+<td>29.2 亿美元</td>
+<td>—</td>
+<td>295.7 亿美元（2032）</td>
+<td>CAGR 39.2%</td>
+</tr>
+<tr>
+<td>Goldman Sachs</td>
+<td>—</td>
+<td>—</td>
+<td>380 亿美元（2035）</td>
+<td>长期乐观情景</td>
+</tr>
+<tr>
+<td>Yahoo Finance / Counterpoint</td>
+<td>约 9 亿美元收入（2025）</td>
+<td>70 亿美元（2030）</td>
+<td>—</td>
+<td>侧重商业收入</td>
+</tr>
+</tbody>
+</table>
+<p>数据来源：MarketsandMarkets、Research Nester、BCC Research、MarketIntelo、Maximize Market Research、Goldman Sachs、Yahoo Finance（2025–2026 年报告）</p>
+<p>尽管各机构预测差异较大，但共同趋势是：<strong>2025 年市场规模约为 30 亿美元量级，2026 年预计达到 40–50 亿美元，2030 年有望突破 100–150 亿美元。</strong></p>
+<h4 id="1311">1.3.1.1 预测方法论：自上而下与自下而上</h4>
+<p>市场预测本质上是对未来供需的量化推断，常用两种方法相互校验。</p>
+<p><strong>自上而下（Top-Down）</strong>：从宏观 TAM 出发，乘以渗透率：</p>
+<div class="arithmatex">\[
+M_{t} = TAM_t \cdot p_t \cdot ASP_t
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(M_t\)</span>：时刻 <span class="arithmatex">\(t\)</span> 的预测市场规模（美元）；</li>
+<li><span class="arithmatex">\(TAM_t\)</span>：总可触达市场（Total Addressable Market），理论上所有可能购买该产品的市场总额；</li>
+<li><span class="arithmatex">\(p_t\)</span>：技术渗透率，即目标市场中实际采用人形机器人的比例；</li>
+<li><span class="arithmatex">\(ASP_t\)</span>：平均售价（Average Selling Price）。</li>
+</ul>
+<p><strong>自下而上（Bottom-Up）</strong>：从单位出货量与均价出发：</p>
+<div class="arithmatex">\[
+M_t = N_t \cdot ASP_t
+\]</div>
+<p>其中 <span class="arithmatex">\(N_t\)</span> 为出货量。当两种方法结果差异过大时，通常意味着对渗透率或均价的假设存在分歧。2025 年各机构对市场规模预测在 19–32 亿美元之间，差异主要源于：是否计入低价科研本体、是否计入服务与软件收入、以及采用出厂价还是终端价。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：CAGR（Compound Annual Growth Rate）</p>
+<p>复合年均增长率描述一段时间内某项指标的年均增长幅度。若起始值为 <span class="arithmatex">\(V_0\)</span>，终值为 <span class="arithmatex">\(V_T\)</span>，时间跨度为 <span class="arithmatex">\(T\)</span> 年，则
+$$
+CAGR = \left(\frac{V_T}{V_0}\right)^{1/T} - 1
+$$
+例如从 2025 年 30 亿美元增长到 2030 年 150 亿美元，<span class="arithmatex">\(CAGR = (150/30)^{1/5}-1 \approx 37.9\%\)</span>。CAGR 平滑了年度波动，但不反映路径风险。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：ASP（Average Selling Price）</p>
+<p>平均售价是总销售收入除以总出货量。人形机器人市场 ASP 下降极快：2023 年科研/样机阶段 ASP 可能超过 10 万美元，2025 年中国厂商已将部分型号做到 1–3 万美元。市场预测对 ASP 曲线假设不同，会显著影响收入预测。</p>
+</div>
+<h4 id="1312">1.3.1.2 情景分析与置信区间</h4>
+<p>单一预测数字容易掩盖不确定性。更好的做法是给定情景假设，构造乐观、基准、悲观三种路径。</p>
+<p>设 2030 年出货量 <span class="arithmatex">\(N_{30}\)</span> 和 ASP <span class="arithmatex">\(P_{30}\)</span> 为随机变量，则市场规模</p>
+<div class="arithmatex">\[
+M_{30} = N_{30} \cdot P_{30}
+\]</div>
+<p>采用对数正态假设，可估计 90% 置信区间：</p>
+<div class="arithmatex">\[
+\ln M_{30} \sim \mathcal{N}\left(\ln(N_{base}P_{base}), \sigma_N^2 + \sigma_P^2 + 2\rho\sigma_N\sigma_P\right)
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(N_{base}, P_{base}\)</span>：基准出货量与基准 ASP；</li>
+<li><span class="arithmatex">\(\sigma_N, \sigma_P\)</span>：出货量与 ASP 的对数标准差，反映预测不确定性；</li>
+<li><span class="arithmatex">\(\rho\)</span>：出货量与 ASP 的相关系数，通常为负（规模扩大伴随降价）。</li>
+</ul>
+<p>以基准情景 <span class="arithmatex">\(N_{base}=500\)</span> 千台、<span class="arithmatex">\(P_{base}=30{,}000\)</span> 美元、<span class="arithmatex">\(\sigma_N=0.5\)</span>、<span class="arithmatex">\(\sigma_P=0.3\)</span>、<span class="arithmatex">\(\rho=-0.3\)</span> 为例：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+N_base, P_base = 500e3, 30_000
+sigma_N, sigma_P, rho = 0.5, 0.3, -0.3
+
+mu = np.log(N_base * P_base)
+sigma = np.sqrt(sigma_N**2 + sigma_P**2 + 2*rho*sigma_N*sigma_P)
+
+samples = np.random.lognormal(mu, sigma, 100_000)
+print(f"2030 市场规模中位数: ${np.median(samples)/1e9:.2f}B")
+print(f"90% 置信区间: ${np.percentile(samples,5)/1e9:.1f}B - ${np.percentile(samples,95)/1e9:.1f}B")</code></pre>
+<p>运行结果大致为：中位数 150 亿美元，90% 置信区间 60–370 亿美元。这一范围解释了为何不同机构对 2030 年预测从 100 亿美元到 380 亿美元不等。</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[市场预测输入] --&gt; B[基准出货量]
+    A --&gt; C[基准 ASP]
+    A --&gt; D[不确定性参数]
+    B --&gt; E[情景生成]
+    C --&gt; E
+    D --&gt; E
+    E --&gt; F[概率分布]
+    F --&gt; G[置信区间]</code></pre>
+<h3 id="132">1.3.2 出货量与区域格局</h3>
+<p>相比金额预测，出货量数据更能反映真实进展：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源/时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025 年全球人形机器人安装量</td>
+<td>约 16,000 台</td>
+<td>Counterpoint Research（2026 年 1 月）</td>
+</tr>
+<tr>
+<td>中国占全球安装量比例</td>
+<td>超过 80%</td>
+<td>Counterpoint Research（2026 年 1 月）</td>
+</tr>
+<tr>
+<td>2027 年全球出货量预测</td>
+<td>115,000 台</td>
+<td>ABI Research</td>
+</tr>
+<tr>
+<td>2027 年累计安装量预测</td>
+<td>超过 100,000 台</td>
+<td>Counterpoint Research</td>
+</tr>
+<tr>
+<td>2026 年一季度中国人形机器人出口同比增长</td>
+<td>210%</td>
+<td>中国海关数据（2026 年 1–4 月）</td>
+</tr>
+<tr>
+<td>2026 年中国人形机器人销量预测</td>
+<td>28,000 台</td>
+<td>摩根士丹利</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2025 年全球市场份额（按安装量）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>总部</th>
+<th>2025 年市场份额</th>
+<th>代表产品</th>
+<th>主要应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>智元机器人（AgiBot）</td>
+<td>上海</td>
+<td>约 31%</td>
+<td>X2、G2</td>
+<td>制造、物流、服务</td>
+</tr>
+<tr>
+<td>宇树科技（Unitree）</td>
+<td>杭州</td>
+<td>约 27%</td>
+<td>G1、H1</td>
+<td>科研、工业、消费</td>
+</tr>
+<tr>
+<td>优必选（UBTECH）</td>
+<td>深圳</td>
+<td>约 5%</td>
+<td>Walker S/S1/S2</td>
+<td>汽车制造</td>
+</tr>
+<tr>
+<td>乐聚机器人（Leju）</td>
+<td>深圳</td>
+<td>约 5%</td>
+<td>Kuavo</td>
+<td>教育、医疗、服务</td>
+</tr>
+<tr>
+<td>Tesla</td>
+<td>美国</td>
+<td>约 5%</td>
+<td>Optimus Gen 2/3</td>
+<td>内部工厂、物流</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>全球</td>
+<td>约 27%</td>
+<td>各类产品</td>
+<td>多元</td>
+</tr>
+</tbody>
+</table>
+<p>数据来源：Robozaps、Counterpoint Research、Omdia、36 氪、虎嗅（2025–2026 年）</p>
+<p>从上表可以看出，中国厂商占据了 2025 年全球安装量的前四名中的三席，合计市场份额超过 70%。这反映了中国在供应链、成本控制和制造能力上的优势。</p>
+<h3 id="133">1.3.3 投资热度与资本证券化</h3>
+<p>2025–2026 年是人形机器人投资的爆发期，也是资本证券化元年：</p>
+<p><strong>全球主要融资事件（2025–2026）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>时间</th>
+<th>轮次</th>
+<th>金额</th>
+<th>估值/亮点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Figure AI</td>
+<td>2025 年 9 月</td>
+<td>Series C</td>
+<td>10 亿美元+</td>
+<td>估值 390 亿美元</td>
+</tr>
+<tr>
+<td>Apptronik</td>
+<td>2025 年</td>
+<td>Series A</td>
+<td>4.03 亿美元</td>
+<td>奔驰、Google 投资</td>
+</tr>
+<tr>
+<td>EngineAI</td>
+<td>2025–2026 年</td>
+<td>A/B 轮</td>
+<td>1.4–2.0 亿美元</td>
+<td>中国深圳</td>
+</tr>
+<tr>
+<td>RobotEra</td>
+<td>2025–2026 年</td>
+<td>A/Growth</td>
+<td>1.4 亿美元+</td>
+<td>吉利、北汽投资</td>
+</tr>
+<tr>
+<td>Galbot</td>
+<td>2025 年 12 月</td>
+<td>—</td>
+<td>3.0 亿美元</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Leju Robotics</td>
+<td>2025 年 10 月</td>
+<td>—</td>
+<td>2.0 亿美元</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Spirit AI</td>
+<td>2026 年 4 月</td>
+<td>Series A</td>
+<td>1.45 亿美元</td>
+<td>具身智能平台</td>
+</tr>
+</tbody>
+</table>
+<p><strong>中国市场融资与上市动态（2025–2026）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>时间</th>
+<th>事件</th>
+<th>规模/估值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>银河通用</td>
+<td>2025 年</td>
+<td>单轮融资</td>
+<td>超 3 亿美元，估值 211 亿元</td>
+</tr>
+<tr>
+<td>宇树科技</td>
+<td>2026 年 3 月</td>
+<td>科创板 IPO 受理</td>
+<td>募资约 42 亿元，估值约 420 亿元</td>
+</tr>
+<tr>
+<td>优必选</td>
+<td>2025 年</td>
+<td>港股三次再融资</td>
+<td>合计约 65 亿港元，累计融资 86.91 亿港元</td>
+</tr>
+<tr>
+<td>智元机器人</td>
+<td>2025–2026 年</td>
+<td>股改+借壳上纬新材</td>
+<td>估值 150 亿元以上</td>
+</tr>
+<tr>
+<td>乐聚机器人</td>
+<td>2025 年</td>
+<td>Pre-IPO 轮</td>
+<td>近 15 亿元</td>
+</tr>
+<tr>
+<td>傅利叶智能</td>
+<td>2025–2026 年</td>
+<td>上市辅导备案</td>
+<td>估值百亿级</td>
+</tr>
+</tbody>
+</table>
+<p>数据来源：Crunchbase、36 氪、凤凰网、新浪财经、AI 中国网（2025–2026 年）</p>
+<p><strong>关键观察</strong>：</p>
+<ul>
+<li>2025 年全球机器人初创企业融资总额超过 85 亿美元，为 2021 年以来最高；其中人形机器人专项融资约 43 亿美元，较 2018 年增长约 6 倍。</li>
+<li>2025 年中国前三季度机器人赛道融资达 500 亿元人民币（约 70 亿美元），同比增长 250%。</li>
+<li>2026 年一季度，中国人形机器人全产业链融资事件超过 100 起，单笔最高 25 亿元，10 亿元及以上大额融资 15 笔。</li>
+<li>超过 20 家具身智能公司在 2026 年初明确上市计划。</li>
+</ul>
+<h3 id="134">1.3.4 成本下降曲线</h3>
+<p>成本下降是人形机器人产业化的关键信号。根据高盛和美银等机构数据：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023–2024 年制造成本降幅</td>
+<td>40%</td>
+<td>Goldman Sachs（via Deloitte）</td>
+</tr>
+<tr>
+<td>当前西方工厂试点单台成本</td>
+<td>9–10 万美元</td>
+<td>Bank of America（2026）</td>
+</tr>
+<tr>
+<td>当前中国 BOM 成本</td>
+<td>约 3.5 万美元</td>
+<td>Bank of America（2026）</td>
+</tr>
+<tr>
+<td>2030 年单台成本预测</td>
+<td>低于 1.7 万美元</td>
+<td>Bank of America</td>
+</tr>
+<tr>
+<td>宇树 G1 售价</td>
+<td>约 1.6 万美元</td>
+<td>公开售价</td>
+</tr>
+<tr>
+<td>宇树 R1 售价（2025 年 7 月）</td>
+<td>5900 美元</td>
+<td>公开售价</td>
+</tr>
+<tr>
+<td>Tesla Optimus 目标售价</td>
+<td>2–3 万美元</td>
+<td>Musk，2026 年 1 月</td>
+</tr>
+</tbody>
+</table>
+<p>数据来源：Goldman Sachs、Bank of America、Optimusk.blog、公开售价信息（2025–2026 年）</p>
+<p>宇树 2025 年 7 月推出售价 5900 美元的 R1 人形机器人，震惊了市场——这一价格点此前被认为需要多年才能实现。这显示中国供应链在成本压缩上的巨大潜力。</p>
+<h3 id="135">1.3.5 劳动力市场的结构性需求</h3>
+<p>人形机器人产业化的根本驱动力之一是劳动力结构变化：</p>
+<ul>
+<li><strong>人口老龄化</strong>：中国 60 岁以上人口占比已超过 20%，制造业一线工人缺口持续扩大；日本、欧洲同样面临严重老龄化。</li>
+<li><strong>危险岗位替代</strong>：化工、采矿、建筑、救援等领域存在大量危险作业，人形机器人可以替代人类进入高风险环境。</li>
+<li><strong>柔性制造需求</strong>：传统工业机器人擅长重复性任务，但面对多品种、小批量、频繁换线的生产模式，人形机器人理论上更具灵活性。</li>
+</ul>
+<h4 id="1351">1.3.5.1 人口老龄化与劳动力缺口的量化</h4>
+<p>人口结构变化可用<strong>老年抚养比</strong>（Old-Age Dependency Ratio, OADR）衡量：</p>
+<div class="arithmatex">\[
+OADR_t = \frac{P_{65+,t}}{P_{15-64,t}} \times 100\%
+\]</div>
+<p>其中 <span class="arithmatex">\(P_{65+,t}\)</span> 为 65 岁以上人口，<span class="arithmatex">\(P_{15-64,t}\)</span> 为 15–64 岁劳动年龄人口。中国 2023 年 OADR 约为 21.1%，预计 2035 年将超过 30%；日本 2023 年已超过 50%。这意味着每 100 名劳动年龄人口需要抚养的老年人口从 21 人增加到 30 人以上，劳动力供给压力持续加大。</p>
+<p>制造业工资因此面临上涨压力。设某岗位年人工成本为 <span class="arithmatex">\(C_h\)</span>，机器人替代该岗位的年等价成本为 <span class="arithmatex">\(C_r\)</span>，则替代条件为：</p>
+<div class="arithmatex">\[
+C_r &lt; C_h
+\]</div>
+<p>机器人年等价成本可分解为：</p>
+<div class="arithmatex">\[
+C_r = \frac{C_{robot} - S_{residual}}{T_{life}} + C_{maint} + C_{energy}
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(C_{robot}\)</span>：机器人购置成本（美元）；</li>
+<li><span class="arithmatex">\(S_{residual}\)</span>：设计寿命结束时的残值（美元）；</li>
+<li><span class="arithmatex">\(T_{life}\)</span>：设计寿命（年）；</li>
+<li><span class="arithmatex">\(C_{maint}\)</span>：年维护成本（美元/年）；</li>
+<li><span class="arithmatex">\(C_{energy}\)</span>：年能耗成本（美元/年）。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：老年抚养比（Old-Age Dependency Ratio）</p>
+<p>老年抚养比是衡量人口老龄化对劳动力供给压力的核心指标，定义为 65 岁及以上人口与 15–64 岁劳动年龄人口之比。OADR 越高，意味着每个劳动年龄人口负担的老年人越多，社会养老和医疗支出压力越大，劳动力供给相对收缩。</p>
+</div>
+<h4 id="1352">1.3.5.2 人机替代盈亏平衡点分析</h4>
+<p>将替代条件转换为小时工资更为直观。设机器人设计寿命为 8 年，年运行 6000 小时（约每天 16 小时 × 375 天），购置成本 5 万美元，年维护成本为购置价的 10%（5000 美元/年），年能耗成本 1000 美元，残值忽略，则：</p>
+<div class="arithmatex">\[
+C_r = \frac{50{,}000}{8} + 5{,}000 + 1{,}000 = 12{,}250 \text{ 美元/年}
+\]</div>
+<p>机器人小时成本：</p>
+<div class="arithmatex">\[
+c_r = \frac{12{,}250}{6{,}000} \approx 2.04 \text{ 美元/小时}
+\]</div>
+<p>若该岗位人类工人年总成本（含工资、社保、福利）为 6 万美元，年工作 2000 小时，则小时成本为 30 美元/小时。此时机器人替代的人力成本优势约为 <span class="arithmatex">\(30 - 2.04 = 27.96\)</span> 美元/小时。即便机器人效率仅为人类的 50%，等效小时成本也仅为 4.08 美元/小时，仍具显著优势。</p>
+<pre class="highlight"><code class="language-python"># 人机替代盈亏平衡点计算
+C_robot = 50_000      # 购置成本（美元）
+T_life = 8            # 设计寿命（年）
+hours_per_year = 6000 # 年运行小时
+C_maint = 0.10 * C_robot  # 年维护成本
+C_energy = 1_000      # 年能耗成本
+
+C_r = C_robot / T_life + C_maint + C_energy
+c_r = C_r / hours_per_year
+print(f"机器人年等价成本: ${C_r:,.0f}/年")
+print(f"机器人小时成本: ${c_r:.2f}/小时")
+
+# 盈亏平衡人类小时工资
+C_h_human = 60_000    # 人类年总成本
+h_human = 2000        # 人类年工作小时
+c_h = C_h_human / h_human
+breakeven_efficiency = c_r / c_h
+print(f"人类小时成本: ${c_h:.2f}/小时")
+print(f"盈亏平衡效率阈值: {breakeven_efficiency*100:.1f}%")</code></pre>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[机器人购置成本] --&gt; B[折旧]
+    A --&gt; C[维护成本]
+    A --&gt; D[能耗成本]
+    B --&gt; E[年等价成本]
+    C --&gt; E
+    D --&gt; E
+    E --&gt; F[机器人小时成本]
+    G[人类小时成本] --&gt; H{机器人小时成本 &lt; 人类小时成本?}
+    F --&gt; H
+    H --&gt;|是| I[具备替代经济性]
+    H --&gt;|否| J[尚不具备替代条件]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：盈亏平衡点（Break-Even Point）</p>
+<p>盈亏平衡点是指两种方案总成本相等时的临界状态。在人机替代分析中，常用于判断机器人效率需要达到人类多少比例才能在经济上持平。该分析忽略了培训成本、任务适应性、社会接受度等非财务因素，实际决策需要更全面的 TCO 评估。</p>
+</div>
+<p>人形机器人经济性分析的更多细节见第 13 章 13.3 节。</p>
+<h3 id="136-ai">1.3.6 AI 能力的跃升</h3>
+<p>人形机器人之所以在 2020 年代重新受到关注，关键在于人工智能能力的跃升：</p>
+<ul>
+<li><strong>计算机视觉</strong>：目标检测、语义分割、深度估计能力大幅提升，使机器人能够更好地理解环境。</li>
+<li><strong>大语言模型（LLM）</strong>：使机器人能够理解复杂指令和上下文。</li>
+<li><strong>VLA 模型</strong>：将视觉、语言和动作统一，使机器人能够根据自然语言指令完成操作任务。代表性模型包括 RT-2、OpenVLA、GR00T N1、Figure Helix、π0。</li>
+<li><strong>强化学习</strong>：在仿真环境中训练 locomotion 和操作技能，并通过 sim-to-real 迁移到真实机器人。</li>
+</ul>
+<p>这些 AI 能力弥补了传统控制方法在开放环境中的不足，使人形机器人从“按预编程动作执行”向“根据感知自主决策”演进。</p>
+<h3 id="137">1.3.7 市场预测的方法论边界</h3>
+<p>市场预测数字虽然引人注目，但理解其方法论边界同样重要。产业分析中常用以下框架：</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：TAM/SAM/SOM</p>
+<ul>
+<li><strong>TAM（Total Addressable Market）</strong>：总潜在市场，指理论上所有可能购买某类产品或服务的市场总额。</li>
+<li><strong>SAM（Serviceable Addressable Market）</strong>：可服务市场，指企业实际能够触达并服务的市场部分，受地域、渠道、技术能力限制。</li>
+<li><strong>SOM（Serviceable Obtainable Market）</strong>：可获得市场，指企业在短期内实际能够获取的市场份额。</li>
+</ul>
+</div>
+<p>例如，若 2035 年全球人形机器人 TAM 为 3800 亿美元，某企业的 SAM 可能仅为工业制造细分市场，而 SOM 则取决于其产能、渠道和品牌。</p>
+<p><strong>技术采用 S 曲线（Logistic Curve）</strong></p>
+<p>新技术的市场渗透率通常遵循 S 曲线：</p>
+<div class="arithmatex">\[
+P(t) = \frac{L}{1 + e^{-k(t - t_0)}}
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(L\)</span> 为市场渗透率上限（通常设为 100% 或某个饱和值）；</li>
+<li><span class="arithmatex">\(k\)</span> 为增长率参数；</li>
+<li><span class="arithmatex">\(t_0\)</span> 为拐点时间，即渗透率增长最快的时刻；</li>
+<li><span class="arithmatex">\(P(t)\)</span> 为时刻 <span class="arithmatex">\(t\)</span> 的市场渗透率。</li>
+</ul>
+<p>S 曲线的拐点处对应最大增长速率，对于投资决策和产能规划具有重要意义。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：学习曲线（Learning Curve）</p>
+<p>学习曲线描述随着累计产量增加，单位成本下降的定量关系。经典形式为：
+$$
+C_n = C_1 \cdot n^{-b}
+$$
+其中 <span class="arithmatex">\(C_n\)</span> 是第 <span class="arithmatex">\(n\)</span> 个产品的成本，<span class="arithmatex">\(C_1\)</span> 是第一个产品的成本，<span class="arithmatex">\(b\)</span> 是学习指数。学习率 <span class="arithmatex">\(LR\)</span> 定义为产量每翻一番成本下降的比例：<span class="arithmatex">\(LR = 1 - 2^{-b}\)</span>。例如，若 <span class="arithmatex">\(b = 0.32\)</span>，则 <span class="arithmatex">\(LR \approx 20\%\)</span>，即产量每翻倍，成本下降 20%。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：经验曲线（Experience Curve）</p>
+<p>经验曲线由波士顿咨询集团（BCG）于 1960 年代提出，是学习曲线在更广泛商业场景中的推广。它不仅包括制造学习，还包括供应链优化、设计改进、规模经济和流程创新。经验曲线常用于战略咨询，解释为何行业龙头在成本上具有持续优势。</p>
+</div>
+<p><strong>对市场预测的批判性思考</strong></p>
+<ol>
+<li><strong>预测区间越长，不确定性越大</strong>：2035 年的预测高度依赖对技术成熟度、政策法规和社会接受度的假设。</li>
+<li><strong>出货量与收入不完全对应</strong>：低价教育/科研机器人可能拉高出货量但对收入贡献有限。</li>
+<li><strong>中美市场结构差异</strong>：中国供应链成本优势可能使中国厂商在出货量上领先，但高端应用和软件服务价值仍可能由美国企业主导。</li>
+<li><strong>泡沫风险</strong>：2025–2026 年的高估值和高融资额包含了显著的资本市场情绪成分，需要区分“能融资”和“能盈利”。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[市场预测输入] --&gt; B[TAM/SAM/SOM]
+    A --&gt; C[S 曲线渗透率]
+    A --&gt; D[学习曲线成本]
+    A --&gt; E[竞争格局]
+    A --&gt; F[政策法规]
+
+    B --&gt; G[市场规模预测]
+    C --&gt; G
+    D --&gt; H[价格与利润率预测]
+    E --&gt; I[市场份额分配]
+    F --&gt; J[准入与合规成本]
+
+    G --&gt; K[综合商业判断]
+    H --&gt; K
+    I --&gt; K
+    J --&gt; K</code></pre>
+<p><strong>Python 示例 1：技术采用 S 曲线参数拟合与预测</strong></p>
+<p>以下代码使用历史出货量数据拟合 Logistic 曲线，并预测未来市场渗透率：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+# 假设历史年份与全球出货量（千台）
+years = np.array([2023, 2024, 2025, 2026])
+shipments_k = np.array([1.5, 5.0, 16.0, 40.0])
+
+# 假设远期饱和出货量为 5000 千台
+L = 5000.0
+
+# 标准化为渗透率
+P = shipments_k / L
+
+# Logistic 模型
+def logistic(t, k, t0):
+    return L / (1 + np.exp(-k * (t - t0)))
+
+# 拟合
+popt, _ = curve_fit(logistic, years, shipments_k, p0=[0.8, 2028])
+k, t0 = popt
+print(f"拟合参数: k={k:.4f}, t0={t0:.2f}")
+
+# 预测
+future_years = np.arange(2023, 2036)
+predicted = logistic(future_years, k, t0)
+
+plt.figure(figsize=(8, 5))
+plt.scatter(years, shipments_k, color='red', label='历史出货量（千台）')
+plt.plot(future_years, predicted, label=f'Logistic 拟合: k={k:.3f}, t0={t0:.1f}')
+plt.axhline(L, color='gray', linestyle='--', label=f'饱和量 L={L} 千台')
+plt.xlabel('年份')
+plt.ylabel('全球出货量（千台）')
+plt.title('人形机器人市场采用 S 曲线预测')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：曲线拟合（Curve Fitting）</p>
+<p>曲线拟合是通过优化方法找到一条数学曲线，使其最接近一组观测数据的过程。常用方法包括最小二乘法（Least Squares）和最大似然估计。拟合参数的不确定性需要通过置信区间和残差分析来评估。</p>
+</div>
+<p><strong>Python 示例 2：学习曲线成本投影</strong></p>
+<p>以下代码根据学习曲线估算累计产量增加时的单台 BOM 成本：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+C1 = 100_000.0  # 第一台 BOM 成本（美元）
+learning_rate = 0.20  # 产量每翻倍，成本下降 20%
+b = -np.log2(1 - learning_rate)
+
+n_units = np.logspace(0, 6, 100)  # 1 到 1e6 台
+C_n = C1 * n_units ** (-b)
+
+plt.figure(figsize=(8, 5))
+plt.loglog(n_units, C_n)
+plt.axhline(17_000, color='red', linestyle='--', label='Bank of America 2030 目标 $17k')
+plt.axhline(5_900, color='green', linestyle='--', label='Unitree R1 售价 $5.9k')
+plt.xlabel('累计产量（台）')
+plt.ylabel('单台 BOM 成本（美元）')
+plt.title(f'学习曲线：学习率 {learning_rate*100:.0f}%')
+plt.legend()
+plt.grid(True, which='both', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+
+# 计算达到目标成本所需累计产量
+target_cost = 17_000
+n_required = (target_cost / C1) ** (-1 / b)
+print(f"达到 ${target_cost:,.0f} 所需累计产量约: {n_required:,.0f} 台")</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：BOM（Bill of Materials）</p>
+<p>物料清单（BOM）是制造一台产品所需的所有零部件及其成本的清单。BOM 成本是硬件产品成本分析的基础，但不包括研发、模具、认证、营销、物流和售后等间接成本。</p>
+</div>
+<hr />
+<h2 id="14-vs">1.4 核心矛盾：能走的机器人 vs 能卖的机器人</h2>
+<p>人形机器人产业化面临的核心判断是：市场上有两种成功标准，一种是“能完成演示”，另一种是“能成为产品”。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>能走的机器人（演示型）</th>
+<th>能卖的机器人（产品型）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>目标</strong></td>
+<td>展示技术可能性</td>
+<td>解决客户问题并盈利</td>
+</tr>
+<tr>
+<td><strong>环境</strong></td>
+<td>受控、平坦、光照固定</td>
+<td>开放、不确定、动态变化</td>
+</tr>
+<tr>
+<td><strong>运行时间</strong></td>
+<td>几分钟到几小时</td>
+<td>每天 8–16 小时，全年 300 天以上</td>
+</tr>
+<tr>
+<td><strong>故障率</strong></td>
+<td>允许失败和重启</td>
+<td>必须达到 99% 以上的可用性</td>
+</tr>
+<tr>
+<td><strong>成本</strong></td>
+<td>不计成本，追求性能</td>
+<td>必须控制在客户可接受范围</td>
+</tr>
+<tr>
+<td><strong>维护</strong></td>
+<td>由工程师现场调试</td>
+<td>可由普通技师快速维修</td>
+</tr>
+<tr>
+<td><strong>合规</strong></td>
+<td>无需认证</td>
+<td>必须通过安全、EMC、电气等认证</td>
+</tr>
+</tbody>
+</table>
+<p>这一差距可从四个维度加以理解。</p>
+<h3 id="141">1.4.1 可靠性：从“能跑”到“不坏”</h3>
+<p>演示型机器人可能只需要在几个特定动作上表现良好，例如走几步、拿起一个杯子。但产品型机器人需要在数万乃至数十万小时的运行中保持性能稳定。</p>
+<p><strong>具体挑战包括：</strong></p>
+<ul>
+<li><strong>机械磨损</strong>：减速器、轴承、齿轮在长期使用中会产生磨损和背隙增加。</li>
+<li><strong>电子老化</strong>：电容、电池、连接器在高温、振动环境下会老化失效。</li>
+<li><strong>传感器漂移</strong>：IMU 零偏漂移、相机标定变化、力传感器温漂会导致感知和控制性能下降。</li>
+<li><strong>软件稳定性</strong>：算法在边界情况下可能出现异常，需要完善的故障检测与恢复机制。</li>
+</ul>
+<p>以工业机器人为参照，汽车产线的工业机器人通常要求 MTBF（平均无故障时间）超过 60,000 小时。而目前大多数人形机器人的 MTBF 还远低于这一水平。Figure 02 在宝马 11 个月部署中完成了约 1,250 小时运行，这已是行业内的重要里程碑，但距离 8 小时/天 × 300 天/年 = 2,400 小时/年的工业标准仍有差距。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：可靠性函数 R(t)</p>
+<p>可靠性函数 <span class="arithmatex">\(R(t)\)</span> 表示产品在时间区间 <span class="arithmatex">\([0, t]\)</span> 内不发生故障的概率。对于恒定故障率 <span class="arithmatex">\(\lambda\)</span> 的指数分布：
+$$
+R(t) = e^{-\lambda t}
+$$
+平均无故障时间 <span class="arithmatex">\(MTBF = \frac{1}{\lambda}\)</span>。指数分布适用于随机失效阶段，但不适用于早期失效和磨损失效阶段。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：MTBF（Mean Time Between Failures）</p>
+<p>平均无故障时间是衡量可修复设备可靠性的核心指标，指两次相邻故障之间的平均时间。对于恒定故障率的指数分布，<span class="arithmatex">\(MTBF = 1/\lambda\)</span>。MTBF 越高，说明设备越不容易发生故障。需要注意的是，MTBF 是统计概念，不表示设备会在恰好 MTBF 时间点故障。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：浴缸曲线（Bathtub Curve）</p>
+<p>浴缸曲线描述产品全生命周期故障率的变化趋势，分为三个阶段：
+1. <strong>早期失效期（Infant Mortality）</strong>：故障率随时间下降，通常由制造缺陷、设计问题引起；
+2. <strong>随机失效期（Useful Life）</strong>：故障率近似恒定，对应正常使用阶段；
+3. <strong>磨损失效期（Wear-Out）</strong>：故障率随时间上升，由材料老化、疲劳、磨损引起。
+浴盆曲线的形状启发产品工程中的“老化筛选”（Burn-in）和预防性维护策略。</p>
+</div>
+<h3 id="142">1.4.2 成本：从“百万美元”到“几万美元”</h3>
+<p>成本是制约人形机器人商业化的最关键因素之一。以下是主要成本构成（以一台全尺寸双足人形机器人为例）：</p>
+<pre class="highlight"><code class="language-mermaid">pie title 人形机器人成本构成示意
+    "执行器及驱动" : 35
+    "减速器" : 20
+    "传感器" : 15
+    "计算平台" : 10
+    "结构件与加工" : 10
+    "电池与电源" : 5
+    "线缆/接插件/其他" : 5</code></pre>
+<p><strong>关键零部件单价参考（2025–2026 年市场水平）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>零部件</th>
+<th>高端进口</th>
+<th>国产替代</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>谐波减速器</td>
+<td>2000–5000 元</td>
+<td>800–2000 元</td>
+<td>数量约 10–20 个</td>
+</tr>
+<tr>
+<td>RV 减速器</td>
+<td>5000–15,000 元</td>
+<td>2000–6000 元</td>
+<td>常用于腿部大负载关节</td>
+</tr>
+<tr>
+<td>无框力矩电机</td>
+<td>3000–10,000 元</td>
+<td>1000–4000 元</td>
+<td>数量约 10–20 个</td>
+</tr>
+<tr>
+<td>六维力传感器</td>
+<td>5000–20,000 元</td>
+<td>2000–8000 元</td>
+<td>常用于脚踝/手腕</td>
+</tr>
+<tr>
+<td>激光雷达</td>
+<td>3000–10,000 元</td>
+<td>1000–5000 元</td>
+<td>如 Livox Mid-360</td>
+</tr>
+<tr>
+<td>高算力计算平台</td>
+<td>5000–20,000 元</td>
+<td>3000–10,000 元</td>
+<td>如 Jetson AGX Orin/Thor</td>
+</tr>
+</tbody>
+</table>
+<p>一台全尺寸人形机器人的 BOM（物料清单）成本在 2025–2026 年因配置不同差异很大：西方厂商试点成本约 9–10 万美元，而中国厂商 BOM 已降至约 3.5 万美元。要实现大规模商业化，单台成本需要进一步降至 3 万美元以下。</p>
+<p><strong>成本建模框架</strong></p>
+<p>产品总成本可以分解为：</p>
+<div class="arithmatex">\[
+C_{total} = C_{BOM} + C_{NRE} + C_{manufacturing} + C_{logistics} + C_{service}
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(C_{BOM}\)</span>：物料清单成本；</li>
+<li><span class="arithmatex">\(C_{NRE}\)</span>：一次性工程开发成本（Non-Recurring Engineering），包括研发、模具、认证、软件；</li>
+<li><span class="arithmatex">\(C_{manufacturing}\)</span>：制造费用，包括人工、设备折旧、工厂运营；</li>
+<li><span class="arithmatex">\(C_{logistics}\)</span>：物流与库存成本；</li>
+<li><span class="arithmatex">\(C_{service}\)</span>：售后、维修、培训成本。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：NRE（Non-Recurring Engineering）</p>
+<p>NRE 是指一次性、非重复发生的工程开发成本，例如芯片流片费用、模具费用、认证费用、软件开发费用等。NRE 需要在产品生命周期总销量中摊销，销量越大，单位 NRE 成本越低。</p>
+</div>
+<h3 id="143">1.4.3 可维护性：从“工程师陪护”到“现场维修”</h3>
+<p>商业部署的机器人必须支持快速维修、零部件更换和软件升级。这要求：</p>
+<ul>
+<li><strong>模块化设计</strong>：执行器、电池、传感器等部件可以快速拆卸和更换。</li>
+<li><strong>标准化接口</strong>：减少专用工具和培训成本。</li>
+<li><strong>远程诊断</strong>：通过 fleet 管理平台监控机器人状态，提前发现潜在故障。</li>
+<li><strong>OTA 升级</strong>：软件可以远程更新，修复 bug 和优化性能。</li>
+<li><strong>备件供应</strong>：建立完善的备件库存和物流体系。</li>
+</ul>
+<p>例如，汽车工厂的机器人如果出现故障，通常要求 30 分钟内恢复运行。人形机器人要达到类似水平，必须在设计阶段就考虑维护性。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：MTTR（Mean Time To Repair）</p>
+<p>平均修复时间是指从故障发生到系统恢复正常运行所需的平均时间。它包括故障检测、诊断、维修、验证和恢复的时间。可用性（Availability）与 MTBF 和 MTTR 的关系为：<span class="arithmatex">\(A = \frac{MTBF}{MTBF + MTTR}\)</span>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：可用性（Availability）</p>
+<p>可用性 <span class="arithmatex">\(A\)</span> 是系统在规定条件下、规定时间内处于可工作状态的概率。对于可修复系统，稳态可用性为：
+$$
+A = \frac{MTBF}{MTBF + MTTR}
+$$
+它综合反映了可靠性和可维护性。提高可用性可以通过提高 MTBF（更可靠）或降低 MTTR（更易修）两条路径实现。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：OTA（Over-The-Air）</p>
+<p>空中升级是指通过无线网络远程更新设备软件。OTA 使得机器人可以在部署后修复漏洞、优化算法、添加功能，而无需召回或现场维护。OTA 也带来了网络安全风险，需要身份验证、加密和回滚机制。</p>
+</div>
+<h3 id="144">1.4.4 合规性：从“实验室自由”到“市场准入”</h3>
+<p>人形机器人在工作环境中与人密切互动，必须符合功能安全、电气安全、电磁兼容、机械安全等相关标准。主要标准包括：</p>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>适用范围</th>
+<th>核心要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 13482:2014</td>
+<td>个人护理机器人</td>
+<td>速度、力、接触压力限制</td>
+</tr>
+<tr>
+<td>ISO/TS 15066</td>
+<td>协作机器人</td>
+<td>人机协作安全要求</td>
+</tr>
+<tr>
+<td>IEC 61508</td>
+<td>功能安全</td>
+<td>控制系统安全完整性等级（SIL）</td>
+</tr>
+<tr>
+<td>ISO 13849</td>
+<td>机械安全控制系统</td>
+<td>控制系统安全相关部件</td>
+</tr>
+<tr>
+<td>IEC 62368</td>
+<td>音视频与信息技术设备安全</td>
+<td>电气安全、火灾风险</td>
+</tr>
+</tbody>
+</table>
+<p>不同地区还有不同的市场准入要求：</p>
+<ul>
+<li><strong>欧盟</strong>：CE 标志</li>
+<li><strong>美国</strong>：UL 认证、FCC 电磁兼容</li>
+<li><strong>中国</strong>：CR 认证（中国机器人认证）、CCC 等</li>
+</ul>
+<p>合规性不仅影响设计选择（如最大运动速度、外壳材料、急停按钮位置），还直接影响测试成本和时间。一个完整的安全认证周期可能需要 6–18 个月，费用从数万美元到数十万美元不等。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：功能安全（Functional Safety）</p>
+<p>功能安全是指系统在故障条件下仍能保持安全状态的能力。IEC 61508 定义了安全完整性等级 SIL 1–4，SIL 4 为最高等级。实现功能安全需要危险分析、冗余设计、故障检测、安全关断机制和系统验证。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：EMC（Electromagnetic Compatibility）</p>
+<p>电磁兼容性指设备在电磁环境中正常工作且不对其他设备产生不可接受电磁干扰的能力。EMC 测试包括辐射发射（RE）、传导发射（CE）、静电放电（ESD）、电快速瞬变脉冲群（EFT）等。</p>
+</div>
+<h3 id="145">1.4.5 系统可靠性：串联模型</h3>
+<p>对于由多个部件组成的机器人，若任一关键部件故障都会导致整机失效，则系统可靠性可近似为各部件可靠性的乘积（串联模型）：</p>
+<div class="arithmatex">\[
+R_s(t) = \prod_{i=1}^{n} R_i(t)
+\]</div>
+<p>若各部件故障率恒定且为 <span class="arithmatex">\(\lambda_i\)</span>，则：</p>
+<div class="arithmatex">\[
+R_s(t) = \exp\left(-\sum_{i=1}^{n} \lambda_i t\right), \quad MTBF_s = \frac{1}{\sum_{i=1}^{n} \lambda_i}
+\]</div>
+<p>这意味着：即使每个部件的可靠性都很高，部件数量增加也会显著降低整机 MTBF。例如，若机器人有 30 个执行器，每个执行器 MTBF 为 100,000 小时，则仅执行器子系统串联 MTBF 约为 3,333 小时。</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[整机可靠性] --&gt; B[机械子系统]
+    A --&gt; C[电子子系统]
+    A --&gt; D[感知子系统]
+    A --&gt; E[软件子系统]
+    A --&gt; F[电源子系统]
+
+    B --&gt; B1[减速器磨损]
+    B --&gt; B2[轴承疲劳]
+    C --&gt; C1[驱动器老化]
+    C --&gt; C2[连接器失效]
+    D --&gt; D1[IMU 漂移]
+    D --&gt; D2[相机标定变化]
+    E --&gt; E1[边界条件崩溃]
+    E --&gt; E2[内存泄漏]
+    F --&gt; F1[电池衰减]
+    F --&gt; F2[BMS 故障]</code></pre>
+<p><strong>Python 示例 3：串联系统可靠性估计</strong></p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# 假设各关键子系统的 MTBF（小时）
+components = {
+    '执行器×30': 100_000 / 30,
+    '减速器×20': 150_000 / 20,
+    '传感器套件': 80_000,
+    '计算平台': 120_000,
+    '电池/BMS': 60_000,
+    '线缆接插件': 50_000,
+}
+
+# 计算各部件故障率
+lambdas = {k: 1/v for k, v in components.items()}
+total_lambda = sum(lambdas.values())
+system_mtbf = 1 / total_lambda
+print(f"系统总故障率: {total_lambda:.6f} /小时")
+print(f"系统 MTBF: {system_mtbf:,.0f} 小时")
+
+# 绘制可靠性函数
+t = np.linspace(0, 10_000, 500)
+R_system = np.exp(-total_lambda * t)
+R_target = np.exp(-t / 60_000)  # 工业机器人参考
+
+plt.figure(figsize=(8, 5))
+plt.plot(t, R_system, label=f'人形机器人串联模型 (MTBF={system_mtbf:.0f}h)')
+plt.plot(t, R_target, '--', label='工业机器人参考 (MTBF=60,000h)')
+plt.xlabel('运行时间 t（小时）')
+plt.ylabel('可靠性 R(t)')
+plt.title('串联系统可靠性随时间衰减')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：故障率（Failure Rate）</p>
+<p>故障率 <span class="arithmatex">\(\lambda(t)\)</span> 是单位时间内发生故障的概率密度，常用单位为 FIT（Failures In Time，10⁻⁹ 次/小时）或 %/1000 小时。恒定故障率下，<span class="arithmatex">\(\lambda = 1/MTBF\)</span>。</p>
+</div>
+<p><strong>Python 示例 4：可用性 A 与 MTBF/MTTR 的关系</strong></p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# 固定 MTBF，变化 MTTR
+mtbf = 1000  # 小时
+mttr_range = np.linspace(1, 200, 100)
+A_fixed_mtbf = mtbf / (mtbf + mttr_range)
+
+# 固定 MTTR，变化 MTBF
+mttr = 24  # 小时
+mtbf_range = np.linspace(100, 5000, 100)
+A_fixed_mttr = mtbf_range / (mtbf_range + mttr)
+
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
+axs[0].semilogy(mttr_range, 1 - A_fixed_mtbf)
+axs[0].set_xlabel('MTTR（小时）')
+axs[0].set_ylabel('不可用性 1-A')
+axs[0].set_title(f'MTBF={mtbf}h 时，MTTR 对不可用性的影响')
+axs[0].grid(True)
+
+axs[1].plot(mtbf_range, A_fixed_mttr)
+axs[1].set_xlabel('MTBF（小时）')
+axs[1].set_ylabel('可用性 A')
+axs[1].set_title(f'MTTR={mttr}h 时，MTBF 对可用性的影响')
+axs[1].grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# 示例：达到 99% 可用性，MTTR=24h 所需 MTBF
+target_A = 0.99
+mttr_example = 24
+required_mtbf = mttr_example * target_A / (1 - target_A)
+print(f"MTTR={mttr_example}h 时，达到可用性 {target_A*100:.0f}% 需要 MTBF ≥ {required_mtbf:,.0f}h")</code></pre>
+<hr />
+<h2 id="15-0-1">1.5 从 0 到 1 的七个跃迁</h2>
+<p>将人形机器人从概念变为可规模化的产品，需要经历七个递进的跃迁阶段。下图展示了这一过程的宏观流程：</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[实验室样机] --&gt; B[工程样机]
+    B --&gt; C[小批量验证]
+    C --&gt; D[量产准备]
+    D --&gt; E[场景部署]
+    E --&gt; F[运营维护]
+    F --&gt; G[规模化复制]</code></pre>
+<h3 id="151-nasa-trl-dod-mrl">1.5.1 阶段与 NASA TRL / DoD MRL 的映射</h3>
+<p>为了更精确地评估每个阶段的技术与制造成熟度，可以将其映射到 NASA 的技术成熟度等级（TRL）和美国国防部的制造成熟度等级（MRL）：</p>
+<table>
+<thead>
+<tr>
+<th>跃迁阶段</th>
+<th>TRL 范围</th>
+<th>MRL 范围</th>
+<th>核心任务</th>
+<th>主要风险</th>
+<th>退出标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验室样机</td>
+<td>TRL 1–3</td>
+<td>MRL 1–2</td>
+<td>原理验证、关键技术突破</td>
+<td>理论不可行、性能天花板</td>
+<td>关键技术在受控条件下可复现</td>
+</tr>
+<tr>
+<td>工程样机</td>
+<td>TRL 4–5</td>
+<td>MRL 3–4</td>
+<td>系统集成、结构/热/电源设计</td>
+<td>集成失败、可靠性不足</td>
+<td>样机可连续运行并完成指定任务</td>
+</tr>
+<tr>
+<td>小批量验证</td>
+<td>TRL 6</td>
+<td>MRL 5–6</td>
+<td>可制造性、供应链、现场测试</td>
+<td>工艺不稳定、供应商风险</td>
+<td>数十台样机在真实场景稳定运行</td>
+</tr>
+<tr>
+<td>量产准备</td>
+<td>TRL 7</td>
+<td>MRL 7–8</td>
+<td>产线设计、BOM 优化、质量体系</td>
+<td>产能爬坡慢、良率低</td>
+<td>产线验证通过，工艺流程固化</td>
+</tr>
+<tr>
+<td>场景部署</td>
+<td>TRL 8</td>
+<td>MRL 8</td>
+<td>客户现场验证、价值证明</td>
+<td>客户需求错配、现场适配难</td>
+<td>客户签署商业订单或长期协议</td>
+</tr>
+<tr>
+<td>运营维护</td>
+<td>TRL 9</td>
+<td>MRL 9</td>
+<td>fleet 管理、远程诊断、备件</td>
+<td>故障率高、服务成本失控</td>
+<td>可用性达到合同承诺水平</td>
+</tr>
+<tr>
+<td>规模化复制</td>
+<td>TRL 9</td>
+<td>MRL 10</td>
+<td>多地区、多场景、商业模式复制</td>
+<td>市场饱和、竞争加剧</td>
+<td>可持续盈利和规模化增长</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">术语解释：TRL（Technology Readiness Level）</p>
+<p>技术成熟度等级由 NASA 提出，用于评估技术从概念到实际应用的成熟程度。TRL 1 为基本原理观察，TRL 9 为在实际任务中得到验证的系统。TRL 是科技项目管理、预算分配和风险评估的重要工具。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：MRL（Manufacturing Readiness Level）</p>
+<p>制造成熟度等级由美国国防部提出，用于评估制造过程从概念到全面生产的成熟程度。MRL 1 为制造可行性识别，MRL 10 为全面低速/全速生产并持续改进。MRL 与 TRL 互补，共同决定技术产业化成熟度。</p>
+</div>
+<h3 id="152">1.5.2 第一阶段：实验室样机</h3>
+<p><strong>目标</strong>：证明核心技术的可行性。</p>
+<p>此阶段通常在高校或企业研究院进行，研究人员关注某个具体问题，例如双足动态行走、全身控制或灵巧操作。样机可能使用现成零部件和大量手动调参，重点在于发表论文或申请专利，而非工程化。</p>
+<p><strong>关键交付物</strong>：</p>
+<ul>
+<li>概念验证样机</li>
+<li>关键算法原型</li>
+<li>学术论文或专利</li>
+</ul>
+<p><strong>主要风险</strong>：理论假设不成立、关键性能指标无法达到。</p>
+<h3 id="153">1.5.3 第二阶段：工程样机</h3>
+<p><strong>目标</strong>：将技术原型转化为可重复运行的系统。</p>
+<p>工程样机阶段开始关注系统集成、结构强度、热管理、电源效率和软件稳定性。零部件逐步从货架产品向定制件过渡，控制算法与真实硬件深度耦合。</p>
+<p><strong>关键交付物</strong>：</p>
+<ul>
+<li>可重复运行的整机系统</li>
+<li>结构设计图纸和 BOM</li>
+<li>控制软件框架</li>
+<li>初步测试报告</li>
+</ul>
+<h3 id="154">1.5.4 第三阶段：小批量验证</h3>
+<p><strong>目标</strong>：验证设计可制造性和供应链稳定性。</p>
+<p>通常制造数十台至数百台样机，在真实或接近真实的场景中进行长期测试。此阶段会暴露设计缺陷、工艺问题和供应商风险，为量产提供输入。</p>
+<p><strong>2025–2026 年案例</strong>：优必选 Walker S2 月产能超过 300 台；乐聚 2025 年批量交付数千台本体机器人；宇树、智元进入万台级产能规划。</p>
+<h3 id="155">1.5.5 第四阶段：量产准备</h3>
+<p><strong>目标</strong>：将工程样机转化为可重复、可追溯、可扩展的生产流程。</p>
+<p>量产准备阶段涉及产线设计、工艺固化、BOM 优化、供应商锁定、测试流程标准化和质量体系建设。</p>
+<p><strong>2025–2026 年案例</strong>：Tesla 将弗里蒙特 Model S/X 产线改造为 Optimus Gen 3 生产线，目标年产能 100 万台；Figure AI 建成 BotQ 工厂，初始年产能 12,000 台，计划扩至 10 万台。</p>
+<h3 id="156">1.5.6 第五阶段：场景部署</h3>
+<p><strong>目标</strong>：在真实客户场景中验证价值。</p>
+<p>部署阶段将机器人投入到真实客户场景中运行，例如工厂产线、仓储物流或商业服务。此阶段需要解决现场适配、人机协作、异常处理和运营支持等问题。</p>
+<p><strong>2025–2026 年案例</strong>：Figure 02 在宝马斯巴达堡工厂完成 11 个月部署；宝马 2026 年夏季在莱比锡工厂启动 Hexagon AEON 人形机器人试点；Tesla Optimus 在弗里蒙特和得州工厂进行电池分类、零件搬运和质检任务。</p>
+<h3 id="157">1.5.7 第六阶段：运营维护</h3>
+<p><strong>目标</strong>：保障机器人长期稳定运行并持续优化。</p>
+<p>运营维护阶段关注远程监控、故障诊断、OTA 升级、备件供应、维修培训和性能优化。此阶段的数据反馈也将成为产品迭代的重要依据。</p>
+<h3 id="158">1.5.8 第七阶段：规模化复制</h3>
+<p><strong>目标</strong>：在多个地区和场景中大规模推广。</p>
+<p>规模化复制阶段意味着产品、供应链、服务和商业模式已经成熟，可以在多个地区和场景中大规模推广。</p>
+<p><strong>2025–2026 年观察</strong>：行业正处于从第五阶段向第六、七阶段跨越的过程中。大多数厂商仍在试点和小批量阶段，真正的规模化复制尚未到来。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    subgraph TRL3["TRL 1-3: 基础研究"]
+        A1[原理观察] --&gt; A2[概念形成] --&gt; A3[实验室验证]
+    end
+
+    subgraph TRL5["TRL 4-5: 技术开发"]
+        B1[部件验证] --&gt; B2[系统集成] --&gt; B3[受控环境测试]
+    end
+
+    subgraph TRL6["TRL 6: 系统验证"]
+        C1[真实环境测试] --&gt; C2[小批量制造] --&gt; C3[性能确认]
+    end
+
+    subgraph TRL8["TRL 7-8: 部署验证"]
+        D1[产线验证] --&gt; D2[客户现场部署] --&gt; D3[价值证明]
+    end
+
+    subgraph TRL9["TRL 9: 成熟运营"]
+        E1[fleet 管理] --&gt; E2[规模化生产] --&gt; E3[持续优化]
+    end
+
+    TRL3 --&gt; TRL5 --&gt; TRL6 --&gt; TRL8 --&gt; TRL9</code></pre>
+<h3 id="159-stage-gate">1.5.9 阶段门（Stage-Gate）管理</h3>
+<p>对于高复杂度产品，通常采用阶段门（Stage-Gate）管理方法：每个阶段结束时设置一个“门”，只有通过评审才能进入下一阶段。评审维度包括：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>评审问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>技术成熟度</td>
+<td>关键技术是否达到阶段目标？</td>
+</tr>
+<tr>
+<td>制造准备度</td>
+<td>工艺、供应链、产能是否就绪？</td>
+</tr>
+<tr>
+<td>成本控制</td>
+<td>目标 BOM 成本是否可达成？</td>
+</tr>
+<tr>
+<td>质量与可靠性</td>
+<td>测试数据是否满足可靠性目标？</td>
+</tr>
+<tr>
+<td>合规认证</td>
+<td>安全认证计划是否清晰？</td>
+</tr>
+<tr>
+<td>商业可行性</td>
+<td>客户价值与商业模式是否成立？</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    S1[阶段1: 实验室样机] --&gt; G1{Gate 1}
+    G1 --&gt; S2[阶段2: 工程样机]
+    S2 --&gt; G2{Gate 2}
+    G2 --&gt; S3[阶段3: 小批量验证]
+    S3 --&gt; G3{Gate 3}
+    G3 --&gt; S4[阶段4: 量产准备]
+    S4 --&gt; G4{Gate 4}
+    G4 --&gt; S5[阶段5: 场景部署]
+    S5 --&gt; G5{Gate 5}
+    G5 --&gt; S6[阶段6: 运营维护]
+    S6 --&gt; G6{Gate 6}
+    G6 --&gt; S7[阶段7: 规模化复制]
+
+    G1 --&gt; |不通过| R1[返工/终止]
+    G2 --&gt; |不通过| R1
+    G3 --&gt; |不通过| R1
+    G4 --&gt; |不通过| R1
+    G5 --&gt; |不通过| R1
+    G6 --&gt; |不通过| R1</code></pre>
+<hr />
+<h2 id="16">1.6 系统复杂度的来源</h2>
+<p>人形机器人之所以难以产业化，根本原因在于其是一个高度复杂的系统工程对象。其复杂度主要来源于以下几个方面。</p>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[人形机器人系统复杂度] --&gt; B[多学科耦合]
+    A --&gt; C[高自由度]
+    A --&gt; D[开放环境]
+    A --&gt; E[软硬件耦合]
+    A --&gt; F[长价值链]
+    A --&gt; G[人机交互]</code></pre>
+<h3 id="161">1.6.1 多学科耦合</h3>
+<p>人形机器人同时涉及机械工程、电子工程、控制理论、计算机科学、人工智能、材料科学、人因工程等多个学科。这些学科的设计目标和约束往往相互冲突。例如，轻量化要求使用更薄的结构件，但这会降低刚度和强度；高性能 AI 算法需要更大算力，但这会增加功耗和散热压力。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：强耦合与弱耦合</p>
+<p>在系统科学中，若两个子系统的状态或参数相互强烈影响，则称为强耦合；若影响较小或可忽略，则称为弱耦合。人形机器人中，电池容量、散热、算力、结构强度和动态性能之间存在强耦合：提高算力会增加功耗和发热，需要更大电池和散热结构，从而增加重量，进而影响动态平衡和能耗。</p>
+</div>
+<h4 id="1611">1.6.1.1 设计耦合矩阵与设计结构矩阵</h4>
+<p>为量化子系统间的耦合，可引入<strong>设计结构矩阵</strong>（Design Structure Matrix, DSM）。设系统有 <span class="arithmatex">\(n\)</span> 个子系统，定义耦合矩阵 <span class="arithmatex">\(\mathcal{D} \in \{0,1\}^{n \times n}\)</span>，其中 <span class="arithmatex">\(d_{ij}=1\)</span> 表示子系统 <span class="arithmatex">\(i\)</span> 的设计决策会直接影响子系统 <span class="arithmatex">\(j\)</span> 的性能。人形机器人主要子系统的 DSM 可表示为：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>结构</th>
+<th>执行器</th>
+<th>感知</th>
+<th>计算</th>
+<th>电源</th>
+<th>软件</th>
+<th>AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构</td>
+<td>—</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>执行器</td>
+<td>1</td>
+<td>—</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>感知</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>计算</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>—</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>电源</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>—</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>软件</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>—</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AI</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>矩阵中 1 的密度越高，系统整体耦合度越高。上表密度约为 44%，远高于典型消费电子产品（通常 15–25%）。高耦合意味着单一设计变更可能引发连锁修改，增加了系统集成和验证的复杂度。</p>
+<p>系统耦合度可定义为：</p>
+<div class="arithmatex">\[
+\rho_c = \frac{\sum_{i \neq j} d_{ij}}{n(n-1)}
+\]</div>
+<p>其中 <span class="arithmatex">\(\rho_c\)</span> 为耦合度，<span class="arithmatex">\(n\)</span> 为子系统数量。上例中 <span class="arithmatex">\(n=7\)</span>，非对角 1 的个数为 26，故 <span class="arithmatex">\(\rho_c = 26/(7\times6) \approx 0.619\)</span>。若采用加权 DSM，还可区分影响强度。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：设计结构矩阵（Design Structure Matrix）</p>
+<p>设计结构矩阵是系统工程中用于描述任务、组件或子系统之间依赖关系的布尔矩阵或加权矩阵。通过对 DSM 进行聚类分析，可以识别高度耦合的模块群，指导模块化设计和接口标准化。DSM 最早由 Donald Steward 于 1981 年在项目管理研究中提出，现广泛应用于复杂产品开发。</p>
+</div>
+<h4 id="1612-">1.6.1.2 能量-质量-算力三角约束</h4>
+<p>人形机器人存在一个根本性的能量-质量-算力三角约束。提高 onboard 计算能力会同时增加功耗和热耗散，而电池能量密度增长缓慢，导致：</p>
+<div class="arithmatex">\[
+E_{battery} \geq \left(P_{compute} + P_{actuators} + P_{sensors}\right) \cdot t_{operation}
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(E_{battery}\)</span>：电池可用能量（Wh）；</li>
+<li><span class="arithmatex">\(P_{compute}, P_{actuators}, P_{sensors}\)</span>：计算、执行器、感知功耗（W）；</li>
+<li><span class="arithmatex">\(t_{operation}\)</span>：目标续航时间（h）。</li>
+</ul>
+<p>若计算功耗增加 <span class="arithmatex">\(\Delta P\)</span>，为保持续航 <span class="arithmatex">\(t\)</span> 不变，需增加电池容量：</p>
+<div class="arithmatex">\[
+\Delta E = \Delta P \cdot t
+\]</div>
+<p>以锂离子电池能量密度 <span class="arithmatex">\(\rho_E \approx 250 \text{ Wh/kg}\)</span> 计算，电池增重：</p>
+<div class="arithmatex">\[
+\Delta m = \frac{\Delta E}{\rho_E} = \frac{\Delta P \cdot t}{\rho_E}
+\]</div>
+<p>例如，将 onboard 计算功耗从 100 W 提升到 200 W（增加 <span class="arithmatex">\(\Delta P = 100\)</span> W），若要求续航 4 小时：</p>
+<div class="arithmatex">\[
+\Delta m = \frac{100 \times 4}{250} = 1.6 \text{ kg}
+\]</div>
+<p>这 1.6 kg 额外质量全部集中在躯干，会提高质心、增加腿部负载和行走能耗，形成正反馈。因此硬件选型必须在算力、功耗、重量之间进行帕累托优化。电源与能量管理的详细分析见第 6 章 6.2 节。</p>
+<pre class="highlight"><code class="language-python"># 计算功耗增加对电池质量和行走能耗的影响
+Delta_P = 100       # 计算功耗增加（W）
+t_op = 4            # 续航要求（h）
+rho_E = 250         # 电池能量密度（Wh/kg）
+g = 9.81            # 重力加速度（m/s^2）
+
+Delta_m = Delta_P * t_op / rho_E
+print(f"电池增重: {Delta_m:.2f} kg")
+
+# 估算额外行走能耗：假设步长 0.7 m，速度 1 m/s，
+# COT = 1.0（无量纲，相对人类约 0.2）
+COT = 1.0
+v = 1.0             # 行走速度（m/s）
+extra_power = COT * Delta_m * g * v
+print(f"额外行走功耗: {extra_power:.1f} W")</code></pre>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[提高 AI 算力] --&gt; B[计算功耗增加]
+    B --&gt; C[电池容量需求增加]
+    C --&gt; D[电池质量增加]
+    D --&gt; E[质心升高/腿部负载增加]
+    E --&gt; F[行走能耗增加]
+    F --&gt; C
+    B --&gt; G[散热需求增加]
+    G --&gt; H[散热结构增重]
+    H --&gt; E</code></pre>
+<h3 id="162">1.6.2 高自由度与动态不稳定性</h3>
+<p>人形机器人通常具有 20–50 个自由度，并且处于 inherently unstable 的双足支撑状态。其运动控制需要在高维状态空间中实时求解，同时满足接触约束、摩擦约束、力约束和运动学约束。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：自由度（Degree of Freedom, DOF）</p>
+<p>自由度是描述机械系统独立运动参数的数目。对于串联机器人，若每个关节提供一个独立运动，则总 DOF 等于关节数。人形机器人通常有 20–50 个 DOF，其中每条腿 5–7 个、每只手臂 6–7 个、躯干 2–3 个、头部 2–3 个、每只手 6–20 个。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：维度灾难（Curse of Dimensionality）</p>
+<p>维度灾难由理查德·贝尔曼（Richard Bellman）在动态规划研究中提出，指状态空间维度增加时，计算复杂度、数据需求和优化难度呈指数级增长。对于 30 维状态空间，即使每个维度仅离散化为 10 个值，状态总数也达到 <span class="arithmatex">\(10^{30}\)</span>，远超常规计算能力。</p>
+</div>
+<h3 id="163">1.6.3 开放环境的不可预测性</h3>
+<p>真实环境具有高度的不确定性。地面材质、光照条件、物体形状、人员行为、障碍物分布等因素都在动态变化。机器人需要具备感知、推理、规划和执行的闭环能力。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：涌现行为（Emergent Behavior）</p>
+<p>涌现行为是指复杂系统中由多个简单组件相互作用而产生的、无法从单个组件行为直接预测的整体现象。在人形机器人中，步态、群体协作、人机交互中的意外行为都可能是涌现的。系统工程需要通过仿真、测试和监控来识别和管理涌现风险。</p>
+</div>
+<h3 id="164">1.6.4 软硬件深度耦合</h3>
+<p>人形机器人的性能不仅取决于算法，还取决于传感器精度、执行器响应、通信延迟、计算能力和电源管理。软件优化必须充分考虑硬件特性，硬件选型也必须服务于软件需求。</p>
+<h4 id="1641">1.6.4.1 端到端延迟预算</h4>
+<p>感知-决策-执行闭环的总延迟决定了机器人对动态环境的响应能力。设各环节延迟为：</p>
+<div class="arithmatex">\[
+T_{total} = T_{sensor} + T_{comm}^{sense} + T_{compute} + T_{comm}^{ctrl} + T_{actuator}
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(T_{sensor}\)</span>：传感器采集与读出延迟；</li>
+<li><span class="arithmatex">\(T_{comm}^{sense}\)</span>：传感器到计算平台通信延迟；</li>
+<li><span class="arithmatex">\(T_{compute}\)</span>：感知与决策推理延迟；</li>
+<li><span class="arithmatex">\(T_{comm}^{ctrl}\)</span>：计算平台到执行器通信延迟；</li>
+<li><span class="arithmatex">\(T_{actuator}\)</span>：执行器响应延迟。</li>
+</ul>
+<p>典型取值（2025–2026 年水平）：</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>典型延迟</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相机曝光与读出 <span class="arithmatex">\(T_{sensor}\)</span></td>
+<td>5–33 ms</td>
+<td>与帧率相关，30 Hz 相机约 33 ms</td>
+</tr>
+<tr>
+<td>传感器到计算平台通信 <span class="arithmatex">\(T_{comm}^{sense}\)</span></td>
+<td>1–5 ms</td>
+<td>取决于总线，GigE 较高，MIPI/PCIe 较低</td>
+</tr>
+<tr>
+<td>感知与决策推理 <span class="arithmatex">\(T_{compute}\)</span></td>
+<td>20–100 ms</td>
+<td>VLA 大模型推理可达 100 ms 以上</td>
+</tr>
+<tr>
+<td>计算到执行器通信 <span class="arithmatex">\(T_{comm}^{ctrl}\)</span></td>
+<td>1–2 ms</td>
+<td>实时以太网或 CAN-FD</td>
+</tr>
+<tr>
+<td>执行器响应 <span class="arithmatex">\(T_{actuator}\)</span></td>
+<td>1–10 ms</td>
+<td>电流环带宽决定</td>
+</tr>
+</tbody>
+</table>
+<p>总延迟通常在 30–150 ms 之间。对于跌倒恢复等高速反应任务，可用反应时间窗口约为 200–300 ms，因此控制算法必须预留足够裕量。更严格的分析需要使用采样定理：控制回路采样周期 <span class="arithmatex">\(T_s\)</span> 应满足：</p>
+<div class="arithmatex">\[
+T_s &lt; \frac{1}{2 f_{max}}
+\]</div>
+<p>其中 <span class="arithmatex">\(f_{max}\)</span> 为需要抑制的扰动频率。若期望抑制 10 Hz 的躯干摆动，采样周期应小于 50 ms。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：控制带宽（Control Bandwidth）</p>
+<p>控制带宽是闭环控制系统能够有效跟踪或抑制的最大频率范围，通常定义为闭环增益下降至 -3 dB 时的频率。根据香农采样定理，数字控制器的采样频率至少应为信号最高频率的 2 倍；工程实践中通常取 10–20 倍以上以保证稳定性和抗混叠性能。控制带宽受限于采样周期、传感器延迟、执行器动态和通信延迟。</p>
+</div>
+<h4 id="1642-">1.6.4.2 感知-决策-执行数据流</h4>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    S[传感器层] --&gt;|原始数据| P[预处理层]
+    P --&gt;|特征/点云/图像| D[感知与决策层]
+    D --&gt;|动作指令| C[运动控制层]
+    C --&gt;|扭矩/位置指令| A[执行器层]
+    A --&gt;|物理作用| E[环境]
+    E --&gt; S
+
+    subgraph 延迟预算
+        S --&gt;|5-33 ms| P
+        P --&gt;|1-5 ms| D
+        D --&gt;|20-100 ms| C
+        C --&gt;|1-2 ms| A
+        A --&gt;|1-10 ms| E
+    end</code></pre>
+<p>该数据流对软硬件协同设计提出要求：若 AI 推理占用过多 CPU/GPU 资源，可能导致控制任务抖动；若通信协议非确定性，则高频控制回路难以保证稳定性。因此，主流人形机器人采用分层计算架构：实时控制任务运行在 MCU/RTOS 上，感知与 AI 任务运行在 Linux/GPU 上，两者之间通过确定性总线或共享内存通信。计算平台架构详见第 6 章 6.1 节，软件栈设计见第 22 章。</p>
+<pre class="highlight"><code class="language-python"># 端到端延迟预算与稳定性裕量分析
+delays = {
+    '相机读出': 33,        # ms
+    '传感器通信': 5,        # ms
+    'AI 推理': 80,          # ms
+    '控制通信': 2,          # ms
+    '执行器响应': 5,        # ms
+}
+
+T_total = sum(delays.values())
+print(f"端到端总延迟: {T_total} ms")
+
+# 针对跌倒恢复任务，假设可用反应窗口 250 ms
+reaction_window = 250
+margin = reaction_window - T_total
+print(f"安全裕量: {margin} ms")
+
+# 控制带宽估算：采样周期取总延迟的 1/3 到 1/5
+T_s = T_total / 5  # ms
+f_bw = 1 / (2 * T_s / 1000)  # Hz, 奈奎斯特频率
+print(f"估算控制带宽上限: {f_bw:.1f} Hz")</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：确定性通信（Deterministic Communication）</p>
+<p>确定性通信指消息传输延迟具有已知上界且抖动很小的通信机制。与尽力而为（best-effort）的以太网不同，实时以太网（如 EtherCAT、PROFINET IRT）、CAN-FD 和时间敏感网络（TSN）通过调度、时间触发或主从同步保证确定性。人形机器人高带宽感知数据与非实时 AI 任务可使用普通网络，但关节级控制循环通常需要确定性通信。</p>
+</div>
+<h3 id="165">1.6.5 长价值链与供应链风险</h3>
+<p>人形机器人的价值链从原材料、零部件、模组、整机到应用服务和运营维护，跨度极长。任何一个环节出现问题，都可能影响整机交付和成本控制。</p>
+<p>以执行器为例，其价值链包括：</p>
+<pre class="highlight"><code>稀土矿产 → 永磁材料 → 电机 → 减速器 → 编码器 → 驱动器 → 执行器总成 → 整机 → 应用服务</code></pre>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[稀土矿产] --&gt; B[永磁材料]
+    B --&gt; C[无框力矩电机]
+    C --&gt; D[减速器]
+    D --&gt; E[编码器]
+    E --&gt; F[驱动器]
+    F --&gt; G[执行器总成]
+    G --&gt; H[机器人整机]
+    H --&gt; I[应用服务]
+    H --&gt; J[运营维护]
+    J --&gt; G</code></pre>
+<h3 id="166">1.6.6 人机交互与社会接受度</h3>
+<p>人形机器人最终要在人类社会中工作，其动作、外观、声音和行为都会影响人类的感受。如果机器人动作过于僵硬或不可预测，可能引起恐惧或不适；如果机器人外观过于逼真，可能引发“恐怖谷”效应。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：人机交互（Human-Robot Interaction, HRI）</p>
+<p>人机交互是研究人类与机器人之间交互的跨学科领域，涵盖心理学、认知科学、设计学、工程学和伦理学。HRI 关注交互的可理解性、安全性、效率和社会接受度。对于人形机器人，HRI 设计需要特别考虑姿态、 gaze、动作可预测性、语音语调和物理接触安全。</p>
+</div>
+<hr />
+<h3 id="167">1.6.7 复杂度的量化：接口数量与系统熵</h3>
+<p>系统复杂度可以通过接口数量和熵来初步量化。对于一个由 <span class="arithmatex">\(n\)</span> 个子系统组成的系统，若每两个子系统之间都可能存在接口，则潜在接口数量为 <span class="arithmatex">\(O(n^2)\)</span>。人形机器人涉及 6–10 个主要子系统，每个子系统内部又有多个组件，接口数量可达数百。</p>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[机器人整机] --&gt; B[机械本体]
+    A --&gt; C[执行器系统]
+    A --&gt; D[感知系统]
+    A --&gt; E[计算平台]
+    A --&gt; F[电源系统]
+    A --&gt; G[软件系统]
+    A --&gt; H[AI 模型]
+
+    B &lt;--&gt;|结构/热| C
+    B &lt;--&gt;|安装/标定| D
+    C &lt;--&gt;|供电/通信| E
+    C &lt;--&gt;|力/热| F
+    D &lt;--&gt;|数据/同步| E
+    E &lt;--&gt;|算力/功耗| F
+    E &lt;--&gt;|算法部署| G
+    G &lt;--&gt;|模型推理| H
+    F &lt;--&gt;|能耗管理| G</code></pre>
+<p>从信息论角度，系统的不确定性可以用熵来度量。若每个接口存在 <span class="arithmatex">\(m\)</span> 种可能的失效模式，则系统总的不确定性与接口数量和失效模式相关。复杂度管理的目标是通过模块化、标准化接口和接口契约来降低系统熵。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：系统熵（System Entropy）</p>
+<p>系统熵借用了热力学和信息论中的熵概念，描述系统的无序程度或不确定性。在系统工程中，高熵意味着组件间关系复杂、行为难以预测、故障传播路径多。降低系统熵的方法包括模块化、接口标准化、解耦设计和数字孪生。</p>
+</div>
+<h3 id="168">1.6.8 级联风险与故障传播</h3>
+<p>人形机器人中的故障往往具有级联效应：一个子系统的微小故障可能通过耦合接口传播到其他子系统，最终导致整机停机或安全事故。例如：</p>
+<ul>
+<li>IMU 漂移 → 状态估计错误 → 落脚位置偏差 → 足部力传感器异常读数 → 控制器误判 → 跌倒</li>
+<li>电池电压下降 → 电机输出扭矩不足 → 关节跟踪误差增大 → 全身控制器补偿过度 → 热保护触发 → 停机</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[IMU 零偏漂移] --&gt; B[姿态估计错误]
+    B --&gt; C[落脚点规划偏差]
+    C --&gt; D[足部力觉异常]
+    D --&gt; E[平衡控制器误判]
+    E --&gt; F[跌倒/停机]</code></pre>
+<p>管理级联风险需要：</p>
+<ol>
+<li><strong>故障模式与影响分析（FMEA）</strong>：系统识别潜在故障及其后果。</li>
+<li><strong>冗余设计</strong>：关键传感器、执行器和通信链路冗余。</li>
+<li><strong>故障检测与隔离（FDI）</strong>：实时检测异常并隔离故障源。</li>
+<li><strong>安全状态机</strong>：故障时切换到安全状态（如停机、蹲下、扶手）。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：FMEA（Failure Mode and Effects Analysis）</p>
+<p>失效模式与影响分析是一种系统化的风险评估方法，用于识别产品或过程中潜在失效模式、其原因和影响，并评估风险优先级数（RPN = 严重度 × 发生度 × 探测度）。FMEA 是汽车、航空航天和医疗设备行业的标准工具。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：故障检测与隔离（Fault Detection and Isolation, FDI）</p>
+<p>故障检测是判断系统是否发生故障，故障隔离是确定故障发生的位置或原因。FDI 方法包括基于模型的残差生成、基于数据驱动的异常检测和基于规则的诊断。在人形机器人中，FDI 对于安全运行至关重要。</p>
+</div>
+<h3 id="169">1.6.9 社会技术系统视角</h3>
+<p>人形机器人不仅是技术系统，也是社会技术系统（Sociotechnical System）。它的部署会影响工作流程、劳动分工、培训需求、法律法规和公众认知。技术成功不等于社会接受，产品设计必须考虑：</p>
+<ul>
+<li><strong>工作岗位影响</strong>：是替代人类还是增强人类能力？</li>
+<li><strong>隐私与安全</strong>：机器人采集的数据如何保护？</li>
+<li><strong>责任归属</strong>：发生事故时，责任在制造商、运营商还是用户？</li>
+<li><strong>文化差异</strong>：不同地区对机器人外形和行为的接受度不同。</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[人形机器人社会技术系统] --&gt; B[技术子系统]
+    A --&gt; C[组织子系统]
+    A --&gt; D[制度子系统]
+    A --&gt; E[文化子系统]
+
+    B --&gt; B1[硬件/软件/AI]
+    C --&gt; C1[工厂/医院/家庭]
+    D --&gt; D1[标准/法规/保险]
+    E --&gt; E1[接受度/伦理/信任]
+
+    B &lt;--&gt;|技术约束| C
+    C &lt;--&gt;|合规需求| D
+    D &lt;--&gt;|社会反馈| E
+    E &lt;--&gt;|接受度影响| B</code></pre>
+<hr />
+<h2 id="17">1.7 为什么需要知识图谱？</h2>
+<p>面对如此复杂的系统工程问题，传统的文献综述、技术报告或产品清单难以提供系统性的认知支持。它们往往是扁平的、碎片化的，无法清晰呈现不同技术、零部件、企业、标准和应用之间的关联关系。</p>
+<h3 id="171">1.7.1 传统知识组织方式的局限</h3>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>论文综述</td>
+<td>系统梳理研究进展</td>
+<td>更新慢，难以关联产业信息</td>
+</tr>
+<tr>
+<td>产品数据库</td>
+<td>便于查询产品参数</td>
+<td>缺乏技术原理和供应链关系</td>
+</tr>
+<tr>
+<td>行业报告</td>
+<td>提供市场洞察</td>
+<td>往往一次性，难以动态更新</td>
+</tr>
+<tr>
+<td>技术博客</td>
+<td>及时、具体</td>
+<td>碎片化、来源质量参差不齐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="172">1.7.2 知识图谱的核心优势</h3>
+<p>知识图谱以实体为节点、以关系为边，将人形机器人领域的各类知识结构化地组织起来。每个实体（如一种减速器、一篇论文、一家公司、一条标准）都有明确的类型、属性和来源；每条关系（如“使用”“组成”“制造”“适用于”）都经过定义和审核。</p>
+<p>知识图谱具有以下优势：</p>
+<p><strong>（1）跨层关联</strong></p>
+<p>知识图谱可以表达从基础材料到整机系统、从算法到硬件、从制造到市场的多层次关系。例如，可以追踪：</p>
+<pre class="highlight"><code>某算法 → 使用了某数据集 → 部署于某机器人 → 使用某厂商减速器 → 由某种材料制成 → 受某标准约束</code></pre>
+<p>这种跨层链路对于识别瓶颈、评估替代方案和进行系统优化至关重要。</p>
+<p><strong>（2）来源可追溯</strong></p>
+<p>每个实体和关系都可以链接到其来源，如论文、报告、公司官网或标准文档。这保证了知识的可验证性。</p>
+<p><strong>（3）动态演进</strong></p>
+<p>人形机器人领域发展迅速，新知识、新产品和新企业不断涌现。知识图谱支持增量更新和版本管理。</p>
+<p><strong>（4）支持推理与查询</strong></p>
+<p>基于知识图谱，可以进行复杂的查询和推理，例如：</p>
+<ul>
+<li>找出所有使用谐波减速器的人形机器人</li>
+<li>识别某算法依赖的硬件清单</li>
+<li>分析某零部件的供应商集中度</li>
+<li>追踪某标准影响的设计选择</li>
+</ul>
+<h3 id="173">1.7.3 本书的知识图谱方法</h3>
+<p>本书选择以知识图谱为核心组织方式，系统梳理人形机器人从 0 到 1 的全流程知识。具体而言：</p>
+<ul>
+<li><strong>实体</strong>：包括材料、零部件、方法、算法、数据集、软件、机器人、企业、标准、应用等。</li>
+<li><strong>关系</strong>：包括组成关系、使用方法、制造关系、部署关系、适用关系、测试关系、监管关系等。</li>
+<li><strong>分层</strong>：按照物理层、感知层、决策层、执行层、系统层、产业层组织知识。</li>
+<li><strong>跨层链路</strong>：揭示从基础研究到产业应用的完整链条。</li>
+</ul>
+<p>下图展示了本书知识图谱的简化结构：</p>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    subgraph 物理层
+        M[材料] --&gt; C[零部件]
+        C --&gt; A[执行器]
+    end
+
+    subgraph 感知层
+        S[传感器] --&gt; P[感知算法]
+    end
+
+    subgraph 决策层
+        AI[AI 模型] --&gt; PL[规划算法]
+    end
+
+    subgraph 执行层
+        A --&gt; CTRL[控制算法]
+        CTRL --&gt; A
+    end
+
+    subgraph 系统层
+        R[机器人整机] --&gt; SW[软件栈]
+    end
+
+    subgraph 产业层
+        SUP[供应商] --&gt; OEM[整机厂]
+        OEM --&gt; APP[应用场景]
+        APP --&gt; MKT[市场]
+        STD[标准] --&gt; R
+    end
+
+    A --&gt; R
+    P --&gt; AI
+    PL --&gt; CTRL
+    SW --&gt; AI
+    SW --&gt; CTRL</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：知识图谱（Knowledge Graph）</p>
+<p>知识图谱是一种用图结构表示知识的语义网络，由实体（节点）、关系（边）和属性组成。它起源于语义网（Semantic Web）和本体论（Ontology）研究，2012 年 Google 正式提出 Knowledge Graph 概念。知识图谱支持结构化查询、推理和可视化，是处理跨学科复杂知识的有效工具。</p>
+</div>
+<h3 id="174">1.7.4 认知可扩展性：为什么知识图谱适合人形机器人</h3>
+<p>人形机器人领域知识横跨数十个学科、数百种零部件、数千家企业和数万篇文献。人类认知的短期记忆和工作记忆容量有限，无法同时处理如此大量的碎片化信息。知识图谱通过以下方式提升认知可扩展性：</p>
+<ol>
+<li><strong>分层抽象</strong>：将复杂系统分解为可管理的层次和模块。</li>
+<li><strong>关系显式化</strong>：将隐含的关联（如“某电机用于某机器人”）显式表达。</li>
+<li><strong>多尺度导航</strong>：既能在宏观层面查看产业链全景，也能在微观层面追踪某个零件的技术参数。</li>
+<li><strong>持续更新</strong>：随着技术和产业发展，知识图谱可以不断扩展和修正。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[人形机器人知识] --&gt; B[物理层]
+    A --&gt; C[感知层]
+    A --&gt; D[决策层]
+    A --&gt; E[执行层]
+    A --&gt; F[系统层]
+    A --&gt; G[产业层]
+
+    B --&gt; B1[材料属性]
+    B --&gt; B2[零件规格]
+    C --&gt; C1[传感器类型]
+    C --&gt; C2[感知算法]
+    D --&gt; D1[运动规划]
+    D --&gt; D2[VLA 模型]
+    E --&gt; E1[执行器]
+    E --&gt; E2[控制律]
+    F --&gt; F1[整机集成]
+    F --&gt; F2[软件栈]
+    G --&gt; G1[企业]
+    G --&gt; G2[市场]
+    G --&gt; G3[标准]</code></pre>
+<hr />
+<h2 id="18">1.8 本书的结构与阅读路径</h2>
+<p>本书按照人形机器人产业化的逻辑链条组织内容，共分为十个部分、三十章。</p>
+<h3 id="181">1.8.1 全书结构</h3>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>主题</th>
+<th>章节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一部分</td>
+<td>总论与方法论</td>
+<td>第 1–2 章</td>
+</tr>
+<tr>
+<td>第二部分</td>
+<td>物理基础层：材料、零部件与供应链</td>
+<td>第 3–7 章</td>
+</tr>
+<tr>
+<td>第三部分</td>
+<td>设计工程层</td>
+<td>第 8–9 章</td>
+</tr>
+<tr>
+<td>第四部分</td>
+<td>制造与量产层</td>
+<td>第 10–13 章</td>
+</tr>
+<tr>
+<td>第五部分</td>
+<td>控制与运动层</td>
+<td>第 14–17 章</td>
+</tr>
+<tr>
+<td>第六部分</td>
+<td>AI、模型与数据层</td>
+<td>第 18–21 章</td>
+</tr>
+<tr>
+<td>第七部分</td>
+<td>软件与仿真层</td>
+<td>第 22–24 章</td>
+</tr>
+<tr>
+<td>第八部分</td>
+<td>评测、基准与验证</td>
+<td>第 25 章</td>
+</tr>
+<tr>
+<td>第九部分</td>
+<td>整机、企业与市场</td>
+<td>第 26–28 章</td>
+</tr>
+<tr>
+<td>第十部分</td>
+<td>政策、伦理与未来</td>
+<td>第 29–30 章</td>
+</tr>
+</tbody>
+</table>
+<h3 id="182">1.8.2 针对不同读者的阅读路径</h3>
+<p>不同专业背景的读者可按以下路径选择性阅读：</p>
+<p><strong>学生/新进入者（建议从基础读起）</strong></p>
+<pre class="highlight"><code>第 1 章 → 第 3–5 章 → 第 8 章 → 第 14–16 章 → 第 18–19 章 → 第 26 章</code></pre>
+<p><strong>机械/制造工程师（聚焦物理实现）</strong></p>
+<pre class="highlight"><code>第 3–5 章 → 第 8–9 章 → 第 10–13 章 → 第 25 章</code></pre>
+<p><strong>AI/软件工程师（聚焦算法与系统）</strong></p>
+<pre class="highlight"><code>第 18–21 章 → 第 22–24 章 → 第 14–17 章 → 第 5–6 章</code></pre>
+<p><strong>产业/投资人（聚焦商业与生态）</strong></p>
+<pre class="highlight"><code>第 1 章 → 第 7 章 → 第 13 章 → 第 26–28 章 → 第 29–30 章</code></pre>
+<p><strong>政策研究者（聚焦监管与社会影响）</strong></p>
+<pre class="highlight"><code>第 1 章 → 第 12 章 → 第 29–30 章</code></pre>
+<hr />
+<h2 id="19">1.9 为什么是人形：更深层的形态经济学</h2>
+<h3 id="1101">1.10.1 形态与任务的匹配</h3>
+<p>机器人形态的选择本质上是任务-环境-成本三者匹配的结果。轮式机器人在平坦地面上效率最高；飞行机器人适合三维空间快速移动；机械臂擅长重复性精密操作；人形机器人则在以下条件下具有潜在优势：</p>
+<ul>
+<li>环境为人类设计（楼梯、门、工具、操作台）</li>
+<li>任务多样且难以预先穷举</li>
+<li>需要与人近距离协作</li>
+<li>专用设备的集成和改造成本高于通用人形方案</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[机器人形态选择] --&gt; B[轮式]
+    A --&gt; C[足式]
+    A --&gt; D[飞行]
+    A --&gt; E[机械臂]
+    A --&gt; F[人形]
+
+    B --&gt; B1[平坦地面高效率]
+    C --&gt; C1[复杂地形通过性]
+    D --&gt; D1[三维空间快速移动]
+    E --&gt; E1[高精度重复操作]
+    F --&gt; F1[人类环境通用性]
+    F --&gt; F2[人机协作接受度]</code></pre>
+<h3 id="1102">1.10.2 双足行走的权衡</h3>
+<p>双足行走是高能量效率与高机动性之间的折中。从生物力学看，人类双足行走的能量效率约为 0.8 J/(kg·m)，与轮式移动相比仍有差距，但双足能够跨越障碍、上下楼梯、在狭窄空间转身。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：科斯特（Cost of Transport, COT）</p>
+<p>运输成本是指移动单位质量、单位距离所消耗的能量，通常单位为 J/(N·m) 或无量纲（除以重力）。人类的 COT 约为 0.2；传统双足机器人的 COT 通常在 1–10 之间，远高于人类；优化的现代双足机器人可接近 0.5–1。</p>
+</div>
+<p>双足控制的困难在于：</p>
+<ol>
+<li><strong>动态不稳定</strong>：单支撑相时，机器人需要在倒立摆动力学下保持稳定。</li>
+<li><strong>接触切换</strong>：步态过程中支撑脚切换，导致系统动力学离散变化。</li>
+<li><strong>欠驱动性</strong>：地面接触力不可直接控制，只能通过整体运动间接调节。</li>
+</ol>
+<p>数学上，双足机器人可以看作混合系统（Hybrid System）：</p>
+<div class="arithmatex">\[
+\begin{cases}
+\dot{x} = f_i(x, u), &amp; \text{当处于接触模式 } i \\
+x^+ = \Delta_{ij}(x^-), &amp; \text{当发生模式切换 } i \to j
+\end{cases}
+\]</div>
+<p>其中 <span class="arithmatex">\(\Delta_{ij}\)</span> 为碰撞/切换映射。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：混合系统（Hybrid System）</p>
+<p>混合系统是由连续动态和离散事件共同组成的动态系统。在机器人学中，双足行走的连续动态是肢体运动，离散事件是脚触地/离地、支撑相切换。混合系统理论为分析步态稳定性提供了数学框架。</p>
+</div>
+<h3 id="1103">1.10.3 通用性与专用性的经济学</h3>
+<p>人形机器人的商业论证最终取决于通用性溢价是否超过专用性效率损失。设：</p>
+<ul>
+<li>专用设备完成单个任务的年成本为 <span class="arithmatex">\(C_s\)</span></li>
+<li>人形机器人完成 <span class="arithmatex">\(N\)</span> 个任务的年成本为 <span class="arithmatex">\(C_h + \sum_{i=1}^{N} c_i\)</span></li>
+</ul>
+<p>则人形方案具有成本优势的条件为：</p>
+<div class="arithmatex">\[
+C_h + \sum_{i=1}^{N} c_i &lt; \sum_{i=1}^{N} C_{s,i}
+\]</div>
+<p>当任务数量 <span class="arithmatex">\(N\)</span> 增加、专用设备集成成本高、任务切换频繁时，人形方案的通用性溢价更容易显现。</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[任务数量 N] --&gt; B[专用方案总成本]
+    A --&gt; C[人形方案总成本]
+
+    B --&gt;|线性增长| D[ΣCs]
+    C --&gt;|亚线性增长| E[Ch + Σci]
+
+    D --&gt; F[盈亏平衡点]
+    E --&gt; F</code></pre>
+<hr />
+<h2 id="110">1.10 产业化关键指标仪表盘</h2>
+<p>为跟踪人形机器人从 0 到 1 的进程，可以建立以下关键指标仪表盘：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>指标</th>
+<th>2025 年行业水平</th>
+<th>工业目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>技术</td>
+<td>双足行走速度</td>
+<td>3–6 km/h</td>
+<td>5–8 km/h</td>
+</tr>
+<tr>
+<td>技术</td>
+<td>续航时间</td>
+<td>2–4 小时</td>
+<td>8–12 小时</td>
+</tr>
+<tr>
+<td>技术</td>
+<td>灵巧手 DOF</td>
+<td>6–11</td>
+<td>15–20</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>MTBF</td>
+<td>500–2,000 h</td>
+<td>&gt; 20,000 h</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>可用性</td>
+<td>90–95%</td>
+<td>&gt; 99%</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>BOM</td>
+<td>$35k–100k</td>
+<td>&lt;$20k</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>售价</td>
+<td>$10k–250k</td>
+<td>&lt;$30k</td>
+</tr>
+<tr>
+<td>制造</td>
+<td>年产能</td>
+<td>百台–万台</td>
+<td>&gt; 10 万台</td>
+</tr>
+<tr>
+<td>部署</td>
+<td>单场景运行时长</td>
+<td>100–1,500 h</td>
+<td>&gt; 5,000 h</td>
+</tr>
+<tr>
+<td>合规</td>
+<td>认证覆盖率</td>
+<td>部分/试点</td>
+<td>全市场准入</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[产业化仪表盘] --&gt; B[技术指标]
+    A --&gt; C[可靠性指标]
+    A --&gt; D[成本指标]
+    A --&gt; E[制造指标]
+    A --&gt; F[部署指标]
+    A --&gt; G[合规指标]
+
+    B --&gt; B1[速度/续航/负载]
+    C --&gt; C1[MTBF/MTTR/可用性]
+    D --&gt; D1[BOM/售价/TCO]
+    E --&gt; E1[产能/良率/节拍]
+    F --&gt; F1[运行时长/任务成功率]
+    G --&gt; G1[认证/标准/市场准入]</code></pre>
+<hr />
+<h2 id="111_1">1.11 本章延伸阅读与思考题</h2>
+<h3 id="1121">1.12.1 延伸阅读</h3>
+<ul>
+<li>维纳《控制论》第一章：反馈与信息</li>
+<li>Kajita 等《Introduction to Humanoid Robotics》：LIPM 与 preview control</li>
+<li>Siciliano &amp; Khatib《Springer Handbook of Robotics》：机器人学全景</li>
+<li>Mori《The Uncanny Valley》：人形外观与情感反应</li>
+<li>Ebeling《An Introduction to Reliability and Maintainability Engineering》：可靠性工程基础</li>
+</ul>
+<h3 id="1122">1.12.2 练习题</h3>
+<ol>
+<li>假设某机器人有 20 个执行器，每个执行器 MTBF 为 80,000 小时，计算仅执行器子系统串联模型下的 MTBF。</li>
+<li>使用学习曲线公式，若第一台产品成本为 10 万美元，学习率为 20%，计算累计产量达到 10,000 台时的单位成本。</li>
+<li>解释为什么 ZMP 准则适用于平面足式机器人，但在点接触或复杂地形上需要更一般的处理方法。</li>
+<li>比较 Tesla Optimus 和 Figure AI 在产业化路径上的异同。</li>
+<li>设计一个适用于人形机器人研发项目的 TRL/MRL 评估检查表。</li>
+</ol>
+<hr />
+<h2 id="112_1">1.12 标准、认证与市场准入体系</h2>
+<p>人形机器人从实验室走向市场，必须通过多层次的标准与认证体系。这些标准不仅规定了产品必须满足的安全要求，也塑造了设计选择、测试流程和成本结构。</p>
+<h3 id="1131">1.13.1 标准体系的层级结构</h3>
+<p>全球机器人标准体系呈现金字塔结构：顶层为国际基础标准，中层为区域和行业应用标准，底层为企业内部标准和测试规范。</p>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[机器人标准体系] --&gt; B[国际标准]
+    A --&gt; C[区域标准]
+    A --&gt; D[行业标准]
+    A --&gt; E[企业标准]
+
+    B --&gt; B1[ISO/IEC 基础标准]
+    B --&gt; B2[IEEE 技术标准]
+    C --&gt; C1[欧盟 EN/CE]
+    C --&gt; C2[美国 UL/FCC]
+    C --&gt; C3[中国 GB/CR/CCC]
+    D --&gt; D1[汽车 ISO/TS 15066]
+    D --&gt; D2[医疗 IEC 60601]
+    D --&gt; D3[物流 VDI 2853]
+    E --&gt; E1[设计规范]
+    E --&gt; E2[测试规范]
+    E --&gt; E3[供应商规范]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：标准（Standard）</p>
+<p>标准是由公认机构制定、经协商一致批准的规范性文件，用于统一产品、过程或服务的技术要求。标准降低了交易成本、提高了互操作性、保障了安全，但也可能成为技术壁垒和市场准入门槛。</p>
+</div>
+<h3 id="1132">1.13.2 主要国际与区域标准概览</h3>
+<table>
+<thead>
+<tr>
+<th>标准/认证</th>
+<th>制定机构</th>
+<th>适用范围</th>
+<th>核心关注点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 13482:2014</td>
+<td>ISO</td>
+<td>个人护理机器人</td>
+<td>机械安全、速度/力限制、接触安全</td>
+</tr>
+<tr>
+<td>ISO/TS 15066:2016</td>
+<td>ISO</td>
+<td>协作机器人</td>
+<td>最大允许压力/力、安全功能</td>
+</tr>
+<tr>
+<td>ISO 13849-1:2023</td>
+<td>ISO</td>
+<td>机械安全控制系统</td>
+<td>控制系统安全相关部件可靠性</td>
+</tr>
+<tr>
+<td>IEC 61508:2010</td>
+<td>IEC</td>
+<td>功能安全通用标准</td>
+<td>SIL 等级、安全生命周期</td>
+</tr>
+<tr>
+<td>IEC 62368-1:2018</td>
+<td>IEC</td>
+<td>信息技术设备安全</td>
+<td>电气安全、火灾、能量危险</td>
+</tr>
+<tr>
+<td>UL 1740</td>
+<td>UL</td>
+<td>工业机器人安全</td>
+<td>机器人系统安全评估</td>
+</tr>
+<tr>
+<td>FCC Part 15</td>
+<td>FCC</td>
+<td>美国无线电设备</td>
+<td>电磁兼容与射频干扰</td>
+</tr>
+<tr>
+<td>CE 标志</td>
+<td>欧盟</td>
+<td>欧盟市场准入</td>
+<td>符合相关指令（机械指令、低电压指令等）</td>
+</tr>
+<tr>
+<td>CR 认证</td>
+<td>中国机器人联盟/认监委</td>
+<td>中国机器人市场准入</td>
+<td>安全、EMC、性能、可靠性</td>
+</tr>
+<tr>
+<td>CCC</td>
+<td>中国质检总局</td>
+<td>强制性产品认证</td>
+<td>电气安全等</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">术语解释：CE 标志与 CCC 认证</p>
+<p>CE 标志是产品进入欧盟市场的合格声明标志，表示产品符合欧盟相关指令的基本要求。CCC（China Compulsory Certification）是中国强制性产品认证，涉及人身安全、动植物生命健康和环境保护的产品必须获得 CCC 认证方可销售。</p>
+</div>
+<h3 id="1133">1.13.3 人形机器人标准面临的特殊挑战</h3>
+<p>相比工业机械臂和协作机器人，人形机器人的标准制定面临特殊挑战：</p>
+<ol>
+<li><strong>形态多样性</strong>：双足、轮式、混合形态难以用统一标准覆盖。</li>
+<li><strong>动态接触</strong>：跌倒、碰撞、抓取等动态接触场景的安全评估复杂。</li>
+<li><strong>人机交互</strong>：家庭和服务场景下与儿童、老人、残障人士的交互需要额外考虑。</li>
+<li><strong>AI 自主性</strong>：VLA 和强化学习模型的不确定性给功能安全评估带来新挑战。</li>
+<li><strong>跨场景应用</strong>：同一台机器人可能在工厂、物流、服务等多种场景使用，标准适用边界模糊。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[人形机器人标准化挑战] --&gt; B[形态多样性]
+    A --&gt; C[动态接触]
+    A --&gt; D[人机交互]
+    A --&gt; E[AI 自主性]
+    A --&gt; F[跨场景应用]
+
+    B --&gt; B1[双足/轮式/混合标准不统一]
+    C --&gt; C1[跌倒/碰撞/抓取安全]
+    D --&gt; D1[儿童/老人/弱势群体]
+    E --&gt; E1[模型不确定性/可解释性]
+    F --&gt; F1[同一产品多场景认证]</code></pre>
+<hr />
+<h2 id="113-ai">1.13 AI 与量产时代的技术栈</h2>
+<h3 id="1141">1.14.1 从传统控制到学习驱动</h3>
+<p>人形机器人的控制方法经历了从经典控制到优化控制、再到学习驱动的演进：</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[经典控制] --&gt; B[ZMP/LIPM]
+    B --&gt; C[MPC/WBC]
+    C --&gt; D[强化学习]
+    D --&gt; E[端到端 VLA]
+
+    A --&gt; A1[PD 控制]
+    B --&gt; B1[倒立摆模型]
+    C --&gt; C1[约束优化]
+    D --&gt; D1[仿真训练]
+    E --&gt; E1[视觉-语言-动作统一]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：强化学习（Reinforcement Learning, RL）</p>
+<p>强化学习是一种通过与环境交互学习最优策略的机器学习方法。智能体在状态 <span class="arithmatex">\(s_t\)</span> 下采取动作 <span class="arithmatex">\(a_t\)</span>，获得奖励 <span class="arithmatex">\(r_t\)</span> 并转移到下一状态 <span class="arithmatex">\(s_{t+1}\)</span>，目标是最大化累计回报 <span class="arithmatex">\(R = \sum_{t} \gamma^t r_t\)</span>。在机器人学中，RL 常用于学习 locomotion 和操作策略。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：Sim-to-Real</p>
+<p>Sim-to-Real 指将在仿真环境中训练的策略迁移到真实机器人的过程。由于仿真与真实世界存在动力学、感知和接触模型的差异（称为 reality gap），需要通过域随机化、系统辨识、残差学习和真实微调等技术缩小差距。</p>
+</div>
+<h3 id="1142-vla">1.14.2 VLA 模型架构概述</h3>
+<p>VLA 模型通常由三个核心模块组成：</p>
+<ol>
+<li><strong>视觉编码器</strong>：将图像/视频转换为视觉特征。</li>
+<li><strong>语言模型</strong>：理解自然语言指令并生成任务规划。</li>
+<li><strong>动作解码器</strong>：将视觉-语言表示映射为机器人动作（关节位置、速度、力矩或末端位姿）。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    I[图像输入] --&gt; V[视觉编码器]
+    T[文本指令] --&gt; L[语言模型]
+    V --&gt; F[多模态融合]
+    L --&gt; F
+    F --&gt; A[动作解码器]
+    A --&gt; M[机器人动作]</code></pre>
+<p>代表性 VLA 模型包括：</p>
+<ul>
+<li><strong>RT-2（Google DeepMind）</strong>：将机器人动作作为语言 token 处理。</li>
+<li><strong>OpenVLA</strong>：开源 VLA 模型，支持多机器人数据微调。</li>
+<li><strong>GR00T N1（NVIDIA）</strong>：面向人形机器人的基础模型。</li>
+<li><strong>Helix（Figure AI）</strong>：端到端高速人形机器人控制。</li>
+<li><strong>π0（Physical Intelligence）</strong>：通用机器人策略模型。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：域随机化（Domain Randomization）</p>
+<p>域随机化是在仿真训练中有意随机化物理参数（如质量、摩擦、阻尼、地形、光照、纹理），使策略对仿真与真实的差异具有鲁棒性。数学上，策略优化目标为 <span class="arithmatex">\(J = \mathbb{E}_{p(\xi)}[R(\pi, \xi)]\)</span>，其中 <span class="arithmatex">\(\xi\)</span> 为随机化的环境参数。</p>
+</div>
+<h3 id="1143">1.14.3 数据飞轮与规模化学习</h3>
+<p>人形机器人的 AI 能力提升依赖于数据飞轮：</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[部署机器人] --&gt; B[采集真实数据]
+    B --&gt; C[数据清洗与标注]
+    C --&gt; D[模型训练]
+    D --&gt; E[模型部署]
+    E --&gt; A
+
+    D --&gt; F[仿真生成数据]
+    F --&gt; C</code></pre>
+<p>真实数据包括遥操作演示、人类动作捕捉、自主运行记录和失败案例。仿真数据可以快速生成大量多样场景，但存在 reality gap。成功的数据策略通常是真实数据与仿真数据的结合。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：数据飞轮（Data Flywheel）</p>
+<p>数据飞轮是指产品使用越多，产生的数据越多，模型越好，产品体验越好，从而吸引更多使用的正反馈循环。在人形机器人中，数据飞轮是实现泛化能力和持续改进的关键机制。</p>
+</div>
+<hr />
+<h2 id="114_1">1.14 产业化路径的多国比较</h2>
+<h3 id="1151">1.15.1 美国：技术领先与资本驱动</h3>
+<p>美国在人形机器人领域的技术创新和资本运作方面领先：</p>
+<ul>
+<li><strong>代表企业</strong>：Tesla、Figure AI、Boston Dynamics、Agility Robotics、Apptronik。</li>
+<li><strong>优势</strong>：AI 算法、大模型、资本市场、高端制造。</li>
+<li><strong>挑战</strong>：制造成本高、供应链部分依赖亚洲、劳动力成本较高。</li>
+</ul>
+<h3 id="1152">1.15.2 中国：供应链与成本优势</h3>
+<p>中国已成为全球最大的人形机器人生产和出货市场：</p>
+<ul>
+<li><strong>代表企业</strong>：宇树科技、智元机器人、优必选、乐聚、傅利叶、银河通用。</li>
+<li><strong>优势</strong>：完整供应链、低成本制造、快速迭代、庞大内需市场。</li>
+<li><strong>挑战</strong>：高端芯片、部分核心零部件仍依赖进口、国际市场准入和品牌认知。</li>
+</ul>
+<h3 id="1153">1.15.3 日本与欧洲：技术积累与应用探索</h3>
+<ul>
+<li><strong>日本</strong>：ASIMO、HRP 系列积累了大量双足控制和人机交互经验，但商业化相对谨慎。</li>
+<li><strong>欧洲</strong>：重视安全标准、协作机器人、医疗和工业应用，但缺乏大规模量产企业。</li>
+</ul>
+<h4 id="1154">1.15.4 比较优势框架与政策工具箱</h4>
+<p>各国在人形机器人产业中的分工可用比较优势理论解释。设国家 <span class="arithmatex">\(i\)</span> 生产人形机器人整机的机会成本为 <span class="arithmatex">\(OC_i\)</span>（以其他高技术产业产出衡量），则机会成本较低的国家在整机集成上具有比较优势。当前中国的比较优势在于制造执行器、减速器等机电部件的规模化生产能力；美国的比较优势在于 AI 模型、芯片设计和高价值软件；日本的优势在于精密减速器和长期可靠性技术；欧洲的优势在于安全标准、医疗监管经验和工业设计。</p>
+<p>政府政策可视为改变比较优势的外生变量。常见政策工具包括：</p>
+<table>
+<thead>
+<tr>
+<th>政策工具</th>
+<th>作用机制</th>
+<th>典型应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>研发补贴</td>
+<td>降低企业 R&amp;D 成本</td>
+<td>美国 NSF/DoD 机器人项目、中国国家重点研发计划</td>
+</tr>
+<tr>
+<td>政府采购</td>
+<td>提供早期市场验证</td>
+<td>工厂、医院、公共场景试点</td>
+</tr>
+<tr>
+<td>产业基金</td>
+<td>缓解资本约束</td>
+<td>中国地方政府机器人基金</td>
+</tr>
+<tr>
+<td>标准制定</td>
+<td>塑造市场准入规则</td>
+<td>欧盟 CE、中国 CR、美国 UL</td>
+</tr>
+<tr>
+<td>人才培养</td>
+<td>扩大工程师供给</td>
+<td>高校机器人专业、产教融合</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[国家产业政策] --&gt; B[研发补贴]
+    A --&gt; C[政府采购]
+    A --&gt; D[产业基金]
+    A --&gt; E[标准制定]
+    A --&gt; F[人才培养]
+
+    B --&gt; G[降低创新成本]
+    C --&gt; H[创造早期需求]
+    D --&gt; I[扩大融资规模]
+    E --&gt; J[设置准入门槛]
+    F --&gt; K[增加要素供给]
+
+    G --&gt; L[比较优势重塑]
+    H --&gt; L
+    I --&gt; L
+    J --&gt; L
+    K --&gt; L</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：比较优势（Comparative Advantage）</p>
+<p>比较优势由大卫·李嘉图（David Ricardo）于 1817 年提出，指一个国家或主体生产某种产品的机会成本低于其他主体时，即使其绝对效率并非最高，也应专注于该产品生产并通过贸易获益。在人形机器人产业链中，比较优势决定了零部件、整机、软件和服务的国际分工格局。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：机会成本（Opportunity Cost）</p>
+<p>机会成本是经济学中的核心概念，指为选择某一方案而放弃的最佳替代方案的收益。例如，一个国家将同样资源投入人形机器人整机制造而非半导体设计，所放弃的半导体产业收益即为其机会成本。比较优势分析强调相对效率而非绝对效率。</p>
+</div>
+<pre class="highlight"><code class="language-python"># 四国比较优势量化示意：以成本指数与技术水平为二维指标
+import numpy as np
+
+countries = ['美国', '中国', '日本', '欧洲']
+cost_index = np.array([85, 45, 70, 75])       # 整机制造成本指数，越低越好
+tech_index = np.array([95, 75, 85, 80])       # 综合技术水平指数，越高越好
+
+# 计算单位技术水平所需成本（机会成本代理）
+opportunity_cost = cost_index / tech_index
+for c, oc in zip(countries, opportunity_cost):
+    print(f"{c}: 机会成本指数 = {oc:.3f}")</code></pre>
+<p>结果中中国机会成本指数最低，意味着在当前资源禀赋下，中国在整机制造上具有相对比较优势；美国虽然技术水平最高，但成本也最高，更适合占据高附加值环节。各国政策对产业格局的影响还将在第 28 章和第 29 章进一步讨论。</p>
+<hr />
+<h2 id="115_1">1.15 对未来的展望：从“有身体”到“有工作”</h2>
+<p>人形机器人产业化的终极标志不是技术参数，而是<strong>在真实经济活动中持续创造价值</strong>。这意味着：</p>
+<ol>
+<li><strong>从演示到生产力</strong>：机器人能够完成客户愿意付费的任务。</li>
+<li><strong>从单台到 fleet</strong>：多台机器人协同工作，由统一平台管理。</li>
+<li><strong>从遥操作到自主</strong>：人类监督而非直接控制。</li>
+<li><strong>从试点到商业模式</strong>：清晰的成本结构、定价、服务和盈利模式。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[当前状态] --&gt; B[短期目标]
+    B --&gt; C[中期目标]
+    C --&gt; D[长期愿景]
+
+    A --&gt; A1[万台级出货]
+    A --&gt; A2[工厂试点]
+    B --&gt; B1[十万台级产能]
+    B --&gt; B2[多场景部署]
+    C --&gt; C1[百万台级市场]
+    C --&gt; C2[半自主运行]
+    D --&gt; D1[通用劳动力]
+    D --&gt; D2[社会深度融合]</code></pre>
+<hr />
+<h2 id="116_1">1.16 关键公式的快速参考</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>含义</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\dot{x} = f(x,u), y = h(x,u)\)</span></td>
+<td>动态系统形式化</td>
+<td>控制设计、状态估计</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(M(q)\ddot{q} + C(q,\dot{q})\dot{q} + G(q) = \tau\)</span></td>
+<td>拉格朗日动力学</td>
+<td>运动规划、仿真</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P(t) = L / (1 + e^{-k(t-t_0)})\)</span></td>
+<td>技术采用 S 曲线</td>
+<td>市场预测</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_n = C_1 n^{-b}\)</span></td>
+<td>学习曲线</td>
+<td>成本预测</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R(t) = e^{-\lambda t}\)</span></td>
+<td>可靠性函数</td>
+<td>寿命预测</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(MTBF = 1/\lambda\)</span></td>
+<td>平均无故障时间</td>
+<td>可靠性指标</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(A = MTBF / (MTBF + MTTR)\)</span></td>
+<td>可用性</td>
+<td>维护规划</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R_s = \prod R_i\)</span></td>
+<td>串联系统可靠性</td>
+<td>系统可靠性设计</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="117">1.17 本章小结</h2>
+<p>本章从产业化的视角出发，系统回答了“为什么是人形机器人”以及“为什么现在是人形机器人的关键窗口期”这两个问题。</p>
+<p>核心观点如下：</p>
+<ol>
+<li>
+<p><strong>人形机器人是模仿人类形态和运动能力的通用机器</strong>，其优势在于环境兼容性、任务通用性和社会接受度，但这些优势目前还只是理论上的。</p>
+</li>
+<li>
+<p><strong>当前正处于产业化关键窗口期</strong>：2025 年全球市场规模约 30 亿美元，安装量约 1.6 万台，中国占比超过 80%；特斯拉、Figure AI、宇树、智元、优必选等头部厂商已进入真实部署或量产爬坡阶段。</p>
+</li>
+<li>
+<p><strong>成本正在快速下降</strong>：2023–2024 年制造成本下降 40%，中国厂商 BOM 已降至约 3.5 万美元，宇树 R1 售价低至 5,900 美元，为规模化应用奠定基础。</p>
+</li>
+<li>
+<p><strong>人形机器人产业化的核心矛盾是“能走”与“能卖”的差距</strong>。可靠性、成本、可维护性与合规性构成了产品化的四维约束。</p>
+</li>
+<li>
+<p><strong>从 0 到 1 需要经历七个跃迁阶段</strong>：实验室样机、工程样机、小批量验证、量产准备、场景部署、运营维护和规模化复制。2025–2026 年行业正处于从场景部署向运营维护和规模化复制过渡的早期。</p>
+</li>
+<li>
+<p><strong>人形机器人是高度复杂的系统工程对象</strong>，具有多学科耦合、高自由度、开放环境不确定性、软硬件深度耦合、长价值链和人机交互复杂性等特点。</p>
+</li>
+<li>
+<p><strong>传统知识组织方式难以应对这种复杂性</strong>，知识图谱能够以实体-关系的方式结构化组织跨领域知识，支持跨层关联、来源追溯、动态演进和复杂查询。</p>
+</li>
+<li>
+<p><strong>人形形态的选择是形态经济学的结果</strong>：在人类建造的环境中，双足行走的通用性可能抵消其在单一任务上的效率劣势，前提是任务多样性和部署规模足够大。</p>
+</li>
+<li>
+<p><strong>可靠性与可用性是可量化的工程指标</strong>：通过 <span class="arithmatex">\(R(t)\)</span>、MTBF、MTTR、串联系统模型和可用性公式，可以建立从演示到产品的工程判断标准。</p>
+</li>
+<li>
+<p><strong>标准与认证是市场准入的必要条件</strong>：ISO、IEC、UL、CE、CCC、CR 等多层次标准体系塑造产品设计、测试流程和成本结构。</p>
+</li>
+<li>
+<p><strong>AI 与量产正在重塑技术栈</strong>：VLA 模型、强化学习、sim-to-real 和数据飞轮正在推动人形机器人从预编程动作向感知驱动的自主行为演进。</p>
+</li>
+<li>
+<p><strong>2025–2026 年的产业格局由美国技术创新、中国供应链与成本优势、日本与欧洲的技术积累共同塑造</strong>，真正的规模化复制尚未到来。</p>
+</li>
+</ol>
+<p>后续章节将围绕这一框架展开，逐步深入人形机器人从材料到市场、从技术到产业的完整旅程。</p>
+<hr />
+<h2 id="118">1.18 本章符号表</h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>单位/量纲</th>
+<th>首次出现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(x(t)\)</span></td>
+<td>系统状态向量</td>
+<td><span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(u(t)\)</span></td>
+<td>控制输入</td>
+<td><span class="arithmatex">\(\mathbb{R}^m\)</span></td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(y(t)\)</span></td>
+<td>系统输出/传感器测量</td>
+<td><span class="arithmatex">\(\mathbb{R}^p\)</span></td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(q\)</span></td>
+<td>广义坐标</td>
+<td><span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(M(q)\)</span></td>
+<td>质量矩阵</td>
+<td>kg·m²</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C(q,\dot{q})\)</span></td>
+<td>科氏力与离心力项</td>
+<td>kg·m²/s</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(G(q)\)</span></td>
+<td>重力项</td>
+<td>N·m</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\tau\)</span></td>
+<td>关节力矩</td>
+<td>N·m</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(J_c\)</span></td>
+<td>接触点雅可比矩阵</td>
+<td>—</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(F_c\)</span></td>
+<td>地面接触力</td>
+<td>N</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_{total}^{(h)}\)</span></td>
+<td>人形方案总拥有成本</td>
+<td>美元</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_{total}^{(s)}\)</span></td>
+<td>专用方案总拥有成本</td>
+<td>美元</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N\)</span></td>
+<td>任务种类数</td>
+<td>—</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta_s\)</span></td>
+<td>专用机器人任务效率</td>
+<td>—</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta_h\)</span></td>
+<td>人形机器人任务效率</td>
+<td>—</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R(t)\)</span></td>
+<td>可靠性函数</td>
+<td>概率</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda\)</span></td>
+<td>故障率</td>
+<td>/小时</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(MTBF\)</span></td>
+<td>平均无故障时间</td>
+<td>小时</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(MTTR\)</span></td>
+<td>平均修复时间</td>
+<td>小时</td>
+<td>1.4.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(A\)</span></td>
+<td>可用性</td>
+<td>概率</td>
+<td>1.4.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_n\)</span></td>
+<td>第 <span class="arithmatex">\(n\)</span> 台产品成本</td>
+<td>美元</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_1\)</span></td>
+<td>第一台产品成本</td>
+<td>美元</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(b\)</span></td>
+<td>学习指数</td>
+<td>—</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(LR\)</span></td>
+<td>学习率</td>
+<td>—</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P(t)\)</span></td>
+<td>市场渗透率</td>
+<td>—</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>市场渗透率上限</td>
+<td>—</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(k\)</span></td>
+<td>S 曲线增长率参数</td>
+<td>1/年</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(t_0\)</span></td>
+<td>S 曲线拐点时间</td>
+<td>年</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(M_t\)</span></td>
+<td>市场规模</td>
+<td>美元</td>
+<td>1.3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(TAM_t\)</span></td>
+<td>总可触达市场</td>
+<td>美元</td>
+<td>1.3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(ASP_t\)</span></td>
+<td>平均售价</td>
+<td>美元</td>
+<td>1.3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_t\)</span></td>
+<td>出货量</td>
+<td>台</td>
+<td>1.3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_h\)</span></td>
+<td>人类岗位年成本</td>
+<td>美元/年</td>
+<td>1.3.5.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_r\)</span></td>
+<td>机器人年等价成本</td>
+<td>美元/年</td>
+<td>1.3.5.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(c_h\)</span></td>
+<td>人类小时成本</td>
+<td>美元/小时</td>
+<td>1.3.5.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(c_r\)</span></td>
+<td>机器人小时成本</td>
+<td>美元/小时</td>
+<td>1.3.5.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(OADR_t\)</span></td>
+<td>老年抚养比</td>
+<td>%</td>
+<td>1.3.5.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathcal{D}\)</span></td>
+<td>DSM 耦合矩阵</td>
+<td><span class="arithmatex">\(\{0,1\}^{n\times n}\)</span></td>
+<td>1.6.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\rho_c\)</span></td>
+<td>系统耦合度</td>
+<td>—</td>
+<td>1.6.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E_{battery}\)</span></td>
+<td>电池可用能量</td>
+<td>Wh</td>
+<td>1.6.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\rho_E\)</span></td>
+<td>电池能量密度</td>
+<td>Wh/kg</td>
+<td>1.6.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T_{total}\)</span></td>
+<td>端到端总延迟</td>
+<td>s</td>
+<td>1.6.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T_s\)</span></td>
+<td>控制采样周期</td>
+<td>s</td>
+<td>1.6.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(f_{max}\)</span></td>
+<td>扰动最高频率</td>
+<td>Hz</td>
+<td>1.6.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(OC_i\)</span></td>
+<td>国家 <span class="arithmatex">\(i\)</span> 生产整机的机会成本</td>
+<td>—</td>
+<td>1.15.4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">本章知识图谱锚点</h2>
+<p><strong>核心实体</strong></p>
+<table>
+<thead>
+<tr>
+<th>实体类型</th>
+<th>代表实体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>robot_system</code></td>
+<td>Tesla Optimus Gen 3、Unitree H1/G1/R1、Figure 02/03、Boston Dynamics Atlas、Agility Digit、Hexagon AEON</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td>Tesla、Figure AI、Unitree、AgiBot、UBTECH、Leju Robotics、Apptronik、Boston Dynamics</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>actuator、harmonic reducer、RV reducer、IMU、LiDAR、compute unit</td>
+</tr>
+<tr>
+<td><code>technology</code></td>
+<td>locomotion、manipulation、teleoperation、VLA、sim-to-real</td>
+</tr>
+<tr>
+<td><code>concept</code></td>
+<td>system engineering、mass production、compliance、uncanny valley</td>
+</tr>
+<tr>
+<td><code>standard</code></td>
+<td>ISO 13482、IEC 61508、ISO 13849、ISO/TS 15066</td>
+</tr>
+<tr>
+<td><code>market</code></td>
+<td>industrial manufacturing、logistics、healthcare、home service</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心关系</strong></p>
+<table>
+<thead>
+<tr>
+<th>关系类型</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_part_of</code></td>
+<td>零部件组成整机</td>
+<td>执行器 → 机器人</td>
+</tr>
+<tr>
+<td><code>implemented_on</code></td>
+<td>方法/算法部署于机器人</td>
+<td>Helix → Figure 03</td>
+</tr>
+<tr>
+<td><code>applies_to</code></td>
+<td>标准/工艺适用于系统</td>
+<td>ISO 13482 → 服务机器人</td>
+</tr>
+<tr>
+<td><code>manufactures</code></td>
+<td>供应商制造零部件</td>
+<td>Harmonic Drive Systems → 谐波减速器</td>
+</tr>
+<tr>
+<td><code>sources_from</code></td>
+<td>整机厂从供应商采购</td>
+<td>Tesla → 拓普集团</td>
+</tr>
+<tr>
+<td><code>uses_dataset</code></td>
+<td>方法使用数据集</td>
+<td>GR00T N1 → 人形机器人训练数据</td>
+</tr>
+<tr>
+<td><code>requires</code></td>
+<td>方法依赖硬件/软件</td>
+<td>VLA → Jetson Thor</td>
+</tr>
+<tr>
+<td><code>deployed_at</code></td>
+<td>机器人部署于客户场景</td>
+<td>Figure 02 → BMW Spartanburg</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跨层链路示例</strong></p>
+<pre class="highlight"><code>稀土材料 → 永磁体 → 无框力矩电机 → 执行器 → 机器人整机 → 宝马工厂部署 → 工业制造市场 → 安全标准/认证</code></pre>
+<p><strong>关键思考问题</strong></p>
+<ol>
+<li>人形机器人与轮式机器人、工业机械臂的本质区别是什么？</li>
+<li>2025–2026 年为什么被认为是人形机器人产业化的关键窗口期？有哪些数据支撑？</li>
+<li>“能走的机器人”与“能卖的机器人”在哪些方面存在差距？</li>
+<li>从实验室到规模化部署需要经历哪些阶段？每个阶段的核心任务和风险是什么？</li>
+<li>知识图谱方法如何解决人形机器人领域的知识碎片化问题？</li>
+</ol>
+<hr />
+<h2 id="_3">参考文献与数据来源</h2>
+<p>[1] Siciliano, B., &amp; Khatib, O. (Eds.). (2016). <em>Springer Handbook of Robotics</em> (2nd ed.). Springer.</p>
+<p>[2] Sakagami, Y., Watanabe, R., Aoyama, C., Matsunaga, S., Higaki, N., &amp; Fujimura, K. (2002). The intelligent ASIMO: System overview and integration. <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2478–2483.</p>
+<p>[3] Kuindersma, S., Deits, R., Fallon, M., Valenzuela, A., Dai, H., Permenter, F., ... &amp; Tedrake, R. (2016). Optimization-based locomotion planning, estimation, and control design for the Atlas humanoid robot. <em>Autonomous Robots</em>, 40(3), 429–455.</p>
+<p>[4] ISO 13482:2014. <em>Robots and robotic devices — Safety requirements for personal care robots</em>. International Organization for Standardization.</p>
+<p>[5] IEC 61508:2010. <em>Functional safety of electrical/electronic/programmable electronic safety-related systems</em>. International Organization for Standardization.</p>
+<p>[6] Mori, M. (1970). The uncanny valley. <em>Energy</em>, 7(4), 33–35.</p>
+<p>[7] Gibson, J. J. (1977). The theory of affordances. In R. Shaw &amp; J. Bransford (Eds.), <em>Perceiving, Acting, and Knowing</em> (pp. 67–82). Lawrence Erlbaum.</p>
+<p>[8] Wiener, N. (1948). <em>Cybernetics: Or Control and Communication in the Animal and the Machine</em>. MIT Press.</p>
+<p>[9] Shannon, C. E. (1948). A mathematical theory of communication. <em>Bell System Technical Journal</em>, 27(3), 379–423.</p>
+<p>[10] Turing, A. M. (1950). Computing machinery and intelligence. <em>Mind</em>, 59(236), 433–460.</p>
+<p>[11] Vukobratović, M., &amp; Borovac, B. (2004). Zero-moment point — Thirty five years of its life. <em>International Journal of Humanoid Robotics</em>, 1(1), 157–173.</p>
+<p>[12] Kajita, S., Kanehiro, F., Kaneko, K., Fujiwara, K., Harada, K., Yokoi, K., &amp; Hirukawa, H. (2003). Biped walking pattern generation by using preview control of zero-moment point. <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2, 1620–1626.</p>
+<p>[13] Kajita, S., Hirukawa, H., Harada, K., &amp; Yokoi, K. (2014). <em>Introduction to Humanoid Robotics</em>. Springer.</p>
+<p>[14] Pfeifer, R., &amp; Bongard, J. (2006). <em>How the Body Shapes the Way We Think: A New View of Intelligence</em>. MIT Press.</p>
+<p>[15] Wilson, A. D., &amp; Golonka, S. (2013). Embodied cognition is not what you think it is. <em>Frontiers in Psychology</em>, 4, 58.</p>
+<p>[16] MarketsandMarkets. (2026). <em>Humanoid Robot Market Report, 2025–2030</em>.</p>
+<p>[17] Research Nester. (2026). <em>Humanoid Robot Market Size &amp; Forecast, 2026–2035</em>.</p>
+<p>[18] BCC Research. (2026). <em>Global Humanoid Robot Market Report</em>.</p>
+<p>[19] MarketIntelo. (2026). <em>Physical AI Humanoid Robotics Market Size, Share &amp; Trends Analysis Report 2025–2034</em>.</p>
+<p>[20] Maximizemarketresearch. (2026). <em>Global Humanoid Robot Market Size, 2025–2032</em>.</p>
+<p>[21] Goldman Sachs Global Investment Research. (2025–2026). <em>Humanoid robots: The next general purpose platform?</em></p>
+<p>[22] Robozaps. (2026-06-09). Humanoid Robot Market Size: $38B by 2035 [Data]. https://blog.robozaps.com/b/market-size-for-humanoid-robots</p>
+<p>[23] Counterpoint Research. (2026-01). <em>Humanoid Robot Market Monitor</em>.</p>
+<p>[24] Yahoo Finance / iiots-world. (2026-05-19). <em>Global Commercial Humanoid Robotics Market Research 2025–2030</em>.</p>
+<p>[25] Bank of America / Deloitte. (2026). <em>Tech Trends: Humanoid Robot Cost Analysis</em>.</p>
+<p>[26] Fortune / Tesla Q4 2024 Earnings Call. (2025-01-30). Elon Musk reveals massive plans for Tesla and Optimus.</p>
+<p>[27] Teslarati. (2026-07-01). Tesla Optimus project fires up as Musk sees production line progress.</p>
+<p>[28] Optimusk.blog. (2026-06). <em>Tesla Optimus Factory Deployment 2025–2026: Inside the Gigafactory Rollout</em>.</p>
+<p>[29] BMW Group PressClub. (2026-02-27/05-13). BMW Group to deploy humanoid robots in production in Germany for the first time.</p>
+<p>[30] Figure AI. (2025-11). BMW Spartanburg pilot results: 30,000+ X3 vehicles, 90,000+ parts, 1,250 hours.</p>
+<p>[31] TechMarketBriefs. (2026-04). <em>Figure AI IPO 2026: $39B Valuation, Risks &amp; Bull Case</em>.</p>
+<p>[32] 36 氪 / 虎嗅 / 未来汽车日报. (2026-06). 人形机器人出海，从“演员”到“打工人”。</p>
+<p>[33] AI 中国网. (2026-04). 乐聚机器人完成 IPO 辅导验收，人形机器人上市潮谁先盈利？</p>
+<p>[34] 新浪财经. (2026-04). 宇树一年赚 6 亿，优必选一年亏 7 亿：同样的机器人赛道，完全不同的账本。</p>
+<p>[35] Mankins, J. C. (2009). Technology readiness assessments: A retrospective. <em>Acta Astronautica</em>, 65(9–10), 1216–1223.</p>
+<p>[36] U.S. Department of Defense. (2011). <em>Manufacturing Readiness Level (MRL) Deskbook</em>.</p>
+<p>[37] Cooper, R. G. (2008). Perspective: The Stage-Gate® idea-to-launch process — Update, what's new, and NexGen systems. <em>Journal of Product Innovation Management</em>, 25(3), 213–232.</p>
+<p>[38] OICA. (2025). <em>World Motor Vehicle Production Statistics</em>.</p>
+<p>[39] International Federation of Robotics (IFR). (2025). <em>World Robotics 2025 Industrial Robots</em>.</p>
+<p>[40] ISO 13849-1:2023. <em>Safety of machinery — Safety-related parts of control systems — Part 1: General principles for design</em>. International Organization for Standardization.</p>
+<p>[41] ISO/TS 15066:2016. <em>Collaborative robots — Safety requirements</em>. International Organization for Standardization.</p>
+<p>[42] IEC 62368-1:2018. <em>Audio/video, information and communication technology equipment — Part 1: Safety requirements</em>. International Electrotechnical Commission.</p>
+<p>[43] Boston Consulting Group (BCG). (1972). <em>Perspectives on Experience</em>. Boston Consulting Group.</p>
+<p>[44] Wright, T. P. (1936). Factors affecting the cost of airplanes. <em>Journal of the Aeronautical Sciences</em>, 3(4), 122–128.</p>
+<p>[45] Barlow, R. E., &amp; Proschan, F. (1975). <em>Statistical Theory of Reliability and Life Testing: Probability Models</em>. Holt, Rinehart and Winston.</p>
+<p>[46] Ebeling, C. E. (2019). <em>An Introduction to Reliability and Maintainability Engineering</em> (3rd ed.). Waveland Press.</p>
+<p>[47] Nahmias, S. (2021). <em>Production and Operations Analysis</em> (8th ed.). Waveland Press.</p>
+<p>[48] Murphy, R. R., &amp; Woods, D. D. (2009). Beyond Asimov: The three laws of responsible robotics. <em>IEEE Intelligent Systems</em>, 24(4), 14–20.</p>
+<p>[49] Goodrich, M. A., &amp; Schultz, A. C. (2007). Human-robot interaction: A survey. <em>Foundations and Trends in Human-Computer Interaction</em>, 1(3), 203–275.</p>
+<p>[50] Hogan, N. (1985). Impedance control: An approach to manipulation: Part I — Theory. <em>Journal of Dynamic Systems, Measurement, and Control</em>, 107(1), 1–7.</p>
+<p>[51] Broekman, W., Aftergood, L., Ho, O., Toschi, C., Jackson, P., &amp; Madhaven, R. (2021). <em>Technology Readiness Assessment Guidebook</em>. NASA.</p>
+<p>[52] 本书知识图谱项目：Awesome Humanoid Robot. 内部项目资料.</p>
+<h3 id="146">1.4.6 产品化四维约束的权衡关系</h3>
+<p>可靠性、成本、可维护性和合规性四个维度并非独立，而是相互制约。提高可靠性通常需要更贵的零部件和更严格的测试；降低成本可能牺牲可维护性或合规投入；加快认证周期可能需要增加测试资源和费用。</p>
+<pre class="highlight"><code class="language-mermaid">graph TD
+    A[产品化四维约束] --&gt; B[可靠性]
+    A --&gt; C[成本]
+    A --&gt; D[可维护性]
+    A --&gt; E[合规性]
+
+    B &lt;--&gt;|冗余设计增加成本| C
+    B &lt;--&gt;|高可靠性部件延长认证| E
+    C &lt;--&gt;|低成本材料增加维护频率| D
+    D &lt;--&gt;|模块化设计增加初期成本| C
+    E &lt;--&gt;|认证费用抬高成本| C
+    E &lt;--&gt;|安全要求限制设计自由度| B</code></pre>
+<p>在实际产品开发中，企业需要根据目标应用场景确定约束优先级。例如：</p>
+<ul>
+<li><strong>工厂产线</strong>：可靠性 &gt; 可维护性 &gt; 合规性 &gt; 成本</li>
+<li><strong>消费级教育机器人</strong>：成本 &gt; 可维护性 &gt; 合规性 &gt; 可靠性</li>
+<li><strong>医疗护理机器人</strong>：合规性 &gt; 可靠性 &gt; 可维护性 &gt; 成本</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：约束优化（Constrained Optimization）</p>
+<p>约束优化是在满足一组约束条件的前提下，使目标函数最大化或最小化的数学问题。标准形式为：<span class="arithmatex">\(\min_x f(x)\)</span>，满足 <span class="arithmatex">\(g_i(x) \leq 0\)</span> 和 <span class="arithmatex">\(h_j(x) = 0\)</span>。产品化四维约束可以看作多目标优化问题，常用 Pareto 前沿方法寻找最优权衡。</p>
+</div>
+<h3 id="147">1.4.7 从演示到产品的成本结构演变</h3>
+<p>随着产量增加，成本结构会发生显著变化。早期样机的成本主要由 NRE 和小批量采购决定；进入量产后，BOM 和制造成本成为主导；规模化运营阶段，服务和维护成本占比上升。</p>
+<pre class="highlight"><code class="language-mermaid">pie title 样机阶段成本构成（小批量）
+    "NRE 摊销" : 45
+    "BOM" : 30
+    "人工装配" : 15
+    "测试认证" : 7
+    "物流" : 3</code></pre>
+<pre class="highlight"><code class="language-mermaid">pie title 量产阶段成本构成（大规模）
+    "BOM" : 55
+    "制造费用" : 20
+    "人工装配" : 10
+    "物流与库存" : 8
+    "售后服务" : 5
+    "NRE 摊销" : 2</code></pre>
+<h3 id="148">1.4.8 可靠性与成本的帕累托前沿</h3>
+<p>在产品设计中，可靠性和成本通常存在帕累托权衡：提高可靠性需要更好的材料、更严格的工艺和更多的测试，从而增加成本。企业需要在帕累托前沿上选择适合自己定位的点。</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    A[低成本低可靠性] --&gt; B[边际改善]
+    B --&gt; C[帕累托前沿拐点]
+    C --&gt; D[高成本高可靠性]
+
+    style A fill:#ffcccc
+    style D fill:#ccffcc
+    style C fill:#ffffcc</code></pre>
+<p>数学上，若 <span class="arithmatex">\(R\)</span> 表示可靠性水平，<span class="arithmatex">\(C\)</span> 表示成本，帕累托前沿由满足以下条件的点组成：</p>
+<div class="arithmatex">\[
+\nexists (R', C') : R' &gt; R \text{ 且 } C' &lt; C
+\]</div>
+<p>即不存在可靠性更高且成本更低的方案。</p>
+<hr />
+<p>[53] IEEE. (2022). <em>IEEE 1872-2015 — Standard Ontologies for Robotics and Automation</em>. IEEE.</p>
+<p>[54] ASTM International. (2023). <em>F45 Committee on Robotics, Automation, and Autonomous Systems</em>.</p>
+<p>[55] VDI/VDE 2853. (2021). <em>Requirements for service robots in intralogistics</em>. VDI/VDE.</p>
+<p>[56] Underwriters Laboratories. (2018). <em>UL 1740 Standard for Safety for Robots and Robotic Equipment</em>.</p>
+<p>[57] European Commission. (2006). <em>Machinery Directive 2006/42/EC</em>.</p>
+<p>[58] State Administration for Market Regulation (SAMR), China. (2022). <em>China Robot Certification (CR) Implementation Rules</em>.</p>
+<p>[59] Google DeepMind. (2023). RT-2: Vision-language-action models transfer web knowledge to robotic control. <em>arXiv preprint arXiv:2307.15818</em>.</p>
+<p>[60] Kim, S., Zhou, Y., Allshire, A., Bhatia, E., Antonova, R., Hogan, F. R., ... &amp; Fazeli, N. (2024). OpenVLA: An open-source vision-language-action model. <em>arXiv preprint arXiv:2406.09246</em>.</p>
+<p>[61] Black, K., Brown, N., Driess, D., Esmail, A., Equi, M., Finn, C., ... &amp; Wahid, A. (2024). π0: A vision-language-action flow model for general robot control. <em>arXiv preprint arXiv:2410.24164</em>.</p>
+<p>[62] NVIDIA. (2025). GR00T N1: An open foundation model for humanoid robots. <em>NVIDIA Technical Blog</em>.</p>
+<p>[63] Figure AI. (2025). Helix: A vision-language-action model for generalist humanoid control. <em>Figure AI Research</em>.</p>
+<p>[64] Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W., &amp; Abbeel, P. (2017). Domain randomization for transferring deep neural networks from simulation to the real world. <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 23–30.</p>
+<p>[65] Pinto, L., Andrychowicz, M., Welinder, P., Zaremba, W., &amp; Abbeel, P. (2017). Asymmetric actor critic for image-based robot learning. <em>Robotics: Science and Systems (RSS)</em>.</p>
+<p>[66] Raibert, M. H. (1986). <em>Legged Robots That Balance</em>. MIT Press.</p>
+<p>[67] Pratt, J., Carff, J., Drakunov, S., &amp; Goswami, A. (2006). Capture point: A step toward humanoid push recovery. <em>IEEE-RAS International Conference on Humanoid Robots</em>, 200–207.</p>
+<p>[68] Stephens, B. J., &amp; Atkeson, C. G. (2010). Push recovery by stepping for humanoid robots with force controlled joints. <em>IEEE-RAS International Conference on Humanoid Robots</em>, 52–59.</p>
+<p>[69] Herzog, A., Rotella, N., Mason, S., Grimminger, F., Schaal, S., &amp; Righetti, L. (2016). Momentum control with hierarchical inverse dynamics on a torque-controlled humanoid. <em>Autonomous Robots</em>, 40(3), 473–491.</p>
+<p>[70] Wieber, P. B. (2006). Trajectory free linear model predictive control for stable walking in the presence of strong perturbations. <em>IEEE-RAS International Conference on Humanoid Robots</em>, 137–142.</p>
+<p>[71] Hwang, J., Fu, Y., &amp; Mittal, R. (2021). Zero-shot text-to-image generation. <em>arXiv preprint arXiv:2102.12092</em>.</p>
+<p>[72] Agrawal, P., Nair, A. V., Abbeel, P., Malik, J., &amp; Levine, S. (2016). Learning to poke by poking: Experiential learning of intuitive physics. <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 29.</p>
+<p>[73] Levine, S., Finn, C., Darrell, T., &amp; Abbeel, P. (2016). End-to-end training of deep visuomotor policies. <em>Journal of Machine Learning Research</em>, 17(1), 1334–1373.</p>
+<p>[74] Sutton, R. S., &amp; Barto, A. G. (2018). <em>Reinforcement Learning: An Introduction</em> (2nd ed.). MIT Press.</p>
+<p>[75] IEEE. (2020). <em>IEEE 7000-2021 — IEEE Standard Model Process for Addressing Ethical Concerns during System Design</em>.</p>
+<p>[76] Winfield, A. F., &amp; Jirotka, M. (2018). Ethical governance is essential to building trust in robotics and artificial intelligence systems. <em>Philosophical Transactions of the Royal Society A</em>, 376(2133), 20180085.</p>
+<p>[77] Bryson, J. J., Diamantis, M. E., &amp; Grant, T. D. (2017). Of, for, and by the people: the legal lacuna of synthetic persons. <em>Artificial Intelligence and Law</em>, 25(3), 273–291.</p>
+<p>[78] Calo, R., Froomkin, A. M., &amp; Kerr, I. (2016). <em>Robot Law</em>. Edward Elgar Publishing.</p>
+<p>[79] International Federation of Robotics (IFR). (2024). <em>World Robotics 2024 Service Robots</em>.</p>
+<p>[80] McKinsey &amp; Company. (2025). <em>The future of robotics: Humanoids and the path to general-purpose automation</em>.</p>
+<p>[81] Boston Consulting Group (BCG). (2025). <em>Humanoid robots: The next industrial revolution?</em></p>
+<p>[82] ABI Research. (2026). <em>Humanoid Robot Market Forecast: 2025–2035</em>.</p>
+<p>[83] Omdia. (2026). <em>Humanoid Robotics Market Tracker: 2025 Shipments and Market Share</em>.</p>
+<p>[84] Morgan Stanley. (2026). <em>China Humanoid Robot Industry Outlook 2026</em>.</p>
+<p>[85] 本书知识图谱项目：Awesome Humanoid Robot. 内部项目资料.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      <span></span>
+      
+      <a class="next" href="/wiki/chapters/chapter-02/">下一页 →<span>第 2 章 知识图谱构建方法论</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#1">第 1 章 绪论：为什么是人形机器人？</a><ul>
+<li><a href="#_1">摘要</a></li>
+<li><a href="#11">1.1 什么是人形机器人？</a><ul>
+<li><a href="#111">1.1.1 基本定义</a></li>
+<li><a href="#112">1.1.2 为什么是人形？</a></li>
+<li><a href="#113">1.1.3 主要形态与分类</a></li>
+<li><a href="#114">1.1.4 关键子系统一览</a></li>
+<li><a href="#115">1.1.5 机器人的形式化定义</a></li>
+<li><a href="#116">1.1.6 人形机器人的分类学</a></li>
+</ul>
+</li>
+<li><a href="#12">1.2 人形机器人的发展历程</a><ul>
+<li><a href="#121-1819">1.2.1 机械自动机时代（18–19 世纪）</a></li>
+<li><a href="#122-20-3050">1.2.2 控制论与计算机科学的诞生（20 世纪 30–50 年代）</a></li>
+<li><a href="#123-1960s1980s">1.2.3 早期人形机器人（1960s–1980s）</a></li>
+<li><a href="#124-1990s2010s">1.2.4 动态平衡时代（1990s–2010s）</a></li>
+<li><a href="#125-ai-2020s">1.2.5 AI 融合与量产时代（2020s 至今）</a></li>
+<li><a href="#126-asimo">1.2.6 本田 ASIMO：技术巅峰与商业困境</a></li>
+<li><a href="#127-atlas">1.2.7 波士顿动力 Atlas：动态能力的极限</a></li>
+<li><a href="#128-20252026">1.2.8 2025–2026 年新一波浪潮：从演示到真实部署</a></li>
+</ul>
+</li>
+<li><a href="#13">1.3 为什么现在是人形机器人的关键窗口期？</a><ul>
+<li><a href="#131">1.3.1 市场规模与增长预测</a><ul>
+<li><a href="#1311">1.3.1.1 预测方法论：自上而下与自下而上</a></li>
+<li><a href="#1312">1.3.1.2 情景分析与置信区间</a></li>
+</ul>
+</li>
+<li><a href="#132">1.3.2 出货量与区域格局</a></li>
+<li><a href="#133">1.3.3 投资热度与资本证券化</a></li>
+<li><a href="#134">1.3.4 成本下降曲线</a></li>
+<li><a href="#135">1.3.5 劳动力市场的结构性需求</a><ul>
+<li><a href="#1351">1.3.5.1 人口老龄化与劳动力缺口的量化</a></li>
+<li><a href="#1352">1.3.5.2 人机替代盈亏平衡点分析</a></li>
+</ul>
+</li>
+<li><a href="#136-ai">1.3.6 AI 能力的跃升</a></li>
+<li><a href="#137">1.3.7 市场预测的方法论边界</a></li>
+</ul>
+</li>
+<li><a href="#14-vs">1.4 核心矛盾：能走的机器人 vs 能卖的机器人</a><ul>
+<li><a href="#141">1.4.1 可靠性：从“能跑”到“不坏”</a></li>
+<li><a href="#142">1.4.2 成本：从“百万美元”到“几万美元”</a></li>
+<li><a href="#143">1.4.3 可维护性：从“工程师陪护”到“现场维修”</a></li>
+<li><a href="#144">1.4.4 合规性：从“实验室自由”到“市场准入”</a></li>
+<li><a href="#145">1.4.5 系统可靠性：串联模型</a></li>
+</ul>
+</li>
+<li><a href="#15-0-1">1.5 从 0 到 1 的七个跃迁</a><ul>
+<li><a href="#151-nasa-trl-dod-mrl">1.5.1 阶段与 NASA TRL / DoD MRL 的映射</a></li>
+<li><a href="#152">1.5.2 第一阶段：实验室样机</a></li>
+<li><a href="#153">1.5.3 第二阶段：工程样机</a></li>
+<li><a href="#154">1.5.4 第三阶段：小批量验证</a></li>
+<li><a href="#155">1.5.5 第四阶段：量产准备</a></li>
+<li><a href="#156">1.5.6 第五阶段：场景部署</a></li>
+<li><a href="#157">1.5.7 第六阶段：运营维护</a></li>
+<li><a href="#158">1.5.8 第七阶段：规模化复制</a></li>
+<li><a href="#159-stage-gate">1.5.9 阶段门（Stage-Gate）管理</a></li>
+</ul>
+</li>
+<li><a href="#16">1.6 系统复杂度的来源</a><ul>
+<li><a href="#161">1.6.1 多学科耦合</a><ul>
+<li><a href="#1611">1.6.1.1 设计耦合矩阵与设计结构矩阵</a></li>
+<li><a href="#1612-">1.6.1.2 能量-质量-算力三角约束</a></li>
+</ul>
+</li>
+<li><a href="#162">1.6.2 高自由度与动态不稳定性</a></li>
+<li><a href="#163">1.6.3 开放环境的不可预测性</a></li>
+<li><a href="#164">1.6.4 软硬件深度耦合</a><ul>
+<li><a href="#1641">1.6.4.1 端到端延迟预算</a></li>
+<li><a href="#1642-">1.6.4.2 感知-决策-执行数据流</a></li>
+</ul>
+</li>
+<li><a href="#165">1.6.5 长价值链与供应链风险</a></li>
+<li><a href="#166">1.6.6 人机交互与社会接受度</a></li>
+<li><a href="#167">1.6.7 复杂度的量化：接口数量与系统熵</a></li>
+<li><a href="#168">1.6.8 级联风险与故障传播</a></li>
+<li><a href="#169">1.6.9 社会技术系统视角</a></li>
+</ul>
+</li>
+<li><a href="#17">1.7 为什么需要知识图谱？</a><ul>
+<li><a href="#171">1.7.1 传统知识组织方式的局限</a></li>
+<li><a href="#172">1.7.2 知识图谱的核心优势</a></li>
+<li><a href="#173">1.7.3 本书的知识图谱方法</a></li>
+<li><a href="#174">1.7.4 认知可扩展性：为什么知识图谱适合人形机器人</a></li>
+</ul>
+</li>
+<li><a href="#18">1.8 本书的结构与阅读路径</a><ul>
+<li><a href="#181">1.8.1 全书结构</a></li>
+<li><a href="#182">1.8.2 针对不同读者的阅读路径</a></li>
+</ul>
+</li>
+<li><a href="#19">1.9 为什么是人形：更深层的形态经济学</a><ul>
+<li><a href="#1101">1.10.1 形态与任务的匹配</a></li>
+<li><a href="#1102">1.10.2 双足行走的权衡</a></li>
+<li><a href="#1103">1.10.3 通用性与专用性的经济学</a></li>
+</ul>
+</li>
+<li><a href="#110">1.10 产业化关键指标仪表盘</a></li>
+<li><a href="#111_1">1.11 本章延伸阅读与思考题</a><ul>
+<li><a href="#1121">1.12.1 延伸阅读</a></li>
+<li><a href="#1122">1.12.2 练习题</a></li>
+</ul>
+</li>
+<li><a href="#112_1">1.12 标准、认证与市场准入体系</a><ul>
+<li><a href="#1131">1.13.1 标准体系的层级结构</a></li>
+<li><a href="#1132">1.13.2 主要国际与区域标准概览</a></li>
+<li><a href="#1133">1.13.3 人形机器人标准面临的特殊挑战</a></li>
+</ul>
+</li>
+<li><a href="#113-ai">1.13 AI 与量产时代的技术栈</a><ul>
+<li><a href="#1141">1.14.1 从传统控制到学习驱动</a></li>
+<li><a href="#1142-vla">1.14.2 VLA 模型架构概述</a></li>
+<li><a href="#1143">1.14.3 数据飞轮与规模化学习</a></li>
+</ul>
+</li>
+<li><a href="#114_1">1.14 产业化路径的多国比较</a><ul>
+<li><a href="#1151">1.15.1 美国：技术领先与资本驱动</a></li>
+<li><a href="#1152">1.15.2 中国：供应链与成本优势</a></li>
+<li><a href="#1153">1.15.3 日本与欧洲：技术积累与应用探索</a><ul>
+<li><a href="#1154">1.15.4 比较优势框架与政策工具箱</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#115_1">1.15 对未来的展望：从“有身体”到“有工作”</a></li>
+<li><a href="#116_1">1.16 关键公式的快速参考</a></li>
+<li><a href="#117">1.17 本章小结</a></li>
+<li><a href="#118">1.18 本章符号表</a></li>
+<li><a href="#_2">本章知识图谱锚点</a></li>
+<li><a href="#_3">参考文献与数据来源</a><ul>
+<li><a href="#146">1.4.6 产品化四维约束的权衡关系</a></li>
+<li><a href="#147">1.4.7 从演示到产品的成本结构演变</a></li>
+<li><a href="#148">1.4.8 可靠性与成本的帕累托前沿</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

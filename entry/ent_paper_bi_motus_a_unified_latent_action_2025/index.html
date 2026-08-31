@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motus · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Motus</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Motus</h1>
+      <p class="entry-name-en">Motus: A Unified Latent Action World Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13030v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1007 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Motus 是2025年由博世、清华大学、北京大学和地平线机器人联合提出的大型视觉-语言-动作世界模型。其核心贡献在于通过 Mixture-of-Transformer 架构统一了理解、视频生成和动作三个专家模块，并利用光流学习潜在动作，实现了从大规模异构数据中预训练。实验表明，Motus 在仿真和真实场景中均显著优于现有方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.13030" target="_blank" rel="noopener">Motus: A Unified Latent Action World Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.13030" target="_blank" rel="noopener">Motus source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Motus 旨在解决当前具身智能体因模型碎片化而无法统一多模态生成能力的问题。它采用 Mixture-of-Transformer 架构整合理解、视频生成和动作三个专家，并借鉴 UniDiffuser 调度器实现世界模型、视觉-语言-动作模型、逆动力学模型等多种建模模式的灵活切换。通过光流提取像素级“增量动作”，Motus 构建了三阶段训练流程和六层数据金字塔，实现了大规模动作预训练。在仿真环境中，Motus 相比 X-VLA 提升 15%，相比 Pi0.5 提升 45%；在真实场景中，性能提升幅度达 11% 至 48%。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>Motus 的核心是 <strong>Mixture-of-Transformer (MoT)</strong> 架构，它集成了三个专家模块：
+- <strong>理解专家</strong>：负责感知与语义理解。
+- <strong>视频生成专家</strong>：负责未来帧预测与世界建模。
+- <strong>动作专家</strong>：负责生成控制指令。</p>
+<p>这三个专家通过 <strong>UniDiffuser 风格调度器</strong> 协同工作，支持五种建模模式：
+- 世界模型
+- 视觉-语言-动作模型
+- 逆动力学模型
+- 视频生成模型
+- 视频-动作联合预测模型</p>
+<h3 id="_4">潜在动作学习</h3>
+<p>Motus 利用 <strong>光流</strong> 提取像素级的“增量动作”（delta action），将连续帧间的运动信息编码为潜在动作表示。这一设计使得模型能够从大规模、异构的机器人操作数据中学习通用的动作先验。</p>
+<h3 id="_5">训练流程</h3>
+<p>采用 <strong>三阶段训练流水线</strong> 与 <strong>六层数据金字塔</strong>：
+1. <strong>阶段一</strong>：在低层数据（如静态图像、文本）上预训练理解与视频生成专家。
+2. <strong>阶段二</strong>：引入光流数据，训练潜在动作编码器与动作专家。
+3. <strong>阶段三</strong>：在高层数据（如真实机器人操作轨迹）上进行联合微调，优化所有模块的协同能力。</p>
+<h3 id="_6">实验设置与结果</h3>
+<ul>
+<li><strong>仿真环境</strong>：在标准机器人操作基准上测试，Motus 相比 X-VLA 提升 <strong>15%</strong>，相比 Pi0.5 提升 <strong>45%</strong>。</li>
+<li><strong>真实场景</strong>：在多种真实机器人操作任务中，Motus 的性能提升范围为 <strong>11% 至 48%</strong>。</li>
+<li><strong>关键结论</strong>：统一建模所有功能（理解、预测、控制）与先验（视觉、语言、动作）能够显著提升下游机器人任务的表现，验证了碎片化模型整合的有效性。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.13030v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">X-VLA</a>
+      
+      <span class="rel-desc">Motus提及X-VLA。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bi_motus_a_unified_latent_action_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">
+          <span class="entry-type">论文</span>
+          <h3>X-VLA</h3>
+          <p>X-VLA 是清华大学 AIR、上海 AI Lab 和北京大学于 2025 年提出的大型视觉-语言-动作模型，专为跨实体机器人操作设计。其核心贡献在于引入软提示（Soft…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">潜在动作学习</a></li>
+<li><a href="#_5">训练流程</a></li>
+<li><a href="#_6">实验设置与结果</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

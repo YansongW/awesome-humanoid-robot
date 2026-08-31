@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M11 · Simulation Environment and Model Conversion: Fall Ten Thousand Times in the Digital World First · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M11 · Simulation Environment and Model Conversion: Fall Ten Thousand Times in the Digital World First</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m11-simulation-environment-and-model-conversion-fall-ten-thousand-times-in-the-digital-world-first">M11 · Simulation Environment and Model Conversion: Fall Ten Thousand Times in the Digital World First</h1>
+<p><strong>Global Position</strong>: Immediately following <a href="/en/roadmap/missions/m10-urdf-modeling/">M10's URDF model package</a>, this is the first step of Stage 2 simulation. The input is the model package delivered by M10, and the output is a <strong>functional simulation project</strong> — model loading without warnings, reasonable contact behavior, actuator/sensor modeling complete, and all baseline checks passed. <a href="/en/roadmap/missions/m12-sim-walking/">M12</a> uses it to stand and walk, <a href="/en/roadmap/missions/m13-rl-training/">M13</a> uses it to train policies.</p>
+<p><strong>Prerequisites</strong>: M10 acceptance all passed (model package checked in, inertial parameters verified); PD standing feel from <a href="/en/roadmap/stage-0-foundations/">Stage 0</a> Step 4 still fresh.</p>
+<p>Theoretical background: <a href="/en/wiki/chapters/chapter-23/">Chapter 23 Simulation and Physics Engines</a>, <a href="/en/wiki/chapters/chapter-22/">Chapter 22 Software Middleware</a>, <a href="/en/wiki/appendices/appendix-c/">Appendix C Software and Simulation Platform List</a>; engine selection summary table is in the first step of the <a href="/en/roadmap/playbooks/sim-setup/">Simulation Environment Setup Playbook</a>.</p>
+<h2 id="step-1-engine-installation-and-official-baseline-verification">Step 1: Engine Installation and Official Baseline Verification</h2>
+<p>【What to Do】Two main paths — choose one (or both):</p>
+<ul>
+<li><strong><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a></strong>: <code>pip install mujoco</code>, runs on CPU only;</li>
+<li><strong><a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a></strong> (runs on top of <a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a>): Requires NVIDIA GPU, conda environment, strict version matching between Isaac Lab and Isaac Sim — the combination changes with releases, refer to the official installation documentation and verify according to your chosen version.</li>
+</ul>
+<p>After installation, first run the official examples (MuJoCo's built-in humanoid model / Isaac Lab's H1 humanoid example), then touch your own model:</p>
+<pre class="highlight"><code class="language-bash"># MuJoCo: CPU only; load the official built-in humanoid model for verification (model path varies by version, verify according to your chosen version)
+pip install mujoco
+python -m mujoco.viewer --mjcf=$(python -c "import mujoco, os; print(os.path.join(os.path.dirname(mujoco.__file__), 'model', 'humanoid', 'humanoid.xml'))")
+# Isaac Lab: conda environment + official H1 example (installation steps and task name follow official documentation)
+conda create -n isaaclab python=3.10 -y &amp;&amp; conda activate isaaclab
+git clone https://github.com/isaac-sim/IsaacLab.git</code></pre>
+<p>【Why】Official examples help you isolate "environment issues" from "model issues" — if the example fails to run, it's an installation error; if the example runs but your model doesn't, it's a model error. Selection logic (see <a href="/en/roadmap/playbooks/sim-setup/">Simulation Playbook</a> for details): MuJoCo has high contact quality and is the de facto standard for legged locomotion research; Isaac Lab uses GPU for large-scale parallelization, designed for RL training. Open-source anchors: ToddlerBot uses MuJoCo/MJX, Berkeley Humanoid Lite is based on Isaac Lab, OpenLoong's MPC+WBC is deployed in MuJoCo (see <a href="https://github.com/hshi74/toddlerbot">ToddlerBot</a>, <a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite</a>, <a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a> repositories respectively).</p>
+<p>【How to Analyze Your Situation】No Nvidia GPU: Stick with MuJoCo all the way — sufficient for control research and small-scale CPU RL; Have an RTX card and going the RL route: Install both — use MuJoCo for model tuning, Isaac Lab for policy training (Berkeley uses this combination); Need full ROS stack integration testing: Add <a href="/entry/ent_software_gazebo/">Gazebo</a>, don't worry about its physics accuracy.</p>
+<h2 id="step-2-urdf-mjcfusd-conversion-and-verification">Step 2: URDF → MJCF/USD Conversion and Verification</h2>
+<p>【What to Do】Convert your <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF</a> to the target format: MuJoCo can directly compile URDF and save as <a href="/entry/ent_technology_mjcf_simulation_format_2024/">MJCF</a>; for Isaac, use the official URDF Importer to convert to USD:</p>
+<pre class="highlight"><code class="language-bash"># MuJoCo Python API compiles URDF and exports MJCF (API details verify according to your chosen version)
+python -c "import mujoco; m = mujoco.MjModel.from_xml_path('robot.urdf'); mujoco.mj_saveLastXML('robot_mjcf.xml', m); print('converted OK')"</code></pre>
+<p>Four classic conversion errors, check one by one:</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inertia tensor not positive definite</td>
+<td>Compilation error/model jitter</td>
+<td>Go back to M10 Step 3, re-export from CAD, check ixx/iyy/izz triangle inequality</td>
+</tr>
+<tr>
+<td>mesh units mm treated as m</td>
+<td>Model 1000x too large/small</td>
+<td>Scale by ×0.001 or unify to meters during export</td>
+</tr>
+<tr>
+<td>mesh path case sensitivity</td>
+<td>File not found on Linux</td>
+<td>Normalize paths and filenames to lowercase</td>
+</tr>
+<tr>
+<td>Joint axis convention differences</td>
+<td>Motion direction all reversed</td>
+<td>Drive each joint in viewer to verify (M10 did initial check, this is in-simulation re-verification)</td>
+</tr>
+</tbody>
+</table>
+<p>After conversion, manually patch the MJCF: <code>&lt;compiler angle="radian" .../&gt;</code> to unify angle units, restore joint limits lost during conversion, confirm coordinate system conventions.</p>
+<p>【Why】URDF was designed for visualization and the ROS toolchain, only supports tree structures, and has weak actuator models; MJCF was designed for simulation and control — it automatically calculates inertia at compile time, and actuators and sensors are first-class citizens (Chapter 23, Section 23.4). Every conversion loses information; small errors are amplified by the physics engine into "flies apart on first run".</p>
+<p>【How to Analyze Your Situation】Replicating an open-source platform: Use the officially maintained MJCF/USD directly (Berkeley has all three formats, archived), this step only requires per-joint verification; Self-developed model: Put the conversion product and patching records into version control — when you modify the model in M13, you'll know what was changed.</p>
+<h2 id="step-3-actuator-modeling-inflated-limits-sim-to-real-suicide">Step 3: Actuator Modeling — Inflated Limits = Sim-to-Real Suicide</h2>
+<p>【What to Do】In MJCF, configure an actuator for each controllable joint: use <code>motor</code> for force control, <code>position</code> for position control; three rules:</p>
+<ol>
+<li><strong>Torque limit</strong> = Peak torque from the M01 specification table (already written as effort in M10 Step 4, verify it wasn't lost during conversion);</li>
+<li><strong>Velocity limit</strong> = Converted value from M01 rated speed;</li>
+<li><strong>Actuator dynamics</strong> approximated with a first-order low-pass filter for real response, time constant initially estimated at 5–20 ms (engineering recommended value, <a href="/en/roadmap/missions/m14-sim-to-real/">M14</a> will backfill with measured values from <a href="/entry/ent_method_system_identification/">system identification</a>).</li>
+</ol>
+<pre class="highlight"><code class="language-xml">&lt;actuator&gt;
+  &lt;!-- ctrlrange fills in peak torque from M01 specification table, strictly no inflation --&gt;
+  &lt;position joint="l_knee_pitch" kp="40" forcerange="-33 33" ctrllimited="true" ctrlrange="-1.2 1.2"/&gt;
+  &lt;!-- First-order low-pass approximates actuator dynamics: dynprm is time constant (seconds), start with 5–20 ms engineering recommendation --&gt;
+  &lt;general joint="l_hip_pitch" dyntype="filter" dynprm="0.01" gaintype="fixed" gainprm="1" ctrllimited="true" ctrlrange="-20 20"/&gt;
+&lt;/actuator&gt;</code></pre>
+<p>【Why】RL will learn actions within the limits: if limits are inflated, the policy learns actions the real robot cannot execute, leading to direct sim-to-real failure (M10 Step 4 rule). Real actuators are not ideal torque sources — current loop response and communication delay make them approximate first-order inertial elements; without modeling this dynamic, gains usable in simulation will cause oscillation on the real robot.</p>
+<p>【How to Analyze Your Situation】Bus servo / QDD quasi-direct drive: <code>position</code> + torque limit is closest to real robot operation; Planning pure force control: <code>motor</code> + low-pass filter. If unsure about the time constant, start with an order of magnitude of 10 ms, then calibrate in M14. PD gains written in the model (kp/kv) or in the controller code: writing in the model means no retuning when changing controllers; writing in code facilitates online tuning — choose one and be consistent throughout.</p>
+<h2 id="step-4-contact-and-friction-everything-for-bipedal-locomotion-happens-at-the-feet">Step 4: Contact and Friction – Everything for Bipedal Locomotion Happens at the Feet</h2>
+<p>【Actions】Four steps:</p>
+<ol>
+<li><strong>Foot Friction Coefficient</strong>: For rubber/PLA against a floor, initially try a range of 0.6–1.0 (specific values need to be confirmed based on your materials);</li>
+<li><strong>Contact Solver Parameters</strong>: <code>solref</code> (time constant, damping ratio) adjusts contact stiffness – too soft causes foot penetration, too hard leads to numerical jitter; <code>solimp</code> controls the constraint impedance curve, start with values near the defaults;</li>
+<li><strong>Self-Collision Pair Pruning</strong>: Use <code>exclude</code> to keep only necessary contact pairs; the number of contact pairs directly determines simulation speed;</li>
+<li><strong>Floor and Disturbance Interface</strong>: Parameterize the floor geom, reserve an entry point for external force disturbances – M13's <a href="/entry/ent_method_domain_randomization/">Domain Randomization</a> needs to randomize friction and push the robot.</li>
+</ol>
+<pre class="highlight"><code class="language-xml">&lt;default&gt;
+  &lt;!-- solref=(time constant, damping ratio): typically 2–10×timestep, smaller values mean stiffer contact --&gt;
+  &lt;geom solref="0.01 1" solimp="0.9 0.95 0.001" friction="0.8 0.005 0.0001"/&gt;
+&lt;/default&gt;
+&lt;contact&gt;&lt;exclude body1="l_thigh" body2="l_shank"/&gt;&lt;/contact&gt;  &lt;!-- Exclude link pairs that cannot collide --&gt;</code></pre>
+<p>【Why】Contact parameters are a major source of the sim-to-real gap. They must be calibrated against the "foot material – floor material" pair and included in subsequent domain randomization (Chapter 23, Section 23.4.4). First, get the nominal values reasonable, then consider randomization.</p>
+<p>【How to Analyze Your Situation】Unsure about friction: Place a sample of your foot material on the target floor and use a spring scale to pull a slider to estimate the magnitude. A printed PLA foot is quite different from a rubber sole; don't copy others' values.</p>
+<h2 id="step-5-sensor-simulation-and-observation-pipeline">Step 5: Sensor Simulation and Observation Pipeline</h2>
+<p>【Actions】Build the observation pipeline according to the real robot's BOM: <a href="/entry/ent_component_imu_2024/">IMU</a> (orientation/angular velocity + noise model), joint encoders (position/velocity, can add quantization), foot contact forces; and define the frequency hierarchy:</p>
+<pre class="highlight"><code class="language-xml">&lt;sensor&gt;
+  &lt;framequat objtype="site" objname="imu_site" noise="0.001"/&gt;
+  &lt;gyro site="imu_site" noise="0.005"/&gt;
+  &lt;jointpos joint="l_knee_pitch"/&gt;  &lt;jointvel joint="l_knee_pitch"/&gt;
+&lt;/sensor&gt;</code></pre>
+<pre class="highlight"><code class="language-python"># Physics 1 kHz, Control 100 Hz (engineering suggestion, verify against your controller bandwidth and bus rate)
+model.opt.timestep = 0.001   # Physics step size
+decimation = 10              # Send control every 10 physics steps → 100 Hz</code></pre>
+<p><strong>Hard Rule: Observation interfaces must correspond one-to-one with real robot sensors – observations unavailable on the real robot must not be used in the policy</strong> (a common discipline for M13/M14). Control frequency anchors: ToddlerBot full-state feedback at 50 Hz, Berkeley CAN bus at 250 Hz (see respective survey files).</p>
+<p>【Why】Observation is the easiest place to cheat in sim-to-real: ground truth values easily readable in simulation (base linear velocity, center of mass position) do not exist on the real robot. Build the pipeline now based on the real robot's sensor list, so M13 training requires zero rework. Adding noise is not about making things difficult; it's about letting the policy adapt to real sensors in advance.</p>
+<p>【How to Analyze Your Situation】Real robot sensors not yet decided: First, go back to the <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Guide</a> to finalize the BOM. Simulation observations follow the real robot, not the other way around.</p>
+<h2 id="step-6-baseline-health-check-ticket-to-m12">Step 6: Baseline Health Check – Ticket to M12</h2>
+<p>【Actions】Four checks:</p>
+<ol>
+<li><strong>Zero Torque Release</strong>: Disable actuators, free fall / suspension – model doesn't fall apart, joints have damping and don't flail wildly;</li>
+<li><strong>Initial Keyframe</strong>: Standing posture with zero input for 10 s without drift, center of mass projection remains stable within the support polygon;</li>
+<li><strong>Contact Force Magnitude</strong>: When standing, single foot normal force ≈ half the body weight, not too large or too small;</li>
+<li><strong>Simulation Speed</strong>: Record the real-time factor (RTF), target ≥ 1 (RL throughput is a separate consideration).</li>
+</ol>
+<p>【Why】Model-level errors (wrong inertia, reversed axes, missing limits) will all be exposed during PD standing. Checking with passive dynamics is the cheapest method. RTF determines the ceiling for subsequent MPC real-time performance and RL training throughput.</p>
+<p>【How to Analyze Your Situation】Model falls apart when suspended: Inertia or joint definition is wrong, go back to M10 Step 3. RTF &lt; 0.5: Check the number of contact pairs, collision mesh complexity, and step size; don't try to brute-force it.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Official engine examples run successfully (MuJoCo humanoid or Isaac Lab H1), screen recording/logs archived.</li>
+<li>[ ] Model loads without warnings; joint drive directions verified against M10 conventions.</li>
+<li>[ ] Actuator limits (torque/speed/position) match the M01 specification table item by item, no inflated values.</li>
+<li>[ ] Zero-torque suspension/free fall test passed: no disintegration, damping is normal; keyframe standing for 10 s without drift, contact force magnitudes are reasonable.</li>
+<li>[ ] Observation list documented: each item specifies its real robot source (which sensor, what rate), items unavailable on the real robot are marked "Forbidden in Policy".</li>
+<li>[ ] Real-time factor recorded; contact pairs and collision bodies have been pruned.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MJCF compilation error: inertia tensor not positive definite</td>
+<td>Manually written inertia matrix violates physical constraints</td>
+<td>Go back to M10 Step 3, re-export from CAD; check ixx/iyy/izz triangle inequality</td>
+</tr>
+<tr>
+<td>Feet sink into floor or slide like on ice</td>
+<td>solref too soft / friction coefficient too low</td>
+<td>Go back to Step 4, adjust solref time constant and friction</td>
+</tr>
+<tr>
+<td>Simulation several times slower than real-time</td>
+<td>Too many contact pairs / collision mesh too complex</td>
+<td>Prune contact pairs with exclude; simplify collision bodies in M10 Step 5</td>
+</tr>
+<tr>
+<td>All joint motion directions reversed</td>
+<td>Mixing degrees and radians / axis convention differences</td>
+<td>Check compiler angle; verify each joint individually in the viewer</td>
+</tr>
+<tr>
+<td>Limits lost after URDF to USD conversion</td>
+<td>Importer option/version behavior differences</td>
+<td>Check limits item by item after conversion, manually add missing ones (verify against your chosen version's Importer documentation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous Task: <a href="/en/roadmap/missions/m10-urdf-modeling/">M10 · URDF Modeling and Export</a></li>
+<li>Next Task: <a href="/en/roadmap/missions/m12-sim-walking/">M12 · Simulation Standing and Walking</a></li>
+<li>Theoretical Background: <a href="/en/wiki/chapters/chapter-22/">Chapter 22 Software Middleware</a>, <a href="/en/wiki/chapters/chapter-23/">Chapter 23 Simulation and Physics Engines</a>, <a href="/en/wiki/appendices/appendix-c/">Appendix C Software and Simulation Platform List</a></li>
+<li><a href="/en/roadmap/playbooks/sim-setup/">Simulation Environment Setup Guide</a> · <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m10-urdf-modeling/">← Previous<span>M10 · URDF Modeling and Export: Turning a Hunk of Metal into a Computable Model</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m12-sim-walking/">Next →<span>M12 · Simulation Standing and Walking: First Stand Firm, Then Walk</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m11-simulation-environment-and-model-conversion-fall-ten-thousand-times-in-the-digital-world-first">M11 · Simulation Environment and Model Conversion: Fall Ten Thousand Times in the Digital World First</a><ul>
+<li><a href="#step-1-engine-installation-and-official-baseline-verification">Step 1: Engine Installation and Official Baseline Verification</a></li>
+<li><a href="#step-2-urdf-mjcfusd-conversion-and-verification">Step 2: URDF → MJCF/USD Conversion and Verification</a></li>
+<li><a href="#step-3-actuator-modeling-inflated-limits-sim-to-real-suicide">Step 3: Actuator Modeling — Inflated Limits = Sim-to-Real Suicide</a></li>
+<li><a href="#step-4-contact-and-friction-everything-for-bipedal-locomotion-happens-at-the-feet">Step 4: Contact and Friction – Everything for Bipedal Locomotion Happens at the Feet</a></li>
+<li><a href="#step-5-sensor-simulation-and-observation-pipeline">Step 5: Sensor Simulation and Observation Pipeline</a></li>
+<li><a href="#step-6-baseline-health-check-ticket-to-m12">Step 6: Baseline Health Check – Ticket to M12</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>
